@@ -345,7 +345,7 @@ window.SALES_DATA = {
           "children": [
             {
               "id": "ase_1001",
-              "name": "KAREN MENDOZA",
+              "name": "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
               "pdv": "TE ICA II",
               "spv": "CYNTHIA GUERRA",
               "quotas": {
@@ -443,7 +443,7 @@ window.SALES_DATA = {
             },
             {
               "id": "ase_1002",
-              "name": "CARLOS HERNANDEZ",
+              "name": "ALEXANDRA ECHAJAYA GARCIA",
               "pdv": "TE ICA II",
               "spv": "CYNTHIA GUERRA",
               "quotas": {
@@ -541,7 +541,7 @@ window.SALES_DATA = {
             },
             {
               "id": "ase_1003",
-              "name": "DIANA SOLIS",
+              "name": "ANDY TITO HUAMANCHA",
               "pdv": "TE ICA II",
               "spv": "CYNTHIA GUERRA",
               "quotas": {
@@ -639,7 +639,7 @@ window.SALES_DATA = {
             },
             {
               "id": "ase_1004",
-              "name": "JORGE VALENCIA",
+              "name": "CARLA ANDREA CERVANTES SALGUERO",
               "pdv": "TE ICA II",
               "spv": "CYNTHIA GUERRA",
               "quotas": {
@@ -7462,7 +7462,7 @@ window.DISCOUNT_DATA = {
           "children": [
             {
               "id": "ase_1001",
-              "name": "KAREN MENDOZA",
+              "name": "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "tot_porta_mono": 0,
@@ -7472,7 +7472,7 @@ window.DISCOUNT_DATA = {
             },
             {
               "id": "ase_1002",
-              "name": "CARLOS HERNANDEZ",
+              "name": "ALEXANDRA ECHAJAYA GARCIA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "tot_porta_mono": 0,
@@ -7482,7 +7482,7 @@ window.DISCOUNT_DATA = {
             },
             {
               "id": "ase_1003",
-              "name": "DIANA SOLIS",
+              "name": "ANDY TITO HUAMANCHA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "tot_porta_mono": 46,
@@ -7492,7 +7492,7 @@ window.DISCOUNT_DATA = {
             },
             {
               "id": "ase_1004",
-              "name": "JORGE VALENCIA",
+              "name": "CARLA ANDREA CERVANTES SALGUERO",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "tot_porta_mono": 0,
