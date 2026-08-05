@@ -1412,8 +1412,6 @@
             ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
             <th class="val-cell">PROY (UND)</th>
             <th class="val-cell">% CUMP.</th>
-            <th class="val-cell">CIERRE M-1</th>
-            <th class="val-cell" style="min-width: 120px;">VAR. PROY VS M-1</th>
             ${showPlanAction ? `<th class="val-cell">PLAN DE ACCIÓN</th>` : ''}
           </tr>
         `;
@@ -1459,7 +1457,7 @@
       treeData.forEach(spv => {
         grandTotal += getNodeUnits(spv, keyToUse);
         grandQuota += getNodeQuota(spv, keyToUse);
-        if (prevMKey) grandM1Units += getNodeUnits(spv, prevMKey);
+        if (currentMonthFilter === 'm202608') { grandM1Units += spv.children.reduce((acc, p) => acc + (p.m1_jul3d || 0), 0); } else if (prevMKey) { grandM1Units += getNodeUnits(spv, prevMKey); }
       });
 
       let visibleRowsCount = 0;
@@ -1512,8 +1510,6 @@
           ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
           <td class="val-cell num-font" style="color: #93c5fd; font-weight: 800;">${grandProjUnits.toLocaleString('es-PE')} u.</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandProjComp) : '-'}</td>
-          <td class="val-cell num-font">${grandM1Units.toLocaleString('es-PE')} u.</td>
-          <td class="val-cell num-font">${getVariationBadgeHTML(diffUnits, diffPct)}</td>
           ${showPlanAction ? `<td class="val-cell" style="color: #cbd5e1;">-</td>` : ''}
         `;
       } else {
@@ -1556,7 +1552,7 @@
         const spvTotal = getNodeUnits(spv, keyToUse);
         const spvQuota = getNodeQuota(spv, keyToUse);
         const spvComp = spvQuota > 0 ? (spvTotal / spvQuota * 100) : 0;
-        const spvM1Units = prevMKey ? getNodeUnits(spv, prevMKey) : 0;
+        const spvM1Units = currentMonthFilter === 'm202608' ? spv.children.reduce((acc, p) => acc + (p.m1_jul3d || 0), 0) : (prevMKey ? getNodeUnits(spv, prevMKey) : 0);
 
         const spvArribos = getNodeArribos(spv, currentMonthFilter);
         const spvConvPct = spvArribos > 0 ? (spvTotal / spvArribos * 100) : 0;
@@ -1597,8 +1593,6 @@
             ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
             <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
-            <td class="val-cell num-font">${spvM1Units.toLocaleString('es-PE')} u.</td>
-            <td class="val-cell num-font">${getVariationBadgeHTML(diffUnits, diffPct)}</td>
             ${showPlanAction ? `<td class="val-cell"><button class="btn-plan-action" onclick="openSupervisorPlanDrawer('${spv.name}')"><i class="fa-solid fa-clipboard-check"></i> Plan Ago26</button></td>` : ''}
           `;
         } else {
@@ -1631,7 +1625,7 @@
             const pdvTotal = getNodeUnits(pdv, keyToUse);
             const pdvQuota = getNodeQuota(pdv, keyToUse);
             const pdvComp = pdvQuota > 0 ? (pdvTotal / pdvQuota * 100) : 0;
-            const pdvM1Units = prevMKey ? getNodeUnits(pdv, prevMKey) : 0;
+            const pdvM1Units = currentMonthFilter === 'm202608' ? (pdv.m1_jul3d || 0) : (prevMKey ? getNodeUnits(pdv, prevMKey) : 0);
 
             const pdvArribos = getNodeArribos(pdv, currentMonthFilter);
             const pdvConvPct = pdvArribos > 0 ? (pdvTotal / pdvArribos * 100) : 0;
@@ -1672,8 +1666,6 @@
                 ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
                 <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
-                <td class="val-cell num-font">${pdvM1Units.toLocaleString('es-PE')} u.</td>
-                <td class="val-cell num-font">${getVariationBadgeHTML(diffUnits, diffPct)}</td>
                 ${showPlanAction ? `<td class="val-cell" style="color: var(--text-light);">-</td>` : ''}
               `;
             } else {
@@ -1732,8 +1724,6 @@
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
                     <td class="val-cell num-font" style="font-weight: 600; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
-                    <td class="val-cell num-font">${aseM1Units.toLocaleString('es-PE')} u.</td>
-                    <td class="val-cell num-font">${getVariationBadgeHTML(diffUnits, diffPct)}</td>
                     ${showPlanAction ? `<td class="val-cell" style="color: var(--text-light);">-</td>` : ''}
                   `;
                 } else {
