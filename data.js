@@ -5118,11 +5118,11 @@ window.SALES_DATA = {
 
 window.DOTACION_DATA = {
   "summary": {
-    "hc_obj": 25,
-    "hc_codigo": 23,
-    "cump_obj": 92,
-    "hc_gap": -2,
-    "hc_contratar": -2,
+    "hc_obj": 27,
+    "hc_codigo": 24,
+    "cump_obj": 88.9,
+    "hc_gap": -3,
+    "hc_contratar": -3,
     "cump_condicion": 74
   },
   "pdvs": [
@@ -5735,4 +5735,1749 @@ window.DOTACION_DATA = {
       ]
     }
   ]
+};
+
+
+window.NPS_DATA = {
+  "target": 58.0,
+  "venta": {
+    "summary": {
+      "total_nps": 63,
+      "total_q": 82,
+      "total_pct_q": 100,
+      "sem1": {
+        "nps": 44,
+        "q": 9,
+        "pct_q": 100
+      },
+      "sem2": {
+        "nps": 57,
+        "q": 28,
+        "pct_q": 100
+      },
+      "sem3": {
+        "nps": 89,
+        "q": 19,
+        "pct_q": 100
+      },
+      "sem4": {
+        "nps": 58,
+        "q": 26,
+        "pct_q": 100
+      }
+    },
+    "pdvs": [
+      {
+        "name": "TE SATELITE CANETE",
+        "spv": "MARÍA BERNAOLA",
+        "total_nps": 40,
+        "total_q": 5,
+        "pct_q": 6,
+        "sem1": {
+          "nps": 0,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem2": {
+          "nps": 50,
+          "q": 4,
+          "pct_q": 14
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_GCHAUPINB",
+            "total_nps": 33,
+            "total_q": 3,
+            "sem1": {
+              "nps": 0,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 33,
+              "q": 2
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            }
+          },
+          {
+            "name": "FLN_CROSASP",
+            "total_nps": 50,
+            "total_q": 2,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 50,
+              "q": 2
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE PISCO",
+        "spv": "MARÍA BERNAOLA",
+        "total_nps": 100,
+        "total_q": 3,
+        "pct_q": 4,
+        "sem1": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem2": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 100,
+          "q": 2,
+          "pct_q": 8
+        },
+        "asesores": [
+          {
+            "name": "FLN_CMANRIQUEN",
+            "total_nps": 100,
+            "total_q": 3,
+            "sem1": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 2
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE SATELITE PUEBLO JOVEN",
+        "spv": "MARÍA BERNAOLA",
+        "total_nps": -100,
+        "total_q": 1,
+        "pct_q": 1,
+        "sem1": {
+          "nps": -100,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem2": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_MGAMBOAM",
+            "total_nps": -100,
+            "total_q": 1,
+            "sem1": {
+              "nps": -100,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE ICA 3",
+        "spv": "CYNTHIA GUERRA",
+        "total_nps": 89,
+        "total_q": 18,
+        "pct_q": 22,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 50,
+          "q": 4,
+          "pct_q": 14
+        },
+        "sem3": {
+          "nps": 100,
+          "q": 6,
+          "pct_q": 32
+        },
+        "sem4": {
+          "nps": 100,
+          "q": 8,
+          "pct_q": 31
+        },
+        "asesores": [
+          {
+            "name": "FLN_NAMESQUITAA",
+            "total_nps": 100,
+            "total_q": 12,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 3
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 4
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 5
+            }
+          },
+          {
+            "name": "FLN_JVALLEJOSP",
+            "total_nps": 67,
+            "total_q": 6,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 67,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 2
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 3
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE ICA II",
+        "spv": "CYNTHIA GUERRA",
+        "total_nps": 92,
+        "total_q": 12,
+        "pct_q": 15,
+        "sem1": {
+          "nps": 100,
+          "q": 2,
+          "pct_q": 22
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 4
+        },
+        "sem3": {
+          "nps": 100,
+          "q": 3,
+          "pct_q": 16
+        },
+        "sem4": {
+          "nps": 83,
+          "q": 6,
+          "pct_q": 23
+        },
+        "asesores": [
+          {
+            "name": "FLN_RNAVARRETEC",
+            "total_nps": 100,
+            "total_q": 5,
+            "sem1": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 2
+            }
+          },
+          {
+            "name": "FLN_DSIMEB",
+            "total_nps": 86,
+            "total_q": 7,
+            "sem1": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 2
+            },
+            "sem4": {
+              "nps": 86,
+              "q": 4
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE NAZCA",
+        "spv": "FERNANDO MORENO",
+        "total_nps": 29,
+        "total_q": 7,
+        "pct_q": 9,
+        "sem1": {
+          "nps": 0,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem2": {
+          "nps": -33,
+          "q": 3,
+          "pct_q": 11
+        },
+        "sem3": {
+          "nps": 100,
+          "q": 2,
+          "pct_q": 11
+        },
+        "sem4": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 4
+        },
+        "asesores": [
+          {
+            "name": "FLN_RPICKMANS",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 0
+            }
+          },
+          {
+            "name": "FLN_PCUMPAV",
+            "total_nps": 17,
+            "total_q": 6,
+            "sem1": {
+              "nps": 0,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 17,
+              "q": 3
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 2
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 1
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE AYACUCHO",
+        "spv": "MERY LAPA",
+        "total_nps": -17,
+        "total_q": 6,
+        "pct_q": 7,
+        "sem1": {
+          "nps": 0,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 4
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": -50,
+          "q": 4,
+          "pct_q": 15
+        },
+        "asesores": [
+          {
+            "name": "FLN_LHUAMANIY",
+            "total_nps": 0,
+            "total_q": 4,
+            "sem1": {
+              "nps": 0,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 3
+            }
+          },
+          {
+            "name": "FLN_SREYMUNDEZM",
+            "total_nps": -50,
+            "total_q": 2,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": -50,
+              "q": 1
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE HUANTA",
+        "spv": "MERY LAPA",
+        "total_nps": 25,
+        "total_q": 4,
+        "pct_q": 5,
+        "sem1": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem2": {
+          "nps": 0,
+          "q": 1,
+          "pct_q": 4
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 2,
+          "pct_q": 8
+        },
+        "asesores": [
+          {
+            "name": "FLN_SMEZAA",
+            "total_nps": 25,
+            "total_q": 4,
+            "sem1": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 2
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE SATELITE CHALA",
+        "spv": "FERNANDO MORENO",
+        "total_nps": 100,
+        "total_q": 2,
+        "pct_q": 2,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 2,
+          "pct_q": 7
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_EHUAMANY",
+            "total_nps": 100,
+            "total_q": 2,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 2
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE SATELITE BARRIO CHINO",
+        "spv": "MARÍA BERNAOLA",
+        "total_nps": 46,
+        "total_q": 13,
+        "pct_q": 16,
+        "sem1": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem2": {
+          "nps": 50,
+          "q": 6,
+          "pct_q": 21
+        },
+        "sem3": {
+          "nps": 33,
+          "q": 3,
+          "pct_q": 16
+        },
+        "sem4": {
+          "nps": 33,
+          "q": 3,
+          "pct_q": 12
+        },
+        "asesores": [
+          {
+            "name": "FLN_RAYALAC",
+            "total_nps": 0,
+            "total_q": 4,
+            "sem1": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 2
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 1
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 1
+            }
+          },
+          {
+            "name": "FLN_ERAMOSA",
+            "total_nps": 67,
+            "total_q": 9,
+            "sem1": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 67,
+              "q": 4
+            },
+            "sem3": {
+              "nps": 67,
+              "q": 2
+            },
+            "sem4": {
+              "nps": 67,
+              "q": 2
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE PARCONA",
+        "spv": "CYNTHIA GUERRA",
+        "total_nps": 100,
+        "total_q": 4,
+        "pct_q": 5,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 4
+        },
+        "sem3": {
+          "nps": 100,
+          "q": 3,
+          "pct_q": 16
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_DCARRIZALER",
+            "total_nps": 100,
+            "total_q": 4,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 3
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE SATELITE PALPA",
+        "spv": "FERNANDO MORENO",
+        "total_nps": 100,
+        "total_q": 1,
+        "pct_q": 1,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem3": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 5
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_AECHAJAYAG",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE ICA",
+        "spv": "MARÍA BERNAOLA",
+        "total_nps": 100,
+        "total_q": 2,
+        "pct_q": 2,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 4
+        },
+        "sem3": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 5
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_LELIZALDEE",
+            "total_nps": 100,
+            "total_q": 2,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE ICA MODELO",
+        "spv": "CYNTHIA GUERRA",
+        "total_nps": 100,
+        "total_q": 4,
+        "pct_q": 5,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 4,
+          "pct_q": 14
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_VBAEZT",
+            "total_nps": 100,
+            "total_q": 3,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 3
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            }
+          },
+          {
+            "name": "FLN_ADELACRUZH",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "postventa": {
+    "summary": {
+      "total_nps": 87,
+      "total_q": 31,
+      "total_pct_q": 100,
+      "sem1": {
+        "nps": 100,
+        "q": 5,
+        "pct_q": 100
+      },
+      "sem2": {
+        "nps": 78,
+        "q": 9,
+        "pct_q": 100
+      },
+      "sem3": {
+        "nps": 78,
+        "q": 9,
+        "pct_q": 100
+      },
+      "sem4": {
+        "nps": 100,
+        "q": 7,
+        "pct_q": 100
+      },
+      "sem5": {
+        "nps": 100,
+        "q": 1,
+        "pct_q": 100
+      }
+    },
+    "pdvs": [
+      {
+        "name": "TE SATELITE CANETE",
+        "spv": "MARÍA BERNAOLA",
+        "total_nps": 100,
+        "total_q": 2,
+        "pct_q": 6,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 2,
+          "pct_q": 22
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem5": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_CROSASP",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          },
+          {
+            "name": "FLN_GCHAUPINB",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE PISCO",
+        "spv": "MARÍA BERNAOLA",
+        "total_nps": 100,
+        "total_q": 1,
+        "pct_q": 3,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem5": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_VECHEVARRIB",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE ICA 3",
+        "spv": "CYNTHIA GUERRA",
+        "total_nps": 100,
+        "total_q": 1,
+        "pct_q": 3,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 14
+        },
+        "sem5": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_NAMESQUITAA",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE ICA II",
+        "spv": "CYNTHIA GUERRA",
+        "total_nps": 100,
+        "total_q": 8,
+        "pct_q": 26,
+        "sem1": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 20
+        },
+        "sem2": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem3": {
+          "nps": 100,
+          "q": 3,
+          "pct_q": 33
+        },
+        "sem4": {
+          "nps": 100,
+          "q": 4,
+          "pct_q": 57
+        },
+        "sem5": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_DSIMEB",
+            "total_nps": 100,
+            "total_q": 6,
+            "sem1": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 2
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 3
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          },
+          {
+            "name": "FLN_RNAVARRETEC",
+            "total_nps": 100,
+            "total_q": 2,
+            "sem1": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE NAZCA",
+        "spv": "FERNANDO MORENO",
+        "total_nps": 60,
+        "total_q": 5,
+        "pct_q": 16,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": -100,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem3": {
+          "nps": 100,
+          "q": 3,
+          "pct_q": 33
+        },
+        "sem4": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 14
+        },
+        "sem5": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_PCUMPAV",
+            "total_nps": 100,
+            "total_q": 2,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": -100,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          },
+          {
+            "name": "FLN_RPICKMANS",
+            "total_nps": 33,
+            "total_q": 3,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": -100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 2
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE AYACUCHO",
+        "spv": "MERY LAPA",
+        "total_nps": 100,
+        "total_q": 3,
+        "pct_q": 10,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 2,
+          "pct_q": 22
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 14
+        },
+        "sem5": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_LHUAMANIY",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          },
+          {
+            "name": "FLN_SREYMUNDEZM",
+            "total_nps": 100,
+            "total_q": 2,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE SATELITE CHALA",
+        "spv": "FERNANDO MORENO",
+        "total_nps": 100,
+        "total_q": 1,
+        "pct_q": 3,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem5": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_EHUAMANY",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE SATELITE BARRIO CHINO",
+        "spv": "MARÍA BERNAOLA",
+        "total_nps": 50,
+        "total_q": 4,
+        "pct_q": 13,
+        "sem1": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 20
+        },
+        "sem2": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 2,
+          "pct_q": 22
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem5": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 100
+        },
+        "asesores": [
+          {
+            "name": "FLN_ERAMOSA",
+            "total_nps": 33,
+            "total_q": 3,
+            "sem1": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 2
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 100,
+              "q": 1
+            }
+          },
+          {
+            "name": "FLN_RAYALAC",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 100,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE SATELITE PALPA",
+        "spv": "FERNANDO MORENO",
+        "total_nps": 100,
+        "total_q": 2,
+        "pct_q": 6,
+        "sem1": {
+          "nps": 100,
+          "q": 2,
+          "pct_q": 40
+        },
+        "sem2": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem5": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_AECHAJAYAG",
+            "total_nps": 100,
+            "total_q": 2,
+            "sem1": {
+              "nps": 100,
+              "q": 2
+            },
+            "sem2": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE ICA",
+        "spv": "MARÍA BERNAOLA",
+        "total_nps": 100,
+        "total_q": 3,
+        "pct_q": 10,
+        "sem1": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 20
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem3": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem5": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_LELIZALDEE",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          },
+          {
+            "name": "FLN_RELIASM",
+            "total_nps": 100,
+            "total_q": 2,
+            "sem1": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "TE ICA MODELO",
+        "spv": "CYNTHIA GUERRA",
+        "total_nps": 100,
+        "total_q": 1,
+        "pct_q": 3,
+        "sem1": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem2": {
+          "nps": 100,
+          "q": 1,
+          "pct_q": 11
+        },
+        "sem3": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem4": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "sem5": {
+          "nps": 0,
+          "q": 0,
+          "pct_q": 0
+        },
+        "asesores": [
+          {
+            "name": "FLN_VBAEZT",
+            "total_nps": 100,
+            "total_q": 1,
+            "sem1": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem2": {
+              "nps": 100,
+              "q": 1
+            },
+            "sem3": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem4": {
+              "nps": 0,
+              "q": 0
+            },
+            "sem5": {
+              "nps": 0,
+              "q": 0
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+
+window.USER_CODE_MAP = {
+  "FLN_LHUAMANIY": "LUIS HUAMANI YUPANQUI",
+  "FLN_SREYMUNDEZM": "SANTIAGO REYMUNDEZ MENDOZA",
+  "FLN_SMEZAA": "SILVIA MEZA ALVAREZ",
+  "FLN_MFELICESG": "MIGUEL FELICES GUTIERREZ",
+  "FLN_LELIZALDEE": "LESLIE ELIZALDE ESPINOZA",
+  "FLN_RELIASM": "RENZO ELIAS MORALES",
+  "FLN_NAMESQUITAA": "NICOLE AMESQUITA AGUILAR",
+  "FLN_JVALLEJOSP": "JORGE VALLEJOS PALACIOS",
+  "FLN_DSIMEB": "DIANA SIME BUSTAMANTE",
+  "FLN_RNAVARRETEC": "RODRIGO NAVARRETE CASTRO",
+  "FLN_VBAEZT": "VALERIA BAEZ TORRES",
+  "FLN_RPICKMANS": "ROBERTO PICKMANS SILVA",
+  "FLN_PCUMPAV": "PEDRO CUMPA VALENCIA",
+  "FLN_DCARRIZALER": "DANIEL CARRIZALES RAMOS",
+  "FLN_JSARCIAG": "JORGE SARCIA GOMEZ",
+  "FLN_CMANRIQUEN": "CARLOS MANRIQUE NAVARRO",
+  "FLN_VECHEVARRIB": "VICTOR ECHEVARRIA BARRIOS",
+  "FLN_FCRUZP": "FELIPE CRUZ PEREZ",
+  "FLN_RAYALAC": "RODRIGO AYALA CASTRO",
+  "FLN_ERAMOSA": "EDUARDO RAMOS ALVAREZ",
+  "FLN_AECHAJAYAG": "ADRIAN ECHAJAYA GOMEZ",
+  "FLN_JIESPINOC": "JEAN ESPINOZA CASTRO",
+  "FLN_CROSASP": "CRISTIAN ROSAS PEREZ",
+  "FLN_GCHAUPINB": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
+  "FLN_EHUAMANY": "ESTEBAN HUAMANI YUPANQUI",
+  "FLN_MGAMBOAM": "MANUEL GAMBOA MORALES",
+  "FLN_ADELACRUZH": "ANDREA DELACRUZ HERNANDEZ",
+  "FLN_CHALA1": "CHRISTIAN SOTO"
 };

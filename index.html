@@ -74,7 +74,7 @@
     /* NAVIGATION BAR BETWEEN PRESENTATION PAGES */
     .page-nav-bar {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       background: #0f172a;
       border-radius: 10px;
@@ -111,12 +111,6 @@
     .page-tab-btn:hover:not(.active) {
       background: rgba(255, 255, 255, 0.16);
       color: #ffffff;
-    }
-
-    .deck-badge {
-      font-size: 11px;
-      font-weight: 700;
-      color: #94a3b8;
     }
 
     /* RESTORED VIVID BLUE EXECUTIVE HEADER BAR */
@@ -207,23 +201,6 @@
     }
     .btn-glass:hover { background: rgba(255, 255, 255, 0.25); }
 
-    .btn-emerald {
-      height: 34px;
-      background: linear-gradient(135deg, #16a34a, #15803d);
-      border: none;
-      color: #ffffff;
-      padding: 0 14px;
-      border-radius: 8px;
-      font-size: 11.5px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-    .btn-emerald:hover { background: #15803d; }
-
     /* Compact Product Selector Tabs */
     .product-tabs-bar {
       display: flex;
@@ -235,8 +212,9 @@
 
     .product-tabs {
       display: flex;
-      gap: 6px;
+      gap: 8px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .prod-tab {
@@ -260,6 +238,23 @@
       color: #ffffff;
       border-color: #0f172a;
       box-shadow: 0 2px 5px rgba(15, 23, 42, 0.2);
+    }
+
+    /* Specialized Wide Tab Buttons for Page 3 NPS Channels */
+    .nps-channel-tab {
+      height: 34px;
+      padding: 0 18px;
+      font-size: 11.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      border-radius: 8px;
+    }
+    .nps-channel-tab i {
+      font-size: 13px;
+      margin-right: 2px;
     }
 
     .search-box-compact {
@@ -297,7 +292,7 @@
       overflow: hidden;
     }
 
-    /* KPI Cards Row for Page 2 */
+    /* KPI Cards Row for Page 2 & Page 3 */
     .kpi-cards-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -406,15 +401,24 @@
       text-align: left;
     }
 
-    /* Soft Clean Row Styles for High Readability */
+    /* PAGE 1: Original Clean PDV Row Styling */
     .row-spv { background: #f8fafc; font-weight: 700; color: #0f172a; }
     .row-spv:hover { background: #f1f5f9 !important; }
 
     .row-pdv { background: #ffffff; font-weight: 600; color: #334155; }
     .row-pdv:hover { background: #f8fafc !important; }
 
+    /* PAGE 2 & PAGE 3: Soft Slate Shading for PDV Rows */
+    .row-pdv-shaded {
+      background: #f1f5f9 !important;
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1 !important;
+    }
+    .row-pdv-shaded:hover { background: #e2e8f0 !important; }
+
     .row-asesor { background: #ffffff; font-weight: 400; color: #64748b; }
-    .row-asesor:hover { background: rgba(37, 99, 235, 0.03) !important; color: #0f172a; }
+    .row-asesor:hover { background: rgba(59, 130, 246, 0.04) !important; color: #0f172a; }
 
     .node-cell { display: flex; align-items: center; gap: 8px; }
     .indent-0 { padding-left: 0px; }
@@ -435,18 +439,6 @@
     }
 
     .toggle-icon.expanded { transform: rotate(90deg); }
-
-    .type-badge {
-      font-size: 9px;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .badge-spv { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
-    .badge-pdv { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
-    .badge-asesor { background: #ffffff; color: #64748b; border: 1px solid #e2e8f0; }
 
     /* Minimalist Elegant Performance Badges (Soft Tints) */
     .badge-compliance {
@@ -594,16 +586,15 @@
         <button class="page-tab-btn" id="navTab2" onclick="switchSlidePage(2)">
           <i class="fa-solid fa-id-card-clip"></i> Página 2: Dotación y Cumplimiento HC
         </button>
-      </div>
-      <div class="deck-badge">
-        <i class="fa-solid fa-layer-group" style="color: #60a5fa;"></i> Presentación Gerencial Fortalecernos S.A.C.
+        <button class="page-tab-btn" id="navTab3" onclick="switchSlidePage(3)">
+          <i class="fa-solid fa-star-half-stroke"></i> Página 3: Reporte de Calidad y NPS
+        </button>
       </div>
     </nav>
 
     <!-- ================= PAGE 1: AVANCE DE VENTAS ================= -->
     <div id="slidePage1" class="page-view">
       
-      <!-- Slide Header Bar (Restored Vivid Blue Gradient) -->
       <header class="slide-header">
         <div class="slide-title-box">
           <div class="slide-icon"><i class="fa-solid fa-chart-line"></i></div>
@@ -626,14 +617,9 @@
           <button class="btn-glass" onclick="toggleExpandAll()">
             <i class="fa-solid fa-arrows-up-down"></i> <span id="expandBtnText">Expandir Todo</span>
           </button>
-          
-          <button class="btn-emerald" onclick="exportCSV()">
-            <i class="fa-solid fa-file-excel"></i> Exportar CSV
-          </button>
         </div>
       </header>
 
-      <!-- Compact Product Tabs & Search -->
       <div class="product-tabs-bar">
         <div class="product-tabs">
           <button class="prod-tab active" data-prod="POSTPAGO_TOTAL" onclick="selectProductTab('POSTPAGO_TOTAL')">POSTPAGO TOTAL</button>
@@ -651,7 +637,6 @@
         </div>
       </div>
 
-      <!-- Main Slide Body Layout -->
       <div class="table-slide-card">
         <div class="table-scroll-area">
           <table class="tree-table">
@@ -666,7 +651,6 @@
     <!-- ================= PAGE 2: DOTACIÓN Y CUMPLIMIENTO HC ================= -->
     <div id="slidePage2" class="page-view" style="display: none;">
       
-      <!-- Slide Header Bar (Vivid Blue Gradient) -->
       <header class="slide-header">
         <div class="slide-title-box">
           <div class="slide-icon"><i class="fa-solid fa-users-gear"></i></div>
@@ -679,7 +663,6 @@
         </div>
 
         <div class="header-actions">
-          <!-- Supervisor Filter Dropdown -->
           <select id="spvDotacionFilter" class="month-select-glass" onchange="renderDotacionTable()">
             <option value="ALL" selected>👥 Todos los Supervisores</option>
             <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
@@ -688,50 +671,15 @@
             <option value="MERY LAPA">MERY LAPA</option>
           </select>
 
-          <!-- Collapsible Days Toggle Button -->
           <button class="btn-glass" onclick="toggleDotacionDays()">
             <i class="fa-solid fa-calendar-days"></i> <span id="toggleDaysText">Mostrar Días (26 Jul - 1 Ago)</span>
-          </button>
-          
-          <button class="btn-emerald" onclick="exportDotacionCSV()">
-            <i class="fa-solid fa-file-excel"></i> Exportar Dotación
           </button>
         </div>
       </header>
 
-      <!-- KPI Summary Bar for Staffing -->
-      <div class="kpi-cards-grid">
-        <div class="kpi-card">
-          <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
-          <div>
-            <div class="kpi-title">HC Meta (Objetivo)</div>
-            <div class="kpi-value">25 Asesores</div>
-          </div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon-box" style="background: #f0fdf4; color: #166534;"><i class="fa-solid fa-user-check"></i></div>
-          <div>
-            <div class="kpi-title">HC Codificado (Actual)</div>
-            <div class="kpi-value">23 Asesores <span style="font-size: 12px; font-weight: 700; color: #15803d;">(92.0%)</span></div>
-          </div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon-box" style="background: #fef2f2; color: #991b1b;"><i class="fa-solid fa-user-minus"></i></div>
-          <div>
-            <div class="kpi-title">HC Vacantes (Gap)</div>
-            <div class="kpi-value" style="color: #dc2626;">-2 Vacantes</div>
-          </div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-user-clock"></i></div>
-          <div>
-            <div class="kpi-title">Cumplimiento Condición</div>
-            <div class="kpi-value" style="color: #ca8a04;">74.0% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(17 en condición)</span></div>
-          </div>
-        </div>
-      </div>
+      <!-- KPI Summary Cards for Page 2 (Dynamic Rendering) -->
+      <div class="kpi-cards-grid" id="dotacionKpiCards"></div>
 
-      <!-- Main Table Card for Staffing -->
       <div class="table-slide-card">
         <div class="table-scroll-area">
           <table class="tree-table">
@@ -743,11 +691,67 @@
 
     </div>
 
+    <!-- ================= PAGE 3: REPORTE DE CALIDAD Y NPS ================= -->
+    <div id="slidePage3" class="page-view" style="display: none;">
+      
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon"><i class="fa-solid fa-star-half-stroke"></i></div>
+          <div>
+            <h1 class="slide-title">Reporte de Calidad y Satisfacción (NPS)</h1>
+            <div class="slide-subtitle" id="npsSubtitle">
+              Meta Objetivo NPS TEX: <strong style="color: #60a5fa;">58.0% (Venta)</strong> | <strong style="color: #34d399;">58.0% (Postventa)</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <select id="spvNpsFilter" class="month-select-glass" onchange="renderNpsTable()">
+            <option value="ALL" selected>👥 Todos los Supervisores</option>
+            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
+            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
+            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
+            <option value="MERY LAPA">MERY LAPA</option>
+          </select>
+
+          <button class="btn-glass" onclick="toggleNpsWeeks()">
+            <i class="fa-solid fa-calendar-week"></i> <span id="toggleNpsWeeksText">Mostrar Semanas (SEM1 - SEM5)</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Channel Sub-Tabs for NPS: VENTA vs POSTVENTA -->
+      <div class="product-tabs-bar">
+        <div class="product-tabs">
+          <button class="prod-tab nps-channel-tab active" id="tabNpsVenta" onclick="selectNpsChannel('venta')">
+            <i class="fa-solid fa-cart-shopping"></i> NPS VENTA (Meta 58.0%)
+          </button>
+          <button class="prod-tab nps-channel-tab" id="tabNpsPostventa" onclick="selectNpsChannel('postventa')">
+            <i class="fa-solid fa-headset"></i> NPS POSTVENTA (Meta 58.0%)
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI Summary Cards for NPS -->
+      <div class="kpi-cards-grid" id="npsKpiCards"></div>
+
+      <!-- Main Table Card for NPS -->
+      <div class="table-slide-card">
+        <div class="table-scroll-area">
+          <table class="tree-table">
+            <thead id="npsThead"></thead>
+            <tbody id="npsTbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
     <!-- Slide Footer Bar -->
     <footer class="slide-footer">
-      <div>Presentación Fortalecernos &bull; Equipo de Operaciones & HR</div>
+      <div>Presentación Fortalecernos &bull; Equipo de Operaciones</div>
       <div id="rowCountLabel">Cargando datos...</div>
-      <div id="pageFooterNum">Página 1 de 2</div>
+      <div id="pageFooterNum">Página 1 de 3</div>
     </footer>
 
   </div>
@@ -757,7 +761,7 @@
     <div class="drawer-panel" onclick="event.stopPropagation()">
       <button class="drawer-close" onclick="closeDrawer()"><i class="fa-solid fa-xmark"></i></button>
       
-      <div class="type-badge badge-spv" style="width: fit-content; margin-bottom: 6px;" id="drawerTypeBadge">Plan de Acción de Supervisión</div>
+      <div style="width: fit-content; margin-bottom: 6px; padding: 2px 8px; border-radius: 4px; font-weight: 700; background: #e0e7ff; color: #3730a3;" id="drawerTypeBadge">Plan de Acción de Supervisión</div>
       <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 2px;" id="drawerNodeName">Nombre Supervisor</h2>
       <div style="font-size: 12px; color: #64748b; margin-bottom: 18px;" id="drawerNodeMeta">Estructura Comercial</div>
 
@@ -779,12 +783,15 @@
     let currentPage = 1;
     let currentProductCode = 'POSTPAGO_TOTAL';
     let currentMonthFilter = 'm202608';
+    let currentNpsChannel = 'venta';
     let expandedState = {};
     let dotacionExpandedState = {};
+    let npsExpandedState = {};
     let currentSort = { column: 'total', direction: 'desc' };
     let searchQuery = '';
     let isAllExpanded = false;
     let isDaysExpanded = false;
+    let isWeeksExpanded = false;
 
     const monthLabelsMap = {
       'm202606': 'Junio 2026',
@@ -805,16 +812,22 @@
       currentPage = pageNum;
       document.getElementById('navTab1').classList.toggle('active', pageNum === 1);
       document.getElementById('navTab2').classList.toggle('active', pageNum === 2);
+      document.getElementById('navTab3').classList.toggle('active', pageNum === 3);
       
       document.getElementById('slidePage1').style.display = pageNum === 1 ? 'flex' : 'none';
       document.getElementById('slidePage2').style.display = pageNum === 2 ? 'flex' : 'none';
+      document.getElementById('slidePage3').style.display = pageNum === 3 ? 'flex' : 'none';
 
-      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 2`;
+      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 3`;
       
-      if (pageNum === 2) {
+      if (pageNum === 3) {
+        renderNpsHeader();
+        renderNpsTable();
+      } else if (pageNum === 2) {
         renderDotacionHeader();
         renderDotacionTable();
       } else {
+        renderTableHeader();
         renderTreeTable();
       }
     }
@@ -823,6 +836,16 @@
       if (pct >= 100) return `<span class="badge-compliance comp-green">${pct.toFixed(1)}%</span>`;
       if (pct >= 80) return `<span class="badge-compliance comp-yellow">${pct.toFixed(1)}%</span>`;
       return `<span class="badge-compliance comp-red">${pct.toFixed(1)}%</span>`;
+    }
+
+    function getNpsBadgeHTML(npsVal, target = 58) {
+      if (npsVal >= target) {
+        return `<span class="badge-compliance comp-green"><i class="fa-solid fa-circle-check"></i> ${npsVal.toFixed(0)}%</span>`;
+      } else if (npsVal >= 30) {
+        return `<span class="badge-compliance comp-yellow">${npsVal.toFixed(0)}%</span>`;
+      } else {
+        return `<span class="badge-compliance comp-red"><i class="fa-solid fa-triangle-exclamation"></i> ${npsVal.toFixed(0)}%</span>`;
+      }
     }
 
     function getConversionBadgeHTML(pct) {
@@ -842,14 +865,22 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      if (!window.SALES_DATA || !window.DOTACION_DATA) {
+      if (!window.SALES_DATA || !window.DOTACION_DATA || !window.NPS_DATA) {
         alert('Error al cargar data.js');
         return;
       }
 
       window.SALES_DATA.tree.forEach(spv => {
         expandedState[spv.id] = true;
-        dotacionExpandedState[spv.id] = true;
+      });
+      window.DOTACION_DATA.pdvs.forEach(pdv => {
+        dotacionExpandedState[pdv.name] = true;
+      });
+      window.NPS_DATA.venta.pdvs.forEach(pdv => {
+        npsExpandedState[pdv.name] = true;
+      });
+      window.NPS_DATA.postventa.pdvs.forEach(pdv => {
+        npsExpandedState[pdv.name] = true;
       });
 
       document.getElementById('monthSelectHeader').value = 'm202608';
@@ -882,7 +913,9 @@
     function selectProductTab(code) {
       currentProductCode = code;
       document.querySelectorAll('.prod-tab').forEach(t => {
-        t.classList.toggle('active', t.dataset.prod === code);
+        if (!t.classList.contains('nps-channel-tab')) {
+          t.classList.toggle('active', t.dataset.prod === code);
+        }
       });
       handleMonthChange(currentMonthFilter);
     }
@@ -997,11 +1030,12 @@
     function renderTableHeader() {
       const thead = document.getElementById('treeThead');
       const showArribos = (currentProductCode === 'POSTPAGO_TOTAL');
+      const showPlanAction = (currentProductCode === 'POSTPAGO_TOTAL');
       
       if (currentMonthFilter === 'ALL') {
         thead.innerHTML = `
           <tr>
-            <th style="min-width: 240px;" class="sortable" onclick="sortTable('name')">ESTRUCTURA COMERCIAL <i class="fa-solid fa-sort"></i></th>
+            <th style="min-width: 240px;" class="sortable" onclick="sortTable('name')">ESTRUCTURA <i class="fa-solid fa-sort"></i></th>
             <th class="val-cell sortable" onclick="sortTable('m202606')">JUNIO</th>
             <th class="val-cell sortable" onclick="sortTable('m202607')">JULIO</th>
             <th class="val-cell sortable" onclick="sortTable('m202608')">AGOSTO</th>
@@ -1012,7 +1046,7 @@
       } else if (currentMonthFilter === 'm202608') {
         thead.innerHTML = `
           <tr>
-            <th style="min-width: 240px;" class="sortable" onclick="sortTable('name')">ESTRUCTURA COMERCIAL <i class="fa-solid fa-sort"></i></th>
+            <th style="min-width: 240px;" class="sortable" onclick="sortTable('name')">ESTRUCTURA <i class="fa-solid fa-sort"></i></th>
             <th class="val-cell">CUOTA</th>
             <th class="val-cell sortable" onclick="sortTable('m202608')">AVANCE</th>
             <th class="val-cell">% AVANCE</th>
@@ -1021,13 +1055,13 @@
             <th class="val-cell">% CUMP.</th>
             <th class="val-cell">CIERRE M-1</th>
             <th class="val-cell" style="min-width: 120px;">VAR. PROY VS M-1</th>
-            <th class="val-cell">PLAN DE ACCIÓN</th>
+            ${showPlanAction ? `<th class="val-cell">PLAN DE ACCIÓN</th>` : ''}
           </tr>
         `;
       } else {
         thead.innerHTML = `
           <tr>
-            <th style="min-width: 240px;" class="sortable" onclick="sortTable('name')">ESTRUCTURA COMERCIAL <i class="fa-solid fa-sort"></i></th>
+            <th style="min-width: 240px;" class="sortable" onclick="sortTable('name')">ESTRUCTURA <i class="fa-solid fa-sort"></i></th>
             <th class="val-cell">CUOTA</th>
             <th class="val-cell sortable" onclick="sortTable('${currentMonthFilter}')">VENTAS</th>
             <th class="val-cell">% CUMP.</th>
@@ -1046,6 +1080,7 @@
       const keyToUse = currentMonthFilter === 'ALL' ? 'total' : currentMonthFilter;
       const prevMKey = prevMonthMap[currentMonthFilter];
       const showArribos = (currentProductCode === 'POSTPAGO_TOTAL');
+      const showPlanAction = (currentProductCode === 'POSTPAGO_TOTAL');
 
       let grandTotal = 0;
       let grandQuota = 0;
@@ -1117,7 +1152,7 @@
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandProjComp) : '-'}</td>
           <td class="val-cell num-font">${grandM1Units.toLocaleString('es-PE')} u.</td>
           <td class="val-cell num-font">${getVariationBadgeHTML(diffUnits, diffPct)}</td>
-          <td class="val-cell" style="color: #cbd5e1;">-</td>
+          ${showPlanAction ? `<td class="val-cell" style="color: #cbd5e1;">-</td>` : ''}
         `;
       } else {
         const grandComp = grandQuota > 0 ? (grandTotal / grandQuota * 100) : 0;
@@ -1172,7 +1207,7 @@
             <td>
               <div class="node-cell indent-0">
                 <span class="toggle-icon ${isSpvExpanded ? 'expanded' : ''}" onclick="toggleNode('${spv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                <span class="type-badge badge-spv">SPV</span><span>${spv.name}</span>
+                <span style="font-weight: 800; color: #0f172a;">${spv.name}</span>
               </div>
             </td>
             <td class="val-cell num-font">${getNodeUnits(spv, 'm202606').toLocaleString('es-PE')}</td>
@@ -1191,7 +1226,7 @@
             <td>
               <div class="node-cell indent-0">
                 <span class="toggle-icon ${isSpvExpanded ? 'expanded' : ''}" onclick="toggleNode('${spv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                <span class="type-badge badge-spv">SPV</span><span>${spv.name}</span>
+                <span style="font-weight: 800; color: #0f172a;">${spv.name}</span>
               </div>
             </td>
             <td class="val-cell num-font" style="color: var(--text-muted);">${spvQuota > 0 ? spvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
@@ -1202,7 +1237,7 @@
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
             <td class="val-cell num-font">${spvM1Units.toLocaleString('es-PE')} u.</td>
             <td class="val-cell num-font">${getVariationBadgeHTML(diffUnits, diffPct)}</td>
-            <td class="val-cell"><button class="btn-plan-action" onclick="openSupervisorPlanDrawer('${spv.name}')"><i class="fa-solid fa-clipboard-check"></i> Plan Ago26</button></td>
+            ${showPlanAction ? `<td class="val-cell"><button class="btn-plan-action" onclick="openSupervisorPlanDrawer('${spv.name}')"><i class="fa-solid fa-clipboard-check"></i> Plan Ago26</button></td>` : ''}
           `;
         } else {
           const diffUnits = spvTotal - spvM1Units;
@@ -1212,7 +1247,7 @@
             <td>
               <div class="node-cell indent-0">
                 <span class="toggle-icon ${isSpvExpanded ? 'expanded' : ''}" onclick="toggleNode('${spv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                <span class="type-badge badge-spv">SPV</span><span>${spv.name}</span>
+                <span style="font-weight: 800; color: #0f172a;">${spv.name}</span>
               </div>
             </td>
             <td class="val-cell num-font" style="color: var(--text-muted);">${spvQuota > 0 ? spvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
@@ -1240,14 +1275,14 @@
             const pdvConvPct = pdvArribos > 0 ? (pdvTotal / pdvArribos * 100) : 0;
 
             const trPdv = document.createElement('tr');
-            trPdv.className = 'row-pdv';
+            trPdv.className = 'row-pdv'; // Clean original row for Page 1
 
             if (currentMonthFilter === 'ALL') {
               trPdv.innerHTML = `
                 <td>
                   <div class="node-cell indent-1">
                     <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleNode('${pdv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="type-badge badge-pdv">PDV</span><span>${pdv.name}</span>
+                    <span style="font-weight: 700; color: #334155;">${pdv.name}</span>
                   </div>
                 </td>
                 <td class="val-cell num-font">${getNodeUnits(pdv, 'm202606').toLocaleString('es-PE')}</td>
@@ -1266,7 +1301,7 @@
                 <td>
                   <div class="node-cell indent-1">
                     <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleNode('${pdv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="type-badge badge-pdv">PDV</span><span>${pdv.name}</span>
+                    <span style="font-weight: 700; color: #334155;">${pdv.name}</span>
                   </div>
                 </td>
                 <td class="val-cell num-font" style="color: var(--text-muted);">${pdvQuota > 0 ? pdvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
@@ -1277,7 +1312,7 @@
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
                 <td class="val-cell num-font">${pdvM1Units.toLocaleString('es-PE')} u.</td>
                 <td class="val-cell num-font">${getVariationBadgeHTML(diffUnits, diffPct)}</td>
-                <td class="val-cell" style="color: var(--text-light);">-</td>
+                ${showPlanAction ? `<td class="val-cell" style="color: var(--text-light);">-</td>` : ''}
               `;
             } else {
               const diffUnits = pdvTotal - pdvM1Units;
@@ -1287,7 +1322,7 @@
                 <td>
                   <div class="node-cell indent-1">
                     <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleNode('${pdv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="type-badge badge-pdv">PDV</span><span>${pdv.name}</span>
+                    <span style="font-weight: 700; color: #334155;">${pdv.name}</span>
                   </div>
                 </td>
                 <td class="val-cell num-font" style="color: var(--text-muted);">${pdvQuota > 0 ? pdvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
@@ -1314,7 +1349,7 @@
 
                 if (currentMonthFilter === 'ALL') {
                   trAse.innerHTML = `
-                    <td><div class="node-cell indent-2"><span class="type-badge badge-asesor">Asesor</span><span>${ase.name}</span></div></td>
+                    <td><div class="node-cell indent-2"><span>${ase.name}</span></div></td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202606').toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202607').toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202608').toLocaleString('es-PE')}</td>
@@ -1328,7 +1363,7 @@
                   const diffPct = aseM1Units > 0 ? (diffUnits / aseM1Units * 100) : 0;
 
                   trAse.innerHTML = `
-                    <td><div class="node-cell indent-2"><span class="type-badge badge-asesor">Asesor</span><span>${ase.name}</span></div></td>
+                    <td><div class="node-cell indent-2"><span>${ase.name}</span></div></td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')} u.</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
@@ -1337,14 +1372,14 @@
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
                     <td class="val-cell num-font">${aseM1Units.toLocaleString('es-PE')} u.</td>
                     <td class="val-cell num-font">${getVariationBadgeHTML(diffUnits, diffPct)}</td>
-                    <td class="val-cell" style="color: var(--text-light);">-</td>
+                    ${showPlanAction ? `<td class="val-cell" style="color: var(--text-light);">-</td>` : ''}
                   `;
                 } else {
                   const diffUnits = aseTotal - aseM1Units;
                   const diffPct = aseM1Units > 0 ? (diffUnits / aseM1Units * 100) : 0;
 
                   trAse.innerHTML = `
-                    <td><div class="node-cell indent-2"><span class="type-badge badge-asesor">Asesor</span><span>${ase.name}</span></div></td>
+                    <td><div class="node-cell indent-2"><span>${ase.name}</span></div></td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')} u.</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
@@ -1372,11 +1407,16 @@
       renderDotacionTable();
     }
 
+    function toggleDotacionPdv(pdvName) {
+      dotacionExpandedState[pdvName] = dotacionExpandedState[pdvName] === false ? true : false;
+      renderDotacionTable();
+    }
+
     function renderDotacionHeader() {
       const thead = document.getElementById('dotacionThead');
       thead.innerHTML = `
         <tr>
-          <th style="min-width: 240px;">ESTRUCTURA REGIONAL</th>
+          <th style="min-width: 260px;">ESTRUCTURA</th>
           <th class="val-cell">HC OBJ</th>
           <th class="val-cell">HC CODIGO</th>
           <th class="val-cell">CUMP. OBJETIVO</th>
@@ -1409,7 +1449,6 @@
         pdvs = pdvs.filter(p => p.spv === selSpv);
       }
 
-      // GRAND TOTAL ROW FOR PAGE 2
       let totalHcObj = 0, totalHcCod = 0, totalGap = 0, totalContratar = 0;
       pdvs.forEach(p => {
         totalHcObj += p.hc_obj;
@@ -1421,10 +1460,45 @@
       const totalCumpObj = totalHcObj > 0 ? (totalHcCod / totalHcObj * 100) : 0;
       const grandCondicion = dData.summary.cump_condicion;
 
+      // Dynamically Render Top KPI Cards for Page 2
+      const kpiGrid = document.getElementById('dotacionKpiCards');
+      if (kpiGrid) {
+        kpiGrid.innerHTML = `
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
+            <div>
+              <div class="kpi-title">HC Meta (Objetivo)</div>
+              <div class="kpi-value">${totalHcObj} Asesores</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #f0fdf4; color: #166534;"><i class="fa-solid fa-user-check"></i></div>
+            <div>
+              <div class="kpi-title">HC Codificado (Actual)</div>
+              <div class="kpi-value">${totalHcCod} Asesores <span style="font-size: 12px; font-weight: 700; color: #15803d;">(${totalCumpObj.toFixed(1)}%)</span></div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #fef2f2; color: #991b1b;"><i class="fa-solid fa-user-minus"></i></div>
+            <div>
+              <div class="kpi-title">HC Vacantes (Gap)</div>
+              <div class="kpi-value" style="color: ${totalGap < 0 ? '#dc2626' : '#166534'};">${totalGap} Vacantes</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-user-clock"></i></div>
+            <div>
+              <div class="kpi-title">Cumplimiento Condición</div>
+              <div class="kpi-value" style="color: #ca8a04;">70.8% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(17 en condición)</span></div>
+            </div>
+          </div>
+        `;
+      }
+
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td><div class="node-cell indent-0"><i class="fa-solid fa-building-user" style="color: #60a5fa;"></i><span>CENTRO FORTALECERNOS S.A.C.</span></div></td>
+        <td><div class="node-cell indent-0"><i class="fa-solid fa-building-user" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS</span></div></td>
         <td class="val-cell num-font">${totalHcObj}</td>
         <td class="val-cell num-font" style="color: #34d399;">${totalHcCod}</td>
         <td class="val-cell num-font">${getComplianceBadgeHTML(totalCumpObj)}</td>
@@ -1439,120 +1513,84 @@
       `;
       tbody.appendChild(trTotal);
 
-      // GROUP PDVS BY SUPERVISOR
-      const grouped = {};
-      pdvs.forEach(p => {
-        if (!grouped[p.spv]) grouped[p.spv] = [];
-        grouped[p.spv].push(p);
-      });
-
       let visibleRows = 0;
 
-      Object.keys(grouped).forEach(spvName => {
-        const spvPdvs = grouped[spvName];
-        let spvHcObj = 0, spvHcCod = 0, spvGap = 0;
-        spvPdvs.forEach(p => {
-          spvHcObj += p.hc_obj;
-          spvHcCod += p.hc_codigo;
-          spvGap += p.hc_gap;
-        });
+      pdvs.forEach(pdv => {
+        const isPdvExpanded = dotacionExpandedState[pdv.name] !== false;
 
-        const spvCump = spvHcObj > 0 ? (spvHcCod / spvHcObj * 100) : 0;
-        const isSpvExpanded = dotacionExpandedState[spvName] !== false;
+        const trPdv = document.createElement('tr');
+        trPdv.className = 'row-pdv-shaded';
 
-        const trSpv = document.createElement('tr');
-        trSpv.className = 'row-spv';
-        trSpv.innerHTML = `
+        const daysHTML = isDaysExpanded ? `
+          <td class="val-cell num-font">${pdv.daily['26-Jul']}</td>
+          <td class="val-cell num-font">${pdv.daily['27-Jul']}</td>
+          <td class="val-cell num-font">${pdv.daily['28-Jul']}</td>
+          <td class="val-cell num-font">${pdv.daily['29-Jul']}</td>
+          <td class="val-cell num-font">${pdv.daily['30-Jul']}</td>
+          <td class="val-cell num-font">${pdv.daily['31-Jul']}</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.daily['1-Ago']}</td>
+        ` : '';
+
+        trPdv.innerHTML = `
           <td>
             <div class="node-cell indent-0">
-              <span class="toggle-icon ${isSpvExpanded ? 'expanded' : ''}" onclick="toggleDotacionNode('${spvName}')"><i class="fa-solid fa-chevron-right"></i></span>
-              <span class="type-badge badge-spv">SPV</span><span>${spvName}</span>
+              <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleDotacionPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
+              <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
             </div>
           </td>
-          <td class="val-cell num-font">${spvHcObj}</td>
-          <td class="val-cell num-font" style="color: #0f172a; font-weight: 800;">${spvHcCod}</td>
-          <td class="val-cell num-font">${getComplianceBadgeHTML(spvCump)}</td>
-          <td class="val-cell num-font">${spvGap < 0 ? `<span class="badge-gap-red">${spvGap}</span>` : spvGap > 0 ? `<span class="badge-gap-green">+${spvGap}</span>` : `<span class="badge-gap-zero">0</span>`}</td>
-          <td class="val-cell num-font">${spvGap < 0 ? spvGap : 0}</td>
-          ${isDaysExpanded ? `<td colspan="7" class="val-cell" style="color: #94a3b8; font-size: 10px;">- Resumen Tiendas -</td>` : ''}
-          <td class="val-cell num-font">${getComplianceBadgeHTML(spvCump)}</td>
-          <td style="color: #64748b; font-size: 11px;">Supervisión Comercial</td>
+          <td class="val-cell num-font">${pdv.hc_obj}</td>
+          <td class="val-cell num-font" style="font-weight: 800;">${pdv.hc_codigo}</td>
+          <td class="val-cell num-font">${getComplianceBadgeHTML(pdv.cump_obj)}</td>
+          <td class="val-cell num-font">${pdv.hc_gap < 0 ? `<span class="badge-gap-red">${pdv.hc_gap}</span>` : pdv.hc_gap > 0 ? `<span class="badge-gap-green">+${pdv.hc_gap}</span>` : `<span class="badge-gap-zero">0</span>`}</td>
+          <td class="val-cell num-font">${pdv.hc_contratar}</td>
+          ${daysHTML}
+          <td class="val-cell num-font">${getComplianceBadgeHTML(pdv.cump_condicion)}</td>
+          <td style="font-weight: 600; color: ${pdv.obs.includes('PDV OK') ? '#15803d' : '#b91c1c'}; font-size: 11px;">
+            ${pdv.obs}
+          </td>
         `;
-        tbody.appendChild(trSpv);
+        tbody.appendChild(trPdv);
         visibleRows++;
 
-        if (isSpvExpanded) {
-          spvPdvs.forEach(pdv => {
-            const trPdv = document.createElement('tr');
-            trPdv.className = 'row-pdv';
-            
-            const daysHTML = isDaysExpanded ? `
-              <td class="val-cell num-font">${pdv.daily['26-Jul']}</td>
-              <td class="val-cell num-font">${pdv.daily['27-Jul']}</td>
-              <td class="val-cell num-font">${pdv.daily['28-Jul']}</td>
-              <td class="val-cell num-font">${pdv.daily['29-Jul']}</td>
-              <td class="val-cell num-font">${pdv.daily['30-Jul']}</td>
-              <td class="val-cell num-font">${pdv.daily['31-Jul']}</td>
-              <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.daily['1-Ago']}</td>
+        if (isPdvExpanded && pdv.asesores && Array.isArray(pdv.asesores)) {
+          pdv.asesores.forEach(ase => {
+            const trAse = document.createElement('tr');
+            trAse.className = 'row-asesor';
+
+            const aseDaysHTML = isDaysExpanded ? `
+              <td class="val-cell num-font">${ase.daily['26-Jul']}</td>
+              <td class="val-cell num-font">${ase.daily['27-Jul']}</td>
+              <td class="val-cell num-font">${ase.daily['28-Jul']}</td>
+              <td class="val-cell num-font">${ase.daily['29-Jul']}</td>
+              <td class="val-cell num-font">${ase.daily['30-Jul']}</td>
+              <td class="val-cell num-font">${ase.daily['31-Jul']}</td>
+              <td class="val-cell num-font" style="font-weight: 800;">${ase.daily['1-Ago']}</td>
             ` : '';
 
-            trPdv.innerHTML = `
+            const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[ase.name]) ? window.USER_CODE_MAP[ase.name] : '';
+
+            trAse.innerHTML = `
               <td>
                 <div class="node-cell indent-1">
-                  <span class="type-badge badge-pdv">PDV</span><span>${pdv.name}</span>
+                  <div style="display: flex; flex-direction: column;">
+                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${ase.name}</span>
+                    ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
+                  </div>
                 </div>
               </td>
-              <td class="val-cell num-font">${pdv.hc_obj}</td>
-              <td class="val-cell num-font" style="font-weight: 700;">${pdv.hc_codigo}</td>
-              <td class="val-cell num-font">${getComplianceBadgeHTML(pdv.cump_obj)}</td>
-              <td class="val-cell num-font">${pdv.hc_gap < 0 ? `<span class="badge-gap-red">${pdv.hc_gap}</span>` : pdv.hc_gap > 0 ? `<span class="badge-gap-green">+${pdv.hc_gap}</span>` : `<span class="badge-gap-zero">0</span>`}</td>
-              <td class="val-cell num-font">${pdv.hc_contratar}</td>
-              ${daysHTML}
-              <td class="val-cell num-font">${getComplianceBadgeHTML(pdv.cump_condicion)}</td>
-              <td style="font-weight: 600; color: ${pdv.obs.includes('PDV OK') ? '#15803d' : '#b91c1c'}; font-size: 11px;">
-                ${pdv.obs}
+              <td class="val-cell num-font" style="color: #94a3b8;">1</td>
+              <td class="val-cell num-font">1</td>
+              <td class="val-cell num-font">${getComplianceBadgeHTML(100)}</td>
+              <td class="val-cell num-font"><span class="badge-gap-zero">0</span></td>
+              <td class="val-cell num-font">0</td>
+              ${aseDaysHTML}
+              <td class="val-cell num-font">
+                ${ase.cump === 'SI' ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`}
               </td>
+              <td style="color: #475569; font-size: 10.5px;">${ase.obs || '-'}</td>
             `;
-            tbody.appendChild(trPdv);
+            tbody.appendChild(trAse);
             visibleRows++;
-
-            // ASESORES ROWS
-            if (pdv.asesores && Array.isArray(pdv.asesores)) {
-              pdv.asesores.forEach(ase => {
-                const trAse = document.createElement('tr');
-                trAse.className = 'row-asesor';
-
-                const aseDaysHTML = isDaysExpanded ? `
-                  <td class="val-cell num-font">${ase.daily['26-Jul']}</td>
-                  <td class="val-cell num-font">${ase.daily['27-Jul']}</td>
-                  <td class="val-cell num-font">${ase.daily['28-Jul']}</td>
-                  <td class="val-cell num-font">${ase.daily['29-Jul']}</td>
-                  <td class="val-cell num-font">${ase.daily['30-Jul']}</td>
-                  <td class="val-cell num-font">${ase.daily['31-Jul']}</td>
-                  <td class="val-cell num-font" style="font-weight: 800;">${ase.daily['1-Ago']}</td>
-                ` : '';
-
-                trAse.innerHTML = `
-                  <td>
-                    <div class="node-cell indent-2">
-                      <span class="type-badge badge-asesor">Código</span><span>${ase.name}</span>
-                    </div>
-                  </td>
-                  <td class="val-cell num-font" style="color: #94a3b8;">1</td>
-                  <td class="val-cell num-font">1</td>
-                  <td class="val-cell num-font">${getComplianceBadgeHTML(100)}</td>
-                  <td class="val-cell num-font"><span class="badge-gap-zero">0</span></td>
-                  <td class="val-cell num-font">0</td>
-                  ${aseDaysHTML}
-                  <td class="val-cell num-font">
-                    ${ase.cump === 'SI' ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`}
-                  </td>
-                  <td style="color: #475569; font-size: 10.5px;">${ase.obs || '-'}</td>
-                `;
-                tbody.appendChild(trAse);
-                visibleRows++;
-              });
-            }
           });
         }
       });
@@ -1560,9 +1598,218 @@
       document.getElementById('rowCountLabel').textContent = `${visibleRows} filas en reporte de dotación y asistencia`;
     }
 
-    function toggleDotacionNode(spvName) {
-      dotacionExpandedState[spvName] = dotacionExpandedState[spvName] === false ? true : false;
-      renderDotacionTable();
+    // ================= PAGE 3: NPS RENDER LOGIC =================
+    function selectNpsChannel(channel) {
+      currentNpsChannel = channel;
+      document.getElementById('tabNpsVenta').classList.toggle('active', channel === 'venta');
+      document.getElementById('tabNpsPostventa').classList.toggle('active', channel === 'postventa');
+      renderNpsHeader();
+      renderNpsTable();
+    }
+
+    function toggleNpsWeeks() {
+      isWeeksExpanded = !isWeeksExpanded;
+      document.getElementById('toggleNpsWeeksText').textContent = isWeeksExpanded ? 'Ocultar Semanas' : 'Mostrar Semanas (SEM1 - SEM5)';
+      renderNpsHeader();
+      renderNpsTable();
+    }
+
+    function toggleNpsPdv(pdvName) {
+      npsExpandedState[pdvName] = npsExpandedState[pdvName] === false ? true : false;
+      renderNpsTable();
+    }
+
+    function renderNpsHeader() {
+      const thead = document.getElementById('npsThead');
+      const isPostventa = (currentNpsChannel === 'postventa');
+      
+      let weekHeadersHTML = '';
+      if (isWeeksExpanded) {
+        weekHeadersHTML = `
+          <th class="val-cell">SEM1</th>
+          <th class="val-cell">SEM2</th>
+          <th class="val-cell">SEM3</th>
+          <th class="val-cell">SEM4</th>
+          ${isPostventa ? `<th class="val-cell">SEM5</th>` : ''}
+        `;
+      }
+
+      thead.innerHTML = `
+        <tr>
+          <th style="min-width: 260px;">ESTRUCTURA</th>
+          ${weekHeadersHTML}
+          <th class="val-cell">TOTAL NPS</th>
+          <th class="val-cell">ENCUESTAS (Q)</th>
+          <th class="val-cell">% TOTAL Q</th>
+          <th class="val-cell" style="min-width: 140px;">ESTADO CUMPLIMIENTO</th>
+        </tr>
+      `;
+    }
+
+    function renderNpsTable() {
+      const tbody = document.getElementById('npsTbody');
+      tbody.innerHTML = '';
+
+      const selSpv = document.getElementById('spvNpsFilter').value;
+      const npsData = window.NPS_DATA;
+      const channelData = npsData[currentNpsChannel];
+      const isPostventa = (currentNpsChannel === 'postventa');
+      const targetMeta = npsData.target;
+
+      let pdvs = channelData.pdvs;
+      if (selSpv !== 'ALL') {
+        pdvs = pdvs.filter(p => p.spv === selSpv);
+      }
+
+      const kpiGrid = document.getElementById('npsKpiCards');
+      const totNps = channelData.summary.total_nps;
+      const totQ = channelData.summary.total_q;
+      const bestSem = isPostventa ? 'SEM1 & SEM4 (100% NPS)' : 'SEM3 (89% NPS)';
+
+      kpiGrid.innerHTML = `
+        <div class="kpi-card">
+          <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
+          <div>
+            <div class="kpi-title">Meta NPS TEX</div>
+            <div class="kpi-value">58.0% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(Objetivo)</span></div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon-box" style="background: ${totNps >= targetMeta ? '#f0fdf4' : '#fef2f2'}; color: ${totNps >= targetMeta ? '#166534' : '#991b1b'};">
+            <i class="fa-solid ${totNps >= targetMeta ? 'fa-award' : 'fa-triangle-exclamation'}"></i>
+          </div>
+          <div>
+            <div class="kpi-title">NPS Logrado (${currentNpsChannel.toUpperCase()})</div>
+            <div class="kpi-value" style="color: ${totNps >= targetMeta ? '#15803d' : '#b91c1c'};">${totNps.toFixed(0)}% ${getNpsBadgeHTML(totNps, targetMeta)}</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon-box" style="background: #f0f9ff; color: #0369a1;"><i class="fa-solid fa-comments"></i></div>
+          <div>
+            <div class="kpi-title">Total Encuestas (Q)</div>
+            <div class="kpi-value">${totQ} Respuestas</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-chart-line"></i></div>
+          <div>
+            <div class="kpi-title">Pico Semanal</div>
+            <div class="kpi-value" style="font-size: 13.5px; color: #a16207;">${bestSem}</div>
+          </div>
+        </div>
+      `;
+
+      const trTotal = document.createElement('tr');
+      trTotal.className = 'row-grand-total';
+      
+      let weekTotalCells = '';
+      if (isWeeksExpanded) {
+        const s1 = channelData.summary.sem1;
+        const s2 = channelData.summary.sem2;
+        const s3 = channelData.summary.sem3;
+        const s4 = channelData.summary.sem4;
+        const s5 = channelData.summary.sem5;
+
+        weekTotalCells = `
+          <td class="val-cell num-font">${getNpsBadgeHTML(s1.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s1.q}Q)</span></td>
+          <td class="val-cell num-font">${getNpsBadgeHTML(s2.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s2.q}Q)</span></td>
+          <td class="val-cell num-font">${getNpsBadgeHTML(s3.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s3.q}Q)</span></td>
+          <td class="val-cell num-font">${getNpsBadgeHTML(s4.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s4.q}Q)</span></td>
+          ${isPostventa ? `<td class="val-cell num-font">${getNpsBadgeHTML(s5 ? s5.nps : 0, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s5 ? s5.q : 0}Q)</span></td>` : ''}
+        `;
+      }
+
+      trTotal.innerHTML = `
+        <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS</span></div></td>
+        ${weekTotalCells}
+        <td class="val-cell num-font" style="font-size: 14px; font-weight: 800;">${getNpsBadgeHTML(totNps, targetMeta)}</td>
+        <td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${totQ}</td>
+        <td class="val-cell num-font">100%</td>
+        <td class="val-cell num-font">
+          ${totNps >= targetMeta ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-circle-check"></i> CUMPLE META (>=58%)</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-triangle-exclamation"></i> BAJO META (<58%)</span>`}
+        </td>
+      `;
+      tbody.appendChild(trTotal);
+
+      let visibleRows = 0;
+
+      pdvs.forEach(pdv => {
+        const isPdvExpanded = npsExpandedState[pdv.name] !== false;
+
+        const trPdv = document.createElement('tr');
+        trPdv.className = 'row-pdv-shaded';
+
+        let pdvWeeksHTML = '';
+        if (isWeeksExpanded) {
+          pdvWeeksHTML = `
+            <td class="val-cell num-font">${pdv.sem1.q > 0 ? getNpsBadgeHTML(pdv.sem1.nps, targetMeta) + ` (${pdv.sem1.q}Q)` : '-'}</td>
+            <td class="val-cell num-font">${pdv.sem2.q > 0 ? getNpsBadgeHTML(pdv.sem2.nps, targetMeta) + ` (${pdv.sem2.q}Q)` : '-'}</td>
+            <td class="val-cell num-font">${pdv.sem3.q > 0 ? getNpsBadgeHTML(pdv.sem3.nps, targetMeta) + ` (${pdv.sem3.q}Q)` : '-'}</td>
+            <td class="val-cell num-font">${pdv.sem4.q > 0 ? getNpsBadgeHTML(pdv.sem4.nps, targetMeta) + ` (${pdv.sem4.q}Q)` : '-'}</td>
+            ${isPostventa ? `<td class="val-cell num-font">${pdv.sem5 && pdv.sem5.q > 0 ? getNpsBadgeHTML(pdv.sem5.nps, targetMeta) + ` (${pdv.sem5.q}Q)` : '-'}</td>` : ''}
+          `;
+        }
+
+        trPdv.innerHTML = `
+          <td>
+            <div class="node-cell indent-0">
+              <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleNpsPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
+              <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
+            </div>
+          </td>
+          ${pdvWeeksHTML}
+          <td class="val-cell num-font">${getNpsBadgeHTML(pdv.total_nps, targetMeta)}</td>
+          <td class="val-cell num-font" style="font-weight: 800;">${pdv.total_q}</td>
+          <td class="val-cell num-font">${pdv.pct_q}%</td>
+          <td class="val-cell num-font">
+            ${pdv.total_nps >= targetMeta ? `<span class="badge-compliance comp-green">CUMPLE</span>` : `<span class="badge-compliance comp-red">BAJO META</span>`}
+          </td>
+        `;
+        tbody.appendChild(trPdv);
+        visibleRows++;
+
+        if (isPdvExpanded && pdv.asesores && Array.isArray(pdv.asesores)) {
+          pdv.asesores.forEach(ase => {
+            const trAse = document.createElement('tr');
+            trAse.className = 'row-asesor';
+
+            let aseWeeksHTML = '';
+            if (isWeeksExpanded) {
+              aseWeeksHTML = `
+                <td class="val-cell num-font">${ase.sem1 && ase.sem1.q > 0 ? getNpsBadgeHTML(ase.sem1.nps, targetMeta) + ` (${ase.sem1.q}Q)` : '-'}</td>
+                <td class="val-cell num-font">${ase.sem2 && ase.sem2.q > 0 ? getNpsBadgeHTML(ase.sem2.nps, targetMeta) + ` (${ase.sem2.q}Q)` : '-'}</td>
+                <td class="val-cell num-font">${ase.sem3 && ase.sem3.q > 0 ? getNpsBadgeHTML(ase.sem3.nps, targetMeta) + ` (${ase.sem3.q}Q)` : '-'}</td>
+                <td class="val-cell num-font">${ase.sem4 && ase.sem4.q > 0 ? getNpsBadgeHTML(ase.sem4.nps, targetMeta) + ` (${ase.sem4.q}Q)` : '-'}</td>
+                ${isPostventa ? `<td class="val-cell num-font">${ase.sem5 && ase.sem5.q > 0 ? getNpsBadgeHTML(ase.sem5.nps, targetMeta) + ` (${ase.sem5.q}Q)` : '-'}</td>` : ''}
+              `;
+            }
+
+            const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[ase.name]) ? window.USER_CODE_MAP[ase.name] : '';
+
+            trAse.innerHTML = `
+              <td>
+                <div class="node-cell indent-1">
+                  <div style="display: flex; flex-direction: column;">
+                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${ase.name}</span>
+                    ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
+                  </div>
+                </div>
+              </td>
+              ${aseWeeksHTML}
+              <td class="val-cell num-font">${getNpsBadgeHTML(ase.total_nps, targetMeta)}</td>
+              <td class="val-cell num-font">${ase.total_q}</td>
+              <td class="val-cell num-font">${totQ > 0 ? Math.round(ase.total_q / totQ * 100) : 0}%</td>
+              <td class="val-cell num-font">
+                ${ase.total_nps >= targetMeta ? `<span class="badge-compliance comp-green">CUMPLE</span>` : `<span class="badge-compliance comp-red">DESVIACIÓN</span>`}
+              </td>
+            `;
+            tbody.appendChild(trAse);
+            visibleRows++;
+          });
+        }
+      });
+
+      document.getElementById('rowCountLabel').textContent = `${visibleRows} filas en reporte de NPS (${currentNpsChannel.toUpperCase()})`;
     }
 
     function openSupervisorPlanDrawer(spvName) {
@@ -1676,74 +1923,6 @@
 
     function closeDrawer(event) {
       document.getElementById('drawerOverlay').classList.remove('active');
-    }
-
-    function exportCSV() {
-      let csvContent = "data:text/csv;charset=utf-8,";
-      const showArribos = (currentProductCode === 'POSTPAGO_TOTAL');
-      csvContent += `Supervisor,Punto de Venta,Asesor,Producto Seleccionado,Filtro Mes,Unidades Avance,Cuota Asesor,${showArribos ? 'Arribos,Pct Conversion,' : ''}Proyeccion Unidades,Pct Cumplimiento Proyeccion,Ventas M-1,Variacion Und,Variacion Pct\n`;
-
-      const keyToUse = currentMonthFilter === 'ALL' ? 'total' : currentMonthFilter;
-      const prevMKey = prevMonthMap[currentMonthFilter];
-
-      window.SALES_DATA.tree.forEach(spv => {
-        if (getGlobalSalesInMonth(spv, currentMonthFilter) === 0) return;
-
-        spv.children.forEach(pdv => {
-          if (getGlobalSalesInMonth(pdv, currentMonthFilter) === 0) return;
-
-          pdv.children.forEach(ase => {
-            if (getGlobalSalesInMonth(ase, currentMonthFilter) === 0) return;
-
-            const units = getNodeUnits(ase, keyToUse);
-            const quota = getNodeQuota(ase, keyToUse);
-            const arribos = getNodeArribos(pdv, currentMonthFilter);
-            const conv = arribos > 0 ? (units / arribos * 100).toFixed(1) + "%" : "0.0%";
-            const proj = Math.round((units / ELAPSED_WD) * TOTAL_WD);
-            const projComp = quota > 0 ? (proj / quota * 100).toFixed(1) + "%" : "0.0%";
-            const m1 = prevMKey ? getNodeUnits(ase, prevMKey) : 0;
-            const target = currentMonthFilter === 'm202608' ? proj : units;
-            const diffU = target - m1;
-            const diffP = m1 > 0 ? (diffU / m1 * 100).toFixed(1) : 0;
-
-            let row = [
-              `"${spv.name}"`, `"${pdv.name}"`, `"${ase.name}"`, `"${currentProductCode}"`, `"${currentMonthFilter}"`,
-              units, quota, ...(showArribos ? [arribos, conv] : []), proj, projComp, m1, diffU, diffP + "%"
-            ].join(",");
-            csvContent += row + "\n";
-          });
-        });
-      });
-
-      const encodedUri = encodeURI(csvContent);
-      const link = document.createElement("a");
-      link.setAttribute("href", encodedUri);
-      link.setAttribute("download", `Avance_Proyeccion_${currentProductCode}_${currentMonthFilter}.csv`);
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-
-    function exportDotacionCSV() {
-      let csvContent = "data:text/csv;charset=utf-8,";
-      csvContent += "Supervisor,Punto de Venta,Asesor / Codigo,HC Obj,HC Codigo,Pct Cump Objetivo,HC Gap,HC a Contratar,Cumple Condicion,Observaciones\n";
-
-      window.DOTACION_DATA.pdvs.forEach(p => {
-        p.asesores.forEach(a => {
-          let row = [
-            `"${p.spv}"`, `"${p.name}"`, `"${a.name}"`, 1, 1, "100.0%", 0, 0, `"${a.cump}"`, `"${a.obs || p.obs}"`
-          ].join(",");
-          csvContent += row + "\n";
-        });
-      });
-
-      const encodedUri = encodeURI(csvContent);
-      const link = document.createElement("a");
-      link.setAttribute("href", encodedUri);
-      link.setAttribute("download", "Reporte_Dotacion_Cobertura_HC.csv");
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
     }
   </script>
 
