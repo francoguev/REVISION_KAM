@@ -2088,7 +2088,7 @@ function toggleDotacionDays() {
     }
 
         
-                        // ================= PAGE 5: MIX DE PLANES RENDER LOGIC =================
+                            // ================= PAGE 5: MIX DE PLANES RENDER LOGIC =================
     let mixExpandedState = {}; // Default is false (collapsed by PDV)
 
     function toggleMixPdv(pdvName) {
@@ -2136,14 +2136,16 @@ function toggleDotacionDays() {
         tree = tree.filter(s => s.children.length > 0);
       }
 
-      // Grand Total Row (Copied metric from Page 1: row-grand-total, font-size 13px)
+      // Grand Total Row with grandTot accumulation
       const grandPlans = { 'Entel Chip 35.90': 0, 'Entel chip+ 32.90': 0, 'Power 29.90 N': 0, 'Power 39.90 N': 0, 'Power 49.90 N': 0, 'Power 59.90 N': 0, 'Power ilim 69.90 N': 0, 'Power ilim 79.90 SD N': 0, 'Power ilim 99.90 SD N': 0 };
+      let grandTot = 0;
 
       tree.forEach(spv => {
         spv.children.forEach(pdv => {
           plans.forEach(p => {
             grandPlans[p] += (pdv.plans[p] || 0);
           });
+          grandTot += (pdv.total || 0);
         });
       });
 
