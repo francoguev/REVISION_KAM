@@ -955,8 +955,7 @@
         if (respQuota && respQuota.ok) {
           const csvText = await respQuota.text();
           if (csvText && csvText.includes('CUOTA')) {
-            const lines = csvText.split('
-');
+            const lines = csvText.split('\n');
             const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
             const mesIdx = header.indexOf('MES');
             const pdvsIdx = header.indexOf('PDVS');
@@ -1025,8 +1024,7 @@
         if (respSales && respSales.ok) {
           const csvSales = await respSales.text();
           if (csvSales && csvSales.includes('NUMPERIODO')) {
-            const lines = csvSales.split('
-');
+            const lines = csvSales.split('\n');
             const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
             const pdvIdx = header.indexOf('VCHJER_PDV');
             const prodIdx = header.indexOf('PRODUCTO');
@@ -1071,8 +1069,7 @@
         if (respReno && respReno.ok) {
           const csvReno = await respReno.text();
           if (csvReno && csvReno.includes('NUMPERIODO')) {
-            const lines = csvReno.split('
-');
+            const lines = csvReno.split('\n');
             const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
             const pdvIdx = header.indexOf('VCHJER_PDV');
 
