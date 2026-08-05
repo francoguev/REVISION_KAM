@@ -821,7 +821,7 @@
     const TOTAL_WD = 26;
     const ELAPSED_WD = 3;
 
-    // REAL-TIME SYNC FROM GOOGLE SHEETS SOURCES
+    // REAL-TIME SYNC & PARSING FROM GOOGLE SHEETS SOURCES
     async function syncLiveDataFromGoogleSheets() {
       const syncIcon = document.getElementById('syncIcon');
       const syncText = document.getElementById('syncBtnText');
@@ -830,24 +830,107 @@
       if (syncText) syncText.textContent = 'Sincronizando...';
 
       try {
-        const urls = {
-          sales1: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT97MSROvHOl71js-xavOYeMmOnhKXw6KZslDd2VlFBgTmvhWMu0mAJ9CB-GFKfDmME93iElTViy2xN/pub?gid=0&single=true&output=csv',
-          sales2: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTlX5u9D95WLC33W5pyEK_jyteea1XzLz5G74O6ANuOv1dIzOzbDkVdEOCS-L7VtAAJUubCujxYEKzt/pub?gid=0&single=true&output=csv',
-          quotas: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS25edYoYsxDcSJQ2OkVFpF-fFZVykQB-E71dCrCizb2FKpiArI3OuwmBtnZF76PFXDAJbYQD27pzbd/pub?gid=948625095&single=true&output=csv',
-          reno1: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrpZPGmF0iSIz_SUcw99Y-12xUmHjGd-B1xyXGY93f1Jda8LA92RurBXbSwbxAenbA4cQx_HyifNbn/pub?gid=0&single=true&output=csv',
-          reno2: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTVOwH43qYohjOQ5fTTt5CDfNamOgrlwi6VN6Z6AaMmO5sPT3_ni5b9Qcx0TX9v9emkN89YDSx75fbb/pub?gid=0&single=true&output=csv'
-        };
+        const quotaUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS25edYoYsxDcSJQ2OkVFpF-fFZVykQB-E71dCrCizb2FKpiArI3OuwmBtnZF76PFXDAJbYQD27pzbd/pub?gid=948625095&single=true&output=csv';
 
-        const fetchPromises = Object.values(urls).map(u => fetch(u, { mode: 'cors' }).then(r => r.text()));
-        await Promise.allSettled(fetchPromises);
+        const resp = await fetch(quotaUrl, { cache: 'no-cache' });
+        const csvText = await resp.text();
 
-        console.log('✅ Synchronized Google Sheets data sources!');
+        if (csvText && csvText.includes('CUOTA')) {
+          const lines = csvText.split('\n');
+          const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
+          
+          const mesIdx = header.indexOf('MES');
+          const pdvsIdx = header.indexOf('PDVS');
+          const prodIdx = header.indexOf('PRODUCTO');
+          const cuotaIdx = header.indexOf('CUOTA');
+
+          if (mesIdx !== -1 && pdvsIdx !== -1 && cuotaIdx !== -1) {
+            const pdvQuotasAug = {};
+            for (let i = 1; i < lines.length; i++) {
+              if (!lines[i].trim()) continue;
+              const cols = lines[i].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
+              const mes = cols[mesIdx];
+              if (mes === '8/1/2026') {
+                const rawPdv = (cols[pdvsIdx] || '').toUpperCase();
+                const prod = (cols[prodIdx] || '').toUpperCase();
+                const val = parseFloat(cols[cuotaIdx]) || 0;
+
+                let pCode = null;
+                if (prod.includes('PORTA OSS')) pCode = 'PORTA_OSS';
+                else if (prod.includes('PORTA OPP')) pCode = 'PORTA_OPP';
+                else if (prod.includes('VR')) pCode = 'VR';
+                else if (prod.includes('RENO')) pCode = 'RENO_SS';
+                else if (prod.includes('LLAA') || prod.includes('ADICIONAL')) pCode = 'LINEA_ADICIONAL';
+                else if (prod.includes('PREPAGO')) pCode = 'PREPAGO';
+
+                if (pCode) {
+                  if (!pdvQuotasAug[rawPdv]) pdvQuotasAug[rawPdv] = {};
+                  pdvQuotasAug[rawPdv][pCode] = (pdvQuotasAug[rawPdv][pCode] || 0) + val;
+                }
+              }
+            }
+
+            const tree = window.SALES_DATA.tree;
+            const products = ['POSTPAGO_TOTAL', 'PORTA_OSS', 'PORTA_OPP', 'VR', 'RENO_SS', 'LINEA_ADICIONAL', 'PREPAGO'];
+
+            tree.forEach(spv => {
+              spv.children.forEach(pdv => {
+                const pdvUpper = pdv.name.toUpperCase();
+                let matchedDict = null;
+                Object.keys(pdvQuotasAug).forEach(k => {
+                  if (pdvUpper.includes(k) || k.includes(pdvUpper) || (k.includes('CA') && pdvUpper.includes('CAÑETE'))) {
+                    matchedDict = pdvQuotasAug[k];
+                  }
+                });
+
+                if (matchedDict) {
+                  products.forEach(p => {
+                    if (p !== 'POSTPAGO_TOTAL') {
+                      const val = Math.round(matchedDict[p] || (pdv.quotas[p] ? pdv.quotas[p].m202608 : 0));
+                      if (!pdv.quotas[p]) pdv.quotas[p] = {};
+                      pdv.quotas[p].m202608 = val;
+                    }
+                  });
+                  if (!pdv.quotas['POSTPAGO_TOTAL']) pdv.quotas['POSTPAGO_TOTAL'] = {};
+                  pdv.quotas['POSTPAGO_TOTAL'].m202608 = Math.round(
+                    (matchedDict['PORTA_OSS'] || 0) + (matchedDict['PORTA_OPP'] || 0) +
+                    (matchedDict['VR'] || 0) + (matchedDict['RENO_SS'] || 0) + (matchedDict['LINEA_ADICIONAL'] || 0)
+                  );
+
+                  const nAses = pdv.children.length;
+                  if (nAses > 0) {
+                    products.forEach(p => {
+                      const totVal = pdv.quotas[p].m202608;
+                      const base = Math.floor(totVal / nAses);
+                      const rem = totVal % nAses;
+                      pdv.children.forEach((ase, idx) => {
+                        if (!ase.quotas[p]) ase.quotas[p] = {};
+                        ase.quotas[p].m202608 = base + (idx < rem ? 1 : 0);
+                      });
+                    });
+                  }
+                }
+              });
+
+              products.forEach(p => {
+                if (!spv.quotas[p]) spv.quotas[p] = {};
+                spv.quotas[p].m202608 = spv.children.reduce((acc, pdv) => acc + (pdv.quotas[p] ? pdv.quotas[p].m202608 || 0 : 0), 0);
+              });
+            });
+
+            products.forEach(p => {
+              window.SALES_DATA.summary.global_quotas[p].m202608 = tree.reduce((acc, spv) => acc + spv.quotas[p].m202608, 0);
+            });
+
+            console.log('✅ Synchronized August quotas live from Google Sheets!');
+          }
+        }
 
         if (currentPage === 1) renderTreeTable();
         else if (currentPage === 2) renderDotacionTable();
         else if (currentPage === 3) renderNpsTable();
 
-        if (syncText) syncText.textContent = 'Sincronizado ✅';
+        if (syncText) syncText.textContent = 'Cuotas Actualizadas ✅';
         setTimeout(() => {
           if (syncText) syncText.textContent = 'Sincronizar Data';
         }, 3000);
