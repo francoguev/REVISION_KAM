@@ -22,9 +22,9 @@ window.SALES_DATA = {
         "m202603": 1380,
         "m202604": 1420,
         "m202605": 1450,
-        "m202606": 1385,
-        "m202607": 1431,
-        "m202608": 177
+        "m202606": 1378,
+        "m202607": 1419,
+        "m202608": 179
       },
       "PORTA_OSS": {
         "m202603": 650,
@@ -77,8 +77,8 @@ window.SALES_DATA = {
     },
     "global_quotas": {
       "POSTPAGO_TOTAL": {
-        "m202606": 1611,
-        "m202607": 1542,
+        "m202606": 2185,
+        "m202607": 2168,
         "m202608": 1498
       },
       "PORTA_OSS": {
@@ -149,8 +149,8 @@ window.SALES_DATA = {
       "name": "CYNTHIA GUERRA",
       "quotas": {
         "POSTPAGO_TOTAL": {
-          "m202606": 505,
-          "m202607": 512,
+          "m202606": 619,
+          "m202607": 647,
           "m202608": 496
         },
         "PORTA_OSS": {
@@ -249,8 +249,8 @@ window.SALES_DATA = {
           "spv": "CYNTHIA GUERRA",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 235,
-              "m202607": 245,
+              "m202606": 288,
+              "m202607": 309,
               "m202608": 240
             },
             "PORTA_OSS": {
@@ -350,9 +350,9 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 55,
-                  "m202607": 58,
-                  "m202608": 60
+                  "m202606": 68,
+                  "m202607": 73,
+                  "m202608": 61
                 },
                 "PORTA_OSS": {
                   "m202606": 32,
@@ -388,8 +388,8 @@ window.SALES_DATA = {
               "units": {
                 "POSTPAGO_TOTAL": {
                   "m202606": 58,
-                  "m202607": 62,
-                  "m202608": 10
+                  "m202607": 63,
+                  "m202608": 11
                 },
                 "PORTA_OSS": {
                   "m202603": 29,
@@ -448,9 +448,9 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 60,
-                  "m202607": 62,
-                  "m202608": 60
+                  "m202606": 74,
+                  "m202607": 79,
+                  "m202608": 61
                 },
                 "PORTA_OSS": {
                   "m202606": 34,
@@ -485,7 +485,7 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 60,
+                  "m202606": 61,
                   "m202607": 65,
                   "m202608": 11
                 },
@@ -546,8 +546,8 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 60,
-                  "m202607": 62,
+                  "m202606": 74,
+                  "m202607": 78,
                   "m202608": 60
                 },
                 "PORTA_OSS": {
@@ -585,7 +585,7 @@ window.SALES_DATA = {
                 "POSTPAGO_TOTAL": {
                   "m202606": 60,
                   "m202607": 63,
-                  "m202608": 10
+                  "m202608": 11
                 },
                 "PORTA_OSS": {
                   "m202603": 28,
@@ -644,9 +644,9 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 60,
-                  "m202607": 63,
-                  "m202608": 60
+                  "m202606": 72,
+                  "m202607": 79,
+                  "m202608": 58
                 },
                 "PORTA_OSS": {
                   "m202606": 34,
@@ -681,9 +681,9 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 60,
-                  "m202607": 64,
-                  "m202608": 10
+                  "m202606": 59,
+                  "m202607": 63,
+                  "m202608": 8
                 },
                 "PORTA_OSS": {
                   "m202603": 28,
@@ -744,8 +744,8 @@ window.SALES_DATA = {
           "spv": "CYNTHIA GUERRA",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 135,
-              "m202607": 126,
+              "m202606": 166,
+              "m202607": 159,
               "m202608": 164
             },
             "PORTA_OSS": {
@@ -845,9 +845,9 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 45,
-                  "m202607": 42,
-                  "m202608": 55
+                  "m202606": 56,
+                  "m202607": 54,
+                  "m202608": 56
                 },
                 "PORTA_OSS": {
                   "m202606": 26,
@@ -882,9 +882,9 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 44,
-                  "m202607": 48,
-                  "m202608": 4
+                  "m202606": 43,
+                  "m202607": 49,
+                  "m202608": 5
                 },
                 "PORTA_OSS": {
                   "m202603": 21,
@@ -943,9 +943,9 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 45,
-                  "m202607": 42,
-                  "m202608": 55
+                  "m202606": 56,
+                  "m202607": 53,
+                  "m202608": 54
                 },
                 "PORTA_OSS": {
                   "m202606": 26,
@@ -980,7 +980,7 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 45,
+                  "m202606": 46,
                   "m202607": 48,
                   "m202608": 4
                 },
@@ -1041,8 +1041,8 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 45,
-                  "m202607": 42,
+                  "m202606": 54,
+                  "m202607": 52,
                   "m202608": 54
                 },
                 "PORTA_OSS": {
@@ -1079,8 +1079,8 @@ window.SALES_DATA = {
               "units": {
                 "POSTPAGO_TOTAL": {
                   "m202606": 45,
-                  "m202607": 48,
-                  "m202608": 4
+                  "m202607": 47,
+                  "m202608": 3
                 },
                 "PORTA_OSS": {
                   "m202603": 20,
@@ -1141,8 +1141,8 @@ window.SALES_DATA = {
           "spv": "CYNTHIA GUERRA",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 80,
-              "m202607": 58,
+              "m202606": 98,
+              "m202607": 105,
               "m202608": 50
             },
             "PORTA_OSS": {
@@ -1242,8 +1242,8 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 40,
-                  "m202607": 41,
+                  "m202606": 49,
+                  "m202607": 52,
                   "m202608": 25
                 },
                 "PORTA_OSS": {
@@ -1279,9 +1279,9 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 16,
+                  "m202606": 17,
                   "m202607": 15,
-                  "m202608": 3
+                  "m202608": 4
                 },
                 "PORTA_OSS": {
                   "m202603": 8,
@@ -1340,8 +1340,8 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 40,
-                  "m202607": 42,
+                  "m202606": 49,
+                  "m202607": 53,
                   "m202608": 25
                 },
                 "PORTA_OSS": {
@@ -1377,9 +1377,9 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 16,
+                  "m202606": 15,
                   "m202607": 15,
-                  "m202608": 3
+                  "m202608": 2
                 },
                 "PORTA_OSS": {
                   "m202603": 7,
@@ -1440,8 +1440,8 @@ window.SALES_DATA = {
           "spv": "CYNTHIA GUERRA",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 55,
-              "m202607": 83,
+              "m202606": 67,
+              "m202607": 74,
               "m202608": 42
             },
             "PORTA_OSS": {
@@ -1541,9 +1541,9 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 27,
-                  "m202607": 29,
-                  "m202608": 21
+                  "m202606": 33,
+                  "m202607": 38,
+                  "m202608": 22
                 },
                 "PORTA_OSS": {
                   "m202606": 15,
@@ -1578,9 +1578,9 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 16,
+                  "m202606": 17,
                   "m202607": 17,
-                  "m202608": 3
+                  "m202608": 4
                 },
                 "PORTA_OSS": {
                   "m202603": 9,
@@ -1639,9 +1639,9 @@ window.SALES_DATA = {
               "spv": "CYNTHIA GUERRA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 28,
-                  "m202607": 29,
-                  "m202608": 21
+                  "m202606": 34,
+                  "m202607": 36,
+                  "m202608": 20
                 },
                 "PORTA_OSS": {
                   "m202606": 16,
@@ -1676,9 +1676,9 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 16,
+                  "m202606": 15,
                   "m202607": 18,
-                  "m202608": 3
+                  "m202608": 2
                 },
                 "PORTA_OSS": {
                   "m202603": 9,
@@ -1740,8 +1740,8 @@ window.SALES_DATA = {
       "name": "MARÍA BERNAOLA",
       "quotas": {
         "POSTPAGO_TOTAL": {
-          "m202606": 483,
-          "m202607": 423,
+          "m202606": 802,
+          "m202607": 750,
           "m202608": 436
         },
         "PORTA_OSS": {
@@ -1780,9 +1780,9 @@ window.SALES_DATA = {
           "m202603": 350,
           "m202604": 360,
           "m202605": 370,
-          "m202606": 351,
-          "m202607": 414,
-          "m202608": 45
+          "m202606": 343,
+          "m202607": 402,
+          "m202608": 47
         },
         "PORTA_OSS": {
           "m202603": 165,
@@ -1840,8 +1840,8 @@ window.SALES_DATA = {
           "spv": "MARÍA BERNAOLA",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 160,
-              "m202607": 139,
+              "m202606": 198,
+              "m202607": 176,
               "m202608": 156
             },
             "PORTA_OSS": {
@@ -1941,9 +1941,9 @@ window.SALES_DATA = {
               "spv": "MARÍA BERNAOLA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 80,
-                  "m202607": 69,
-                  "m202608": 78
+                  "m202606": 100,
+                  "m202607": 87,
+                  "m202608": 79
                 },
                 "PORTA_OSS": {
                   "m202606": 46,
@@ -2039,9 +2039,9 @@ window.SALES_DATA = {
               "spv": "MARÍA BERNAOLA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 80,
-                  "m202607": 70,
-                  "m202608": 78
+                  "m202606": 98,
+                  "m202607": 89,
+                  "m202608": 77
                 },
                 "PORTA_OSS": {
                   "m202606": 46,
@@ -2139,8 +2139,8 @@ window.SALES_DATA = {
           "spv": "MARÍA BERNAOLA",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 82,
-              "m202607": 71,
+              "m202606": 101,
+              "m202607": 89,
               "m202608": 66
             },
             "PORTA_OSS": {
@@ -2180,7 +2180,7 @@ window.SALES_DATA = {
               "m202604": 72,
               "m202605": 74,
               "m202606": 69,
-              "m202607": 81,
+              "m202607": 80,
               "m202608": 9
             },
             "PORTA_OSS": {
@@ -2240,9 +2240,9 @@ window.SALES_DATA = {
               "spv": "MARÍA BERNAOLA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 41,
-                  "m202607": 35,
-                  "m202608": 33
+                  "m202606": 51,
+                  "m202607": 44,
+                  "m202608": 34
                 },
                 "PORTA_OSS": {
                   "m202606": 24,
@@ -2278,7 +2278,7 @@ window.SALES_DATA = {
               "units": {
                 "POSTPAGO_TOTAL": {
                   "m202606": 34,
-                  "m202607": 40,
+                  "m202607": 39,
                   "m202608": 4
                 },
                 "PORTA_OSS": {
@@ -2338,9 +2338,9 @@ window.SALES_DATA = {
               "spv": "MARÍA BERNAOLA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 41,
-                  "m202607": 36,
-                  "m202608": 33
+                  "m202606": 50,
+                  "m202607": 45,
+                  "m202608": 32
                 },
                 "PORTA_OSS": {
                   "m202606": 23,
@@ -2438,8 +2438,8 @@ window.SALES_DATA = {
           "spv": "MARÍA BERNAOLA",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 111,
-              "m202607": 98,
+              "m202606": 136,
+              "m202607": 124,
               "m202608": 98
             },
             "PORTA_OSS": {
@@ -2478,8 +2478,8 @@ window.SALES_DATA = {
               "m202603": 60,
               "m202604": 62,
               "m202605": 64,
-              "m202606": 62,
-              "m202607": 73,
+              "m202606": 61,
+              "m202607": 74,
               "m202608": 4
             },
             "PORTA_OSS": {
@@ -2539,8 +2539,8 @@ window.SALES_DATA = {
               "spv": "MARÍA BERNAOLA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 55,
-                  "m202607": 49,
+                  "m202606": 67,
+                  "m202607": 62,
                   "m202608": 49
                 },
                 "PORTA_OSS": {
@@ -2637,8 +2637,8 @@ window.SALES_DATA = {
               "spv": "MARÍA BERNAOLA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 56,
-                  "m202607": 49,
+                  "m202606": 69,
+                  "m202607": 62,
                   "m202608": 49
                 },
                 "PORTA_OSS": {
@@ -2674,8 +2674,8 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 31,
-                  "m202607": 37,
+                  "m202606": 30,
+                  "m202607": 38,
                   "m202608": 2
                 },
                 "PORTA_OSS": {
@@ -2737,8 +2737,8 @@ window.SALES_DATA = {
           "spv": "MARÍA BERNAOLA",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 55,
-              "m202607": 48,
+              "m202606": 67,
+              "m202607": 61,
               "m202608": 50
             },
             "PORTA_OSS": {
@@ -2778,8 +2778,8 @@ window.SALES_DATA = {
               "m202604": 36,
               "m202605": 37,
               "m202606": 35,
-              "m202607": 42,
-              "m202608": 6
+              "m202607": 43,
+              "m202608": 7
             },
             "PORTA_OSS": {
               "m202606": 17,
@@ -2838,9 +2838,9 @@ window.SALES_DATA = {
               "spv": "MARÍA BERNAOLA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 27,
-                  "m202607": 24,
-                  "m202608": 25
+                  "m202606": 33,
+                  "m202607": 31,
+                  "m202608": 26
                 },
                 "PORTA_OSS": {
                   "m202606": 15,
@@ -2876,8 +2876,8 @@ window.SALES_DATA = {
               "units": {
                 "POSTPAGO_TOTAL": {
                   "m202606": 17,
-                  "m202607": 21,
-                  "m202608": 3
+                  "m202607": 22,
+                  "m202608": 5
                 },
                 "PORTA_OSS": {
                   "m202603": 8,
@@ -2936,9 +2936,9 @@ window.SALES_DATA = {
               "spv": "MARÍA BERNAOLA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 28,
-                  "m202607": 24,
-                  "m202608": 25
+                  "m202606": 34,
+                  "m202607": 30,
+                  "m202608": 24
                 },
                 "PORTA_OSS": {
                   "m202606": 16,
@@ -2975,7 +2975,7 @@ window.SALES_DATA = {
                 "POSTPAGO_TOTAL": {
                   "m202606": 18,
                   "m202607": 21,
-                  "m202608": 3
+                  "m202608": 2
                 },
                 "PORTA_OSS": {
                   "m202603": 8,
@@ -3037,8 +3037,8 @@ window.SALES_DATA = {
           "quotas": {
             "POSTPAGO_TOTAL": {
               "m202608": 66,
-              "m202606": 100,
-              "m202607": 67
+              "m202606": 300,
+              "m202607": 300
             },
             "PORTA_OSS": {
               "m202608": 26,
@@ -3074,7 +3074,7 @@ window.SALES_DATA = {
           "units": {
             "POSTPAGO_TOTAL": {
               "m202606": 40,
-              "m202607": 55,
+              "m202607": 42,
               "m202608": 6
             },
             "PORTA_OSS": {
@@ -3115,8 +3115,8 @@ window.SALES_DATA = {
               "type": "Asesor",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 50,
-                  "m202607": 50,
+                  "m202606": 150,
+                  "m202607": 150,
                   "m202608": 66
                 },
                 "PORTA_OSS": {
@@ -3198,9 +3198,9 @@ window.SALES_DATA = {
       "name": "FERNANDO MORENO",
       "quotas": {
         "POSTPAGO_TOTAL": {
-          "m202606": 339,
-          "m202607": 341,
-          "m202608": 327
+          "m202606": 416,
+          "m202607": 428,
+          "m202608": 326
         },
         "PORTA_OSS": {
           "m202606": 194,
@@ -3298,8 +3298,8 @@ window.SALES_DATA = {
           "spv": "FERNANDO MORENO",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 245,
-              "m202607": 245,
+              "m202606": 301,
+              "m202607": 310,
               "m202608": 224
             },
             "PORTA_OSS": {
@@ -3338,7 +3338,7 @@ window.SALES_DATA = {
               "m202603": 230,
               "m202604": 235,
               "m202605": 240,
-              "m202606": 239,
+              "m202606": 240,
               "m202607": 206,
               "m202608": 19
             },
@@ -3399,9 +3399,9 @@ window.SALES_DATA = {
               "spv": "FERNANDO MORENO",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 81,
-                  "m202607": 81,
-                  "m202608": 75
+                  "m202606": 99,
+                  "m202607": 102,
+                  "m202608": 76
                 },
                 "PORTA_OSS": {
                   "m202606": 46,
@@ -3436,8 +3436,8 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 79,
-                  "m202607": 68,
+                  "m202606": 80,
+                  "m202607": 67,
                   "m202608": 6
                 },
                 "PORTA_OSS": {
@@ -3497,9 +3497,9 @@ window.SALES_DATA = {
               "spv": "FERNANDO MORENO",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 82,
-                  "m202607": 82,
-                  "m202608": 75
+                  "m202606": 102,
+                  "m202607": 105,
+                  "m202608": 74
                 },
                 "PORTA_OSS": {
                   "m202606": 47,
@@ -3535,7 +3535,7 @@ window.SALES_DATA = {
               "units": {
                 "POSTPAGO_TOTAL": {
                   "m202606": 80,
-                  "m202607": 69,
+                  "m202607": 70,
                   "m202608": 6
                 },
                 "PORTA_OSS": {
@@ -3595,8 +3595,8 @@ window.SALES_DATA = {
               "spv": "FERNANDO MORENO",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 82,
-                  "m202607": 82,
+                  "m202606": 100,
+                  "m202607": 103,
                   "m202608": 74
                 },
                 "PORTA_OSS": {
@@ -3695,8 +3695,8 @@ window.SALES_DATA = {
           "spv": "FERNANDO MORENO",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 58,
-              "m202607": 48,
+              "m202606": 70,
+              "m202607": 73,
               "m202608": 61
             },
             "PORTA_OSS": {
@@ -3735,7 +3735,7 @@ window.SALES_DATA = {
               "m202603": 50,
               "m202604": 52,
               "m202605": 55,
-              "m202606": 56,
+              "m202606": 55,
               "m202607": 48,
               "m202608": 2
             },
@@ -3796,8 +3796,8 @@ window.SALES_DATA = {
               "spv": "FERNANDO MORENO",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 29,
-                  "m202607": 29,
+                  "m202606": 36,
+                  "m202607": 37,
                   "m202608": 31
                 },
                 "PORTA_OSS": {
@@ -3834,8 +3834,8 @@ window.SALES_DATA = {
               "units": {
                 "POSTPAGO_TOTAL": {
                   "m202606": 28,
-                  "m202607": 24,
-                  "m202608": 1
+                  "m202607": 25,
+                  "m202608": 2
                 },
                 "PORTA_OSS": {
                   "m202603": 12,
@@ -3894,8 +3894,8 @@ window.SALES_DATA = {
               "spv": "FERNANDO MORENO",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 29,
-                  "m202607": 29,
+                  "m202606": 34,
+                  "m202607": 36,
                   "m202608": 30
                 },
                 "PORTA_OSS": {
@@ -3931,9 +3931,9 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 28,
-                  "m202607": 24,
-                  "m202608": 1
+                  "m202606": 27,
+                  "m202607": 23,
+                  "m202608": 0
                 },
                 "PORTA_OSS": {
                   "m202603": 12,
@@ -3994,9 +3994,9 @@ window.SALES_DATA = {
           "spv": "FERNANDO MORENO",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 36,
-              "m202607": 48,
-              "m202608": 42
+              "m202606": 45,
+              "m202607": 45,
+              "m202608": 41
             },
             "PORTA_OSS": {
               "m202606": 21,
@@ -4095,8 +4095,8 @@ window.SALES_DATA = {
               "spv": "FERNANDO MORENO",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 18,
-                  "m202607": 18,
+                  "m202606": 24,
+                  "m202607": 24,
                   "m202608": 21
                 },
                 "PORTA_OSS": {
@@ -4133,7 +4133,7 @@ window.SALES_DATA = {
               "units": {
                 "POSTPAGO_TOTAL": {
                   "m202606": 16,
-                  "m202607": 14,
+                  "m202607": 15,
                   "m202608": 2
                 },
                 "PORTA_OSS": {
@@ -4193,9 +4193,9 @@ window.SALES_DATA = {
               "spv": "FERNANDO MORENO",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 18,
-                  "m202607": 18,
-                  "m202608": 21
+                  "m202606": 21,
+                  "m202607": 21,
+                  "m202608": 20
                 },
                 "PORTA_OSS": {
                   "m202606": 10,
@@ -4231,7 +4231,7 @@ window.SALES_DATA = {
               "units": {
                 "POSTPAGO_TOTAL": {
                   "m202606": 17,
-                  "m202607": 14,
+                  "m202607": 13,
                   "m202608": 2
                 },
                 "PORTA_OSS": {
@@ -4294,9 +4294,9 @@ window.SALES_DATA = {
       "name": "MERY LAPA",
       "quotas": {
         "POSTPAGO_TOTAL": {
-          "m202606": 284,
-          "m202607": 266,
-          "m202608": 239
+          "m202606": 348,
+          "m202607": 343,
+          "m202608": 240
         },
         "PORTA_OSS": {
           "m202606": 162,
@@ -4334,7 +4334,7 @@ window.SALES_DATA = {
           "m202603": 280,
           "m202604": 290,
           "m202605": 290,
-          "m202606": 270,
+          "m202606": 271,
           "m202607": 272,
           "m202608": 42
         },
@@ -4394,8 +4394,8 @@ window.SALES_DATA = {
           "spv": "MERY LAPA",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 153,
-              "m202607": 141,
+              "m202606": 187,
+              "m202607": 185,
               "m202608": 131
             },
             "PORTA_OSS": {
@@ -4434,7 +4434,7 @@ window.SALES_DATA = {
               "m202603": 150,
               "m202604": 155,
               "m202605": 155,
-              "m202606": 146,
+              "m202606": 147,
               "m202607": 147,
               "m202608": 18
             },
@@ -4495,8 +4495,8 @@ window.SALES_DATA = {
               "spv": "MERY LAPA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 76,
-                  "m202607": 73,
+                  "m202606": 93,
+                  "m202607": 92,
                   "m202608": 66
                 },
                 "PORTA_OSS": {
@@ -4532,9 +4532,9 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 73,
+                  "m202606": 74,
                   "m202607": 73,
-                  "m202608": 9
+                  "m202608": 10
                 },
                 "PORTA_OSS": {
                   "m202603": 36,
@@ -4593,8 +4593,8 @@ window.SALES_DATA = {
               "spv": "MERY LAPA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 77,
-                  "m202607": 74,
+                  "m202606": 94,
+                  "m202607": 93,
                   "m202608": 65
                 },
                 "PORTA_OSS": {
@@ -4632,7 +4632,7 @@ window.SALES_DATA = {
                 "POSTPAGO_TOTAL": {
                   "m202606": 73,
                   "m202607": 74,
-                  "m202608": 9
+                  "m202608": 8
                 },
                 "PORTA_OSS": {
                   "m202603": 35,
@@ -4693,9 +4693,9 @@ window.SALES_DATA = {
           "spv": "MERY LAPA",
           "quotas": {
             "POSTPAGO_TOTAL": {
-              "m202606": 131,
-              "m202607": 125,
-              "m202608": 108
+              "m202606": 161,
+              "m202607": 158,
+              "m202608": 109
             },
             "PORTA_OSS": {
               "m202606": 75,
@@ -4794,9 +4794,9 @@ window.SALES_DATA = {
               "spv": "MERY LAPA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 65,
-                  "m202607": 62,
-                  "m202608": 54
+                  "m202606": 80,
+                  "m202607": 79,
+                  "m202608": 55
                 },
                 "PORTA_OSS": {
                   "m202606": 37,
@@ -4831,9 +4831,9 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 62,
+                  "m202606": 63,
                   "m202607": 62,
-                  "m202608": 12
+                  "m202608": 13
                 },
                 "PORTA_OSS": {
                   "m202603": 31,
@@ -4892,8 +4892,8 @@ window.SALES_DATA = {
               "spv": "MERY LAPA",
               "quotas": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 66,
-                  "m202607": 63,
+                  "m202606": 81,
+                  "m202607": 79,
                   "m202608": 54
                 },
                 "PORTA_OSS": {
@@ -4929,9 +4929,9 @@ window.SALES_DATA = {
               },
               "units": {
                 "POSTPAGO_TOTAL": {
-                  "m202606": 62,
+                  "m202606": 61,
                   "m202607": 63,
-                  "m202608": 12
+                  "m202608": 11
                 },
                 "PORTA_OSS": {
                   "m202603": 30,
