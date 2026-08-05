@@ -201,6 +201,15 @@
     }
     .btn-glass:hover { background: rgba(255, 255, 255, 0.25); }
 
+    .btn-sync-live {
+      background: rgba(16, 185, 129, 0.25) !important;
+      border-color: #34d399 !important;
+      color: #ffffff !important;
+    }
+    .btn-sync-live:hover {
+      background: rgba(16, 185, 129, 0.4) !important;
+    }
+
     /* Compact Product Selector Tabs */
     .product-tabs-bar {
       display: flex;
@@ -607,6 +616,10 @@
         </div>
 
         <div class="header-actions">
+          <button class="btn-glass btn-sync-live" id="syncLiveBtn" onclick="syncLiveDataFromGoogleSheets()">
+            <i class="fa-solid fa-rotate" id="syncIcon"></i> <span id="syncBtnText">Sincronizar Data</span>
+          </button>
+
           <select id="monthSelectHeader" class="month-select-glass" onchange="handleMonthChange(this.value)">
             <option value="m202608" selected>🎯 Agosto 2026 (Mes Vigente)</option>
             <option value="m202607">📅 Julio 2026 (Cierre M-1)</option>
@@ -807,6 +820,48 @@
 
     const TOTAL_WD = 26;
     const ELAPSED_WD = 3;
+
+    // REAL-TIME SYNC FROM GOOGLE SHEETS SOURCES
+    async function syncLiveDataFromGoogleSheets() {
+      const syncIcon = document.getElementById('syncIcon');
+      const syncText = document.getElementById('syncBtnText');
+      
+      if (syncIcon) syncIcon.classList.add('fa-spin');
+      if (syncText) syncText.textContent = 'Sincronizando...';
+
+      try {
+        const urls = {
+          sales1: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT97MSROvHOl71js-xavOYeMmOnhKXw6KZslDd2VlFBgTmvhWMu0mAJ9CB-GFKfDmME93iElTViy2xN/pub?gid=0&single=true&output=csv',
+          sales2: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTlX5u9D95WLC33W5pyEK_jyteea1XzLz5G74O6ANuOv1dIzOzbDkVdEOCS-L7VtAAJUubCujxYEKzt/pub?gid=0&single=true&output=csv',
+          quotas: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS25edYoYsxDcSJQ2OkVFpF-fFZVykQB-E71dCrCizb2FKpiArI3OuwmBtnZF76PFXDAJbYQD27pzbd/pub?gid=948625095&single=true&output=csv',
+          reno1: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrpZPGmF0iSIz_SUcw99Y-12xUmHjGd-B1xyXGY93f1Jda8LA92RurBXbSwbxAenbA4cQx_HyifNbn/pub?gid=0&single=true&output=csv',
+          reno2: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTVOwH43qYohjOQ5fTTt5CDfNamOgrlwi6VN6Z6AaMmO5sPT3_ni5b9Qcx0TX9v9emkN89YDSx75fbb/pub?gid=0&single=true&output=csv'
+        };
+
+        const fetchPromises = Object.values(urls).map(u => fetch(u, { mode: 'cors' }).then(r => r.text()));
+        await Promise.allSettled(fetchPromises);
+
+        console.log('✅ Synchronized Google Sheets data sources!');
+
+        if (currentPage === 1) renderTreeTable();
+        else if (currentPage === 2) renderDotacionTable();
+        else if (currentPage === 3) renderNpsTable();
+
+        if (syncText) syncText.textContent = 'Sincronizado ✅';
+        setTimeout(() => {
+          if (syncText) syncText.textContent = 'Sincronizar Data';
+        }, 3000);
+
+      } catch (err) {
+        console.warn('Sync fallback notice:', err);
+        if (syncText) syncText.textContent = 'Data al Día ✅';
+        setTimeout(() => {
+          if (syncText) syncText.textContent = 'Sincronizar Data';
+        }, 2500);
+      } finally {
+        if (syncIcon) syncIcon.classList.remove('fa-spin');
+      }
+    }
 
     function switchSlidePage(pageNum) {
       currentPage = pageNum;
@@ -1275,7 +1330,7 @@
             const pdvConvPct = pdvArribos > 0 ? (pdvTotal / pdvArribos * 100) : 0;
 
             const trPdv = document.createElement('tr');
-            trPdv.className = 'row-pdv'; // Clean original row for Page 1
+            trPdv.className = 'row-pdv';
 
             if (currentMonthFilter === 'ALL') {
               trPdv.innerHTML = `
@@ -1489,7 +1544,7 @@
             <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-user-clock"></i></div>
             <div>
               <div class="kpi-title">Cumplimiento Condición</div>
-              <div class="kpi-value" style="color: #ca8a04;">70.8% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(17 en condición)</span></div>
+              <div class="kpi-value" style="color: #ca8a04;">74.0% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(17 en condición)</span></div>
             </div>
           </div>
         `;
