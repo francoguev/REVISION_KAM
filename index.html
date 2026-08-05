@@ -301,7 +301,7 @@
       overflow: hidden;
     }
 
-    /* KPI Cards Row for Page 2 & Page 3 */
+    /* KPI Cards Row for Page 2, Page 3 & Page 4 */
     .kpi-cards-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -417,7 +417,7 @@
     .row-pdv { background: #ffffff; font-weight: 600; color: #334155; }
     .row-pdv:hover { background: #f8fafc !important; }
 
-    /* PAGE 2 & PAGE 3: Soft Slate Shading for PDV Rows */
+    /* PAGE 2 & PAGE 3 & PAGE 4: Soft Slate Shading for PDV Rows */
     .row-pdv-shaded {
       background: #f1f5f9 !important;
       font-weight: 700;
@@ -598,6 +598,9 @@
         <button class="page-tab-btn" id="navTab3" onclick="switchSlidePage(3)">
           <i class="fa-solid fa-star-half-stroke"></i> Página 3: Reporte de Calidad y NPS
         </button>
+        <button class="page-tab-btn" id="navTab4" onclick="switchSlidePage(4)">
+          <i class="fa-solid fa-tags"></i> Página 4: Tasa de Uso de Descuento
+        </button>
       </div>
     </nav>
 
@@ -760,11 +763,66 @@
 
     </div>
 
+    <!-- ================= PAGE 4: TASA DE USO DE DESCUENTO ================= -->
+    <div id="slidePage4" class="page-view" style="display: none;">
+      
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon"><i class="fa-solid fa-percent"></i></div>
+          <div>
+            <h1 class="slide-title">Reporte de Tasa de Uso de Descuento</h1>
+            <div class="slide-subtitle">
+              Julio 2026 (Cierre M-1) &bull; Producto: <strong style="color: #60a5fa;">PORTA OSS MONO</strong> &bull; Descuento: <strong style="color: #38bdf8;">Descuento 50% x 6 meses (SA)</strong> &bull; Meta Máxima: <strong style="color: #f87171;">70.0%</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <select id="spvDiscountFilter" class="month-select-glass" onchange="renderDiscountTable()">
+            <option value="ALL" selected>👥 Todos los Supervisores</option>
+            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
+            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
+            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
+            <option value="MERY LAPA">MERY LAPA</option>
+          </select>
+
+          <button class="btn-glass" onclick="toggleDiscountExpandAll()">
+            <i class="fa-solid fa-arrows-up-down"></i> <span id="expandDiscountBtnText">Expandir Todo</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="product-tabs-bar">
+        <div style="font-size: 12px; font-weight: 700; color: #475569; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-filter" style="color: #3b82f6;"></i> Evaluación Exclusiva: <strong>PORTA OSS MONO</strong> con <strong>Descuento 50% x 6 meses (SA)</strong>
+        </div>
+
+        <div class="search-box-compact">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="discountSearchInput" class="search-input-compact" placeholder="Buscar Supervisor, PDV o Asesor..." oninput="handleDiscountSearch()">
+        </div>
+      </div>
+
+      <!-- KPI Summary Cards for Page 4 -->
+      <div class="kpi-cards-grid" id="discountKpiCards"></div>
+
+      <!-- Main Table Card for Discount View -->
+      <div class="table-slide-card">
+        <div class="table-scroll-area">
+          <table class="tree-table">
+            <thead id="discountThead"></thead>
+            <tbody id="discountTbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
     <!-- Slide Footer Bar -->
     <footer class="slide-footer">
       <div>Presentación Fortalecernos &bull; Equipo de Operaciones</div>
       <div id="rowCountLabel">Cargando datos...</div>
-      <div id="pageFooterNum">Página 1 de 3</div>
+      <div id="pageFooterNum">Página 1 de 4</div>
     </footer>
 
   </div>
@@ -800,11 +858,14 @@
     let expandedState = {};
     let dotacionExpandedState = {};
     let npsExpandedState = {};
+    let discountExpandedState = {};
     let currentSort = { column: 'total', direction: 'desc' };
     let searchQuery = '';
+    let discountSearchQuery = '';
     let isAllExpanded = false;
     let isDaysExpanded = false;
     let isWeeksExpanded = false;
+    let isDiscountAllExpanded = true;
 
     const monthLabelsMap = {
       'm202606': 'Junio 2026',
@@ -931,6 +992,7 @@
         if (currentPage === 1) renderTreeTable();
         else if (currentPage === 2) renderDotacionTable();
         else if (currentPage === 3) renderNpsTable();
+        else if (currentPage === 4) renderDiscountTable();
 
         if (syncText) syncText.textContent = 'Cuotas Actualizadas ✅';
         setTimeout(() => {
@@ -953,14 +1015,19 @@
       document.getElementById('navTab1').classList.toggle('active', pageNum === 1);
       document.getElementById('navTab2').classList.toggle('active', pageNum === 2);
       document.getElementById('navTab3').classList.toggle('active', pageNum === 3);
+      document.getElementById('navTab4').classList.toggle('active', pageNum === 4);
       
       document.getElementById('slidePage1').style.display = pageNum === 1 ? 'flex' : 'none';
       document.getElementById('slidePage2').style.display = pageNum === 2 ? 'flex' : 'none';
       document.getElementById('slidePage3').style.display = pageNum === 3 ? 'flex' : 'none';
+      document.getElementById('slidePage4').style.display = pageNum === 4 ? 'flex' : 'none';
 
-      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 3`;
+      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 4`;
       
-      if (pageNum === 3) {
+      if (pageNum === 4) {
+        renderDiscountHeader();
+        renderDiscountTable();
+      } else if (pageNum === 3) {
         renderNpsHeader();
         renderNpsTable();
       } else if (pageNum === 2) {
@@ -1004,8 +1071,25 @@
       }
     }
 
+    function getDiscountUsageBadgeHTML(pct, target = 70.0) {
+      if (pct > target) {
+        return `<span class="badge-compliance comp-red"><i class="fa-solid fa-triangle-exclamation"></i> ${pct.toFixed(1)}%</span>`;
+      } else {
+        return `<span class="badge-compliance comp-green"><i class="fa-solid fa-circle-check"></i> ${pct.toFixed(1)}%</span>`;
+      }
+    }
+
+    function getDiscountStatusHTML(pct, target = 70.0) {
+      if (pct > target) {
+        const diff = (pct - target).toFixed(1);
+        return `<span class="badge-compliance comp-red"><i class="fa-solid fa-triangle-exclamation"></i> EXCEDE META (+${diff}%)</span>`;
+      } else {
+        return `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> DENTRO DE META (<=70%)</span>`;
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-      if (!window.SALES_DATA || !window.DOTACION_DATA || !window.NPS_DATA) {
+      if (!window.SALES_DATA || !window.DOTACION_DATA || !window.NPS_DATA || !window.DISCOUNT_DATA) {
         alert('Error al cargar data.js');
         return;
       }
@@ -1021,6 +1105,12 @@
       });
       window.NPS_DATA.postventa.pdvs.forEach(pdv => {
         npsExpandedState[pdv.name] = true;
+      });
+      window.DISCOUNT_DATA.tree.forEach(spv => {
+        discountExpandedState[spv.id] = true;
+        spv.children.forEach(pdv => {
+          discountExpandedState[pdv.id] = true;
+        });
       });
 
       document.getElementById('monthSelectHeader').value = 'm202608';
@@ -1950,6 +2040,196 @@
       });
 
       document.getElementById('rowCountLabel').textContent = `${visibleRows} filas en reporte de NPS (${currentNpsChannel.toUpperCase()})`;
+    }
+
+    // ================= PAGE 4: TASA DE USO DE DESCUENTO RENDER LOGIC =================
+    function handleDiscountSearch() {
+      discountSearchQuery = document.getElementById('discountSearchInput').value.trim().toLowerCase();
+      if (discountSearchQuery.length > 0) {
+        window.DISCOUNT_DATA.tree.forEach(spv => {
+          discountExpandedState[spv.id] = true;
+          spv.children.forEach(pdv => { discountExpandedState[pdv.id] = true; });
+        });
+      }
+      renderDiscountTable();
+    }
+
+    function toggleDiscountNode(nodeId, event) {
+      if (event) event.stopPropagation();
+      discountExpandedState[nodeId] = !discountExpandedState[nodeId];
+      renderDiscountTable();
+    }
+
+    function toggleDiscountExpandAll() {
+      isDiscountAllExpanded = !isDiscountAllExpanded;
+      window.DISCOUNT_DATA.tree.forEach(spv => {
+        discountExpandedState[spv.id] = isDiscountAllExpanded;
+        spv.children.forEach(pdv => { discountExpandedState[pdv.id] = isDiscountAllExpanded; });
+      });
+      document.getElementById('expandDiscountBtnText').textContent = isDiscountAllExpanded ? 'Colapsar Todo' : 'Expandir Todo';
+      renderDiscountTable();
+    }
+
+    function renderDiscountHeader() {
+      const thead = document.getElementById('discountThead');
+      thead.innerHTML = `
+        <tr>
+          <th style="min-width: 280px;">ESTRUCTURA COMERCIAL</th>
+          <th class="val-cell">TOTAL VENTAS PORTA OSS MONO</th>
+          <th class="val-cell">VENTAS CON DESCUENTO 50%</th>
+          <th class="val-cell">% TASA DE USO DESCUENTO</th>
+          <th class="val-cell" style="min-width: 180px;">ESTADO / ALERTA DESVIACIÓN</th>
+        </tr>
+      `;
+    }
+
+    function renderDiscountTable() {
+      const tbody = document.getElementById('discountTbody');
+      tbody.innerHTML = '';
+
+      const discData = window.DISCOUNT_DATA;
+      const selSpv = document.getElementById('spvDiscountFilter').value;
+      const targetMeta = discData.target_pct;
+
+      let tree = JSON.parse(JSON.stringify(discData.tree));
+      if (selSpv !== 'ALL') {
+        tree = tree.filter(s => s.name === selSpv);
+      }
+
+      // Render KPI cards for Page 4
+      const kpiGrid = document.getElementById('discountKpiCards');
+      const globSum = discData.summary;
+
+      if (kpiGrid) {
+        kpiGrid.innerHTML = `
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
+            <div>
+              <div class="kpi-title">Meta Máxima Tasa Uso</div>
+              <div class="kpi-value">70.0% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(Objetivo)</span></div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: ${globSum.excede_meta ? '#fef2f2' : '#f0fdf4'}; color: ${globSum.excede_meta ? '#991b1b' : '#166534'};">
+              <i class="fa-solid ${globSum.excede_meta ? 'fa-triangle-exclamation' : 'fa-circle-check'}"></i>
+            </div>
+            <div>
+              <div class="kpi-title">Tasa Uso Lograda (Julio)</div>
+              <div class="kpi-value" style="color: ${globSum.excede_meta ? '#b91c1c' : '#15803d'};">${globSum.pct_tasa_uso.toFixed(1)}% ${getDiscountUsageBadgeHTML(globSum.pct_tasa_uso, targetMeta)}</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #f0f9ff; color: #0369a1;"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div>
+              <div class="kpi-title">Ventas PORTA OSS MONO</div>
+              <div class="kpi-value">${globSum.tot_porta_mono} Unidades</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-tags"></i></div>
+            <div>
+              <div class="kpi-title">Con Descuento 50%</div>
+              <div class="kpi-value" style="color: #a16207;">${globSum.tot_desc_50} Unidades</div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Grand Total Row
+      const trTotal = document.createElement('tr');
+      trTotal.className = 'row-grand-total';
+      trTotal.innerHTML = `
+        <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS (JULIO 2026)</span></div></td>
+        <td class="val-cell num-font">${globSum.tot_porta_mono.toLocaleString('es-PE')} u.</td>
+        <td class="val-cell num-font" style="color: #38bdf8;">${globSum.tot_desc_50.toLocaleString('es-PE')} u.</td>
+        <td class="val-cell num-font" style="font-size: 13.5px;">${getDiscountUsageBadgeHTML(globSum.pct_tasa_uso, targetMeta)}</td>
+        <td class="val-cell num-font">${getDiscountStatusHTML(globSum.pct_tasa_uso, targetMeta)}</td>
+      `;
+      tbody.appendChild(trTotal);
+
+      let visibleRows = 0;
+
+      tree.forEach(spv => {
+        let spvMatch = spv.name.toLowerCase().includes(discountSearchQuery);
+        let matchingPDVs = spv.children.filter(pdv => {
+          let pdvMatch = pdv.name.toLowerCase().includes(discountSearchQuery);
+          let matchingAsesores = pdv.children.filter(ase => ase.name.toLowerCase().includes(discountSearchQuery));
+          return pdvMatch || matchingAsesores.length > 0;
+        });
+
+        if (discountSearchQuery.length > 0 && !spvMatch && matchingPDVs.length === 0) return;
+
+        visibleRows++;
+        const isSpvExpanded = discountExpandedState[spv.id] !== false;
+
+        const trSpv = document.createElement('tr');
+        trSpv.className = 'row-spv';
+        trSpv.innerHTML = `
+          <td>
+            <div class="node-cell indent-0">
+              <span class="toggle-icon ${isSpvExpanded ? 'expanded' : ''}" onclick="toggleDiscountNode('${spv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
+              <span style="font-weight: 800; color: #0f172a;">${spv.name}</span>
+            </div>
+          </td>
+          <td class="val-cell num-font val-total">${spv.tot_porta_mono.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${spv.tot_desc_50.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font">${getDiscountUsageBadgeHTML(spv.pct_tasa_uso, targetMeta)}</td>
+          <td class="val-cell num-font">${getDiscountStatusHTML(spv.pct_tasa_uso, targetMeta)}</td>
+        `;
+        tbody.appendChild(trSpv);
+
+        if (isSpvExpanded) {
+          let pdvsToRender = spvMatch && discountSearchQuery.length > 0 ? spv.children : matchingPDVs;
+          pdvsToRender.forEach(pdv => {
+            visibleRows++;
+            const isPdvExpanded = discountExpandedState[pdv.id] !== false;
+
+            const trPdv = document.createElement('tr');
+            trPdv.className = 'row-pdv-shaded';
+            trPdv.innerHTML = `
+              <td>
+                <div class="node-cell indent-1">
+                  <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleDiscountNode('${pdv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
+                  <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
+                </div>
+              </td>
+              <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${pdv.tot_porta_mono.toLocaleString('es-PE')} u.</td>
+              <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.tot_desc_50.toLocaleString('es-PE')} u.</td>
+              <td class="val-cell num-font">${getDiscountUsageBadgeHTML(pdv.pct_tasa_uso, targetMeta)}</td>
+              <td class="val-cell num-font">${getDiscountStatusHTML(pdv.pct_tasa_uso, targetMeta)}</td>
+            `;
+            tbody.appendChild(trPdv);
+
+            if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
+              pdv.children.forEach(ase => {
+                visibleRows++;
+                const trAse = document.createElement('tr');
+                trAse.className = 'row-asesor';
+
+                const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[ase.name]) ? window.USER_CODE_MAP[ase.name] : '';
+
+                trAse.innerHTML = `
+                  <td>
+                    <div class="node-cell indent-2">
+                      <div style="display: flex; flex-direction: column;">
+                        <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${ase.name}</span>
+                        ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
+                      </div>
+                    </div>
+                  </td>
+                  <td class="val-cell num-font">${ase.tot_porta_mono} u.</td>
+                  <td class="val-cell num-font" style="color: #0369a1; font-weight: 700;">${ase.tot_desc_50} u.</td>
+                  <td class="val-cell num-font">${ase.tot_porta_mono > 0 ? getDiscountUsageBadgeHTML(ase.pct_tasa_uso, targetMeta) : '-'}</td>
+                  <td class="val-cell num-font">${ase.tot_porta_mono > 0 ? getDiscountStatusHTML(ase.pct_tasa_uso, targetMeta) : '-'}</td>
+                `;
+                tbody.appendChild(trAse);
+              });
+            }
+          });
+        }
+      });
+
+      document.getElementById('rowCountLabel').textContent = `${visibleRows} filas en reporte de tasa de uso de descuento`;
     }
 
     function openSupervisorPlanDrawer(spvName) {

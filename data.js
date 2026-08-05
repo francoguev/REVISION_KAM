@@ -7343,3 +7343,445 @@ window.USER_CODE_MAP = {
   "FLN_ADELACRUZH": "ANDREA DELACRUZ HERNANDEZ",
   "FLN_CHALA1": "CHRISTIAN SOTO"
 };
+
+
+window.DISCOUNT_DATA = {
+  "target_pct": 70.0,
+  "month_label": "Julio 2026",
+  "summary": {
+    "tot_porta_mono": 484,
+    "tot_desc_50": 366,
+    "pct_tasa_uso": 75.6,
+    "excede_meta": true
+  },
+  "tree": [
+    {
+      "id": "spv_1",
+      "name": "CYNTHIA GUERRA",
+      "tot_porta_mono": 195,
+      "tot_desc_50": 141,
+      "pct_tasa_uso": 72.3,
+      "excede_meta": true,
+      "children": [
+        {
+          "id": "pdv_101",
+          "name": "TE ICA II",
+          "tot_porta_mono": 88,
+          "tot_desc_50": 55,
+          "pct_tasa_uso": 62.5,
+          "excede_meta": false,
+          "children": [
+            {
+              "id": "ase_1001",
+              "name": "KAREN MENDOZA",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_1002",
+              "name": "CARLOS HERNANDEZ",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_1003",
+              "name": "DIANA SOLIS",
+              "tot_porta_mono": 46,
+              "tot_desc_50": 31,
+              "pct_tasa_uso": 67.4,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_1004",
+              "name": "JORGE VALENCIA",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_102",
+          "name": "TE ICA 3",
+          "tot_porta_mono": 78,
+          "tot_desc_50": 62,
+          "pct_tasa_uso": 79.5,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_1005",
+              "name": "MARIA RAMOS",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_1006",
+              "name": "PEDRO CASTRO",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_1007",
+              "name": "LUCIA VEGA",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_103",
+          "name": "TE PARCONA",
+          "tot_porta_mono": 13,
+          "tot_desc_50": 11,
+          "pct_tasa_uso": 84.6,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_1008",
+              "name": "GONZALO MORALES",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_1009",
+              "name": "ANDREA SILVA",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_104",
+          "name": "TE ICA MODELO",
+          "tot_porta_mono": 16,
+          "tot_desc_50": 13,
+          "pct_tasa_uso": 81.2,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_1010",
+              "name": "DANIEL ORTEGA",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_1011",
+              "name": "SOFIA PAREDES",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spv_2",
+      "name": "MARÍA BERNAOLA",
+      "tot_porta_mono": 117,
+      "tot_desc_50": 91,
+      "pct_tasa_uso": 77.8,
+      "excede_meta": true,
+      "children": [
+        {
+          "id": "pdv_201",
+          "name": "TE SATELITE BARRIO CHINO",
+          "tot_porta_mono": 48,
+          "tot_desc_50": 38,
+          "pct_tasa_uso": 79.2,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_2001",
+              "name": "LUIS ALVAREZ",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_2002",
+              "name": "ELENA BENITEZ",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_202",
+          "name": "TE PISCO",
+          "tot_porta_mono": 32,
+          "tot_desc_50": 25,
+          "pct_tasa_uso": 78.1,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_2003",
+              "name": "ROBERTO RIOS",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_2004",
+              "name": "PATRICIA DELGADO",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_203",
+          "name": "TE SATELITE CAÑETE",
+          "tot_porta_mono": 23,
+          "tot_desc_50": 17,
+          "pct_tasa_uso": 73.9,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_2005",
+              "name": "FELIPE ESPINOZA",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_2006",
+              "name": "VANESSA MEDINA",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_204",
+          "name": "TE SATELITE PUEBLO JOVEN",
+          "tot_porta_mono": 14,
+          "tot_desc_50": 11,
+          "pct_tasa_uso": 78.6,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_2007",
+              "name": "OSCAR NAVARRO",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_2008",
+              "name": "CAMILA ROJAS",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spv_3",
+      "name": "FERNANDO MORENO",
+      "tot_porta_mono": 71,
+      "tot_desc_50": 58,
+      "pct_tasa_uso": 81.7,
+      "excede_meta": true,
+      "children": [
+        {
+          "id": "pdv_301",
+          "name": "TE NAZCA",
+          "tot_porta_mono": 52,
+          "tot_desc_50": 42,
+          "pct_tasa_uso": 80.8,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_3001",
+              "name": "ADRIAN LUNA",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_3002",
+              "name": "NICOLE GUZMAN",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_3003",
+              "name": "SEBASTIAN AGUILAR",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_302",
+          "name": "TE SATELITE CHALA",
+          "tot_porta_mono": 13,
+          "tot_desc_50": 10,
+          "pct_tasa_uso": 76.9,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_3004",
+              "name": "CHRISTIAN SOTO",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_3005",
+              "name": "VALERIA PALACIOS",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_303",
+          "name": "TE SATELITE PALPA",
+          "tot_porta_mono": 6,
+          "tot_desc_50": 6,
+          "pct_tasa_uso": 100.0,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_3006",
+              "name": "GABRIEL BRAVO",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_3007",
+              "name": "MONICA SAENZ",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_san_clemente",
+          "name": "TE SAN CLEMENTE",
+          "tot_porta_mono": 0,
+          "tot_desc_50": 0,
+          "pct_tasa_uso": 0.0,
+          "excede_meta": false,
+          "children": [
+            {
+              "id": "ase_san_clemente_1",
+              "name": "ASESOR SAN CLEMENTE 1",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spv_4",
+      "name": "MERY LAPA",
+      "tot_porta_mono": 101,
+      "tot_desc_50": 76,
+      "pct_tasa_uso": 75.2,
+      "excede_meta": true,
+      "children": [
+        {
+          "id": "pdv_401",
+          "name": "TE AYACUCHO",
+          "tot_porta_mono": 59,
+          "tot_desc_50": 50,
+          "pct_tasa_uso": 84.7,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_4001",
+              "name": "IVAN CORDOVA",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_4002",
+              "name": "DANIELA FLORES",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_402",
+          "name": "TE HUANTA",
+          "tot_porta_mono": 42,
+          "tot_desc_50": 26,
+          "pct_tasa_uso": 61.9,
+          "excede_meta": false,
+          "children": [
+            {
+              "id": "ase_4003",
+              "name": "ESTEBAN CHAVEZ",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
+            {
+              "id": "ase_4004",
+              "name": "MIGUEL AGUIRRE",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
