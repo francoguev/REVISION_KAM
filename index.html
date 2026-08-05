@@ -638,9 +638,7 @@
             <option value="ALL">🗓️ Últimos 3 Meses (Jun - Ago)</option>
           </select>
 
-          <button class="btn-glass" onclick="toggleExpandAll()">
-            <i class="fa-solid fa-arrows-up-down"></i> <span id="expandBtnText">Expandir Todo</span>
-          </button>
+          
         </div>
       </header>
 
@@ -815,7 +813,6 @@
             <option value="MERY LAPA">MERY LAPA</option>
           </select>
 
-          <button class="btn-glass" onclick="toggleDiscountExpandAll()">
             <i class="fa-solid fa-arrows-up-down"></i> <span id="expandDiscountBtnText">Expandir Todo</span>
           </button>
         </div>
@@ -847,14 +844,14 @@
 
     </div>
 
-            <!-- ================= PAGE 5: MIX DE PLANES (JULIO 2026) ================= -->
+                <!-- ================= PAGE 5: MIX DE PLANES (JULIO 2026) ================= -->
     <div id="slidePage5" class="page-view" style="display: none;">
       <header class="slide-header">
         <div class="slide-title-box">
-          <div class="slide-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="slide-icon" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3);"><i class="fa-solid fa-layer-group"></i></div>
           <div>
-            <h1 class="slide-title" style="font-size: 20px; font-weight: 800; letter-spacing: -0.3px;">Mix de Planes Postpago (Cierre de Julio 2026)</h1>
-            <div class="slide-subtitle" style="font-size: 11.5px; color: #94a3b8;">Fortalecernos S.A.C. &bull; Cierre Mensual: 1,431 Unidades &bull; Distribución Jerárquica por Rango de Plan</div>
+            <h1 class="slide-title">Mix de Planes Postpago (Cierre de Julio 2026)</h1>
+            <div class="slide-subtitle">Fortalecernos S.A.C. &bull; Cierre Mensual: 1,431 Unidades &bull; Análisis por Rango de Precio</div>
           </div>
         </div>
         <div class="header-actions">
@@ -874,54 +871,52 @@
         </div>
       </header>
 
-      <div class="table-container-card" style="display: flex; flex-direction: column; flex: 1; min-height: 0; background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);">
-        <div class="table-scroll-wrapper" style="max-height: 520px; overflow-y: auto; overflow-x: auto; flex: 1;">
-          <table class="presentation-table" style="width: 100%; border-collapse: separate; border-spacing: 0; font-size: 11px;">
-            <thead style="position: sticky; top: 0; z-index: 10; background: #1e293b; backdrop-filter: blur(8px);">
+      <div class="table-container-card">
+        <div class="table-scroll-wrapper" style="max-height: 520px; overflow-y: auto; overflow-x: auto;">
+          <table class="presentation-table">
+            <thead>
               <tr>
-                <th style="min-width: 250px; text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 800; color: #f8fafc; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #334155;">
-                  <i class="fa-solid fa-store" style="color: #60a5fa; margin-right: 6px;"></i>PDV / ASESOR
-                </th>
+                <th style="min-width: 250px; text-align: left;">PDV / ASESOR</th>
                 <!-- RED PLANES (< 39.90) -->
-                <th class="val-cell" style="background: rgba(239, 68, 68, 0.12); color: #fca5a5; border-bottom: 2px solid #ef4444; padding: 8px 6px;" title="Planes Prohibidos (< 39.90)">
-                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-ban" style="color: #ef4444; margin-right: 3px;"></i>Entel Chip 35.90</div>
+                <th class="val-cell" style="background: #fef2f2; color: #991b1b; border-bottom: 2px solid #fca5a5;" title="Menores a 39.90 (Restringidos)">
+                  <div style="font-size: 11px; font-weight: 700;">35.90</div>
                 </th>
-                <th class="val-cell" style="background: rgba(239, 68, 68, 0.12); color: #fca5a5; border-bottom: 2px solid #ef4444; padding: 8px 6px;" title="Planes Prohibidos (< 39.90)">
-                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-ban" style="color: #ef4444; margin-right: 3px;"></i>Entel chip+ 32.90</div>
+                <th class="val-cell" style="background: #fef2f2; color: #991b1b; border-bottom: 2px solid #fca5a5;" title="Menores a 39.90 (Restringidos)">
+                  <div style="font-size: 11px; font-weight: 700;">32.90</div>
                 </th>
-                <th class="val-cell" style="background: rgba(239, 68, 68, 0.12); color: #fca5a5; border-bottom: 2px solid #ef4444; padding: 8px 6px;" title="Planes Prohibidos (< 39.90)">
-                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-ban" style="color: #ef4444; margin-right: 3px;"></i>Power 29.90 N</div>
+                <th class="val-cell" style="background: #fef2f2; color: #991b1b; border-bottom: 2px solid #fca5a5;" title="Menores a 39.90 (Restringidos)">
+                  <div style="font-size: 11px; font-weight: 700;">29.90</div>
                 </th>
                 <!-- AMBER PLAN (39.90) -->
-                <th class="val-cell" style="background: rgba(234, 179, 8, 0.12); color: #fde047; border-bottom: 2px solid #eab308; padding: 8px 6px;" title="Plan a Controlar (39.90)">
-                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-triangle-exclamation" style="color: #eab308; margin-right: 3px;"></i>Power 39.90 N</div>
+                <th class="val-cell" style="background: #fefce8; color: #854d0e; border-bottom: 2px solid #fef08a;" title="Plan 39.90 (A Controlar)">
+                  <div style="font-size: 11px; font-weight: 700;">39.90</div>
                 </th>
                 <!-- GREEN PLANES (>= 49.90) -->
-                <th class="val-cell" style="background: rgba(34, 197, 94, 0.12); color: #6ee7b7; border-bottom: 2px solid #22c55e; padding: 8px 6px;" title="Planes Correctos (>= 49.90)">
-                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 3px;"></i>Power 49.90 N</div>
+                <th class="val-cell" style="background: #f0fdf4; color: #166534; border-bottom: 2px solid #bbf7d0;" title="49.90 en adelante (Correctos)">
+                  <div style="font-size: 11px; font-weight: 700;">49.90</div>
                 </th>
-                <th class="val-cell" style="background: rgba(34, 197, 94, 0.12); color: #6ee7b7; border-bottom: 2px solid #22c55e; padding: 8px 6px;" title="Planes Correctos (>= 49.90)">
-                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 3px;"></i>Power 59.90 N</div>
+                <th class="val-cell" style="background: #f0fdf4; color: #166534; border-bottom: 2px solid #bbf7d0;" title="49.90 en adelante (Correctos)">
+                  <div style="font-size: 11px; font-weight: 700;">59.90</div>
                 </th>
-                <th class="val-cell" style="background: rgba(34, 197, 94, 0.12); color: #6ee7b7; border-bottom: 2px solid #22c55e; padding: 8px 6px;" title="Planes Correctos (>= 49.90)">
-                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 3px;"></i>Power Ilim 69.90</div>
+                <th class="val-cell" style="background: #f0fdf4; color: #166534; border-bottom: 2px solid #bbf7d0;" title="49.90 en adelante (Correctos)">
+                  <div style="font-size: 11px; font-weight: 700;">69.90</div>
                 </th>
-                <th class="val-cell" style="background: rgba(34, 197, 94, 0.12); color: #6ee7b7; border-bottom: 2px solid #22c55e; padding: 8px 6px;" title="Planes Correctos (>= 49.90)">
-                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 3px;"></i>Power Ilim 79.90</div>
+                <th class="val-cell" style="background: #f0fdf4; color: #166534; border-bottom: 2px solid #bbf7d0;" title="49.90 en adelante (Correctos)">
+                  <div style="font-size: 11px; font-weight: 700;">79.90</div>
                 </th>
-                <th class="val-cell" style="background: rgba(34, 197, 94, 0.12); color: #6ee7b7; border-bottom: 2px solid #22c55e; padding: 8px 6px;" title="Planes Correctos (>= 49.90)">
-                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 3px;"></i>Power Ilim 99.90</div>
+                <th class="val-cell" style="background: #f0fdf4; color: #166534; border-bottom: 2px solid #bbf7d0;" title="49.90 en adelante (Correctos)">
+                  <div style="font-size: 11px; font-weight: 700;">99.90</div>
                 </th>
-                <th class="val-cell" style="font-weight: 800; background: #0f172a; color: #38bdf8; border-bottom: 2px solid #38bdf8; padding: 8px 8px; font-size: 10.5px;">TOTAL GENERAL</th>
+                <th class="val-cell" style="font-weight: 800; background: #f8fafc; color: #0f172a;">TOTAL GENERAL</th>
               </tr>
             </thead>
             <tbody id="mixPlanesTbody"></tbody>
           </table>
         </div>
-        <footer class="table-footer" style="padding: 8px 16px; background: #0f172a; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center;">
-          <div class="footer-left" style="color: #64748b; font-size: 10.5px;">Presentación Fortalecernos &bull; Equipo de Operaciones</div>
-          <div class="footer-center" id="rowCountLabelPage5" style="color: #94a3b8; font-size: 10.5px; font-weight: 600;">14 Tiendas (Haz clic en ▼ para desplegar los Asesores)</div>
-          <div class="footer-right" id="pageFooterNum5" style="color: #64748b; font-size: 10.5px;">Página 5 de 5</div>
+        <footer class="table-footer">
+          <div class="footer-left">Presentación Fortalecernos &bull; Equipo de Operaciones</div>
+          <div class="footer-center" id="rowCountLabelPage5">14 Tiendas (Clic en ▼ para desplegar Asesores)</div>
+          <div class="footer-right" id="pageFooterNum5">Página 5 de 5</div>
         </footer>
       </div>
     </div>
@@ -1708,7 +1703,7 @@
 
         if (isSpvExpanded) {
           spv.children.forEach(pdv => {
-            const isPdvExpanded = expandedState[pdv.id] !== false;
+            const isPdvExpanded = expandedState[pdv.id] === true;
 
             const trPdv = document.createElement('tr');
             trPdv.className = 'row-pdv';
@@ -1799,10 +1794,7 @@
                   trAse.innerHTML = `
                     <td>
                       <div class="node-cell indent-2">
-                        <div style="display: flex; flex-direction: column;">
-                          <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
-                          <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>
-                        </div>
+                        <span style="font-weight: 600; color: #334155; font-size: 11px;">${realName || userCode}</span>
                       </div>
                     </td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202606').toLocaleString('es-PE')}</td>
@@ -1821,10 +1813,7 @@
                   trAse.innerHTML = `
                     <td>
                       <div class="node-cell indent-2">
-                        <div style="display: flex; flex-direction: column;">
-                          <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
-                          <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>
-                        </div>
+                        <span style="font-weight: 600; color: #334155; font-size: 11px;">${realName || userCode}</span>
                       </div>
                     </td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
@@ -1844,10 +1833,7 @@
                   trAse.innerHTML = `
                     <td>
                       <div class="node-cell indent-2">
-                        <div style="display: flex; flex-direction: column;">
-                          <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
-                          <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>
-                        </div>
+                        <span style="font-weight: 600; color: #334155; font-size: 11px;">${realName || userCode}</span>
                       </div>
                     </td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
@@ -2127,8 +2113,8 @@ function toggleDotacionDays() {
     }
 
         
-            // ================= PAGE 5: MIX DE PLANES RENDER LOGIC =================
-    let mixExpandedState = {};
+                // ================= PAGE 5: MIX DE PLANES RENDER LOGIC =================
+    let mixExpandedState = {}; // Default is false (collapsed by PDV)
 
     function toggleMixPdv(pdvName) {
       mixExpandedState[pdvName] = mixExpandedState[pdvName] === true ? false : true;
@@ -2136,18 +2122,18 @@ function toggleDotacionDays() {
     }
 
     function getPlanBadgeCellHTML(planName, count) {
-      if (!count || count <= 0) return `<td class="val-cell num-font" style="color: #475569; font-size: 11px;">-</td>`;
+      if (!count || count <= 0) return `<td class="val-cell num-font" style="color: var(--text-light);">-</td>`;
       
       const pNorm = planName.toUpperCase();
       if (pNorm.includes('35.90') || pNorm.includes('32.90') || pNorm.includes('29.90')) {
-        // Red Plan (< 39.90)
-        return `<td class="val-cell num-font"><span style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); padding: 1.5px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">${count}</span></td>`;
+        // Red Plan (< 39.90) - Soft elegant rose badge
+        return `<td class="val-cell num-font"><span style="background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; padding: 2px 7px; border-radius: 4px; font-weight: 700;">${count}</span></td>`;
       } else if (pNorm.includes('39.90')) {
-        // Yellow Plan (39.90)
-        return `<td class="val-cell num-font"><span style="background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); padding: 1.5px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">${count}</span></td>`;
+        // Yellow Plan (39.90) - Soft elegant amber badge
+        return `<td class="val-cell num-font"><span style="background: #fefce8; color: #854d0e; border: 1px solid #fef08a; padding: 2px 7px; border-radius: 4px; font-weight: 700;">${count}</span></td>`;
       } else {
-        // Green Plan (>= 49.90)
-        return `<td class="val-cell num-font"><span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); padding: 1.5px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">${count}</span></td>`;
+        // Green Plan (>= 49.90) - Soft elegant sage badge
+        return `<td class="val-cell num-font"><span style="background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; padding: 2px 7px; border-radius: 4px; font-weight: 700;">${count}</span></td>`;
       }
     }
 
@@ -2189,13 +2175,12 @@ function toggleDotacionDays() {
 
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
-      trTotal.style.background = '#1e293b';
 
       let planColsHTML = plans.map(p => getPlanBadgeCellHTML(p, grandPlans[p])).join('');
       trTotal.innerHTML = `
-        <td><div class="node-cell indent-0" style="font-size: 11px;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span style="font-weight: 800; color: #f8fafc;">TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
         ${planColsHTML}
-        <td class="val-cell num-font" style="font-size: 12px; font-weight: 800; color: #38bdf8;">${grandTot.toLocaleString('es-PE')} u.</td>
+        <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${grandTot.toLocaleString('es-PE')} u.</td>
       `;
       tbody.appendChild(trTotal);
 
@@ -2207,19 +2192,18 @@ function toggleDotacionDays() {
 
           const trPdv = document.createElement('tr');
           trPdv.className = 'row-pdv-shaded';
-          trPdv.style.fontSize = '11px';
 
           let pdvColsHTML = plans.map(p => getPlanBadgeCellHTML(p, pdv.plans[p])).join('');
 
           trPdv.innerHTML = `
             <td>
               <div class="node-cell indent-0">
-                <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleMixPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i></span>
-                <span style="font-weight: 800; color: #0f172a; font-size: 11.5px;">${pdv.name}</span>
+                <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleMixPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
+                <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
               </div>
             </td>
             ${pdvColsHTML}
-            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; font-size: 11.5px;">${pdv.total.toLocaleString('es-PE')} u.</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${pdv.total.toLocaleString('es-PE')} u.</td>
           `;
           tbody.appendChild(trPdv);
           visibleRows++;
@@ -2231,22 +2215,16 @@ function toggleDotacionDays() {
 
               let aseColsHTML = plans.map(p => getPlanBadgeCellHTML(p, ase.plans[p])).join('');
               const userCode = ase.user_code || ase.name;
-              const realName = ase.real_name || (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : '');
+              const realName = ase.real_name || (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : userCode);
 
               trAse.innerHTML = `
                 <td>
                   <div class="node-cell indent-1">
-                    <div style="display: flex; flex-direction: column;">
-                      <div style="display: flex; align-items: center; gap: 4px;">
-                        <span style="font-size: 8px; font-weight: 800; background: #334155; color: #cbd5e1; padding: 1px 4px; border-radius: 3px; text-transform: uppercase;">ASESOR</span>
-                        <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
-                      </div>
-                      <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1; margin-top: 1px;">${realName}</span>
-                    </div>
+                    <span style="font-weight: 600; color: #334155; font-size: 11px;">${realName}</span>
                   </div>
                 </td>
                 ${aseColsHTML}
-                <td class="val-cell num-font" style="font-weight: 700; color: #334155; font-size: 11px;">${ase.total.toLocaleString('es-PE')} u.</td>
+                <td class="val-cell num-font" style="font-weight: 700; color: #334155;">${ase.total.toLocaleString('es-PE')} u.</td>
               `;
               tbody.appendChild(trAse);
               visibleRows++;
@@ -2256,7 +2234,7 @@ function toggleDotacionDays() {
       });
 
       const labelEl = document.getElementById('rowCountLabelPage5');
-      if (labelEl) labelEl.textContent = `${visibleRows} filas en Mix de Planes (Haz clic en la tienda para desplegar Asesores)`;
+      if (labelEl) labelEl.textContent = `${visibleRows} filas en Mix de Planes (Clic en ▼ para desplegar Asesores)`;
     }
 
     function renderNpsTable() {
