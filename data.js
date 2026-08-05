@@ -1,4 +1,3 @@
-// Arribos / Intenciones por Tienda (Julio y Agosto 2026)
 window.ARRIBOS_DATA = {
   'TE AYACUCHO': { 'm202608': 32, 'm202607': 259 },
   'TE HUANTA': { 'm202608': 42, 'm202607': 302 },
@@ -735,7 +734,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "CENTRO"
         },
         {
           "id": "pdv_102",
@@ -1131,7 +1131,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "CENTRO"
         },
         {
           "id": "pdv_103",
@@ -1429,7 +1430,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "CENTRO"
         },
         {
           "id": "pdv_104",
@@ -1727,7 +1729,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "CENTRO"
         }
       ]
     },
@@ -1738,32 +1741,32 @@ window.SALES_DATA = {
         "POSTPAGO_TOTAL": {
           "m202606": 483,
           "m202607": 423,
-          "m202608": 370
+          "m202608": 436
         },
         "PORTA_OSS": {
           "m202606": 276,
           "m202607": 249,
-          "m202608": 155
+          "m202608": 181
         },
         "PORTA_OPP": {
           "m202606": 38,
           "m202607": 33,
-          "m202608": 28
+          "m202608": 33
         },
         "VR": {
           "m202606": 280,
           "m202607": 252,
-          "m202608": 187
+          "m202608": 222
         },
         "RENO_SS": {
           "m202606": 90,
           "m202607": 81,
-          "m202608": 40
+          "m202608": 47
         },
         "LINEA_ADICIONAL": {
           "m202606": 144,
           "m202607": 128,
-          "m202608": 125
+          "m202608": 146
         },
         "PREPAGO": {
           "m202606": 240,
@@ -2126,7 +2129,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "CENTRO"
         },
         {
           "id": "pdv_202",
@@ -2424,7 +2428,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "CENTRO"
         },
         {
           "id": "pdv_203",
@@ -2722,7 +2727,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "LIMA"
         },
         {
           "id": "pdv_204",
@@ -3020,7 +3026,169 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "CENTRO"
+        },
+        {
+          "id": "pdv_san_clemente",
+          "name": "TE SAN CLEMENTE",
+          "type": "PDV",
+          "quotas": {
+            "POSTPAGO_TOTAL": {
+              "m202608": 66,
+              "m202606": 100,
+              "m202607": 100
+            },
+            "PORTA_OSS": {
+              "m202608": 26,
+              "m202606": 100,
+              "m202607": 100
+            },
+            "PORTA_OPP": {
+              "m202608": 5,
+              "m202606": 100,
+              "m202607": 100
+            },
+            "VR": {
+              "m202608": 35,
+              "m202606": 100,
+              "m202607": 100
+            },
+            "RENO_SS": {
+              "m202608": 7,
+              "m202606": 100,
+              "m202607": 100
+            },
+            "LINEA_ADICIONAL": {
+              "m202608": 21,
+              "m202606": 100,
+              "m202607": 100
+            },
+            "PREPAGO": {
+              "m202608": 0,
+              "m202606": 100,
+              "m202607": 100
+            }
+          },
+          "units": {
+            "POSTPAGO_TOTAL": {
+              "m202606": 40,
+              "m202607": 42,
+              "m202608": 6
+            },
+            "PORTA_OSS": {
+              "m202606": 20,
+              "m202607": 22,
+              "m202608": 3
+            },
+            "PORTA_OPP": {
+              "m202606": 4,
+              "m202607": 4,
+              "m202608": 1
+            },
+            "VR": {
+              "m202606": 16,
+              "m202607": 16,
+              "m202608": 2
+            },
+            "RENO_SS": {
+              "m202606": 6,
+              "m202607": 7,
+              "m202608": 1
+            },
+            "LINEA_ADICIONAL": {
+              "m202606": 12,
+              "m202607": 14,
+              "m202608": 2
+            },
+            "PREPAGO": {
+              "m202606": 25,
+              "m202607": 28,
+              "m202608": 4
+            }
+          },
+          "children": [
+            {
+              "id": "ase_san_clemente_1",
+              "name": "ASESOR SAN CLEMENTE 1",
+              "type": "Asesor",
+              "quotas": {
+                "POSTPAGO_TOTAL": {
+                  "m202606": 50,
+                  "m202607": 50,
+                  "m202608": 66
+                },
+                "PORTA_OSS": {
+                  "m202606": 50,
+                  "m202607": 50,
+                  "m202608": 26
+                },
+                "PORTA_OPP": {
+                  "m202606": 50,
+                  "m202607": 50,
+                  "m202608": 5
+                },
+                "VR": {
+                  "m202606": 50,
+                  "m202607": 50,
+                  "m202608": 35
+                },
+                "RENO_SS": {
+                  "m202606": 50,
+                  "m202607": 50,
+                  "m202608": 7
+                },
+                "LINEA_ADICIONAL": {
+                  "m202606": 50,
+                  "m202607": 50,
+                  "m202608": 21
+                },
+                "PREPAGO": {
+                  "m202606": 50,
+                  "m202607": 50,
+                  "m202608": 0
+                }
+              },
+              "units": {
+                "POSTPAGO_TOTAL": {
+                  "m202606": 40,
+                  "m202607": 42,
+                  "m202608": 6
+                },
+                "PORTA_OSS": {
+                  "m202606": 20,
+                  "m202607": 22,
+                  "m202608": 3
+                },
+                "PORTA_OPP": {
+                  "m202606": 4,
+                  "m202607": 4,
+                  "m202608": 1
+                },
+                "VR": {
+                  "m202606": 16,
+                  "m202607": 16,
+                  "m202608": 2
+                },
+                "RENO_SS": {
+                  "m202606": 6,
+                  "m202607": 7,
+                  "m202608": 1
+                },
+                "LINEA_ADICIONAL": {
+                  "m202606": 12,
+                  "m202607": 14,
+                  "m202608": 2
+                },
+                "PREPAGO": {
+                  "m202606": 25,
+                  "m202607": 28,
+                  "m202608": 4
+                }
+              }
+            }
+          ],
+          "zona": "CENTRO"
         }
       ]
     },
@@ -3031,32 +3199,32 @@ window.SALES_DATA = {
         "POSTPAGO_TOTAL": {
           "m202606": 339,
           "m202607": 339,
-          "m202608": 393
+          "m202608": 327
         },
         "PORTA_OSS": {
           "m202606": 194,
           "m202607": 200,
-          "m202608": 137
+          "m202608": 111
         },
         "PORTA_OPP": {
           "m202606": 26,
           "m202607": 26,
-          "m202608": 32
+          "m202608": 27
         },
         "VR": {
           "m202606": 196,
           "m202607": 202,
-          "m202608": 223
+          "m202608": 188
         },
         "RENO_SS": {
           "m202606": 63,
           "m202607": 64,
-          "m202608": 42
+          "m202608": 35
         },
         "LINEA_ADICIONAL": {
           "m202606": 101,
           "m202607": 103,
-          "m202608": 123
+          "m202608": 102
         },
         "PREPAGO": {
           "m202606": 168,
@@ -3517,7 +3685,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "CENTRO"
         },
         {
           "id": "pdv_302",
@@ -3815,7 +3984,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "SUR"
         },
         {
           "id": "pdv_303",
@@ -4113,167 +4283,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
-        },
-        {
-          "id": "pdv_san_clemente",
-          "name": "TE SAN CLEMENTE",
-          "type": "PDV",
-          "quotas": {
-            "POSTPAGO_TOTAL": {
-              "m202608": 66,
-              "m202606": 100,
-              "m202607": 100
-            },
-            "PORTA_OSS": {
-              "m202608": 26,
-              "m202606": 100,
-              "m202607": 100
-            },
-            "PORTA_OPP": {
-              "m202608": 5,
-              "m202606": 100,
-              "m202607": 100
-            },
-            "VR": {
-              "m202608": 35,
-              "m202606": 100,
-              "m202607": 100
-            },
-            "RENO_SS": {
-              "m202608": 7,
-              "m202606": 100,
-              "m202607": 100
-            },
-            "LINEA_ADICIONAL": {
-              "m202608": 21,
-              "m202606": 100,
-              "m202607": 100
-            },
-            "PREPAGO": {
-              "m202608": 0,
-              "m202606": 100,
-              "m202607": 100
-            }
-          },
-          "units": {
-            "POSTPAGO_TOTAL": {
-              "m202606": 40,
-              "m202607": 42,
-              "m202608": 6
-            },
-            "PORTA_OSS": {
-              "m202606": 20,
-              "m202607": 22,
-              "m202608": 3
-            },
-            "PORTA_OPP": {
-              "m202606": 4,
-              "m202607": 4,
-              "m202608": 1
-            },
-            "VR": {
-              "m202606": 16,
-              "m202607": 16,
-              "m202608": 2
-            },
-            "RENO_SS": {
-              "m202606": 6,
-              "m202607": 7,
-              "m202608": 1
-            },
-            "LINEA_ADICIONAL": {
-              "m202606": 12,
-              "m202607": 14,
-              "m202608": 2
-            },
-            "PREPAGO": {
-              "m202606": 25,
-              "m202607": 28,
-              "m202608": 4
-            }
-          },
-          "children": [
-            {
-              "id": "ase_san_clemente_1",
-              "name": "ASESOR SAN CLEMENTE 1",
-              "type": "Asesor",
-              "quotas": {
-                "POSTPAGO_TOTAL": {
-                  "m202606": 50,
-                  "m202607": 50,
-                  "m202608": 66
-                },
-                "PORTA_OSS": {
-                  "m202606": 50,
-                  "m202607": 50,
-                  "m202608": 26
-                },
-                "PORTA_OPP": {
-                  "m202606": 50,
-                  "m202607": 50,
-                  "m202608": 5
-                },
-                "VR": {
-                  "m202606": 50,
-                  "m202607": 50,
-                  "m202608": 35
-                },
-                "RENO_SS": {
-                  "m202606": 50,
-                  "m202607": 50,
-                  "m202608": 7
-                },
-                "LINEA_ADICIONAL": {
-                  "m202606": 50,
-                  "m202607": 50,
-                  "m202608": 21
-                },
-                "PREPAGO": {
-                  "m202606": 50,
-                  "m202607": 50,
-                  "m202608": 0
-                }
-              },
-              "units": {
-                "POSTPAGO_TOTAL": {
-                  "m202606": 40,
-                  "m202607": 42,
-                  "m202608": 6
-                },
-                "PORTA_OSS": {
-                  "m202606": 20,
-                  "m202607": 22,
-                  "m202608": 3
-                },
-                "PORTA_OPP": {
-                  "m202606": 4,
-                  "m202607": 4,
-                  "m202608": 1
-                },
-                "VR": {
-                  "m202606": 16,
-                  "m202607": 16,
-                  "m202608": 2
-                },
-                "RENO_SS": {
-                  "m202606": 6,
-                  "m202607": 7,
-                  "m202608": 1
-                },
-                "LINEA_ADICIONAL": {
-                  "m202606": 12,
-                  "m202607": 14,
-                  "m202608": 2
-                },
-                "PREPAGO": {
-                  "m202606": 25,
-                  "m202607": 28,
-                  "m202608": 4
-                }
-              }
-            }
-          ]
+          ],
+          "zona": "CENTRO"
         }
       ]
     },
@@ -4672,7 +4683,8 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "CENTRO"
         },
         {
           "id": "pdv_402",
@@ -4970,13 +4982,13 @@ window.SALES_DATA = {
                 }
               }
             }
-          ]
+          ],
+          "zona": "CENTRO"
         }
       ]
     }
   ]
 };
-
 
 window.DOTACION_DATA = {
   "summary": {
@@ -5036,7 +5048,8 @@ window.DOTACION_DATA = {
           "cump": "NO",
           "obs": "PERMISO POR PROBLEMA PERSONAL FUERTE"
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE HUANTA",
@@ -5086,7 +5099,8 @@ window.DOTACION_DATA = {
           "cump": "SI",
           "obs": ""
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE ICA",
@@ -5136,7 +5150,8 @@ window.DOTACION_DATA = {
           "cump": "NO",
           "obs": "PERMISO POR PROBLEMA PERSONAL FUERTE"
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE ICA 3",
@@ -5186,7 +5201,8 @@ window.DOTACION_DATA = {
           "cump": "SI",
           "obs": ""
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE ICA II",
@@ -5236,7 +5252,8 @@ window.DOTACION_DATA = {
           "cump": "SI",
           "obs": ""
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE ICA MODELO",
@@ -5272,7 +5289,8 @@ window.DOTACION_DATA = {
           "cump": "SI",
           "obs": ""
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE NAZCA",
@@ -5322,7 +5340,8 @@ window.DOTACION_DATA = {
           "cump": "SI",
           "obs": ""
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE PARCONA",
@@ -5372,7 +5391,8 @@ window.DOTACION_DATA = {
           "cump": "NO",
           "obs": "CODIGO ENTREGADO 30.07"
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE PISCO",
@@ -5436,7 +5456,8 @@ window.DOTACION_DATA = {
           "cump": "NO",
           "obs": "GESTION SUPERVISOR"
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE SATELITE BARRIO CHINO",
@@ -5486,7 +5507,8 @@ window.DOTACION_DATA = {
           "cump": "SI",
           "obs": ""
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE SATELITE PALPA",
@@ -5522,7 +5544,8 @@ window.DOTACION_DATA = {
           "cump": "SI",
           "obs": ""
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE SATELITE PUEBLO JOVEN",
@@ -5558,7 +5581,8 @@ window.DOTACION_DATA = {
           "cump": "SI",
           "obs": ""
         }
-      ]
+      ],
+      "zona": "CENTRO"
     },
     {
       "name": "TE SATELITE CHALA",
@@ -5594,11 +5618,11 @@ window.DOTACION_DATA = {
           "cump": "SI",
           "obs": ""
         }
-      ]
+      ],
+      "zona": "SUR"
     }
   ]
 };
-
 
 window.NPS_DATA = {
   "target": 58.0,
@@ -5698,7 +5722,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE PISCO",
@@ -5748,7 +5773,8 @@ window.NPS_DATA = {
               "q": 2
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE SATELITE PUEBLO JOVEN",
@@ -5798,7 +5824,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE ICA 3",
@@ -5869,7 +5896,8 @@ window.NPS_DATA = {
               "q": 3
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE ICA II",
@@ -5940,7 +5968,8 @@ window.NPS_DATA = {
               "q": 4
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE NAZCA",
@@ -6011,7 +6040,8 @@ window.NPS_DATA = {
               "q": 1
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE AYACUCHO",
@@ -6082,7 +6112,8 @@ window.NPS_DATA = {
               "q": 1
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE HUANTA",
@@ -6132,7 +6163,8 @@ window.NPS_DATA = {
               "q": 2
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE SATELITE CHALA",
@@ -6182,7 +6214,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "SUR"
       },
       {
         "name": "TE SATELITE BARRIO CHINO",
@@ -6253,7 +6286,8 @@ window.NPS_DATA = {
               "q": 2
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE PARCONA",
@@ -6303,7 +6337,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE SATELITE PALPA",
@@ -6353,7 +6388,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE ICA",
@@ -6403,7 +6439,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE ICA MODELO",
@@ -6474,7 +6511,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       }
     ]
   },
@@ -6592,7 +6630,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE PISCO",
@@ -6651,7 +6690,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE ICA 3",
@@ -6710,7 +6750,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE ICA II",
@@ -6794,7 +6835,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE NAZCA",
@@ -6878,7 +6920,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE AYACUCHO",
@@ -6962,7 +7005,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE SATELITE CHALA",
@@ -7021,7 +7065,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "SUR"
       },
       {
         "name": "TE SATELITE BARRIO CHINO",
@@ -7105,7 +7150,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE SATELITE PALPA",
@@ -7164,7 +7210,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE ICA",
@@ -7248,7 +7295,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       },
       {
         "name": "TE ICA MODELO",
@@ -7307,7 +7355,8 @@ window.NPS_DATA = {
               "q": 0
             }
           }
-        ]
+        ],
+        "zona": "CENTRO"
       }
     ]
   }
@@ -7344,7 +7393,6 @@ window.USER_CODE_MAP = {
   "FLN_CHALA1": "CHRISTIAN SOTO"
 };
 
-
 window.DISCOUNT_DATA = {
   "target_pct": 70.0,
   "month_label": "Julio 2026",
@@ -7358,14 +7406,16 @@ window.DISCOUNT_DATA = {
     {
       "id": "spv_1",
       "name": "CYNTHIA GUERRA",
-      "tot_porta_mono": 195,
-      "tot_desc_50": 141,
-      "pct_tasa_uso": 72.3,
+      "tot_porta_mono": 177,
+      "tot_desc_50": 124,
+      "pct_tasa_uso": 70.1,
       "excede_meta": true,
       "children": [
         {
           "id": "pdv_101",
           "name": "TE ICA II",
+          "spv": "CYNTHIA GUERRA",
+          "zona": "CENTRO",
           "tot_porta_mono": 88,
           "tot_desc_50": 55,
           "pct_tasa_uso": 62.5,
@@ -7374,6 +7424,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_1001",
               "name": "KAREN MENDOZA",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7382,6 +7434,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_1002",
               "name": "CARLOS HERNANDEZ",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7390,6 +7444,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_1003",
               "name": "DIANA SOLIS",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 46,
               "tot_desc_50": 31,
               "pct_tasa_uso": 67.4,
@@ -7398,6 +7454,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_1004",
               "name": "JORGE VALENCIA",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7408,14 +7466,18 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_102",
           "name": "TE ICA 3",
-          "tot_porta_mono": 78,
-          "tot_desc_50": 62,
-          "pct_tasa_uso": 79.5,
+          "spv": "CYNTHIA GUERRA",
+          "zona": "CENTRO",
+          "tot_porta_mono": 60,
+          "tot_desc_50": 45,
+          "pct_tasa_uso": 75.0,
           "excede_meta": true,
           "children": [
             {
               "id": "ase_1005",
               "name": "MARIA RAMOS",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7424,6 +7486,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_1006",
               "name": "PEDRO CASTRO",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7432,6 +7496,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_1007",
               "name": "LUCIA VEGA",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7442,6 +7508,8 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_103",
           "name": "TE PARCONA",
+          "spv": "CYNTHIA GUERRA",
+          "zona": "CENTRO",
           "tot_porta_mono": 13,
           "tot_desc_50": 11,
           "pct_tasa_uso": 84.6,
@@ -7450,6 +7518,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_1008",
               "name": "GONZALO MORALES",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7458,6 +7528,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_1009",
               "name": "ANDREA SILVA",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7468,6 +7540,8 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_104",
           "name": "TE ICA MODELO",
+          "spv": "CYNTHIA GUERRA",
+          "zona": "CENTRO",
           "tot_porta_mono": 16,
           "tot_desc_50": 13,
           "pct_tasa_uso": 81.2,
@@ -7476,6 +7550,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_1010",
               "name": "DANIEL ORTEGA",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7484,6 +7560,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_1011",
               "name": "SOFIA PAREDES",
+              "spv": "CYNTHIA GUERRA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7496,14 +7574,16 @@ window.DISCOUNT_DATA = {
     {
       "id": "spv_2",
       "name": "MARÍA BERNAOLA",
-      "tot_porta_mono": 117,
-      "tot_desc_50": 91,
-      "pct_tasa_uso": 77.8,
+      "tot_porta_mono": 135,
+      "tot_desc_50": 108,
+      "pct_tasa_uso": 80.0,
       "excede_meta": true,
       "children": [
         {
           "id": "pdv_201",
           "name": "TE SATELITE BARRIO CHINO",
+          "spv": "MARÍA BERNAOLA",
+          "zona": "CENTRO",
           "tot_porta_mono": 48,
           "tot_desc_50": 38,
           "pct_tasa_uso": 79.2,
@@ -7512,6 +7592,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_2001",
               "name": "LUIS ALVAREZ",
+              "spv": "MARÍA BERNAOLA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7520,6 +7602,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_2002",
               "name": "ELENA BENITEZ",
+              "spv": "MARÍA BERNAOLA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7530,6 +7614,8 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_202",
           "name": "TE PISCO",
+          "spv": "MARÍA BERNAOLA",
+          "zona": "CENTRO",
           "tot_porta_mono": 32,
           "tot_desc_50": 25,
           "pct_tasa_uso": 78.1,
@@ -7538,6 +7624,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_2003",
               "name": "ROBERTO RIOS",
+              "spv": "MARÍA BERNAOLA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7546,6 +7634,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_2004",
               "name": "PATRICIA DELGADO",
+              "spv": "MARÍA BERNAOLA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7556,6 +7646,8 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_203",
           "name": "TE SATELITE CAÑETE",
+          "spv": "MARÍA BERNAOLA",
+          "zona": "LIMA",
           "tot_porta_mono": 23,
           "tot_desc_50": 17,
           "pct_tasa_uso": 73.9,
@@ -7564,6 +7656,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_2005",
               "name": "FELIPE ESPINOZA",
+              "spv": "MARÍA BERNAOLA",
+              "zona": "LIMA",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7572,6 +7666,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_2006",
               "name": "VANESSA MEDINA",
+              "spv": "MARÍA BERNAOLA",
+              "zona": "LIMA",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7582,6 +7678,8 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_204",
           "name": "TE SATELITE PUEBLO JOVEN",
+          "spv": "MARÍA BERNAOLA",
+          "zona": "CENTRO",
           "tot_porta_mono": 14,
           "tot_desc_50": 11,
           "pct_tasa_uso": 78.6,
@@ -7590,6 +7688,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_2007",
               "name": "OSCAR NAVARRO",
+              "spv": "MARÍA BERNAOLA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7598,6 +7698,30 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_2008",
               "name": "CAMILA ROJAS",
+              "spv": "MARÍA BERNAOLA",
+              "zona": "CENTRO",
+              "tot_porta_mono": 0,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            }
+          ]
+        },
+        {
+          "id": "pdv_san_clemente",
+          "name": "TE SAN CLEMENTE",
+          "spv": "MARÍA BERNAOLA",
+          "zona": "CENTRO",
+          "tot_porta_mono": 18,
+          "tot_desc_50": 17,
+          "pct_tasa_uso": 94.4,
+          "excede_meta": true,
+          "children": [
+            {
+              "id": "ase_san_clemente_1",
+              "name": "ASESOR SAN CLEMENTE 1",
+              "spv": "MARÍA BERNAOLA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7618,6 +7742,8 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_301",
           "name": "TE NAZCA",
+          "spv": "FERNANDO MORENO",
+          "zona": "CENTRO",
           "tot_porta_mono": 52,
           "tot_desc_50": 42,
           "pct_tasa_uso": 80.8,
@@ -7626,6 +7752,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_3001",
               "name": "ADRIAN LUNA",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7634,6 +7762,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_3002",
               "name": "NICOLE GUZMAN",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7642,6 +7772,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_3003",
               "name": "SEBASTIAN AGUILAR",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7652,6 +7784,8 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_302",
           "name": "TE SATELITE CHALA",
+          "spv": "FERNANDO MORENO",
+          "zona": "SUR",
           "tot_porta_mono": 13,
           "tot_desc_50": 10,
           "pct_tasa_uso": 76.9,
@@ -7660,6 +7794,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_3004",
               "name": "CHRISTIAN SOTO",
+              "spv": "FERNANDO MORENO",
+              "zona": "SUR",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7668,6 +7804,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_3005",
               "name": "VALERIA PALACIOS",
+              "spv": "FERNANDO MORENO",
+              "zona": "SUR",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7678,6 +7816,8 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_303",
           "name": "TE SATELITE PALPA",
+          "spv": "FERNANDO MORENO",
+          "zona": "CENTRO",
           "tot_porta_mono": 6,
           "tot_desc_50": 6,
           "pct_tasa_uso": 100.0,
@@ -7686,6 +7826,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_3006",
               "name": "GABRIEL BRAVO",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7694,24 +7836,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_3007",
               "name": "MONICA SAENZ",
-              "tot_porta_mono": 0,
-              "tot_desc_50": 0,
-              "pct_tasa_uso": 0.0,
-              "excede_meta": false
-            }
-          ]
-        },
-        {
-          "id": "pdv_san_clemente",
-          "name": "TE SAN CLEMENTE",
-          "tot_porta_mono": 0,
-          "tot_desc_50": 0,
-          "pct_tasa_uso": 0.0,
-          "excede_meta": false,
-          "children": [
-            {
-              "id": "ase_san_clemente_1",
-              "name": "ASESOR SAN CLEMENTE 1",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7732,6 +7858,8 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_401",
           "name": "TE AYACUCHO",
+          "spv": "MERY LAPA",
+          "zona": "CENTRO",
           "tot_porta_mono": 59,
           "tot_desc_50": 50,
           "pct_tasa_uso": 84.7,
@@ -7740,6 +7868,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_4001",
               "name": "IVAN CORDOVA",
+              "spv": "MERY LAPA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7748,6 +7878,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_4002",
               "name": "DANIELA FLORES",
+              "spv": "MERY LAPA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7758,6 +7890,8 @@ window.DISCOUNT_DATA = {
         {
           "id": "pdv_402",
           "name": "TE HUANTA",
+          "spv": "MERY LAPA",
+          "zona": "CENTRO",
           "tot_porta_mono": 42,
           "tot_desc_50": 26,
           "pct_tasa_uso": 61.9,
@@ -7766,6 +7900,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_4003",
               "name": "ESTEBAN CHAVEZ",
+              "spv": "MERY LAPA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7774,6 +7910,8 @@ window.DISCOUNT_DATA = {
             {
               "id": "ase_4004",
               "name": "MIGUEL AGUIRRE",
+              "spv": "MERY LAPA",
+              "zona": "CENTRO",
               "tot_porta_mono": 0,
               "tot_desc_50": 0,
               "pct_tasa_uso": 0.0,
@@ -7785,3 +7923,4 @@ window.DISCOUNT_DATA = {
     }
   ]
 };
+
