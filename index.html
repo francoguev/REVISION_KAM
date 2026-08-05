@@ -2152,7 +2152,9 @@ function toggleDotacionDays() {
 
       let planColsHTML = plans.map(p => {
         const cnt = grandPlans[p];
-        return `<td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${cnt > 0 ? cnt.toLocaleString('es-PE') : '-'}</td>`;
+        const pct = grandTot > 0 ? (cnt / grandTot * 100) : 0;
+        const pctStr = cnt > 0 ? ` (${pct.toFixed(1)}%)` : '';
+        return `<td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800;">${cnt > 0 ? cnt.toLocaleString('es-PE') + `<span style="font-size: 10.5px; color: #475569; font-weight: 600; margin-left: 2px;">${pctStr}</span>` : '-'}</td>`;
       }).join('');
 
       trTotal.innerHTML = `
