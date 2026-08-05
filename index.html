@@ -920,109 +920,212 @@
 
       try {
         const quotaUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS25edYoYsxDcSJQ2OkVFpF-fFZVykQB-E71dCrCizb2FKpiArI3OuwmBtnZF76PFXDAJbYQD27pzbd/pub?gid=948625095&single=true&output=csv';
+        const salesAugUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTlX5u9D95WLC33W5pyEK_jyteea1XzLz5G74O6ANuOv1dIzOzbDkVdEOCS-L7VtAAJUubCujxYEKzt/pub?gid=0&single=true&output=csv';
+        const renoAugUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTVOwH43qYohjOQ5fTTt5CDfNamOgrlwi6VN6Z6AaMmO5sPT3_ni5b9Qcx0TX9v9emkN89YDSx75fbb/pub?gid=0&single=true&output=csv';
 
-        const resp = await fetch(quotaUrl, { cache: 'no-cache' });
-        const csvText = await resp.text();
+        const [respQuota, respSales, respReno] = await Promise.all([
+          fetch(quotaUrl, { cache: 'no-cache' }).catch(() => null),
+          fetch(salesAugUrl, { cache: 'no-cache' }).catch(() => null),
+          fetch(renoAugUrl, { cache: 'no-cache' }).catch(() => null)
+        ]);
 
-        if (csvText && csvText.includes('CUOTA')) {
-          const lines = csvText.split('\n');
-          const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
-          
-          const mesIdx = header.indexOf('MES');
-          const pdvsIdx = header.indexOf('PDVS');
-          const prodIdx = header.indexOf('PRODUCTO');
-          const cuotaIdx = header.indexOf('CUOTA');
+        const products = ['POSTPAGO_TOTAL', 'PORTA_OSS', 'PORTA_OPP', 'VR', 'RENO_SS', 'LINEA_ADICIONAL', 'PREPAGO'];
+        const tree = window.SALES_DATA.tree;
 
-          if (mesIdx !== -1 && pdvsIdx !== -1 && cuotaIdx !== -1) {
-            const pdvQuotasAug = {};
-            for (let i = 1; i < lines.length; i++) {
-              if (!lines[i].trim()) continue;
-              const cols = lines[i].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
-              const mes = cols[mesIdx];
-              if (mes === '8/1/2026') {
-                const rawPdv = (cols[pdvsIdx] || '').toUpperCase();
+        function normPdvName(r) {
+          const raw = String(r || '').trim().toUpperCase();
+          if (raw.includes('CA') && raw.includes('ETE')) return 'TE SATELITE CAÑETE';
+          if (raw.includes('AYACUCHO')) return 'TE AYACUCHO';
+          if (raw.includes('HUANTA')) return 'TE HUANTA';
+          if (raw.includes('ICA 3') || raw.includes('ICA III')) return 'TE ICA 3';
+          if (raw.includes('ICA II')) return 'TE ICA II';
+          if (raw.includes('MODELO')) return 'TE ICA MODELO';
+          if (raw.includes('NAZCA')) return 'TE NAZCA';
+          if (raw.includes('PARCONA')) return 'TE PARCONA';
+          if (raw.includes('PISCO')) return 'TE PISCO';
+          if (raw.includes('CLEMENTE') || raw === 'TE ICA') return 'TE SAN CLEMENTE';
+          if (raw.includes('BARRIO CHINO')) return 'TE SATELITE BARRIO CHINO';
+          if (raw.includes('CHALA')) return 'TE SATELITE CHALA';
+          if (raw.includes('PALPA')) return 'TE SATELITE PALPA';
+          if (raw.includes('PUEBLO JOVEN')) return 'TE SATELITE PUEBLO JOVEN';
+          return raw;
+        }
+
+        // 1. UPDATE QUOTAS IF FETCHED
+        if (respQuota && respQuota.ok) {
+          const csvText = await respQuota.text();
+          if (csvText && csvText.includes('CUOTA')) {
+            const lines = csvText.split('
+');
+            const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
+            const mesIdx = header.indexOf('MES');
+            const pdvsIdx = header.indexOf('PDVS');
+            const prodIdx = header.indexOf('PRODUCTO');
+            const cuotaIdx = header.indexOf('CUOTA');
+
+            if (mesIdx !== -1 && pdvsIdx !== -1 && cuotaIdx !== -1) {
+              const pdvQuotasAug = {};
+              for (let i = 1; i < lines.length; i++) {
+                if (!lines[i].trim()) continue;
+                const cols = lines[i].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
+                if (cols[mesIdx] === '8/1/2026') {
+                  const pdvNorm = normPdvName(cols[pdvsIdx]);
+                  const prod = (cols[prodIdx] || '').toUpperCase();
+                  const val = parseFloat(cols[cuotaIdx]) || 0;
+
+                  let pCode = null;
+                  if (prod.includes('PORTA OSS')) pCode = 'PORTA_OSS';
+                  else if (prod.includes('PORTA OPP')) pCode = 'PORTA_OPP';
+                  else if (prod.includes('VR')) pCode = 'VR';
+                  else if (prod.includes('RENO')) pCode = 'RENO_SS';
+                  else if (prod.includes('LLAA') || prod.includes('ADICIONAL')) pCode = 'LINEA_ADICIONAL';
+                  else if (prod.includes('PREPAGO')) pCode = 'PREPAGO';
+
+                  if (pCode) {
+                    if (!pdvQuotasAug[pdvNorm]) pdvQuotasAug[pdvNorm] = {};
+                    pdvQuotasAug[pdvNorm][pCode] = (pdvQuotasAug[pdvNorm][pCode] || 0) + val;
+                  }
+                }
+              }
+
+              tree.forEach(spv => {
+                spv.children.forEach(pdv => {
+                  const pdvNorm = normPdvName(pdv.name);
+                  const matchedDict = pdvQuotasAug[pdvNorm];
+                  if (matchedDict) {
+                    products.forEach(p => {
+                      if (p !== 'POSTPAGO_TOTAL') {
+                        const val = Math.round(matchedDict[p] || (pdv.quotas[p] ? pdv.quotas[p].m202608 : 0));
+                        if (!pdv.quotas[p]) pdv.quotas[p] = {};
+                        pdv.quotas[p].m202608 = val;
+                      }
+                    });
+                    if (!pdv.quotas['POSTPAGO_TOTAL']) pdv.quotas['POSTPAGO_TOTAL'] = {};
+                    pdv.quotas['POSTPAGO_TOTAL'].m202608 = (
+                      (pdv.quotas['PORTA_OSS'] ? pdv.quotas['PORTA_OSS'].m202608 : 0) +
+                      (pdv.quotas['PORTA_OPP'] ? pdv.quotas['PORTA_OPP'].m202608 : 0) +
+                      (pdv.quotas['VR'] ? pdv.quotas['VR'].m202608 : 0)
+                    );
+                  }
+                });
+                products.forEach(p => {
+                  if (!spv.quotas[p]) spv.quotas[p] = {};
+                  spv.quotas[p].m202608 = spv.children.reduce((acc, pdv) => acc + (pdv.quotas[p] ? pdv.quotas[p].m202608 || 0 : 0), 0);
+                });
+              });
+
+              products.forEach(p => {
+                window.SALES_DATA.summary.global_quotas[p].m202608 = tree.reduce((acc, spv) => acc + spv.quotas[p].m202608, 0);
+              });
+            }
+          }
+        }
+
+        // 2. UPDATE LIVE SALES IF FETCHED
+        if (respSales && respSales.ok) {
+          const csvSales = await respSales.text();
+          if (csvSales && csvSales.includes('NUMPERIODO')) {
+            const lines = csvSales.split('
+');
+            const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
+            const pdvIdx = header.indexOf('VCHJER_PDV');
+            const prodIdx = header.indexOf('PRODUCTO');
+
+            if (pdvIdx !== -1 && prodIdx !== -1) {
+              const liveSalesAug = {};
+              for (let i = 1; i < lines.length; i++) {
+                if (!lines[i].trim()) continue;
+                const cols = lines[i].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
+                const pdvNorm = normPdvName(cols[pdvIdx]);
                 const prod = (cols[prodIdx] || '').toUpperCase();
-                const val = parseFloat(cols[cuotaIdx]) || 0;
 
                 let pCode = null;
                 if (prod.includes('PORTA OSS')) pCode = 'PORTA_OSS';
                 else if (prod.includes('PORTA OPP')) pCode = 'PORTA_OPP';
                 else if (prod.includes('VR')) pCode = 'VR';
-                else if (prod.includes('RENO')) pCode = 'RENO_SS';
                 else if (prod.includes('LLAA') || prod.includes('ADICIONAL')) pCode = 'LINEA_ADICIONAL';
                 else if (prod.includes('PREPAGO')) pCode = 'PREPAGO';
 
                 if (pCode) {
-                  if (!pdvQuotasAug[rawPdv]) pdvQuotasAug[rawPdv] = {};
-                  pdvQuotasAug[rawPdv][pCode] = (pdvQuotasAug[rawPdv][pCode] || 0) + val;
+                  if (!liveSalesAug[pdvNorm]) liveSalesAug[pdvNorm] = {};
+                  liveSalesAug[pdvNorm][pCode] = (liveSalesAug[pdvNorm][pCode] || 0) + 1;
                 }
               }
-            }
 
-            const tree = window.SALES_DATA.tree;
-            const products = ['POSTPAGO_TOTAL', 'PORTA_OSS', 'PORTA_OPP', 'VR', 'RENO_SS', 'LINEA_ADICIONAL', 'PREPAGO'];
-
-            tree.forEach(spv => {
-              spv.children.forEach(pdv => {
-                const pdvUpper = pdv.name.toUpperCase();
-                let matchedDict = null;
-                Object.keys(pdvQuotasAug).forEach(k => {
-                  if (pdvUpper.includes(k) || k.includes(pdvUpper) || (k.includes('CA') && pdvUpper.includes('CAÑETE'))) {
-                    matchedDict = pdvQuotasAug[k];
-                  }
-                });
-
-                if (matchedDict) {
-                  products.forEach(p => {
-                    if (p !== 'POSTPAGO_TOTAL') {
-                      const val = Math.round(matchedDict[p] || (pdv.quotas[p] ? pdv.quotas[p].m202608 : 0));
-                      if (!pdv.quotas[p]) pdv.quotas[p] = {};
-                      pdv.quotas[p].m202608 = val;
-                    }
+              // Update PDV units
+              tree.forEach(spv => {
+                spv.children.forEach(pdv => {
+                  const pdvNorm = normPdvName(pdv.name);
+                  const salesDict = liveSalesAug[pdvNorm] || {};
+                  ['PORTA_OSS', 'PORTA_OPP', 'VR', 'LINEA_ADICIONAL', 'PREPAGO'].forEach(p => {
+                    if (!pdv.units[p]) pdv.units[p] = {};
+                    pdv.units[p].m202608 = salesDict[p] || pdv.units[p].m202608 || 0;
                   });
-                  // POSTPAGO TOTAL = Captura SS (OSS + OPP + VR = 1498 u.)
-                  if (!pdv.quotas['POSTPAGO_TOTAL']) pdv.quotas['POSTPAGO_TOTAL'] = {};
-                  pdv.quotas['POSTPAGO_TOTAL'].m202608 = (
-                    (pdv.quotas['PORTA_OSS'] ? pdv.quotas['PORTA_OSS'].m202608 : 0) +
-                    (pdv.quotas['PORTA_OPP'] ? pdv.quotas['PORTA_OPP'].m202608 : 0) +
-                    (pdv.quotas['VR'] ? pdv.quotas['VR'].m202608 : 0)
-                  );
-
-                  const nAses = pdv.children.length;
-                  if (nAses > 0) {
-                    products.forEach(p => {
-                      const totVal = pdv.quotas[p].m202608;
-                      const base = Math.floor(totVal / nAses);
-                      const rem = totVal % nAses;
-                      pdv.children.forEach((ase, idx) => {
-                        if (!ase.quotas[p]) ase.quotas[p] = {};
-                        ase.quotas[p].m202608 = base + (idx < rem ? 1 : 0);
-                      });
-                    });
-                  }
-                }
+                });
               });
-
-              products.forEach(p => {
-                if (!spv.quotas[p]) spv.quotas[p] = {};
-                spv.quotas[p].m202608 = spv.children.reduce((acc, pdv) => acc + (pdv.quotas[p] ? pdv.quotas[p].m202608 || 0 : 0), 0);
-              });
-            });
-
-            products.forEach(p => {
-              window.SALES_DATA.summary.global_quotas[p].m202608 = tree.reduce((acc, spv) => acc + spv.quotas[p].m202608, 0);
-            });
-
-            console.log('✅ Synchronized August quotas live from Google Sheets!');
+            }
           }
         }
+
+        // 3. UPDATE LIVE RENO IF FETCHED
+        if (respReno && respReno.ok) {
+          const csvReno = await respReno.text();
+          if (csvReno && csvReno.includes('NUMPERIODO')) {
+            const lines = csvReno.split('
+');
+            const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
+            const pdvIdx = header.indexOf('VCHJER_PDV');
+
+            if (pdvIdx !== -1) {
+              const liveRenoAug = {};
+              for (let i = 1; i < lines.length; i++) {
+                if (!lines[i].trim()) continue;
+                const cols = lines[i].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
+                const pdvNorm = normPdvName(cols[pdvIdx]);
+                liveRenoAug[pdvNorm] = (liveRenoAug[pdvNorm] || 0) + 1;
+              }
+
+              tree.forEach(spv => {
+                spv.children.forEach(pdv => {
+                  const pdvNorm = normPdvName(pdv.name);
+                  if (!pdv.units['RENO_SS']) pdv.units['RENO_SS'] = {};
+                  pdv.units['RENO_SS'].m202608 = liveRenoAug[pdvNorm] || pdv.units['RENO_SS'].m202608 || 0;
+                });
+              });
+            }
+          }
+        }
+
+        // RE-CALCULATE POSTPAGO_TOTAL AND AGGREGATE TREES
+        tree.forEach(spv => {
+          spv.children.forEach(pdv => {
+            if (!pdv.units['POSTPAGO_TOTAL']) pdv.units['POSTPAGO_TOTAL'] = {};
+            pdv.units['POSTPAGO_TOTAL'].m202608 = (
+              (pdv.units['PORTA_OSS'] ? pdv.units['PORTA_OSS'].m202608 : 0) +
+              (pdv.units['PORTA_OPP'] ? pdv.units['PORTA_OPP'].m202608 : 0) +
+              (pdv.units['VR'] ? pdv.units['VR'].m202608 : 0) +
+              (pdv.units['RENO_SS'] ? pdv.units['RENO_SS'].m202608 : 0) +
+              (pdv.units['LINEA_ADICIONAL'] ? pdv.units['LINEA_ADICIONAL'].m202608 : 0)
+            );
+          });
+
+          products.forEach(p => {
+            if (!spv.units[p]) spv.units[p] = {};
+            spv.units[p].m202608 = spv.children.reduce((acc, pdv) => acc + (pdv.units[p] ? pdv.units[p].m202608 || 0 : 0), 0);
+          });
+        });
+
+        products.forEach(p => {
+          if (!window.SALES_DATA.summary.global_units[p]) window.SALES_DATA.summary.global_units[p] = {};
+          window.SALES_DATA.summary.global_units[p].m202608 = tree.reduce((acc, spv) => acc + (spv.units[p] ? spv.units[p].m202608 || 0 : 0), 0);
+        });
 
         if (currentPage === 1) renderTreeTable();
         else if (currentPage === 2) renderDotacionTable();
         else if (currentPage === 3) renderNpsTable();
         else if (currentPage === 4) renderDiscountTable();
 
-        if (syncText) syncText.textContent = 'Cuotas Actualizadas ✅';
+        if (syncText) syncText.textContent = 'Ventas y Cuotas Actualizadas ✅';
         setTimeout(() => {
           if (syncText) syncText.textContent = 'Sincronizar Data';
         }, 3000);
