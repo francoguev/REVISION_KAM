@@ -891,10 +891,12 @@
                       pdv.quotas[p].m202608 = val;
                     }
                   });
+                  // POSTPAGO TOTAL = Captura SS (OSS + OPP + VR = 1498 u.)
                   if (!pdv.quotas['POSTPAGO_TOTAL']) pdv.quotas['POSTPAGO_TOTAL'] = {};
                   pdv.quotas['POSTPAGO_TOTAL'].m202608 = (
-                    pdv.quotas['PORTA_OSS'].m202608 + pdv.quotas['PORTA_OPP'].m202608 +
-                    pdv.quotas['VR'].m202608 + pdv.quotas['RENO_SS'].m202608 + pdv.quotas['LINEA_ADICIONAL'].m202608
+                    (pdv.quotas['PORTA_OSS'] ? pdv.quotas['PORTA_OSS'].m202608 : 0) +
+                    (pdv.quotas['PORTA_OPP'] ? pdv.quotas['PORTA_OPP'].m202608 : 0) +
+                    (pdv.quotas['VR'] ? pdv.quotas['VR'].m202608 : 0)
                   );
 
                   const nAses = pdv.children.length;
