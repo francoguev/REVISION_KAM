@@ -609,6 +609,10 @@
           <i class="fa-solid fa-user-shield"></i>
           <span>Página 6: Permanencia M6 (Enero 2026)</span>
         </button>
+        <button class="page-tab-btn" id="navTab7" onclick="switchSlidePage(7)">
+          <i class="fa-solid fa-right-left"></i>
+          <span>Página 7: Operador Cedente</span>
+        </button>
       </div>
     </nav>
 
@@ -935,6 +939,60 @@
       </div>
     </div>
 
+        <!-- ================= PAGE 7: OPERADOR CEDENTE ================= -->
+    <div id="slidePage7" class="page-view" style="display: none;">
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon"><i class="fa-solid fa-right-left"></i></div>
+          <div>
+            <h1 class="slide-title">Participación por Operador Cedente (Portabilidad OSS)</h1>
+            <div class="slide-subtitle">Fortalecernos S.A.C. &bull; Captura por Operador de Origen (Claro, Movistar, Bitel) &bull; <strong>Junio, Julio, Agosto 2026</strong></div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <select id="monthCedenteFilter" class="month-select-glass" onchange="renderCedenteTable()">
+            <option value="Julio" selected>📅 Julio 2026 (M-1)</option>
+            <option value="Junio">📅 Junio 2026</option>
+            <option value="Agosto">📅 Agosto 2026</option>
+            <option value="Acumulado">📊 Acumulado Trimestre</option>
+          </select>
+          <select id="zoneSelectPage7" class="month-select-glass" onchange="renderCedenteTable()">
+            <option value="ALL">🌍 Todas las Zonas</option>
+            <option value="CENTRO">📍 CENTRO</option>
+            <option value="SUR">📍 SUR</option>
+            <option value="LIMA">📍 LIMA</option>
+          </select>
+          <select id="spvCedenteFilter" class="month-select-glass" onchange="renderCedenteTable()">
+            <option value="ALL">👥 Todos los Supervisores</option>
+            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
+            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
+            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
+            <option value="MERY LAPA">MERY LAPA</option>
+          </select>
+        </div>
+      </header>
+
+      <div class="table-container-card">
+        <div class="table-scroll-wrapper" style="max-height: 560px; overflow-y: auto; overflow-x: auto;">
+          <table class="presentation-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #1e293b; color: #ffffff;">
+                <th style="min-width: 250px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PDV / ASESOR</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">TOTAL PORTAS</th>
+                <th class="val-cell" style="color: #60a5fa; font-weight: 800; padding: 10px 12px; font-size: 11px;">CLARO (UND)</th>
+                <th class="val-cell" style="color: #93c5fd; font-weight: 800; padding: 10px 12px; font-size: 11px;">CLARO (%)</th>
+                <th class="val-cell" style="color: #4ade80; font-weight: 800; padding: 10px 12px; font-size: 11px;">MOVISTAR (UND)</th>
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;">MOVISTAR (%)</th>
+                <th class="val-cell" style="color: #facc15; font-weight: 800; padding: 10px 12px; font-size: 11px;">BITEL (UND)</th>
+                <th class="val-cell" style="color: #fde047; font-weight: 800; padding: 10px 12px; font-size: 11px;">BITEL (%)</th>
+              </tr>
+            </thead>
+            <tbody id="cedenteTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
     <!-- Slide Footer Bar -->
     <footer class="slide-footer">
       <div id="rowCountLabel">Cargando datos...</div>
@@ -1228,14 +1286,14 @@
 
     function switchSlidePage(pageNum) {
       currentPage = pageNum;
-      for (let i = 1; i <= 6; i++) {
+      for (let i = 1; i <= 7; i++) {
         const btn = document.getElementById('navTab' + i);
         if (btn) btn.classList.toggle('active', i === pageNum);
         const slide = document.getElementById('slidePage' + i);
         if (slide) slide.style.display = (i === pageNum) ? 'flex' : 'none';
       }
 
-      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 6`;
+      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 7`;
       
       if (pageNum === 1) {
         renderTableHeader();
@@ -1253,6 +1311,8 @@
         renderMixPlanesTable();
       } else if (pageNum === 6) {
         renderPermanenciaTable();
+      } else if (pageNum === 7) {
+        renderCedenteTable();
       }
     }
 
@@ -2267,6 +2327,132 @@ function toggleDotacionDays() {
         // Red Alert (< 50%)
         return `<span style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px;">⚠️ ${pctVal.toFixed(2)}%</span>`;
       }
+    }
+
+    
+    // ================= PAGE 7: OPERADOR CEDENTE RENDER LOGIC =================
+    let cedenteExpandedState = {}; // Default is false (collapsed by PDV)
+
+    function toggleCedentePdv(pdvName) {
+      cedenteExpandedState[pdvName] = cedenteExpandedState[pdvName] === true ? false : true;
+      renderCedenteTable();
+    }
+
+    function renderCedenteTable() {
+      const tbody = document.getElementById('cedenteTbody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      const selMonth = document.getElementById('monthCedenteFilter') ? document.getElementById('monthCedenteFilter').value : 'Julio';
+      const selZone = document.getElementById('zoneSelectPage7') ? document.getElementById('zoneSelectPage7').value : 'ALL';
+      const selSpv = document.getElementById('spvCedenteFilter') ? document.getElementById('spvCedenteFilter').value : 'ALL';
+
+      const cData = window.OPERADOR_CEDENTE_DATA;
+      if (!cData || !cData.tree) return;
+
+      let tree = JSON.parse(JSON.stringify(cData.tree));
+      if (selSpv !== 'ALL') {
+        tree = tree.filter(s => s.name === selSpv);
+      }
+
+      // Grand Total Calculation
+      let grandTotal = 0;
+      let grandClaro = 0;
+      let grandMovistar = 0;
+      let grandBitel = 0;
+
+      tree.forEach(spv => {
+        let filteredPdvs = spv.children;
+        if (selZone !== 'ALL') {
+          filteredPdvs = filteredPdvs.filter(p => p.zona === selZone);
+        }
+        filteredPdvs.forEach(pdv => {
+          const mInfo = pdv.months[selMonth] || { claro_u: 0, movistar_u: 0, bitel_u: 0, total_u: 0 };
+          grandClaro += mInfo.claro_u;
+          grandMovistar += mInfo.movistar_u;
+          grandBitel += mInfo.bitel_u;
+          grandTotal += mInfo.total_u;
+        });
+      });
+
+      const grandClaroPct = grandTotal > 0 ? (grandClaro / grandTotal * 100) : 0;
+      const grandMovPct = grandTotal > 0 ? (grandMovistar / grandTotal * 100) : 0;
+      const grandBitPct = grandTotal > 0 ? (grandBitel / grandTotal * 100) : 0;
+
+      // Grand Total Row
+      const trTotal = document.createElement('tr');
+      trTotal.className = 'row-grand-total';
+      trTotal.innerHTML = `
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS (${selMonth})</span></div></td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${grandTotal.toLocaleString('es-PE')} u.</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #2563eb;">${grandClaro.toLocaleString('es-PE')}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #1d4ed8;">${grandClaroPct.toFixed(1)}%</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #16a34a;">${grandMovistar.toLocaleString('es-PE')}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #15803d;">${grandMovPct.toFixed(1)}%</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #ca8a04;">${grandBitel.toLocaleString('es-PE')}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #a16207;">${grandBitPct.toFixed(1)}%</td>
+      `;
+      tbody.appendChild(trTotal);
+
+      // Render PDVs and Asesores
+      tree.forEach(spv => {
+        let filteredPdvs = spv.children;
+        if (selZone !== 'ALL') {
+          filteredPdvs = filteredPdvs.filter(p => p.zona === selZone);
+        }
+
+        filteredPdvs.forEach(pdv => {
+          const isPdvExpanded = cedenteExpandedState[pdv.name] === true;
+          const mInfo = pdv.months[selMonth] || { claro_u: 0, claro_pct: 0, movistar_u: 0, movistar_pct: 0, bitel_u: 0, bitel_pct: 0, total_u: 0 };
+
+          const trPdv = document.createElement('tr');
+          trPdv.className = 'row-pdv-shaded';
+
+          trPdv.innerHTML = `
+            <td style="padding: 9px 12px;">
+              <div class="node-cell indent-0">
+                <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleCedentePdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
+                <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
+              </div>
+            </td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${mInfo.total_u.toLocaleString('es-PE')} u.</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #2563eb; padding: 9px 12px;">${mInfo.claro_u > 0 ? mInfo.claro_u : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 700; color: #1d4ed8; padding: 9px 12px;">${mInfo.claro_pct > 0 ? mInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #16a34a; padding: 9px 12px;">${mInfo.movistar_u > 0 ? mInfo.movistar_u : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 700; color: #15803d; padding: 9px 12px;">${mInfo.movistar_pct > 0 ? mInfo.movistar_pct.toFixed(1) + '%' : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #ca8a04; padding: 9px 12px;">${mInfo.bitel_u > 0 ? mInfo.bitel_u : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 700; color: #a16207; padding: 9px 12px;">${mInfo.bitel_pct > 0 ? mInfo.bitel_pct.toFixed(1) + '%' : '-'}</td>
+          `;
+          tbody.appendChild(trPdv);
+
+          if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
+            pdv.children.forEach(ase => {
+              const aInfo = ase.months[selMonth] || { claro_u: 0, claro_pct: 0, movistar_u: 0, movistar_pct: 0, bitel_u: 0, bitel_pct: 0, total_u: 0 };
+              const trAse = document.createElement('tr');
+              trAse.className = 'row-asesor';
+
+              const userCode = ase.name;
+              const realName = window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : userCode;
+
+              trAse.innerHTML = `
+                <td style="padding: 7px 12px;">
+                  <div class="node-cell indent-1">
+                    <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
+                  </div>
+                </td>
+                <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${aInfo.total_u > 0 ? aInfo.total_u + ' u.' : '-'}</td>
+                <td class="val-cell num-font" style="color: #3b82f6; padding: 7px 12px;">${aInfo.claro_u > 0 ? aInfo.claro_u : '-'}</td>
+                <td class="val-cell num-font" style="color: #60a5fa; padding: 7px 12px;">${aInfo.claro_pct > 0 ? aInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
+                <td class="val-cell num-font" style="color: #22c55e; padding: 7px 12px;">${aInfo.movistar_u > 0 ? aInfo.movistar_u : '-'}</td>
+                <td class="val-cell num-font" style="color: #4ade80; padding: 7px 12px;">${aInfo.movistar_pct > 0 ? aInfo.movistar_pct.toFixed(1) + '%' : '-'}</td>
+                <td class="val-cell num-font" style="color: #eab308; padding: 7px 12px;">${aInfo.bitel_u > 0 ? aInfo.bitel_u : '-'}</td>
+                <td class="val-cell num-font" style="color: #facc15; padding: 7px 12px;">${aInfo.bitel_pct > 0 ? aInfo.bitel_pct.toFixed(1) + '%' : '-'}</td>
+              `;
+              tbody.appendChild(trAse);
+            });
+          }
+        });
+      });
     }
 
     function renderPermanenciaTable() {

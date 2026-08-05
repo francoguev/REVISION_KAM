@@ -9249,3 +9249,2201 @@ window.PERMANENCIA_DATA = {
     }
   ]
 };
+
+window.OPERADOR_CEDENTE_DATA = {
+  "summary": {
+    "Junio": {
+      "claro": 269,
+      "movistar": 193,
+      "bitel": 215,
+      "total": 677
+    },
+    "Julio": {
+      "claro": 291,
+      "movistar": 212,
+      "bitel": 212,
+      "total": 715
+    },
+    "Agosto": {
+      "claro": 10,
+      "movistar": 4,
+      "bitel": 6,
+      "total": 20
+    },
+    "Acumulado": {
+      "claro": 570,
+      "movistar": 409,
+      "bitel": 433,
+      "total": 1412
+    }
+  },
+  "tree": [
+    {
+      "name": "CYNTHIA GUERRA",
+      "children": [
+        {
+          "name": "TE ICA 3",
+          "spv": "CYNTHIA GUERRA",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 26,
+              "claro_pct": 40.0,
+              "movistar_u": 18,
+              "movistar_pct": 27.7,
+              "bitel_u": 21,
+              "bitel_pct": 32.3,
+              "total_u": 65
+            },
+            "Julio": {
+              "claro_u": 27,
+              "claro_pct": 37.5,
+              "movistar_u": 20,
+              "movistar_pct": 27.8,
+              "bitel_u": 25,
+              "bitel_pct": 34.7,
+              "total_u": 72
+            },
+            "Agosto": {
+              "claro_u": 1,
+              "claro_pct": 33.3,
+              "movistar_u": 2,
+              "movistar_pct": 66.7,
+              "bitel_u": 0,
+              "bitel_pct": 0.0,
+              "total_u": 3
+            },
+            "Acumulado": {
+              "claro_u": 54,
+              "claro_pct": 38.6,
+              "movistar_u": 40,
+              "movistar_pct": 28.6,
+              "bitel_u": 46,
+              "bitel_pct": 32.9,
+              "total_u": 140
+            }
+          },
+          "children": [
+            {
+              "name": "JANELLA ISABEL VALLEJOS PINEDA",
+              "months": {
+                "Junio": {
+                  "claro_u": 12,
+                  "claro_pct": 34.3,
+                  "movistar_u": 8,
+                  "movistar_pct": 22.9,
+                  "bitel_u": 15,
+                  "bitel_pct": 42.9,
+                  "total_u": 35
+                },
+                "Julio": {
+                  "claro_u": 12,
+                  "claro_pct": 38.7,
+                  "movistar_u": 10,
+                  "movistar_pct": 32.3,
+                  "bitel_u": 9,
+                  "bitel_pct": 29.0,
+                  "total_u": 31
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 24,
+                  "claro_pct": 36.4,
+                  "movistar_u": 18,
+                  "movistar_pct": 27.3,
+                  "bitel_u": 24,
+                  "bitel_pct": 36.4,
+                  "total_u": 66
+                }
+              }
+            },
+            {
+              "name": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
+              "months": {
+                "Junio": {
+                  "claro_u": 0,
+                  "claro_pct": 0.0,
+                  "movistar_u": 1,
+                  "movistar_pct": 100.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 1
+                },
+                "Julio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 0,
+                  "claro_pct": 0.0,
+                  "movistar_u": 1,
+                  "movistar_pct": 100.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 1
+                }
+              }
+            },
+            {
+              "name": "NAOMI MARINA AMESQUITA APARCANA",
+              "months": {
+                "Junio": {
+                  "claro_u": 14,
+                  "claro_pct": 48.3,
+                  "movistar_u": 9,
+                  "movistar_pct": 31.0,
+                  "bitel_u": 6,
+                  "bitel_pct": 20.7,
+                  "total_u": 29
+                },
+                "Julio": {
+                  "claro_u": 15,
+                  "claro_pct": 36.6,
+                  "movistar_u": 10,
+                  "movistar_pct": 24.4,
+                  "bitel_u": 16,
+                  "bitel_pct": 39.0,
+                  "total_u": 41
+                },
+                "Agosto": {
+                  "claro_u": 1,
+                  "claro_pct": 33.3,
+                  "movistar_u": 2,
+                  "movistar_pct": 66.7,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 3
+                },
+                "Acumulado": {
+                  "claro_u": 30,
+                  "claro_pct": 41.1,
+                  "movistar_u": 21,
+                  "movistar_pct": 28.8,
+                  "bitel_u": 22,
+                  "bitel_pct": 30.1,
+                  "total_u": 73
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "TE ICA II",
+          "spv": "CYNTHIA GUERRA",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 40,
+              "claro_pct": 33.9,
+              "movistar_u": 39,
+              "movistar_pct": 33.1,
+              "bitel_u": 39,
+              "bitel_pct": 33.1,
+              "total_u": 118
+            },
+            "Julio": {
+              "claro_u": 48,
+              "claro_pct": 37.2,
+              "movistar_u": 47,
+              "movistar_pct": 36.4,
+              "bitel_u": 34,
+              "bitel_pct": 26.4,
+              "total_u": 129
+            },
+            "Agosto": {
+              "claro_u": 1,
+              "claro_pct": 50.0,
+              "movistar_u": 1,
+              "movistar_pct": 50.0,
+              "bitel_u": 0,
+              "bitel_pct": 0.0,
+              "total_u": 2
+            },
+            "Acumulado": {
+              "claro_u": 89,
+              "claro_pct": 35.7,
+              "movistar_u": 87,
+              "movistar_pct": 34.9,
+              "bitel_u": 73,
+              "bitel_pct": 29.3,
+              "total_u": 249
+            }
+          },
+          "children": [
+            {
+              "name": "DIANA LORENA SIME BENDEZU",
+              "months": {
+                "Junio": {
+                  "claro_u": 26,
+                  "claro_pct": 39.4,
+                  "movistar_u": 26,
+                  "movistar_pct": 39.4,
+                  "bitel_u": 14,
+                  "bitel_pct": 21.2,
+                  "total_u": 66
+                },
+                "Julio": {
+                  "claro_u": 21,
+                  "claro_pct": 30.9,
+                  "movistar_u": 27,
+                  "movistar_pct": 39.7,
+                  "bitel_u": 20,
+                  "bitel_pct": 29.4,
+                  "total_u": 68
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 47,
+                  "claro_pct": 35.1,
+                  "movistar_u": 53,
+                  "movistar_pct": 39.6,
+                  "bitel_u": 34,
+                  "bitel_pct": 25.4,
+                  "total_u": 134
+                }
+              }
+            },
+            {
+              "name": "GAMBOA MEDINA MARTIN JOSÉ ANTONIO",
+              "months": {
+                "Junio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Julio": {
+                  "claro_u": 3,
+                  "claro_pct": 75.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 25.0,
+                  "total_u": 4
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 3,
+                  "claro_pct": 75.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 25.0,
+                  "total_u": 4
+                }
+              }
+            },
+            {
+              "name": "ROGGER SMITH NAVARRETE CAHUA",
+              "months": {
+                "Junio": {
+                  "claro_u": 14,
+                  "claro_pct": 26.9,
+                  "movistar_u": 13,
+                  "movistar_pct": 25.0,
+                  "bitel_u": 25,
+                  "bitel_pct": 48.1,
+                  "total_u": 52
+                },
+                "Julio": {
+                  "claro_u": 24,
+                  "claro_pct": 42.1,
+                  "movistar_u": 20,
+                  "movistar_pct": 35.1,
+                  "bitel_u": 13,
+                  "bitel_pct": 22.8,
+                  "total_u": 57
+                },
+                "Agosto": {
+                  "claro_u": 1,
+                  "claro_pct": 50.0,
+                  "movistar_u": 1,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 2
+                },
+                "Acumulado": {
+                  "claro_u": 39,
+                  "claro_pct": 35.1,
+                  "movistar_u": 34,
+                  "movistar_pct": 30.6,
+                  "bitel_u": 38,
+                  "bitel_pct": 34.2,
+                  "total_u": 111
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "TE ICA MODELO",
+          "spv": "CYNTHIA GUERRA",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 4,
+              "claro_pct": 33.3,
+              "movistar_u": 4,
+              "movistar_pct": 33.3,
+              "bitel_u": 4,
+              "bitel_pct": 33.3,
+              "total_u": 12
+            },
+            "Julio": {
+              "claro_u": 7,
+              "claro_pct": 36.8,
+              "movistar_u": 8,
+              "movistar_pct": 42.1,
+              "bitel_u": 4,
+              "bitel_pct": 21.1,
+              "total_u": 19
+            },
+            "Agosto": {
+              "claro_u": 0,
+              "claro_pct": 0,
+              "movistar_u": 0,
+              "movistar_pct": 0,
+              "bitel_u": 0,
+              "bitel_pct": 0,
+              "total_u": 0
+            },
+            "Acumulado": {
+              "claro_u": 11,
+              "claro_pct": 35.5,
+              "movistar_u": 12,
+              "movistar_pct": 38.7,
+              "bitel_u": 8,
+              "bitel_pct": 25.8,
+              "total_u": 31
+            }
+          },
+          "children": [
+            {
+              "name": "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
+              "months": {
+                "Junio": {
+                  "claro_u": 2,
+                  "claro_pct": 33.3,
+                  "movistar_u": 1,
+                  "movistar_pct": 16.7,
+                  "bitel_u": 3,
+                  "bitel_pct": 50.0,
+                  "total_u": 6
+                },
+                "Julio": {
+                  "claro_u": 1,
+                  "claro_pct": 50.0,
+                  "movistar_u": 1,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 2
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 3,
+                  "claro_pct": 37.5,
+                  "movistar_u": 2,
+                  "movistar_pct": 25.0,
+                  "bitel_u": 3,
+                  "bitel_pct": 37.5,
+                  "total_u": 8
+                }
+              }
+            },
+            {
+              "name": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
+              "months": {
+                "Junio": {
+                  "claro_u": 2,
+                  "claro_pct": 33.3,
+                  "movistar_u": 3,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 16.7,
+                  "total_u": 6
+                },
+                "Julio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 2,
+                  "claro_pct": 33.3,
+                  "movistar_u": 3,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 16.7,
+                  "total_u": 6
+                }
+              }
+            },
+            {
+              "name": "VALENTINA BAEZ TORDOYA",
+              "months": {
+                "Junio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Julio": {
+                  "claro_u": 6,
+                  "claro_pct": 35.3,
+                  "movistar_u": 7,
+                  "movistar_pct": 41.2,
+                  "bitel_u": 4,
+                  "bitel_pct": 23.5,
+                  "total_u": 17
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 6,
+                  "claro_pct": 35.3,
+                  "movistar_u": 7,
+                  "movistar_pct": 41.2,
+                  "bitel_u": 4,
+                  "bitel_pct": 23.5,
+                  "total_u": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "TE PARCONA",
+          "spv": "CYNTHIA GUERRA",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 6,
+              "claro_pct": 23.1,
+              "movistar_u": 17,
+              "movistar_pct": 65.4,
+              "bitel_u": 3,
+              "bitel_pct": 11.5,
+              "total_u": 26
+            },
+            "Julio": {
+              "claro_u": 5,
+              "claro_pct": 29.4,
+              "movistar_u": 6,
+              "movistar_pct": 35.3,
+              "bitel_u": 6,
+              "bitel_pct": 35.3,
+              "total_u": 17
+            },
+            "Agosto": {
+              "claro_u": 0,
+              "claro_pct": 0,
+              "movistar_u": 0,
+              "movistar_pct": 0,
+              "bitel_u": 0,
+              "bitel_pct": 0,
+              "total_u": 0
+            },
+            "Acumulado": {
+              "claro_u": 11,
+              "claro_pct": 25.6,
+              "movistar_u": 23,
+              "movistar_pct": 53.5,
+              "bitel_u": 9,
+              "bitel_pct": 20.9,
+              "total_u": 43
+            }
+          },
+          "children": [
+            {
+              "name": "DANILO GIORDANO CARRIZALES RAMOS",
+              "months": {
+                "Junio": {
+                  "claro_u": 1,
+                  "claro_pct": 16.7,
+                  "movistar_u": 5,
+                  "movistar_pct": 83.3,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 6
+                },
+                "Julio": {
+                  "claro_u": 5,
+                  "claro_pct": 29.4,
+                  "movistar_u": 6,
+                  "movistar_pct": 35.3,
+                  "bitel_u": 6,
+                  "bitel_pct": 35.3,
+                  "total_u": 17
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 6,
+                  "claro_pct": 26.1,
+                  "movistar_u": 11,
+                  "movistar_pct": 47.8,
+                  "bitel_u": 6,
+                  "bitel_pct": 26.1,
+                  "total_u": 23
+                }
+              }
+            },
+            {
+              "name": "JOSUÉ MIGUEL ESPINO SAYRITUPAC",
+              "months": {
+                "Junio": {
+                  "claro_u": 5,
+                  "claro_pct": 25.0,
+                  "movistar_u": 12,
+                  "movistar_pct": 60.0,
+                  "bitel_u": 3,
+                  "bitel_pct": 15.0,
+                  "total_u": 20
+                },
+                "Julio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 5,
+                  "claro_pct": 25.0,
+                  "movistar_u": 12,
+                  "movistar_pct": 60.0,
+                  "bitel_u": 3,
+                  "bitel_pct": 15.0,
+                  "total_u": 20
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FERNANDO MORENO",
+      "children": [
+        {
+          "name": "TE NAZCA",
+          "spv": "FERNANDO MORENO",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 33,
+              "claro_pct": 35.5,
+              "movistar_u": 28,
+              "movistar_pct": 30.1,
+              "bitel_u": 32,
+              "bitel_pct": 34.4,
+              "total_u": 93
+            },
+            "Julio": {
+              "claro_u": 37,
+              "claro_pct": 40.2,
+              "movistar_u": 29,
+              "movistar_pct": 31.5,
+              "bitel_u": 26,
+              "bitel_pct": 28.3,
+              "total_u": 92
+            },
+            "Agosto": {
+              "claro_u": 4,
+              "claro_pct": 100.0,
+              "movistar_u": 0,
+              "movistar_pct": 0.0,
+              "bitel_u": 0,
+              "bitel_pct": 0.0,
+              "total_u": 4
+            },
+            "Acumulado": {
+              "claro_u": 74,
+              "claro_pct": 39.2,
+              "movistar_u": 57,
+              "movistar_pct": 30.2,
+              "bitel_u": 58,
+              "bitel_pct": 30.7,
+              "total_u": 189
+            }
+          },
+          "children": [
+            {
+              "name": "JOSE FERNANDO MORENO VALENCIA",
+              "months": {
+                "Junio": {
+                  "claro_u": 3,
+                  "claro_pct": 37.5,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 5,
+                  "bitel_pct": 62.5,
+                  "total_u": 8
+                },
+                "Julio": {
+                  "claro_u": 6,
+                  "claro_pct": 31.6,
+                  "movistar_u": 8,
+                  "movistar_pct": 42.1,
+                  "bitel_u": 5,
+                  "bitel_pct": 26.3,
+                  "total_u": 19
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 9,
+                  "claro_pct": 33.3,
+                  "movistar_u": 8,
+                  "movistar_pct": 29.6,
+                  "bitel_u": 10,
+                  "bitel_pct": 37.0,
+                  "total_u": 27
+                }
+              }
+            },
+            {
+              "name": "PEDRO FERNANDO CUMPA VIVANCO",
+              "months": {
+                "Junio": {
+                  "claro_u": 11,
+                  "claro_pct": 37.9,
+                  "movistar_u": 4,
+                  "movistar_pct": 13.8,
+                  "bitel_u": 14,
+                  "bitel_pct": 48.3,
+                  "total_u": 29
+                },
+                "Julio": {
+                  "claro_u": 18,
+                  "claro_pct": 48.6,
+                  "movistar_u": 7,
+                  "movistar_pct": 18.9,
+                  "bitel_u": 12,
+                  "bitel_pct": 32.4,
+                  "total_u": 37
+                },
+                "Agosto": {
+                  "claro_u": 3,
+                  "claro_pct": 100.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 3
+                },
+                "Acumulado": {
+                  "claro_u": 32,
+                  "claro_pct": 46.4,
+                  "movistar_u": 11,
+                  "movistar_pct": 15.9,
+                  "bitel_u": 26,
+                  "bitel_pct": 37.7,
+                  "total_u": 69
+                }
+              }
+            },
+            {
+              "name": "RUBETH DANNAE PICKMAN SAN MIGUEL",
+              "months": {
+                "Junio": {
+                  "claro_u": 17,
+                  "claro_pct": 31.5,
+                  "movistar_u": 24,
+                  "movistar_pct": 44.4,
+                  "bitel_u": 13,
+                  "bitel_pct": 24.1,
+                  "total_u": 54
+                },
+                "Julio": {
+                  "claro_u": 13,
+                  "claro_pct": 36.1,
+                  "movistar_u": 14,
+                  "movistar_pct": 38.9,
+                  "bitel_u": 9,
+                  "bitel_pct": 25.0,
+                  "total_u": 36
+                },
+                "Agosto": {
+                  "claro_u": 1,
+                  "claro_pct": 100.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 1
+                },
+                "Acumulado": {
+                  "claro_u": 31,
+                  "claro_pct": 34.1,
+                  "movistar_u": 38,
+                  "movistar_pct": 41.8,
+                  "bitel_u": 22,
+                  "bitel_pct": 24.2,
+                  "total_u": 91
+                }
+              }
+            },
+            {
+              "name": "YESSICA MARIA RAMOS TAPIA",
+              "months": {
+                "Junio": {
+                  "claro_u": 2,
+                  "claro_pct": 100.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 2
+                },
+                "Julio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 2,
+                  "claro_pct": 100.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "TE SATELITE CHALA",
+          "spv": "FERNANDO MORENO",
+          "zona": "SUR",
+          "months": {
+            "Junio": {
+              "claro_u": 10,
+              "claro_pct": 43.5,
+              "movistar_u": 3,
+              "movistar_pct": 13.0,
+              "bitel_u": 10,
+              "bitel_pct": 43.5,
+              "total_u": 23
+            },
+            "Julio": {
+              "claro_u": 8,
+              "claro_pct": 38.1,
+              "movistar_u": 3,
+              "movistar_pct": 14.3,
+              "bitel_u": 10,
+              "bitel_pct": 47.6,
+              "total_u": 21
+            },
+            "Agosto": {
+              "claro_u": 0,
+              "claro_pct": 0.0,
+              "movistar_u": 0,
+              "movistar_pct": 0.0,
+              "bitel_u": 1,
+              "bitel_pct": 100.0,
+              "total_u": 1
+            },
+            "Acumulado": {
+              "claro_u": 18,
+              "claro_pct": 40.0,
+              "movistar_u": 6,
+              "movistar_pct": 13.3,
+              "bitel_u": 21,
+              "bitel_pct": 46.7,
+              "total_u": 45
+            }
+          },
+          "children": [
+            {
+              "name": "ELIZABETH LISLEY HUAMAN YBARRA",
+              "months": {
+                "Junio": {
+                  "claro_u": 10,
+                  "claro_pct": 43.5,
+                  "movistar_u": 3,
+                  "movistar_pct": 13.0,
+                  "bitel_u": 10,
+                  "bitel_pct": 43.5,
+                  "total_u": 23
+                },
+                "Julio": {
+                  "claro_u": 8,
+                  "claro_pct": 38.1,
+                  "movistar_u": 3,
+                  "movistar_pct": 14.3,
+                  "bitel_u": 10,
+                  "bitel_pct": 47.6,
+                  "total_u": 21
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 100.0,
+                  "total_u": 1
+                },
+                "Acumulado": {
+                  "claro_u": 18,
+                  "claro_pct": 40.0,
+                  "movistar_u": 6,
+                  "movistar_pct": 13.3,
+                  "bitel_u": 21,
+                  "bitel_pct": 46.7,
+                  "total_u": 45
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "TE SATELITE PALPA",
+          "spv": "FERNANDO MORENO",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 3,
+              "claro_pct": 21.4,
+              "movistar_u": 8,
+              "movistar_pct": 57.1,
+              "bitel_u": 3,
+              "bitel_pct": 21.4,
+              "total_u": 14
+            },
+            "Julio": {
+              "claro_u": 7,
+              "claro_pct": 58.3,
+              "movistar_u": 4,
+              "movistar_pct": 33.3,
+              "bitel_u": 1,
+              "bitel_pct": 8.3,
+              "total_u": 12
+            },
+            "Agosto": {
+              "claro_u": 1,
+              "claro_pct": 50.0,
+              "movistar_u": 0,
+              "movistar_pct": 0.0,
+              "bitel_u": 1,
+              "bitel_pct": 50.0,
+              "total_u": 2
+            },
+            "Acumulado": {
+              "claro_u": 11,
+              "claro_pct": 39.3,
+              "movistar_u": 12,
+              "movistar_pct": 42.9,
+              "bitel_u": 5,
+              "bitel_pct": 17.9,
+              "total_u": 28
+            }
+          },
+          "children": [
+            {
+              "name": "ALEXANDRA ECHAJAYA GARCIA",
+              "months": {
+                "Junio": {
+                  "claro_u": 3,
+                  "claro_pct": 21.4,
+                  "movistar_u": 8,
+                  "movistar_pct": 57.1,
+                  "bitel_u": 3,
+                  "bitel_pct": 21.4,
+                  "total_u": 14
+                },
+                "Julio": {
+                  "claro_u": 7,
+                  "claro_pct": 58.3,
+                  "movistar_u": 4,
+                  "movistar_pct": 33.3,
+                  "bitel_u": 1,
+                  "bitel_pct": 8.3,
+                  "total_u": 12
+                },
+                "Agosto": {
+                  "claro_u": 1,
+                  "claro_pct": 50.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 50.0,
+                  "total_u": 2
+                },
+                "Acumulado": {
+                  "claro_u": 11,
+                  "claro_pct": 39.3,
+                  "movistar_u": 12,
+                  "movistar_pct": 42.9,
+                  "bitel_u": 5,
+                  "bitel_pct": 17.9,
+                  "total_u": 28
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MARÍA BERNAOLA",
+      "children": [
+        {
+          "name": "TE ICA",
+          "spv": "MARÍA BERNAOLA",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 13,
+              "claro_pct": 41.9,
+              "movistar_u": 9,
+              "movistar_pct": 29.0,
+              "bitel_u": 9,
+              "bitel_pct": 29.0,
+              "total_u": 31
+            },
+            "Julio": {
+              "claro_u": 15,
+              "claro_pct": 46.9,
+              "movistar_u": 11,
+              "movistar_pct": 34.4,
+              "bitel_u": 6,
+              "bitel_pct": 18.8,
+              "total_u": 32
+            },
+            "Agosto": {
+              "claro_u": 0,
+              "claro_pct": 0.0,
+              "movistar_u": 0,
+              "movistar_pct": 0.0,
+              "bitel_u": 1,
+              "bitel_pct": 100.0,
+              "total_u": 1
+            },
+            "Acumulado": {
+              "claro_u": 28,
+              "claro_pct": 43.8,
+              "movistar_u": 20,
+              "movistar_pct": 31.2,
+              "bitel_u": 16,
+              "bitel_pct": 25.0,
+              "total_u": 64
+            }
+          },
+          "children": [
+            {
+              "name": "LUIS ELIZALDE ESCATE",
+              "months": {
+                "Junio": {
+                  "claro_u": 9,
+                  "claro_pct": 47.4,
+                  "movistar_u": 5,
+                  "movistar_pct": 26.3,
+                  "bitel_u": 5,
+                  "bitel_pct": 26.3,
+                  "total_u": 19
+                },
+                "Julio": {
+                  "claro_u": 6,
+                  "claro_pct": 42.9,
+                  "movistar_u": 6,
+                  "movistar_pct": 42.9,
+                  "bitel_u": 2,
+                  "bitel_pct": 14.3,
+                  "total_u": 14
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 100.0,
+                  "total_u": 1
+                },
+                "Acumulado": {
+                  "claro_u": 15,
+                  "claro_pct": 44.1,
+                  "movistar_u": 11,
+                  "movistar_pct": 32.4,
+                  "bitel_u": 8,
+                  "bitel_pct": 23.5,
+                  "total_u": 34
+                }
+              }
+            },
+            {
+              "name": "ROSARIO ISABEL ELIAS MAVILA",
+              "months": {
+                "Junio": {
+                  "claro_u": 4,
+                  "claro_pct": 33.3,
+                  "movistar_u": 4,
+                  "movistar_pct": 33.3,
+                  "bitel_u": 4,
+                  "bitel_pct": 33.3,
+                  "total_u": 12
+                },
+                "Julio": {
+                  "claro_u": 9,
+                  "claro_pct": 50.0,
+                  "movistar_u": 5,
+                  "movistar_pct": 27.8,
+                  "bitel_u": 4,
+                  "bitel_pct": 22.2,
+                  "total_u": 18
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 13,
+                  "claro_pct": 43.3,
+                  "movistar_u": 9,
+                  "movistar_pct": 30.0,
+                  "bitel_u": 8,
+                  "bitel_pct": 26.7,
+                  "total_u": 30
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "TE PISCO",
+          "spv": "MARÍA BERNAOLA",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 9,
+              "claro_pct": 37.5,
+              "movistar_u": 11,
+              "movistar_pct": 45.8,
+              "bitel_u": 4,
+              "bitel_pct": 16.7,
+              "total_u": 24
+            },
+            "Julio": {
+              "claro_u": 15,
+              "claro_pct": 35.7,
+              "movistar_u": 24,
+              "movistar_pct": 57.1,
+              "bitel_u": 3,
+              "bitel_pct": 7.1,
+              "total_u": 42
+            },
+            "Agosto": {
+              "claro_u": 0,
+              "claro_pct": 0,
+              "movistar_u": 0,
+              "movistar_pct": 0,
+              "bitel_u": 0,
+              "bitel_pct": 0,
+              "total_u": 0
+            },
+            "Acumulado": {
+              "claro_u": 24,
+              "claro_pct": 36.4,
+              "movistar_u": 35,
+              "movistar_pct": 53.0,
+              "bitel_u": 7,
+              "bitel_pct": 10.6,
+              "total_u": 66
+            }
+          },
+          "children": [
+            {
+              "name": "CYNTIA JETZABEL MANRIQUE NAPA",
+              "months": {
+                "Junio": {
+                  "claro_u": 6,
+                  "claro_pct": 33.3,
+                  "movistar_u": 8,
+                  "movistar_pct": 44.4,
+                  "bitel_u": 4,
+                  "bitel_pct": 22.2,
+                  "total_u": 18
+                },
+                "Julio": {
+                  "claro_u": 5,
+                  "claro_pct": 23.8,
+                  "movistar_u": 14,
+                  "movistar_pct": 66.7,
+                  "bitel_u": 2,
+                  "bitel_pct": 9.5,
+                  "total_u": 21
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 11,
+                  "claro_pct": 28.2,
+                  "movistar_u": 22,
+                  "movistar_pct": 56.4,
+                  "bitel_u": 6,
+                  "bitel_pct": 15.4,
+                  "total_u": 39
+                }
+              }
+            },
+            {
+              "name": "FIORELLA ASTRID CRUZ PARODI",
+              "months": {
+                "Junio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Julio": {
+                  "claro_u": 1,
+                  "claro_pct": 50.0,
+                  "movistar_u": 1,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 2
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 1,
+                  "claro_pct": 50.0,
+                  "movistar_u": 1,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 2
+                }
+              }
+            },
+            {
+              "name": "MARIA DE LA CRUZ MEZA",
+              "months": {
+                "Junio": {
+                  "claro_u": 3,
+                  "claro_pct": 50.0,
+                  "movistar_u": 3,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 6
+                },
+                "Julio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 3,
+                  "claro_pct": 50.0,
+                  "movistar_u": 3,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 6
+                }
+              }
+            },
+            {
+              "name": "VALERIA ALANA ECHEVARRIA BRAVO",
+              "months": {
+                "Junio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Julio": {
+                  "claro_u": 9,
+                  "claro_pct": 47.4,
+                  "movistar_u": 9,
+                  "movistar_pct": 47.4,
+                  "bitel_u": 1,
+                  "bitel_pct": 5.3,
+                  "total_u": 19
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 9,
+                  "claro_pct": 47.4,
+                  "movistar_u": 9,
+                  "movistar_pct": 47.4,
+                  "bitel_u": 1,
+                  "bitel_pct": 5.3,
+                  "total_u": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "TE SATELITE BARRIO CHINO",
+          "spv": "MARÍA BERNAOLA",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 31,
+              "claro_pct": 50.8,
+              "movistar_u": 8,
+              "movistar_pct": 13.1,
+              "bitel_u": 22,
+              "bitel_pct": 36.1,
+              "total_u": 61
+            },
+            "Julio": {
+              "claro_u": 32,
+              "claro_pct": 42.7,
+              "movistar_u": 9,
+              "movistar_pct": 12.0,
+              "bitel_u": 34,
+              "bitel_pct": 45.3,
+              "total_u": 75
+            },
+            "Agosto": {
+              "claro_u": 1,
+              "claro_pct": 25.0,
+              "movistar_u": 0,
+              "movistar_pct": 0.0,
+              "bitel_u": 3,
+              "bitel_pct": 75.0,
+              "total_u": 4
+            },
+            "Acumulado": {
+              "claro_u": 64,
+              "claro_pct": 45.7,
+              "movistar_u": 17,
+              "movistar_pct": 12.1,
+              "bitel_u": 59,
+              "bitel_pct": 42.1,
+              "total_u": 140
+            }
+          },
+          "children": [
+            {
+              "name": "ARIANA JUDITH VASQUEZ CHOQUE",
+              "months": {
+                "Junio": {
+                  "claro_u": 1,
+                  "claro_pct": 25.0,
+                  "movistar_u": 2,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 25.0,
+                  "total_u": 4
+                },
+                "Julio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 1,
+                  "claro_pct": 25.0,
+                  "movistar_u": 2,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 25.0,
+                  "total_u": 4
+                }
+              }
+            },
+            {
+              "name": "ELIZABETH ANA RAMOS ANGULO",
+              "months": {
+                "Junio": {
+                  "claro_u": 15,
+                  "claro_pct": 50.0,
+                  "movistar_u": 3,
+                  "movistar_pct": 10.0,
+                  "bitel_u": 12,
+                  "bitel_pct": 40.0,
+                  "total_u": 30
+                },
+                "Julio": {
+                  "claro_u": 20,
+                  "claro_pct": 47.6,
+                  "movistar_u": 4,
+                  "movistar_pct": 9.5,
+                  "bitel_u": 18,
+                  "bitel_pct": 42.9,
+                  "total_u": 42
+                },
+                "Agosto": {
+                  "claro_u": 1,
+                  "claro_pct": 50.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 50.0,
+                  "total_u": 2
+                },
+                "Acumulado": {
+                  "claro_u": 36,
+                  "claro_pct": 48.6,
+                  "movistar_u": 7,
+                  "movistar_pct": 9.5,
+                  "bitel_u": 31,
+                  "bitel_pct": 41.9,
+                  "total_u": 74
+                }
+              }
+            },
+            {
+              "name": "RIGOBERTO AYALA CARPIO",
+              "months": {
+                "Junio": {
+                  "claro_u": 15,
+                  "claro_pct": 55.6,
+                  "movistar_u": 3,
+                  "movistar_pct": 11.1,
+                  "bitel_u": 9,
+                  "bitel_pct": 33.3,
+                  "total_u": 27
+                },
+                "Julio": {
+                  "claro_u": 12,
+                  "claro_pct": 36.4,
+                  "movistar_u": 5,
+                  "movistar_pct": 15.2,
+                  "bitel_u": 16,
+                  "bitel_pct": 48.5,
+                  "total_u": 33
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 2,
+                  "bitel_pct": 100.0,
+                  "total_u": 2
+                },
+                "Acumulado": {
+                  "claro_u": 27,
+                  "claro_pct": 43.5,
+                  "movistar_u": 8,
+                  "movistar_pct": 12.9,
+                  "bitel_u": 27,
+                  "bitel_pct": 43.5,
+                  "total_u": 62
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "TE SATELITE CAÑETE",
+          "spv": "MARÍA BERNAOLA",
+          "zona": "LIMA",
+          "months": {
+            "Junio": {
+              "claro_u": 19,
+              "claro_pct": 50.0,
+              "movistar_u": 7,
+              "movistar_pct": 18.4,
+              "bitel_u": 12,
+              "bitel_pct": 31.6,
+              "total_u": 38
+            },
+            "Julio": {
+              "claro_u": 11,
+              "claro_pct": 30.6,
+              "movistar_u": 17,
+              "movistar_pct": 47.2,
+              "bitel_u": 8,
+              "bitel_pct": 22.2,
+              "total_u": 36
+            },
+            "Agosto": {
+              "claro_u": 1,
+              "claro_pct": 100.0,
+              "movistar_u": 0,
+              "movistar_pct": 0.0,
+              "bitel_u": 0,
+              "bitel_pct": 0.0,
+              "total_u": 1
+            },
+            "Acumulado": {
+              "claro_u": 31,
+              "claro_pct": 41.3,
+              "movistar_u": 24,
+              "movistar_pct": 32.0,
+              "bitel_u": 20,
+              "bitel_pct": 26.7,
+              "total_u": 75
+            }
+          },
+          "children": [
+            {
+              "name": "CAMILA VERONICA ROSAS PALOMINO",
+              "months": {
+                "Junio": {
+                  "claro_u": 11,
+                  "claro_pct": 55.0,
+                  "movistar_u": 3,
+                  "movistar_pct": 15.0,
+                  "bitel_u": 6,
+                  "bitel_pct": 30.0,
+                  "total_u": 20
+                },
+                "Julio": {
+                  "claro_u": 6,
+                  "claro_pct": 42.9,
+                  "movistar_u": 6,
+                  "movistar_pct": 42.9,
+                  "bitel_u": 2,
+                  "bitel_pct": 14.3,
+                  "total_u": 14
+                },
+                "Agosto": {
+                  "claro_u": 1,
+                  "claro_pct": 100.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 1
+                },
+                "Acumulado": {
+                  "claro_u": 18,
+                  "claro_pct": 51.4,
+                  "movistar_u": 9,
+                  "movistar_pct": 25.7,
+                  "bitel_u": 8,
+                  "bitel_pct": 22.9,
+                  "total_u": 35
+                }
+              }
+            },
+            {
+              "name": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
+              "months": {
+                "Junio": {
+                  "claro_u": 8,
+                  "claro_pct": 44.4,
+                  "movistar_u": 4,
+                  "movistar_pct": 22.2,
+                  "bitel_u": 6,
+                  "bitel_pct": 33.3,
+                  "total_u": 18
+                },
+                "Julio": {
+                  "claro_u": 5,
+                  "claro_pct": 22.7,
+                  "movistar_u": 11,
+                  "movistar_pct": 50.0,
+                  "bitel_u": 6,
+                  "bitel_pct": 27.3,
+                  "total_u": 22
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 13,
+                  "claro_pct": 32.5,
+                  "movistar_u": 15,
+                  "movistar_pct": 37.5,
+                  "bitel_u": 12,
+                  "bitel_pct": 30.0,
+                  "total_u": 40
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "TE SATELITE PUEBLO JOVEN",
+          "spv": "MARÍA BERNAOLA",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 6,
+              "claro_pct": 37.5,
+              "movistar_u": 3,
+              "movistar_pct": 18.8,
+              "bitel_u": 7,
+              "bitel_pct": 43.8,
+              "total_u": 16
+            },
+            "Julio": {
+              "claro_u": 8,
+              "claro_pct": 27.6,
+              "movistar_u": 7,
+              "movistar_pct": 24.1,
+              "bitel_u": 14,
+              "bitel_pct": 48.3,
+              "total_u": 29
+            },
+            "Agosto": {
+              "claro_u": 0,
+              "claro_pct": 0.0,
+              "movistar_u": 1,
+              "movistar_pct": 100.0,
+              "bitel_u": 0,
+              "bitel_pct": 0.0,
+              "total_u": 1
+            },
+            "Acumulado": {
+              "claro_u": 14,
+              "claro_pct": 30.4,
+              "movistar_u": 11,
+              "movistar_pct": 23.9,
+              "bitel_u": 21,
+              "bitel_pct": 45.7,
+              "total_u": 46
+            }
+          },
+          "children": [
+            {
+              "name": "JASMIN JANINE PAULA ESPINO CUYA",
+              "months": {
+                "Junio": {
+                  "claro_u": 6,
+                  "claro_pct": 37.5,
+                  "movistar_u": 3,
+                  "movistar_pct": 18.8,
+                  "bitel_u": 7,
+                  "bitel_pct": 43.8,
+                  "total_u": 16
+                },
+                "Julio": {
+                  "claro_u": 5,
+                  "claro_pct": 19.2,
+                  "movistar_u": 7,
+                  "movistar_pct": 26.9,
+                  "bitel_u": 14,
+                  "bitel_pct": 53.8,
+                  "total_u": 26
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0.0,
+                  "movistar_u": 1,
+                  "movistar_pct": 100.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 1
+                },
+                "Acumulado": {
+                  "claro_u": 11,
+                  "claro_pct": 25.6,
+                  "movistar_u": 11,
+                  "movistar_pct": 25.6,
+                  "bitel_u": 21,
+                  "bitel_pct": 48.8,
+                  "total_u": 43
+                }
+              }
+            },
+            {
+              "name": "MARIA DEL CARMEN BERNAOLA FARFAN",
+              "months": {
+                "Junio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Julio": {
+                  "claro_u": 2,
+                  "claro_pct": 100.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 2
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 2,
+                  "claro_pct": 100.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 2
+                }
+              }
+            },
+            {
+              "name": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
+              "months": {
+                "Junio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Julio": {
+                  "claro_u": 1,
+                  "claro_pct": 100.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 1
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 1,
+                  "claro_pct": 100.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MERY LAPA",
+      "children": [
+        {
+          "name": "TE AYACUCHO",
+          "spv": "MERY LAPA",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 32,
+              "claro_pct": 42.1,
+              "movistar_u": 21,
+              "movistar_pct": 27.6,
+              "bitel_u": 23,
+              "bitel_pct": 30.3,
+              "total_u": 76
+            },
+            "Julio": {
+              "claro_u": 40,
+              "claro_pct": 50.0,
+              "movistar_u": 18,
+              "movistar_pct": 22.5,
+              "bitel_u": 22,
+              "bitel_pct": 27.5,
+              "total_u": 80
+            },
+            "Agosto": {
+              "claro_u": 1,
+              "claro_pct": 100.0,
+              "movistar_u": 0,
+              "movistar_pct": 0.0,
+              "bitel_u": 0,
+              "bitel_pct": 0.0,
+              "total_u": 1
+            },
+            "Acumulado": {
+              "claro_u": 73,
+              "claro_pct": 46.5,
+              "movistar_u": 39,
+              "movistar_pct": 24.8,
+              "bitel_u": 45,
+              "bitel_pct": 28.7,
+              "total_u": 157
+            }
+          },
+          "children": [
+            {
+              "name": "LORENA ALEXANDRA HUAMANI YUPANQUI",
+              "months": {
+                "Junio": {
+                  "claro_u": 28,
+                  "claro_pct": 44.4,
+                  "movistar_u": 17,
+                  "movistar_pct": 27.0,
+                  "bitel_u": 18,
+                  "bitel_pct": 28.6,
+                  "total_u": 63
+                },
+                "Julio": {
+                  "claro_u": 23,
+                  "claro_pct": 47.9,
+                  "movistar_u": 10,
+                  "movistar_pct": 20.8,
+                  "bitel_u": 15,
+                  "bitel_pct": 31.2,
+                  "total_u": 48
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 51,
+                  "claro_pct": 45.9,
+                  "movistar_u": 27,
+                  "movistar_pct": 24.3,
+                  "bitel_u": 33,
+                  "bitel_pct": 29.7,
+                  "total_u": 111
+                }
+              }
+            },
+            {
+              "name": "NORI ESPINO AYVAR",
+              "months": {
+                "Junio": {
+                  "claro_u": 1,
+                  "claro_pct": 12.5,
+                  "movistar_u": 3,
+                  "movistar_pct": 37.5,
+                  "bitel_u": 4,
+                  "bitel_pct": 50.0,
+                  "total_u": 8
+                },
+                "Julio": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 1,
+                  "claro_pct": 12.5,
+                  "movistar_u": 3,
+                  "movistar_pct": 37.5,
+                  "bitel_u": 4,
+                  "bitel_pct": 50.0,
+                  "total_u": 8
+                }
+              }
+            },
+            {
+              "name": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
+              "months": {
+                "Junio": {
+                  "claro_u": 3,
+                  "claro_pct": 60.0,
+                  "movistar_u": 1,
+                  "movistar_pct": 20.0,
+                  "bitel_u": 1,
+                  "bitel_pct": 20.0,
+                  "total_u": 5
+                },
+                "Julio": {
+                  "claro_u": 17,
+                  "claro_pct": 53.1,
+                  "movistar_u": 8,
+                  "movistar_pct": 25.0,
+                  "bitel_u": 7,
+                  "bitel_pct": 21.9,
+                  "total_u": 32
+                },
+                "Agosto": {
+                  "claro_u": 1,
+                  "claro_pct": 100.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 1
+                },
+                "Acumulado": {
+                  "claro_u": 21,
+                  "claro_pct": 55.3,
+                  "movistar_u": 9,
+                  "movistar_pct": 23.7,
+                  "bitel_u": 8,
+                  "bitel_pct": 21.1,
+                  "total_u": 38
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "TE HUANTA",
+          "spv": "MERY LAPA",
+          "zona": "CENTRO",
+          "months": {
+            "Junio": {
+              "claro_u": 37,
+              "claro_pct": 46.2,
+              "movistar_u": 17,
+              "movistar_pct": 21.2,
+              "bitel_u": 26,
+              "bitel_pct": 32.5,
+              "total_u": 80
+            },
+            "Julio": {
+              "claro_u": 31,
+              "claro_pct": 52.5,
+              "movistar_u": 9,
+              "movistar_pct": 15.3,
+              "bitel_u": 19,
+              "bitel_pct": 32.2,
+              "total_u": 59
+            },
+            "Agosto": {
+              "claro_u": 0,
+              "claro_pct": 0,
+              "movistar_u": 0,
+              "movistar_pct": 0,
+              "bitel_u": 0,
+              "bitel_pct": 0,
+              "total_u": 0
+            },
+            "Acumulado": {
+              "claro_u": 68,
+              "claro_pct": 48.9,
+              "movistar_u": 26,
+              "movistar_pct": 18.7,
+              "bitel_u": 45,
+              "bitel_pct": 32.4,
+              "total_u": 139
+            }
+          },
+          "children": [
+            {
+              "name": "MARCO ANDRE FELICES GONZALEZ",
+              "months": {
+                "Junio": {
+                  "claro_u": 12,
+                  "claro_pct": 36.4,
+                  "movistar_u": 8,
+                  "movistar_pct": 24.2,
+                  "bitel_u": 13,
+                  "bitel_pct": 39.4,
+                  "total_u": 33
+                },
+                "Julio": {
+                  "claro_u": 16,
+                  "claro_pct": 48.5,
+                  "movistar_u": 4,
+                  "movistar_pct": 12.1,
+                  "bitel_u": 13,
+                  "bitel_pct": 39.4,
+                  "total_u": 33
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 28,
+                  "claro_pct": 42.4,
+                  "movistar_u": 12,
+                  "movistar_pct": 18.2,
+                  "bitel_u": 26,
+                  "bitel_pct": 39.4,
+                  "total_u": 66
+                }
+              }
+            },
+            {
+              "name": "MERY LAPA ZARATE",
+              "months": {
+                "Junio": {
+                  "claro_u": 11,
+                  "claro_pct": 52.4,
+                  "movistar_u": 5,
+                  "movistar_pct": 23.8,
+                  "bitel_u": 5,
+                  "bitel_pct": 23.8,
+                  "total_u": 21
+                },
+                "Julio": {
+                  "claro_u": 4,
+                  "claro_pct": 57.1,
+                  "movistar_u": 2,
+                  "movistar_pct": 28.6,
+                  "bitel_u": 1,
+                  "bitel_pct": 14.3,
+                  "total_u": 7
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 15,
+                  "claro_pct": 53.6,
+                  "movistar_u": 7,
+                  "movistar_pct": 25.0,
+                  "bitel_u": 6,
+                  "bitel_pct": 21.4,
+                  "total_u": 28
+                }
+              }
+            },
+            {
+              "name": "SONALY JULIA MEZA ASTUPILLO",
+              "months": {
+                "Junio": {
+                  "claro_u": 14,
+                  "claro_pct": 53.8,
+                  "movistar_u": 4,
+                  "movistar_pct": 15.4,
+                  "bitel_u": 8,
+                  "bitel_pct": 30.8,
+                  "total_u": 26
+                },
+                "Julio": {
+                  "claro_u": 11,
+                  "claro_pct": 57.9,
+                  "movistar_u": 3,
+                  "movistar_pct": 15.8,
+                  "bitel_u": 5,
+                  "bitel_pct": 26.3,
+                  "total_u": 19
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0,
+                  "total_u": 0
+                },
+                "Acumulado": {
+                  "claro_u": 25,
+                  "claro_pct": 55.6,
+                  "movistar_u": 7,
+                  "movistar_pct": 15.6,
+                  "bitel_u": 13,
+                  "bitel_pct": 28.9,
+                  "total_u": 45
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
