@@ -892,9 +892,9 @@
                     }
                   });
                   if (!pdv.quotas['POSTPAGO_TOTAL']) pdv.quotas['POSTPAGO_TOTAL'] = {};
-                  pdv.quotas['POSTPAGO_TOTAL'].m202608 = Math.round(
-                    (matchedDict['PORTA_OSS'] || 0) + (matchedDict['PORTA_OPP'] || 0) +
-                    (matchedDict['VR'] || 0) + (matchedDict['RENO_SS'] || 0) + (matchedDict['LINEA_ADICIONAL'] || 0)
+                  pdv.quotas['POSTPAGO_TOTAL'].m202608 = (
+                    pdv.quotas['PORTA_OSS'].m202608 + pdv.quotas['PORTA_OPP'].m202608 +
+                    pdv.quotas['VR'].m202608 + pdv.quotas['RENO_SS'].m202608 + pdv.quotas['LINEA_ADICIONAL'].m202608
                   );
 
                   const nAses = pdv.children.length;
