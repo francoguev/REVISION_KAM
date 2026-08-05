@@ -818,8 +818,6 @@
             <option value="MERY LAPA">MERY LAPA</option>
           </select>
 
-            <i class="fa-solid fa-arrows-up-down"></i> <span id="expandDiscountBtnText">Expandir Todo</span>
-          </button>
         </div>
       </header>
 
@@ -2567,7 +2565,7 @@ function toggleDotacionDays() {
       window.DISCOUNT_DATA.tree.forEach(spv => {
         spv.children.forEach(pdv => { discountExpandedState[pdv.id] = isDiscountAllExpanded; });
       });
-      document.getElementById('expandDiscountBtnText').textContent = isDiscountAllExpanded ? 'Colapsar Todo' : 'Expandir Todo';
+      const btnEl = document.getElementById('expandDiscountBtnText'); if (btnEl) btnEl.textContent = isDiscountAllExpanded ? 'Colapsar Todo' : 'Expandir Todo';
       renderDiscountTable();
     }
 
