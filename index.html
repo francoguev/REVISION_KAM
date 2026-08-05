@@ -602,7 +602,12 @@
           <i class="fa-solid fa-star-half-stroke"></i> Página 4: Reporte de Calidad y NPS
         </button>
         <button class="page-tab-btn" id="navTab5" onclick="switchSlidePage(5)">
-          <i class="fa-solid fa-layer-group"></i> Página 5: Mix de Planes (Julio 2026)
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Página 5: Mix de Planes (Julio 2026)</span>
+        </button>
+        <button class="page-tab-btn" id="navTab6" onclick="switchSlidePage(6)">
+          <i class="fa-solid fa-user-shield"></i>
+          <span>Página 6: Permanencia M6 (Enero 2026)</span>
         </button>
       </div>
     </nav>
@@ -895,6 +900,40 @@
           </table>
         </div>
       </div>
+        <!-- ================= PAGE 6: PERMANENCIA M6 (ENERO 2026) ================= -->
+    <div id="slidePage6" class="page-view" style="display: none;">
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon"><i class="fa-solid fa-user-shield"></i></div>
+          <div>
+            <h1 class="slide-title">Reporte de Permanencia M6 (Cohorte Enero 2026)</h1>
+            <div class="slide-subtitle">Fortalecernos S.A.C. &bull; Curva de Desactivación M0 a M6 (Julio 2026) &bull; <strong>Objetivo de Permanencia: 50.0%</strong></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="table-container-card">
+        <div class="table-scroll-wrapper" style="max-height: 560px; overflow-y: auto; overflow-x: auto;">
+          <table class="presentation-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #1e293b; color: #ffffff;">
+                <th style="min-width: 250px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PDV / ASESOR</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">SS TOTAL (ENE)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M0 (ENE)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M1 (FEB)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M2 (MAR)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M3 (ABR)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M4 (MAY)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M5 (JUN)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M6 (JUL)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">% PERM_M6 (RETENCIÓN)</th>
+              </tr>
+            </thead>
+            <tbody id="permanenciaTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
     </div>
 
     <!-- Slide Footer Bar -->
@@ -1190,14 +1229,14 @@
 
     function switchSlidePage(pageNum) {
       currentPage = pageNum;
-      for (let i = 1; i <= 5; i++) {
+      for (let i = 1; i <= 6; i++) {
         const btn = document.getElementById('navTab' + i);
         if (btn) btn.classList.toggle('active', i === pageNum);
         const slide = document.getElementById('slidePage' + i);
         if (slide) slide.style.display = (i === pageNum) ? 'flex' : 'none';
       }
 
-      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 5`;
+      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 6`;
       
       if (pageNum === 1) {
         renderTableHeader();
@@ -1213,6 +1252,8 @@
         renderNpsTable();
       } else if (pageNum === 5) {
         renderMixPlanesTable();
+      } else if (pageNum === 6) {
+        renderPermanenciaTable();
       }
     }
 
@@ -2206,6 +2247,108 @@ function toggleDotacionDays() {
             });
           }
         });
+      });
+    }
+
+    
+    // ================= PAGE 6: PERMANENCIA M6 RENDER LOGIC =================
+    let permExpandedState = {}; // Default is false (collapsed by PDV)
+
+    function togglePermPdv(pdvName) {
+      permExpandedState[pdvName] = permExpandedState[pdvName] === true ? false : true;
+      renderPermanenciaTable();
+    }
+
+    function getPermBadgeHTML(pctVal) {
+      if (pctVal === null || pctVal === undefined) return `-`;
+      if (pctVal >= 50.0) {
+        // Green Cumple (>= 50%)
+        return `<span style="background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px;">✓ ${pctVal.toFixed(2)}%</span>`;
+      } else {
+        // Red Alert (< 50%)
+        return `<span style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px;">⚠️ ${pctVal.toFixed(2)}%</span>`;
+      }
+    }
+
+    function renderPermanenciaTable() {
+      const tbody = document.getElementById('permanenciaTbody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      const permData = window.PERMANENCIA_DATA;
+      if (!permData || !permData.tree) return;
+
+      const s = permData.summary;
+
+      // Grand Total Row
+      const trTotal = document.createElement('tr');
+      trTotal.className = 'row-grand-total';
+      trTotal.innerHTML = `
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS</span></div></td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${s.total_sales_jan.toLocaleString('es-PE')} u.</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m0_pct ? s.m0_pct.toFixed(2) + '%' : '-'}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m1_pct ? s.m1_pct.toFixed(2) + '%' : '-'}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m2_pct ? s.m2_pct.toFixed(2) + '%' : '-'}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m3_pct ? s.m3_pct.toFixed(2) + '%' : '-'}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m4_pct ? s.m4_pct.toFixed(2) + '%' : '-'}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m5_pct ? s.m5_pct.toFixed(2) + '%' : '-'}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m6_pct ? s.m6_pct.toFixed(2) + '%' : '-'}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px;">${getPermBadgeHTML(s.perm_m6_pct)}</td>
+      `;
+      tbody.appendChild(trTotal);
+
+      permData.tree.forEach(pdv => {
+        const isPdvExpanded = permExpandedState[pdv.name] === true;
+
+        const trPdv = document.createElement('tr');
+        trPdv.className = 'row-pdv-shaded';
+
+        trPdv.innerHTML = `
+          <td style="padding: 9px 12px;">
+            <div class="node-cell indent-0">
+              <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="togglePermPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
+              <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
+            </div>
+          </td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${pdv.total.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m0 !== null ? pdv.m0.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m1 !== null ? pdv.m1.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m2 !== null ? pdv.m2.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m3 !== null ? pdv.m3.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m4 !== null ? pdv.m4.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m5 !== null ? pdv.m5.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m6 !== null ? pdv.m6.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="padding: 9px 12px;">${getPermBadgeHTML(pdv.perm_m6)}</td>
+        `;
+        tbody.appendChild(trPdv);
+
+        if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
+          pdv.children.forEach(ase => {
+            const trAse = document.createElement('tr');
+            trAse.className = 'row-asesor';
+
+            const userCode = ase.name;
+            const realName = window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : userCode;
+
+            trAse.innerHTML = `
+              <td style="padding: 7px 12px;">
+                <div class="node-cell indent-1">
+                  <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
+                </div>
+              </td>
+              <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${ase.total.toLocaleString('es-PE')} u.</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m0 !== null ? ase.m0.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m1 !== null ? ase.m1.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m2 !== null ? ase.m2.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m3 !== null ? ase.m3.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m4 !== null ? ase.m4.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m5 !== null ? ase.m5.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m6 !== null ? ase.m6.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="padding: 7px 12px;">${getPermBadgeHTML(ase.perm_m6)}</td>
+            `;
+            tbody.appendChild(trAse);
+          });
+        }
       });
     }
 

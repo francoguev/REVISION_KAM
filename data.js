@@ -9126,3 +9126,126 @@ window.MIX_PLANES_DATA = {
     }
   ]
 };
+
+
+window.PERMANENCIA_DATA = {
+  summary: {
+    total_sales_jan: 1396,
+    m0_pct: 0.64,
+    m1_pct: 7.66,
+    m2_pct: 15.97,
+    m3_pct: 22.71,
+    m4_pct: 34.60,
+    m5_pct: 41.76,
+    m6_pct: 44.13,
+    perm_m6_pct: 55.87
+  },
+  tree: [
+    {
+      name: "TE AYACUCHO",
+      total: 146,
+      m0: null, m1: 12.33, m2: 26.71, m3: 30.82, m4: 45.21, m5: 54.79, m6: 56.85, perm_m6: 43.15,
+      children: [
+        { name: "FLN_DESPINOZA", total: 22, m0: null, m1: 27.27, m2: 31.82, m3: null, m4: 50.00, m5: 54.55, m6: 59.09, perm_m6: 40.91 },
+        { name: "FLN_LHUAMANIY", total: 21, m0: null, m1: 19.05, m2: 28.57, m3: null, m4: 38.10, m5: 47.62, m6: 52.38, perm_m6: 47.62 },
+        { name: "FLN_RCUYAP", total: 103, m0: null, m1: 7.77, m2: 25.24, m3: 31.07, m4: 45.63, m5: 56.31, m6: 57.28, perm_m6: 42.72 }
+      ]
+    },
+    {
+      name: "TE HUANTA",
+      total: 132,
+      m0: null, m1: 8.33, m2: 15.15, m3: 27.27, m4: 56.06, m5: 63.64, m6: 65.15, perm_m6: 34.85,
+      children: [
+        { name: "FLN_MLAPAZ", total: 67, m0: null, m1: 13.43, m2: 20.90, m3: 31.34, m4: 55.22, m5: 64.18, m6: 65.67, perm_m6: 34.33 },
+        { name: "FLN_MRAMOSF", total: 65, m0: null, m1: 3.08, m2: 9.23, m3: 23.08, m4: 56.92, m5: 63.08, m6: 64.62, perm_m6: 35.38 }
+      ]
+    },
+    {
+      name: "TE ICA",
+      total: 115,
+      m0: null, m1: 6.96, m2: 14.78, m3: 19.13, m4: 24.35, m5: 34.78, m6: 35.65, perm_m6: 64.35,
+      children: [
+        { name: "FLN_FMEJIAV", total: 54, m0: null, m1: 9.26, m2: 16.67, m3: 22.22, m4: null, m5: 31.48, m6: null, perm_m6: 68.52 },
+        { name: "FLN_RCONISLLAV", total: 61, m0: null, m1: 4.92, m2: 13.11, m3: 16.39, m4: 26.23, m5: 37.70, m6: 39.34, perm_m6: 60.66 }
+      ]
+    },
+    {
+      name: "TE ICA II",
+      total: 222,
+      m0: 1.80, m1: 9.01, m2: 14.86, m3: 19.37, m4: 30.18, m5: 34.68, m6: 36.94, perm_m6: 63.06,
+      children: [
+        { name: "FLN_DSIMEB", total: 116, m0: 3.45, m1: 13.79, m2: 19.83, m3: 24.14, m4: 31.90, m5: 38.79, m6: 39.66, perm_m6: 60.34 },
+        { name: "FLN_RNAVARRETEC", total: 106, m0: null, m1: 3.77, m2: 9.43, m3: 14.15, m4: 28.30, m5: 30.19, m6: 33.96, perm_m6: 66.04 }
+      ]
+    },
+    {
+      name: "TE NAZCA",
+      total: 165,
+      m0: 0.61, m1: 5.45, m2: 12.73, m3: 18.79, m4: 26.67, m5: 32.73, m6: 35.15, perm_m6: 64.85,
+      children: [
+        { name: "FLN_NARBIETOS", total: 10, m0: null, m1: null, m2: null, m3: 10.00, m4: null, m5: 30.00, m6: null, perm_m6: 70.00 },
+        { name: "FLN_RPICKMANS", total: 155, m0: 0.65, m1: 5.81, m2: 13.55, m3: 19.35, m4: 27.74, m5: 32.90, m6: 35.48, perm_m6: 64.52 }
+      ]
+    },
+    {
+      name: "TE PARCONA",
+      total: 66,
+      m0: 1.52, m1: 10.61, m2: 18.18, m3: 24.24, m4: 31.82, m5: 37.88, m6: null, perm_m6: 62.12,
+      children: [
+        { name: "FLN_AAPARCANAF", total: 4, m0: null, m1: null, m2: null, m3: null, m4: null, m5: null, m6: null, perm_m6: 100.00 },
+        { name: "FLN_DCARRIZALER", total: 62, m0: 1.61, m1: 11.29, m2: 19.35, m3: 25.81, m4: 33.87, m5: 40.32, m6: null, perm_m6: 59.68 }
+      ]
+    },
+    {
+      name: "TE PISCO",
+      total: 89,
+      m0: null, m1: 2.25, m2: 12.36, m3: 14.61, m4: 25.84, m5: 35.96, m6: 40.45, perm_m6: 59.55,
+      children: [
+        { name: "FLN_ECARDENASB", total: 15, m0: null, m1: null, m2: null, m3: null, m4: 6.67, m5: 20.00, m6: 33.33, perm_m6: 66.67 },
+        { name: "FLN_JCSALGUERO", total: 74, m0: null, m1: 2.70, m2: 14.86, m3: 17.57, m4: 29.73, m5: 39.19, m6: 41.89, perm_m6: 58.11 }
+      ]
+    },
+    {
+      name: "TE SATELITE BARRIO CHINO",
+      total: 164,
+      m0: null, m1: 6.10, m2: 15.85, m3: 28.05, m4: 36.59, m5: 45.73, m6: 49.39, perm_m6: 50.61,
+      children: [
+        { name: "FLN_AVASQUEZC", total: 59, m0: null, m1: 3.39, m2: 13.56, m3: 22.03, m4: 35.59, m5: 47.46, m6: 50.85, perm_m6: 49.15 },
+        { name: "FLN_RAYALAC", total: 105, m0: null, m1: 7.62, m2: 17.14, m3: 31.43, m4: 37.14, m5: 44.76, m6: 48.57, perm_m6: 51.43 }
+      ]
+    },
+    {
+      name: "TE SATELITE CAÑETE",
+      total: 113,
+      m0: 1.77, m1: 13.27, m2: 23.01, m3: 31.86, m4: 44.25, m5: 50.44, m6: 51.33, perm_m6: 48.67,
+      children: [
+        { name: "FLN_CPINOG", total: 52, m0: 3.85, m1: 13.46, m2: 17.31, m3: 25.00, m4: 34.62, m5: 44.23, m6: 46.15, perm_m6: 53.85 },
+        { name: "FLN_GCHAUPINB", total: 61, m0: null, m1: 13.11, m2: 27.87, m3: 37.70, m4: 52.46, m5: 55.74, m6: null, perm_m6: 44.26 }
+      ]
+    },
+    {
+      name: "TE SATELITE CHALA",
+      total: 56,
+      m0: 1.79, m1: null, m2: 8.93, m3: 12.50, m4: 17.86, m5: 25.00, m6: 28.57, perm_m6: 71.43,
+      children: [
+        { name: "FLN_EHUAMANY", total: 56, m0: 1.79, m1: null, m2: 8.93, m3: 12.50, m4: 17.86, m5: 25.00, m6: 28.57, perm_m6: 71.43 }
+      ]
+    },
+    {
+      name: "TE SATELITE PALPA",
+      total: 65,
+      m0: null, m1: 4.62, m2: 13.85, m3: 23.08, m4: 36.92, m5: 38.46, m6: 43.08, perm_m6: 56.92,
+      children: [
+        { name: "FLN_AECHAJAYAG", total: 65, m0: null, m1: 4.62, m2: 13.85, m3: 23.08, m4: 36.92, m5: 38.46, m6: 43.08, perm_m6: 56.92 }
+      ]
+    },
+    {
+      name: "TE SATELITE PUEBLO JOVEN",
+      total: 63,
+      m0: null, m1: 4.76, m2: 6.35, m3: 11.11, m4: 25.40, m5: 31.75, m6: 34.92, perm_m6: 65.08,
+      children: [
+        { name: "FLN_ERAMOSA", total: 63, m0: null, m1: 4.76, m2: 6.35, m3: 11.11, m4: 25.40, m5: 31.75, m6: 34.92, perm_m6: 65.08 }
+      ]
+    }
+  ]
+};
