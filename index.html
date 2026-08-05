@@ -844,15 +844,58 @@
 
     </div>
 
-                    <!-- ================= PAGE 5: MIX DE PLANES (JULIO 2026) ================= -->
+                        <!-- ================= PAGE 5: MIX DE PLANES (JULIO 2026) ================= -->
     <div id="slidePage5" class="page-view" style="display: none;">
       <header class="slide-header">
         <div class="slide-title-box">
           <div class="slide-icon"><i class="fa-solid fa-layer-group"></i></div>
           <div>
             <h1 class="slide-title">Mix de Planes Postpago (Cierre de Julio 2026)</h1>
-            <div class="slide-subtitle">Fortalecernos S.A.C. &bull; Cierre Mensual: 1,431 Unidades &bull; Desglose Limpio por Rango de Plan</div>
+            <div class="slide-subtitle">Fortalecernos S.A.C. &bull; Cierre Mensual: 1,431 Unidades &bull; Desglose por Rango de Plan</div>
           </div>
+        </div>
+        <div class="header-actions">
+          <select id="zoneSelectPage5" class="month-select-glass" onchange="renderMixPlanesTable()">
+            <option value="ALL">🌍 Todas las Zonas</option>
+            <option value="CENTRO">📍 CENTRO</option>
+            <option value="SUR">📍 SUR</option>
+            <option value="LIMA">📍 LIMA</option>
+          </select>
+          <select id="spvMixFilter" class="month-select-glass" onchange="renderMixPlanesTable()">
+            <option value="ALL">👥 Todos los Supervisores</option>
+            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
+            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
+            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
+            <option value="MERY LAPA">MERY LAPA</option>
+          </select>
+        </div>
+      </header>
+
+      <div class="table-container-card">
+        <div class="table-scroll-wrapper" style="max-height: 560px; overflow-y: auto; overflow-x: auto;">
+          <table class="presentation-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #1e293b; color: #ffffff;">
+                <th style="min-width: 250px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PDV / ASESOR</th>
+                <!-- RED PLANES (< 39.90) -->
+                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">35.9</th>
+                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">32.9</th>
+                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">29.9</th>
+                <!-- AMBER PLAN (39.90) -->
+                <th class="val-cell" style="color: #fde047; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Plan 39.90">39.9</th>
+                <!-- GREEN PLANES (>= 49.90) -->
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">49.9</th>
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">59.9</th>
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">69.9</th>
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">79.9</th>
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">99.9</th>
+              </tr>
+            </thead>
+            <tbody id="mixPlanesTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
         </div>
         <div class="header-actions">
           <select id="zoneSelectPage5" class="month-select-glass" onchange="renderMixPlanesTable()">
@@ -895,17 +938,11 @@
             <tbody id="mixPlanesTbody"></tbody>
           </table>
         </div>
-        <footer class="table-footer">
-          <div class="footer-left">Presentación Fortalecernos &bull; Equipo de Operaciones</div>
-          <div class="footer-center" id="rowCountLabelPage5">14 Tiendas (Clic en ▼ para desplegar Asesores)</div>
-          <div class="footer-right" id="pageFooterNum5">Página 5 de 5</div>
-        </footer>
       </div>
     </div>
 
     <!-- Slide Footer Bar -->
     <footer class="slide-footer">
-      <div>Presentación Fortalecernos &bull; Equipo de Operaciones</div>
       <div id="rowCountLabel">Cargando datos...</div>
       <div id="pageFooterNum">Página 1 de 4</div>
     </footer>
@@ -2095,7 +2132,7 @@ function toggleDotacionDays() {
     }
 
         
-                    // ================= PAGE 5: MIX DE PLANES RENDER LOGIC =================
+                        // ================= PAGE 5: MIX DE PLANES RENDER LOGIC =================
     let mixExpandedState = {}; // Default is false (collapsed by PDV)
 
     function toggleMixPdv(pdvName) {
@@ -2104,7 +2141,7 @@ function toggleDotacionDays() {
     }
 
     function getPlanCellHTML(planName, count, isPdvRow = false) {
-      if (!count || count <= 0) return `<td class="val-cell num-font" style="color: #cbd5e1;">-</td>`;
+      if (!count || count <= 0) return `<td class="val-cell num-font" style="color: #cbd5e1; padding: 9px 12px;">-</td>`;
       
       const pNorm = planName.toUpperCase();
       let textColor = '#334155';
@@ -2117,7 +2154,7 @@ function toggleDotacionDays() {
       }
 
       const fontWeight = isPdvRow ? '800' : '600';
-      return `<td class="val-cell num-font" style="color: ${textColor}; font-weight: ${fontWeight};">${count.toLocaleString('es-PE')}</td>`;
+      return `<td class="val-cell num-font" style="color: ${textColor}; font-weight: ${fontWeight}; padding: 9px 12px;">${count.toLocaleString('es-PE')}</td>`;
     }
 
     function renderMixPlanesTable() {
@@ -2143,31 +2180,30 @@ function toggleDotacionDays() {
         tree = tree.filter(s => s.children.length > 0);
       }
 
-      // Grand Total Row
+      // Grand Total Row (Copied metric from Page 1: row-grand-total, font-size 13px)
       const grandPlans = { 'Entel Chip 35.90': 0, 'Entel chip+ 32.90': 0, 'Power 29.90 N': 0, 'Power 39.90 N': 0, 'Power 49.90 N': 0, 'Power 59.90 N': 0, 'Power ilim 69.90 N': 0, 'Power ilim 79.90 SD N': 0, 'Power ilim 99.90 SD N': 0 };
-      let grandTot = 0;
 
       tree.forEach(spv => {
         spv.children.forEach(pdv => {
           plans.forEach(p => {
             grandPlans[p] += (pdv.plans[p] || 0);
           });
-          grandTot += pdv.total;
         });
       });
 
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
 
-      let planColsHTML = plans.map(p => getPlanCellHTML(p, grandPlans[p], true)).join('');
+      let planColsHTML = plans.map(p => {
+        const cnt = grandPlans[p];
+        return `<td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${cnt > 0 ? cnt.toLocaleString('es-PE') : '-'}</td>`;
+      }).join('');
+
       trTotal.innerHTML = `
-        <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
         ${planColsHTML}
-        <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${grandTot.toLocaleString('es-PE')} u.</td>
       `;
       tbody.appendChild(trTotal);
-
-      let visibleRows = 0;
 
       tree.forEach(spv => {
         spv.children.forEach(pdv => {
@@ -2179,17 +2215,15 @@ function toggleDotacionDays() {
           let pdvColsHTML = plans.map(p => getPlanCellHTML(p, pdv.plans[p], true)).join('');
 
           trPdv.innerHTML = `
-            <td>
+            <td style="padding: 9px 12px;">
               <div class="node-cell indent-0">
                 <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleMixPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
-                <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
+                <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
               </div>
             </td>
             ${pdvColsHTML}
-            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${pdv.total.toLocaleString('es-PE')} u.</td>
           `;
           tbody.appendChild(trPdv);
-          visibleRows++;
 
           if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
             pdv.children.forEach(ase => {
@@ -2201,23 +2235,18 @@ function toggleDotacionDays() {
               const realName = ase.real_name || (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : userCode);
 
               trAse.innerHTML = `
-                <td>
+                <td style="padding: 7px 12px;">
                   <div class="node-cell indent-1">
                     <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
                   </div>
                 </td>
                 ${aseColsHTML}
-                <td class="val-cell num-font" style="font-weight: 700; color: #334155;">${ase.total.toLocaleString('es-PE')} u.</td>
               `;
               tbody.appendChild(trAse);
-              visibleRows++;
             });
           }
         });
       });
-
-      const labelEl = document.getElementById('rowCountLabelPage5');
-      if (labelEl) labelEl.textContent = `${visibleRows} filas en Mix de Planes (Clic en ▼ para desplegar Asesores)`;
     }
 
     function renderNpsTable() {
