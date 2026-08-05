@@ -834,6 +834,15 @@
     }
 
     function getNodeQuota(node, monthKey) {
+      // If it's a SPV node, dynamically sum the quotas of its children PDVs for consistency
+      if (node.children && Array.isArray(node.children) && node.id && node.id.startsWith('spv')) {
+        let sum = 0;
+        node.children.forEach(pdv => {
+          sum += getNodeQuota(pdv, monthKey);
+        });
+        return sum;
+      }
+
       if (node.quotas && node.quotas[currentProductCode]) {
         if (currentMonthFilter !== 'ALL' && monthKey === 'total') {
           return node.quotas[currentProductCode][currentMonthFilter] || 0;
