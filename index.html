@@ -1217,11 +1217,15 @@
 
     function getNodeArribos(node, monthKey) {
       if (!window.ARRIBOS_DATA) return 0;
-      if (node.name && window.ARRIBOS_DATA[node.name]) {
+      let targetName = node.name;
+      if (targetName === 'TE SAN CLEMENTE' && !window.ARRIBOS_DATA['TE SAN CLEMENTE']) {
+        targetName = 'TE ICA';
+      }
+      if (node.name && window.ARRIBOS_DATA[targetName]) {
         if (monthKey === 'ALL') {
-          return (window.ARRIBOS_DATA[node.name]['m202607'] || 0) + (window.ARRIBOS_DATA[node.name]['m202608'] || 0);
+          return (window.ARRIBOS_DATA[targetName]['m202607'] || 0) + (window.ARRIBOS_DATA[targetName]['m202608'] || 0);
         }
-        return window.ARRIBOS_DATA[node.name][monthKey] || 0;
+        return window.ARRIBOS_DATA[targetName][monthKey] || 0;
       }
       if (node.children && Array.isArray(node.children)) {
         let sum = 0;
