@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reporte de Avance y Proyección de Ventas - Presentación Fortalecernos</title>
+  <title>Reporte Ejecutivo Fortalecernos - Deck de Presentación</title>
   
   <!-- Google Fonts: Space Grotesk, Outfit, Inter, IBM Plex Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,17 +66,65 @@
       box-shadow: var(--shadow-slide);
       display: flex;
       flex-direction: column;
-      padding: 18px 24px;
+      padding: 16px 22px;
       overflow: hidden;
       position: relative;
+    }
+
+    /* NAVIGATION BAR BETWEEN PRESENTATION PAGES */
+    .page-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      border-radius: 10px;
+      padding: 6px 14px;
+      margin-bottom: 10px;
+    }
+
+    .page-nav-tabs {
+      display: flex;
+      gap: 8px;
+    }
+
+    .page-tab-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #cbd5e1;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .page-tab-btn.active {
+      background: #3b82f6;
+      color: #ffffff;
+      border-color: #60a5fa;
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+    }
+    .page-tab-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+    }
+
+    .deck-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: #94a3b8;
     }
 
     /* RESTORED VIVID BLUE EXECUTIVE HEADER BAR */
     .slide-header {
       background: linear-gradient(135deg, #0e1aa1, #1e1b4b);
       border-radius: var(--radius-card);
-      padding: 14px 22px;
-      margin-bottom: 12px;
+      padding: 12px 20px;
+      margin-bottom: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -87,24 +135,24 @@
     .slide-title-box {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .slide-icon {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       border-radius: 10px;
       background: rgba(255, 255, 255, 0.18);
       backdrop-filter: blur(8px);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 17px;
       color: #ffffff;
     }
 
     .slide-title {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 800;
       color: #ffffff;
       line-height: 1.1;
@@ -112,7 +160,7 @@
     }
 
     .slide-subtitle {
-      font-size: 12px;
+      font-size: 11.5px;
       color: #cbd5e1;
     }
 
@@ -131,7 +179,7 @@
       color: #ffffff;
       padding: 0 12px;
       border-radius: 8px;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       outline: none;
       cursor: pointer;
@@ -149,7 +197,7 @@
       color: #ffffff;
       padding: 0 14px;
       border-radius: 8px;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       cursor: pointer;
       display: inline-flex;
@@ -166,7 +214,7 @@
       color: #ffffff;
       padding: 0 14px;
       border-radius: 8px;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       cursor: pointer;
       display: inline-flex;
@@ -181,7 +229,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       gap: 12px;
     }
 
@@ -240,14 +288,46 @@
       outline: none;
     }
 
-    /* Full Width Slide Body Layout for Tree Table */
-    .slide-body-grid {
+    /* Page View Containers */
+    .page-view {
       flex: 1;
       display: flex;
       flex-direction: column;
       min-height: 0;
       overflow: hidden;
     }
+
+    /* KPI Cards Row for Page 2 */
+    .kpi-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+    }
+
+    .kpi-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .kpi-title { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; }
+    .kpi-value { font-size: 16px; font-weight: 800; color: #0f172a; }
 
     /* Main Table Container */
     .table-slide-card {
@@ -269,7 +349,7 @@
     .tree-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 12px;
+      font-size: 11.5px;
     }
 
     /* Clean Concise Header (Executive Solid Navy & Clean Typography) */
@@ -281,9 +361,9 @@
       color: #f1f5f9;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 11px;
+      font-size: 10.5px;
       letter-spacing: 0.5px;
-      padding: 12px 10px;
+      padding: 10px 8px;
       vertical-align: middle;
       line-height: 1.2;
       text-align: center !important;
@@ -300,7 +380,7 @@
     .tree-table th.sortable:hover { color: #38bdf8; }
 
     .tree-table td {
-      padding: 9px 12px;
+      padding: 8px 10px;
       border-bottom: 1px solid #f1f5f9;
       white-space: nowrap;
     }
@@ -314,12 +394,12 @@
       background: linear-gradient(135deg, #0f172a, #1e293b) !important;
       color: #ffffff !important;
       font-weight: 800 !important;
-      font-size: 13px;
+      font-size: 12.5px;
     }
     .row-grand-total td {
       border-bottom: 2px solid #3b82f6 !important;
       color: #ffffff !important;
-      padding: 11px 12px;
+      padding: 10px 10px;
       text-align: center;
     }
     .row-grand-total td:first-child {
@@ -382,18 +462,9 @@
     .comp-yellow { background: #fefce8; color: #a16207; border: 1px solid #fef08a; }
     .comp-red { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
 
-    .badge-alert-dev {
-      background: #fef2f2;
-      color: #b91c1c;
-      border: 1px solid #fecaca;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 9px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-    }
+    .badge-gap-red { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; padding: 2px 7px; border-radius: 50px; font-weight: 800; }
+    .badge-gap-green { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; padding: 2px 7px; border-radius: 50px; font-weight: 800; }
+    .badge-gap-zero { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; padding: 2px 7px; border-radius: 50px; font-weight: 700; }
 
     /* Executive Action Button (Exclusive for Supervisors) */
     .btn-plan-action {
@@ -414,7 +485,7 @@
       box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     }
 
-    .val-total { font-weight: 800; color: #0f172a; font-size: 12.5px; }
+    .val-total { font-weight: 800; color: #0f172a; font-size: 12px; }
     .val-highlight { color: #0f172a; font-weight: 600; }
 
     /* Slide Footer Controls */
@@ -422,8 +493,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 10px;
-      margin-top: 6px;
+      padding-top: 8px;
+      margin-top: 4px;
       border-top: 1px solid var(--border-subtle);
       font-size: 11px;
       color: var(--text-light);
@@ -453,7 +524,7 @@
     }
     .drawer-close:hover { background: #0f172a; color: #ffffff; }
 
-    /* STYLED HIGH VISUAL LOAD DIAGNOSTIC CARDS */
+    /* DIAGNOSTIC CARDS */
     .pdv-diag-card {
       background: #ffffff;
       border-radius: 12px;
@@ -463,134 +534,49 @@
       border: 1px solid #e2e8f0;
       transition: transform 0.2s ease;
     }
-    .pdv-diag-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.12);
-    }
     .pdv-diag-card.status-red { border-left: 5px solid #ef4444; }
     .pdv-diag-card.status-yellow { border-left: 5px solid #f59e0b; }
     .pdv-diag-card.status-green { border-left: 5px solid #10b981; }
 
-    .pdv-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-    }
-    .pdv-card-name {
-      font-size: 13.5px;
-      font-weight: 800;
-      color: #0f172a;
-    }
+    .pdv-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .pdv-card-name { font-size: 13.5px; font-weight: 800; color: #0f172a; }
 
-    .progress-bar-bg {
-      width: 100%;
-      height: 6px;
-      background: #f1f5f9;
-      border-radius: 3px;
-      overflow: hidden;
-      margin: 8px 0;
-    }
-    .progress-bar-fill {
-      height: 100%;
-      border-radius: 3px;
-    }
+    .progress-bar-bg { width: 100%; height: 6px; background: #f1f5f9; border-radius: 3px; overflow: hidden; margin: 8px 0; }
+    .progress-bar-fill { height: 100%; border-radius: 3px; }
 
     .metrics-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      background: #f8fafc;
-      padding: 8px;
-      border-radius: 8px;
-      margin-top: 6px;
-      text-align: center;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+      background: #f8fafc; padding: 8px; border-radius: 8px; margin-top: 6px; text-align: center;
     }
-    .metric-mini-item {
-      display: flex;
-      flex-direction: column;
-    }
-    .metric-mini-label {
-      font-size: 9px;
-      font-weight: 700;
-      color: #64748b;
-      text-transform: uppercase;
-    }
-    .metric-mini-val {
-      font-size: 11.5px;
-      font-weight: 800;
-      color: #0f172a;
-    }
+    .metric-mini-item { display: flex; flex-direction: column; }
+    .metric-mini-label { font-size: 9px; font-weight: 700; color: #64748b; text-transform: uppercase; }
+    .metric-mini-val { font-size: 11.5px; font-weight: 800; color: #0f172a; }
 
-    /* MICRO-ALERT BOX INSIDE PDV CARD */
     .pdv-alert-box {
-      background: #fff1f2;
-      border: 1px solid #fecdd3;
-      border-radius: 6px;
-      padding: 8px 10px;
-      margin-top: 10px;
-      font-size: 10.5px;
-      color: #9f1239;
+      background: #fff1f2; border: 1px solid #fecdd3; border-radius: 6px;
+      padding: 8px 10px; margin-top: 10px; font-size: 10.5px; color: #9f1239;
     }
-    .pdv-alert-header {
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-bottom: 3px;
-      color: #e11d48;
-    }
-    .pdv-alert-list {
-      margin-left: 14px;
-      padding-left: 0;
-      line-height: 1.45;
-    }
+    .pdv-alert-header { font-weight: 700; display: flex; align-items: center; gap: 5px; margin-bottom: 3px; color: #e11d48; }
+    .pdv-alert-list { margin-left: 14px; padding-left: 0; line-height: 1.45; }
 
-    /* HIGH IMPACT EXECUTIVE ACTION BOX FOR SUPERVISOR */
+    /* SUPERVISOR ACTION BOX */
     .supervisor-action-card {
       background: linear-gradient(135deg, #0f172a, #1e293b);
-      border-radius: 14px;
-      padding: 20px;
-      color: #ffffff;
+      border-radius: 14px; padding: 20px; color: #ffffff;
       box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
-      border: 1px solid #3b82f6;
-      margin-top: 14px;
+      border: 1px solid #3b82f6; margin-top: 14px;
     }
-    .supervisor-action-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
+    .supervisor-action-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
     .supervisor-action-header i {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: rgba(59, 130, 246, 0.25);
-      color: #60a5fa;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
+      width: 32px; height: 32px; border-radius: 8px; background: rgba(59, 130, 246, 0.25);
+      color: #60a5fa; display: flex; align-items: center; justify-content: center; font-size: 16px;
     }
-    .supervisor-action-title {
-      font-size: 14px;
-      font-weight: 800;
-      color: #ffffff;
-    }
+    .supervisor-action-title { font-size: 14px; font-weight: 800; color: #ffffff; }
 
     .supervisor-blank-area {
-      background: rgba(255, 255, 255, 0.06);
-      border: 2px dashed rgba(255, 255, 255, 0.25);
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      color: #cbd5e1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 130px;
+      background: rgba(255, 255, 255, 0.06); border: 2px dashed rgba(255, 255, 255, 0.25);
+      border-radius: 10px; padding: 20px; text-align: center; color: #cbd5e1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;
     }
   </style>
 </head>
@@ -599,84 +585,158 @@
   <!-- 16:9 Executive Presentation Slide Wrapper -->
   <div class="slide-wrapper">
     
-    <!-- Slide Header Bar (Restored Vivid Blue Gradient) -->
-    <header class="slide-header">
-      <div class="slide-title-box">
-        <div class="slide-icon">
-          <i class="fa-solid fa-chart-line"></i>
+    <!-- Multi-Page Navigation Bar -->
+    <nav class="page-nav-bar">
+      <div class="page-nav-tabs">
+        <button class="page-tab-btn active" id="navTab1" onclick="switchSlidePage(1)">
+          <i class="fa-solid fa-chart-line"></i> Página 1: Avance y Proyección de Ventas
+        </button>
+        <button class="page-tab-btn" id="navTab2" onclick="switchSlidePage(2)">
+          <i class="fa-solid fa-id-card-clip"></i> Página 2: Dotación y Cumplimiento HC
+        </button>
+      </div>
+      <div class="deck-badge">
+        <i class="fa-solid fa-layer-group" style="color: #60a5fa;"></i> Presentación Gerencial Fortalecernos S.A.C.
+      </div>
+    </nav>
+
+    <!-- ================= PAGE 1: AVANCE DE VENTAS ================= -->
+    <div id="slidePage1" class="page-view">
+      
+      <!-- Slide Header Bar (Restored Vivid Blue Gradient) -->
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div>
+            <h1 class="slide-title">Reporte de Avance y Proyección de Ventas</h1>
+            <div class="slide-subtitle" id="headerPeriodSubtitle">
+              Agosto 2026 (Mes Vigente - Avance 3/26 Días Hábiles) &bull; <strong id="selectedProductBadge" style="color: #6366f1">POSTPAGO TOTAL</strong>
+            </div>
+          </div>
         </div>
-        <div>
-          <h1 class="slide-title">Reporte de Avance y Proyección de Ventas</h1>
-          <div class="slide-subtitle" id="headerPeriodSubtitle">
-            Agosto 2026 (Mes Vigente - Avance 3/26 Días Hábiles) &bull; <strong id="selectedProductBadge" style="color: #6366f1">POSTPAGO TOTAL</strong>
+
+        <div class="header-actions">
+          <select id="monthSelectHeader" class="month-select-glass" onchange="handleMonthChange(this.value)">
+            <option value="m202608" selected>🎯 Agosto 2026 (Mes Vigente)</option>
+            <option value="m202607">📅 Julio 2026 (Cierre M-1)</option>
+            <option value="m202606">📅 Junio 2026 (Cierre M-2)</option>
+            <option value="ALL">🗓️ Últimos 3 Meses (Jun - Ago)</option>
+          </select>
+
+          <button class="btn-glass" onclick="toggleExpandAll()">
+            <i class="fa-solid fa-arrows-up-down"></i> <span id="expandBtnText">Expandir Todo</span>
+          </button>
+          
+          <button class="btn-emerald" onclick="exportCSV()">
+            <i class="fa-solid fa-file-excel"></i> Exportar CSV
+          </button>
+        </div>
+      </header>
+
+      <!-- Compact Product Tabs & Search -->
+      <div class="product-tabs-bar">
+        <div class="product-tabs">
+          <button class="prod-tab active" data-prod="POSTPAGO_TOTAL" onclick="selectProductTab('POSTPAGO_TOTAL')">POSTPAGO TOTAL</button>
+          <button class="prod-tab" data-prod="PORTA_OSS" onclick="selectProductTab('PORTA_OSS')">PORTA OSS</button>
+          <button class="prod-tab" data-prod="PORTA_OPP" onclick="selectProductTab('PORTA_OPP')">PORTA OPP</button>
+          <button class="prod-tab" data-prod="VR" onclick="selectProductTab('VR')">VR (VENTA REGULAR)</button>
+          <button class="prod-tab" data-prod="RENO_SS" onclick="selectProductTab('RENO_SS')">RENOVACION (RENO SS)</button>
+          <button class="prod-tab" data-prod="LINEA_ADICIONAL" onclick="selectProductTab('LINEA_ADICIONAL')">LINEA ADICIONAL</button>
+          <button class="prod-tab" data-prod="PREPAGO" onclick="selectProductTab('PREPAGO')">PREPAGO</button>
+        </div>
+
+        <div class="search-box-compact">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" class="search-input-compact" placeholder="Buscar Supervisor, PDV o Asesor..." oninput="handleSearch()">
+        </div>
+      </div>
+
+      <!-- Main Slide Body Layout -->
+      <div class="table-slide-card">
+        <div class="table-scroll-area">
+          <table class="tree-table">
+            <thead id="treeThead"></thead>
+            <tbody id="treeTbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= PAGE 2: DOTACIÓN Y CUMPLIMIENTO HC ================= -->
+    <div id="slidePage2" class="page-view" style="display: none;">
+      
+      <!-- Slide Header Bar (Vivid Blue Gradient) -->
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <div>
+            <h1 class="slide-title">Reporte de Dotación, Cobertura HC y Asistencia</h1>
+            <div class="slide-subtitle">
+              Fortalecernos S.A.C. &bull; Cobertura Regional y Cumplimiento de Condición (Cierre 01 de Agosto 2026)
+            </div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <!-- Supervisor Filter Dropdown -->
+          <select id="spvDotacionFilter" class="month-select-glass" onchange="renderDotacionTable()">
+            <option value="ALL" selected>👥 Todos los Supervisores</option>
+            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
+            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
+            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
+            <option value="MERY LAPA">MERY LAPA</option>
+          </select>
+
+          <!-- Collapsible Days Toggle Button -->
+          <button class="btn-glass" onclick="toggleDotacionDays()">
+            <i class="fa-solid fa-calendar-days"></i> <span id="toggleDaysText">Mostrar Días (26 Jul - 1 Ago)</span>
+          </button>
+          
+          <button class="btn-emerald" onclick="exportDotacionCSV()">
+            <i class="fa-solid fa-file-excel"></i> Exportar Dotación
+          </button>
+        </div>
+      </header>
+
+      <!-- KPI Summary Bar for Staffing -->
+      <div class="kpi-cards-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
+          <div>
+            <div class="kpi-title">HC Meta (Objetivo)</div>
+            <div class="kpi-value">25 Asesores</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon-box" style="background: #f0fdf4; color: #166534;"><i class="fa-solid fa-user-check"></i></div>
+          <div>
+            <div class="kpi-title">HC Codificado (Actual)</div>
+            <div class="kpi-value">23 Asesores <span style="font-size: 12px; font-weight: 700; color: #15803d;">(92.0%)</span></div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon-box" style="background: #fef2f2; color: #991b1b;"><i class="fa-solid fa-user-minus"></i></div>
+          <div>
+            <div class="kpi-title">HC Vacantes (Gap)</div>
+            <div class="kpi-value" style="color: #dc2626;">-2 Vacantes</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-user-clock"></i></div>
+          <div>
+            <div class="kpi-title">Cumplimiento Condición</div>
+            <div class="kpi-value" style="color: #ca8a04;">74.0% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(17 en condición)</span></div>
           </div>
         </div>
       </div>
 
-      <div class="header-actions">
-        <!-- Month Selector Limited to Junio, Julio, Agosto -->
-        <select id="monthSelectHeader" class="month-select-glass" onchange="handleMonthChange(this.value)">
-          <option value="m202608" selected>🎯 Agosto 2026 (Mes Vigente)</option>
-          <option value="m202607">📅 Julio 2026 (Cierre M-1)</option>
-          <option value="m202606">📅 Junio 2026 (Cierre M-2)</option>
-          <option value="ALL">🗓️ Últimos 3 Meses (Jun - Ago)</option>
-        </select>
-
-        <button class="btn-glass" onclick="toggleExpandAll()">
-          <i class="fa-solid fa-arrows-up-down"></i> <span id="expandBtnText">Expandir Todo</span>
-        </button>
-        
-        <button class="btn-emerald" onclick="exportCSV()">
-          <i class="fa-solid fa-file-excel"></i> Exportar CSV
-        </button>
-      </div>
-    </header>
-
-    <!-- Compact Product Tabs & Search -->
-    <div class="product-tabs-bar">
-      <div class="product-tabs">
-        <button class="prod-tab active" data-prod="POSTPAGO_TOTAL" onclick="selectProductTab('POSTPAGO_TOTAL')">
-          POSTPAGO TOTAL
-        </button>
-        <button class="prod-tab" data-prod="PORTA_OSS" onclick="selectProductTab('PORTA_OSS')">
-          PORTA OSS
-        </button>
-        <button class="prod-tab" data-prod="PORTA_OPP" onclick="selectProductTab('PORTA_OPP')">
-          PORTA OPP
-        </button>
-        <button class="prod-tab" data-prod="VR" onclick="selectProductTab('VR')">
-          VR (VENTA REGULAR)
-        </button>
-        <button class="prod-tab" data-prod="RENO_SS" onclick="selectProductTab('RENO_SS')">
-          RENOVACION (RENO SS)
-        </button>
-        <button class="prod-tab" data-prod="LINEA_ADICIONAL" onclick="selectProductTab('LINEA_ADICIONAL')">
-          LINEA ADICIONAL
-        </button>
-        <button class="prod-tab" data-prod="PREPAGO" onclick="selectProductTab('PREPAGO')">
-          PREPAGO
-        </button>
-      </div>
-
-      <div class="search-box-compact">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="searchInput" class="search-input-compact" placeholder="Buscar Supervisor, PDV o Asesor..." oninput="handleSearch()">
-      </div>
-    </div>
-
-    <!-- Main Slide Body Layout (Full Width Executive Table) -->
-    <div class="slide-body-grid">
-      
-      <!-- Executive Tree Table Card -->
+      <!-- Main Table Card for Staffing -->
       <div class="table-slide-card">
         <div class="table-scroll-area">
           <table class="tree-table">
-            <thead id="treeThead">
-              <!-- Dynamic Centered Concise Table Headers -->
-            </thead>
-            <tbody id="treeTbody">
-              <!-- Dynamic Centered Total Row & Tree Rows -->
-            </tbody>
+            <thead id="dotacionThead"></thead>
+            <tbody id="dotacionTbody"></tbody>
           </table>
         </div>
       </div>
@@ -685,9 +745,9 @@
 
     <!-- Slide Footer Bar -->
     <footer class="slide-footer">
-      <div>Presentación Fortalecernos &bull; Equipo de Operaciones</div>
+      <div>Presentación Fortalecernos &bull; Equipo de Operaciones & HR</div>
       <div id="rowCountLabel">Cargando datos...</div>
-      <div>Página 1 de 1</div>
+      <div id="pageFooterNum">Página 1 de 2</div>
     </footer>
 
   </div>
@@ -701,19 +761,12 @@
       <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 2px;" id="drawerNodeName">Nombre Supervisor</h2>
       <div style="font-size: 12px; color: #64748b; margin-bottom: 18px;" id="drawerNodeMeta">Estructura Comercial</div>
 
-      <!-- Section 1: PDV Diagnostics and Deviation Alerts (ONLY PDVs < 100% PROJECTION) -->
       <div style="font-size: 11px; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">
         <i class="fa-solid fa-triangle-exclamation" style="color: #e11d48;"></i> Diagnóstico y Alertas en PDVs (&lt; 100% Proyección)
       </div>
       
-      <div id="drawerPdvDiagnosticsList">
-        <!-- Rendered dynamically with micro-alerts -->
-      </div>
-
-      <!-- Section 2: Styled Executive Action Card for Supervisor -->
-      <div id="supervisorActionContainer">
-        <!-- Rendered dynamically -->
-      </div>
+      <div id="drawerPdvDiagnosticsList"></div>
+      <div id="supervisorActionContainer"></div>
 
     </div>
   </div>
@@ -723,12 +776,15 @@
 
   <script>
     // State Variables
+    let currentPage = 1;
     let currentProductCode = 'POSTPAGO_TOTAL';
-    let currentMonthFilter = 'm202608'; // Default to active month: Agosto 2026!
+    let currentMonthFilter = 'm202608';
     let expandedState = {};
+    let dotacionExpandedState = {};
     let currentSort = { column: 'total', direction: 'desc' };
     let searchQuery = '';
     let isAllExpanded = false;
+    let isDaysExpanded = false;
 
     const monthLabelsMap = {
       'm202606': 'Junio 2026',
@@ -742,8 +798,26 @@
       'm202606': null
     };
 
-    const TOTAL_WD = 26; // 31 days - 5 Sundays
-    const ELAPSED_WD = 3; // Aug 1 (Sat), Aug 3 (Mon), Aug 4 (Tue)
+    const TOTAL_WD = 26;
+    const ELAPSED_WD = 3;
+
+    function switchSlidePage(pageNum) {
+      currentPage = pageNum;
+      document.getElementById('navTab1').classList.toggle('active', pageNum === 1);
+      document.getElementById('navTab2').classList.toggle('active', pageNum === 2);
+      
+      document.getElementById('slidePage1').style.display = pageNum === 1 ? 'flex' : 'none';
+      document.getElementById('slidePage2').style.display = pageNum === 2 ? 'flex' : 'none';
+
+      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 2`;
+      
+      if (pageNum === 2) {
+        renderDotacionHeader();
+        renderDotacionTable();
+      } else {
+        renderTreeTable();
+      }
+    }
 
     function getComplianceBadgeHTML(pct) {
       if (pct >= 100) return `<span class="badge-compliance comp-green">${pct.toFixed(1)}%</span>`;
@@ -768,18 +842,18 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      if (!window.SALES_DATA) {
+      if (!window.SALES_DATA || !window.DOTACION_DATA) {
         alert('Error al cargar data.js');
         return;
       }
 
       window.SALES_DATA.tree.forEach(spv => {
         expandedState[spv.id] = true;
+        dotacionExpandedState[spv.id] = true;
       });
 
       document.getElementById('monthSelectHeader').value = 'm202608';
 
-      renderKPIs();
       renderTableHeader();
       renderTreeTable();
     });
@@ -795,7 +869,6 @@
         subtitle.innerHTML = `Mes Filtrado: ${monthLabelsMap[val] || val} &bull; <strong id="selectedProductBadge" style="color: #6366f1">${getProductLabel()}</strong>`;
       }
 
-      renderKPIs();
       renderTableHeader();
       renderTreeTable();
     }
@@ -811,10 +884,6 @@
       document.querySelectorAll('.prod-tab').forEach(t => {
         t.classList.toggle('active', t.dataset.prod === code);
       });
-      updateProductViews();
-    }
-
-    function updateProductViews() {
       handleMonthChange(currentMonthFilter);
     }
 
@@ -834,7 +903,6 @@
     }
 
     function getNodeQuota(node, monthKey) {
-      // If it's a SPV node, dynamically sum the quotas of its children PDVs for consistency
       if (node.children && Array.isArray(node.children) && node.id && node.id.startsWith('spv')) {
         let sum = 0;
         node.children.forEach(pdv => {
@@ -857,19 +925,14 @@
       return 0;
     }
 
-    // Helper: Calculates Arribos for PDVs, SPVs, and Grand Total
     function getNodeArribos(node, monthKey) {
       if (!window.ARRIBOS_DATA) return 0;
-      
-      // If it's a PDV node
       if (node.name && window.ARRIBOS_DATA[node.name]) {
         if (monthKey === 'ALL') {
           return (window.ARRIBOS_DATA[node.name]['m202607'] || 0) + (window.ARRIBOS_DATA[node.name]['m202608'] || 0);
         }
         return window.ARRIBOS_DATA[node.name][monthKey] || 0;
       }
-
-      // If it's a SPV node (sum of active children PDVs)
       if (node.children && Array.isArray(node.children)) {
         let sum = 0;
         node.children.forEach(child => {
@@ -877,11 +940,9 @@
         });
         return sum;
       }
-
       return 0;
     }
 
-    // Helper: Calculates total sales across ALL product lines in the selected month
     function getGlobalSalesInMonth(node, monthKey) {
       let tot = 0;
       if (node.units) {
@@ -895,8 +956,6 @@
       }
       return tot;
     }
-
-    function renderKPIs() {}
 
     function handleSearch() {
       searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
@@ -935,7 +994,6 @@
       renderTreeTable();
     }
 
-    // Clean Concise Header Renderer matching the User's Image Exactly
     function renderTableHeader() {
       const thead = document.getElementById('treeThead');
       const showArribos = (currentProductCode === 'POSTPAGO_TOTAL');
@@ -947,10 +1005,7 @@
             <th class="val-cell sortable" onclick="sortTable('m202606')">JUNIO</th>
             <th class="val-cell sortable" onclick="sortTable('m202607')">JULIO</th>
             <th class="val-cell sortable" onclick="sortTable('m202608')">AGOSTO</th>
-            ${showArribos ? `
-              <th class="val-cell">ARRIBOS</th>
-              <th class="val-cell">% CONV.</th>
-            ` : ''}
+            ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
             <th class="val-cell sortable" onclick="sortTable('total')">TOTAL</th>
           </tr>
         `;
@@ -961,10 +1016,7 @@
             <th class="val-cell">CUOTA</th>
             <th class="val-cell sortable" onclick="sortTable('m202608')">AVANCE</th>
             <th class="val-cell">% AVANCE</th>
-            ${showArribos ? `
-              <th class="val-cell">ARRIBOS</th>
-              <th class="val-cell">% CONV.</th>
-            ` : ''}
+            ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
             <th class="val-cell">PROY (UND)</th>
             <th class="val-cell">% CUMP.</th>
             <th class="val-cell">CIERRE M-1</th>
@@ -979,10 +1031,7 @@
             <th class="val-cell">CUOTA</th>
             <th class="val-cell sortable" onclick="sortTable('${currentMonthFilter}')">VENTAS</th>
             <th class="val-cell">% CUMP.</th>
-            ${showArribos ? `
-              <th class="val-cell">ARRIBOS</th>
-              <th class="val-cell">% CONV.</th>
-            ` : ''}
+            ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
             <th class="val-cell">CIERRE M-1</th>
             <th class="val-cell" style="min-width: 120px;">VAR. VS M-1</th>
           </tr>
@@ -1021,7 +1070,6 @@
       let visibleRowsCount = 0;
       let treeData = JSON.parse(JSON.stringify(window.SALES_DATA.tree));
 
-      // FILTER TO STRICTLY ACTIVE COMMERCIAL NODES OF THE SELECTED MONTH (NO GHOST NODES)
       treeData = treeData.filter(spv => {
         if (getGlobalSalesInMonth(spv, currentMonthFilter) === 0) return false;
         spv.children = spv.children.filter(pdv => {
@@ -1032,14 +1080,10 @@
         return true;
       });
 
-      // CALCULATE GRAND TOTAL ARRIBOS AND CONVERSION
       let grandArribos = 0;
-      treeData.forEach(spv => {
-        grandArribos += getNodeArribos(spv, currentMonthFilter);
-      });
+      treeData.forEach(spv => { grandArribos += getNodeArribos(spv, currentMonthFilter); });
       const grandConvPct = grandArribos > 0 ? (grandTotal / grandArribos * 100) : 0;
 
-      // RENDER TOTAL FORTALECERNOS ROW (NO PLAN DE ACCION BUTTON AS REQUESTED)
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
 
@@ -1049,19 +1093,11 @@
         const m8 = window.SALES_DATA.summary.global_units[currentProductCode]['m202608'] || 0;
 
         trTotal.innerHTML = `
-          <td>
-            <div class="node-cell indent-0">
-              <i class="fa-solid fa-calculator" style="color: #60a5fa;"></i>
-              <span>TOTAL FORTALECERNOS</span>
-            </div>
-          </td>
+          <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS</span></div></td>
           <td class="val-cell num-font">${m6.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${m7.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${m8.toLocaleString('es-PE')}</td>
-          ${showArribos ? `
-            <td class="val-cell num-font" style="color: #38bdf8;">${grandArribos.toLocaleString('es-PE')} int.</td>
-            <td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>
-          ` : ''}
+          ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8;">${grandArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
         `;
       } else if (currentMonthFilter === 'm202608') {
@@ -1072,19 +1108,11 @@
         const diffPct = grandM1Units > 0 ? (diffUnits / grandM1Units * 100) : 0;
 
         trTotal.innerHTML = `
-          <td>
-            <div class="node-cell indent-0">
-              <i class="fa-solid fa-calculator" style="color: #60a5fa;"></i>
-              <span>TOTAL FORTALECERNOS</span>
-            </div>
-          </td>
+          <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS</span></div></td>
           <td class="val-cell num-font">${grandQuota.toLocaleString('es-PE')} u.</td>
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')} u.</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandComp) : '-'}</td>
-          ${showArribos ? `
-            <td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')} int.</td>
-            <td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>
-          ` : ''}
+          ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
           <td class="val-cell num-font" style="color: #93c5fd; font-weight: 800;">${grandProjUnits.toLocaleString('es-PE')} u.</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandProjComp) : '-'}</td>
           <td class="val-cell num-font">${grandM1Units.toLocaleString('es-PE')} u.</td>
@@ -1097,19 +1125,11 @@
         const diffPct = grandM1Units > 0 ? (diffUnits / grandM1Units * 100) : 0;
 
         trTotal.innerHTML = `
-          <td>
-            <div class="node-cell indent-0">
-              <i class="fa-solid fa-calculator" style="color: #60a5fa;"></i>
-              <span>TOTAL FORTALECERNOS</span>
-            </div>
-          </td>
+          <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS</span></div></td>
           <td class="val-cell num-font">${grandQuota.toLocaleString('es-PE')} u.</td>
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')} u.</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandComp) : '-'}</td>
-          ${showArribos ? `
-            <td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')} int.</td>
-            <td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>
-          ` : ''}
+          ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
           <td class="val-cell num-font">${prevMKey ? grandM1Units.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
           <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
         `;
@@ -1117,7 +1137,6 @@
 
       tbody.appendChild(trTotal);
 
-      // Sort SPVs
       treeData.sort((a, b) => {
         let valA = currentSort.column === 'name' ? a.name : getNodeUnits(a, currentSort.column);
         let valB = currentSort.column === 'name' ? b.name : getNodeUnits(b, currentSort.column);
@@ -1125,7 +1144,6 @@
         return valA < valB ? 1 : -1;
       });
 
-      // RENDER TREE ROWS (PLAN DE ACCION STRICTLY EXCLUSIVE TO SPV ROWS ONLY)
       treeData.forEach(spv => {
         let spvMatch = spv.name.toLowerCase().includes(searchQuery);
         let matchingPDVs = spv.children.filter(pdv => {
@@ -1154,17 +1172,13 @@
             <td>
               <div class="node-cell indent-0">
                 <span class="toggle-icon ${isSpvExpanded ? 'expanded' : ''}" onclick="toggleNode('${spv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                <span class="type-badge badge-spv">SPV</span>
-                <span>${spv.name}</span>
+                <span class="type-badge badge-spv">SPV</span><span>${spv.name}</span>
               </div>
             </td>
             <td class="val-cell num-font">${getNodeUnits(spv, 'm202606').toLocaleString('es-PE')}</td>
             <td class="val-cell num-font">${getNodeUnits(spv, 'm202607').toLocaleString('es-PE')}</td>
             <td class="val-cell num-font">${getNodeUnits(spv, 'm202608').toLocaleString('es-PE')}</td>
-            ${showArribos ? `
-              <td class="val-cell num-font" style="color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td>
-              <td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>
-            ` : ''}
+            ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
             <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')}</td>
           `;
         } else if (currentMonthFilter === 'm202608') {
@@ -1177,17 +1191,13 @@
             <td>
               <div class="node-cell indent-0">
                 <span class="toggle-icon ${isSpvExpanded ? 'expanded' : ''}" onclick="toggleNode('${spv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                <span class="type-badge badge-spv">SPV</span>
-                <span>${spv.name}</span>
+                <span class="type-badge badge-spv">SPV</span><span>${spv.name}</span>
               </div>
             </td>
             <td class="val-cell num-font" style="color: var(--text-muted);">${spvQuota > 0 ? spvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
             <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')} u.</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(spvComp) : '-'}</td>
-            ${showArribos ? `
-              <td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td>
-              <td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>
-            ` : ''}
+            ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
             <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
             <td class="val-cell num-font">${spvM1Units.toLocaleString('es-PE')} u.</td>
@@ -1202,17 +1212,13 @@
             <td>
               <div class="node-cell indent-0">
                 <span class="toggle-icon ${isSpvExpanded ? 'expanded' : ''}" onclick="toggleNode('${spv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                <span class="type-badge badge-spv">SPV</span>
-                <span>${spv.name}</span>
+                <span class="type-badge badge-spv">SPV</span><span>${spv.name}</span>
               </div>
             </td>
             <td class="val-cell num-font" style="color: var(--text-muted);">${spvQuota > 0 ? spvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
             <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')} u.</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(spvComp) : '-'}</td>
-            ${showArribos ? `
-              <td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td>
-              <td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>
-            ` : ''}
+            ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
             <td class="val-cell num-font">${prevMKey ? spvM1Units.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
             <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
           `;
@@ -1222,14 +1228,6 @@
 
         if (isSpvExpanded) {
           let pdvsToRender = spvMatch && searchQuery.length > 0 ? spv.children : matchingPDVs;
-          
-          pdvsToRender.sort((a, b) => {
-            let valA = currentSort.column === 'name' ? a.name : getNodeUnits(a, currentSort.column);
-            let valB = currentSort.column === 'name' ? b.name : getNodeUnits(b, currentSort.column);
-            if (currentSort.direction === 'asc') return valA > valB ? 1 : -1;
-            return valA < valB ? 1 : -1;
-          });
-
           pdvsToRender.forEach(pdv => {
             visibleRowsCount++;
             const isPdvExpanded = !!expandedState[pdv.id];
@@ -1237,11 +1235,6 @@
             const pdvQuota = getNodeQuota(pdv, keyToUse);
             const pdvComp = pdvQuota > 0 ? (pdvTotal / pdvQuota * 100) : 0;
             const pdvM1Units = prevMKey ? getNodeUnits(pdv, prevMKey) : 0;
-
-            const julUnits = pdv.units && pdv.units[currentProductCode] ? (pdv.units[currentProductCode]['m202607'] || 0) : 0;
-            const julQuota = pdv.quotas && pdv.quotas[currentProductCode] ? (pdv.quotas[currentProductCode]['m202607'] || 0) : 0;
-            const julComp = julQuota > 0 ? (julUnits / julQuota * 100) : 100;
-            const isJulDeviation = julComp < 80;
 
             const pdvArribos = getNodeArribos(pdv, currentMonthFilter);
             const pdvConvPct = pdvArribos > 0 ? (pdvTotal / pdvArribos * 100) : 0;
@@ -1254,18 +1247,13 @@
                 <td>
                   <div class="node-cell indent-1">
                     <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleNode('${pdv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="type-badge badge-pdv">PDV</span>
-                    <span>${pdv.name}</span>
-                    ${isJulDeviation ? '<span class="badge-alert-dev"><i class="fa-solid fa-triangle-exclamation"></i> Desviación</span>' : ''}
+                    <span class="type-badge badge-pdv">PDV</span><span>${pdv.name}</span>
                   </div>
                 </td>
                 <td class="val-cell num-font">${getNodeUnits(pdv, 'm202606').toLocaleString('es-PE')}</td>
                 <td class="val-cell num-font">${getNodeUnits(pdv, 'm202607').toLocaleString('es-PE')}</td>
                 <td class="val-cell num-font">${getNodeUnits(pdv, 'm202608').toLocaleString('es-PE')}</td>
-                ${showArribos ? `
-                  <td class="val-cell num-font" style="color: #475569;">${pdvArribos.toLocaleString('es-PE')} int.</td>
-                  <td class="val-cell num-font">${getConversionBadgeHTML(pdvConvPct)}</td>
-                ` : ''}
+                ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${pdvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(pdvConvPct)}</td>` : ''}
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')}</td>
               `;
             } else if (currentMonthFilter === 'm202608') {
@@ -1278,21 +1266,16 @@
                 <td>
                   <div class="node-cell indent-1">
                     <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleNode('${pdv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="type-badge badge-pdv">PDV</span>
-                    <span>${pdv.name}</span>
-                    ${isJulDeviation ? '<span class="badge-alert-dev"><i class="fa-solid fa-triangle-exclamation"></i> Desviación</span>' : ''}
+                    <span class="type-badge badge-pdv">PDV</span><span>${pdv.name}</span>
                   </div>
                 </td>
                 <td class="val-cell num-font" style="color: var(--text-muted);">${pdvQuota > 0 ? pdvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')} u.</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(pdvComp) : '-'}</td>
-                ${showArribos ? `
-                  <td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td>
-                  <td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>
-                ` : ''}
+                ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
                 <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
-                <td class="val-cell num-font">${pdvM1Units.toLocaleString('es-PE')} u. ${julQuota > 0 ? '(' + julComp.toFixed(0) + '%)' : ''}</td>
+                <td class="val-cell num-font">${pdvM1Units.toLocaleString('es-PE')} u.</td>
                 <td class="val-cell num-font">${getVariationBadgeHTML(diffUnits, diffPct)}</td>
                 <td class="val-cell" style="color: var(--text-light);">-</td>
               `;
@@ -1304,18 +1287,13 @@
                 <td>
                   <div class="node-cell indent-1">
                     <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleNode('${pdv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="type-badge badge-pdv">PDV</span>
-                    <span>${pdv.name}</span>
-                    ${isJulDeviation ? '<span class="badge-alert-dev"><i class="fa-solid fa-triangle-exclamation"></i> Desviación</span>' : ''}
+                    <span class="type-badge badge-pdv">PDV</span><span>${pdv.name}</span>
                   </div>
                 </td>
                 <td class="val-cell num-font" style="color: var(--text-muted);">${pdvQuota > 0 ? pdvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')} u.</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(pdvComp) : '-'}</td>
-                ${showArribos ? `
-                  <td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td>
-                  <td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>
-                ` : ''}
+                ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
                 <td class="val-cell num-font">${prevMKey ? pdvM1Units.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                 <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
               `;
@@ -1324,19 +1302,7 @@
             tbody.appendChild(trPdv);
 
             if (isPdvExpanded) {
-              let asesoresToRender = pdv.children;
-              if (searchQuery.length > 0) {
-                asesoresToRender = asesoresToRender.filter(ase => ase.name.toLowerCase().includes(searchQuery));
-              }
-
-              asesoresToRender.sort((a, b) => {
-                let valA = currentSort.column === 'name' ? a.name : getNodeUnits(a, currentSort.column);
-                let valB = currentSort.column === 'name' ? b.name : getNodeUnits(b, currentSort.column);
-                if (currentSort.direction === 'asc') return valA > valB ? 1 : -1;
-                return valA < valB ? 1 : -1;
-              });
-
-              asesoresToRender.forEach(ase => {
+              pdv.children.forEach(ase => {
                 visibleRowsCount++;
                 const aseTotal = getNodeUnits(ase, keyToUse);
                 const aseQuota = getNodeQuota(ase, keyToUse);
@@ -1345,25 +1311,14 @@
 
                 const trAse = document.createElement('tr');
                 trAse.className = 'row-asesor';
-                trAse.style.cursor = 'pointer';
-                trAse.onclick = () => openAsesorDrawer(ase);
 
                 if (currentMonthFilter === 'ALL') {
                   trAse.innerHTML = `
-                    <td>
-                      <div class="node-cell indent-2">
-                        <span class="type-badge badge-asesor">Asesor</span>
-                        <span>${ase.name}</span>
-                        <i class="fa-solid fa-circle-info" style="font-size: 10px; color: #475569;"></i>
-                      </div>
-                    </td>
+                    <td><div class="node-cell indent-2"><span class="type-badge badge-asesor">Asesor</span><span>${ase.name}</span></div></td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202606').toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202607').toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202608').toLocaleString('es-PE')}</td>
-                    ${showArribos ? `
-                      <td class="val-cell num-font" style="color: var(--text-light);">-</td>
-                      <td class="val-cell num-font" style="color: var(--text-light);">-</td>
-                    ` : ''}
+                    ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')}</td>
                   `;
                 } else if (currentMonthFilter === 'm202608') {
@@ -1373,20 +1328,11 @@
                   const diffPct = aseM1Units > 0 ? (diffUnits / aseM1Units * 100) : 0;
 
                   trAse.innerHTML = `
-                    <td>
-                      <div class="node-cell indent-2">
-                        <span class="type-badge badge-asesor">Asesor</span>
-                        <span>${ase.name}</span>
-                        <i class="fa-solid fa-circle-info" style="font-size: 10px; color: #475569;"></i>
-                      </div>
-                    </td>
+                    <td><div class="node-cell indent-2"><span class="type-badge badge-asesor">Asesor</span><span>${ase.name}</span></div></td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')} u.</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
-                    ${showArribos ? `
-                      <td class="val-cell num-font" style="color: var(--text-light);">-</td>
-                      <td class="val-cell num-font" style="color: var(--text-light);">-</td>
-                    ` : ''}
+                    ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
                     <td class="val-cell num-font" style="font-weight: 600; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
                     <td class="val-cell num-font">${aseM1Units.toLocaleString('es-PE')} u.</td>
@@ -1398,20 +1344,11 @@
                   const diffPct = aseM1Units > 0 ? (diffUnits / aseM1Units * 100) : 0;
 
                   trAse.innerHTML = `
-                    <td>
-                      <div class="node-cell indent-2">
-                        <span class="type-badge badge-asesor">Asesor</span>
-                        <span>${ase.name}</span>
-                        <i class="fa-solid fa-circle-info" style="font-size: 10px; color: #475569;"></i>
-                      </div>
-                    </td>
+                    <td><div class="node-cell indent-2"><span class="type-badge badge-asesor">Asesor</span><span>${ase.name}</span></div></td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')} u.</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
-                    ${showArribos ? `
-                      <td class="val-cell num-font" style="color: var(--text-light);">-</td>
-                      <td class="val-cell num-font" style="color: var(--text-light);">-</td>
-                    ` : ''}
+                    ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
                     <td class="val-cell num-font">${prevMKey ? aseM1Units.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                     <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
                   `;
@@ -1427,7 +1364,207 @@
       document.getElementById('rowCountLabel').textContent = `${visibleRowsCount} filas en estructura jerárquica activa`;
     }
 
-    // Opens Action Plan Drawer Specifically for Supervisors (ONLY SHOWING FLAGGED PDVs < 100% PROJECTION & MICRO-ALERTS)
+    // ================= PAGE 2: DOTACIÓN RENDER LOGIC =================
+    function toggleDotacionDays() {
+      isDaysExpanded = !isDaysExpanded;
+      document.getElementById('toggleDaysText').textContent = isDaysExpanded ? 'Ocultar Días (26-Jul a 1-Ago)' : 'Mostrar Días (26-Jul - 1-Ago)';
+      renderDotacionHeader();
+      renderDotacionTable();
+    }
+
+    function renderDotacionHeader() {
+      const thead = document.getElementById('dotacionThead');
+      thead.innerHTML = `
+        <tr>
+          <th style="min-width: 240px;">ESTRUCTURA REGIONAL</th>
+          <th class="val-cell">HC OBJ</th>
+          <th class="val-cell">HC CODIGO</th>
+          <th class="val-cell">CUMP. OBJETIVO</th>
+          <th class="val-cell">HC GAP</th>
+          <th class="val-cell">HC A CONTRATAR</th>
+          ${isDaysExpanded ? `
+            <th class="val-cell">26-Jul</th>
+            <th class="val-cell">27-Jul</th>
+            <th class="val-cell">28-Jul</th>
+            <th class="val-cell">29-Jul</th>
+            <th class="val-cell">30-Jul</th>
+            <th class="val-cell">31-Jul</th>
+            <th class="val-cell">1-Ago</th>
+          ` : ''}
+          <th class="val-cell">CUMP. CONDICIÓN</th>
+          <th style="min-width: 200px;">OBSERVACIONES / ESTADO HR</th>
+        </tr>
+      `;
+    }
+
+    function renderDotacionTable() {
+      const tbody = document.getElementById('dotacionTbody');
+      tbody.innerHTML = '';
+
+      const selSpv = document.getElementById('spvDotacionFilter').value;
+      const dData = window.DOTACION_DATA;
+      let pdvs = dData.pdvs;
+
+      if (selSpv !== 'ALL') {
+        pdvs = pdvs.filter(p => p.spv === selSpv);
+      }
+
+      // GRAND TOTAL ROW FOR PAGE 2
+      let totalHcObj = 0, totalHcCod = 0, totalGap = 0, totalContratar = 0;
+      pdvs.forEach(p => {
+        totalHcObj += p.hc_obj;
+        totalHcCod += p.hc_codigo;
+        totalGap += p.hc_gap;
+        totalContratar += p.hc_contratar;
+      });
+
+      const totalCumpObj = totalHcObj > 0 ? (totalHcCod / totalHcObj * 100) : 0;
+      const grandCondicion = dData.summary.cump_condicion;
+
+      const trTotal = document.createElement('tr');
+      trTotal.className = 'row-grand-total';
+      trTotal.innerHTML = `
+        <td><div class="node-cell indent-0"><i class="fa-solid fa-building-user" style="color: #60a5fa;"></i><span>CENTRO FORTALECERNOS S.A.C.</span></div></td>
+        <td class="val-cell num-font">${totalHcObj}</td>
+        <td class="val-cell num-font" style="color: #34d399;">${totalHcCod}</td>
+        <td class="val-cell num-font">${getComplianceBadgeHTML(totalCumpObj)}</td>
+        <td class="val-cell num-font">${totalGap < 0 ? `<span class="badge-gap-red">${totalGap}</span>` : `<span class="badge-gap-green">+${totalGap}</span>`}</td>
+        <td class="val-cell num-font">${totalContratar}</td>
+        ${isDaysExpanded ? `
+          <td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td>
+          <td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">17</td>
+        ` : ''}
+        <td class="val-cell num-font">${getComplianceBadgeHTML(grandCondicion)}</td>
+        <td style="color: #cbd5e1; font-weight: 600;">Dotación Operativa Nacional</td>
+      `;
+      tbody.appendChild(trTotal);
+
+      // GROUP PDVS BY SUPERVISOR
+      const grouped = {};
+      pdvs.forEach(p => {
+        if (!grouped[p.spv]) grouped[p.spv] = [];
+        grouped[p.spv].push(p);
+      });
+
+      let visibleRows = 0;
+
+      Object.keys(grouped).forEach(spvName => {
+        const spvPdvs = grouped[spvName];
+        let spvHcObj = 0, spvHcCod = 0, spvGap = 0;
+        spvPdvs.forEach(p => {
+          spvHcObj += p.hc_obj;
+          spvHcCod += p.hc_codigo;
+          spvGap += p.hc_gap;
+        });
+
+        const spvCump = spvHcObj > 0 ? (spvHcCod / spvHcObj * 100) : 0;
+        const isSpvExpanded = dotacionExpandedState[spvName] !== false;
+
+        const trSpv = document.createElement('tr');
+        trSpv.className = 'row-spv';
+        trSpv.innerHTML = `
+          <td>
+            <div class="node-cell indent-0">
+              <span class="toggle-icon ${isSpvExpanded ? 'expanded' : ''}" onclick="toggleDotacionNode('${spvName}')"><i class="fa-solid fa-chevron-right"></i></span>
+              <span class="type-badge badge-spv">SPV</span><span>${spvName}</span>
+            </div>
+          </td>
+          <td class="val-cell num-font">${spvHcObj}</td>
+          <td class="val-cell num-font" style="color: #0f172a; font-weight: 800;">${spvHcCod}</td>
+          <td class="val-cell num-font">${getComplianceBadgeHTML(spvCump)}</td>
+          <td class="val-cell num-font">${spvGap < 0 ? `<span class="badge-gap-red">${spvGap}</span>` : spvGap > 0 ? `<span class="badge-gap-green">+${spvGap}</span>` : `<span class="badge-gap-zero">0</span>`}</td>
+          <td class="val-cell num-font">${spvGap < 0 ? spvGap : 0}</td>
+          ${isDaysExpanded ? `<td colspan="7" class="val-cell" style="color: #94a3b8; font-size: 10px;">- Resumen Tiendas -</td>` : ''}
+          <td class="val-cell num-font">${getComplianceBadgeHTML(spvCump)}</td>
+          <td style="color: #64748b; font-size: 11px;">Supervisión Comercial</td>
+        `;
+        tbody.appendChild(trSpv);
+        visibleRows++;
+
+        if (isSpvExpanded) {
+          spvPdvs.forEach(pdv => {
+            const trPdv = document.createElement('tr');
+            trPdv.className = 'row-pdv';
+            
+            const daysHTML = isDaysExpanded ? `
+              <td class="val-cell num-font">${pdv.daily['26-Jul']}</td>
+              <td class="val-cell num-font">${pdv.daily['27-Jul']}</td>
+              <td class="val-cell num-font">${pdv.daily['28-Jul']}</td>
+              <td class="val-cell num-font">${pdv.daily['29-Jul']}</td>
+              <td class="val-cell num-font">${pdv.daily['30-Jul']}</td>
+              <td class="val-cell num-font">${pdv.daily['31-Jul']}</td>
+              <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.daily['1-Ago']}</td>
+            ` : '';
+
+            trPdv.innerHTML = `
+              <td>
+                <div class="node-cell indent-1">
+                  <span class="type-badge badge-pdv">PDV</span><span>${pdv.name}</span>
+                </div>
+              </td>
+              <td class="val-cell num-font">${pdv.hc_obj}</td>
+              <td class="val-cell num-font" style="font-weight: 700;">${pdv.hc_codigo}</td>
+              <td class="val-cell num-font">${getComplianceBadgeHTML(pdv.cump_obj)}</td>
+              <td class="val-cell num-font">${pdv.hc_gap < 0 ? `<span class="badge-gap-red">${pdv.hc_gap}</span>` : pdv.hc_gap > 0 ? `<span class="badge-gap-green">+${pdv.hc_gap}</span>` : `<span class="badge-gap-zero">0</span>`}</td>
+              <td class="val-cell num-font">${pdv.hc_contratar}</td>
+              ${daysHTML}
+              <td class="val-cell num-font">${getComplianceBadgeHTML(pdv.cump_condicion)}</td>
+              <td style="font-weight: 600; color: ${pdv.obs.includes('PDV OK') ? '#15803d' : '#b91c1c'}; font-size: 11px;">
+                ${pdv.obs}
+              </td>
+            `;
+            tbody.appendChild(trPdv);
+            visibleRows++;
+
+            // ASESORES ROWS
+            if (pdv.asesores && Array.isArray(pdv.asesores)) {
+              pdv.asesores.forEach(ase => {
+                const trAse = document.createElement('tr');
+                trAse.className = 'row-asesor';
+
+                const aseDaysHTML = isDaysExpanded ? `
+                  <td class="val-cell num-font">${ase.daily['26-Jul']}</td>
+                  <td class="val-cell num-font">${ase.daily['27-Jul']}</td>
+                  <td class="val-cell num-font">${ase.daily['28-Jul']}</td>
+                  <td class="val-cell num-font">${ase.daily['29-Jul']}</td>
+                  <td class="val-cell num-font">${ase.daily['30-Jul']}</td>
+                  <td class="val-cell num-font">${ase.daily['31-Jul']}</td>
+                  <td class="val-cell num-font" style="font-weight: 800;">${ase.daily['1-Ago']}</td>
+                ` : '';
+
+                trAse.innerHTML = `
+                  <td>
+                    <div class="node-cell indent-2">
+                      <span class="type-badge badge-asesor">Código</span><span>${ase.name}</span>
+                    </div>
+                  </td>
+                  <td class="val-cell num-font" style="color: #94a3b8;">1</td>
+                  <td class="val-cell num-font">1</td>
+                  <td class="val-cell num-font">${getComplianceBadgeHTML(100)}</td>
+                  <td class="val-cell num-font"><span class="badge-gap-zero">0</span></td>
+                  <td class="val-cell num-font">0</td>
+                  ${aseDaysHTML}
+                  <td class="val-cell num-font">
+                    ${ase.cump === 'SI' ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`}
+                  </td>
+                  <td style="color: #475569; font-size: 10.5px;">${ase.obs || '-'}</td>
+                `;
+                tbody.appendChild(trAse);
+                visibleRows++;
+              });
+            }
+          });
+        }
+      });
+
+      document.getElementById('rowCountLabel').textContent = `${visibleRows} filas en reporte de dotación y asistencia`;
+    }
+
+    function toggleDotacionNode(spvName) {
+      dotacionExpandedState[spvName] = dotacionExpandedState[spvName] === false ? true : false;
+      renderDotacionTable();
+    }
+
     function openSupervisorPlanDrawer(spvName) {
       document.getElementById('drawerTypeBadge').textContent = 'Plan de Acción de Supervisión';
       document.getElementById('drawerNodeName').textContent = spvName;
@@ -1451,23 +1588,16 @@
           const pdvArribos = getNodeArribos(pdv, currentMonthFilter);
           const pdvConv = pdvArribos > 0 ? (pdvUnits / pdvArribos * 100) : 0;
 
-          // STRICT FILTER: ONLY SHOW PDVs THAT DO NOT PROJECT TO 100% OF QUOTA
           if (pdvProjComp < 100) {
             flaggedCount++;
 
-            // DETECT SPECIFIC MICRO-ALERTS
             let microAlerts = [];
-
-            // Alert 1: Low Projection
-            microAlerts.append ? null : null;
             microAlerts.push(`Proyección de cierre por debajo de la cuota (${pdvProjComp.toFixed(1)}% / ${pdvProjUnits} u. de ${pdvQuota} u. meta).`);
 
-            // Alert 2: Low Conversion (Target is 35%)
             if (pdvArribos > 0 && pdvConv < 35) {
               microAlerts.push(`Conversión de tienda baja (${pdvConv.toFixed(1)}% vs Meta 35.0% \u2022 Arribos: ${pdvArribos} int.).`);
             }
 
-            // Alert 3: Low Adviser Sales (Advisers with <= 3 units in 3 days)
             let lowAsesores = [];
             if (pdv.children && Array.isArray(pdv.children)) {
               pdv.children.forEach(ase => {
@@ -1497,32 +1627,15 @@
               </div>
 
               <div class="metrics-mini-grid">
-                <div class="metric-mini-item">
-                  <span class="metric-mini-label">Avance (3D)</span>
-                  <span class="metric-mini-val" style="color: #2563eb;">${pdvUnits} u.</span>
-                </div>
-                <div class="metric-mini-item">
-                  <span class="metric-mini-label">Cuota Mes</span>
-                  <span class="metric-mini-val">${pdvQuota} u.</span>
-                </div>
-                <div class="metric-mini-item">
-                  <span class="metric-mini-label">Proyección</span>
-                  <span class="metric-mini-val" style="color: #7c3aed;">${pdvProjUnits} u.</span>
-                </div>
-                <div class="metric-mini-item">
-                  <span class="metric-mini-label">% Conversión</span>
-                  <span class="metric-mini-val">${pdvArribos > 0 ? pdvConv.toFixed(1) + '%' : '-'}</span>
-                </div>
+                <div class="metric-mini-item"><span class="metric-mini-label">Avance (3D)</span><span class="metric-mini-val" style="color: #2563eb;">${pdvUnits} u.</span></div>
+                <div class="metric-mini-item"><span class="metric-mini-label">Cuota Mes</span><span class="metric-mini-val">${pdvQuota} u.</span></div>
+                <div class="metric-mini-item"><span class="metric-mini-label">Proyección</span><span class="metric-mini-val" style="color: #7c3aed;">${pdvProjUnits} u.</span></div>
+                <div class="metric-mini-item"><span class="metric-mini-label">% Conversión</span><span class="metric-mini-val">${pdvArribos > 0 ? pdvConv.toFixed(1) + '%' : '-'}</span></div>
               </div>
 
-              <!-- MICRO-ALERTS FOOTER -->
               <div class="pdv-alert-box">
-                <div class="pdv-alert-header">
-                  <i class="fa-solid fa-triangle-exclamation"></i> Diagnóstico Específico en Tienda:
-                </div>
-                <ul class="pdv-alert-list">
-                  ${microAlerts.map(alt => `<li>${alt}</li>`).join('')}
-                </ul>
+                <div class="pdv-alert-header"><i class="fa-solid fa-triangle-exclamation"></i> Diagnóstico Específico en Tienda:</div>
+                <ul class="pdv-alert-list">${microAlerts.map(alt => `<li>${alt}</li>`).join('')}</ul>
               </div>
             `;
             diagList.appendChild(card);
@@ -1530,7 +1643,6 @@
         });
       }
 
-      // IF ALL PDVS UNDER THIS SUPERVISOR PROJECT >= 100%
       if (flaggedCount === 0) {
         diagList.innerHTML = `
           <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 18px; text-align: center; color: #166534;">
@@ -1555,52 +1667,6 @@
             <div style="font-size: 11px; color: #94a3b8; margin-top: 6px; line-height: 1.4;">
               Las acciones específicas de este supervisor se ingresarán para la reunión con gerencia.
             </div>
-          </div>
-        </div>
-      `;
-
-      document.getElementById('drawerOverlay').classList.add('active');
-    }
-
-    function openAsesorDrawer(ase) {
-      document.getElementById('drawerTypeBadge').textContent = 'Detalle de Asesor';
-      document.getElementById('drawerNodeName').textContent = ase.name;
-      document.getElementById('drawerNodeMeta').textContent = `${ase.pdv} \u2022 Supervisor: ${ase.spv}`;
-      
-      const keyToUse = currentMonthFilter === 'ALL' ? 'total' : currentMonthFilter;
-      const selUnits = getNodeUnits(ase, keyToUse);
-      const selQuota = getNodeQuota(ase, keyToUse);
-      const julUnits = ase.units && ase.units[currentProductCode] ? (ase.units[currentProductCode]['m202607'] || 0) : 0;
-
-      const compPct = selQuota > 0 ? ((selUnits / selQuota) * 100).toFixed(1) : '0.0';
-      const projUnits = Math.round((selUnits / ELAPSED_WD) * TOTAL_WD);
-      const projPct = selQuota > 0 ? ((projUnits / selQuota) * 100).toFixed(1) : '0.0';
-
-      const diagList = document.getElementById('drawerPdvDiagnosticsList');
-      diagList.innerHTML = `
-        <div class="pdv-diag-card status-green">
-          <div class="pdv-card-header">
-            <div class="pdv-card-name">Ficha Individual Asesor</div>
-            <div>${getComplianceBadgeHTML(parseFloat(compPct))}</div>
-          </div>
-          <div class="metrics-mini-grid">
-            <div class="metric-mini-item"><span class="metric-mini-label">Avance</span><span class="metric-mini-val">${selUnits} u.</span></div>
-            <div class="metric-mini-item"><span class="metric-mini-label">Cuota</span><span class="metric-mini-val">${selQuota} u.</span></div>
-            <div class="metric-mini-item"><span class="metric-mini-label">Proyección</span><span class="metric-mini-val">${projUnits} u.</span></div>
-            <div class="metric-mini-item"><span class="metric-mini-label">Cump. Proy</span><span class="metric-mini-val">${projPct}%</span></div>
-          </div>
-        </div>
-      `;
-
-      const actionContainer = document.getElementById('supervisorActionContainer');
-      actionContainer.innerHTML = `
-        <div class="supervisor-action-card" style="background: linear-gradient(135deg, #1e293b, #334155);">
-          <div class="supervisor-action-header">
-            <i class="fa-solid fa-user-gear"></i>
-            <div class="supervisor-action-title">Monitoreo Individual</div>
-          </div>
-          <div class="supervisor-blank-area">
-            <div style="font-weight: 700; font-size: 12px; color: #ffffff;">Ficha de Seguimiento Individual en Tienda</div>
           </div>
         </div>
       `;
@@ -1641,19 +1707,8 @@
             const diffP = m1 > 0 ? (diffU / m1 * 100).toFixed(1) : 0;
 
             let row = [
-              `"${spv.name}"`,
-              `"${pdv.name}"`,
-              `"${ase.name}"`,
-              `"${currentProductCode}"`,
-              `"${currentMonthFilter}"`,
-              units,
-              quota,
-              ...(showArribos ? [arribos, conv] : []),
-              proj,
-              projComp,
-              m1,
-              diffU,
-              diffP + "%"
+              `"${spv.name}"`, `"${pdv.name}"`, `"${ase.name}"`, `"${currentProductCode}"`, `"${currentMonthFilter}"`,
+              units, quota, ...(showArribos ? [arribos, conv] : []), proj, projComp, m1, diffU, diffP + "%"
             ].join(",");
             csvContent += row + "\n";
           });
@@ -1664,6 +1719,28 @@
       const link = document.createElement("a");
       link.setAttribute("href", encodedUri);
       link.setAttribute("download", `Avance_Proyeccion_${currentProductCode}_${currentMonthFilter}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function exportDotacionCSV() {
+      let csvContent = "data:text/csv;charset=utf-8,";
+      csvContent += "Supervisor,Punto de Venta,Asesor / Codigo,HC Obj,HC Codigo,Pct Cump Objetivo,HC Gap,HC a Contratar,Cumple Condicion,Observaciones\n";
+
+      window.DOTACION_DATA.pdvs.forEach(p => {
+        p.asesores.forEach(a => {
+          let row = [
+            `"${p.spv}"`, `"${p.name}"`, `"${a.name}"`, 1, 1, "100.0%", 0, 0, `"${a.cump}"`, `"${a.obs || p.obs}"`
+          ].join(",");
+          csvContent += row + "\n";
+        });
+      });
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "Reporte_Dotacion_Cobertura_HC.csv");
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

@@ -5114,3 +5114,625 @@ window.SALES_DATA = {
     }
   ]
 };
+
+
+window.DOTACION_DATA = {
+  "summary": {
+    "hc_obj": 25,
+    "hc_codigo": 23,
+    "cump_obj": 92,
+    "hc_gap": -2,
+    "hc_contratar": -2,
+    "cump_condicion": 74
+  },
+  "pdvs": [
+    {
+      "name": "TE AYACUCHO",
+      "spv": "MERY LAPA",
+      "hc_obj": 2,
+      "hc_codigo": 2,
+      "cump_obj": 100,
+      "hc_gap": 0,
+      "hc_contratar": 0,
+      "daily": {
+        "26-Jul": 3,
+        "27-Jul": 13,
+        "28-Jul": 9,
+        "29-Jul": 8,
+        "30-Jul": 2,
+        "31-Jul": 9,
+        "1-Ago": 1
+      },
+      "cump_condicion": 50,
+      "obs": "PDV OK",
+      "asesores": [
+        {
+          "name": "FLN_LHUAMANIY",
+          "daily": {
+            "26-Jul": 3,
+            "27-Jul": 13,
+            "28-Jul": 9,
+            "29-Jul": 7,
+            "30-Jul": 2,
+            "31-Jul": 3,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        },
+        {
+          "name": "FLN_SREYMUNDEZM",
+          "daily": {
+            "26-Jul": 0,
+            "27-Jul": 0,
+            "28-Jul": 0,
+            "29-Jul": 1,
+            "30-Jul": 0,
+            "31-Jul": 6,
+            "1-Ago": 0
+          },
+          "cump": "NO",
+          "obs": "PERMISO POR PROBLEMA PERSONAL FUERTE"
+        }
+      ]
+    },
+    {
+      "name": "TE HUANTA",
+      "spv": "MERY LAPA",
+      "hc_obj": 2,
+      "hc_codigo": 2,
+      "cump_obj": 100,
+      "hc_gap": 0,
+      "hc_contratar": 0,
+      "daily": {
+        "26-Jul": 9,
+        "27-Jul": 14,
+        "28-Jul": 9,
+        "29-Jul": 9,
+        "30-Jul": 11,
+        "31-Jul": 6,
+        "1-Ago": 1
+      },
+      "cump_condicion": 50,
+      "obs": "PDV OK",
+      "asesores": [
+        {
+          "name": "FLN_SMEZAA",
+          "daily": {
+            "26-Jul": 9,
+            "27-Jul": 6,
+            "28-Jul": 9,
+            "29-Jul": 0,
+            "30-Jul": 0,
+            "31-Jul": 0,
+            "1-Ago": 0
+          },
+          "cump": "NO",
+          "obs": "PERMISO POR PROBLEMA PERSONAL FUERTE"
+        },
+        {
+          "name": "FLN_MFELICESG",
+          "daily": {
+            "26-Jul": 0,
+            "27-Jul": 8,
+            "28-Jul": 0,
+            "29-Jul": 9,
+            "30-Jul": 11,
+            "31-Jul": 6,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "name": "TE ICA",
+      "spv": "MARÍA BERNAOLA",
+      "hc_obj": 2,
+      "hc_codigo": 2,
+      "cump_obj": 100,
+      "hc_gap": 0,
+      "hc_contratar": 0,
+      "daily": {
+        "26-Jul": 5,
+        "27-Jul": 13,
+        "28-Jul": 2,
+        "29-Jul": 0,
+        "30-Jul": 7,
+        "31-Jul": 1,
+        "1-Ago": 1
+      },
+      "cump_condicion": 50,
+      "obs": "PDV OK",
+      "asesores": [
+        {
+          "name": "FLN_LELIZALDEE",
+          "daily": {
+            "26-Jul": 5,
+            "27-Jul": 13,
+            "28-Jul": 2,
+            "29-Jul": 0,
+            "30-Jul": 4,
+            "31-Jul": 1,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        },
+        {
+          "name": "FLN_RELIASM",
+          "daily": {
+            "26-Jul": 0,
+            "27-Jul": 0,
+            "28-Jul": 0,
+            "29-Jul": 0,
+            "30-Jul": 3,
+            "31-Jul": 0,
+            "1-Ago": 0
+          },
+          "cump": "NO",
+          "obs": "PERMISO POR PROBLEMA PERSONAL FUERTE"
+        }
+      ]
+    },
+    {
+      "name": "TE ICA 3",
+      "spv": "CYNTHIA GUERRA",
+      "hc_obj": 2,
+      "hc_codigo": 2,
+      "cump_obj": 100,
+      "hc_gap": 0,
+      "hc_contratar": 0,
+      "daily": {
+        "26-Jul": 9,
+        "27-Jul": 12,
+        "28-Jul": 4,
+        "29-Jul": 5,
+        "30-Jul": 14,
+        "31-Jul": 14,
+        "1-Ago": 2
+      },
+      "cump_condicion": 100,
+      "obs": "PDV OK",
+      "asesores": [
+        {
+          "name": "FLN_NAMESQUITAA",
+          "daily": {
+            "26-Jul": 0,
+            "27-Jul": 9,
+            "28-Jul": 0,
+            "29-Jul": 2,
+            "30-Jul": 4,
+            "31-Jul": 7,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        },
+        {
+          "name": "FLN_JVALLEJOSP",
+          "daily": {
+            "26-Jul": 9,
+            "27-Jul": 3,
+            "28-Jul": 4,
+            "29-Jul": 3,
+            "30-Jul": 10,
+            "31-Jul": 7,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "name": "TE ICA II",
+      "spv": "CYNTHIA GUERRA",
+      "hc_obj": 3,
+      "hc_codigo": 2,
+      "cump_obj": 67,
+      "hc_gap": -1,
+      "hc_contratar": -1,
+      "daily": {
+        "26-Jul": 17,
+        "27-Jul": 34,
+        "28-Jul": 9,
+        "29-Jul": 18,
+        "30-Jul": 25,
+        "31-Jul": 20,
+        "1-Ago": 2
+      },
+      "cump_condicion": 100,
+      "obs": "2 ENTREVISTAS 05.08",
+      "asesores": [
+        {
+          "name": "FLN_DSIMEB",
+          "daily": {
+            "26-Jul": 1,
+            "27-Jul": 23,
+            "28-Jul": 0,
+            "29-Jul": 18,
+            "30-Jul": 17,
+            "31-Jul": 10,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        },
+        {
+          "name": "FLN_RNAVARRETEC",
+          "daily": {
+            "26-Jul": 16,
+            "27-Jul": 11,
+            "28-Jul": 9,
+            "29-Jul": 0,
+            "30-Jul": 8,
+            "31-Jul": 10,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "name": "TE ICA MODELO",
+      "spv": "CYNTHIA GUERRA",
+      "hc_obj": 2,
+      "hc_codigo": 2,
+      "cump_obj": 100,
+      "hc_gap": 0,
+      "hc_contratar": 0,
+      "daily": {
+        "26-Jul": 2,
+        "27-Jul": 6,
+        "28-Jul": 1,
+        "29-Jul": 4,
+        "30-Jul": 3,
+        "31-Jul": 2,
+        "1-Ago": 1
+      },
+      "cump_condicion": 50,
+      "obs": "PDV OK",
+      "asesores": [
+        {
+          "name": "FLN_VBAEZT",
+          "daily": {
+            "26-Jul": 2,
+            "27-Jul": 6,
+            "28-Jul": 1,
+            "29-Jul": 4,
+            "30-Jul": 3,
+            "31-Jul": 2,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "name": "TE NAZCA",
+      "spv": "FERNANDO MORENO",
+      "hc_obj": 3,
+      "hc_codigo": 2,
+      "cump_obj": 67,
+      "hc_gap": -1,
+      "hc_contratar": -1,
+      "daily": {
+        "26-Jul": 7,
+        "27-Jul": 14,
+        "28-Jul": 8,
+        "29-Jul": 6,
+        "30-Jul": 20,
+        "31-Jul": 12,
+        "1-Ago": 2
+      },
+      "cump_condicion": 100,
+      "obs": "CODIGO ENTREGADO 30.07 / HC INICIA INDUCCIÓN EL 03.08 / CODIGO 11.08",
+      "asesores": [
+        {
+          "name": "FLN_RPICKMANS",
+          "daily": {
+            "26-Jul": 7,
+            "27-Jul": 14,
+            "28-Jul": 1,
+            "29-Jul": 5,
+            "30-Jul": 11,
+            "31-Jul": 5,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        },
+        {
+          "name": "FLN_FCUMPAV",
+          "daily": {
+            "26-Jul": 0,
+            "27-Jul": 0,
+            "28-Jul": 7,
+            "29-Jul": 1,
+            "30-Jul": 9,
+            "31-Jul": 7,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "name": "TE PARCONA",
+      "spv": "CYNTHIA GUERRA",
+      "hc_obj": 2,
+      "hc_codigo": 2,
+      "cump_obj": 100,
+      "hc_gap": 0,
+      "hc_contratar": 0,
+      "daily": {
+        "26-Jul": 5,
+        "27-Jul": 9,
+        "28-Jul": 2,
+        "29-Jul": 0,
+        "30-Jul": 7,
+        "31-Jul": 8,
+        "1-Ago": 1
+      },
+      "cump_condicion": 50,
+      "obs": "PDV OK",
+      "asesores": [
+        {
+          "name": "FLN_DCARRIZALER",
+          "daily": {
+            "26-Jul": 5,
+            "27-Jul": 9,
+            "28-Jul": 2,
+            "29-Jul": 0,
+            "30-Jul": 7,
+            "31-Jul": 8,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        },
+        {
+          "name": "FLN_JSARCIAG",
+          "daily": {
+            "26-Jul": 0,
+            "27-Jul": 0,
+            "28-Jul": 0,
+            "29-Jul": 0,
+            "30-Jul": 0,
+            "31-Jul": 0,
+            "1-Ago": 0
+          },
+          "cump": "NO",
+          "obs": "CODIGO ENTREGADO 30.07"
+        }
+      ]
+    },
+    {
+      "name": "TE PISCO",
+      "spv": "MARÍA BERNAOLA",
+      "hc_obj": 2,
+      "hc_codigo": 3,
+      "cump_obj": 150,
+      "hc_gap": 1,
+      "hc_contratar": 1,
+      "daily": {
+        "26-Jul": 9,
+        "27-Jul": 14,
+        "28-Jul": 2,
+        "29-Jul": 0,
+        "30-Jul": 4,
+        "31-Jul": 13,
+        "1-Ago": 2
+      },
+      "cump_condicion": 67,
+      "obs": "PDV OK / HC DE SOBREDOTACION CON CODIGO 20.07",
+      "asesores": [
+        {
+          "name": "FLN_CMANRIQUEN",
+          "daily": {
+            "26-Jul": 6,
+            "27-Jul": 6,
+            "28-Jul": 0,
+            "29-Jul": 0,
+            "30-Jul": 3,
+            "31-Jul": 6,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        },
+        {
+          "name": "FLN_VECHEVARRIB",
+          "daily": {
+            "26-Jul": 3,
+            "27-Jul": 8,
+            "28-Jul": 2,
+            "29-Jul": 0,
+            "30-Jul": 1,
+            "31-Jul": 7,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        },
+        {
+          "name": "FLN_FCRUZP",
+          "daily": {
+            "26-Jul": 0,
+            "27-Jul": 0,
+            "28-Jul": 0,
+            "29-Jul": 0,
+            "30-Jul": 0,
+            "31-Jul": 0,
+            "1-Ago": 0
+          },
+          "cump": "NO",
+          "obs": "GESTION SUPERVISOR"
+        }
+      ]
+    },
+    {
+      "name": "TE SATELITE BARRIO CHINO",
+      "spv": "MARÍA BERNAOLA",
+      "hc_obj": 2,
+      "hc_codigo": 2,
+      "cump_obj": 100,
+      "hc_gap": 0,
+      "hc_contratar": 0,
+      "daily": {
+        "26-Jul": 16,
+        "27-Jul": 11,
+        "28-Jul": 17,
+        "29-Jul": 18,
+        "30-Jul": 24,
+        "31-Jul": 38,
+        "1-Ago": 2
+      },
+      "cump_condicion": 100,
+      "obs": "PDV OK",
+      "asesores": [
+        {
+          "name": "FLN_RAYALAC",
+          "daily": {
+            "26-Jul": 4,
+            "27-Jul": 0,
+            "28-Jul": 15,
+            "29-Jul": 18,
+            "30-Jul": 14,
+            "31-Jul": 24,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        },
+        {
+          "name": "FLN_ERAMOSA",
+          "daily": {
+            "26-Jul": 12,
+            "27-Jul": 11,
+            "28-Jul": 2,
+            "29-Jul": 0,
+            "30-Jul": 10,
+            "31-Jul": 14,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "name": "TE SATELITE PALPA",
+      "spv": "FERNANDO MORENO",
+      "hc_obj": 1,
+      "hc_codigo": 1,
+      "cump_obj": 100,
+      "hc_gap": 0,
+      "hc_contratar": 0,
+      "daily": {
+        "26-Jul": 8,
+        "27-Jul": 4,
+        "28-Jul": 0,
+        "29-Jul": 6,
+        "30-Jul": 4,
+        "31-Jul": 1,
+        "1-Ago": 1
+      },
+      "cump_condicion": 100,
+      "obs": "PDV OK",
+      "asesores": [
+        {
+          "name": "FLN_AECHAJAYAG",
+          "daily": {
+            "26-Jul": 8,
+            "27-Jul": 4,
+            "28-Jul": 0,
+            "29-Jul": 6,
+            "30-Jul": 4,
+            "31-Jul": 1,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "name": "TE SATELITE PUEBLO JOVEN",
+      "spv": "MARÍA BERNAOLA",
+      "hc_obj": 2,
+      "hc_codigo": 1,
+      "cump_obj": 50,
+      "hc_gap": -1,
+      "hc_contratar": -1,
+      "daily": {
+        "26-Jul": 7,
+        "27-Jul": 6,
+        "28-Jul": 0,
+        "29-Jul": 8,
+        "30-Jul": 4,
+        "31-Jul": 4,
+        "1-Ago": 1
+      },
+      "cump_condicion": 100,
+      "obs": "HC INICIA INDUCCIÓN EL 10.08 / CODIGO 17.08",
+      "asesores": [
+        {
+          "name": "FLN_JIESPINOC",
+          "daily": {
+            "26-Jul": 7,
+            "27-Jul": 6,
+            "28-Jul": 0,
+            "29-Jul": 8,
+            "30-Jul": 4,
+            "31-Jul": 4,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "name": "TE SATELITE CHALA",
+      "spv": "FERNANDO MORENO",
+      "hc_obj": 2,
+      "hc_codigo": 1,
+      "cump_obj": 50,
+      "hc_gap": -1,
+      "hc_contratar": -1,
+      "daily": {
+        "26-Jul": 4,
+        "27-Jul": 3,
+        "28-Jul": 0,
+        "29-Jul": 4,
+        "30-Jul": 2,
+        "31-Jul": 2,
+        "1-Ago": 1
+      },
+      "cump_condicion": 100,
+      "obs": "EN PROCESO DE SELECCIÓN",
+      "asesores": [
+        {
+          "name": "FLN_CHALA1",
+          "daily": {
+            "26-Jul": 4,
+            "27-Jul": 3,
+            "28-Jul": 0,
+            "29-Jul": 4,
+            "30-Jul": 2,
+            "31-Jul": 2,
+            "1-Ago": 1
+          },
+          "cump": "SI",
+          "obs": ""
+        }
+      ]
+    }
+  ]
+};
