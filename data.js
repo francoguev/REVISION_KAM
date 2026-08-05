@@ -3119,7 +3119,7 @@ window.SALES_DATA = {
           "children": [
             {
               "id": "ase_san_clemente_1",
-              "name": "ASESOR SAN CLEMENTE 1",
+              "name": "MARIA DE LA CRUZ MEZA",
               "type": "Asesor",
               "quotas": {
                 "POSTPAGO_TOTAL": {
@@ -5036,7 +5036,7 @@ window.DOTACION_DATA = {
       "obs": "PDV OK",
       "asesores": [
         {
-          "name": "FLN_LHUAMANIY",
+          "name": "LORENA ALEXANDRA HUAMANI YUPANQUI",
           "daily": {
             "26-Jul": 3,
             "27-Jul": 13,
@@ -5050,7 +5050,7 @@ window.DOTACION_DATA = {
           "obs": ""
         },
         {
-          "name": "FLN_SREYMUNDEZM",
+          "name": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
           "daily": {
             "26-Jul": 0,
             "27-Jul": 0,
@@ -5087,7 +5087,7 @@ window.DOTACION_DATA = {
       "obs": "PDV OK",
       "asesores": [
         {
-          "name": "FLN_SMEZAA",
+          "name": "SONALY JULIA MEZA ASTUPILLO",
           "daily": {
             "26-Jul": 9,
             "27-Jul": 6,
@@ -5101,7 +5101,7 @@ window.DOTACION_DATA = {
           "obs": "PERMISO POR PROBLEMA PERSONAL FUERTE"
         },
         {
-          "name": "FLN_MFELICESG",
+          "name": "MARCO ANDRE FELICES GONZALEZ",
           "daily": {
             "26-Jul": 0,
             "27-Jul": 8,
@@ -5138,7 +5138,7 @@ window.DOTACION_DATA = {
       "obs": "PDV OK",
       "asesores": [
         {
-          "name": "FLN_LELIZALDEE",
+          "name": "LUIS ELIZALDE ESCATE",
           "daily": {
             "26-Jul": 5,
             "27-Jul": 13,
@@ -5152,7 +5152,7 @@ window.DOTACION_DATA = {
           "obs": ""
         },
         {
-          "name": "FLN_RELIASM",
+          "name": "ROSARIO ISABEL ELIAS MAVILA",
           "daily": {
             "26-Jul": 0,
             "27-Jul": 0,
@@ -5189,7 +5189,7 @@ window.DOTACION_DATA = {
       "obs": "PDV OK",
       "asesores": [
         {
-          "name": "FLN_NAMESQUITAA",
+          "name": "NAOMI MARINA AMESQUITA APARCANA",
           "daily": {
             "26-Jul": 0,
             "27-Jul": 9,
@@ -5203,7 +5203,7 @@ window.DOTACION_DATA = {
           "obs": ""
         },
         {
-          "name": "FLN_JVALLEJOSP",
+          "name": "JANELLA ISABEL VALLEJOS PINEDA",
           "daily": {
             "26-Jul": 9,
             "27-Jul": 3,
@@ -5240,7 +5240,7 @@ window.DOTACION_DATA = {
       "obs": "2 ENTREVISTAS 05.08",
       "asesores": [
         {
-          "name": "FLN_DSIMEB",
+          "name": "DIANA LORENA SIME BENDEZU",
           "daily": {
             "26-Jul": 1,
             "27-Jul": 23,
@@ -5254,7 +5254,7 @@ window.DOTACION_DATA = {
           "obs": ""
         },
         {
-          "name": "FLN_RNAVARRETEC",
+          "name": "ROGGER SMITH NAVARRETE CAHUA",
           "daily": {
             "26-Jul": 16,
             "27-Jul": 11,
@@ -5291,7 +5291,7 @@ window.DOTACION_DATA = {
       "obs": "PDV OK",
       "asesores": [
         {
-          "name": "FLN_VBAEZT",
+          "name": "VALENTINA BAEZ TORDOYA",
           "daily": {
             "26-Jul": 2,
             "27-Jul": 6,
@@ -5328,7 +5328,7 @@ window.DOTACION_DATA = {
       "obs": "CODIGO ENTREGADO 30.07 / HC INICIA INDUCCIÓN EL 03.08 / CODIGO 11.08",
       "asesores": [
         {
-          "name": "FLN_RPICKMANS",
+          "name": "RUBETH DANNAE PICKMAN SAN MIGUEL",
           "daily": {
             "26-Jul": 7,
             "27-Jul": 14,
@@ -5379,7 +5379,7 @@ window.DOTACION_DATA = {
       "obs": "PDV OK",
       "asesores": [
         {
-          "name": "FLN_DCARRIZALER",
+          "name": "DANILO GIORDANO CARRIZALES RAMOS",
           "daily": {
             "26-Jul": 5,
             "27-Jul": 9,
@@ -5430,7 +5430,7 @@ window.DOTACION_DATA = {
       "obs": "PDV OK / HC DE SOBREDOTACION CON CODIGO 20.07",
       "asesores": [
         {
-          "name": "FLN_CMANRIQUEN",
+          "name": "CYNTIA JETZABEL MANRIQUE NAPA",
           "daily": {
             "26-Jul": 6,
             "27-Jul": 6,
@@ -5444,7 +5444,7 @@ window.DOTACION_DATA = {
           "obs": ""
         },
         {
-          "name": "FLN_VECHEVARRIB",
+          "name": "VALERIA ALANA ECHEVARRIA BRAVO",
           "daily": {
             "26-Jul": 3,
             "27-Jul": 8,
@@ -5458,7 +5458,7 @@ window.DOTACION_DATA = {
           "obs": ""
         },
         {
-          "name": "FLN_FCRUZP",
+          "name": "FIORELLA ASTRID CRUZ PARODI",
           "daily": {
             "26-Jul": 0,
             "27-Jul": 0,
@@ -5495,7 +5495,7 @@ window.DOTACION_DATA = {
       "obs": "PDV OK",
       "asesores": [
         {
-          "name": "FLN_RAYALAC",
+          "name": "RIGOBERTO AYALA CARPIO",
           "daily": {
             "26-Jul": 4,
             "27-Jul": 0,
@@ -5509,7 +5509,7 @@ window.DOTACION_DATA = {
           "obs": ""
         },
         {
-          "name": "FLN_ERAMOSA",
+          "name": "ELIZABETH ANA RAMOS ANGULO",
           "daily": {
             "26-Jul": 12,
             "27-Jul": 11,
@@ -5546,7 +5546,7 @@ window.DOTACION_DATA = {
       "obs": "PDV OK",
       "asesores": [
         {
-          "name": "FLN_AECHAJAYAG",
+          "name": "ALEXANDRA ECHAJAYA GARCIA",
           "daily": {
             "26-Jul": 8,
             "27-Jul": 4,
@@ -5696,7 +5696,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_GCHAUPINB",
+            "name": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
             "total_nps": 33,
             "total_q": 3,
             "sem1": {
@@ -5717,7 +5717,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_CROSASP",
+            "name": "CAMILA VERONICA ROSAS PALOMINO",
             "total_nps": 50,
             "total_q": 2,
             "sem1": {
@@ -5768,7 +5768,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_CMANRIQUEN",
+            "name": "CYNTIA JETZABEL MANRIQUE NAPA",
             "total_nps": 100,
             "total_q": 3,
             "sem1": {
@@ -5819,7 +5819,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_MGAMBOAM",
+            "name": "GAMBOA MEDINA MARTIN JOSÉ ANTONIO",
             "total_nps": -100,
             "total_q": 1,
             "sem1": {
@@ -5870,7 +5870,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_NAMESQUITAA",
+            "name": "NAOMI MARINA AMESQUITA APARCANA",
             "total_nps": 100,
             "total_q": 12,
             "sem1": {
@@ -5891,7 +5891,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_JVALLEJOSP",
+            "name": "JANELLA ISABEL VALLEJOS PINEDA",
             "total_nps": 67,
             "total_q": 6,
             "sem1": {
@@ -5942,7 +5942,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_RNAVARRETEC",
+            "name": "ROGGER SMITH NAVARRETE CAHUA",
             "total_nps": 100,
             "total_q": 5,
             "sem1": {
@@ -5963,7 +5963,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_DSIMEB",
+            "name": "DIANA LORENA SIME BENDEZU",
             "total_nps": 86,
             "total_q": 7,
             "sem1": {
@@ -6014,7 +6014,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_RPICKMANS",
+            "name": "RUBETH DANNAE PICKMAN SAN MIGUEL",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -6035,7 +6035,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_PCUMPAV",
+            "name": "PEDRO FERNANDO CUMPA VIVANCO",
             "total_nps": 17,
             "total_q": 6,
             "sem1": {
@@ -6086,7 +6086,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_LHUAMANIY",
+            "name": "LORENA ALEXANDRA HUAMANI YUPANQUI",
             "total_nps": 0,
             "total_q": 4,
             "sem1": {
@@ -6107,7 +6107,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_SREYMUNDEZM",
+            "name": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
             "total_nps": -50,
             "total_q": 2,
             "sem1": {
@@ -6158,7 +6158,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_SMEZAA",
+            "name": "SONALY JULIA MEZA ASTUPILLO",
             "total_nps": 25,
             "total_q": 4,
             "sem1": {
@@ -6209,7 +6209,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_EHUAMANY",
+            "name": "ELIZABETH LISLEY HUAMAN YBARRA",
             "total_nps": 100,
             "total_q": 2,
             "sem1": {
@@ -6260,7 +6260,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_RAYALAC",
+            "name": "RIGOBERTO AYALA CARPIO",
             "total_nps": 0,
             "total_q": 4,
             "sem1": {
@@ -6281,7 +6281,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_ERAMOSA",
+            "name": "ELIZABETH ANA RAMOS ANGULO",
             "total_nps": 67,
             "total_q": 9,
             "sem1": {
@@ -6332,7 +6332,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_DCARRIZALER",
+            "name": "DANILO GIORDANO CARRIZALES RAMOS",
             "total_nps": 100,
             "total_q": 4,
             "sem1": {
@@ -6383,7 +6383,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_AECHAJAYAG",
+            "name": "ALEXANDRA ECHAJAYA GARCIA",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -6434,7 +6434,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_LELIZALDEE",
+            "name": "LUIS ELIZALDE ESCATE",
             "total_nps": 100,
             "total_q": 2,
             "sem1": {
@@ -6485,7 +6485,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_VBAEZT",
+            "name": "VALENTINA BAEZ TORDOYA",
             "total_nps": 100,
             "total_q": 3,
             "sem1": {
@@ -6506,7 +6506,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_ADELACRUZH",
+            "name": "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -6596,7 +6596,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_CROSASP",
+            "name": "CAMILA VERONICA ROSAS PALOMINO",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -6621,7 +6621,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_GCHAUPINB",
+            "name": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -6681,7 +6681,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_VECHEVARRIB",
+            "name": "VALERIA ALANA ECHEVARRIA BRAVO",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -6741,7 +6741,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_NAMESQUITAA",
+            "name": "NAOMI MARINA AMESQUITA APARCANA",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -6801,7 +6801,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_DSIMEB",
+            "name": "DIANA LORENA SIME BENDEZU",
             "total_nps": 100,
             "total_q": 6,
             "sem1": {
@@ -6826,7 +6826,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_RNAVARRETEC",
+            "name": "ROGGER SMITH NAVARRETE CAHUA",
             "total_nps": 100,
             "total_q": 2,
             "sem1": {
@@ -6886,7 +6886,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_PCUMPAV",
+            "name": "PEDRO FERNANDO CUMPA VIVANCO",
             "total_nps": 100,
             "total_q": 2,
             "sem1": {
@@ -6911,7 +6911,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_RPICKMANS",
+            "name": "RUBETH DANNAE PICKMAN SAN MIGUEL",
             "total_nps": 33,
             "total_q": 3,
             "sem1": {
@@ -6971,7 +6971,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_LHUAMANIY",
+            "name": "LORENA ALEXANDRA HUAMANI YUPANQUI",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -6996,7 +6996,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_SREYMUNDEZM",
+            "name": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
             "total_nps": 100,
             "total_q": 2,
             "sem1": {
@@ -7056,7 +7056,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_EHUAMANY",
+            "name": "ELIZABETH LISLEY HUAMAN YBARRA",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -7116,7 +7116,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_ERAMOSA",
+            "name": "ELIZABETH ANA RAMOS ANGULO",
             "total_nps": 33,
             "total_q": 3,
             "sem1": {
@@ -7141,7 +7141,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_RAYALAC",
+            "name": "RIGOBERTO AYALA CARPIO",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -7201,7 +7201,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_AECHAJAYAG",
+            "name": "ALEXANDRA ECHAJAYA GARCIA",
             "total_nps": 100,
             "total_q": 2,
             "sem1": {
@@ -7261,7 +7261,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_LELIZALDEE",
+            "name": "LUIS ELIZALDE ESCATE",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -7286,7 +7286,7 @@ window.NPS_DATA = {
             }
           },
           {
-            "name": "FLN_RELIASM",
+            "name": "ROSARIO ISABEL ELIAS MAVILA",
             "total_nps": 100,
             "total_q": 2,
             "sem1": {
@@ -7346,7 +7346,7 @@ window.NPS_DATA = {
         },
         "asesores": [
           {
-            "name": "FLN_VBAEZT",
+            "name": "VALENTINA BAEZ TORDOYA",
             "total_nps": 100,
             "total_q": 1,
             "sem1": {
@@ -7378,34 +7378,58 @@ window.NPS_DATA = {
 };
 
 window.USER_CODE_MAP = {
-  "FLN_LHUAMANIY": "LUIS HUAMANI YUPANQUI",
-  "FLN_SREYMUNDEZM": "SANTIAGO REYMUNDEZ MENDOZA",
-  "FLN_SMEZAA": "SILVIA MEZA ALVAREZ",
-  "FLN_MFELICESG": "MIGUEL FELICES GUTIERREZ",
-  "FLN_LELIZALDEE": "LESLIE ELIZALDE ESPINOZA",
-  "FLN_RELIASM": "RENZO ELIAS MORALES",
-  "FLN_NAMESQUITAA": "NICOLE AMESQUITA AGUILAR",
-  "FLN_JVALLEJOSP": "JORGE VALLEJOS PALACIOS",
-  "FLN_DSIMEB": "DIANA SIME BUSTAMANTE",
-  "FLN_RNAVARRETEC": "RODRIGO NAVARRETE CASTRO",
-  "FLN_VBAEZT": "VALERIA BAEZ TORRES",
-  "FLN_RPICKMANS": "ROBERTO PICKMANS SILVA",
-  "FLN_PCUMPAV": "PEDRO CUMPA VALENCIA",
-  "FLN_DCARRIZALER": "DANIEL CARRIZALES RAMOS",
-  "FLN_JSARCIAG": "JORGE SARCIA GOMEZ",
-  "FLN_CMANRIQUEN": "CARLOS MANRIQUE NAVARRO",
-  "FLN_VECHEVARRIB": "VICTOR ECHEVARRIA BARRIOS",
-  "FLN_FCRUZP": "FELIPE CRUZ PEREZ",
-  "FLN_RAYALAC": "RODRIGO AYALA CASTRO",
-  "FLN_ERAMOSA": "EDUARDO RAMOS ALVAREZ",
-  "FLN_AECHAJAYAG": "ADRIAN ECHAJAYA GOMEZ",
-  "FLN_JIESPINOC": "JEAN ESPINOZA CASTRO",
-  "FLN_CROSASP": "CRISTIAN ROSAS PEREZ",
-  "FLN_GCHAUPINB": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
-  "FLN_EHUAMANY": "ESTEBAN HUAMANI YUPANQUI",
-  "FLN_MGAMBOAM": "MANUEL GAMBOA MORALES",
-  "FLN_ADELACRUZH": "ANDREA DELACRUZ HERNANDEZ",
-  "FLN_CHALA1": "CHRISTIAN SOTO"
+  "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ": "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
+  "ALEXANDRA ECHAJAYA GARCIA": "ALEXANDRA ECHAJAYA GARCIA",
+  "ANDY TITO HUAMANCHA": "ANDY TITO HUAMANCHA",
+  "ARIANA JUDITH VASQUEZ CHOQUE": "ARIANA JUDITH VASQUEZ CHOQUE",
+  "CARLA ANDREA CERVANTES SALGUERO": "CARLA ANDREA CERVANTES SALGUERO",
+  "CYNTIA JETZABEL MANRIQUE NAPA": "CYNTIA JETZABEL MANRIQUE NAPA",
+  "CARLOS JEANPIER PINO GOYCOCHEA": "CARLOS JEANPIER PINO GOYCOCHEA",
+  "CAMILA VERONICA ROSAS PALOMINO": "CAMILA VERONICA ROSAS PALOMINO",
+  "DANILO GIORDANO CARRIZALES RAMOS": "DANILO GIORDANO CARRIZALES RAMOS",
+  "DYLAN ALMENDRA RAMOS ANGULO": "DYLAN ALMENDRA RAMOS ANGULO",
+  "DIANA LORENA SIME BENDEZU": "DIANA LORENA SIME BENDEZU",
+  "ELIZABETH LISLEY HUAMAN YBARRA": "ELIZABETH LISLEY HUAMAN YBARRA",
+  "EVELYN LOPE CURO": "EVELYN LOPE CURO",
+  "EDUARDO JESUS MENDOZA ZAPATA": "EDUARDO JESUS MENDOZA ZAPATA",
+  "ELIZABETH ANA RAMOS ANGULO": "ELIZABETH ANA RAMOS ANGULO",
+  "FIORELLA ASTRID CRUZ PARODI": "FIORELLA ASTRID CRUZ PARODI",
+  "GISELLA VANNESA CHAUPIN BUSTAMANTE": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
+  "JAZMIN LIZBETH SALGUERO CHACALIAZA": "JAZMIN LIZBETH SALGUERO CHACALIAZA",
+  "JOSUÉ MIGUEL ESPINO SAYRITUPAC": "JOSUÉ MIGUEL ESPINO SAYRITUPAC",
+  "JOSE FERNANDO MORENO VALENCIA": "JOSE FERNANDO MORENO VALENCIA",
+  "JUNIOR ANTHONY GARCIA GUERRA": "JUNIOR ANTHONY GARCIA GUERRA",
+  "JASMIN JANINE PAULA ESPINO CUYA": "JASMIN JANINE PAULA ESPINO CUYA",
+  "JUNIOR LUCIANO MUÑOZH ERNÁNDEZ": "JUNIOR LUCIANO MUÑOZH ERNÁNDEZ",
+  "JANELLA ISABEL VALLEJOS PINEDA": "JANELLA ISABEL VALLEJOS PINEDA",
+  "KESSIA ANYELIN HUAMANI ANYOSA": "KESSIA ANYELIN HUAMANI ANYOSA",
+  "LUIS ELIZALDE ESCATE": "LUIS ELIZALDE ESCATE",
+  "LORENA ALEXANDRA HUAMANI YUPANQUI": "LORENA ALEXANDRA HUAMANI YUPANQUI",
+  "MARIA DEL CARMEN BERNAOLA FARFAN": "MARIA DEL CARMEN BERNAOLA FARFAN",
+  "MARIA DE LA CRUZ MEZA": "MARIA DE LA CRUZ MEZA",
+  "MARYORI MARICIELO DONAYRE CAMACHO": "MARYORI MARICIELO DONAYRE CAMACHO",
+  "MARCO ANDRE FELICES GONZALEZ": "MARCO ANDRE FELICES GONZALEZ",
+  "GAMBOA MEDINA MARTIN JOSÉ ANTONIO": "GAMBOA MEDINA MARTIN JOSÉ ANTONIO",
+  "MERY LAPA ZARATE": "MERY LAPA ZARATE",
+  "MONICA MARTINEZ PEREZ": "MONICA MARTINEZ PEREZ",
+  "MARIFER RAMOS GARCIA": "MARIFER RAMOS GARCIA",
+  "MIJAIL JHOAN VASQUEZ LIZARZABURO": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
+  "NAOMI MARINA AMESQUITA APARCANA": "NAOMI MARINA AMESQUITA APARCANA",
+  "NORI ESPINO AYVAR": "NORI ESPINO AYVAR",
+  "PEDRO FERNANDO CUMPA VIVANCO": "PEDRO FERNANDO CUMPA VIVANCO",
+  "RIGOBERTO AYALA CARPIO": "RIGOBERTO AYALA CARPIO",
+  "ROSA ANGELICA CONISLLA VALDIÑO": "ROSA ANGELICA CONISLLA VALDIÑO",
+  "RUTH KARINA CUYA PRADO": "RUTH KARINA CUYA PRADO",
+  "ROSARIO ISABEL ELIAS MAVILA": "ROSARIO ISABEL ELIAS MAVILA",
+  "JOSE FERNANDO MORENO VALENCIA": "JOSE FERNANDO MORENO VALENCIA",
+  "ROGGER SMITH NAVARRETE CAHUA": "ROGGER SMITH NAVARRETE CAHUA",
+  "RUBETH DANNAE PICKMAN SAN MIGUEL": "RUBETH DANNAE PICKMAN SAN MIGUEL",
+  "SONALY JULIA MEZA ASTUPILLO": "SONALY JULIA MEZA ASTUPILLO",
+  "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
+  "VALENTINA BAEZ TORDOYA": "VALENTINA BAEZ TORDOYA",
+  "VALERIA ALANA ECHEVARRIA BRAVO": "VALERIA ALANA ECHEVARRIA BRAVO",
+  "CONCA FLORES YAMY NICOLL": "CONCA FLORES YAMY NICOLL",
+  "YESSICA MARIA RAMOS TAPIA": "YESSICA MARIA RAMOS TAPIA"
 };
 
 window.DISCOUNT_DATA = {
@@ -7734,7 +7758,7 @@ window.DISCOUNT_DATA = {
           "children": [
             {
               "id": "ase_san_clemente_1",
-              "name": "ASESOR SAN CLEMENTE 1",
+              "name": "MARIA DE LA CRUZ MEZA",
               "spv": "MARÍA BERNAOLA",
               "zona": "CENTRO",
               "tot_porta_mono": 0,
