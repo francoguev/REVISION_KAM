@@ -1559,7 +1559,7 @@
         const grandProjUnits = Math.round((grandTotal / ELAPSED_WD) * TOTAL_WD);
         const grandComp = grandQuota > 0 ? (grandTotal / grandQuota * 100) : 0;
         const grandProjComp = grandQuota > 0 ? (grandProjUnits / grandQuota * 100) : 0;
-        const grandVarM1 = grandTotal - grandM1Units;
+        const grandVarM1 = grandProjUnits - grandM1Units;
         const grandVarPct = grandM1Units > 0 ? (grandVarM1 / grandM1Units * 100) : 0;
 
         trTotal.innerHTML = `
@@ -1633,7 +1633,7 @@
           const projUnits = Math.round((spvTotal / ELAPSED_WD) * TOTAL_WD);
           const projComp = spvQuota > 0 ? (projUnits / spvQuota * 100) : 0;
           const spvM1 = getNodeUnits(spv, 'm202607');
-          const spvVarM1 = spvTotal - spvM1;
+          const spvVarM1 = projUnits - spvM1;
           const spvVarPct = spvM1 > 0 ? (spvVarM1 / spvM1 * 100) : 0;
 
           trSpv.innerHTML = `
@@ -1711,7 +1711,7 @@
               const projUnits = Math.round((pdvTotal / ELAPSED_WD) * TOTAL_WD);
               const projComp = pdvQuota > 0 ? (projUnits / pdvQuota * 100) : 0;
               const pdvM1 = getNodeUnits(pdv, 'm202607');
-              const pdvVarM1 = pdvTotal - pdvM1;
+              const pdvVarM1 = projUnits - pdvM1;
               const pdvVarPct = pdvM1 > 0 ? (pdvVarM1 / pdvM1 * 100) : 0;
 
               trPdv.innerHTML = `
@@ -1782,7 +1782,7 @@
                   const projUnits = Math.round((aseTotal / ELAPSED_WD) * TOTAL_WD);
                   const projComp = aseQuota > 0 ? (projUnits / aseQuota * 100) : 0;
                   const aseM1 = getNodeUnits(ase, 'm202607');
-                  const aseVarM1 = aseTotal - aseM1;
+                  const aseVarM1 = projUnits - aseM1;
                   const aseVarPct = aseM1 > 0 ? (aseVarM1 / aseM1 * 100) : 0;
 
                   trAse.innerHTML = `
