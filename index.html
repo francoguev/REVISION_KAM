@@ -586,20 +586,23 @@
   <!-- 16:9 Executive Presentation Slide Wrapper -->
   <div class="slide-wrapper">
     
-    <!-- Multi-Page Navigation Bar -->
+            <!-- Multi-Page Navigation Bar -->
     <nav class="page-nav-bar">
       <div class="page-nav-tabs">
         <button class="page-tab-btn active" id="navTab1" onclick="switchSlidePage(1)">
           <i class="fa-solid fa-chart-line"></i> Página 1: Avance y Proyección de Ventas
         </button>
         <button class="page-tab-btn" id="navTab2" onclick="switchSlidePage(2)">
-          <i class="fa-solid fa-id-card-clip"></i> Página 2: Dotación y Cumplimiento HC
+          <i class="fa-solid fa-tags"></i> Página 2: Tasa de Uso de Descuento
         </button>
         <button class="page-tab-btn" id="navTab3" onclick="switchSlidePage(3)">
-          <i class="fa-solid fa-star-half-stroke"></i> Página 3: Reporte de Calidad y NPS
+          <i class="fa-solid fa-id-card-clip"></i> Página 3: Dotación y Cumplimiento HC
         </button>
         <button class="page-tab-btn" id="navTab4" onclick="switchSlidePage(4)">
-          <i class="fa-solid fa-tags"></i> Página 4: Tasa de Uso de Descuento
+          <i class="fa-solid fa-star-half-stroke"></i> Página 4: Reporte de Calidad y NPS
+        </button>
+        <button class="page-tab-btn" id="navTab5" onclick="switchSlidePage(5)">
+          <i class="fa-solid fa-layer-group"></i> Página 5: Mix de Planes (Julio 2026)
         </button>
       </div>
     </nav>
@@ -670,7 +673,7 @@
     </div>
 
     <!-- ================= PAGE 2: DOTACIÓN Y CUMPLIMIENTO HC ================= -->
-    <div id="slidePage2" class="page-view" style="display: none;">
+    <div id="slidePage3" class="page-view" style="display: none;">
       
       <header class="slide-header">
         <div class="slide-title-box">
@@ -720,7 +723,7 @@
     </div>
 
     <!-- ================= PAGE 3: REPORTE DE CALIDAD Y NPS ================= -->
-    <div id="slidePage3" class="page-view" style="display: none;">
+    <div id="slidePage4" class="page-view" style="display: none;">
       
       <header class="slide-header">
         <div class="slide-title-box">
@@ -783,7 +786,7 @@
     </div>
 
     <!-- ================= PAGE 4: TASA DE USO DE DESCUENTO ================= -->
-    <div id="slidePage4" class="page-view" style="display: none;">
+    <div id="slidePage2" class="page-view" style="display: none;">
       
       <header class="slide-header">
         <div class="slide-title-box">
@@ -844,6 +847,85 @@
 
     </div>
 
+            <!-- ================= PAGE 5: MIX DE PLANES (JULIO 2026) ================= -->
+    <div id="slidePage5" class="page-view" style="display: none;">
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);"><i class="fa-solid fa-layer-group"></i></div>
+          <div>
+            <h1 class="slide-title" style="font-size: 20px; font-weight: 800; letter-spacing: -0.3px;">Mix de Planes Postpago (Cierre de Julio 2026)</h1>
+            <div class="slide-subtitle" style="font-size: 11.5px; color: #94a3b8;">Fortalecernos S.A.C. &bull; Cierre Mensual: 1,431 Unidades &bull; Distribución Jerárquica por Rango de Plan</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <select id="zoneSelectPage5" class="month-select-glass" onchange="renderMixPlanesTable()">
+            <option value="ALL">🌍 Todas las Zonas</option>
+            <option value="CENTRO">📍 CENTRO</option>
+            <option value="SUR">📍 SUR</option>
+            <option value="LIMA">📍 LIMA</option>
+          </select>
+          <select id="spvMixFilter" class="month-select-glass" onchange="renderMixPlanesTable()">
+            <option value="ALL">👥 Todos los Supervisores</option>
+            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
+            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
+            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
+            <option value="MERY LAPA">MERY LAPA</option>
+          </select>
+        </div>
+      </header>
+
+      <div class="table-container-card" style="display: flex; flex-direction: column; flex: 1; min-height: 0; background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);">
+        <div class="table-scroll-wrapper" style="max-height: 520px; overflow-y: auto; overflow-x: auto; flex: 1;">
+          <table class="presentation-table" style="width: 100%; border-collapse: separate; border-spacing: 0; font-size: 11px;">
+            <thead style="position: sticky; top: 0; z-index: 10; background: #1e293b; backdrop-filter: blur(8px);">
+              <tr>
+                <th style="min-width: 250px; text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 800; color: #f8fafc; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #334155;">
+                  <i class="fa-solid fa-store" style="color: #60a5fa; margin-right: 6px;"></i>PDV / ASESOR
+                </th>
+                <!-- RED PLANES (< 39.90) -->
+                <th class="val-cell" style="background: rgba(239, 68, 68, 0.12); color: #fca5a5; border-bottom: 2px solid #ef4444; padding: 8px 6px;" title="Planes Prohibidos (< 39.90)">
+                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-ban" style="color: #ef4444; margin-right: 3px;"></i>Entel Chip 35.90</div>
+                </th>
+                <th class="val-cell" style="background: rgba(239, 68, 68, 0.12); color: #fca5a5; border-bottom: 2px solid #ef4444; padding: 8px 6px;" title="Planes Prohibidos (< 39.90)">
+                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-ban" style="color: #ef4444; margin-right: 3px;"></i>Entel chip+ 32.90</div>
+                </th>
+                <th class="val-cell" style="background: rgba(239, 68, 68, 0.12); color: #fca5a5; border-bottom: 2px solid #ef4444; padding: 8px 6px;" title="Planes Prohibidos (< 39.90)">
+                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-ban" style="color: #ef4444; margin-right: 3px;"></i>Power 29.90 N</div>
+                </th>
+                <!-- AMBER PLAN (39.90) -->
+                <th class="val-cell" style="background: rgba(234, 179, 8, 0.12); color: #fde047; border-bottom: 2px solid #eab308; padding: 8px 6px;" title="Plan a Controlar (39.90)">
+                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-triangle-exclamation" style="color: #eab308; margin-right: 3px;"></i>Power 39.90 N</div>
+                </th>
+                <!-- GREEN PLANES (>= 49.90) -->
+                <th class="val-cell" style="background: rgba(34, 197, 94, 0.12); color: #6ee7b7; border-bottom: 2px solid #22c55e; padding: 8px 6px;" title="Planes Correctos (>= 49.90)">
+                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 3px;"></i>Power 49.90 N</div>
+                </th>
+                <th class="val-cell" style="background: rgba(34, 197, 94, 0.12); color: #6ee7b7; border-bottom: 2px solid #22c55e; padding: 8px 6px;" title="Planes Correctos (>= 49.90)">
+                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 3px;"></i>Power 59.90 N</div>
+                </th>
+                <th class="val-cell" style="background: rgba(34, 197, 94, 0.12); color: #6ee7b7; border-bottom: 2px solid #22c55e; padding: 8px 6px;" title="Planes Correctos (>= 49.90)">
+                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 3px;"></i>Power Ilim 69.90</div>
+                </th>
+                <th class="val-cell" style="background: rgba(34, 197, 94, 0.12); color: #6ee7b7; border-bottom: 2px solid #22c55e; padding: 8px 6px;" title="Planes Correctos (>= 49.90)">
+                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 3px;"></i>Power Ilim 79.90</div>
+                </th>
+                <th class="val-cell" style="background: rgba(34, 197, 94, 0.12); color: #6ee7b7; border-bottom: 2px solid #22c55e; padding: 8px 6px;" title="Planes Correctos (>= 49.90)">
+                  <div style="font-size: 10px; font-weight: 800;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 3px;"></i>Power Ilim 99.90</div>
+                </th>
+                <th class="val-cell" style="font-weight: 800; background: #0f172a; color: #38bdf8; border-bottom: 2px solid #38bdf8; padding: 8px 8px; font-size: 10.5px;">TOTAL GENERAL</th>
+              </tr>
+            </thead>
+            <tbody id="mixPlanesTbody"></tbody>
+          </table>
+        </div>
+        <footer class="table-footer" style="padding: 8px 16px; background: #0f172a; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center;">
+          <div class="footer-left" style="color: #64748b; font-size: 10.5px;">Presentación Fortalecernos &bull; Equipo de Operaciones</div>
+          <div class="footer-center" id="rowCountLabelPage5" style="color: #94a3b8; font-size: 10.5px; font-weight: 600;">14 Tiendas (Haz clic en ▼ para desplegar los Asesores)</div>
+          <div class="footer-right" id="pageFooterNum5" style="color: #64748b; font-size: 10.5px;">Página 5 de 5</div>
+        </footer>
+      </div>
+    </div>
+
     <!-- Slide Footer Bar -->
     <footer class="slide-footer">
       <div>Presentación Fortalecernos &bull; Equipo de Operaciones</div>
@@ -869,7 +951,9 @@
       <div id="drawerPdvDiagnosticsList"></div>
       <div id="supervisorActionContainer"></div>
 
-    </div>
+    
+    
+</div>
   </div>
 
   <!-- Data Payload -->
@@ -1136,30 +1220,29 @@
 
     function switchSlidePage(pageNum) {
       currentPage = pageNum;
-      document.getElementById('navTab1').classList.toggle('active', pageNum === 1);
-      document.getElementById('navTab2').classList.toggle('active', pageNum === 2);
-      document.getElementById('navTab3').classList.toggle('active', pageNum === 3);
-      document.getElementById('navTab4').classList.toggle('active', pageNum === 4);
-      
-      document.getElementById('slidePage1').style.display = pageNum === 1 ? 'flex' : 'none';
-      document.getElementById('slidePage2').style.display = pageNum === 2 ? 'flex' : 'none';
-      document.getElementById('slidePage3').style.display = pageNum === 3 ? 'flex' : 'none';
-      document.getElementById('slidePage4').style.display = pageNum === 4 ? 'flex' : 'none';
+      for (let i = 1; i <= 5; i++) {
+        const btn = document.getElementById('navTab' + i);
+        if (btn) btn.classList.toggle('active', i === pageNum);
+        const slide = document.getElementById('slidePage' + i);
+        if (slide) slide.style.display = (i === pageNum) ? 'flex' : 'none';
+      }
 
-      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 4`;
+      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 5`;
       
-      if (pageNum === 4) {
+      if (pageNum === 1) {
+        renderTableHeader();
+        renderTreeTable();
+      } else if (pageNum === 2) {
         renderDiscountHeader();
         renderDiscountTable();
       } else if (pageNum === 3) {
-        renderNpsHeader();
-        renderNpsTable();
-      } else if (pageNum === 2) {
         renderDotacionHeader();
         renderDotacionTable();
-      } else {
-        renderTableHeader();
-        renderTreeTable();
+      } else if (pageNum === 4) {
+        renderNpsHeader();
+        renderNpsTable();
+      } else if (pageNum === 5) {
+        renderMixPlanesTable();
       }
     }
 
@@ -1386,61 +1469,66 @@
 
     function renderTableHeader() {
       const thead = document.getElementById('treeThead');
+      if (!thead) return;
+
       const showArribos = (currentProductCode === 'POSTPAGO_TOTAL');
-      const showPlanAction = (currentProductCode === 'POSTPAGO_TOTAL');
-      
+
       if (currentMonthFilter === 'ALL') {
         thead.innerHTML = `
           <tr>
-            <th style="min-width: 240px;" class="sortable" onclick="sortTable('name')">ESTRUCTURA <i class="fa-solid fa-sort"></i></th>
+            <th style="min-width: 280px;">ESTRUCTURA</th>
             <th class="val-cell sortable" onclick="sortTable('m202606')">JUNIO</th>
             <th class="val-cell sortable" onclick="sortTable('m202607')">JULIO</th>
             <th class="val-cell sortable" onclick="sortTable('m202608')">AGOSTO</th>
             ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
-            <th class="val-cell sortable" onclick="sortTable('total')">TOTAL</th>
+            <th class="val-cell sortable" onclick="sortTable('total')">TOTAL VENTAS</th>
           </tr>
         `;
       } else if (currentMonthFilter === 'm202608') {
         thead.innerHTML = `
           <tr>
-            <th style="min-width: 240px;" class="sortable" onclick="sortTable('name')">ESTRUCTURA <i class="fa-solid fa-sort"></i></th>
-            <th class="val-cell">CUOTA</th>
+            <th style="min-width: 280px;">ESTRUCTURA</th>
+            <th class="val-cell sortable" onclick="sortTable('quota')">CUOTA</th>
             <th class="val-cell sortable" onclick="sortTable('m202608')">AVANCE</th>
-            <th class="val-cell">% AVANCE</th>
+            <th class="val-cell sortable" onclick="sortTable('pct_cump')">% AVANCE</th>
             ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
             <th class="val-cell">PROY (UND)</th>
             <th class="val-cell">% CUMP.</th>
-            ${showPlanAction ? `<th class="val-cell">PLAN DE ACCIÓN</th>` : ''}
+            <th class="val-cell sortable" onclick="sortTable('m1')">M-1</th>
+            <th class="val-cell sortable" onclick="sortTable('var_m1')">VAR VS M-1</th>
           </tr>
         `;
       } else {
+        const prevMKey = prevMonthMap[currentMonthFilter];
+        const prevLabel = prevMKey ? (monthLabelsMap[prevMKey] || prevMKey).toUpperCase() : 'M-1';
         thead.innerHTML = `
           <tr>
-            <th style="min-width: 240px;" class="sortable" onclick="sortTable('name')">ESTRUCTURA <i class="fa-solid fa-sort"></i></th>
-            <th class="val-cell">CUOTA</th>
-            <th class="val-cell sortable" onclick="sortTable('${currentMonthFilter}')">VENTAS</th>
-            <th class="val-cell">% CUMP.</th>
+            <th style="min-width: 280px;">ESTRUCTURA</th>
+            <th class="val-cell sortable" onclick="sortTable('quota')">CUOTA</th>
+            <th class="val-cell sortable" onclick="sortTable('current')">VENTAS</th>
+            <th class="val-cell sortable" onclick="sortTable('pct_cump')">% CUMP.</th>
             ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
-            <th class="val-cell">CIERRE M-1</th>
-            <th class="val-cell" style="min-width: 120px;">VAR. VS M-1</th>
+            <th class="val-cell">${prevLabel} (M-1)</th>
+            <th class="val-cell">VAR VS M-1</th>
           </tr>
         `;
       }
     }
 
     function renderTreeTable() {
+      renderTableHeader();
+
       const tbody = document.getElementById('treeTbody');
+      if (!tbody) return;
       tbody.innerHTML = '';
 
       const keyToUse = currentMonthFilter === 'ALL' ? 'total' : currentMonthFilter;
       const prevMKey = prevMonthMap[currentMonthFilter];
       const showArribos = (currentProductCode === 'POSTPAGO_TOTAL');
-      const showPlanAction = (currentProductCode === 'POSTPAGO_TOTAL');
       const selZone = document.getElementById('zoneSelectPage1').value;
 
       let treeData = JSON.parse(JSON.stringify(window.SALES_DATA.tree));
 
-      // Filter by Zone if selected
       if (selZone !== 'ALL') {
         treeData.forEach(spv => {
           spv.children = spv.children.filter(pdv => pdv.zona === selZone);
@@ -1455,7 +1543,11 @@
       treeData.forEach(spv => {
         grandTotal += getNodeUnits(spv, keyToUse);
         grandQuota += getNodeQuota(spv, keyToUse);
-        if (currentMonthFilter === 'm202608') { grandM1Units += spv.children.reduce((acc, p) => acc + (p.m1_jul3d || 0), 0); } else if (prevMKey) { grandM1Units += getNodeUnits(spv, prevMKey); }
+        if (currentMonthFilter === 'm202608') {
+          grandM1Units += getNodeUnits(spv, 'm202607');
+        } else if (prevMKey) {
+          grandM1Units += getNodeUnits(spv, prevMKey);
+        }
       });
 
       let visibleRowsCount = 0;
@@ -1497,18 +1589,19 @@
         const grandProjUnits = Math.round((grandTotal / ELAPSED_WD) * TOTAL_WD);
         const grandComp = grandQuota > 0 ? (grandTotal / grandQuota * 100) : 0;
         const grandProjComp = grandQuota > 0 ? (grandProjUnits / grandQuota * 100) : 0;
-        const diffUnits = grandProjUnits - grandM1Units;
-        const diffPct = grandM1Units > 0 ? (diffUnits / grandM1Units * 100) : 0;
+        const grandVarM1 = grandTotal - grandM1Units;
+        const grandVarPct = grandM1Units > 0 ? (grandVarM1 / grandM1Units * 100) : 0;
 
         trTotal.innerHTML = `
           <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
-          <td class="val-cell num-font">${grandQuota.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font">${grandQuota > 0 ? grandQuota.toLocaleString('es-PE') + ' u.' : '-'}</td>
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')} u.</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandComp) : '-'}</td>
           ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
           <td class="val-cell num-font" style="color: #93c5fd; font-weight: 800;">${grandProjUnits.toLocaleString('es-PE')} u.</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandProjComp) : '-'}</td>
-          ${showPlanAction ? `<td class="val-cell" style="color: #cbd5e1;">-</td>` : ''}
+          <td class="val-cell num-font" style="font-weight: 700;">${grandM1Units.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font">${getVariationBadgeHTML(grandVarM1, grandVarPct)}</td>
         `;
       } else {
         const grandComp = grandQuota > 0 ? (grandTotal / grandQuota * 100) : 0;
@@ -1517,7 +1610,7 @@
 
         trTotal.innerHTML = `
           <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
-          <td class="val-cell num-font">${grandQuota.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font">${grandQuota > 0 ? grandQuota.toLocaleString('es-PE') + ' u.' : '-'}</td>
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')} u.</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandComp) : '-'}</td>
           ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
@@ -1528,37 +1621,31 @@
 
       tbody.appendChild(trTotal);
 
+      // Sort Tree Data
       treeData.sort((a, b) => {
         let valA = currentSort.column === 'name' ? a.name : getNodeUnits(a, currentSort.column);
         let valB = currentSort.column === 'name' ? b.name : getNodeUnits(b, currentSort.column);
-        if (currentSort.direction === 'asc') return valA > valB ? 1 : -1;
-        return valA < valB ? 1 : -1;
+        if (typeof valA === 'string') return currentSort.direction === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        return currentSort.direction === 'asc' ? valA - valB : valB - valA;
       });
 
       treeData.forEach(spv => {
-        let spvMatch = spv.name.toLowerCase().includes(searchQuery);
-        let matchingPDVs = spv.children.filter(pdv => {
-          let pdvMatch = pdv.name.toLowerCase().includes(searchQuery);
-          let matchingAsesores = pdv.children.filter(ase => ase.name.toLowerCase().includes(searchQuery));
-          return pdvMatch || matchingAsesores.length > 0;
-        });
-
-        if (searchQuery.length > 0 && !spvMatch && matchingPDVs.length === 0) return;
-
-        visibleRowsCount++;
-        const isSpvExpanded = !!expandedState[spv.id];
-        const spvTotal = getNodeUnits(spv, keyToUse);
-        const spvQuota = getNodeQuota(spv, keyToUse);
-        const spvComp = spvQuota > 0 ? (spvTotal / spvQuota * 100) : 0;
-        const spvM1Units = currentMonthFilter === 'm202608' ? spv.children.reduce((acc, p) => acc + (p.m1_jul3d || 0), 0) : (prevMKey ? getNodeUnits(spv, prevMKey) : 0);
-
-        const spvArribos = getNodeArribos(spv, currentMonthFilter);
-        const spvConvPct = spvArribos > 0 ? (spvTotal / spvArribos * 100) : 0;
+        const isSpvExpanded = expandedState[spv.id] !== false;
 
         const trSpv = document.createElement('tr');
         trSpv.className = 'row-spv';
 
+        const spvTotal = getNodeUnits(spv, keyToUse);
+        const spvQuota = getNodeQuota(spv, keyToUse);
+        const spvComp = spvQuota > 0 ? (spvTotal / spvQuota * 100) : 0;
+        const spvArribos = getNodeArribos(spv, currentMonthFilter);
+        const spvConvPct = spvArribos > 0 ? (spvTotal / spvArribos * 100) : 0;
+
         if (currentMonthFilter === 'ALL') {
+          const m6 = getNodeUnits(spv, 'm202606');
+          const m7 = getNodeUnits(spv, 'm202607');
+          const m8 = getNodeUnits(spv, 'm202608');
+
           trSpv.innerHTML = `
             <td>
               <div class="node-cell indent-0">
@@ -1566,17 +1653,18 @@
                 <span style="font-weight: 800; color: #0f172a;">${spv.name}</span>
               </div>
             </td>
-            <td class="val-cell num-font">${getNodeUnits(spv, 'm202606').toLocaleString('es-PE')}</td>
-            <td class="val-cell num-font">${getNodeUnits(spv, 'm202607').toLocaleString('es-PE')}</td>
-            <td class="val-cell num-font">${getNodeUnits(spv, 'm202608').toLocaleString('es-PE')}</td>
-            ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
-            <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')}</td>
+            <td class="val-cell num-font">${m6.toLocaleString('es-PE')}</td>
+            <td class="val-cell num-font">${m7.toLocaleString('es-PE')}</td>
+            <td class="val-cell num-font">${m8.toLocaleString('es-PE')}</td>
+            ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${spvArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font" style="color: #475569;">${spvConvPct.toFixed(1)}%</td>` : ''}
+            <td class="val-cell num-font val-total" style="color: #0f172a;">${spvTotal.toLocaleString('es-PE')}</td>
           `;
         } else if (currentMonthFilter === 'm202608') {
           const projUnits = Math.round((spvTotal / ELAPSED_WD) * TOTAL_WD);
           const projComp = spvQuota > 0 ? (projUnits / spvQuota * 100) : 0;
-          const diffUnits = projUnits - spvM1Units;
-          const diffPct = spvM1Units > 0 ? (diffUnits / spvM1Units * 100) : 0;
+          const spvM1 = getNodeUnits(spv, 'm202607');
+          const spvVarM1 = spvTotal - spvM1;
+          const spvVarPct = spvM1 > 0 ? (spvVarM1 / spvM1 * 100) : 0;
 
           trSpv.innerHTML = `
             <td>
@@ -1591,11 +1679,13 @@
             ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
             <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
-            ${showPlanAction ? `<td class="val-cell"><button class="btn-plan-action" onclick="openSupervisorPlanDrawer('${spv.name}')"><i class="fa-solid fa-clipboard-check"></i> Plan Ago26</button></td>` : ''}
+            <td class="val-cell num-font" style="font-weight: 600;">${spvM1.toLocaleString('es-PE')} u.</td>
+            <td class="val-cell num-font">${getVariationBadgeHTML(spvVarM1, spvVarPct)}</td>
           `;
         } else {
-          const diffUnits = spvTotal - spvM1Units;
-          const diffPct = spvM1Units > 0 ? (diffUnits / spvM1Units * 100) : 0;
+          const spvM1 = prevMKey ? getNodeUnits(spv, prevMKey) : 0;
+          const diffUnits = spvTotal - spvM1;
+          const diffPct = spvM1 > 0 ? (diffUnits / spvM1 * 100) : 0;
 
           trSpv.innerHTML = `
             <td>
@@ -1608,30 +1698,32 @@
             <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')} u.</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(spvComp) : '-'}</td>
             ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
-            <td class="val-cell num-font">${prevMKey ? spvM1Units.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
+            <td class="val-cell num-font">${prevMKey ? spvM1.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
             <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
           `;
         }
 
         tbody.appendChild(trSpv);
+        visibleRowsCount++;
 
         if (isSpvExpanded) {
-          let pdvsToRender = spvMatch && searchQuery.length > 0 ? spv.children : matchingPDVs;
-          pdvsToRender.forEach(pdv => {
-            visibleRowsCount++;
-            const isPdvExpanded = !!expandedState[pdv.id];
-            const pdvTotal = getNodeUnits(pdv, keyToUse);
-            const pdvQuota = getNodeQuota(pdv, keyToUse);
-            const pdvComp = pdvQuota > 0 ? (pdvTotal / pdvQuota * 100) : 0;
-            const pdvM1Units = currentMonthFilter === 'm202608' ? (pdv.m1_jul3d || 0) : (prevMKey ? getNodeUnits(pdv, prevMKey) : 0);
-
-            const pdvArribos = getNodeArribos(pdv, currentMonthFilter);
-            const pdvConvPct = pdvArribos > 0 ? (pdvTotal / pdvArribos * 100) : 0;
+          spv.children.forEach(pdv => {
+            const isPdvExpanded = expandedState[pdv.id] !== false;
 
             const trPdv = document.createElement('tr');
             trPdv.className = 'row-pdv';
 
+            const pdvTotal = getNodeUnits(pdv, keyToUse);
+            const pdvQuota = getNodeQuota(pdv, keyToUse);
+            const pdvComp = pdvQuota > 0 ? (pdvTotal / pdvQuota * 100) : 0;
+            const pdvArribos = getNodeArribos(pdv, currentMonthFilter);
+            const pdvConvPct = pdvArribos > 0 ? (pdvTotal / pdvArribos * 100) : 0;
+
             if (currentMonthFilter === 'ALL') {
+              const m6 = getNodeUnits(pdv, 'm202606');
+              const m7 = getNodeUnits(pdv, 'm202607');
+              const m8 = getNodeUnits(pdv, 'm202608');
+
               trPdv.innerHTML = `
                 <td>
                   <div class="node-cell indent-1">
@@ -1639,17 +1731,18 @@
                     <span style="font-weight: 700; color: #334155;">${pdv.name}</span>
                   </div>
                 </td>
-                <td class="val-cell num-font">${getNodeUnits(pdv, 'm202606').toLocaleString('es-PE')}</td>
-                <td class="val-cell num-font">${getNodeUnits(pdv, 'm202607').toLocaleString('es-PE')}</td>
-                <td class="val-cell num-font">${getNodeUnits(pdv, 'm202608').toLocaleString('es-PE')}</td>
-                ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${pdvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(pdvConvPct)}</td>` : ''}
+                <td class="val-cell num-font">${m6.toLocaleString('es-PE')}</td>
+                <td class="val-cell num-font">${m7.toLocaleString('es-PE')}</td>
+                <td class="val-cell num-font">${m8.toLocaleString('es-PE')}</td>
+                ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')}</td>
               `;
             } else if (currentMonthFilter === 'm202608') {
               const projUnits = Math.round((pdvTotal / ELAPSED_WD) * TOTAL_WD);
               const projComp = pdvQuota > 0 ? (projUnits / pdvQuota * 100) : 0;
-              const diffUnits = projUnits - pdvM1Units;
-              const diffPct = pdvM1Units > 0 ? (diffUnits / pdvM1Units * 100) : 0;
+              const pdvM1 = getNodeUnits(pdv, 'm202607');
+              const pdvVarM1 = pdvTotal - pdvM1;
+              const pdvVarPct = pdvM1 > 0 ? (pdvVarM1 / pdvM1 * 100) : 0;
 
               trPdv.innerHTML = `
                 <td>
@@ -1664,11 +1757,13 @@
                 ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
                 <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
-                ${showPlanAction ? `<td class="val-cell" style="color: var(--text-light);">-</td>` : ''}
+                <td class="val-cell num-font" style="font-weight: 600;">${pdvM1.toLocaleString('es-PE')} u.</td>
+                <td class="val-cell num-font">${getVariationBadgeHTML(pdvVarM1, pdvVarPct)}</td>
               `;
             } else {
-              const diffUnits = pdvTotal - pdvM1Units;
-              const diffPct = pdvM1Units > 0 ? (diffUnits / pdvM1Units * 100) : 0;
+              const pdvM1 = prevMKey ? getNodeUnits(pdv, prevMKey) : 0;
+              const diffUnits = pdvTotal - pdvM1;
+              const diffPct = pdvM1 > 0 ? (diffUnits / pdvM1 * 100) : 0;
 
               trPdv.innerHTML = `
                 <td>
@@ -1681,7 +1776,7 @@
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')} u.</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(pdvComp) : '-'}</td>
                 ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
-                <td class="val-cell num-font">${prevMKey ? pdvM1Units.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
+                <td class="val-cell num-font">${prevMKey ? pdvM1.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                 <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
               `;
             }
@@ -1694,14 +1789,22 @@
                 const aseTotal = getNodeUnits(ase, keyToUse);
                 const aseQuota = getNodeQuota(ase, keyToUse);
                 const aseComp = aseQuota > 0 ? (aseTotal / aseQuota * 100) : 0;
-                const aseM1Units = prevMKey ? getNodeUnits(ase, prevMKey) : 0;
+                const userCode = ase.user_code || ase.name;
+                const realName = ase.real_name || (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : '');
 
                 const trAse = document.createElement('tr');
                 trAse.className = 'row-asesor';
 
                 if (currentMonthFilter === 'ALL') {
                   trAse.innerHTML = `
-                    <td><div class="node-cell indent-2"><span>${ase.name}</span></div></td>
+                    <td>
+                      <div class="node-cell indent-2">
+                        <div style="display: flex; flex-direction: column;">
+                          <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
+                          <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>
+                        </div>
+                      </div>
+                    </td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202606').toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202607').toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202608').toLocaleString('es-PE')}</td>
@@ -1711,30 +1814,47 @@
                 } else if (currentMonthFilter === 'm202608') {
                   const projUnits = Math.round((aseTotal / ELAPSED_WD) * TOTAL_WD);
                   const projComp = aseQuota > 0 ? (projUnits / aseQuota * 100) : 0;
-                  const diffUnits = projUnits - aseM1Units;
-                  const diffPct = aseM1Units > 0 ? (diffUnits / aseM1Units * 100) : 0;
+                  const aseM1 = getNodeUnits(ase, 'm202607');
+                  const aseVarM1 = aseTotal - aseM1;
+                  const aseVarPct = aseM1 > 0 ? (aseVarM1 / aseM1 * 100) : 0;
 
                   trAse.innerHTML = `
-                    <td><div class="node-cell indent-2"><span>${ase.name}</span></div></td>
+                    <td>
+                      <div class="node-cell indent-2">
+                        <div style="display: flex; flex-direction: column;">
+                          <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
+                          <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>
+                        </div>
+                      </div>
+                    </td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')} u.</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
                     <td class="val-cell num-font" style="font-weight: 600; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
-                    ${showPlanAction ? `<td class="val-cell" style="color: var(--text-light);">-</td>` : ''}
+                    <td class="val-cell num-font" style="color: #64748b;">${aseM1.toLocaleString('es-PE')} u.</td>
+                    <td class="val-cell num-font">${getVariationBadgeHTML(aseVarM1, aseVarPct)}</td>
                   `;
                 } else {
-                  const diffUnits = aseTotal - aseM1Units;
-                  const diffPct = aseM1Units > 0 ? (diffUnits / aseM1Units * 100) : 0;
+                  const aseM1 = prevMKey ? getNodeUnits(ase, prevMKey) : 0;
+                  const diffUnits = aseTotal - aseM1;
+                  const diffPct = aseM1 > 0 ? (diffUnits / aseM1 * 100) : 0;
 
                   trAse.innerHTML = `
-                    <td><div class="node-cell indent-2"><span>${ase.name}</span></div></td>
+                    <td>
+                      <div class="node-cell indent-2">
+                        <div style="display: flex; flex-direction: column;">
+                          <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
+                          <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>
+                        </div>
+                      </div>
+                    </td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')} u.</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
-                    <td class="val-cell num-font">${prevMKey ? aseM1Units.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
+                    <td class="val-cell num-font">${prevMKey ? aseM1.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
                     <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
                   `;
                 }
@@ -1746,11 +1866,11 @@
         }
       });
 
-      document.getElementById('rowCountLabel').textContent = `${visibleRowsCount} filas en estructura jerárquica activa`;
+      const labelEl = document.getElementById('rowCountLabel');
+      if (labelEl) labelEl.textContent = `${visibleRowsCount} filas en estructura jerárquica activa`;
     }
 
-    // ================= PAGE 2: DOTACIÓN RENDER LOGIC =================
-    function toggleDotacionDays() {
+function toggleDotacionDays() {
       isDaysExpanded = !isDaysExpanded;
       document.getElementById('toggleDaysText').textContent = isDaysExpanded ? 'Ocultar Días (26-Jul a 1-Ago)' : 'Mostrar Días (26-Jul - 1-Ago)';
       renderDotacionHeader();
@@ -1787,13 +1907,15 @@
       `;
     }
 
-    function renderDotacionTable() {
+        function renderDotacionTable() {
       const tbody = document.getElementById('dotacionTbody');
       tbody.innerHTML = '';
 
       const selSpv = document.getElementById('spvDotacionFilter').value;
       const selZone = document.getElementById('zoneSelectPage2').value;
       const dData = window.DOTACION_DATA;
+      if (!dData || !dData.pdvs) return;
+
       let pdvs = dData.pdvs;
 
       if (selSpv !== 'ALL') {
@@ -1805,16 +1927,16 @@
 
       let totalHcObj = 0, totalHcCod = 0, totalGap = 0, totalContratar = 0;
       pdvs.forEach(p => {
-        totalHcObj += p.hc_obj;
-        totalHcCod += p.hc_codigo;
-        totalGap += p.hc_gap;
-        totalContratar += p.hc_contratar;
+        totalHcObj += (p.hc_obj || 0);
+        totalHcCod += (p.hc_codigo || 0);
+        totalGap += (p.hc_gap || 0);
+        totalContratar += (p.hc_contratar || 0);
       });
 
       const totalCumpObj = totalHcObj > 0 ? (totalHcCod / totalHcObj * 100) : 0;
-      const grandCondicion = dData.summary.cump_condicion;
+      const grandCondicion = dData.summary ? dData.summary.cump_condicion : 74.0;
 
-      // Dynamically Render Top KPI Cards for Page 2
+      // Render Top KPI Cards
       const kpiGrid = document.getElementById('dotacionKpiCards');
       if (kpiGrid) {
         kpiGrid.innerHTML = `
@@ -1829,7 +1951,7 @@
             <div class="kpi-icon-box" style="background: #f0fdf4; color: #166534;"><i class="fa-solid fa-user-check"></i></div>
             <div>
               <div class="kpi-title">HC Codificado (Actual)</div>
-              <div class="kpi-value">${totalHcCod} Asesores <span style="font-size: 12px; font-weight: 700; color: #15803d;">(${totalCumpObj.toFixed(1)}%)</span></div>
+              <div class="kpi-value" style="color: #15803d;">${totalHcCod} Asesores <span style="font-size: 12px; font-weight: 600;">(${totalCumpObj.toFixed(1)}%)</span></div>
             </div>
           </div>
           <div class="kpi-card">
@@ -1849,6 +1971,7 @@
         `;
       }
 
+      // Grand Total Row
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
@@ -1875,14 +1998,15 @@
         const trPdv = document.createElement('tr');
         trPdv.className = 'row-pdv-shaded';
 
+        const d = pdv.daily || {};
         const daysHTML = isDaysExpanded ? `
-          <td class="val-cell num-font">${pdv.daily['26-Jul']}</td>
-          <td class="val-cell num-font">${pdv.daily['27-Jul']}</td>
-          <td class="val-cell num-font">${pdv.daily['28-Jul']}</td>
-          <td class="val-cell num-font">${pdv.daily['29-Jul']}</td>
-          <td class="val-cell num-font">${pdv.daily['30-Jul']}</td>
-          <td class="val-cell num-font">${pdv.daily['31-Jul']}</td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.daily['1-Ago']}</td>
+          <td class="val-cell num-font">${d['26-Jul'] || '-'}</td>
+          <td class="val-cell num-font">${d['27-Jul'] || '-'}</td>
+          <td class="val-cell num-font">${d['28-Jul'] || '-'}</td>
+          <td class="val-cell num-font">${d['29-Jul'] || '-'}</td>
+          <td class="val-cell num-font">${d['30-Jul'] || '-'}</td>
+          <td class="val-cell num-font">${d['31-Jul'] || '-'}</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${d['1-Ago'] || '-'}</td>
         ` : '';
 
         trPdv.innerHTML = `
@@ -1899,8 +2023,8 @@
           <td class="val-cell num-font">${pdv.hc_contratar}</td>
           ${daysHTML}
           <td class="val-cell num-font">${getComplianceBadgeHTML(pdv.cump_condicion)}</td>
-          <td style="font-weight: 600; color: ${pdv.obs.includes('PDV OK') ? '#15803d' : '#b91c1c'}; font-size: 11px;">
-            ${pdv.obs}
+          <td style="font-weight: 600; color: ${pdv.obs && pdv.obs.includes('PDV OK') ? '#15803d' : '#b91c1c'}; font-size: 11px;">
+            ${pdv.obs || '-'}
           </td>
         `;
         tbody.appendChild(trPdv);
@@ -1911,24 +2035,26 @@
             const trAse = document.createElement('tr');
             trAse.className = 'row-asesor';
 
+            const ad = ase.daily || {};
             const aseDaysHTML = isDaysExpanded ? `
-              <td class="val-cell num-font">${ase.daily['26-Jul']}</td>
-              <td class="val-cell num-font">${ase.daily['27-Jul']}</td>
-              <td class="val-cell num-font">${ase.daily['28-Jul']}</td>
-              <td class="val-cell num-font">${ase.daily['29-Jul']}</td>
-              <td class="val-cell num-font">${ase.daily['30-Jul']}</td>
-              <td class="val-cell num-font">${ase.daily['31-Jul']}</td>
-              <td class="val-cell num-font" style="font-weight: 800;">${ase.daily['1-Ago']}</td>
+              <td class="val-cell num-font">${ad['26-Jul'] || '-'}</td>
+              <td class="val-cell num-font">${ad['27-Jul'] || '-'}</td>
+              <td class="val-cell num-font">${ad['28-Jul'] || '-'}</td>
+              <td class="val-cell num-font">${ad['29-Jul'] || '-'}</td>
+              <td class="val-cell num-font">${ad['30-Jul'] || '-'}</td>
+              <td class="val-cell num-font">${ad['31-Jul'] || '-'}</td>
+              <td class="val-cell num-font" style="font-weight: 800;">${ad['1-Ago'] || '-'}</td>
             ` : '';
 
-            const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[ase.name]) ? window.USER_CODE_MAP[ase.name] : '';
+            const userCode = ase.user_code || ase.name;
+            const realName = ase.real_name || (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : '');
 
             trAse.innerHTML = `
               <td>
                 <div class="node-cell indent-1">
                   <div style="display: flex; flex-direction: column;">
-                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${ase.name}</span>
-                    ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
+                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
+                    <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>
                   </div>
                 </div>
               </td>
@@ -2000,6 +2126,139 @@
       `;
     }
 
+        
+            // ================= PAGE 5: MIX DE PLANES RENDER LOGIC =================
+    let mixExpandedState = {};
+
+    function toggleMixPdv(pdvName) {
+      mixExpandedState[pdvName] = mixExpandedState[pdvName] === true ? false : true;
+      renderMixPlanesTable();
+    }
+
+    function getPlanBadgeCellHTML(planName, count) {
+      if (!count || count <= 0) return `<td class="val-cell num-font" style="color: #475569; font-size: 11px;">-</td>`;
+      
+      const pNorm = planName.toUpperCase();
+      if (pNorm.includes('35.90') || pNorm.includes('32.90') || pNorm.includes('29.90')) {
+        // Red Plan (< 39.90)
+        return `<td class="val-cell num-font"><span style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); padding: 1.5px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">${count}</span></td>`;
+      } else if (pNorm.includes('39.90')) {
+        // Yellow Plan (39.90)
+        return `<td class="val-cell num-font"><span style="background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); padding: 1.5px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">${count}</span></td>`;
+      } else {
+        // Green Plan (>= 49.90)
+        return `<td class="val-cell num-font"><span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); padding: 1.5px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">${count}</span></td>`;
+      }
+    }
+
+    function renderMixPlanesTable() {
+      const tbody = document.getElementById('mixPlanesTbody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      const selSpv = document.getElementById('spvMixFilter') ? document.getElementById('spvMixFilter').value : 'ALL';
+      const selZone = document.getElementById('zoneSelectPage5') ? document.getElementById('zoneSelectPage5').value : 'ALL';
+      const mixData = window.MIX_PLANES_DATA;
+      if (!mixData || !mixData.tree) return;
+
+      const plans = mixData.plans_list;
+
+      let tree = JSON.parse(JSON.stringify(mixData.tree));
+      if (selSpv !== 'ALL') {
+        tree = tree.filter(s => s.name === selSpv);
+      }
+      if (selZone !== 'ALL') {
+        tree.forEach(s => {
+          s.children = s.children.filter(p => p.zona === selZone);
+        });
+        tree = tree.filter(s => s.children.length > 0);
+      }
+
+      // Grand Total Row
+      const grandPlans = { 'Entel Chip 35.90': 0, 'Entel chip+ 32.90': 0, 'Power 29.90 N': 0, 'Power 39.90 N': 0, 'Power 49.90 N': 0, 'Power 59.90 N': 0, 'Power ilim 69.90 N': 0, 'Power ilim 79.90 SD N': 0, 'Power ilim 99.90 SD N': 0 };
+      let grandTot = 0;
+
+      tree.forEach(spv => {
+        spv.children.forEach(pdv => {
+          plans.forEach(p => {
+            grandPlans[p] += (pdv.plans[p] || 0);
+          });
+          grandTot += pdv.total;
+        });
+      });
+
+      const trTotal = document.createElement('tr');
+      trTotal.className = 'row-grand-total';
+      trTotal.style.background = '#1e293b';
+
+      let planColsHTML = plans.map(p => getPlanBadgeCellHTML(p, grandPlans[p])).join('');
+      trTotal.innerHTML = `
+        <td><div class="node-cell indent-0" style="font-size: 11px;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span style="font-weight: 800; color: #f8fafc;">TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        ${planColsHTML}
+        <td class="val-cell num-font" style="font-size: 12px; font-weight: 800; color: #38bdf8;">${grandTot.toLocaleString('es-PE')} u.</td>
+      `;
+      tbody.appendChild(trTotal);
+
+      let visibleRows = 0;
+
+      tree.forEach(spv => {
+        spv.children.forEach(pdv => {
+          const isPdvExpanded = mixExpandedState[pdv.name] === true; // COLLAPSED BY DEFAULT
+
+          const trPdv = document.createElement('tr');
+          trPdv.className = 'row-pdv-shaded';
+          trPdv.style.fontSize = '11px';
+
+          let pdvColsHTML = plans.map(p => getPlanBadgeCellHTML(p, pdv.plans[p])).join('');
+
+          trPdv.innerHTML = `
+            <td>
+              <div class="node-cell indent-0">
+                <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleMixPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i></span>
+                <span style="font-weight: 800; color: #0f172a; font-size: 11.5px;">${pdv.name}</span>
+              </div>
+            </td>
+            ${pdvColsHTML}
+            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; font-size: 11.5px;">${pdv.total.toLocaleString('es-PE')} u.</td>
+          `;
+          tbody.appendChild(trPdv);
+          visibleRows++;
+
+          if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
+            pdv.children.forEach(ase => {
+              const trAse = document.createElement('tr');
+              trAse.className = 'row-asesor';
+
+              let aseColsHTML = plans.map(p => getPlanBadgeCellHTML(p, ase.plans[p])).join('');
+              const userCode = ase.user_code || ase.name;
+              const realName = ase.real_name || (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : '');
+
+              trAse.innerHTML = `
+                <td>
+                  <div class="node-cell indent-1">
+                    <div style="display: flex; flex-direction: column;">
+                      <div style="display: flex; align-items: center; gap: 4px;">
+                        <span style="font-size: 8px; font-weight: 800; background: #334155; color: #cbd5e1; padding: 1px 4px; border-radius: 3px; text-transform: uppercase;">ASESOR</span>
+                        <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
+                      </div>
+                      <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1; margin-top: 1px;">${realName}</span>
+                    </div>
+                  </div>
+                </td>
+                ${aseColsHTML}
+                <td class="val-cell num-font" style="font-weight: 700; color: #334155; font-size: 11px;">${ase.total.toLocaleString('es-PE')} u.</td>
+              `;
+              tbody.appendChild(trAse);
+              visibleRows++;
+            });
+          }
+        });
+      });
+
+      const labelEl = document.getElementById('rowCountLabelPage5');
+      if (labelEl) labelEl.textContent = `${visibleRows} filas en Mix de Planes (Haz clic en la tienda para desplegar Asesores)`;
+    }
+
     function renderNpsTable() {
       const tbody = document.getElementById('npsTbody');
       tbody.innerHTML = '';
@@ -2007,11 +2266,13 @@
       const selSpv = document.getElementById('spvNpsFilter').value;
       const selZone = document.getElementById('zoneSelectPage3').value;
       const npsData = window.NPS_DATA;
+      if (!npsData || !npsData[currentNpsChannel]) return;
+
       const channelData = npsData[currentNpsChannel];
       const isPostventa = (currentNpsChannel === 'postventa');
-      const targetMeta = npsData.target;
+      const targetMeta = npsData.target || 58.0;
 
-      let pdvs = channelData.pdvs;
+      let pdvs = channelData.pdvs || [];
       if (selSpv !== 'ALL') {
         pdvs = pdvs.filter(p => p.spv === selSpv);
       }
@@ -2022,57 +2283,58 @@
       let totQ = 0;
       let sumNpsQ = 0;
       pdvs.forEach(p => {
-        totQ += p.total_q;
-        sumNpsQ += (p.total_nps * p.total_q);
+        totQ += (p.total_q || 0);
+        sumNpsQ += ((p.total_nps || 0) * (p.total_q || 0));
       });
-      const totNps = totQ > 0 ? (sumNpsQ / totQ) : channelData.summary.total_nps;
+      const totNps = totQ > 0 ? (sumNpsQ / totQ) : (channelData.summary ? channelData.summary.total_nps : 72.0);
 
       const kpiGrid = document.getElementById('npsKpiCards');
-      const bestSem = isPostventa ? 'SEM1 & SEM4 (100% NPS)' : 'SEM3 (89% NPS)';
-
-      kpiGrid.innerHTML = `
-        <div class="kpi-card">
-          <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
-          <div>
-            <div class="kpi-title">Meta NPS TEX</div>
-            <div class="kpi-value">58.0% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(Objetivo)</span></div>
+      if (kpiGrid) {
+        const bestSem = isPostventa ? 'SEM1 & SEM4 (100% NPS)' : 'SEM3 (89% NPS)';
+        kpiGrid.innerHTML = `
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
+            <div>
+              <div class="kpi-title">Meta NPS TEX</div>
+              <div class="kpi-value">58.0% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(Objetivo)</span></div>
+            </div>
           </div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon-box" style="background: ${totNps >= targetMeta ? '#f0fdf4' : '#fef2f2'}; color: ${totNps >= targetMeta ? '#166534' : '#991b1b'};">
-            <i class="fa-solid ${totNps >= targetMeta ? 'fa-award' : 'fa-triangle-exclamation'}"></i>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: ${totNps >= targetMeta ? '#f0fdf4' : '#fef2f2'}; color: ${totNps >= targetMeta ? '#166534' : '#991b1b'};">
+              <i class="fa-solid ${totNps >= targetMeta ? 'fa-award' : 'fa-triangle-exclamation'}"></i>
+            </div>
+            <div>
+              <div class="kpi-title">NPS Logrado (${currentNpsChannel.toUpperCase()})</div>
+              <div class="kpi-value" style="color: ${totNps >= targetMeta ? '#15803d' : '#b91c1c'};">${totNps.toFixed(0)}% ${getNpsBadgeHTML(totNps, targetMeta)}</div>
+            </div>
           </div>
-          <div>
-            <div class="kpi-title">NPS Logrado (${currentNpsChannel.toUpperCase()})</div>
-            <div class="kpi-value" style="color: ${totNps >= targetMeta ? '#15803d' : '#b91c1c'};">${totNps.toFixed(0)}% ${getNpsBadgeHTML(totNps, targetMeta)}</div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #f0f9ff; color: #0369a1;"><i class="fa-solid fa-comments"></i></div>
+            <div>
+              <div class="kpi-title">Total Encuestas (Q)</div>
+              <div class="kpi-value">${totQ} Respuestas</div>
+            </div>
           </div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon-box" style="background: #f0f9ff; color: #0369a1;"><i class="fa-solid fa-comments"></i></div>
-          <div>
-            <div class="kpi-title">Total Encuestas (Q)</div>
-            <div class="kpi-value">${totQ} Respuestas</div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-chart-line"></i></div>
+            <div>
+              <div class="kpi-title">Pico Semanal</div>
+              <div class="kpi-value" style="font-size: 13.5px; color: #a16207;">${bestSem}</div>
+            </div>
           </div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-chart-line"></i></div>
-          <div>
-            <div class="kpi-title">Pico Semanal</div>
-            <div class="kpi-value" style="font-size: 13.5px; color: #a16207;">${bestSem}</div>
-          </div>
-        </div>
-      `;
+        `;
+      }
 
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
-      
+
       let weekTotalCells = '';
-      if (isWeeksExpanded) {
-        const s1 = channelData.summary.sem1;
-        const s2 = channelData.summary.sem2;
-        const s3 = channelData.summary.sem3;
-        const s4 = channelData.summary.sem4;
-        const s5 = channelData.summary.sem5;
+      if (isWeeksExpanded && channelData.summary) {
+        const s1 = channelData.summary.sem1 || {nps:0, q:0};
+        const s2 = channelData.summary.sem2 || {nps:0, q:0};
+        const s3 = channelData.summary.sem3 || {nps:0, q:0};
+        const s4 = channelData.summary.sem4 || {nps:0, q:0};
+        const s5 = channelData.summary.sem5 || {nps:0, q:0};
 
         weekTotalCells = `
           <td class="val-cell num-font">${getNpsBadgeHTML(s1.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s1.q}Q)</span></td>
@@ -2105,12 +2367,18 @@
 
         let pdvWeeksHTML = '';
         if (isWeeksExpanded) {
+          const s1 = pdv.sem1 || {nps:0, q:0};
+          const s2 = pdv.sem2 || {nps:0, q:0};
+          const s3 = pdv.sem3 || {nps:0, q:0};
+          const s4 = pdv.sem4 || {nps:0, q:0};
+          const s5 = pdv.sem5 || {nps:0, q:0};
+
           pdvWeeksHTML = `
-            <td class="val-cell num-font">${pdv.sem1.q > 0 ? getNpsBadgeHTML(pdv.sem1.nps, targetMeta) + ` (${pdv.sem1.q}Q)` : '-'}</td>
-            <td class="val-cell num-font">${pdv.sem2.q > 0 ? getNpsBadgeHTML(pdv.sem2.nps, targetMeta) + ` (${pdv.sem2.q}Q)` : '-'}</td>
-            <td class="val-cell num-font">${pdv.sem3.q > 0 ? getNpsBadgeHTML(pdv.sem3.nps, targetMeta) + ` (${pdv.sem3.q}Q)` : '-'}</td>
-            <td class="val-cell num-font">${pdv.sem4.q > 0 ? getNpsBadgeHTML(pdv.sem4.nps, targetMeta) + ` (${pdv.sem4.q}Q)` : '-'}</td>
-            ${isPostventa ? `<td class="val-cell num-font">${pdv.sem5 && pdv.sem5.q > 0 ? getNpsBadgeHTML(pdv.sem5.nps, targetMeta) + ` (${pdv.sem5.q}Q)` : '-'}</td>` : ''}
+            <td class="val-cell num-font">${s1.q > 0 ? getNpsBadgeHTML(s1.nps, targetMeta) + ` (${s1.q}Q)` : '-'}</td>
+            <td class="val-cell num-font">${s2.q > 0 ? getNpsBadgeHTML(s2.nps, targetMeta) + ` (${s2.q}Q)` : '-'}</td>
+            <td class="val-cell num-font">${s3.q > 0 ? getNpsBadgeHTML(s3.nps, targetMeta) + ` (${s3.q}Q)` : '-'}</td>
+            <td class="val-cell num-font">${s4.q > 0 ? getNpsBadgeHTML(s4.nps, targetMeta) + ` (${s4.q}Q)` : '-'}</td>
+            ${isPostventa ? `<td class="val-cell num-font">${s5.q > 0 ? getNpsBadgeHTML(s5.nps, targetMeta) + ` (${s5.q}Q)` : '-'}</td>` : ''}
           `;
         }
 
@@ -2123,10 +2391,10 @@
           </td>
           ${pdvWeeksHTML}
           <td class="val-cell num-font">${getNpsBadgeHTML(pdv.total_nps, targetMeta)}</td>
-          <td class="val-cell num-font" style="font-weight: 800;">${pdv.total_q}</td>
+          <td class="val-cell num-font">${pdv.total_q}</td>
           <td class="val-cell num-font">${pdv.pct_q}%</td>
           <td class="val-cell num-font">
-            ${pdv.total_nps >= targetMeta ? `<span class="badge-compliance comp-green">CUMPLE</span>` : `<span class="badge-compliance comp-red">BAJO META</span>`}
+            ${pdv.total_nps >= targetMeta ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`}
           </td>
         `;
         tbody.appendChild(trPdv);
@@ -2139,32 +2407,39 @@
 
             let aseWeeksHTML = '';
             if (isWeeksExpanded) {
+              const s1 = ase.sem1 || {nps:0, q:0};
+              const s2 = ase.sem2 || {nps:0, q:0};
+              const s3 = ase.sem3 || {nps:0, q:0};
+              const s4 = ase.sem4 || {nps:0, q:0};
+              const s5 = ase.sem5 || {nps:0, q:0};
+
               aseWeeksHTML = `
-                <td class="val-cell num-font">${ase.sem1 && ase.sem1.q > 0 ? getNpsBadgeHTML(ase.sem1.nps, targetMeta) + ` (${ase.sem1.q}Q)` : '-'}</td>
-                <td class="val-cell num-font">${ase.sem2 && ase.sem2.q > 0 ? getNpsBadgeHTML(ase.sem2.nps, targetMeta) + ` (${ase.sem2.q}Q)` : '-'}</td>
-                <td class="val-cell num-font">${ase.sem3 && ase.sem3.q > 0 ? getNpsBadgeHTML(ase.sem3.nps, targetMeta) + ` (${ase.sem3.q}Q)` : '-'}</td>
-                <td class="val-cell num-font">${ase.sem4 && ase.sem4.q > 0 ? getNpsBadgeHTML(ase.sem4.nps, targetMeta) + ` (${ase.sem4.q}Q)` : '-'}</td>
-                ${isPostventa ? `<td class="val-cell num-font">${ase.sem5 && ase.sem5.q > 0 ? getNpsBadgeHTML(ase.sem5.nps, targetMeta) + ` (${ase.sem5.q}Q)` : '-'}</td>` : ''}
+                <td class="val-cell num-font">${s1.q > 0 ? getNpsBadgeHTML(s1.nps, targetMeta) + ` (${s1.q}Q)` : '-'}</td>
+                <td class="val-cell num-font">${s2.q > 0 ? getNpsBadgeHTML(s2.nps, targetMeta) + ` (${s2.q}Q)` : '-'}</td>
+                <td class="val-cell num-font">${s3.q > 0 ? getNpsBadgeHTML(s3.nps, targetMeta) + ` (${s3.q}Q)` : '-'}</td>
+                <td class="val-cell num-font">${s4.q > 0 ? getNpsBadgeHTML(s4.nps, targetMeta) + ` (${s4.q}Q)` : '-'}</td>
+                ${isPostventa ? `<td class="val-cell num-font">${s5.q > 0 ? getNpsBadgeHTML(s5.nps, targetMeta) + ` (${s5.q}Q)` : '-'}</td>` : ''}
               `;
             }
 
-            const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[ase.name]) ? window.USER_CODE_MAP[ase.name] : '';
+            const userCode = ase.user_code || ase.name;
+            const realName = ase.real_name || (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : '');
 
             trAse.innerHTML = `
               <td>
                 <div class="node-cell indent-1">
                   <div style="display: flex; flex-direction: column;">
-                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${ase.name}</span>
-                    ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
+                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
+                    <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>
                   </div>
                 </div>
               </td>
               ${aseWeeksHTML}
               <td class="val-cell num-font">${getNpsBadgeHTML(ase.total_nps, targetMeta)}</td>
               <td class="val-cell num-font">${ase.total_q}</td>
-              <td class="val-cell num-font">${totQ > 0 ? Math.round(ase.total_q / totQ * 100) : 0}%</td>
+              <td class="val-cell num-font">${ase.pct_q}%</td>
               <td class="val-cell num-font">
-                ${ase.total_nps >= targetMeta ? `<span class="badge-compliance comp-green">CUMPLE</span>` : `<span class="badge-compliance comp-red">DESVIACIÓN</span>`}
+                ${ase.total_nps >= targetMeta ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`}
               </td>
             `;
             tbody.appendChild(trAse);
@@ -2173,7 +2448,7 @@
         }
       });
 
-      document.getElementById('rowCountLabel').textContent = `${visibleRows} filas en reporte de NPS (${currentNpsChannel.toUpperCase()})`;
+      document.getElementById('rowCountLabel').textContent = `${visibleRows} filas en reporte de calidad y NPS`;
     }
 
     // ================= PAGE 4: TASA DE USO DE DESCUENTO RENDER LOGIC =================
