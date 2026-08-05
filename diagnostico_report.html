@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagnóstico Integral y Matriz de Alertas - Fortalecernos S.A.C.</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&display=swap');
+    
+    @page {
+      size: A4 portrait;
+      margin: 15mm 15mm 15mm 15mm;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-banner h1 {
+      margin: 0 0 6px 0;
+      font-size: 20pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .header-banner p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 10pt;
+    }
+    .header-badge {
+      background: rgba(59, 130, 246, 0.2);
+      border: 1px solid #3b82f6;
+      color: #60a5fa;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 9pt;
+    }
+
+    .section-title {
+      font-size: 14pt;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin: 24px 0 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    table.summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 9.5pt;
+    }
+    table.summary-table th {
+      background: #1e293b;
+      color: #ffffff;
+      text-align: left;
+      padding: 8px 10px;
+      font-weight: 700;
+    }
+    table.summary-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    table.summary-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8.5pt;
+      font-weight: 700;
+    }
+    .badge-success { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .badge-warning { background: #fef9c3; color: #854d0e; border: 1px solid #fef08a; }
+    .badge-danger { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+    .spv-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 20px;
+      page-break-inside: avoid;
+    }
+    .spv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .spv-name {
+      font-size: 12pt;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .pdv-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    .pdv-title {
+      font-weight: 800;
+      font-size: 10.5pt;
+      color: #0f172a;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .pdv-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+      font-size: 9pt;
+      color: #334155;
+    }
+    .metric-item {
+      background: #f1f5f9;
+      padding: 6px 8px;
+      border-radius: 4px;
+    }
+    .pdv-diag {
+      margin-top: 8px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 8.5pt;
+      font-weight: 600;
+    }
+    .pdv-diag.alert { background: #fff1f2; color: #9f1239; border-left: 3px solid #f43f5e; }
+    .pdv-diag.warn { background: #fffbe6; color: #78350f; border-left: 3px solid #f59e0b; }
+    .pdv-diag.ok { background: #f0fdf4; color: #14532d; border-left: 3px solid #22c55e; }
+
+    .matrix-box {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 16px;
+      border-radius: 10px;
+      margin-top: 24px;
+    }
+    .matrix-box h3 { margin-top: 0; color: #38bdf8; }
+    .matrix-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 9pt; }
+    .matrix-item { background: #1e293b; padding: 10px; border-radius: 6px; }
+
+    .num { font-family: 'JetBrains Mono', monospace; }
+
+    .page-break { page-break-before: always; }
+  </style>
+</head>
+<body>
+
+  <!-- BANNER CABECERA -->
+  <div class="header-banner">
+    <div>
+      <h1>Diagnóstico Integral y Matriz de Alertas</h1>
+      <p>Fortalecernos S.A.C. &bull; Evaluación Operacional Multidimensional por Supervisor y PDV</p>
+    </div>
+    <div class="header-badge">INFORME EJECUTIVO PDF</div>
+  </div>
+
+  <!-- RESUMEN EJECUTIVO -->
+  <div class="section-title">📊 Resumen de Salud Operacional por Supervisor</div>
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>Supervisor</th>
+        <th>PDVs</th>
+        <th>Cumplimiento Avance</th>
+        <th>% Uso Descuento</th>
+        <th>NPS Venta</th>
+        <th>Cobertura HC</th>
+        <th>Retención M6</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>CYNTHIA GUERRA</strong></td>
+        <td>4</td>
+        <td><span class="badge badge-success">127.3%</span></td>
+        <td>72.6%</td>
+        <td><span class="badge badge-success">+95.2 pts</span></td>
+        <td>88.9% (-1 HC)</td>
+        <td><span class="badge badge-success">63.2%</span></td>
+      </tr>
+      <tr>
+        <td><strong>MARÍA BERNAOLA</strong></td>
+        <td>5</td>
+        <td><span class="badge badge-success">122.7%</span></td>
+        <td>68.1%</td>
+        <td><span class="badge badge-warning">+37.2 pts</span></td>
+        <td>90.0% (-1 HC)</td>
+        <td><span class="badge badge-success">56.0%</span></td>
+      </tr>
+      <tr>
+        <td><strong>FERNANDO MORENO</strong></td>
+        <td>3</td>
+        <td><span class="badge badge-danger">73.4%</span></td>
+        <td><span class="badge badge-danger">83.5%</span></td>
+        <td><span class="badge badge-success">+76.2 pts</span></td>
+        <td>80.0% (-1 HC)</td>
+        <td><span class="badge badge-success">64.4%</span></td>
+      </tr>
+      <tr>
+        <td><strong>MERY LAPA</strong></td>
+        <td>2</td>
+        <td><span class="badge badge-success">159.1%</span></td>
+        <td><span class="badge badge-danger">86.6%</span></td>
+        <td><span class="badge badge-danger">+4.2 pts</span></td>
+        <td>100.0% (OK)</td>
+        <td><span class="badge badge-danger">39.0%</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SUPERVISOR 1 -->
+  <div class="spv-card">
+    <div class="spv-header">
+      <div class="spv-name">👤 SUPERVISOR: CYNTHIA GUERRA (4 PDVs - Zona CENTRO)</div>
+      <span class="badge badge-success">Desempeño Comercial Alto</span>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE ICA II</span> <span class="badge badge-success">173.3% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 416 u. proy. (+162 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento 50%:</strong> 64.0% de uso (OK)</div>
+        <div class="metric-item"><strong>Dotación HC:</strong> 2/3 HC (66.7% - Vacante -1 HC)</div>
+        <div class="metric-item"><strong>NPS Venta / Retención:</strong> +91.7 pts | 63.06% M6</div>
+      </div>
+      <div class="pdv-diag ok">✓ Diagnóstico: Desempeño comercial excelente. Prioridad: Cobertura de vacante pendiente (-1 HC).</div>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE ICA 3</span> <span class="badge badge-danger">68.9% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 113 u. proy. (-31 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento 50%:</strong> <span class="num" style="color:#dc2626;font-weight:700;">92.5%</span> (Excedido)</div>
+        <div class="metric-item"><strong>Dotación HC:</strong> 2/2 HC (100% Cobertura)</div>
+        <div class="metric-item"><strong>NPS Venta / Retención:</strong> +88.9 pts | 64.35% M6</div>
+      </div>
+      <div class="pdv-diag alert">🚨 Diagnóstico: Caída en cuota (68.9%) con sobreuso del 50% de descuento (92.5%). Riesgo de canibalización.</div>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE PARCONA</span> <span class="badge badge-success">122.0% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 61 u. proy. (+31 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento 50%:</strong> 72.7% de uso (Alerta leve)</div>
+        <div class="metric-item"><strong>Dotación / NPS:</strong> 2/2 HC | +100.0 pts NPS</div>
+        <div class="metric-item"><strong>Retención M6:</strong> 62.12% (Cumple)</div>
+      </div>
+      <div class="pdv-diag warn">⚠️ Diagnóstico: Ritmo comercial fuerte. Ajustar ligero exceso en tasa de descuento (72.7%).</div>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE ICA MODELO</span> <span class="badge badge-success">145.2% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 61 u. proy. (+26 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> 61.5% | +100.0 pts NPS</div>
+        <div class="metric-item"><strong>Dotación:</strong> 2/2 HC (100% Cobertura)</div>
+        <div class="metric-item"><strong>Mix Planes:</strong> 74.3% en planes high (>=49.90)</div>
+      </div>
+      <div class="pdv-diag ok">✓ Diagnóstico: PDV completamente equilibrado en ventas, margen, calidad y dotación.</div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SUPERVISOR 2 -->
+  <div class="spv-card">
+    <div class="spv-header">
+      <div class="spv-name">👤 SUPERVISOR: MARÍA BERNAOLA (5 PDVs - Zonas CENTRO y LIMA)</div>
+      <span class="badge badge-warning">Alerta en Calidad y Cañete</span>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE SATELITE BARRIO CHINO</span> <span class="badge badge-success">172.4% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 269 u. proy. (+106 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> 74.2% desc | <span style="color:#b45309;font-weight:700;">+46.2 pts NPS</span></div>
+        <div class="metric-item"><strong>Dotación:</strong> 2/2 HC (100% Cobertura)</div>
+        <div class="metric-item"><strong>Retención M6:</strong> 50.61% (En límite)</div>
+      </div>
+      <div class="pdv-diag warn">⚠️ Diagnóstico: Alto volumen con excelente ARPU (82.8% >=49.90), pero brecha en calidad de atención (+46.2 NPS).</div>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE PISCO</span> <span class="badge badge-success">157.6% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 104 u. proy. (+23 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> 73.9% desc | +100.0 pts NPS</div>
+        <div class="metric-item"><strong>Dotación HC:</strong> 3/2 HC (Sobredotación +1 HC)</div>
+        <div class="metric-item"><strong>Retención M6:</strong> 59.55% (Cumple)</div>
+      </div>
+      <div class="pdv-diag warn">⚠️ Diagnóstico: Monitorear productividad de la sobredotación (+1 HC) y normar tasa de descuento.</div>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE SATELITE CAÑETE (Zona LIMA)</span> <span class="badge badge-danger">53.1% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 52 u. proy. (-21 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> <span style="color:#dc2626;font-weight:700;">77.8% desc</span> | <span style="color:#dc2626;font-weight:700;">+40.0 pts NPS</span></div>
+        <div class="metric-item"><strong>Dotación HC:</strong> 2/2 HC (100% Cobertura)</div>
+        <div class="metric-item"><strong>Retención M6:</strong> <span style="color:#dc2626;font-weight:700;">48.67% M6</span> (Deserción)</div>
+      </div>
+      <div class="pdv-diag alert">🚨 Diagnóstico: PDV en estado crítico: Caída severa de cuota (53.1%), sobreuso de descuentos, baja calidad y fuga M6.</div>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE SATELITE PUEBLO JOVEN</span> <span class="badge badge-success">138.0% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 69 u. proy. (+27 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> 54.5% desc | <span style="color:#dc2626;font-weight:700;">-100.0 pts NPS</span></div>
+        <div class="metric-item"><strong>Dotación HC:</strong> 1/2 HC (Vacante -1 HC)</div>
+        <div class="metric-item"><strong>Retención M6:</strong> 65.08% (Cumple)</div>
+      </div>
+      <div class="pdv-diag alert">🚨 Diagnóstico: Buen ritmo comercial y retención, pero urgente intervención por NPS detractor (-100 pts) e inducción de nuevo HC.</div>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE SAN CLEMENTE</span> <span class="badge badge-warning">92.4% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 61 u. proy. (+6 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> 60.0% desc | +100.0 pts NPS</div>
+        <div class="metric-item"><strong>Dotación:</strong> 2/2 HC (100% Cobertura)</div>
+        <div class="metric-item"><strong>Mix Planes:</strong> <span style="color:#b45309;font-weight:700;">9.1% planes &lt;39.90</span></div>
+      </div>
+      <div class="pdv-diag warn">⚠️ Diagnóstico: Eliminar la colocación de planes menores a 39.90 y cubrir la brecha restante de cuota.</div>
+    </div>
+  </div>
+
+  <!-- SUPERVISOR 3 -->
+  <div class="spv-card">
+    <div class="spv-header">
+      <div class="spv-name">👤 SUPERVISOR: FERNANDO MORENO (3 PDVs - Zonas CENTRO y SUR)</div>
+      <span class="badge badge-danger">Alerta Crítica en Avance y Descuento</span>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE NAZCA</span> <span class="badge badge-danger">77.2% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 173 u. proy. (-33 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> <span style="color:#dc2626;font-weight:700;">87.1% desc</span> | <span style="color:#b45309;font-weight:700;">+28.6 pts NPS</span></div>
+        <div class="metric-item"><strong>Dotación HC:</strong> 2/3 HC (Vacante -1 HC)</div>
+        <div class="metric-item"><strong>Retención M6:</strong> 64.85% (Cumple)</div>
+      </div>
+      <div class="pdv-diag alert">🚨 Diagnóstico: Caída comercial (77.2%), alto sobreuso de descuento (87.1%), vacante sin cubrir y deficiente NPS.</div>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE SATELITE CHALA (Zona SUR)</span> <span class="badge badge-danger">57.4% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 35 u. proy. (-13 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> <span style="color:#dc2626;font-weight:700;">80.0% desc</span> | +100.0 pts NPS</div>
+        <div class="metric-item"><strong>Dotación / Retención:</strong> 1/1 HC | 71.43% M6</div>
+      </div>
+      <div class="pdv-diag alert">🚨 Diagnóstico: Excelente retención M6, pero avance muy rezagado (57.4%) con excesiva dependencia del descuento (80.0%).</div>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE SATELITE PALPA</span> <span class="badge badge-warning">85.4% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 35 u. proy. (+7 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> <span style="color:#dc2626;font-weight:700;">83.3% desc</span> | +100.0 pts NPS</div>
+        <div class="metric-item"><strong>Dotación / Retención:</strong> 1/1 HC | 56.92% M6</div>
+      </div>
+      <div class="pdv-diag warn">⚠️ Diagnóstico: Normar el uso de descuento (83.3%) e impulsar el volumen para alcanzar la meta.</div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SUPERVISOR 4 -->
+  <div class="spv-card">
+    <div class="spv-header">
+      <div class="spv-name">👤 SUPERVISOR: MERY LAPA (2 PDVs - Zona CENTRO)</div>
+      <span class="badge badge-danger">Alerta Máxima Churn M6 y Descuento</span>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE AYACUCHO</span> <span class="badge badge-success">119.1% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 156 u. proy. (+9 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> <span style="color:#dc2626;font-weight:700;">86.8% desc</span> | <span style="color:#dc2626;font-weight:700;">-16.7 pts NPS</span></div>
+        <div class="metric-item"><strong>Mix Planes:</strong> <span style="color:#b45309;font-weight:700;">49.0% plan 39.90</span></div>
+        <div class="metric-item"><strong>Retención M6:</strong> <span style="color:#dc2626;font-weight:700;">43.15% M6</span> (Deserción)</div>
+      </div>
+      <div class="pdv-diag alert">🚨 Diagnóstico: NPS negativo (-16.7), sobreuso masivo de descuento (86.8%) y alta deserción de clientes a M6 (43.15%).</div>
+    </div>
+
+    <div class="pdv-box">
+      <div class="pdv-title"><span>📍 TE HUANTA</span> <span class="badge badge-success">199.1% Cuota</span></div>
+      <div class="pdv-metrics">
+        <div class="metric-item"><strong>Avance Ago26:</strong> 217 u. proy. (+92 u. vs M-1)</div>
+        <div class="metric-item"><strong>Descuento / NPS:</strong> <span style="color:#dc2626;font-weight:700;">86.4% desc</span> | <span style="color:#b45309;font-weight:700;">+25.0 pts NPS</span></div>
+        <div class="metric-item"><strong>Mix Planes:</strong> <span style="color:#b45309;font-weight:700;">57.6% plan 39.90</span></div>
+        <div class="metric-item"><strong>Retención M6:</strong> <span style="color:#dc2626;font-weight:700;">34.85% M6</span> (Fuga masiva)</div>
+      </div>
+      <div class="pdv-diag alert">🚨 Diagnóstico: "Burbuja de Churn": Alto volumen comercial pero el 65.15% de los clientes se da de baja antes de M6 (solo 34.85% retención).</div>
+    </div>
+  </div>
+
+  <!-- MATRIZ DE ACCIONES SUGERIDAS -->
+  <div class="matrix-box">
+    <h3>🎯 Matriz Priorizada de Acciones Sugeridas</h3>
+    <div class="matrix-grid">
+      <div class="matrix-item">
+        <strong>1. Recuperación Comercial</strong><br>
+        Intervención directa en TE CAÑETE (53.1%), TE CHALA (57.4%), TE ICA 3 (68.9%) y TE NAZCA (77.2%). Recomposición de plan de abordaje.
+      </div>
+      <div class="matrix-item">
+        <strong>2. Control de Descuentos (Tope 70%)</strong><br>
+        Aprobación previa obligatoria para los 8 PDVs excedidos (>70%), especialmente TE ICA 3 (92.5%), TE NAZCA (87.1%) y TE AYACUCHO (86.8%).
+      </div>
+      <div class="matrix-item">
+        <strong>3. Auditoría de Calidad y Churn M6</strong><br>
+        Investigación de venta forzada en TE HUANTA (34.85% retención M6) y TE AYACUCHO (43.15% retención M6).
+      </div>
+      <div class="matrix-item">
+        <strong>4. Experiencia de Cliente y Dotación</strong><br>
+        Capacitación inmediata en TE PUEBLO JOVEN (-100 NPS) y TE AYACUCHO (-16.7 NPS). Acelerar ingresos de HC en TE NAZCA, TE PUEBLO JOVEN y TE ICA II.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
