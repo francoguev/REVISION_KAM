@@ -1041,8 +1041,8 @@
                 if (prod.includes('PORTA OSS')) pCode = 'PORTA_OSS';
                 else if (prod.includes('PORTA OPP')) pCode = 'PORTA_OPP';
                 else if (prod.includes('VR')) pCode = 'VR';
-                else if (prod.includes('LLAA') || prod.includes('ADICIONAL')) pCode = 'LINEA_ADICIONAL';
                 else if (prod.includes('PREPAGO')) pCode = 'PREPAGO';
+                else if (prod.includes('LLAA') || prod.includes('ADICIONAL')) pCode = 'LINEA_ADICIONAL';
 
                 if (pCode) {
                   if (!liveSalesAug[pdvNorm]) liveSalesAug[pdvNorm] = {};
