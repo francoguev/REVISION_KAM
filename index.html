@@ -82,32 +82,42 @@
       margin-bottom: 10px;
     }
 
-    .page-nav-tabs {
+    .slide-nav-tabs {
       display: flex;
-      gap: 8px;
+      align-items: center;
+      gap: 6px;
+      background: #0f172a;
+      padding: 8px 12px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow-x: auto;
+      white-space: nowrap;
     }
 
     .page-tab-btn {
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #cbd5e1;
-      padding: 6px 16px;
-      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #94a3b8;
+      padding: 7px 14px;
+      border-radius: 8px;
       font-size: 11.5px;
       font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
+      flex-shrink: 0;
       transition: all 0.2s ease;
     }
 
     .page-tab-btn.active {
-      background: #3b82f6;
+      background: #2563eb;
       color: #ffffff;
       border-color: #60a5fa;
-      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
     }
+
     .page-tab-btn:hover:not(.active) {
       background: rgba(255, 255, 255, 0.16);
       color: #ffffff;
@@ -333,31 +343,33 @@
     .kpi-title { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; }
     .kpi-value { font-size: 16px; font-weight: 800; color: #0f172a; }
 
-    /* Main Table Container */
-    .table-slide-card {
+        /* ================= TABLA PRESENTACIÓN (MASTER DESIGN SYSTEM) ================= */
+    .table-slide-card, .table-container-card {
       flex: 1;
       background: #ffffff;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-card);
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
     }
 
-    .table-scroll-area {
+    .table-scroll-area, .table-scroll-wrapper {
       flex: 1;
+      max-height: 580px;
       overflow-y: auto;
       overflow-x: auto;
     }
 
-    .tree-table {
+    .tree-table, .presentation-table {
       width: 100%;
       border-collapse: collapse;
       font-size: 11.5px;
+      font-family: inherit;
     }
 
-    /* Clean Concise Header (Executive Solid Navy & Clean Typography) */
-    .tree-table th {
+    .tree-table th, .presentation-table th {
       position: sticky;
       top: 0;
       z-index: 20;
@@ -376,14 +388,14 @@
       user-select: none;
     }
 
-    .tree-table th:first-child {
+    .tree-table th:first-child, .presentation-table th:first-child {
       text-align: left !important;
     }
 
-    .tree-table th.sortable { cursor: pointer; }
-    .tree-table th.sortable:hover { color: #38bdf8; }
+    .tree-table th.sortable, .presentation-table th.sortable { cursor: pointer; }
+    .tree-table th.sortable:hover, .presentation-table th.sortable:hover { color: #38bdf8; }
 
-    .tree-table td {
+    .tree-table td, .presentation-table td {
       padding: 8px 10px;
       border-bottom: 1px solid #f1f5f9;
       white-space: nowrap;
@@ -393,7 +405,6 @@
       text-align: center !important;
     }
 
-    /* Premium Executive Total Row (Dark Slate & Sapphire Accent) */
     .row-grand-total {
       background: linear-gradient(135deg, #0f172a, #1e293b) !important;
       color: #ffffff !important;
@@ -410,23 +421,29 @@
       text-align: left;
     }
 
-    /* PAGE 1: Original Clean PDV Row Styling */
-    .row-spv { background: #f8fafc; font-weight: 700; color: #0f172a; }
+    .row-spv {
+      background: #f8fafc;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 1px solid #f1f5f9;
+    }
     .row-spv:hover { background: #f1f5f9 !important; }
 
-    .row-pdv { background: #ffffff; font-weight: 600; color: #334155; }
-    .row-pdv:hover { background: #f8fafc !important; }
-
-    /* PAGE 2, PAGE 3 & PAGE 4: Soft Slate Shading for PDV Rows */
-    .row-pdv-shaded {
-      background: #f1f5f9 !important;
-      font-weight: 700;
-      color: #0f172a;
-      border-bottom: 1px solid #cbd5e1 !important;
+    .row-pdv, .row-pdv-shaded {
+      background: #ffffff;
+      font-weight: 600;
+      color: #334155;
+      border-bottom: 1px solid #f1f5f9;
     }
-    .row-pdv-shaded:hover { background: #e2e8f0 !important; }
+    .row-pdv:hover, .row-pdv-shaded:hover { background: #f8fafc !important; }
 
-    .row-asesor { background: #ffffff; font-weight: 400; color: #64748b; }
+    .row-asesor {
+      background: #ffffff;
+      font-weight: 400;
+      color: #64748b;
+      font-size: 11px;
+      border-bottom: 1px solid #f1f5f9;
+    }
     .row-asesor:hover { background: rgba(59, 130, 246, 0.04) !important; color: #0f172a; }
 
     .node-cell { display: flex; align-items: center; gap: 8px; }
@@ -445,8 +462,8 @@
       font-size: 10px;
       color: #0f172a;
       cursor: pointer;
+      transition: transform 0.15s ease;
     }
-
     .toggle-icon.expanded { transform: rotate(90deg); }
 
     /* Minimalist Elegant Performance Badges (Soft Tints) */
@@ -482,7 +499,7 @@
     }
     .btn-plan-action:hover {
       background: #1e293b;
-      border-color: #3b82f6;
+      border-color: #ef4444;
       box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     }
 
@@ -585,39 +602,91 @@
 
   <!-- 16:9 Executive Presentation Slide Wrapper -->
   <div class="slide-wrapper">
-    
-            <!-- Multi-Page Navigation Bar -->
-    <nav class="page-nav-bar">
-      <div class="page-nav-tabs">
-        <button class="page-tab-btn active" id="navTab1" onclick="switchSlidePage(1)">
-          <i class="fa-solid fa-chart-line"></i> Página 1: Avance y Proyección de Ventas
-        </button>
-        <button class="page-tab-btn" id="navTab2" onclick="switchSlidePage(2)">
-          <i class="fa-solid fa-tags"></i> Página 2: Tasa de Uso de Descuento
-        </button>
-        <button class="page-tab-btn" id="navTab3" onclick="switchSlidePage(3)">
-          <i class="fa-solid fa-id-card-clip"></i> Página 3: Dotación y Cumplimiento HC
-        </button>
-        <button class="page-tab-btn" id="navTab4" onclick="switchSlidePage(4)">
-          <i class="fa-solid fa-star-half-stroke"></i> Página 4: Reporte de Calidad y NPS
-        </button>
-        <button class="page-tab-btn" id="navTab5" onclick="switchSlidePage(5)">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>Página 5: Mix de Planes (Julio 2026)</span>
-        </button>
-        <button class="page-tab-btn" id="navTab6" onclick="switchSlidePage(6)">
-          <i class="fa-solid fa-user-shield"></i>
-          <span>Página 6: Permanencia M6 (Enero 2026)</span>
-        </button>
-        <button class="page-tab-btn" id="navTab7" onclick="switchSlidePage(7)">
-          <i class="fa-solid fa-right-left"></i>
-          <span>Página 7: Operador Cedente</span>
-        </button>
-      </div>
-    </nav>
+        <div class="slide-nav-tabs">
+      <button class="page-tab-btn active" id="navTab0" onclick="switchSlidePage(0)">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+      </button>
+      <button class="page-tab-btn" id="navTab1" onclick="switchSlidePage(1)">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Página 1: Avance y Proyección de Ventas</span>
+      </button>
+      <button class="page-tab-btn" id="navTab2" onclick="switchSlidePage(2)">
+        <i class="fa-solid fa-tags"></i>
+        <span>Página 2: Tasa de Uso de Descuento</span>
+      </button>
+      <button class="page-tab-btn" id="navTab3" onclick="switchSlidePage(3)">
+        <i class="fa-solid fa-right-left"></i>
+        <span>Página 3: Mix Operador Cedente</span>
+      </button>
+      <button class="page-tab-btn" id="navTab4" onclick="switchSlidePage(4)">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Página 4: Mix de Planes</span>
+      </button>
+      <button class="page-tab-btn" id="navTab5" onclick="switchSlidePage(5)">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Página 5: Permanencia</span>
+      </button>
+      <button class="page-tab-btn" id="navTab6" onclick="switchSlidePage(6)">
+        <i class="fa-solid fa-users"></i>
+        <span>Página 6: Dotación y Cumplimiento HC</span>
+      </button>
+      <button class="page-tab-btn" id="navTab7" onclick="switchSlidePage(7)">
+        <i class="fa-solid fa-star"></i>
+        <span>Página 7: Reporte de Calidad y NPS</span>
+      </button>
+    </div>
 
-    <!-- ================= PAGE 1: AVANCE DE VENTAS ================= -->
-    <div id="slidePage1" class="page-view">
+
+        
+
+<!-- ================= PAGE 0: PORTADA / INICIO ================= -->
+    <div id="slidePage0" class="page-view" style="display: none; flex-direction: column; justify-content: center; align-items: flex-start; background: #ffffff; padding: 60px 80px; min-height: 580px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04); position: relative; overflow: hidden;">
+      
+      <!-- Fondo decorativo sutil en azul -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 450px; height: 450px; background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(255, 255, 255, 0) 70%); border-radius: 50%; pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -80px; right: 100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, rgba(255, 255, 255, 0) 70%); border-radius: 50%; pointer-events: none;"></div>
+
+      <!-- Marca / Icono corporativo en azul -->
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 28px;">
+        <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 22px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <span style="font-size: 14px; font-weight: 800; color: #1e3a8a; letter-spacing: 1.5px; text-transform: uppercase;">Informe de Gestión Comercial & Operativa</span>
+      </div>
+
+      <!-- REVISIÓN 360 (Texto mediano) -->
+      <div style="font-size: 22px; font-weight: 700; color: #2563eb; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">
+        REVISIÓN 360
+      </div>
+
+      <!-- FORTALECERNOS S.A.C. (Texto grande) -->
+      <h1 style="font-size: 54px; font-weight: 800; color: #0f172a; margin: 0 0 20px 0; line-height: 1.1; letter-spacing: -1px;">
+        FORTALECERNOS S.A.C.
+      </h1>
+
+      <!-- Línea divisoria en gradiente azul -->
+      <div style="width: 140px; height: 5px; background: linear-gradient(90deg, #1d4ed8 0%, #60a5fa 100%); border-radius: 3px; margin-bottom: 28px;"></div>
+
+      <!-- JULIO - AGOSTO (Pequeño / Pill corporativo) -->
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 700; letter-spacing: 1px;">
+        <i class="fa-solid fa-calendar-days" style="color: #2563eb;"></i>
+        <span>JULIO - AGOSTO</span>
+      </div>
+
+      <!-- Metadata del informe al pie de la portada -->
+      <div style="margin-top: 60px; font-size: 13px; color: #475569; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+        <span>Equipo de Operaciones</span>
+        <span style="color: #94a3b8;">&bull;</span>
+        <span>Equipo Comercial</span>
+      </div>
+
+    </div>
+
+
+
+<!-- ================= PAGE 1: AVANCE DE VENTAS ================= -->
+    <div id="slidePage1" class="page-view" style="display: none;">
       
       <header class="slide-header">
         <div class="slide-title-box">
@@ -679,17 +748,218 @@
 
     </div>
 
-    <!-- ================= PAGE 2: DOTACIÓN Y CUMPLIMIENTO HC ================= -->
+    
+
+<!-- ================= PAGE 2: TASA DE USO DE DESCUENTO ================= -->
+    <div id="slidePage2" class="page-view" style="display: none;">
+      
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon"><i class="fa-solid fa-percent"></i></div>
+          <div>
+            <h1 class="slide-title">Reporte de Tasa de Uso de Descuento</h1>
+            <div class="slide-subtitle">
+              Julio 2026 (Cierre M-1) &bull; Producto: <strong style="color: #6366f1;">PORTA OSS MONO</strong> &bull; Descuento: <strong style="color: #38bdf8;">Descuento 50% x 6 meses (SA)</strong> &bull; Tope Máximo: <strong style="color: #f87171;">70.0%</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <select id="zoneSelectPage4" class="month-select-glass" onchange="renderDiscountTable()">
+            <option value="ALL" selected>🌍 Todas las Zonas</option>
+            <option value="CENTRO">📍 CENTRO</option>
+            <option value="SUR">📍 SUR</option>
+            <option value="LIMA">📍 LIMA</option>
+          </select>
+
+          <select id="spvDiscountFilter" class="month-select-glass" onchange="renderDiscountTable()">
+            <option value="ALL" selected>👥 Todos los Supervisores</option>
+            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
+            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
+            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
+            <option value="MERY LAPA">MERY LAPA</option>
+          </select>
+
+        </div>
+      </header>
+
+      
+
+      <!-- KPI Summary Cards for Page 4 -->
+      <div class="kpi-cards-grid" id="discountKpiCards"></div>
+
+      <!-- Main Table Card for Discount View -->
+      <div class="table-slide-card">
+        <div class="table-scroll-area">
+          <table class="tree-table">
+            <thead id="discountThead"></thead>
+            <tbody id="discountTbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+                                
+
+<!-- ================= PAGE 3: OPERADOR CEDENTE ================= -->
     <div id="slidePage3" class="page-view" style="display: none;">
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon"><i class="fa-solid fa-right-left"></i></div>
+          <div>
+            <h1 class="slide-title">Participación por Operador Cedente (Portabilidad OSS)</h1>
+            <div class="slide-subtitle">Mix por Operador de Origen (Claro, Movistar, Bitel)</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <select id="monthCedenteFilter" class="month-select-glass" onchange="renderCedenteTable()">
+            <option value="Julio" selected>📅 Julio 2026 (M-1)</option>
+            <option value="Junio">📅 Junio 2026</option>
+            <option value="Agosto">📅 Agosto 2026</option>
+            <option value="Acumulado">📊 Acumulado Trimestre</option>
+          </select>
+          <select id="zoneSelectPage7" class="month-select-glass" onchange="renderCedenteTable()">
+            <option value="ALL">🌍 Todas las Zonas</option>
+            <option value="CENTRO">📍 CENTRO</option>
+            <option value="SUR">📍 SUR</option>
+            <option value="LIMA">📍 LIMA</option>
+          </select>
+          <select id="spvCedenteFilter" class="month-select-glass" onchange="renderCedenteTable()">
+            <option value="ALL">👥 Todos los Supervisores</option>
+            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
+            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
+            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
+            <option value="MERY LAPA">MERY LAPA</option>
+          </select>
+        </div>
+      </header>
+
+      <div class="table-container-card">
+        <div class="table-scroll-wrapper" style="max-height: 560px; overflow-y: auto; overflow-x: auto;">
+          <table class="presentation-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #1e293b; color: #ffffff;">
+                <th style="min-width: 280px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PUNTO DE VENTA / ASESOR</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">TOTAL PORTAS</th>
+                <th class="val-cell" style="color: #f87171; font-weight: 800; padding: 10px 12px; font-size: 11px;">CLARO (UND)</th>
+                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;">CLARO (%)</th>
+                <th class="val-cell" style="color: #4ade80; font-weight: 800; padding: 10px 12px; font-size: 11px;">MOVISTAR (UND)</th>
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;">MOVISTAR (%)</th>
+                <th class="val-cell" style="color: #facc15; font-weight: 800; padding: 10px 12px; font-size: 11px;">BITEL (UND)</th>
+                <th class="val-cell" style="color: #fde047; font-weight: 800; padding: 10px 12px; font-size: 11px;">BITEL (%)</th>
+              </tr>
+            </thead>
+            <tbody id="cedenteTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide Footer Bar -->
+    
+
+<!-- ================= PAGE 4: MIX DE PLANES ================= -->
+    <div id="slidePage4" class="page-view" style="display: none;">
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <div>
+            <h1 class="slide-title">Mix de Planes Postpago</h1>
+            <div class="slide-subtitle">Cierre Mensual Julio 2026: 1,431 Unidades &bull; Desglose por RB de Plan</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <select id="zoneSelectPage5" class="month-select-glass" onchange="renderMixPlanesTable()">
+            <option value="ALL">🌍 Todas las Zonas</option>
+            <option value="CENTRO">📍 CENTRO</option>
+            <option value="SUR">📍 SUR</option>
+            <option value="LIMA">📍 LIMA</option>
+          </select>
+          <select id="spvMixFilter" class="month-select-glass" onchange="renderMixPlanesTable()">
+            <option value="ALL">👥 Todos los Supervisores</option>
+            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
+            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
+            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
+            <option value="MERY LAPA">MERY LAPA</option>
+          </select>
+        </div>
+      </header>
+
+      <div class="table-container-card">
+        <div class="table-scroll-wrapper" style="max-height: 560px; overflow-y: auto; overflow-x: auto;">
+          <table class="presentation-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #1e293b; color: #ffffff;">
+                <th style="min-width: 280px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PUNTO DE VENTA / ASESOR</th>
+                <!-- RED PLANES (< 39.90) -->
+                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">35.9</th>
+                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">32.9</th>
+                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">29.9</th>
+                <!-- AMBER PLAN (39.90) -->
+                <th class="val-cell" style="color: #fde047; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Plan 39.90">39.9</th>
+                <!-- GREEN PLANES (>= 49.90) -->
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">49.9</th>
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">59.9</th>
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">69.9</th>
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">79.9</th>
+                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">99.9</th>
+              </tr>
+            </thead>
+            <tbody id="mixPlanesTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    
+
+<!-- ================= PAGE 5: PERMANENCIA M6 ================= -->
+    <div id="slidePage5" class="page-view" style="display: none;">
+      <header class="slide-header">
+        <div class="slide-title-box">
+          <div class="slide-icon"><i class="fa-solid fa-user-shield"></i></div>
+          <div>
+            <h1 class="slide-title">Reporte de Permanencia M6 (Camada Enero 2026)</h1>
+            <div class="slide-subtitle">Curva de Desactivación M0 a M6 (Julio 2026) &bull; <strong>Objetivo de Permanencia: 50.0%</strong></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="table-container-card">
+        <div class="table-scroll-wrapper" style="max-height: 560px; overflow-y: auto; overflow-x: auto;">
+          <table class="presentation-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #1e293b; color: #ffffff;">
+                <th style="min-width: 280px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PUNTO DE VENTA / ASESOR</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">SS TOTAL (ENE)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M0 (ENE)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M1 (FEB)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M2 (MAR)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M3 (ABR)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M4 (MAY)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M5 (JUN)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M6 (JUL)</th>
+                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">% PERM_M6 (RETENCIÓN)</th>
+              </tr>
+            </thead>
+            <tbody id="permanenciaTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+        
+
+<!-- ================= PAGE 6: DOTACIÓN Y CUMPLIMIENTO HC ================= -->
+    <div id="slidePage6" class="page-view" style="display: none;">
       
       <header class="slide-header">
         <div class="slide-title-box">
           <div class="slide-icon"><i class="fa-solid fa-users-gear"></i></div>
           <div>
-            <h1 class="slide-title">Reporte de Dotación, Cobertura HC y Asistencia</h1>
-            <div class="slide-subtitle">
-              Fortalecernos S.A.C. &bull; Cobertura Regional y Cumplimiento de Condición (Cierre 01 de Agosto 2026)
-            </div>
+            <h1 class="slide-title">Reporte de Dotación y Cobertura HC</h1>
+            <div class="slide-subtitle">Cobertura Regional y Cumplimiento de Condición</div>
           </div>
         </div>
 
@@ -729,8 +999,10 @@
 
     </div>
 
-    <!-- ================= PAGE 3: REPORTE DE CALIDAD Y NPS ================= -->
-    <div id="slidePage4" class="page-view" style="display: none;">
+    
+
+<!-- ================= PAGE 7: REPORTE DE CALIDAD Y NPS ================= -->
+    <div id="slidePage7" class="page-view" style="display: none;">
       
       <header class="slide-header">
         <div class="slide-title-box">
@@ -738,7 +1010,7 @@
           <div>
             <h1 class="slide-title">Reporte de Calidad y Satisfacción (NPS)</h1>
             <div class="slide-subtitle" id="npsSubtitle">
-              Meta Objetivo NPS TEX: <strong style="color: #60a5fa;">58.0% (Venta)</strong> | <strong style="color: #34d399;">58.0% (Postventa)</strong>
+              Meta Objetivo NPS TEX: <strong style="color: #6366f1;">58.0% (Venta)</strong> | <strong style="color: #34d399;">58.0% (Postventa)</strong>
             </div>
           </div>
         </div>
@@ -792,210 +1064,10 @@
 
     </div>
 
-    <!-- ================= PAGE 4: TASA DE USO DE DESCUENTO ================= -->
-    <div id="slidePage2" class="page-view" style="display: none;">
-      
-      <header class="slide-header">
-        <div class="slide-title-box">
-          <div class="slide-icon"><i class="fa-solid fa-percent"></i></div>
-          <div>
-            <h1 class="slide-title">Reporte de Tasa de Uso de Descuento</h1>
-            <div class="slide-subtitle">
-              Julio 2026 (Cierre M-1) &bull; Producto: <strong style="color: #60a5fa;">PORTA OSS MONO</strong> &bull; Descuento: <strong style="color: #38bdf8;">Descuento 50% x 6 meses (SA)</strong> &bull; Tope Máximo: <strong style="color: #f87171;">70.0%</strong>
-            </div>
-          </div>
-        </div>
+    
 
-        <div class="header-actions">
-          <select id="zoneSelectPage4" class="month-select-glass" onchange="renderDiscountTable()">
-            <option value="ALL" selected>🌍 Todas las Zonas</option>
-            <option value="CENTRO">📍 CENTRO</option>
-            <option value="SUR">📍 SUR</option>
-            <option value="LIMA">📍 LIMA</option>
-          </select>
-
-          <select id="spvDiscountFilter" class="month-select-glass" onchange="renderDiscountTable()">
-            <option value="ALL" selected>👥 Todos los Supervisores</option>
-            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
-            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
-            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
-            <option value="MERY LAPA">MERY LAPA</option>
-          </select>
-
-        </div>
-      </header>
-
-      <div class="product-tabs-bar">
-        <div style="font-size: 12px; font-weight: 700; color: #475569; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-filter" style="color: #3b82f6;"></i> Evaluación Exclusiva: <strong>PORTA OSS MONO</strong> con <strong>Descuento 50% x 6 meses (SA)</strong>
-        </div>
-
-        <div class="search-box-compact">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="discountSearchInput" class="search-input-compact" placeholder="Buscar PDV o Asesor..." oninput="handleDiscountSearch()">
-        </div>
-      </div>
-
-      <!-- KPI Summary Cards for Page 4 -->
-      <div class="kpi-cards-grid" id="discountKpiCards"></div>
-
-      <!-- Main Table Card for Discount View -->
-      <div class="table-slide-card">
-        <div class="table-scroll-area">
-          <table class="tree-table">
-            <thead id="discountThead"></thead>
-            <tbody id="discountTbody"></tbody>
-          </table>
-        </div>
-      </div>
-
-    </div>
-
-                                <!-- ================= PAGE 5: MIX DE PLANES (JULIO 2026) ================= -->
-    <div id="slidePage5" class="page-view" style="display: none;">
-      <header class="slide-header">
-        <div class="slide-title-box">
-          <div class="slide-icon"><i class="fa-solid fa-layer-group"></i></div>
-          <div>
-            <h1 class="slide-title">Mix de Planes Postpago (Cierre de Julio 2026)</h1>
-            <div class="slide-subtitle">Fortalecernos S.A.C. &bull; Cierre Mensual: 1,431 Unidades &bull; Desglose por Rango de Plan</div>
-          </div>
-        </div>
-        <div class="header-actions">
-          <select id="zoneSelectPage5" class="month-select-glass" onchange="renderMixPlanesTable()">
-            <option value="ALL">🌍 Todas las Zonas</option>
-            <option value="CENTRO">📍 CENTRO</option>
-            <option value="SUR">📍 SUR</option>
-            <option value="LIMA">📍 LIMA</option>
-          </select>
-          <select id="spvMixFilter" class="month-select-glass" onchange="renderMixPlanesTable()">
-            <option value="ALL">👥 Todos los Supervisores</option>
-            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
-            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
-            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
-            <option value="MERY LAPA">MERY LAPA</option>
-          </select>
-        </div>
-      </header>
-
-      <div class="table-container-card">
-        <div class="table-scroll-wrapper" style="max-height: 560px; overflow-y: auto; overflow-x: auto;">
-          <table class="presentation-table" style="width: 100%; border-collapse: collapse;">
-            <thead>
-              <tr style="background: #1e293b; color: #ffffff;">
-                <th style="min-width: 250px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PDV / ASESOR</th>
-                <!-- RED PLANES (< 39.90) -->
-                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">35.9</th>
-                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">32.9</th>
-                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">29.9</th>
-                <!-- AMBER PLAN (39.90) -->
-                <th class="val-cell" style="color: #fde047; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Plan 39.90">39.9</th>
-                <!-- GREEN PLANES (>= 49.90) -->
-                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">49.9</th>
-                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">59.9</th>
-                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">69.9</th>
-                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">79.9</th>
-                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="49.90 en adelante">99.9</th>
-              </tr>
-            </thead>
-            <tbody id="mixPlanesTbody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- ================= PAGE 6: PERMANENCIA M6 (ENERO 2026) ================= -->
-    <div id="slidePage6" class="page-view" style="display: none;">
-      <header class="slide-header">
-        <div class="slide-title-box">
-          <div class="slide-icon"><i class="fa-solid fa-user-shield"></i></div>
-          <div>
-            <h1 class="slide-title">Reporte de Permanencia M6 (Cohorte Enero 2026)</h1>
-            <div class="slide-subtitle">Fortalecernos S.A.C. &bull; Curva de Desactivación M0 a M6 (Julio 2026) &bull; <strong>Objetivo de Permanencia: 50.0%</strong></div>
-          </div>
-        </div>
-      </header>
-
-      <div class="table-container-card">
-        <div class="table-scroll-wrapper" style="max-height: 560px; overflow-y: auto; overflow-x: auto;">
-          <table class="presentation-table" style="width: 100%; border-collapse: collapse;">
-            <thead>
-              <tr style="background: #1e293b; color: #ffffff;">
-                <th style="min-width: 250px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PDV / ASESOR</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">SS TOTAL (ENE)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M0 (ENE)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M1 (FEB)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M2 (MAR)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M3 (ABR)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M4 (MAY)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M5 (JUN)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M6 (JUL)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">% PERM_M6 (RETENCIÓN)</th>
-              </tr>
-            </thead>
-            <tbody id="permanenciaTbody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-        <!-- ================= PAGE 7: OPERADOR CEDENTE ================= -->
-    <div id="slidePage7" class="page-view" style="display: none;">
-      <header class="slide-header">
-        <div class="slide-title-box">
-          <div class="slide-icon"><i class="fa-solid fa-right-left"></i></div>
-          <div>
-            <h1 class="slide-title">Participación por Operador Cedente (Portabilidad OSS)</h1>
-            <div class="slide-subtitle">Fortalecernos S.A.C. &bull; Captura por Operador de Origen (Claro, Movistar, Bitel) &bull; <strong>Junio, Julio, Agosto 2026</strong></div>
-          </div>
-        </div>
-        <div class="header-actions">
-          <select id="monthCedenteFilter" class="month-select-glass" onchange="renderCedenteTable()">
-            <option value="Julio" selected>📅 Julio 2026 (M-1)</option>
-            <option value="Junio">📅 Junio 2026</option>
-            <option value="Agosto">📅 Agosto 2026</option>
-            <option value="Acumulado">📊 Acumulado Trimestre</option>
-          </select>
-          <select id="zoneSelectPage7" class="month-select-glass" onchange="renderCedenteTable()">
-            <option value="ALL">🌍 Todas las Zonas</option>
-            <option value="CENTRO">📍 CENTRO</option>
-            <option value="SUR">📍 SUR</option>
-            <option value="LIMA">📍 LIMA</option>
-          </select>
-          <select id="spvCedenteFilter" class="month-select-glass" onchange="renderCedenteTable()">
-            <option value="ALL">👥 Todos los Supervisores</option>
-            <option value="CYNTHIA GUERRA">CYNTHIA GUERRA</option>
-            <option value="MARÍA BERNAOLA">MARÍA BERNAOLA</option>
-            <option value="FERNANDO MORENO">FERNANDO MORENO</option>
-            <option value="MERY LAPA">MERY LAPA</option>
-          </select>
-        </div>
-      </header>
-
-      <div class="table-container-card">
-        <div class="table-scroll-wrapper" style="max-height: 560px; overflow-y: auto; overflow-x: auto;">
-          <table class="presentation-table" style="width: 100%; border-collapse: collapse;">
-            <thead>
-              <tr style="background: #1e293b; color: #ffffff;">
-                <th style="min-width: 250px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PDV / ASESOR</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">TOTAL PORTAS</th>
-                <th class="val-cell" style="color: #60a5fa; font-weight: 800; padding: 10px 12px; font-size: 11px;">CLARO (UND)</th>
-                <th class="val-cell" style="color: #93c5fd; font-weight: 800; padding: 10px 12px; font-size: 11px;">CLARO (%)</th>
-                <th class="val-cell" style="color: #4ade80; font-weight: 800; padding: 10px 12px; font-size: 11px;">MOVISTAR (UND)</th>
-                <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;">MOVISTAR (%)</th>
-                <th class="val-cell" style="color: #facc15; font-weight: 800; padding: 10px 12px; font-size: 11px;">BITEL (UND)</th>
-                <th class="val-cell" style="color: #fde047; font-weight: 800; padding: 10px 12px; font-size: 11px;">BITEL (%)</th>
-              </tr>
-            </thead>
-            <tbody id="cedenteTbody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide Footer Bar -->
-    <footer class="slide-footer">
-      <div id="rowCountLabel">Cargando datos...</div>
+<footer class="slide-footer">
+      <div id="rowCountLabel">Equipo de Operaciones • 2026</div>
       <div id="pageFooterNum">Página 1 de 4</div>
     </footer>
 
@@ -1024,295 +1096,114 @@
 
   <!-- Data Payload -->
   <script src="data.js"></script>
-
-  <script>
-    // State Variables
-    let currentPage = 1;
-    let currentProductCode = 'POSTPAGO_TOTAL';
-    let currentMonthFilter = 'm202608';
-    let currentNpsChannel = 'venta';
-    let expandedState = {};
-    let dotacionExpandedState = {};
-    let npsExpandedState = {};
-    let discountExpandedState = {};
-    let currentSort = { column: 'total', direction: 'desc' };
-    let searchQuery = '';
-    let discountSearchQuery = '';
-    let isAllExpanded = false;
-    let isDaysExpanded = false;
-    let isWeeksExpanded = false;
-    let isDiscountAllExpanded = true;
-
-    const monthLabelsMap = {
-      'm202606': 'Junio 2026',
+    <script>
+                // ================= GLOBAL STATE VARIABLES =================
+    var currentSort = { col: null, dir: 'asc' };
+    var totalCondicion = 0;
+    var ELAPSED_WD = 3;
+    var TOTAL_WD = 26;
+    var grandCondicionPct = 74.0;
+    var monthLabelsMap = {
+      'm202608': 'Agosto 2026',
       'm202607': 'Julio 2026',
-      'm202608': 'Agosto 2026'
+      'm202606': 'Junio 2026',
+      'm202605': 'Mayo 2026',
+      'm202604': 'Abril 2026',
+      'm202603': 'Marzo 2026',
+      'm202602': 'Febrero 2026',
+      'm202601': 'Enero 2026'
     };
 
-    const prevMonthMap = {
+    var prevMonthLabels = {
       'm202608': 'm202607',
       'm202607': 'm202606',
-      'm202606': null
+      'm202606': 'm202605',
+      'm202605': 'm202604',
+      'm202604': 'm202603',
+      'm202603': 'm202602',
+      'm202602': 'm202601'
+    };
+    var currentPage = 0;
+    var currentProductCode = 'POSTPAGO_TOTAL';
+    var currentMonthFilter = 'm202608';
+    var searchQuery = '';
+    var expandedState = {};
+
+    var discountExpandedState = {};
+    var discountSearchQuery = '';
+
+    var dotacionExpandedState = {};
+    var isDaysExpanded = false;
+
+    var npsExpandedState = {};
+    var currentNpsChannel = 'venta';
+    var isWeeksExpanded = false;
+
+    var mixExpandedState = {};
+    var permExpandedState = {};
+    var cedenteExpandedState = {};
+
+                // ================= GLOBAL STATE VARIABLES =================
+    var currentSort = { col: null, dir: 'asc' };
+    var totalCondicion = 0;
+    var ELAPSED_WD = 3;
+    var TOTAL_WD = 26;
+    var grandCondicionPct = 74.0;
+    var monthLabelsMap = {
+      'm202608': 'Agosto 2026',
+      'm202607': 'Julio 2026',
+      'm202606': 'Junio 2026',
+      'm202605': 'Mayo 2026',
+      'm202604': 'Abril 2026',
+      'm202603': 'Marzo 2026',
+      'm202602': 'Febrero 2026',
+      'm202601': 'Enero 2026'
     };
 
-    const TOTAL_WD = 26;
-    const ELAPSED_WD = 3;
-
-    // REAL-TIME SYNC & PARSING FROM GOOGLE SHEETS SOURCES
-    async function syncLiveDataFromGoogleSheets() {
-      const syncIcon = document.getElementById('syncIcon');
-      const syncText = document.getElementById('syncBtnText');
-      
-      if (syncIcon) syncIcon.classList.add('fa-spin');
-      if (syncText) syncText.textContent = 'Sincronizando...';
-
-      try {
-        const quotaUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS25edYoYsxDcSJQ2OkVFpF-fFZVykQB-E71dCrCizb2FKpiArI3OuwmBtnZF76PFXDAJbYQD27pzbd/pub?gid=948625095&single=true&output=csv';
-        const salesAugUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTlX5u9D95WLC33W5pyEK_jyteea1XzLz5G74O6ANuOv1dIzOzbDkVdEOCS-L7VtAAJUubCujxYEKzt/pub?gid=0&single=true&output=csv';
-        const renoAugUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTVOwH43qYohjOQ5fTTt5CDfNamOgrlwi6VN6Z6AaMmO5sPT3_ni5b9Qcx0TX9v9emkN89YDSx75fbb/pub?gid=0&single=true&output=csv';
-
-        const [respQuota, respSales, respReno] = await Promise.all([
-          fetch(quotaUrl, { cache: 'no-cache' }).catch(() => null),
-          fetch(salesAugUrl, { cache: 'no-cache' }).catch(() => null),
-          fetch(renoAugUrl, { cache: 'no-cache' }).catch(() => null)
-        ]);
-
-        const products = ['POSTPAGO_TOTAL', 'PORTA_OSS', 'PORTA_OPP', 'VR', 'RENO_SS', 'LINEA_ADICIONAL', 'PREPAGO'];
-        const tree = window.SALES_DATA.tree;
-
-        function normPdvName(r) {
-          const raw = String(r || '').trim().toUpperCase();
-          if (raw.includes('CA') && raw.includes('ETE')) return 'TE SATELITE CAÑETE';
-          if (raw.includes('AYACUCHO')) return 'TE AYACUCHO';
-          if (raw.includes('HUANTA')) return 'TE HUANTA';
-          if (raw.includes('ICA 3') || raw.includes('ICA III')) return 'TE ICA 3';
-          if (raw.includes('ICA II')) return 'TE ICA II';
-          if (raw.includes('MODELO')) return 'TE ICA MODELO';
-          if (raw.includes('NAZCA')) return 'TE NAZCA';
-          if (raw.includes('PARCONA')) return 'TE PARCONA';
-          if (raw.includes('PISCO')) return 'TE PISCO';
-          if (raw.includes('CLEMENTE') || raw === 'TE ICA') return 'TE SAN CLEMENTE';
-          if (raw.includes('BARRIO CHINO')) return 'TE SATELITE BARRIO CHINO';
-          if (raw.includes('CHALA')) return 'TE SATELITE CHALA';
-          if (raw.includes('PALPA')) return 'TE SATELITE PALPA';
-          if (raw.includes('PUEBLO JOVEN')) return 'TE SATELITE PUEBLO JOVEN';
-          return raw;
-        }
-
-        // 1. UPDATE QUOTAS IF FETCHED
-        if (respQuota && respQuota.ok) {
-          const csvText = await respQuota.text();
-          if (csvText && csvText.includes('CUOTA')) {
-            const lines = csvText.split('\n');
-            const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
-            const mesIdx = header.indexOf('MES');
-            const pdvsIdx = header.indexOf('PDVS');
-            const prodIdx = header.indexOf('PRODUCTO');
-            const cuotaIdx = header.indexOf('CUOTA');
-
-            if (mesIdx !== -1 && pdvsIdx !== -1 && cuotaIdx !== -1) {
-              const pdvQuotasAug = {};
-              for (let i = 1; i < lines.length; i++) {
-                if (!lines[i].trim()) continue;
-                const cols = lines[i].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
-                if (cols[mesIdx] === '8/1/2026') {
-                  const pdvNorm = normPdvName(cols[pdvsIdx]);
-                  const prod = (cols[prodIdx] || '').toUpperCase();
-                  const val = parseFloat(cols[cuotaIdx]) || 0;
-
-                  let pCode = null;
-                  if (prod.includes('PORTA OSS')) pCode = 'PORTA_OSS';
-                  else if (prod.includes('PORTA OPP')) pCode = 'PORTA_OPP';
-                  else if (prod.includes('VR')) pCode = 'VR';
-                  else if (prod.includes('RENO')) pCode = 'RENO_SS';
-                  else if (prod.includes('LLAA') || prod.includes('ADICIONAL')) pCode = 'LINEA_ADICIONAL';
-                  else if (prod.includes('PREPAGO')) pCode = 'PREPAGO';
-
-                  if (pCode) {
-                    if (!pdvQuotasAug[pdvNorm]) pdvQuotasAug[pdvNorm] = {};
-                    pdvQuotasAug[pdvNorm][pCode] = (pdvQuotasAug[pdvNorm][pCode] || 0) + val;
-                  }
-                }
-              }
-
-              tree.forEach(spv => {
-                spv.children.forEach(pdv => {
-                  const pdvNorm = normPdvName(pdv.name);
-                  const matchedDict = pdvQuotasAug[pdvNorm];
-                  if (matchedDict) {
-                    products.forEach(p => {
-                      if (p !== 'POSTPAGO_TOTAL') {
-                        const val = Math.round(matchedDict[p] || (pdv.quotas[p] ? pdv.quotas[p].m202608 : 0));
-                        if (!pdv.quotas[p]) pdv.quotas[p] = {};
-                        pdv.quotas[p].m202608 = val;
-                      }
-                    });
-                    if (!pdv.quotas['POSTPAGO_TOTAL']) pdv.quotas['POSTPAGO_TOTAL'] = {};
-                    pdv.quotas['POSTPAGO_TOTAL'].m202608 = (
-                      (pdv.quotas['PORTA_OSS'] ? pdv.quotas['PORTA_OSS'].m202608 : 0) +
-                      (pdv.quotas['PORTA_OPP'] ? pdv.quotas['PORTA_OPP'].m202608 : 0) +
-                      (pdv.quotas['VR'] ? pdv.quotas['VR'].m202608 : 0)
-                    );
-                  }
-                });
-                products.forEach(p => {
-                  if (!spv.quotas[p]) spv.quotas[p] = {};
-                  spv.quotas[p].m202608 = spv.children.reduce((acc, pdv) => acc + (pdv.quotas[p] ? pdv.quotas[p].m202608 || 0 : 0), 0);
-                });
-              });
-
-              products.forEach(p => {
-                window.SALES_DATA.summary.global_quotas[p].m202608 = tree.reduce((acc, spv) => acc + spv.quotas[p].m202608, 0);
-              });
-            }
-          }
-        }
-
-        // 2. UPDATE LIVE SALES IF FETCHED
-        if (respSales && respSales.ok) {
-          const csvSales = await respSales.text();
-          if (csvSales && csvSales.includes('NUMPERIODO')) {
-            const lines = csvSales.split('\n');
-            const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
-            const pdvIdx = header.indexOf('VCHJER_PDV');
-            const prodIdx = header.indexOf('PRODUCTO');
-
-            if (pdvIdx !== -1 && prodIdx !== -1) {
-              const liveSalesAug = {};
-              for (let i = 1; i < lines.length; i++) {
-                if (!lines[i].trim()) continue;
-                const cols = lines[i].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
-                const pdvNorm = normPdvName(cols[pdvIdx]);
-                const prod = (cols[prodIdx] || '').toUpperCase();
-
-                let pCode = null;
-                if (prod.includes('PORTA OSS')) pCode = 'PORTA_OSS';
-                else if (prod.includes('PORTA OPP')) pCode = 'PORTA_OPP';
-                else if (prod.includes('VR')) pCode = 'VR';
-                else if (prod.includes('PREPAGO')) pCode = 'PREPAGO';
-                else if (prod.includes('LLAA') || prod.includes('ADICIONAL')) pCode = 'LINEA_ADICIONAL';
-
-                if (pCode) {
-                  if (!liveSalesAug[pdvNorm]) liveSalesAug[pdvNorm] = {};
-                  liveSalesAug[pdvNorm][pCode] = (liveSalesAug[pdvNorm][pCode] || 0) + 1;
-                }
-              }
-
-              // Update PDV units
-              tree.forEach(spv => {
-                spv.children.forEach(pdv => {
-                  const pdvNorm = normPdvName(pdv.name);
-                  const salesDict = liveSalesAug[pdvNorm] || {};
-                  ['PORTA_OSS', 'PORTA_OPP', 'VR', 'LINEA_ADICIONAL', 'PREPAGO'].forEach(p => {
-                    if (!pdv.units[p]) pdv.units[p] = {};
-                    pdv.units[p].m202608 = salesDict[p] || pdv.units[p].m202608 || 0;
-                  });
-                });
-              });
-            }
-          }
-        }
-
-        // 3. UPDATE LIVE RENO IF FETCHED
-        if (respReno && respReno.ok) {
-          const csvReno = await respReno.text();
-          if (csvReno && csvReno.includes('NUMPERIODO')) {
-            const lines = csvReno.split('\n');
-            const header = lines[0].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
-            const pdvIdx = header.indexOf('VCHJER_PDV');
-
-            if (pdvIdx !== -1) {
-              const liveRenoAug = {};
-              for (let i = 1; i < lines.length; i++) {
-                if (!lines[i].trim()) continue;
-                const cols = lines[i].split(',').map(s => s.trim().replace(/^"|"$/g, ''));
-                const pdvNorm = normPdvName(cols[pdvIdx]);
-                liveRenoAug[pdvNorm] = (liveRenoAug[pdvNorm] || 0) + 1;
-              }
-
-              tree.forEach(spv => {
-                spv.children.forEach(pdv => {
-                  const pdvNorm = normPdvName(pdv.name);
-                  if (!pdv.units['RENO_SS']) pdv.units['RENO_SS'] = {};
-                  pdv.units['RENO_SS'].m202608 = liveRenoAug[pdvNorm] || pdv.units['RENO_SS'].m202608 || 0;
-                });
-              });
-            }
-          }
-        }
-
-        // RE-CALCULATE POSTPAGO_TOTAL AND AGGREGATE TREES
-        tree.forEach(spv => {
-          spv.children.forEach(pdv => {
-            if (!pdv.units['POSTPAGO_TOTAL']) pdv.units['POSTPAGO_TOTAL'] = {};
-            pdv.units['POSTPAGO_TOTAL'].m202608 = (
-              (pdv.units['PORTA_OSS'] ? pdv.units['PORTA_OSS'].m202608 : 0) +
-              (pdv.units['PORTA_OPP'] ? pdv.units['PORTA_OPP'].m202608 : 0) +
-              (pdv.units['VR'] ? pdv.units['VR'].m202608 : 0)
-            );
-          });
-
-          products.forEach(p => {
-            if (!spv.units[p]) spv.units[p] = {};
-            spv.units[p].m202608 = spv.children.reduce((acc, pdv) => acc + (pdv.units[p] ? pdv.units[p].m202608 || 0 : 0), 0);
-          });
-        });
-
-        products.forEach(p => {
-          if (!window.SALES_DATA.summary.global_units[p]) window.SALES_DATA.summary.global_units[p] = {};
-          window.SALES_DATA.summary.global_units[p].m202608 = tree.reduce((acc, spv) => acc + (spv.units[p] ? spv.units[p].m202608 || 0 : 0), 0);
-        });
-
-        if (currentPage === 1) renderTreeTable();
-        else if (currentPage === 2) renderDotacionTable();
-        else if (currentPage === 3) renderNpsTable();
-        else if (currentPage === 4) renderDiscountTable();
-
-        if (syncText) syncText.textContent = 'Ventas y Cuotas Actualizadas ✅';
-        setTimeout(() => {
-          if (syncText) syncText.textContent = 'Sincronizar Data';
-        }, 3000);
-
-      } catch (err) {
-        console.warn('Sync fallback notice:', err);
-        if (syncText) syncText.textContent = 'Data al Día ✅';
-        setTimeout(() => {
-          if (syncText) syncText.textContent = 'Sincronizar Data';
-        }, 2500);
-      } finally {
-        if (syncIcon) syncIcon.classList.remove('fa-spin');
-      }
-    }
-
+    var prevMonthLabels = {
+      'm202608': 'm202607',
+      'm202607': 'm202606',
+      'm202606': 'm202605',
+      'm202605': 'm202604',
+      'm202604': 'm202603',
+      'm202603': 'm202602',
+      'm202602': 'm202601'
+    };
+    // State Variables
     function switchSlidePage(pageNum) {
       currentPage = pageNum;
-      for (let i = 1; i <= 7; i++) {
+      for (let i = 0; i <= 7; i++) {
         const btn = document.getElementById('navTab' + i);
         if (btn) btn.classList.toggle('active', i === pageNum);
         const slide = document.getElementById('slidePage' + i);
         if (slide) slide.style.display = (i === pageNum) ? 'flex' : 'none';
       }
 
-      document.getElementById('pageFooterNum').textContent = `Página ${pageNum} de 7`;
+      const footerNum = document.getElementById('pageFooterNum');
+      if (footerNum) {
+        footerNum.textContent = pageNum === 0 ? 'Portada • Informe Ejecutivo 360°' : `Página ${pageNum} de 7`;
+      }
       
-      if (pageNum === 1) {
+      if (pageNum === 0) {
+        // Inicio / Portada
+      } else if (pageNum === 1) {
         renderTableHeader();
         renderTreeTable();
       } else if (pageNum === 2) {
         renderDiscountHeader();
         renderDiscountTable();
       } else if (pageNum === 3) {
+        renderCedenteTable();
+      } else if (pageNum === 4) {
+        renderMixPlanesTable();
+      } else if (pageNum === 5) {
+        renderPermanenciaTable();
+      } else if (pageNum === 6) {
         renderDotacionHeader();
         renderDotacionTable();
-      } else if (pageNum === 4) {
+      } else if (pageNum === 7) {
         renderNpsHeader();
         renderNpsTable();
-      } else if (pageNum === 5) {
-        renderMixPlanesTable();
-      } else if (pageNum === 6) {
-        renderPermanenciaTable();
-      } else if (pageNum === 7) {
-        renderCedenteTable();
       }
     }
 
@@ -1340,11 +1231,11 @@
 
     function getVariationBadgeHTML(diffUnits, diffPct) {
       if (diffUnits > 0) {
-        return `<span class="badge-compliance comp-green"><i class="fa-solid fa-arrow-up"></i> +${diffUnits.toLocaleString('es-PE')} u. (+${diffPct.toFixed(1)}%)</span>`;
+        return `<span class="badge-compliance comp-green"><i class="fa-solid fa-arrow-up"></i> +${diffUnits.toLocaleString('es-PE')} (+${diffPct.toFixed(1)}%)</span>`;
       } else if (diffUnits < 0) {
-        return `<span class="badge-compliance comp-red"><i class="fa-solid fa-arrow-down"></i> ${diffUnits.toLocaleString('es-PE')} u. (${diffPct.toFixed(1)}%)</span>`;
+        return `<span class="badge-compliance comp-red"><i class="fa-solid fa-arrow-down"></i> ${diffUnits.toLocaleString('es-PE')} (${diffPct.toFixed(1)}%)</span>`;
       } else {
-        return `<span class="badge-compliance comp-yellow">= 0 u. (0.0%)</span>`;
+        return `<span class="badge-compliance comp-yellow">= 0 (0.0%)</span>`;
       }
     }
 
@@ -1365,34 +1256,8 @@
       }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      if (!window.SALES_DATA || !window.DOTACION_DATA || !window.NPS_DATA || !window.DISCOUNT_DATA) {
-        alert('Error al cargar data.js');
-        return;
-      }
-
-      window.SALES_DATA.tree.forEach(spv => {
-        expandedState[spv.id] = true;
-      });
-      window.DOTACION_DATA.pdvs.forEach(pdv => {
-        dotacionExpandedState[pdv.name] = true;
-      });
-      window.NPS_DATA.venta.pdvs.forEach(pdv => {
-        npsExpandedState[pdv.name] = true;
-      });
-      window.NPS_DATA.postventa.pdvs.forEach(pdv => {
-        npsExpandedState[pdv.name] = true;
-      });
-      window.DISCOUNT_DATA.tree.forEach(spv => {
-        spv.children.forEach(pdv => {
-          discountExpandedState[pdv.id] = true;
-        });
-      });
-
-      document.getElementById('monthSelectHeader').value = 'm202608';
-
-      renderTableHeader();
-      renderTreeTable();
+        document.addEventListener('DOMContentLoaded', () => {
+      switchSlidePage(0);
     });
 
     function handleMonthChange(val) {
@@ -1546,7 +1411,7 @@
       if (currentMonthFilter === 'ALL') {
         thead.innerHTML = `
           <tr>
-            <th style="min-width: 280px;">ESTRUCTURA</th>
+            <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
             <th class="val-cell sortable" onclick="sortTable('m202606')">JUNIO</th>
             <th class="val-cell sortable" onclick="sortTable('m202607')">JULIO</th>
             <th class="val-cell sortable" onclick="sortTable('m202608')">AGOSTO</th>
@@ -1557,7 +1422,7 @@
       } else if (currentMonthFilter === 'm202608') {
         thead.innerHTML = `
           <tr>
-            <th style="min-width: 280px;">ESTRUCTURA</th>
+            <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
             <th class="val-cell sortable" onclick="sortTable('quota')">CUOTA</th>
             <th class="val-cell sortable" onclick="sortTable('m202608')">AVANCE</th>
             <th class="val-cell sortable" onclick="sortTable('pct_cump')">% AVANCE</th>
@@ -1569,11 +1434,11 @@
           </tr>
         `;
       } else {
-        const prevMKey = prevMonthMap[currentMonthFilter];
+        const prevMKey = prevMonthLabels[currentMonthFilter];
         const prevLabel = prevMKey ? (monthLabelsMap[prevMKey] || prevMKey).toUpperCase() : 'M-1';
         thead.innerHTML = `
           <tr>
-            <th style="min-width: 280px;">ESTRUCTURA</th>
+            <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
             <th class="val-cell sortable" onclick="sortTable('quota')">CUOTA</th>
             <th class="val-cell sortable" onclick="sortTable('current')">VENTAS</th>
             <th class="val-cell sortable" onclick="sortTable('pct_cump')">% CUMP.</th>
@@ -1593,7 +1458,7 @@
       tbody.innerHTML = '';
 
       const keyToUse = currentMonthFilter === 'ALL' ? 'total' : currentMonthFilter;
-      const prevMKey = prevMonthMap[currentMonthFilter];
+      const prevMKey = prevMonthLabels[currentMonthFilter];
       const showArribos = (currentProductCode === 'POSTPAGO_TOTAL');
       const selZone = document.getElementById('zoneSelectPage1').value;
 
@@ -1648,11 +1513,11 @@
         });
 
         trTotal.innerHTML = `
-          <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+          <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
           <td class="val-cell num-font">${m6.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${m7.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${m8.toLocaleString('es-PE')}</td>
-          ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8;">${grandArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
+          ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8;">${grandArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
         `;
       } else if (currentMonthFilter === 'm202608') {
@@ -1663,14 +1528,14 @@
         const grandVarPct = grandM1Units > 0 ? (grandVarM1 / grandM1Units * 100) : 0;
 
         trTotal.innerHTML = `
-          <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
-          <td class="val-cell num-font">${grandQuota > 0 ? grandQuota.toLocaleString('es-PE') + ' u.' : '-'}</td>
-          <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')} u.</td>
+          <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+          <td class="val-cell num-font">${grandQuota > 0 ? grandQuota.toLocaleString('es-PE') : '-'}</td>
+          <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandComp) : '-'}</td>
-          ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
-          <td class="val-cell num-font" style="color: #93c5fd; font-weight: 800;">${grandProjUnits.toLocaleString('es-PE')} u.</td>
+          ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
+          <td class="val-cell num-font" style="color: #93c5fd; font-weight: 800;">${grandProjUnits.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandProjComp) : '-'}</td>
-          <td class="val-cell num-font" style="font-weight: 700;">${grandM1Units.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font" style="font-weight: 700;">${grandM1Units.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${getVariationBadgeHTML(grandVarM1, grandVarPct)}</td>
         `;
       } else {
@@ -1679,12 +1544,12 @@
         const diffPct = grandM1Units > 0 ? (diffUnits / grandM1Units * 100) : 0;
 
         trTotal.innerHTML = `
-          <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
-          <td class="val-cell num-font">${grandQuota > 0 ? grandQuota.toLocaleString('es-PE') + ' u.' : '-'}</td>
-          <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')} u.</td>
+          <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+          <td class="val-cell num-font">${grandQuota > 0 ? grandQuota.toLocaleString('es-PE') : '-'}</td>
+          <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandComp) : '-'}</td>
-          ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
-          <td class="val-cell num-font">${prevMKey ? grandM1Units.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
+          ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
+          <td class="val-cell num-font">${prevMKey ? grandM1Units.toLocaleString('es-PE') : 'N/A'}</td>
           <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
         `;
       }
@@ -1743,13 +1608,13 @@
                 <span style="font-weight: 800; color: #0f172a;">${spv.name}</span>
               </div>
             </td>
-            <td class="val-cell num-font" style="color: var(--text-muted);">${spvQuota > 0 ? spvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
-            <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')} u.</td>
+            <td class="val-cell num-font" style="color: var(--text-muted);">${spvQuota > 0 ? spvQuota.toLocaleString('es-PE') : 'N/A'}</td>
+            <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')}</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(spvComp) : '-'}</td>
-            ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
-            <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
+            ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
+            <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')}</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
-            <td class="val-cell num-font" style="font-weight: 600;">${spvM1.toLocaleString('es-PE')} u.</td>
+            <td class="val-cell num-font" style="font-weight: 600;">${spvM1.toLocaleString('es-PE')}</td>
             <td class="val-cell num-font">${getVariationBadgeHTML(spvVarM1, spvVarPct)}</td>
           `;
         } else {
@@ -1764,11 +1629,11 @@
                 <span style="font-weight: 800; color: #0f172a;">${spv.name}</span>
               </div>
             </td>
-            <td class="val-cell num-font" style="color: var(--text-muted);">${spvQuota > 0 ? spvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
-            <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')} u.</td>
+            <td class="val-cell num-font" style="color: var(--text-muted);">${spvQuota > 0 ? spvQuota.toLocaleString('es-PE') : 'N/A'}</td>
+            <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')}</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(spvComp) : '-'}</td>
-            ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')} int.</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
-            <td class="val-cell num-font">${prevMKey ? spvM1.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
+            ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
+            <td class="val-cell num-font">${prevMKey ? spvM1.toLocaleString('es-PE') : 'N/A'}</td>
             <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
           `;
         }
@@ -1804,7 +1669,7 @@
                 <td class="val-cell num-font">${m6.toLocaleString('es-PE')}</td>
                 <td class="val-cell num-font">${m7.toLocaleString('es-PE')}</td>
                 <td class="val-cell num-font">${m8.toLocaleString('es-PE')}</td>
-                ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
+                ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')}</td>
               `;
             } else if (currentMonthFilter === 'm202608') {
@@ -1821,13 +1686,13 @@
                     <span style="font-weight: 700; color: #334155;">${pdv.name}</span>
                   </div>
                 </td>
-                <td class="val-cell num-font" style="color: var(--text-muted);">${pdvQuota > 0 ? pdvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
-                <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')} u.</td>
+                <td class="val-cell num-font" style="color: var(--text-muted);">${pdvQuota > 0 ? pdvQuota.toLocaleString('es-PE') : 'N/A'}</td>
+                <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')}</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(pdvComp) : '-'}</td>
-                ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
-                <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
+                ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
+                <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')}</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
-                <td class="val-cell num-font" style="font-weight: 600;">${pdvM1.toLocaleString('es-PE')} u.</td>
+                <td class="val-cell num-font" style="font-weight: 600;">${pdvM1.toLocaleString('es-PE')}</td>
                 <td class="val-cell num-font">${getVariationBadgeHTML(pdvVarM1, pdvVarPct)}</td>
               `;
             } else {
@@ -1842,11 +1707,11 @@
                     <span style="font-weight: 700; color: #334155;">${pdv.name}</span>
                   </div>
                 </td>
-                <td class="val-cell num-font" style="color: var(--text-muted);">${pdvQuota > 0 ? pdvQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
-                <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')} u.</td>
+                <td class="val-cell num-font" style="color: var(--text-muted);">${pdvQuota > 0 ? pdvQuota.toLocaleString('es-PE') : 'N/A'}</td>
+                <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')}</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(pdvComp) : '-'}</td>
-                ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') + ' int.' : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
-                <td class="val-cell num-font">${prevMKey ? pdvM1.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
+                ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
+                <td class="val-cell num-font">${prevMKey ? pdvM1.toLocaleString('es-PE') : 'N/A'}</td>
                 <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
               `;
             }
@@ -1891,13 +1756,13 @@
                         <span style="font-weight: 600; color: #334155; font-size: 11px;">${realName || userCode}</span>
                       </div>
                     </td>
-                    <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
-                    <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')} u.</td>
+                    <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') : 'N/A'}</td>
+                    <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
-                    <td class="val-cell num-font" style="font-weight: 600; color: #0f172a;">${projUnits.toLocaleString('es-PE')} u.</td>
+                    <td class="val-cell num-font" style="font-weight: 600; color: #0f172a;">${projUnits.toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(projComp) : '-'}</td>
-                    <td class="val-cell num-font" style="color: #64748b;">${aseM1.toLocaleString('es-PE')} u.</td>
+                    <td class="val-cell num-font" style="color: #64748b;">${aseM1.toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${getVariationBadgeHTML(aseVarM1, aseVarPct)}</td>
                   `;
                 } else {
@@ -1911,11 +1776,11 @@
                         <span style="font-weight: 600; color: #334155; font-size: 11px;">${realName || userCode}</span>
                       </div>
                     </td>
-                    <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
-                    <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')} u.</td>
+                    <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') : 'N/A'}</td>
+                    <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
-                    <td class="val-cell num-font">${prevMKey ? aseM1.toLocaleString('es-PE') + ' u.' : 'N/A'}</td>
+                    <td class="val-cell num-font">${prevMKey ? aseM1.toLocaleString('es-PE') : 'N/A'}</td>
                     <td class="val-cell num-font">${prevMKey ? getVariationBadgeHTML(diffUnits, diffPct) : 'N/A'}</td>
                   `;
                 }
@@ -1927,8 +1792,7 @@
         }
       });
 
-      const labelEl = document.getElementById('rowCountLabel');
-      if (labelEl) labelEl.textContent = `${visibleRowsCount} filas en estructura jerárquica activa`;
+      const labelEl = document.getElementById('rowCountLabel'); if (labelEl) labelEl.textContent = 'Equipo de Operaciones • 2026';
     }
 
 function toggleDotacionDays() {
@@ -1947,7 +1811,7 @@ function toggleDotacionDays() {
       const thead = document.getElementById('dotacionThead');
       thead.innerHTML = `
         <tr>
-          <th style="min-width: 260px;">ESTRUCTURA</th>
+          <th style="min-width: 260px;">PUNTO DE VENTA / ASESOR</th>
           <th class="val-cell">HC OBJ</th>
           <th class="val-cell">HC CODIGO</th>
           <th class="val-cell">CUMP. OBJETIVO</th>
@@ -2036,7 +1900,7 @@ function toggleDotacionDays() {
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td><div class="node-cell indent-0"><i class="fa-solid fa-building-user" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
         <td class="val-cell num-font">${totalHcObj}</td>
         <td class="val-cell num-font" style="color: #34d399;">${totalHcCod}</td>
         <td class="val-cell num-font">${getComplianceBadgeHTML(totalCumpObj)}</td>
@@ -2046,12 +1910,15 @@ function toggleDotacionDays() {
           <td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td>
           <td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">17</td>
         ` : ''}
-        <td class="val-cell num-font">${getComplianceBadgeHTML(grandCondicion)}</td>
+        <td class="val-cell num-font">${getComplianceBadgeHTML(grandCondicionPct)}</td>
         <td style="color: #cbd5e1; font-weight: 600;">Dotación Operativa Nacional</td>
       `;
       tbody.appendChild(trTotal);
 
       let visibleRows = 0;
+
+      // Sort PDVs from highest to lowest TOTAL NPS (total_nps descending)
+      pdvs.sort((a, b) => (b.total_nps || 0) - (a.total_nps || 0));
 
       pdvs.forEach(pdv => {
         const isPdvExpanded = dotacionExpandedState[pdv.name] !== false;
@@ -2092,6 +1959,8 @@ function toggleDotacionDays() {
         visibleRows++;
 
         if (isPdvExpanded && pdv.asesores && Array.isArray(pdv.asesores)) {
+          // Sort Asesores from highest to lowest TOTAL NPS (total_nps descending)
+          pdv.asesores.sort((a, b) => (b.total_nps || 0) - (a.total_nps || 0));
           pdv.asesores.forEach(ase => {
             const trAse = document.createElement('tr');
             trAse.className = 'row-asesor';
@@ -2136,7 +2005,7 @@ function toggleDotacionDays() {
         }
       });
 
-      document.getElementById('rowCountLabel').textContent = `${visibleRows} filas en reporte de dotación y asistencia`;
+      document.getElementById('rowCountLabel').textContent = 'Equipo de Operaciones • 2026';
     }
 
     // ================= PAGE 3: NPS RENDER LOGIC =================
@@ -2177,11 +2046,11 @@ function toggleDotacionDays() {
 
       thead.innerHTML = `
         <tr>
-          <th style="min-width: 260px;">ESTRUCTURA</th>
+          <th style="min-width: 260px;">PUNTO DE VENTA / ASESOR</th>
           ${weekHeadersHTML}
           <th class="val-cell">TOTAL NPS</th>
-          <th class="val-cell">ENCUESTAS (Q)</th>
-          <th class="val-cell">% TOTAL Q</th>
+          <th class="val-cell">ENCUESTAS</th>
+          <th class="val-cell">% TOTAL</th>
           <th class="val-cell" style="min-width: 140px;">ESTADO CUMPLIMIENTO</th>
         </tr>
       `;
@@ -2189,7 +2058,7 @@ function toggleDotacionDays() {
 
         
                             // ================= PAGE 5: MIX DE PLANES RENDER LOGIC =================
-    let mixExpandedState = {}; // Default is false (collapsed by PDV)
+    // Default is false (collapsed by PDV)
 
     function toggleMixPdv(pdvName) {
       mixExpandedState[pdvName] = mixExpandedState[pdvName] === true ? false : true;
@@ -2260,7 +2129,7 @@ function toggleDotacionDays() {
       }).join('');
 
       trTotal.innerHTML = `
-        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
         ${planColsHTML}
       `;
       tbody.appendChild(trTotal);
@@ -2311,7 +2180,7 @@ function toggleDotacionDays() {
 
     
     // ================= PAGE 6: PERMANENCIA M6 RENDER LOGIC =================
-    let permExpandedState = {}; // Default is false (collapsed by PDV)
+    // Default is false (collapsed by PDV)
 
     function togglePermPdv(pdvName) {
       permExpandedState[pdvName] = permExpandedState[pdvName] === true ? false : true;
@@ -2331,7 +2200,7 @@ function toggleDotacionDays() {
 
     
     // ================= PAGE 7: OPERADOR CEDENTE RENDER LOGIC =================
-    let cedenteExpandedState = {}; // Default is false (collapsed by PDV)
+    // Default is false (collapsed by PDV)
 
     function toggleCedentePdv(pdvName) {
       cedenteExpandedState[pdvName] = cedenteExpandedState[pdvName] === true ? false : true;
@@ -2383,10 +2252,10 @@ function toggleDotacionDays() {
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS (${selMonth})</span></div></td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${grandTotal.toLocaleString('es-PE')} u.</td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #2563eb;">${grandClaro.toLocaleString('es-PE')}</td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #1d4ed8;">${grandClaroPct.toFixed(1)}%</td>
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><span>TOTAL FORTALECERNOS (${selMonth})</span></div></td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${grandTotal.toLocaleString('es-PE')}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #dc2626;">${grandClaro.toLocaleString('es-PE')}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #b91c1c;">${grandClaroPct.toFixed(1)}%</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #16a34a;">${grandMovistar.toLocaleString('es-PE')}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #15803d;">${grandMovPct.toFixed(1)}%</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #ca8a04;">${grandBitel.toLocaleString('es-PE')}</td>
@@ -2415,9 +2284,9 @@ function toggleDotacionDays() {
                 <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
               </div>
             </td>
-            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${mInfo.total_u.toLocaleString('es-PE')} u.</td>
-            <td class="val-cell num-font" style="font-weight: 800; color: #2563eb; padding: 9px 12px;">${mInfo.claro_u > 0 ? mInfo.claro_u : '-'}</td>
-            <td class="val-cell num-font" style="font-weight: 700; color: #1d4ed8; padding: 9px 12px;">${mInfo.claro_pct > 0 ? mInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${mInfo.total_u.toLocaleString('es-PE')}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #dc2626; padding: 9px 12px;">${mInfo.claro_u > 0 ? mInfo.claro_u : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 700; color: #b91c1c; padding: 9px 12px;">${mInfo.claro_pct > 0 ? mInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
             <td class="val-cell num-font" style="font-weight: 800; color: #16a34a; padding: 9px 12px;">${mInfo.movistar_u > 0 ? mInfo.movistar_u : '-'}</td>
             <td class="val-cell num-font" style="font-weight: 700; color: #15803d; padding: 9px 12px;">${mInfo.movistar_pct > 0 ? mInfo.movistar_pct.toFixed(1) + '%' : '-'}</td>
             <td class="val-cell num-font" style="font-weight: 800; color: #ca8a04; padding: 9px 12px;">${mInfo.bitel_u > 0 ? mInfo.bitel_u : '-'}</td>
@@ -2440,9 +2309,9 @@ function toggleDotacionDays() {
                     <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
                   </div>
                 </td>
-                <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${aInfo.total_u > 0 ? aInfo.total_u + ' u.' : '-'}</td>
-                <td class="val-cell num-font" style="color: #3b82f6; padding: 7px 12px;">${aInfo.claro_u > 0 ? aInfo.claro_u : '-'}</td>
-                <td class="val-cell num-font" style="color: #60a5fa; padding: 7px 12px;">${aInfo.claro_pct > 0 ? aInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
+                <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${aInfo.total_u > 0 ? aInfo.total_u : '-'}</td>
+                <td class="val-cell num-font" style="color: #ef4444; padding: 7px 12px;">${aInfo.claro_u > 0 ? aInfo.claro_u : '-'}</td>
+                <td class="val-cell num-font" style="color: #f87171; padding: 7px 12px;">${aInfo.claro_pct > 0 ? aInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
                 <td class="val-cell num-font" style="color: #22c55e; padding: 7px 12px;">${aInfo.movistar_u > 0 ? aInfo.movistar_u : '-'}</td>
                 <td class="val-cell num-font" style="color: #4ade80; padding: 7px 12px;">${aInfo.movistar_pct > 0 ? aInfo.movistar_pct.toFixed(1) + '%' : '-'}</td>
                 <td class="val-cell num-font" style="color: #eab308; padding: 7px 12px;">${aInfo.bitel_u > 0 ? aInfo.bitel_u : '-'}</td>
@@ -2469,8 +2338,8 @@ function toggleDotacionDays() {
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS</span></div></td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${s.total_sales_jan.toLocaleString('es-PE')} u.</td>
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><span>TOTAL FORTALECERNOS</span></div></td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${s.total_sales_jan.toLocaleString('es-PE')}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m0_pct ? s.m0_pct.toFixed(2) + '%' : '-'}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m1_pct ? s.m1_pct.toFixed(2) + '%' : '-'}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m2_pct ? s.m2_pct.toFixed(2) + '%' : '-'}</td>
@@ -2495,7 +2364,7 @@ function toggleDotacionDays() {
               <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
             </div>
           </td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${pdv.total.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${pdv.total.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m0 !== null ? pdv.m0.toFixed(2) + '%' : '-'}</td>
           <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m1 !== null ? pdv.m1.toFixed(2) + '%' : '-'}</td>
           <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m2 !== null ? pdv.m2.toFixed(2) + '%' : '-'}</td>
@@ -2521,7 +2390,7 @@ function toggleDotacionDays() {
                   <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
                 </div>
               </td>
-              <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${ase.total.toLocaleString('es-PE')} u.</td>
+              <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${ase.total.toLocaleString('es-PE')}</td>
               <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m0 !== null ? ase.m0.toFixed(2) + '%' : '-'}</td>
               <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m1 !== null ? ase.m1.toFixed(2) + '%' : '-'}</td>
               <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m2 !== null ? ase.m2.toFixed(2) + '%' : '-'}</td>
@@ -2589,7 +2458,7 @@ function toggleDotacionDays() {
           <div class="kpi-card">
             <div class="kpi-icon-box" style="background: #f0f9ff; color: #0369a1;"><i class="fa-solid fa-comments"></i></div>
             <div>
-              <div class="kpi-title">Total Encuestas (Q)</div>
+              <div class="kpi-title">Total Encuestas</div>
               <div class="kpi-value">${totQ} Respuestas</div>
             </div>
           </div>
@@ -2615,16 +2484,16 @@ function toggleDotacionDays() {
         const s5 = channelData.summary.sem5 || {nps:0, q:0};
 
         weekTotalCells = `
-          <td class="val-cell num-font">${getNpsBadgeHTML(s1.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s1.q}Q)</span></td>
-          <td class="val-cell num-font">${getNpsBadgeHTML(s2.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s2.q}Q)</span></td>
-          <td class="val-cell num-font">${getNpsBadgeHTML(s3.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s3.q}Q)</span></td>
-          <td class="val-cell num-font">${getNpsBadgeHTML(s4.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s4.q}Q)</span></td>
-          ${isPostventa ? `<td class="val-cell num-font">${getNpsBadgeHTML(s5 ? s5.nps : 0, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s5 ? s5.q : 0}Q)</span></td>` : ''}
+          <td class="val-cell num-font">${getNpsBadgeHTML(s1.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s1.q})</span></td>
+          <td class="val-cell num-font">${getNpsBadgeHTML(s2.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s2.q})</span></td>
+          <td class="val-cell num-font">${getNpsBadgeHTML(s3.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s3.q})</span></td>
+          <td class="val-cell num-font">${getNpsBadgeHTML(s4.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s4.q})</span></td>
+          ${isPostventa ? `<td class="val-cell num-font">${getNpsBadgeHTML(s5 ? s5.nps : 0, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s5 ? s5.q : 0})</span></td>` : ''}
         `;
       }
 
       trTotal.innerHTML = `
-        <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
         ${weekTotalCells}
         <td class="val-cell num-font" style="font-size: 14px; font-weight: 800;">${getNpsBadgeHTML(totNps, targetMeta)}</td>
         <td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${totQ}</td>
@@ -2637,8 +2506,11 @@ function toggleDotacionDays() {
 
       let visibleRows = 0;
 
+      // Sort PDVs from highest to lowest TOTAL NPS (total_nps descending)
+      pdvs.sort((a, b) => (b.total_nps || 0) - (a.total_nps || 0));
+
       pdvs.forEach(pdv => {
-        const isPdvExpanded = npsExpandedState[pdv.name] !== false;
+        const isPdvExpanded = npsExpandedState[pdv.name] === true;
 
         const trPdv = document.createElement('tr');
         trPdv.className = 'row-pdv-shaded';
@@ -2652,11 +2524,11 @@ function toggleDotacionDays() {
           const s5 = pdv.sem5 || {nps:0, q:0};
 
           pdvWeeksHTML = `
-            <td class="val-cell num-font">${s1.q > 0 ? getNpsBadgeHTML(s1.nps, targetMeta) + ` (${s1.q}Q)` : '-'}</td>
-            <td class="val-cell num-font">${s2.q > 0 ? getNpsBadgeHTML(s2.nps, targetMeta) + ` (${s2.q}Q)` : '-'}</td>
-            <td class="val-cell num-font">${s3.q > 0 ? getNpsBadgeHTML(s3.nps, targetMeta) + ` (${s3.q}Q)` : '-'}</td>
-            <td class="val-cell num-font">${s4.q > 0 ? getNpsBadgeHTML(s4.nps, targetMeta) + ` (${s4.q}Q)` : '-'}</td>
-            ${isPostventa ? `<td class="val-cell num-font">${s5.q > 0 ? getNpsBadgeHTML(s5.nps, targetMeta) + ` (${s5.q}Q)` : '-'}</td>` : ''}
+            <td class="val-cell num-font">${s1.q > 0 ? getNpsBadgeHTML(s1.nps, targetMeta) + ` (${s1.q})` : '-'}</td>
+            <td class="val-cell num-font">${s2.q > 0 ? getNpsBadgeHTML(s2.nps, targetMeta) + ` (${s2.q})` : '-'}</td>
+            <td class="val-cell num-font">${s3.q > 0 ? getNpsBadgeHTML(s3.nps, targetMeta) + ` (${s3.q})` : '-'}</td>
+            <td class="val-cell num-font">${s4.q > 0 ? getNpsBadgeHTML(s4.nps, targetMeta) + ` (${s4.q})` : '-'}</td>
+            ${isPostventa ? `<td class="val-cell num-font">${s5.q > 0 ? getNpsBadgeHTML(s5.nps, targetMeta) + ` (${s5.q})` : '-'}</td>` : ''}
           `;
         }
 
@@ -2679,6 +2551,8 @@ function toggleDotacionDays() {
         visibleRows++;
 
         if (isPdvExpanded && pdv.asesores && Array.isArray(pdv.asesores)) {
+          // Sort Asesores from highest to lowest TOTAL NPS (total_nps descending)
+          pdv.asesores.sort((a, b) => (b.total_nps || 0) - (a.total_nps || 0));
           pdv.asesores.forEach(ase => {
             const trAse = document.createElement('tr');
             trAse.className = 'row-asesor';
@@ -2692,11 +2566,11 @@ function toggleDotacionDays() {
               const s5 = ase.sem5 || {nps:0, q:0};
 
               aseWeeksHTML = `
-                <td class="val-cell num-font">${s1.q > 0 ? getNpsBadgeHTML(s1.nps, targetMeta) + ` (${s1.q}Q)` : '-'}</td>
-                <td class="val-cell num-font">${s2.q > 0 ? getNpsBadgeHTML(s2.nps, targetMeta) + ` (${s2.q}Q)` : '-'}</td>
-                <td class="val-cell num-font">${s3.q > 0 ? getNpsBadgeHTML(s3.nps, targetMeta) + ` (${s3.q}Q)` : '-'}</td>
-                <td class="val-cell num-font">${s4.q > 0 ? getNpsBadgeHTML(s4.nps, targetMeta) + ` (${s4.q}Q)` : '-'}</td>
-                ${isPostventa ? `<td class="val-cell num-font">${s5.q > 0 ? getNpsBadgeHTML(s5.nps, targetMeta) + ` (${s5.q}Q)` : '-'}</td>` : ''}
+                <td class="val-cell num-font">${s1.q > 0 ? getNpsBadgeHTML(s1.nps, targetMeta) + ` (${s1.q})` : '-'}</td>
+                <td class="val-cell num-font">${s2.q > 0 ? getNpsBadgeHTML(s2.nps, targetMeta) + ` (${s2.q})` : '-'}</td>
+                <td class="val-cell num-font">${s3.q > 0 ? getNpsBadgeHTML(s3.nps, targetMeta) + ` (${s3.q})` : '-'}</td>
+                <td class="val-cell num-font">${s4.q > 0 ? getNpsBadgeHTML(s4.nps, targetMeta) + ` (${s4.q})` : '-'}</td>
+                ${isPostventa ? `<td class="val-cell num-font">${s5.q > 0 ? getNpsBadgeHTML(s5.nps, targetMeta) + ` (${s5.q})` : '-'}</td>` : ''}
               `;
             }
 
@@ -2726,7 +2600,7 @@ function toggleDotacionDays() {
         }
       });
 
-      document.getElementById('rowCountLabel').textContent = `${visibleRows} filas en reporte de calidad y NPS`;
+      document.getElementById('rowCountLabel').textContent = 'Equipo de Operaciones • 2026';
     }
 
     // ================= PAGE 4: TASA DE USO DE DESCUENTO RENDER LOGIC =================
@@ -2759,7 +2633,7 @@ function toggleDotacionDays() {
       const thead = document.getElementById('discountThead');
       thead.innerHTML = `
         <tr>
-          <th style="min-width: 280px;">PUNTO DE VENTA (PDV) / ASESOR</th>
+          <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
           <th class="val-cell">TOTAL VENTAS PORTA OSS MONO</th>
           <th class="val-cell">VENTAS CON DESCUENTO 50%</th>
           <th class="val-cell">% TASA DE USO DESCUENTO</th>
@@ -2842,9 +2716,9 @@ function toggleDotacionDays() {
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''} ${selSpv !== 'ALL' ? '[' + selSpv + ']' : ''}</span></div></td>
-        <td class="val-cell num-font">${totMono.toLocaleString('es-PE')} u.</td>
-        <td class="val-cell num-font" style="color: #38bdf8;">${totDesc.toLocaleString('es-PE')} u.</td>
+        <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''} ${selSpv !== 'ALL' ? '[' + selSpv + ']' : ''}</span></div></td>
+        <td class="val-cell num-font">${totMono.toLocaleString('es-PE')}</td>
+        <td class="val-cell num-font" style="color: #38bdf8;">${totDesc.toLocaleString('es-PE')}</td>
         <td class="val-cell num-font" style="font-size: 13.5px;">${getDiscountUsageBadgeHTML(pctTasaUso, targetMeta)}</td>
         <td class="val-cell num-font">${getDiscountStatusHTML(pctTasaUso, targetMeta)}</td>
       `;
@@ -2859,7 +2733,7 @@ function toggleDotacionDays() {
         if (discountSearchQuery.length > 0 && !pdvMatch && matchingAsesores.length === 0) return;
 
         visibleRows++;
-        const isPdvExpanded = discountExpandedState[pdv.id] !== false;
+        const isPdvExpanded = discountExpandedState[pdv.id] === true;
 
         const trPdv = document.createElement('tr');
         trPdv.className = 'row-pdv-shaded';
@@ -2870,8 +2744,8 @@ function toggleDotacionDays() {
               <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
             </div>
           </td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${pdv.tot_porta_mono.toLocaleString('es-PE')} u.</td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.tot_desc_50.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${pdv.tot_porta_mono.toLocaleString('es-PE')}</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.tot_desc_50.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${getDiscountUsageBadgeHTML(pdv.pct_tasa_uso, targetMeta)}</td>
           <td class="val-cell num-font">${getDiscountStatusHTML(pdv.pct_tasa_uso, targetMeta)}</td>
         `;
@@ -2896,8 +2770,8 @@ function toggleDotacionDays() {
                   </div>
                 </div>
               </td>
-              <td class="val-cell num-font">${ase.tot_porta_mono} u.</td>
-              <td class="val-cell num-font" style="color: #0369a1; font-weight: 700;">${ase.tot_desc_50} u.</td>
+              <td class="val-cell num-font">${ase.tot_porta_mono}</td>
+              <td class="val-cell num-font" style="color: #0369a1; font-weight: 700;">${ase.tot_desc_50}</td>
               <td class="val-cell num-font">${ase.tot_porta_mono > 0 ? getDiscountUsageBadgeHTML(ase.pct_tasa_uso, targetMeta) : '-'}</td>
               <td class="val-cell num-font">${ase.tot_porta_mono > 0 ? getDiscountStatusHTML(ase.pct_tasa_uso, targetMeta) : '-'}</td>
             `;
@@ -2906,7 +2780,7 @@ function toggleDotacionDays() {
         }
       });
 
-      document.getElementById('rowCountLabel').textContent = `${visibleRows} filas en reporte de tasa de uso de descuento`;
+      document.getElementById('rowCountLabel').textContent = 'Equipo de Operaciones • 2026';
     }
 
     function roundOneDec(val) {
@@ -2951,7 +2825,7 @@ function toggleDotacionDays() {
               pdv.children.forEach(ase => {
                 const aseUnits = getNodeUnits(ase, currentMonthFilter);
                 if (aseUnits <= 3) {
-                  lowAsesores.push(`${ase.name} (${aseUnits} u.)`);
+                  lowAsesores.push(`${ase.name} (${aseUnits})`);
                 }
               });
             }
@@ -2975,9 +2849,9 @@ function toggleDotacionDays() {
               </div>
 
               <div class="metrics-mini-grid">
-                <div class="metric-mini-item"><span class="metric-mini-label">Avance (3D)</span><span class="metric-mini-val" style="color: #2563eb;">${pdvUnits} u.</span></div>
-                <div class="metric-mini-item"><span class="metric-mini-label">Cuota Mes</span><span class="metric-mini-val">${pdvQuota} u.</span></div>
-                <div class="metric-mini-item"><span class="metric-mini-label">Proyección</span><span class="metric-mini-val" style="color: #7c3aed;">${pdvProjUnits} u.</span></div>
+                <div class="metric-mini-item"><span class="metric-mini-label">Avance (3D)</span><span class="metric-mini-val" style="color: #dc2626;">${pdvUnits}</span></div>
+                <div class="metric-mini-item"><span class="metric-mini-label">Cuota Mes</span><span class="metric-mini-val">${pdvQuota}</span></div>
+                <div class="metric-mini-item"><span class="metric-mini-label">Proyección</span><span class="metric-mini-val" style="color: #7c3aed;">${pdvProjUnits}</span></div>
                 <div class="metric-mini-item"><span class="metric-mini-label">% Conversión</span><span class="metric-mini-val">${pdvArribos > 0 ? pdvConv.toFixed(1) + '%' : '-'}</span></div>
               </div>
 
@@ -3010,7 +2884,7 @@ function toggleDotacionDays() {
           </div>
           
           <div class="supervisor-blank-area">
-            <i class="fa-solid fa-clipboard-question" style="font-size: 26px; color: #60a5fa; margin-bottom: 8px;"></i>
+            <i class="fa-solid fa-clipboard-question" style="font-size: 26px; color: #f87171; margin-bottom: 8px;"></i>
             <div style="font-weight: 800; font-size: 13.5px; color: #ffffff;">[ Espacio Reservado para Acciones de ${spvName} ]</div>
             <div style="font-size: 11px; color: #94a3b8; margin-top: 6px; line-height: 1.4;">
               Las acciones específicas de este supervisor se ingresarán para la reunión con gerencia.
