@@ -14,6 +14,7 @@ if (!scriptMatch) {
 const elements = new Map();
 const defaultValue = (id) => {
   if (id === 'monthFilter') return 'm202608';
+  if (id === 'dotacionPeriodFilter') return '9-15';
   if (/month/i.test(id)) return 'Agosto';
   if (/zone|spv/i.test(id)) return 'ALL';
   return '';
@@ -86,6 +87,15 @@ run('Tabla de operador cedente', () => sandbox.renderCedenteTable());
 run('Tabla de mix de planes', () => sandbox.renderMixPlanesTable());
 run('Tabla de permanencia', () => sandbox.renderPermanenciaTable());
 run('Tabla de dotación', () => sandbox.renderDotacionTable());
+for (const period of ['5-11', '9-15']) {
+  run(`Tabla de dotación ${period}`, () => {
+    documentMock.getElementById('dotacionPeriodFilter').value = period;
+    sandbox.renderDotacionTable();
+    const periodData = sandbox.DOTACION_DATA.periods[period];
+    check(documentMock.getElementById('toggleDaysText').textContent.includes(`${periodData.daily_headers[0]} - ${periodData.daily_headers[periodData.daily_headers.length - 1]}`), `El encabezado diario no corresponde al periodo ${period}.`);
+    check(documentMock.getElementById('dotacionKpiCards').innerHTML.includes(`${periodData.summary.hc_obj} Asesores`), `Los indicadores superiores no corresponden al periodo ${period}.`);
+  });
+}
 run('NPS Venta', () => sandbox.selectNpsChannel('venta'));
 run('NPS Postventa', () => sandbox.selectNpsChannel('postventa'));
 run('Semanas NPS', () => sandbox.toggleNpsWeeks());
@@ -99,21 +109,24 @@ for (const channel of ['venta', 'postventa']) {
   check(pdvs.every((item, index) => index === 0 || pdvs[index - 1].total_nps >= item.total_nps), `Los PDV de NPS ${channel} no están ordenados de mayor a menor.`);
   check(pdvs.every((pdv) => (pdv.children || []).every((item, index) => index === 0 || pdv.children[index - 1].total_nps >= item.total_nps)), `Los asesores de NPS ${channel} no están ordenados de mayor a menor.`);
 }
-check(sandbox.NPS_DATA.venta.summary.total_nps === 12.5, 'El NPS total de Venta debe ser 12.5% (13% mostrado).');
+check(sandbox.NPS_DATA.venta.summary.total_nps === 50, 'El NPS total de Venta debe ser 50%.');
 check(sandbox.NPS_DATA.venta.summary.total_q === 8, 'El total de encuestas de Venta debe ser 8.');
-check(sandbox.NPS_DATA.venta.summary.sem1_nps === 0 && sandbox.NPS_DATA.venta.summary.sem1_q === 4, 'SEM1 de Venta no coincide con el Excel.');
-check(sandbox.NPS_DATA.venta.summary.sem5_nps === 25 && sandbox.NPS_DATA.venta.summary.sem5_q === 4, 'SEM5 de Venta no coincide con el Excel.');
+check(sandbox.NPS_DATA.venta.summary.sem1_nps === 50 && sandbox.NPS_DATA.venta.summary.sem1_q === 8, 'SEM1 de Venta no coincide con el Excel.');
+check(sandbox.NPS_DATA.venta.summary.sem5_nps === undefined && sandbox.NPS_DATA.venta.summary.sem5_q === undefined, 'Venta conserva una SEM5 que ya no existe en el Excel.');
 check(sandbox.NPS_DATA.postventa.summary.total_nps === -50 && sandbox.NPS_DATA.postventa.summary.total_q === 2, 'El resumen de Postventa no coincide con el Excel.');
-check(/const weeklyResults = \[1, 2, 3, 4, 5\]/.test(html) && !html.includes("SEM3 (89% NPS)"), 'La baldosa Pico Semanal no se calcula dinámicamente.');
+check(/const weeklyResults = availableWeeks\.map/.test(html) && !html.includes("SEM3 (89% NPS)"), 'La baldosa Pico Semanal no se calcula dinámicamente.');
+check(/function getAvailableNpsWeeks\(channelData\)/.test(html), 'La Página 7 no limita las columnas a las semanas disponibles.');
+check(!html.includes('Mostrar Semanas (SEM1 - SEM5)'), 'El control semanal anuncia semanas inexistentes.');
 check(!/\$\{totNps\.toFixed\(0\)\}% \$\{getNpsBadgeHTML/.test(html), 'La baldosa NPS Logrado repite el porcentaje.');
 check(/id="tabNpsVenta"[\s\S]*?NPS VENTA\s*<\/button>/.test(html), 'El selector de NPS Venta contiene texto adicional.');
 check(/id="tabNpsPostventa"[\s\S]*?NPS POSTVENTA\s*<\/button>/.test(html), 'El selector de NPS Postventa contiene texto adicional.');
 check(!/NPS (?:VENTA|POSTVENTA) \([^)]*\)/.test(html), 'Los selectores NPS todavía contienen texto entre paréntesis.');
 const ventaExpected = {
-  'TE PISCO': [0, 2, 25],
-  'TE ICA 3': [25, 4, 50],
-  'TE SATELITE BARRIO CHINO': [-100, 1, 12.5],
-  'TE ICA MODELO': [100, 1, 12.5],
+  'TE PISCO': [-100, 1, 12.5],
+  'TE ICA 3': [33.3, 3, 37.5],
+  'TE ICA II': [100, 1, 12.5],
+  'TE NAZCA': [100, 1, 12.5],
+  'TE SATELITE BARRIO CHINO': [100, 2, 25],
 };
 for (const pdv of sandbox.NPS_DATA.venta.pdvs) {
   const expected = ventaExpected[pdv.name];
@@ -135,6 +148,12 @@ check(!/ENCUESTAS \(Q\)|TOTAL Q|\$\{q\}Q|\bu\.|\bUND\.?\b|\bUnidades?\b|\bRespue
 check(/const isPdvExpanded = pageState\[7\]\.expanded\[pdv\.name\] === true;/.test(html), 'NPS no inicia contraído al nivel PDV.');
 check(/const isPdvExpanded = pageState\[2\]\.expanded\[pdv\.id\] === true;/.test(html), 'Descuentos no inicia contraído al nivel PDV.');
 check(/isPdvExpanded && pdv\.asesores && Array\.isArray\(pdv\.asesores\)/.test(html), 'Operador cedente no usa la colección de asesores al desplegar un PDV.');
+const cedenteAdvisors = sandbox.OPERADOR_CEDENTE_DATA.tree.flatMap((supervisor) =>
+  (supervisor.children || []).flatMap((pdv) => pdv.asesores || []),
+);
+check(cedenteAdvisors.length > 0, 'Operador cedente no contiene asesores.');
+check(cedenteAdvisors.every((advisor) => advisor.name && advisor.user_code && advisor.name !== 'undefined' && advisor.user_code !== 'undefined'), 'Operador cedente contiene asesores sin nombre válido.');
+check(html.includes("ase.user_code || ase.name || 'Sin asesor'"), 'La Página 3 no tiene respaldo seguro para el nombre del asesor.');
 const cedenteScript = html.match(/\/\/ ================= PAGE 3: OPERADOR CEDENTE =================([\s\S]*?)\/\/ ================= PAGE 4:/)?.[1] || '';
 check((cedenteScript.match(/color: #dc2626/g) || []).length === 3 && (cedenteScript.match(/color: #b91c1c/g) || []).length === 3, 'Claro no conserva su paleta roja exclusiva en todos los niveles de la página 3.');
 check(!/#2563eb|#1d4ed8|#3b82f6|#60a5fa/.test(cedenteScript), 'Persisten colores azules dentro de la tabla de operador cedente.');
@@ -184,6 +203,20 @@ for (const [id, expected] of Object.entries(monthFilters)) {
   check(options.every((option) => option[1] !== 'ALL'), `${id} contiene una opción mensual agrupada.`);
 }
 check(!/>[^<]*(?:M-[0-9]|Últimos\s+[0-9]|Todos los meses)[^<]*</i.test(html), 'Hay etiquetas mensuales relativas o agrupadas visibles.');
+check(!html.includes('zoneSelectPage5'), 'La Página 5 todavía contiene el filtro de zonas.');
+check(!html.includes('zoneSelectPage6'), 'La Página 6 todavía contiene el filtro de zonas.');
+check(html.includes('permData.user_name_map && permData.user_name_map[userCode.toUpperCase()]'), 'La Página 5 no cruza los usuarios con su mapa exclusivo de nombres.');
+check(html.includes('${realName ? `<span style="margin-left: 8px; font-weight: 500; color: #94a3b8; font-size: 10px;">${realName}</span>` : \'\'}'), 'La Página 5 no deja en blanco los usuarios sin coincidencia o no aplica la jerarquía secundaria.');
+check(html.includes('id="dotacionPeriodFilter"'), 'La Página 6 no contiene el selector de periodo de dotación.');
+check(html.includes('<option value="5-11">5-11</option>') && html.includes('<option value="9-15" selected>9-15</option>'), 'El selector de dotación no contiene ambos periodos o no preselecciona 9-15.');
+check(html.includes('function getActiveDotacionData()'), 'La Página 6 no selecciona una fuente de dotación independiente por periodo.');
+check(sandbox.DOTACION_DATA && sandbox.DOTACION_DATA.periods && sandbox.DOTACION_DATA.periods['5-11'] && sandbox.DOTACION_DATA.periods['9-15'], 'DOTACION_DATA no contiene ambas hojas 5-11 y 9-15.');
+
+check(html.includes("const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];"), 'La Pagina 5 no contiene el calendario para generar encabezados por mes.');
+check(html.includes('monthAbbreviations[(selectedMonthIndex + monthOffset) % monthAbbreviations.length]'), 'Los encabezados M0 a M6 de la Pagina 5 no avanzan desde el mes filtrado.');
+check(html.includes('`SS TOTAL (${selectedMonthLabel})`') && html.includes('`M${monthOffset} (${monthLabel})`'), 'Los encabezados dinamicos de permanencia no respetan el formato solicitado.');
+
+check(html.includes('return advisorMonth && Number(advisorMonth.total_u || 0) > 0;'), 'La Pagina 3 muestra asesores sin ventas de Portabilidad OSS en el mes filtrado.');
 
 const salesAdvisors = sandbox.SALES_DATA.tree.flatMap((supervisor) =>
   (supervisor.children || []).flatMap((pdv) => pdv.children || []),
@@ -210,6 +243,26 @@ for (const advisor of advisorsWithTenure) {
   }
 }
 check(html.includes('getAdvisorTenureHTML(ase)'), 'La Página 1 no renderiza la antigüedad junto al asesor.');
+check(html.includes('getPostpagoTotalSalesInMonth(ase, pageState[1].monthFilter) > 0'), 'La plantilla de asesores de la Página 1 no se basa en POSTPAGO TOTAL del mes filtrado.');
+const quotaMonths = ['m202606', 'm202607', 'm202608'];
+const productCodes = sandbox.SALES_DATA.summary.prod_definitions.map((product) => product.id);
+for (const supervisor of sandbox.SALES_DATA.tree) {
+  for (const pdv of supervisor.children || []) {
+    for (const month of quotaMonths) {
+      const template = (pdv.children || []).filter((advisor) => (advisor.products.POSTPAGO_TOTAL.units[month] || 0) > 0);
+      if (template.length === 0) continue;
+      for (const productCode of productCodes) {
+        const expectedQuota = pdv.products[productCode].quotas[month] / template.length;
+        for (const advisor of template) {
+          const actualQuota = advisor.products[productCode].quotas[month];
+          check(Math.abs(actualQuota - expectedQuota) < 1e-9, `${advisor.name} no tiene la cuota proporcional de ${productCode} en ${month}.`);
+        }
+        const assignedQuota = template.reduce((sum, advisor) => sum + advisor.products[productCode].quotas[month], 0);
+        check(Math.abs(assignedQuota - pdv.products[productCode].quotas[month]) < 1e-9, `Las cuotas de asesores no reconcilian con ${pdv.name}, ${productCode}, ${month}.`);
+      }
+    }
+  }
+}
 const pageOneCss = fs.readFileSync(path.join(projectDir, 'styles', 'page-1.css'), 'utf8');
 check(pageOneCss.includes('#slidePage1 .advisor-tenure'), 'Faltan estilos aislados para la antigüedad en Página 1.');
 for (let page = 0; page <= 7; page += 1) {
