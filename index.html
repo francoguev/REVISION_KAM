@@ -364,12 +364,6 @@
             <option value="Junio">Junio</option>
             <option value="Enero">Enero</option>
           </select>
-          <select id="zoneSelectPage5" class="month-select-glass" onchange="renderPermanenciaTable()">
-            <option value="ALL">🌐 Todas las Zonas</option>
-            <option value="CENTRO">📍 CENTRO</option>
-            <option value="SUR">📍 SUR</option>
-            <option value="LIMA">📍 LIMA</option>
-          </select>
         </div>
       </header>
 
@@ -379,14 +373,14 @@
             <thead>
               <tr style="background: #1e293b; color: #ffffff;">
                 <th style="min-width: 280px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PUNTO DE VENTA / ASESOR</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">SS TOTAL (ENE)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M0 (ENE)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M1 (FEB)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M2 (MAR)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M3 (ABR)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M4 (MAY)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M5 (JUN)</th>
-                <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M6 (JUL)</th>
+                <th id="permanenciaSsTotalHeader" class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">SS TOTAL (AGO)</th>
+                <th id="permanenciaM0Header" class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M0 (AGO)</th>
+                <th id="permanenciaM1Header" class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M1 (SEP)</th>
+                <th id="permanenciaM2Header" class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M2 (OCT)</th>
+                <th id="permanenciaM3Header" class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M3 (NOV)</th>
+                <th id="permanenciaM4Header" class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M4 (DIC)</th>
+                <th id="permanenciaM5Header" class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M5 (ENE)</th>
+                <th id="permanenciaM6Header" class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">M6 (FEB)</th>
                 <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">% PERM_M6 (RETENCIÓN)</th>
               </tr>
             </thead>
@@ -411,11 +405,9 @@
         </div>
 
         <div class="header-actions">
-          <select id="zoneSelectPage6" class="month-select-glass" onchange="renderDotacionTable()">
-            <option value="ALL" selected>🌍 Todas las Zonas</option>
-            <option value="CENTRO">📍 CENTRO</option>
-            <option value="SUR">📍 SUR</option>
-            <option value="LIMA">📍 LIMA</option>
+          <select id="dotacionPeriodFilter" class="month-select-glass" onchange="renderDotacionTable()" aria-label="Periodo de dotación">
+            <option value="5-11">5-11</option>
+            <option value="9-15" selected>9-15</option>
           </select>
 
           <select id="spvDotacionFilter" class="month-select-glass" onchange="renderDotacionTable()">
@@ -479,7 +471,7 @@
           </select>
 
           <button class="btn-glass" onclick="toggleNpsWeeks()">
-            <i class="fa-solid fa-calendar-week"></i> <span id="toggleNpsWeeksText">Mostrar Semanas (SEM1 - SEM5)</span>
+            <i class="fa-solid fa-calendar-week"></i> <span id="toggleNpsWeeksText">Mostrar Semana</span>
           </button>
         </div>
       </header>
@@ -831,6 +823,19 @@
       return tot;
     }
 
+    function getPostpagoTotalSalesInMonth(node, monthKey) {
+      if (!node || !node.products || !node.products.POSTPAGO_TOTAL) return 0;
+      const units = node.products.POSTPAGO_TOTAL.units || {};
+      if (monthKey === 'ALL') {
+        return (units.m202606 || 0) + (units.m202607 || 0) + (units.m202608 || 0);
+      }
+      return units[monthKey] || 0;
+    }
+
+    function formatAdvisorQuota(value) {
+      return value.toLocaleString('es-PE', { maximumFractionDigits: 2 });
+    }
+
     function handleSearch() {
       pageState[1].query = document.getElementById('searchInput').value.trim().toLowerCase();
       if (pageState[1].query.length > 0) {
@@ -946,7 +951,7 @@
         if (getGlobalSalesInMonth(spv, pageState[1].monthFilter) === 0) return false;
         spv.children = spv.children.filter(pdv => {
           if (getGlobalSalesInMonth(pdv, pageState[1].monthFilter) === 0) return false;
-          pdv.children = pdv.children.filter(ase => getGlobalSalesInMonth(ase, pageState[1].monthFilter) > 0);
+          pdv.children = pdv.children.filter(ase => getPostpagoTotalSalesInMonth(ase, pageState[1].monthFilter) > 0);
           return true;
         });
         return true;
@@ -1211,7 +1216,7 @@
                         <span class="advisor-name-line"><span class="advisor-name">${realName || userCode}</span>${getAdvisorTenureHTML(ase)}</span>
                       </div>
                     </td>
-                    <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') : 'N/A'}</td>
+                    <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? formatAdvisorQuota(aseQuota) : 'N/A'}</td>
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
@@ -1231,7 +1236,7 @@
                         <span class="advisor-name-line"><span class="advisor-name">${realName || userCode}</span>${getAdvisorTenureHTML(ase)}</span>
                       </div>
                     </td>
-                    <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') : 'N/A'}</td>
+                    <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? formatAdvisorQuota(aseQuota) : 'N/A'}</td>
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
@@ -1268,10 +1273,18 @@ function toggleDotacionDays() {
     window.toggleDotacionPdv = toggleDotacionPdv;
     
 
+    function getActiveDotacionData() {
+      const rootData = window.DOTACION_DATA;
+      if (!rootData) return null;
+      const periodFilter = document.getElementById('dotacionPeriodFilter');
+      const selectedPeriod = periodFilter ? periodFilter.value : (rootData.default_period || '9-15');
+      return rootData.periods && rootData.periods[selectedPeriod] ? rootData.periods[selectedPeriod] : rootData;
+    }
+
     function renderDotacionHeader() {
       const thead = document.getElementById('dotacionThead');
       if (!thead) return;
-      const dData = window.DOTACION_DATA;
+      const dData = getActiveDotacionData();
       const dHeaders = (dData && dData.daily_headers) ? dData.daily_headers : ['5-Ago', '6-Ago', '7-Ago', '8-Ago', '9-Ago', '10-Ago', '11-Ago'];
       
       const btnText = document.getElementById('toggleDaysText');
@@ -1310,7 +1323,7 @@ window.renderDotacionTable = function renderDotacionTable() {
 
       const selSpv = document.getElementById('spvDotacionFilter') ? document.getElementById('spvDotacionFilter').value : 'ALL';
       const selZone = document.getElementById('zoneSelectPage2') ? document.getElementById('zoneSelectPage2').value : 'ALL';
-      const dData = window.DOTACION_DATA;
+      const dData = getActiveDotacionData();
       if (!dData) return;
 
       const dKeys = dData.daily_keys || ['2026-08-05', '2026-08-06', '2026-08-07', '2026-08-08', '2026-08-09', '2026-08-10', '2026-08-11'];
@@ -1510,7 +1523,7 @@ window.renderDotacionTable = function renderDotacionTable() {
     function toggleNpsWeeks() {
       pageState[7].weeksExpanded = !pageState[7].weeksExpanded;
       const txtEl = document.getElementById('toggleNpsWeeksText');
-      if (txtEl) txtEl.textContent = pageState[7].weeksExpanded ? 'Ocultar Semanas (SEM1 - SEM5)' : 'Mostrar Semanas (SEM1 - SEM5)';
+      if (txtEl) txtEl.textContent = pageState[7].weeksExpanded ? 'Ocultar Semana' : 'Mostrar Semana';
       renderNpsHeader();
       renderNpsTable();
     }
@@ -1792,12 +1805,15 @@ window.renderDotacionTable = function renderDotacionTable() {
           tbody.appendChild(trPdv);
 
           if (isPdvExpanded && pdv.asesores && Array.isArray(pdv.asesores)) {
-            pdv.asesores.forEach(ase => {
+            pdv.asesores.filter(ase => {
+              const advisorMonth = ase.months && ase.months[selMonth];
+              return advisorMonth && Number(advisorMonth.total_u || 0) > 0;
+            }).forEach(ase => {
               const aInfo = (ase.months && ase.months[selMonth]) ? ase.months[selMonth] : { claro_u: 0, claro_pct: 0, movistar_u: 0, movistar_pct: 0, bitel_u: 0, bitel_pct: 0, total_u: 0 };
               const trAse = document.createElement('tr');
               trAse.className = 'row-asesor';
 
-              const userCode = ase.name;
+              const userCode = ase.user_code || ase.name || 'Sin asesor';
               const realName = window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : userCode;
 
               trAse.innerHTML = `
@@ -1973,7 +1989,20 @@ window.renderDotacionTable = function renderDotacionTable() {
       tbody.innerHTML = '';
 
       const selMonth = document.getElementById('monthPermanenciaFilter') ? document.getElementById('monthPermanenciaFilter').value : 'Agosto';
-      const selZone = document.getElementById('zoneSelectPage5') ? document.getElementById('zoneSelectPage5').value : 'ALL';
+
+      const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+      const monthAbbreviations = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+      const selectedMonthIndex = monthNames.indexOf(selMonth);
+      if (selectedMonthIndex >= 0) {
+        const selectedMonthLabel = monthAbbreviations[selectedMonthIndex];
+        const ssTotalHeader = document.getElementById('permanenciaSsTotalHeader');
+        if (ssTotalHeader) ssTotalHeader.textContent = `SS TOTAL (${selectedMonthLabel})`;
+        for (let monthOffset = 0; monthOffset <= 6; monthOffset += 1) {
+          const monthHeader = document.getElementById(`permanenciaM${monthOffset}Header`);
+          const monthLabel = monthAbbreviations[(selectedMonthIndex + monthOffset) % monthAbbreviations.length];
+          if (monthHeader) monthHeader.textContent = `M${monthOffset} (${monthLabel})`;
+        }
+      }
 
       const permData = window.PERMANENCIA_DATA;
       if (!permData) return;
@@ -2005,7 +2034,6 @@ window.renderDotacionTable = function renderDotacionTable() {
       tbody.appendChild(trTotal);
 
       tree.forEach(pdv => {
-        if (selZone !== 'ALL' && pdv.zona && pdv.zona !== selZone) return;
         const isPdvExpanded = pageState[5].expanded[pdv.name] === true;
 
         const trPdv = document.createElement('tr');
@@ -2036,12 +2064,13 @@ window.renderDotacionTable = function renderDotacionTable() {
             trAse.className = 'row-asesor';
 
             const userCode = ase.name;
-            const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode]) ? window.USER_CODE_MAP[userCode] : userCode;
+            const realName = permData.user_name_map && permData.user_name_map[userCode.toUpperCase()] ? permData.user_name_map[userCode.toUpperCase()] : '';
 
             trAse.innerHTML = `
               <td style="padding: 7px 12px;">
                 <div class="node-cell indent-2">
-                  <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
+                  <span style="font-weight: 700; color: #475569; font-size: 11px;">${userCode}</span>
+                  ${realName ? `<span style="margin-left: 8px; font-weight: 500; color: #94a3b8; font-size: 10px;">${realName}</span>` : ''}
                 </div>
               </td>
               <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${ase.total ? ase.total.toLocaleString('es-PE') + '' : '-'}</td>
@@ -2064,19 +2093,19 @@ window.renderDotacionTable = function renderDotacionTable() {
     }
 
     // ================= PAGE 7: REPORTE DE CALIDAD Y NPS =================
+    function getAvailableNpsWeeks(channelData) {
+      return [1, 2, 3, 4, 5].filter(week => channelData && channelData.summary && Number(channelData.summary[`sem${week}_q`] || 0) > 0);
+    }
+
     function renderNpsHeader() {
       const thead = document.getElementById('npsThead');
       if (!thead) return;
 
+      const channelData = window.NPS_DATA && window.NPS_DATA[pageState[7].channel];
+      const availableWeeks = getAvailableNpsWeeks(channelData);
       let weekHeadersHTML = '';
       if (pageState[7].weeksExpanded) {
-        weekHeadersHTML = `
-          <th class="val-cell">SEM1</th>
-          <th class="val-cell">SEM2</th>
-          <th class="val-cell">SEM3</th>
-          <th class="val-cell">SEM4</th>
-          <th class="val-cell">SEM5</th>
-        `;
+        weekHeadersHTML = availableWeeks.map(week => `<th class="val-cell">SEM${week}</th>`).join('');
       }
 
       thead.innerHTML = `
@@ -2103,6 +2132,7 @@ window.renderDotacionTable = function renderDotacionTable() {
 
       const channelData = npsData[pageState[7].channel];
       const targetMeta = npsData.target || 58.0;
+      const availableWeeks = getAvailableNpsWeeks(channelData);
 
       let pdvs = channelData.pdvs || [];
       if (selSpv !== 'ALL') {
@@ -2122,7 +2152,7 @@ window.renderDotacionTable = function renderDotacionTable() {
 
       const kpiGrid = document.getElementById('npsKpiCards');
       if (kpiGrid) {
-        const weeklyResults = [1, 2, 3, 4, 5].map(week => {
+        const weeklyResults = availableWeeks.map(week => {
           let q = 0;
           let weightedNps = 0;
           pdvs.forEach(pdv => {
@@ -2174,13 +2204,7 @@ window.renderDotacionTable = function renderDotacionTable() {
 
       let weekTotalCells = '';
       if (pageState[7].weeksExpanded) {
-        weekTotalCells = `
-          <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 1, targetMeta)}</td>
-          <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 2, targetMeta)}</td>
-          <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 3, targetMeta)}</td>
-          <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 4, targetMeta)}</td>
-          <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 5, targetMeta)}</td>
-        `;
+        weekTotalCells = availableWeeks.map(week => `<td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, week, targetMeta)}</td>`).join('');
       }
 
       trTotal.innerHTML = `
@@ -2205,13 +2229,7 @@ window.renderDotacionTable = function renderDotacionTable() {
 
         let pdvWeeksHTML = '';
         if (pageState[7].weeksExpanded) {
-          pdvWeeksHTML = `
-            <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 1, targetMeta)}</td>
-            <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 2, targetMeta)}</td>
-            <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 3, targetMeta)}</td>
-            <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 4, targetMeta)}</td>
-            <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 5, targetMeta)}</td>
-          `;
+          pdvWeeksHTML = availableWeeks.map(week => `<td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, week, targetMeta)}</td>`).join('');
         }
 
         trPdv.innerHTML = `
@@ -2239,13 +2257,7 @@ window.renderDotacionTable = function renderDotacionTable() {
 
             let aseWeeksHTML = '';
             if (pageState[7].weeksExpanded) {
-              aseWeeksHTML = `
-                <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 1, targetMeta)}</td>
-                <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 2, targetMeta)}</td>
-                <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 3, targetMeta)}</td>
-                <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 4, targetMeta)}</td>
-                <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 5, targetMeta)}</td>
-              `;
+              aseWeeksHTML = availableWeeks.map(week => `<td class="val-cell num-font">${getWeekCellBadgeHTML(ase, week, targetMeta)}</td>`).join('');
             }
 
             const userCode = ase.user_code || ase.name;

@@ -275,12 +275,24 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
                         pdv_products[pcode]["quotas"][m_key] = quotas_dict[pdv][pcode][m_key]
                         
             ase_children = []
+            postpago_sellers_by_month = {
+                m_key: sum(
+                    1 for advisor_products in p_data["ases"].values()
+                    if advisor_products["POSTPAGO_TOTAL"][m_key] > 0
+                )
+                for m_key in ["m202606", "m202607", "m202608"]
+            }
             for ase, a_prods in sorted(p_data["ases"].items()):
                 # Standardize advisor product format to match pdv & spv nodes: { quotas: {...}, units: {...} }
                 ase_formatted_products = {}
                 for pcode in a_prods:
+                    advisor_quotas = {"m202606":0, "m202607":0, "m202608":0}
+                    for m_key in advisor_quotas:
+                        seller_count = postpago_sellers_by_month[m_key]
+                        if seller_count > 0 and a_prods["POSTPAGO_TOTAL"][m_key] > 0:
+                            advisor_quotas[m_key] = pdv_products[pcode]["quotas"][m_key] / seller_count
                     ase_formatted_products[pcode] = {
-                        "quotas": {"m202606":0, "m202607":0, "m202608":0},
+                        "quotas": advisor_quotas,
                         "units": a_prods[pcode]
                     }
 
@@ -443,7 +455,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
                         ase_months[m]["movistar_pct"] = round((ase_months[m]["movistar_u"] / t * 100), 1)
                         ase_months[m]["bitel_pct"] = round((ase_months[m]["bitel_u"] / t * 100), 1)
 
-                pdv_node["asesores"].append({"user_code": str(ase), "months": ase_months})
+                pdv_node["asesores"].append({"name": str(ase), "user_code": str(ase), "months": ase_months})
             spv_node["children"].append(pdv_node)
         tree_cedente.append(spv_node)
 
@@ -531,33 +543,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     mix_planes_data_obj = {"month_label": "Agosto 2026", "plans_list": plans_list, "months": mix_months, "summary": mix_months["Agosto"]["summary"], "tree": mix_months["Agosto"]["tree"]}
 
     # 7.4 BUILD DOTACION_DATA (Dynamic from DOTACIÓN sheet with full Asesor hierarchy)
-    dot_sheet_name = [s for s in xl.sheet_names if 'DOT' in s.upper()][0] if 'xl' in locals() else 'DOTACIÓN'
-    df_dot = pd.read_excel(excel_path, sheet_name=dot_sheet_name)
-    strip_text_columns(df_dot)
-
-    daily_cols = [c for c in df_dot.columns if isinstance(c, pd.Timestamp) or '2026' in str(c) or '08-' in str(c)]
-    
     months_es = {1: 'Ene', 2: 'Feb', 3: 'Mar', 4: 'Abr', 5: 'May', 6: 'Jun', 7: 'Jul', 8: 'Ago', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dic'}
-    daily_keys = []
-    daily_headers = []
-    for c in daily_cols:
-        if isinstance(c, pd.Timestamp):
-            daily_keys.append(c.strftime('%Y-%m-%d'))
-            daily_headers.append(f"{c.day}-{months_es.get(c.month, 'Ago')}")
-        else:
-            c_str = str(c)[:10]
-            daily_keys.append(c_str)
-            try:
-                parts = c_str.split('-')
-                m_int = int(parts[1]) if len(parts) > 1 else 8
-                d_int = int(parts[2]) if len(parts) > 2 else 1
-                daily_headers.append(f"{d_int}-{months_es.get(m_int, 'Ago')}")
-            except:
-                daily_headers.append(c_str)
-
-    spvs_dot = ['CYNTHIA GUERRA', 'MARÍA BERNAOLA', 'FERNANDO MORENO', 'MERY LAPA']
-    spv_nodes_dot = {s: {"name": s, "hc_obj": 0, "hc_codigo": 0, "hc_gap": 0, "cumple_condicion": 0, "daily_totals": {k: 0 for k in daily_keys}, "children": []} for s in spvs_dot}
-    summary_dot_obj = {"hc_obj": 0, "hc_codigo": 0, "cump_obj_pct": 0.0, "hc_gap": 0, "cumple_condicion": 0, "cump_condicion_pct": 0.0, "daily_totals": {k: 0 for k in daily_keys}}
 
     def parse_num_dot(val):
         if pd.isna(val) or str(val).lower() in ['nan', 'int', 'none', '']: return 0.0
@@ -567,87 +553,83 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
         try: return float(val_str)
         except: return 0.0
 
-    col_cump_cond = df_dot.columns[13]
-    col_cump_cond_pct = df_dot.columns[14]
-
-    curr_spv_dot = 'MERY LAPA'
-    curr_pdv_node = None
-
-    for idx, row in df_dot.iterrows():
-        est = str(row['ESTRUCTURA']).strip()
-        if not est or est.upper() in ['NAN', 'REGIONES', 'CENTRO', 'FORTALECERNOS S.A.C.']: continue
-        if est in spvs_dot:
-            curr_spv_dot = est
-            continue
-
-        is_pdv = est.startswith('TE ') or est in store_spv_map
-
-        daily_sales = {}
-        for d_idx, d_col in enumerate(daily_cols):
-            d_key = daily_keys[d_idx]
-            d_val = row[d_col]
-            if pd.notna(d_val) and str(d_val).upper() not in ['NAN', 'INT']:
-                try: daily_sales[d_key] = int(float(d_val))
-                except: daily_sales[d_key] = 0
+    def build_dotacion_period(sheet_name):
+        df_dot = pd.read_excel(excel_path, sheet_name=sheet_name)
+        strip_text_columns(df_dot)
+        daily_cols = [c for c in df_dot.columns if isinstance(c, pd.Timestamp) or '2026' in str(c) or '08-' in str(c)]
+        daily_keys = [c.strftime('%Y-%m-%d') if isinstance(c, pd.Timestamp) else str(c)[:10] for c in daily_cols]
+        daily_headers = []
+        for c in daily_cols:
+            if isinstance(c, pd.Timestamp):
+                daily_headers.append(f"{c.day}-{months_es.get(c.month, 'Ago')}")
             else:
-                daily_sales[d_key] = 0
+                try:
+                    parts = str(c)[:10].split('-')
+                    daily_headers.append(f"{int(parts[2])}-{months_es.get(int(parts[1]), 'Ago')}")
+                except Exception:
+                    daily_headers.append(str(c)[:10])
 
-        obs = str(row['OBSERVACIONES']) if pd.notna(row['OBSERVACIONES']) and str(row['OBSERVACIONES']) != 'nan' else ''
+        spvs_dot = ['CYNTHIA GUERRA', 'MARÍA BERNAOLA', 'FERNANDO MORENO', 'MERY LAPA']
+        spv_nodes_dot = {s: {"name": s, "hc_obj": 0, "hc_codigo": 0, "hc_gap": 0, "cumple_condicion": 0, "daily_totals": {k: 0 for k in daily_keys}, "children": []} for s in spvs_dot}
+        summary_dot_obj = {"hc_obj": 0, "hc_codigo": 0, "cump_obj_pct": 0.0, "hc_gap": 0, "cumple_condicion": 0, "cump_condicion_pct": 0.0, "daily_totals": {k: 0 for k in daily_keys}}
+        col_cump_cond = df_dot.columns[13]
+        curr_spv_dot = 'MERY LAPA'
+        curr_pdv_node = None
 
-        if is_pdv:
-            target_spv = store_spv_map.get(est, curr_spv_dot)
-            hc_obj = parse_num_dot(row['HC OBJ'])
-            hc_cod = parse_num_dot(row['HC CODIGO'])
-            hc_gap = parse_num_dot(row['HC GAP'])
-            cump_cond = parse_num_dot(row[col_cump_cond])
-            cump_cond_pct = parse_num_dot(row[col_cump_cond_pct])
+        for _, row in df_dot.iterrows():
+            est = str(row['ESTRUCTURA']).strip()
+            if not est or est.upper() in ['NAN', 'REGIONES', 'CENTRO', 'FORTALECERNOS S.A.C.']:
+                continue
+            if est in spvs_dot:
+                curr_spv_dot = est
+                continue
+            is_pdv = est.startswith('TE ') or est in store_spv_map
+            daily_sales = {}
+            for d_idx, d_col in enumerate(daily_cols):
+                d_val = row[d_col]
+                try:
+                    daily_sales[daily_keys[d_idx]] = int(float(d_val)) if pd.notna(d_val) and str(d_val).upper() not in ['NAN', 'INT'] else 0
+                except Exception:
+                    daily_sales[daily_keys[d_idx]] = 0
+            obs = str(row['OBSERVACIONES']) if pd.notna(row['OBSERVACIONES']) and str(row['OBSERVACIONES']) != 'nan' else ''
 
-            curr_pdv_node = {
-                "name": est, "spv": target_spv, "zona": "SUR",
-                "hc_obj": int(hc_obj), "hc_codigo": int(hc_cod), "hc_gap": int(hc_gap),
-                "cump_obj_pct": round((hc_cod / hc_obj * 100), 1) if hc_obj > 0 else 0.0,
-                "hc_contratar": int(hc_gap),
-                "cumple_condicion": int(cump_cond),
-                "cump_condicion_pct": round((cump_cond / hc_cod * 100), 1) if hc_cod > 0 else 0.0,
-                "obs": obs, "daily_sales": daily_sales, "children": []
-            }
-            spv_nodes_dot[target_spv]["children"].append(curr_pdv_node)
-            spv_nodes_dot[target_spv]["hc_obj"] += int(hc_obj)
-            spv_nodes_dot[target_spv]["hc_codigo"] += int(hc_cod)
-            spv_nodes_dot[target_spv]["hc_gap"] += int(hc_gap)
-            spv_nodes_dot[target_spv]["cumple_condicion"] += int(cump_cond)
-            
-            summary_dot_obj["hc_obj"] += int(hc_obj)
-            summary_dot_obj["hc_codigo"] += int(hc_cod)
-            summary_dot_obj["hc_gap"] += int(hc_gap)
-            summary_dot_obj["cumple_condicion"] += int(cump_cond)
-
-            for d_key, d_v in daily_sales.items():
-                spv_nodes_dot[target_spv]["daily_totals"][d_key] += d_v
-                summary_dot_obj["daily_totals"][d_key] += d_v
-        else:
-            if curr_pdv_node:
-                cond_str = str(row[col_cump_cond]).strip().upper()
-                is_cumple = (cond_str == 'SI')
-                ase_node = {
-                    "name": est,
-                    "user_code": est,
-                    "cumple_condicion": cond_str,
-                    "is_cumple": is_cumple,
-                    "obs": obs,
-                    "daily_sales": daily_sales
+            if is_pdv:
+                target_spv = store_spv_map.get(est, curr_spv_dot)
+                hc_obj = parse_num_dot(row['HC OBJ'])
+                hc_cod = parse_num_dot(row['HC CODIGO'])
+                hc_gap = parse_num_dot(row['HC GAP'])
+                cump_cond = parse_num_dot(row[col_cump_cond])
+                curr_pdv_node = {
+                    "name": est, "spv": target_spv, "zona": "SUR",
+                    "hc_obj": int(hc_obj), "hc_codigo": int(hc_cod), "hc_gap": int(hc_gap),
+                    "cump_obj_pct": round((hc_cod / hc_obj * 100), 1) if hc_obj > 0 else 0.0,
+                    "hc_contratar": int(parse_num_dot(row['HC A CONTRATAR'])),
+                    "cumple_condicion": int(cump_cond),
+                    "cump_condicion_pct": round((cump_cond / hc_cod * 100), 1) if hc_cod > 0 else 0.0,
+                    "obs": obs, "daily_sales": daily_sales, "children": []
                 }
-                curr_pdv_node["children"].append(ase_node)
+                spv_nodes_dot[target_spv]["children"].append(curr_pdv_node)
+                for key, value in [('hc_obj', hc_obj), ('hc_codigo', hc_cod), ('hc_gap', hc_gap), ('cumple_condicion', cump_cond)]:
+                    spv_nodes_dot[target_spv][key] += int(value)
+                    summary_dot_obj[key] += int(value)
+                for d_key, d_value in daily_sales.items():
+                    spv_nodes_dot[target_spv]["daily_totals"][d_key] += d_value
+                    summary_dot_obj["daily_totals"][d_key] += d_value
+            elif curr_pdv_node:
+                cond_str = str(row[col_cump_cond]).strip().upper()
+                curr_pdv_node["children"].append({
+                    "name": est, "user_code": est, "cumple_condicion": cond_str,
+                    "is_cumple": cond_str == 'SI', "obs": obs, "daily_sales": daily_sales
+                })
 
-    summary_dot_obj["cump_obj_pct"] = round((summary_dot_obj["hc_codigo"] / summary_dot_obj["hc_obj"] * 100), 1) if summary_dot_obj["hc_obj"] > 0 else 0.0
-    summary_dot_obj["cump_condicion_pct"] = round((summary_dot_obj["cumple_condicion"] / summary_dot_obj["hc_codigo"] * 100), 1) if summary_dot_obj["hc_codigo"] > 0 else 0.0
+        summary_dot_obj["cump_obj_pct"] = round((summary_dot_obj["hc_codigo"] / summary_dot_obj["hc_obj"] * 100), 1) if summary_dot_obj["hc_obj"] > 0 else 0.0
+        summary_dot_obj["cump_condicion_pct"] = round((summary_dot_obj["cumple_condicion"] / summary_dot_obj["hc_codigo"] * 100), 1) if summary_dot_obj["hc_codigo"] > 0 else 0.0
+        return {"sheet_name": sheet_name, "daily_keys": daily_keys, "daily_headers": daily_headers, "summary": summary_dot_obj, "tree": list(spv_nodes_dot.values())}
 
-    dotacion_data_obj = {
-        "daily_keys": daily_keys,
-        "daily_headers": daily_headers,
-        "summary": summary_dot_obj,
-        "tree": list(spv_nodes_dot.values())
-    }
+    dot_sheet_names = [s for s in xl.sheet_names if s.upper().startswith('DOTACIÓN ')]
+    dotacion_periods = {sheet_name.replace('DOTACIÓN ', ''): build_dotacion_period(sheet_name) for sheet_name in dot_sheet_names}
+    default_dotacion_period = '9-15' if '9-15' in dotacion_periods else next(iter(dotacion_periods))
+    dotacion_data_obj = {"default_period": default_dotacion_period, "periods": dotacion_periods, **dotacion_periods[default_dotacion_period]}
 
     # 7.5 BUILD PERMANENCIA_DATA (Dynamic for all Camadas: Agosto, Julio, Junio, Enero)
     df_perm = pd.read_excel(excel_path, sheet_name='PERMANENCIA')
@@ -723,11 +705,20 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
         permanencia_months[camada_clean] = {"summary": summary_obj, "tree": tree_list}
 
     default_perm = permanencia_months.get("Agosto", list(permanencia_months.values())[0])
+    df_users_perm = pd.read_excel(excel_path, sheet_name='USUARIOS', header=2)
+    permanencia_user_name_map = {}
+    if {'USUARIO', 'ASESOR'}.issubset(df_users_perm.columns):
+        for _, user_row in df_users_perm.iterrows():
+            user_code = str(user_row.get('USUARIO', '')).strip().upper()
+            advisor_name = str(user_row.get('ASESOR', '')).strip()
+            if user_code and user_code != 'NAN' and advisor_name and advisor_name.lower() != 'nan':
+                permanencia_user_name_map[user_code] = advisor_name
     permanencia_data_obj = {
         "month_label": "Agosto 2026",
         "months": permanencia_months,
         "summary": default_perm["summary"],
-        "tree": default_perm["tree"]
+        "tree": default_perm["tree"],
+        "user_name_map": permanencia_user_name_map
     }
 
     # 7.6 BUILD NPS_DATA (Dynamic from sheets NPS VENTA and NPS POSTVENTA)
@@ -744,7 +735,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     strip_text_columns(df_nps_v)
 
     pdvs_v = []
-    summary_v = {"total_nps": 12.5, "total_q": 8}
+    summary_v = {"total_nps": 0.0, "total_q": 0}
     curr_pdv_v = None
 
     for idx in range(6, len(df_nps_v)):
@@ -754,23 +745,19 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
 
         if est.upper() == 'VENTA':
             summary_v = {
-                "total_nps": parse_nps_val(row.iloc[7], is_pct=True),
-                "total_q": parse_nps_val(row.iloc[8]),
-                "total_pct_q": parse_nps_val(row.iloc[9], is_pct=True),
+                "total_nps": parse_nps_val(row.iloc[4], is_pct=True),
+                "total_q": parse_nps_val(row.iloc[5]),
+                "total_pct_q": parse_nps_val(row.iloc[6], is_pct=True),
                 "sem1_nps": parse_nps_val(row.iloc[1], is_pct=True),
-                "sem1_q": parse_nps_val(row.iloc[2]),
-                "sem5_nps": parse_nps_val(row.iloc[4], is_pct=True),
-                "sem5_q": parse_nps_val(row.iloc[5])
+                "sem1_q": parse_nps_val(row.iloc[2])
             }
             continue
 
-        tot_nps = parse_nps_val(row.iloc[7], is_pct=True) or 0.0
-        tot_q = parse_nps_val(row.iloc[8]) or 0
-        tot_pct_q = parse_nps_val(row.iloc[9], is_pct=True) or 0.0
+        tot_nps = parse_nps_val(row.iloc[4], is_pct=True) or 0.0
+        tot_q = parse_nps_val(row.iloc[5]) or 0
+        tot_pct_q = parse_nps_val(row.iloc[6], is_pct=True) or 0.0
         s1_nps = parse_nps_val(row.iloc[1], is_pct=True)
         s1_q = parse_nps_val(row.iloc[2])
-        s5_nps = parse_nps_val(row.iloc[4], is_pct=True)
-        s5_q = parse_nps_val(row.iloc[5])
 
         is_pdv = est.startswith('TE ') or est in store_spv_map
         if is_pdv:
@@ -778,7 +765,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             curr_pdv_v = {
                 "name": est, "spv": target_spv, "zona": "SUR",
                 "total_nps": tot_nps, "total_q": tot_q, "total_pct_q": tot_pct_q,
-                "sem1_nps": s1_nps, "sem1_q": s1_q, "sem5_nps": s5_nps, "sem5_q": s5_q,
+                "sem1_nps": s1_nps, "sem1_q": s1_q,
                 "children": []
             }
             pdvs_v.append(curr_pdv_v)
@@ -786,7 +773,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             curr_pdv_v["children"].append({
                 "name": est,
                 "total_nps": tot_nps, "total_q": tot_q, "total_pct_q": tot_pct_q,
-                "sem1_nps": s1_nps, "sem1_q": s1_q, "sem5_nps": s5_nps, "sem5_q": s5_q
+                "sem1_nps": s1_nps, "sem1_q": s1_q
             })
 
     pdvs_v.sort(key=lambda x: x["total_nps"], reverse=True)
