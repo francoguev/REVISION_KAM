@@ -2595,9 +2595,17 @@ function renderNpsHeader() {
       const selZone = document.getElementById('zoneSelectPage5') ? document.getElementById('zoneSelectPage5').value : 'ALL';
 
       const permData = window.PERMANENCIA_DATA;
-      if (!permData || !permData.tree) return;
+      if (!permData) return;
 
-      const s = permData.summary || {};
+      const monthData = permData.months && permData.months[selMonth] ? permData.months[selMonth] : permData;
+      const s = monthData.summary || {};
+      const tree = monthData.tree || [];
+
+      const titleEl = document.getElementById('permanenciaTitle');
+      if (titleEl) titleEl.textContent = `Reporte de Permanencia M6 (Camada ${selMonth} 2026)`;
+
+      const subEl = document.getElementById('permanenciaSubtitle');
+      if (subEl) subEl.innerHTML = `Curva de Desactivación M0 a M6 (${selMonth} 2026) &bull; <strong>Objetivo de Permanencia: 50.0%</strong>`;
 
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
@@ -2615,7 +2623,7 @@ function renderNpsHeader() {
       `;
       tbody.appendChild(trTotal);
 
-      permData.tree.forEach(pdv => {
+      tree.forEach(pdv => {
         if (selZone !== 'ALL' && pdv.zona && pdv.zona !== selZone) return;
         const isPdvExpanded = permExpandedState[pdv.name] === true;
 
@@ -2669,6 +2677,9 @@ function renderNpsHeader() {
           });
         }
       });
+
+      const labelEl = document.getElementById('rowCountLabel');
+      if (labelEl) labelEl.textContent = `Reporte de Permanencia M6 (${selMonth} 2026)`;
     }
 
     // ================= PAGE 7: REPORTE DE CALIDAD Y NPS =================
