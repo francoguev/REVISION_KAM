@@ -78,7 +78,11 @@ const run = (label, fn) => {
 };
 
 for (let page = 0; page <= 7; page += 1) {
-  run(`Página ${page}`, () => sandbox.switchSlidePage(page));
+  run(`Página ${page}`, () => {
+    sandbox.switchSlidePage(page);
+    check(documentMock.getElementById('rowCountLabel').textContent === 'Equipo de Operaciones • 2026', `La Página ${page} no muestra el texto inferior uniforme.`);
+    if (page === 0) check(documentMock.getElementById('pageFooterNum').textContent === '', 'La portada conserva texto adicional en el pie.');
+  });
 }
 
 run('Tabla de ventas', () => sandbox.renderTreeTable());
@@ -205,6 +209,9 @@ for (const [id, expected] of Object.entries(monthFilters)) {
 check(!/>[^<]*(?:M-[0-9]|Últimos\s+[0-9]|Todos los meses)[^<]*</i.test(html), 'Hay etiquetas mensuales relativas o agrupadas visibles.');
 check(!html.includes('zoneSelectPage5'), 'La Página 5 todavía contiene el filtro de zonas.');
 check(!html.includes('zoneSelectPage6'), 'La Página 6 todavía contiene el filtro de zonas.');
+check(!html.includes('${pctTasaUso.toFixed(1)}% ${getDiscountUsageBadgeHTML(pctTasaUso, targetMeta)}'), 'La baldosa Tasa Uso Lograda de la Página 2 repite el indicador.');
+check(!html.includes('Portada • Informe Ejecutivo 360°'), 'La portada todavía muestra el texto inferior que debía retirarse.');
+check((html.match(/labelEl\.textContent = 'Equipo de Operaciones • 2026'/g) || []).length === 4, 'No todas las páginas conservan el texto inferior de Equipo de Operaciones.');
 check(html.includes('permData.user_name_map && permData.user_name_map[userCode.toUpperCase()]'), 'La Página 5 no cruza los usuarios con su mapa exclusivo de nombres.');
 check(html.includes('${realName ? `<span style="margin-left: 8px; font-weight: 500; color: #94a3b8; font-size: 10px;">${realName}</span>` : \'\'}'), 'La Página 5 no deja en blanco los usuarios sin coincidencia o no aplica la jerarquía secundaria.');
 check(html.includes('id="dotacionPeriodFilter"'), 'La Página 6 no contiene el selector de periodo de dotación.');

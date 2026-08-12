@@ -605,8 +605,10 @@
       }
 
       const footerNum = document.getElementById('pageFooterNum');
+      const footerLabel = document.getElementById('rowCountLabel');
+      if (footerLabel) footerLabel.textContent = 'Equipo de Operaciones • 2026';
       if (footerNum) {
-        footerNum.textContent = pageNum === 0 ? 'Portada • Informe Ejecutivo 360°' : `Página ${pageNum} de 7`;
+        footerNum.textContent = pageNum === 0 ? '' : `Página ${pageNum} de 7`;
       }
       
       if (pageNum === 0) {
@@ -1622,7 +1624,7 @@ window.renderDotacionTable = function renderDotacionTable() {
             </div>
             <div>
               <div class="kpi-title">Tasa Uso Lograda (${selMonth})</div>
-              <div class="kpi-value" style="color: ${isExcede ? '#b91c1c' : '#15803d'};">${pctTasaUso.toFixed(1)}% ${getDiscountUsageBadgeHTML(pctTasaUso, targetMeta)}</div>
+              <div class="kpi-value" style="color: ${isExcede ? '#b91c1c' : '#15803d'};">${pctTasaUso.toFixed(1)}%</div>
             </div>
           </div>
           <div class="kpi-card">
@@ -1711,7 +1713,7 @@ window.renderDotacionTable = function renderDotacionTable() {
       });
 
       const labelEl = document.getElementById('rowCountLabel');
-      if (labelEl) labelEl.textContent = `${visibleRows} filas en reporte de tasa de uso de descuento (${selMonth})`;
+      if (labelEl) labelEl.textContent = 'Equipo de Operaciones • 2026';
     }
 
     // ================= PAGE 3: OPERADOR CEDENTE =================
@@ -2089,7 +2091,7 @@ window.renderDotacionTable = function renderDotacionTable() {
       });
 
       const labelEl = document.getElementById('rowCountLabel');
-      if (labelEl) labelEl.textContent = `Reporte de Permanencia M6 (${selMonth} 2026)`;
+      if (labelEl) labelEl.textContent = 'Equipo de Operaciones • 2026';
     }
 
     // ================= PAGE 7: REPORTE DE CALIDAD Y NPS =================
@@ -2287,7 +2289,7 @@ window.renderDotacionTable = function renderDotacionTable() {
       });
 
       const labelEl = document.getElementById('rowCountLabel');
-      if (labelEl) labelEl.textContent = `${visibleRows} filas en reporte de calidad y NPS (${pageState[7].channel.toUpperCase()})`;
+      if (labelEl) labelEl.textContent = 'Equipo de Operaciones • 2026';
     }
 
     function getWeekCellBadgeHTML(node, wNum, targetMeta) {
