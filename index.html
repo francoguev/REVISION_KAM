@@ -668,10 +668,10 @@
       <!-- Línea divisoria en gradiente azul -->
       <div style="width: 140px; height: 5px; background: linear-gradient(90deg, #1d4ed8 0%, #60a5fa 100%); border-radius: 3px; margin-bottom: 28px;"></div>
 
-      <!-- JULIO - AGOSTO (Pequeño / Pill corporativo) -->
+      <!-- AGOSTO S1 (Pequeño / Pill corporativo) -->
       <div style="display: inline-flex; align-items: center; gap: 8px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 700; letter-spacing: 1px;">
         <i class="fa-solid fa-calendar-days" style="color: #2563eb;"></i>
-        <span>JULIO - AGOSTO</span>
+        <span>AGOSTO S1</span>
       </div>
 
       <!-- Metadata del informe al pie de la portada -->
@@ -694,7 +694,7 @@
           <div>
             <h1 class="slide-title">Reporte de Avance y Proyección de Ventas</h1>
             <div class="slide-subtitle" id="headerPeriodSubtitle">
-              Agosto 2026 (Mes Vigente - Avance 3/26 Días Hábiles) &bull; <strong id="selectedProductBadge" style="color: #6366f1">POSTPAGO TOTAL</strong>
+              Agosto 2026 (Mes Vigente - Avance 8/26 Días Hábiles) &bull; <strong id="selectedProductBadge" style="color: #6366f1">POSTPAGO TOTAL</strong>
             </div>
           </div>
         </div>
@@ -759,13 +759,18 @@
           <div>
             <h1 class="slide-title">Reporte de Tasa de Uso de Descuento</h1>
             <div class="slide-subtitle">
-              Julio 2026 (Cierre M-1) &bull; Producto: <strong style="color: #6366f1;">PORTA OSS MONO</strong> &bull; Descuento: <strong style="color: #38bdf8;">Descuento 50% x 6 meses (SA)</strong> &bull; Tope Máximo: <strong style="color: #f87171;">70.0%</strong>
+              Producto: <strong style="color: #6366f1;">PORTA OSS MONO</strong> &bull; Descuento: <strong style="color: #38bdf8;">Descuento 50% x 6 meses (SA)</strong> &bull; Tope Máximo: <strong style="color: #f87171;">70.0%</strong>
             </div>
           </div>
         </div>
 
         <div class="header-actions">
-          <select id="zoneSelectPage4" class="month-select-glass" onchange="renderDiscountTable()">
+          <select id="monthDiscountFilter" class="month-select-glass" onchange="renderDiscountTable()">
+            <option value="Junio">🗓️ Junio 2026</option>
+            <option value="Julio">🗓️ Julio 2026</option>
+            <option value="Agosto" selected>🗓️ Agosto 2026</option>
+          </select>
+          <select id="zoneSelectPage2" class="month-select-glass" onchange="renderDiscountTable()">
             <option value="ALL" selected>🌍 Todas las Zonas</option>
             <option value="CENTRO">📍 CENTRO</option>
             <option value="SUR">📍 SUR</option>
@@ -814,10 +819,9 @@
         </div>
         <div class="header-actions">
           <select id="monthCedenteFilter" class="month-select-glass" onchange="renderCedenteTable()">
-            <option value="Julio" selected>📅 Julio 2026 (M-1)</option>
-            <option value="Junio">📅 Junio 2026</option>
-            <option value="Agosto">📅 Agosto 2026</option>
-            <option value="Acumulado">📊 Acumulado Trimestre</option>
+            <option value="Junio">🗓️ Junio 2026</option>
+            <option value="Julio">🗓️ Julio 2026</option>
+            <option value="Agosto" selected>🗓️ Agosto 2026</option>
           </select>
           <select id="zoneSelectPage7" class="month-select-glass" onchange="renderCedenteTable()">
             <option value="ALL">🌍 Todas las Zonas</option>
@@ -866,11 +870,16 @@
           <div class="slide-icon"><i class="fa-solid fa-layer-group"></i></div>
           <div>
             <h1 class="slide-title">Mix de Planes Postpago</h1>
-            <div class="slide-subtitle">Cierre Mensual Julio 2026: 1,431 Unidades &bull; Desglose por RB de Plan</div>
+            <div id="mixPlanesSubtitle" class="slide-subtitle">Cierre Mensual Agosto 2026: 409 Unidades &bull; Desglose por RB de Plan</div>
           </div>
         </div>
         <div class="header-actions">
-          <select id="zoneSelectPage5" class="month-select-glass" onchange="renderMixPlanesTable()">
+          <select id="monthMixPlanesFilter" class="month-select-glass" onchange="renderMixPlanesTable()">
+            <option value="Junio">🗓️ Junio 2026</option>
+            <option value="Julio">🗓️ Julio 2026</option>
+            <option value="Agosto" selected>🗓️ Agosto 2026</option>
+          </select>
+          <select id="zoneSelectPage4" class="month-select-glass" onchange="renderMixPlanesTable()">
             <option value="ALL">🌍 Todas las Zonas</option>
             <option value="CENTRO">📍 CENTRO</option>
             <option value="SUR">📍 SUR</option>
@@ -920,9 +929,23 @@
         <div class="slide-title-box">
           <div class="slide-icon"><i class="fa-solid fa-user-shield"></i></div>
           <div>
-            <h1 class="slide-title">Reporte de Permanencia M6 (Camada Enero 2026)</h1>
-            <div class="slide-subtitle">Curva de Desactivación M0 a M6 (Julio 2026) &bull; <strong>Objetivo de Permanencia: 50.0%</strong></div>
+            <h1 id="permanenciaTitle" class="slide-title">Reporte de Permanencia M6 (Camada Agosto 2026)</h1>
+            <div id="permanenciaSubtitle" class="slide-subtitle">Curva de Desactivación M0 a M6 (Agosto 2026) &bull; <strong>Objetivo de Permanencia: 50.0%</strong></div>
           </div>
+        </div>
+        <div class="header-actions">
+          <select id="monthPermanenciaFilter" class="month-select-glass" onchange="renderPermanenciaTable()">
+            <option value="Agosto" selected>🗓️ Agosto 2026</option>
+            <option value="Julio">🗓️ Julio 2026</option>
+            <option value="Junio">🗓️ Junio 2026</option>
+            <option value="Enero">🗓️ Enero 2026</option>
+          </select>
+          <select id="zoneSelectPage5" class="month-select-glass" onchange="renderPermanenciaTable()">
+            <option value="ALL">🌐 Todas las Zonas</option>
+            <option value="CENTRO">📍 CENTRO</option>
+            <option value="SUR">📍 SUR</option>
+            <option value="LIMA">📍 LIMA</option>
+          </select>
         </div>
       </header>
 
@@ -964,7 +987,7 @@
         </div>
 
         <div class="header-actions">
-          <select id="zoneSelectPage2" class="month-select-glass" onchange="renderDotacionTable()">
+          <select id="zoneSelectPage6" class="month-select-glass" onchange="renderDotacionTable()">
             <option value="ALL" selected>🌍 Todas las Zonas</option>
             <option value="CENTRO">📍 CENTRO</option>
             <option value="SUR">📍 SUR</option>
@@ -1016,7 +1039,7 @@
         </div>
 
         <div class="header-actions">
-          <select id="zoneSelectPage3" class="month-select-glass" onchange="renderNpsTable()">
+          <select id="zoneSelectPage7" class="month-select-glass" onchange="renderNpsTable()">
             <option value="ALL" selected>🌍 Todas las Zonas</option>
             <option value="CENTRO">📍 CENTRO</option>
             <option value="SUR">📍 SUR</option>
@@ -1095,12 +1118,12 @@
   </div>
 
   <!-- Data Payload -->
-  <script src="data.js"></script>
+  <script src="data.js?v=20260811_final"></script>
     <script>
                 // ================= GLOBAL STATE VARIABLES =================
-    var currentSort = { col: null, dir: 'asc' };
+    var currentSort = { column: null, direction: 'desc' };
     var totalCondicion = 0;
-    var ELAPSED_WD = 3;
+    var ELAPSED_WD = 8;
     var TOTAL_WD = 26;
     var grandCondicionPct = 74.0;
     var monthLabelsMap = {
@@ -1146,7 +1169,7 @@
                 // ================= GLOBAL STATE VARIABLES =================
     var currentSort = { col: null, dir: 'asc' };
     var totalCondicion = 0;
-    var ELAPSED_WD = 3;
+    var ELAPSED_WD = 8;
     var TOTAL_WD = 26;
     var grandCondicionPct = 74.0;
     var monthLabelsMap = {
@@ -1208,9 +1231,11 @@
     }
 
     function getComplianceBadgeHTML(pct) {
-      if (pct >= 100) return `<span class="badge-compliance comp-green">${pct.toFixed(1)}%</span>`;
-      if (pct >= 80) return `<span class="badge-compliance comp-yellow">${pct.toFixed(1)}%</span>`;
-      return `<span class="badge-compliance comp-red">${pct.toFixed(1)}%</span>`;
+      if (pct === null || pct === undefined || isNaN(pct)) return '-';
+      const val = Number(pct);
+      if (val >= 100) return `<span class="badge-compliance comp-green">${val.toFixed(1)}%</span>`;
+      if (val >= 80) return `<span class="badge-compliance comp-yellow">${val.toFixed(1)}%</span>`;
+      return `<span class="badge-compliance comp-red">${val.toFixed(1)}%</span>`;
     }
 
     function getNpsBadgeHTML(npsVal, target = 58) {
@@ -1266,7 +1291,7 @@
       if (val === 'ALL') {
         subtitle.innerHTML = 'Periodo Últimos 3 Meses (Junio - Agosto 2026) &bull; <strong id="selectedProductBadge" style="color: #6366f1">' + getProductLabel() + '</strong>';
       } else if (val === 'm202608') {
-        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 3/26 Días Hábiles) &bull; <strong id="selectedProductBadge" style="color: #6366f1">' + getProductLabel() + '</strong>';
+        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 8/26 Días Hábiles) &bull; <strong id="selectedProductBadge" style="color: #6366f1">' + getProductLabel() + '</strong>';
       } else {
         subtitle.innerHTML = `Mes Filtrado: ${monthLabelsMap[val] || val} &bull; <strong id="selectedProductBadge" style="color: #6366f1">${getProductLabel()}</strong>`;
       }
@@ -1292,21 +1317,27 @@
     }
 
     function getNodeUnits(node, monthKey) {
-      if (node.units && node.units[currentProductCode]) {
+      if (!node) return 0;
+      let uDict = null;
+      if (node.products && node.products[currentProductCode]) {
+        uDict = node.products[currentProductCode].units;
+      } else if (node.units && node.units[currentProductCode]) {
+        uDict = node.units[currentProductCode];
+      }
+      if (uDict) {
         if (currentMonthFilter !== 'ALL' && monthKey === 'total') {
-          return node.units[currentProductCode][currentMonthFilter] || 0;
+          return uDict[currentMonthFilter] || 0;
         }
         if (currentMonthFilter === 'ALL' && monthKey === 'total') {
-          return (node.units[currentProductCode]['m202606'] || 0) + 
-                 (node.units[currentProductCode]['m202607'] || 0) + 
-                 (node.units[currentProductCode]['m202608'] || 0);
+          return (uDict['m202606'] || 0) + (uDict['m202607'] || 0) + (uDict['m202608'] || 0);
         }
-        return node.units[currentProductCode][monthKey] || 0;
+        return uDict[monthKey] || 0;
       }
       return 0;
     }
 
     function getNodeQuota(node, monthKey) {
+      if (!node) return 0;
       if (node.children && Array.isArray(node.children) && node.id && node.id.startsWith('spv')) {
         let sum = 0;
         node.children.forEach(pdv => {
@@ -1315,16 +1346,20 @@
         return sum;
       }
 
-      if (node.quotas && node.quotas[currentProductCode]) {
+      let qDict = null;
+      if (node.products && node.products[currentProductCode]) {
+        qDict = node.products[currentProductCode].quotas;
+      } else if (node.quotas && node.quotas[currentProductCode]) {
+        qDict = node.quotas[currentProductCode];
+      }
+      if (qDict) {
         if (currentMonthFilter !== 'ALL' && monthKey === 'total') {
-          return node.quotas[currentProductCode][currentMonthFilter] || 0;
+          return qDict[currentMonthFilter] || 0;
         }
         if (currentMonthFilter === 'ALL' && monthKey === 'total') {
-          return (node.quotas[currentProductCode]['m202606'] || 0) + 
-                 (node.quotas[currentProductCode]['m202607'] || 0) + 
-                 (node.quotas[currentProductCode]['m202608'] || 0);
+          return (qDict['m202606'] || 0) + (qDict['m202607'] || 0) + (qDict['m202608'] || 0);
         }
-        return node.quotas[currentProductCode][monthKey] || 0;
+        return qDict[monthKey] || 0;
       }
       return 0;
     }
@@ -1352,8 +1387,18 @@
     }
 
     function getGlobalSalesInMonth(node, monthKey) {
+      if (!node) return 0;
       let tot = 0;
-      if (node.units) {
+      if (node.products) {
+        Object.values(node.products).forEach(pObj => {
+          const uDict = pObj.units || pObj;
+          if (monthKey === 'ALL') {
+            tot += (uDict['m202606'] || 0) + (uDict['m202607'] || 0) + (uDict['m202608'] || 0);
+          } else {
+            tot += (uDict[monthKey] || 0);
+          }
+        });
+      } else if (node.units) {
         Object.values(node.units).forEach(mDict => {
           if (monthKey === 'ALL') {
             tot += (mDict['m202606'] || 0) + (mDict['m202607'] || 0) + (mDict['m202608'] || 0);
@@ -1802,13 +1847,35 @@ function toggleDotacionDays() {
       renderDotacionTable();
     }
 
-    function toggleDotacionPdv(pdvName) {
-      dotacionExpandedState[pdvName] = dotacionExpandedState[pdvName] === false ? true : false;
+    window.toggleDotacionPdv = function toggleDotacionPdv(pdvName) {
+  globalThis.toggleDotacionPdv = toggleDotacionPdv;
+      dotacionExpandedState[pdvName] = !dotacionExpandedState[pdvName];
       renderDotacionTable();
     }
+    if (typeof global !== 'undefined') global.toggleDotacionPdv = toggleDotacionPdv;
+    if (typeof window !== 'undefined') window.toggleDotacionPdv = toggleDotacionPdv;
+    
+    window.toggleDotacionPdv = toggleDotacionPdv;
+    
 
     function renderDotacionHeader() {
       const thead = document.getElementById('dotacionThead');
+      if (!thead) return;
+      const dData = window.DOTACION_DATA;
+      const dHeaders = (dData && dData.daily_headers) ? dData.daily_headers : ['5-Ago', '6-Ago', '7-Ago', '8-Ago', '9-Ago', '10-Ago', '11-Ago'];
+      
+      const btnText = document.getElementById('toggleDaysText');
+      if (btnText && dHeaders.length > 0) {
+        btnText.textContent = `${isDaysExpanded ? 'Ocultar' : 'Mostrar'} Días (${dHeaders[0]} - ${dHeaders[dHeaders.length - 1]})`;
+      }
+
+      let dailyThs = '';
+      if (isDaysExpanded) {
+        dHeaders.forEach(dh => {
+          dailyThs += `<th class="val-cell">${dh}</th>`;
+        });
+      }
+
       thead.innerHTML = `
         <tr>
           <th style="min-width: 260px;">PUNTO DE VENTA / ASESOR</th>
@@ -1817,51 +1884,60 @@ function toggleDotacionDays() {
           <th class="val-cell">CUMP. OBJETIVO</th>
           <th class="val-cell">HC GAP</th>
           <th class="val-cell">HC A CONTRATAR</th>
-          ${isDaysExpanded ? `
-            <th class="val-cell">26-Jul</th>
-            <th class="val-cell">27-Jul</th>
-            <th class="val-cell">28-Jul</th>
-            <th class="val-cell">29-Jul</th>
-            <th class="val-cell">30-Jul</th>
-            <th class="val-cell">31-Jul</th>
-            <th class="val-cell">1-Ago</th>
-          ` : ''}
+          ${dailyThs}
           <th class="val-cell">CUMP. CONDICIÓN</th>
           <th style="min-width: 200px;">OBSERVACIONES / ESTADO HR</th>
         </tr>
       `;
     }
 
-        function renderDotacionTable() {
+        
+window.renderDotacionTable = function renderDotacionTable() {
+  globalThis.renderDotacionTable = renderDotacionTable;
       const tbody = document.getElementById('dotacionTbody');
+      if (!tbody) return;
       tbody.innerHTML = '';
 
-      const selSpv = document.getElementById('spvDotacionFilter').value;
-      const selZone = document.getElementById('zoneSelectPage2').value;
+      const selSpv = document.getElementById('spvDotacionFilter') ? document.getElementById('spvDotacionFilter').value : 'ALL';
+      const selZone = document.getElementById('zoneSelectPage2') ? document.getElementById('zoneSelectPage2').value : 'ALL';
       const dData = window.DOTACION_DATA;
-      if (!dData || !dData.pdvs) return;
+      if (!dData) return;
 
-      let pdvs = dData.pdvs;
-
-      if (selSpv !== 'ALL') {
-        pdvs = pdvs.filter(p => p.spv === selSpv);
+      const dKeys = dData.daily_keys || ['2026-08-05', '2026-08-06', '2026-08-07', '2026-08-08', '2026-08-09', '2026-08-10', '2026-08-11'];
+      let pdvs = [];
+      if (dData.pdvs && Array.isArray(dData.pdvs)) {
+        pdvs = dData.pdvs;
+      } else if (dData.tree && Array.isArray(dData.tree)) {
+        dData.tree.forEach(spvNode => {
+          if (spvNode.children && Array.isArray(spvNode.children)) {
+            spvNode.children.forEach(pdvNode => pdvs.push(pdvNode));
+          }
+        });
       }
-      if (selZone !== 'ALL') {
-        pdvs = pdvs.filter(p => p.zona === selZone);
-      }
+      if (!pdvs || pdvs.length === 0) return;
 
-      let totalHcObj = 0, totalHcCod = 0, totalGap = 0, totalContratar = 0;
+      if (selSpv !== 'ALL') pdvs = pdvs.filter(p => p.spv === selSpv);
+      if (selZone !== 'ALL') pdvs = pdvs.filter(p => p.zona === selZone);
+
+      let totalHcObj = 0, totalHcCod = 0, totalGap = 0, totalContratar = 0, totalCumpleCond = 0;
+      let grandDaily = {};
+      dKeys.forEach(k => grandDaily[k] = 0);
+
       pdvs.forEach(p => {
         totalHcObj += (p.hc_obj || 0);
         totalHcCod += (p.hc_codigo || 0);
         totalGap += (p.hc_gap || 0);
-        totalContratar += (p.hc_contratar || 0);
+        totalContratar += (p.hc_contratar !== undefined ? p.hc_contratar : (p.hc_gap || 0));
+        totalCumpleCond += (p.cumple_condicion || 0);
+        if (p.daily_sales) {
+          dKeys.forEach(k => { grandDaily[k] += (p.daily_sales[k] || 0); });
+        }
       });
 
       const totalCumpObj = totalHcObj > 0 ? (totalHcCod / totalHcObj * 100) : 0;
-      const grandCondicion = dData.summary ? dData.summary.cump_condicion : 74.0;
+      const totalCumpCondPct = totalHcCod > 0 ? (totalCumpleCond / totalHcCod * 100) : 0;
 
-      // Render Top KPI Cards
+      // Update KPI Cards
       const kpiGrid = document.getElementById('dotacionKpiCards');
       if (kpiGrid) {
         kpiGrid.innerHTML = `
@@ -1883,153 +1959,124 @@ function toggleDotacionDays() {
             <div class="kpi-icon-box" style="background: #fef2f2; color: #991b1b;"><i class="fa-solid fa-user-minus"></i></div>
             <div>
               <div class="kpi-title">HC Vacantes (Gap)</div>
-              <div class="kpi-value" style="color: ${totalGap < 0 ? '#dc2626' : '#166534'};">${totalGap} Vacantes</div>
+              <div class="kpi-value" style="color: #b91c1c;">${totalGap} Vacantes</div>
             </div>
           </div>
           <div class="kpi-card">
-            <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-user-clock"></i></div>
+            <div class="kpi-icon-box" style="background: #fef3c7; color: #92400e;"><i class="fa-solid fa-user-gear"></i></div>
             <div>
               <div class="kpi-title">Cumplimiento Condición</div>
-              <div class="kpi-value" style="color: #ca8a04;">${grandCondicionPct.toFixed(1)}% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(${totalCondicion} en condición)</span></div>
+              <div class="kpi-value" style="color: #b45309;">${totalCumpCondPct.toFixed(1)}% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(${totalCumpleCond} en condición)</span></div>
             </div>
           </div>
         `;
       }
 
+      renderDotacionHeader();
+
       // Grand Total Row
+      let grandDailyTds = '';
+      if (isDaysExpanded) {
+        dKeys.forEach(k => {
+          grandDailyTds += `<td class="val-cell num-font" style="font-weight: 800; font-size: 12px;">${grandDaily[k] || 0}</td>`;
+        });
+      }
+
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
-        <td class="val-cell num-font">${totalHcObj}</td>
-        <td class="val-cell num-font" style="color: #34d399;">${totalHcCod}</td>
-        <td class="val-cell num-font">${getComplianceBadgeHTML(totalCumpObj)}</td>
-        <td class="val-cell num-font">${totalGap < 0 ? `<span class="badge-gap-red">${totalGap}</span>` : `<span class="badge-gap-green">+${totalGap}</span>`}</td>
-        <td class="val-cell num-font">${totalContratar}</td>
-        ${isDaysExpanded ? `
-          <td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td><td class="val-cell num-font">INT</td>
-          <td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">17</td>
-        ` : ''}
-        <td class="val-cell num-font">${getComplianceBadgeHTML(grandCondicionPct)}</td>
-        <td style="color: #cbd5e1; font-weight: 600;">Dotación Operativa Nacional</td>
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><span>TOTAL FORTALECERNOS</span></div></td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${totalHcObj}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${totalHcCod}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${getComplianceBadgeHTML(totalCumpObj)}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700; color: ${totalGap < 0 ? '#ef4444' : '#3b82f6'};">${totalGap}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700; color: ${totalContratar < 0 ? '#ef4444' : '#3b82f6'};">${totalContratar}</td>
+        ${grandDailyTds}
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${getComplianceBadgeHTML(totalCumpCondPct)}</td>
+        <td style="padding: 10px 12px; font-size: 11px; font-weight: 700; color: #94a3b8;">Dotación Operativa Nacional</td>
       `;
       tbody.appendChild(trTotal);
 
-      let visibleRows = 0;
+      // PDV Rows
+      pdvs.forEach(p => {
+        const isPdvExpanded = dotacionExpandedState[p.name] === true;
 
-      // Sort PDVs from highest to lowest TOTAL NPS (total_nps descending)
-      pdvs.sort((a, b) => (b.total_nps || 0) - (a.total_nps || 0));
+        let pDailyTds = '';
+        if (isDaysExpanded) {
+          dKeys.forEach(k => {
+            const val = (p.daily_sales && p.daily_sales[k] !== undefined) ? p.daily_sales[k] : 0;
+            pDailyTds += `<td class="val-cell num-font" style="font-weight: 700;">${val > 0 ? val : '-'}</td>`;
+          });
+        }
 
-      pdvs.forEach(pdv => {
-        const isPdvExpanded = dotacionExpandedState[pdv.name] !== false;
+        const hcContratarVal = (p.hc_contratar !== undefined && p.hc_contratar !== null) ? p.hc_contratar : (p.hc_gap !== undefined ? p.hc_gap : 0);
 
-        const trPdv = document.createElement('tr');
-        trPdv.className = 'row-pdv-shaded';
-
-        const d = pdv.daily || {};
-        const daysHTML = isDaysExpanded ? `
-          <td class="val-cell num-font">${d['26-Jul'] || '-'}</td>
-          <td class="val-cell num-font">${d['27-Jul'] || '-'}</td>
-          <td class="val-cell num-font">${d['28-Jul'] || '-'}</td>
-          <td class="val-cell num-font">${d['29-Jul'] || '-'}</td>
-          <td class="val-cell num-font">${d['30-Jul'] || '-'}</td>
-          <td class="val-cell num-font">${d['31-Jul'] || '-'}</td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${d['1-Ago'] || '-'}</td>
-        ` : '';
-
-        trPdv.innerHTML = `
-          <td>
-            <div class="node-cell indent-0">
-              <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleDotacionPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
-              <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
+        const trPDV = document.createElement('tr');
+        trPDV.className = 'row-pdv';
+        trPDV.innerHTML = `
+          <td style="padding: 8px 12px;">
+            <div class="node-cell indent-1" style="font-weight: 700; font-size: 12px;">
+              <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleDotacionPdv('${p.name}')"><i class="fa-solid fa-chevron-right"></i></span>
+              <span style="font-weight: 800; color: #0f172a;">${p.name}</span>
             </div>
           </td>
-          <td class="val-cell num-font">${pdv.hc_obj}</td>
-          <td class="val-cell num-font" style="font-weight: 800;">${pdv.hc_codigo}</td>
-          <td class="val-cell num-font">${getComplianceBadgeHTML(pdv.cump_obj)}</td>
-          <td class="val-cell num-font">${pdv.hc_gap < 0 ? `<span class="badge-gap-red">${pdv.hc_gap}</span>` : pdv.hc_gap > 0 ? `<span class="badge-gap-green">+${pdv.hc_gap}</span>` : `<span class="badge-gap-zero">0</span>`}</td>
-          <td class="val-cell num-font">${pdv.hc_contratar}</td>
-          ${daysHTML}
-          <td class="val-cell num-font">${getComplianceBadgeHTML(pdv.cump_condicion)}</td>
-          <td style="font-weight: 600; color: ${pdv.obs && pdv.obs.includes('PDV OK') ? '#15803d' : '#b91c1c'}; font-size: 11px;">
-            ${pdv.obs || '-'}
-          </td>
+          <td class="val-cell num-font">${p.hc_obj || 0}</td>
+          <td class="val-cell num-font">${p.hc_codigo || 0}</td>
+          <td class="val-cell num-font">${p.cump_obj_pct ? getComplianceBadgeHTML(p.cump_obj_pct) : '-'}</td>
+          <td class="val-cell num-font" style="color: ${(p.hc_gap || 0) < 0 ? '#ef4444' : '#3b82f6'};">${p.hc_gap !== undefined ? p.hc_gap : 0}</td>
+          <td class="val-cell num-font" style="color: ${hcContratarVal < 0 ? '#ef4444' : '#3b82f6'};">${hcContratarVal}</td>
+          ${pDailyTds}
+          <td class="val-cell num-font">${p.cump_condicion_pct ? getComplianceBadgeHTML(p.cump_condicion_pct) : '-'}</td>
+          <td style="font-size: 10.5px; font-weight: 600; color: ${(p.obs && p.obs.includes('PDV OK')) ? '#10b981' : '#f59e0b'};">${p.obs || '-'}</td>
         `;
-        tbody.appendChild(trPdv);
-        visibleRows++;
+        tbody.appendChild(trPDV);
 
-        if (isPdvExpanded && pdv.asesores && Array.isArray(pdv.asesores)) {
-          // Sort Asesores from highest to lowest TOTAL NPS (total_nps descending)
-          pdv.asesores.sort((a, b) => (b.total_nps || 0) - (a.total_nps || 0));
-          pdv.asesores.forEach(ase => {
+        // Render Asesores if expanded
+        if (isPdvExpanded && p.children && Array.isArray(p.children)) {
+          p.children.forEach(ase => {
+            let aseDailyTds = '';
+            if (isDaysExpanded) {
+              dKeys.forEach(k => {
+                const v = (ase.daily_sales && ase.daily_sales[k] !== undefined) ? ase.daily_sales[k] : 0;
+                aseDailyTds += `<td class="val-cell num-font">${v > 0 ? v : '-'}</td>`;
+              });
+            }
+            const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[ase.name]) ? window.USER_CODE_MAP[ase.name] : '';
+            let condBadge = '-';
+            if (ase.cumple_condicion === 'SI' || ase.is_cumple) {
+              condBadge = `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>`;
+            } else if (ase.cumple_condicion === 'NO') {
+              condBadge = `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`;
+            }
+
             const trAse = document.createElement('tr');
             trAse.className = 'row-asesor';
-
-            const ad = ase.daily || {};
-            const aseDaysHTML = isDaysExpanded ? `
-              <td class="val-cell num-font">${ad['26-Jul'] || '-'}</td>
-              <td class="val-cell num-font">${ad['27-Jul'] || '-'}</td>
-              <td class="val-cell num-font">${ad['28-Jul'] || '-'}</td>
-              <td class="val-cell num-font">${ad['29-Jul'] || '-'}</td>
-              <td class="val-cell num-font">${ad['30-Jul'] || '-'}</td>
-              <td class="val-cell num-font">${ad['31-Jul'] || '-'}</td>
-              <td class="val-cell num-font" style="font-weight: 800;">${ad['1-Ago'] || '-'}</td>
-            ` : '';
-
-            const userCode = ase.user_code || ase.name;
-            const realName = ase.real_name || (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : '');
-
             trAse.innerHTML = `
-              <td>
-                <div class="node-cell indent-1">
+              <td style="padding: 6px 12px 6px 36px;">
+                <div class="node-cell indent-2">
                   <div style="display: flex; flex-direction: column;">
-                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
-                    <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>
+                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${ase.name}</span>
+                    ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
                   </div>
                 </div>
               </td>
-              <td class="val-cell num-font" style="color: #94a3b8;">1</td>
-              <td class="val-cell num-font">1</td>
-              <td class="val-cell num-font">${getComplianceBadgeHTML(100)}</td>
-              <td class="val-cell num-font"><span class="badge-gap-zero">0</span></td>
-              <td class="val-cell num-font">0</td>
-              ${aseDaysHTML}
-              <td class="val-cell num-font">
-                ${ase.cump === 'SI' ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`}
-              </td>
-              <td style="color: #475569; font-size: 10.5px;">${ase.obs || '-'}</td>
+              <td class="val-cell num-font" style="color: #94a3b8;">-</td>
+              <td class="val-cell num-font" style="color: #94a3b8;">-</td>
+              <td class="val-cell num-font" style="color: #94a3b8;">-</td>
+              <td class="val-cell num-font" style="color: #94a3b8;">-</td>
+              <td class="val-cell num-font" style="color: #94a3b8;">-</td>
+              ${aseDailyTds}
+              <td class="val-cell num-font">${condBadge}</td>
+              <td style="font-size: 10px; font-weight: 600; color: ${ase.obs && ase.obs.includes('RENUNCIA') ? '#ef4444' : '#64748b'};">${ase.obs || '-'}</td>
             `;
             tbody.appendChild(trAse);
-            visibleRows++;
           });
         }
       });
-
-      document.getElementById('rowCountLabel').textContent = 'Equipo de Operaciones • 2026';
     }
 
-    // ================= PAGE 3: NPS RENDER LOGIC =================
-    function selectNpsChannel(channel) {
-      currentNpsChannel = channel;
-      document.getElementById('tabNpsVenta').classList.toggle('active', channel === 'venta');
-      document.getElementById('tabNpsPostventa').classList.toggle('active', channel === 'postventa');
-      renderNpsHeader();
-      renderNpsTable();
-    }
-
-    function toggleNpsWeeks() {
-      isWeeksExpanded = !isWeeksExpanded;
-      document.getElementById('toggleNpsWeeksText').textContent = isWeeksExpanded ? 'Ocultar Semanas' : 'Mostrar Semanas (SEM1 - SEM5)';
-      renderNpsHeader();
-      renderNpsTable();
-    }
-
-    function toggleNpsPdv(pdvName) {
-      npsExpandedState[pdvName] = npsExpandedState[pdvName] === false ? true : false;
-      renderNpsTable();
-    }
-
-    function renderNpsHeader() {
+  
+function renderNpsHeader() {
       const thead = document.getElementById('npsThead');
       const isPostventa = (currentNpsChannel === 'postventa');
       
@@ -2046,164 +2093,236 @@ function toggleDotacionDays() {
 
       thead.innerHTML = `
         <tr>
-          <th style="min-width: 260px;">PUNTO DE VENTA / ASESOR</th>
+          <th style="min-width: 260px;">ESTRUCTURA</th>
           ${weekHeadersHTML}
           <th class="val-cell">TOTAL NPS</th>
-          <th class="val-cell">ENCUESTAS</th>
-          <th class="val-cell">% TOTAL</th>
+          <th class="val-cell">ENCUESTAS (Q)</th>
+          <th class="val-cell">% TOTAL Q</th>
           <th class="val-cell" style="min-width: 140px;">ESTADO CUMPLIMIENTO</th>
         </tr>
       `;
     }
 
         
-                            // ================= PAGE 5: MIX DE PLANES RENDER LOGIC =================
-    // Default is false (collapsed by PDV)
+                            
+    // ================= PAGE GLOBAL HELPERS & VARIABLES =================
+    var isWeeksExpanded = false;
+    var currentNpsChannel = 'venta';
+    var npsExpandedState = {};
+    var discountSearchQuery = '';
+    var discountExpandedState = {};
+    var isDiscountAllExpanded = false;
+    var mixExpandedState = {};
+    var permExpandedState = {};
+    var cedenteExpandedState = {};
 
-    function toggleMixPdv(pdvName) {
-      mixExpandedState[pdvName] = mixExpandedState[pdvName] === true ? false : true;
-      renderMixPlanesTable();
+    function selectNpsChannel(channel) {
+      currentNpsChannel = channel;
+      const btnVenta = document.getElementById('tabNpsVenta');
+      const btnPost = document.getElementById('tabNpsPostventa');
+      if (btnVenta) btnVenta.classList.toggle('active', channel === 'venta');
+      if (btnPost) btnPost.classList.toggle('active', channel === 'postventa');
+      renderNpsHeader();
+      renderNpsTable();
     }
 
-    function getPlanCellHTML(planName, count, isPdvRow = false) {
-      if (!count || count <= 0) return `<td class="val-cell num-font" style="color: #cbd5e1; padding: 9px 12px;">-</td>`;
-      
-      const pNorm = planName.toUpperCase();
-      let textColor = '#334155';
-      if (pNorm.includes('35.90') || pNorm.includes('32.90') || pNorm.includes('29.90')) {
-        textColor = '#dc2626'; // Soft Red for < 39.90
-      } else if (pNorm.includes('39.90')) {
-        textColor = '#0f172a'; // Bold dark for 39.90
-      } else {
-        textColor = '#15803d'; // Soft Green for >= 49.90
+    function toggleNpsWeeks() {
+      isWeeksExpanded = !isWeeksExpanded;
+      const txtEl = document.getElementById('toggleNpsWeeksText');
+      if (txtEl) txtEl.textContent = isWeeksExpanded ? 'Ocultar Semanas (SEM1 - SEM5)' : 'Mostrar Semanas (SEM1 - SEM5)';
+      renderNpsHeader();
+      renderNpsTable();
+    }
+
+    function toggleNpsPdv(pdvName) {
+      npsExpandedState[pdvName] = !npsExpandedState[pdvName];
+      renderNpsTable();
+    }
+
+    // ================= PAGE 2: TASA DE USO DE DESCUENTO =================
+    function handleDiscountSearch() {
+      discountSearchQuery = document.getElementById('discountSearchInput') ? document.getElementById('discountSearchInput').value.trim().toLowerCase() : '';
+      if (discountSearchQuery.length > 0 && window.DISCOUNT_DATA && window.DISCOUNT_DATA.months) {
+        const mData = window.DISCOUNT_DATA.months['Agosto'] || window.DISCOUNT_DATA;
+        if (mData.tree) {
+          mData.tree.forEach(spv => {
+            spv.children.forEach(pdv => { discountExpandedState[pdv.id] = true; });
+          });
+        }
       }
-
-      const fontWeight = isPdvRow ? '800' : '600';
-      return `<td class="val-cell num-font" style="color: ${textColor}; font-weight: ${fontWeight}; padding: 9px 12px;">${count.toLocaleString('es-PE')}</td>`;
+      renderDiscountTable();
     }
 
-    function renderMixPlanesTable() {
-      const tbody = document.getElementById('mixPlanesTbody');
+    function toggleDiscountNode(nodeId, event) {
+      if (event) event.stopPropagation();
+      discountExpandedState[nodeId] = !discountExpandedState[nodeId];
+      renderDiscountTable();
+    }
+
+    function renderDiscountHeader() {
+      const thead = document.getElementById('discountThead');
+      if (!thead) return;
+      thead.innerHTML = `
+        <tr>
+          <th style="min-width: 280px;">PUNTO DE VENTA (PDV) / ASESOR</th>
+          <th class="val-cell">TOTAL VENTAS PORTA OSS MONO</th>
+          <th class="val-cell">VENTAS CON DESCUENTO 50%</th>
+          <th class="val-cell">% TASA DE USO DESCUENTO</th>
+          <th class="val-cell" style="min-width: 180px;">ESTADO / ALERTA DESVIACIÓN</th>
+        </tr>
+      `;
+    }
+
+    function renderDiscountTable() {
+      const tbody = document.getElementById('discountTbody');
       if (!tbody) return;
       tbody.innerHTML = '';
 
-      const selSpv = document.getElementById('spvMixFilter') ? document.getElementById('spvMixFilter').value : 'ALL';
-      const selZone = document.getElementById('zoneSelectPage5') ? document.getElementById('zoneSelectPage5').value : 'ALL';
-      const mixData = window.MIX_PLANES_DATA;
-      if (!mixData || !mixData.tree) return;
+      const discData = window.DISCOUNT_DATA;
+      if (!discData) return;
 
-      const plans = mixData.plans_list;
+      const selMonth = document.getElementById('monthDiscountFilter') ? document.getElementById('monthDiscountFilter').value : 'Agosto';
+      const selZone = document.getElementById('zoneSelectPage2') ? document.getElementById('zoneSelectPage2').value : 'ALL';
+      const selSpv = document.getElementById('spvDiscountFilter') ? document.getElementById('spvDiscountFilter').value : 'ALL';
+      const targetMeta = discData.target_pct || 70.0;
 
-      let tree = JSON.parse(JSON.stringify(mixData.tree));
-      if (selSpv !== 'ALL') {
-        tree = tree.filter(s => s.name === selSpv);
-      }
-      if (selZone !== 'ALL') {
-        tree.forEach(s => {
-          s.children = s.children.filter(p => p.zona === selZone);
-        });
-        tree = tree.filter(s => s.children.length > 0);
-      }
+      const monthData = discData.months && discData.months[selMonth] ? discData.months[selMonth] : { tree: discData.tree || [], summary: {} };
+      const treeData = monthData.tree || [];
 
-      // Grand Total Row with grandTot accumulation
-      const grandPlans = { 'Entel Chip 35.90': 0, 'Entel chip+ 32.90': 0, 'Power 29.90 N': 0, 'Power 39.90 N': 0, 'Power 49.90 N': 0, 'Power 59.90 N': 0, 'Power ilim 69.90 N': 0, 'Power ilim 79.90 SD N': 0, 'Power ilim 99.90 SD N': 0 };
-      let grandTot = 0;
-
-      tree.forEach(spv => {
-        spv.children.forEach(pdv => {
-          plans.forEach(p => {
-            grandPlans[p] += (pdv.plans[p] || 0);
-          });
-          grandTot += (pdv.total || 0);
-        });
+      let allPdvs = [];
+      treeData.forEach(spv => {
+        if (selSpv === 'ALL' || spv.name === selSpv) {
+          if (spv.children) {
+            spv.children.forEach(pdv => {
+              if (selZone === 'ALL' || pdv.zona === selZone) {
+                allPdvs.push(pdv);
+              }
+            });
+          }
+        }
       });
+
+      let totMono = 0;
+      let totDesc = 0;
+      allPdvs.forEach(p => {
+        totMono += (p.tot_porta_mono || 0);
+        totDesc += (p.tot_desc_50 || 0);
+      });
+
+      const pctTasaUso = totMono > 0 ? (totDesc / totMono * 100) : 0.0;
+      const isExcede = pctTasaUso > targetMeta;
+
+      const kpiGrid = document.getElementById('discountKpiCards');
+      if (kpiGrid) {
+        kpiGrid.innerHTML = `
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
+            <div>
+              <div class="kpi-title">Tope Máximo Tasa Uso</div>
+              <div class="kpi-value">70.0% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(Límite)</span></div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: ${isExcede ? '#fef2f2' : '#f0fdf4'}; color: ${isExcede ? '#991b1b' : '#166534'};">
+              <i class="fa-solid ${isExcede ? 'fa-triangle-exclamation' : 'fa-circle-check'}"></i>
+            </div>
+            <div>
+              <div class="kpi-title">Tasa Uso Lograda (${selMonth})</div>
+              <div class="kpi-value" style="color: ${isExcede ? '#b91c1c' : '#15803d'};">${pctTasaUso.toFixed(1)}% ${getDiscountUsageBadgeHTML(pctTasaUso, targetMeta)}</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #f0f9ff; color: #0369a1;"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div>
+              <div class="kpi-title">Ventas PORTA OSS MONO</div>
+              <div class="kpi-value">${totMono.toLocaleString('es-PE')} u.</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-tags"></i></div>
+            <div>
+              <div class="kpi-title">Con Descuento 50%</div>
+              <div class="kpi-value" style="color: #a16207;">${totDesc.toLocaleString('es-PE')} u.</div>
+            </div>
+          </div>
+        `;
+      }
 
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
-
-      let planColsHTML = plans.map(p => {
-        const cnt = grandPlans[p];
-        const pct = grandTot > 0 ? (cnt / grandTot * 100) : 0;
-        const pctStr = cnt > 0 ? ` (${pct.toFixed(1)}%)` : '';
-        return `<td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800;">${cnt > 0 ? cnt.toLocaleString('es-PE') + `<span style="font-size: 10.5px; color: #475569; font-weight: 600; margin-left: 2px;">${pctStr}</span>` : '-'}</td>`;
-      }).join('');
-
       trTotal.innerHTML = `
-        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
-        ${planColsHTML}
+        <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS (${selMonth}) ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        <td class="val-cell num-font">${totMono.toLocaleString('es-PE')} u.</td>
+        <td class="val-cell num-font" style="color: #38bdf8;">${totDesc.toLocaleString('es-PE')} u.</td>
+        <td class="val-cell num-font" style="font-size: 13.5px;">${getDiscountUsageBadgeHTML(pctTasaUso, targetMeta)}</td>
+        <td class="val-cell num-font">${getDiscountStatusHTML(pctTasaUso, targetMeta)}</td>
       `;
       tbody.appendChild(trTotal);
 
-      tree.forEach(spv => {
-        spv.children.forEach(pdv => {
-          const isPdvExpanded = mixExpandedState[pdv.name] === true; // COLLAPSED BY DEFAULT
+      let visibleRows = 0;
 
-          const trPdv = document.createElement('tr');
-          trPdv.className = 'row-pdv-shaded';
+      allPdvs.forEach(pdv => {
+        let pdvMatch = pdv.name.toLowerCase().includes(discountSearchQuery);
+        let matchingAsesores = pdv.children ? pdv.children.filter(ase => ase.name.toLowerCase().includes(discountSearchQuery)) : [];
 
-          let pdvColsHTML = plans.map(p => getPlanCellHTML(p, pdv.plans[p], true)).join('');
+        if (discountSearchQuery.length > 0 && !pdvMatch && matchingAsesores.length === 0) return;
 
-          trPdv.innerHTML = `
-            <td style="padding: 9px 12px;">
-              <div class="node-cell indent-0">
-                <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleMixPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
-                <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
-              </div>
-            </td>
-            ${pdvColsHTML}
-          `;
-          tbody.appendChild(trPdv);
+        visibleRows++;
+        const isPdvExpanded = discountExpandedState[pdv.id] !== false;
 
-          if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
-            pdv.children.forEach(ase => {
-              const trAse = document.createElement('tr');
-              trAse.className = 'row-asesor';
+        const trPdv = document.createElement('tr');
+        trPdv.className = 'row-pdv-shaded';
+        trPdv.innerHTML = `
+          <td>
+            <div class="node-cell indent-0">
+              <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleDiscountNode('${pdv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
+              <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
+            </div>
+          </td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${pdv.tot_porta_mono.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.tot_desc_50.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font">${getDiscountUsageBadgeHTML(pdv.pct_tasa_uso, targetMeta)}</td>
+          <td class="val-cell num-font">${getDiscountStatusHTML(pdv.pct_tasa_uso, targetMeta)}</td>
+        `;
+        tbody.appendChild(trPdv);
 
-              let aseColsHTML = plans.map(p => getPlanCellHTML(p, ase.plans[p], false)).join('');
-              const userCode = ase.user_code || ase.name;
-              const realName = ase.real_name || (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : userCode);
+        if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
+          pdv.children.forEach(ase => {
+            if (discountSearchQuery.length > 0 && !pdvMatch && !ase.name.toLowerCase().includes(discountSearchQuery)) return;
 
-              trAse.innerHTML = `
-                <td style="padding: 7px 12px;">
-                  <div class="node-cell indent-1">
-                    <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
+            visibleRows++;
+            const trAse = document.createElement('tr');
+            trAse.className = 'row-asesor';
+
+            const userCode = ase.name;
+            const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode]) ? window.USER_CODE_MAP[userCode] : '';
+
+            trAse.innerHTML = `
+              <td>
+                <div class="node-cell indent-1">
+                  <div style="display: flex; flex-direction: column;">
+                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
+                    ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
                   </div>
-                </td>
-                ${aseColsHTML}
-              `;
-              tbody.appendChild(trAse);
-            });
-          }
-        });
+                </div>
+              </td>
+              <td class="val-cell num-font">${ase.tot_porta_mono} u.</td>
+              <td class="val-cell num-font" style="color: #0369a1; font-weight: 700;">${ase.tot_desc_50} u.</td>
+              <td class="val-cell num-font">${ase.tot_porta_mono > 0 ? getDiscountUsageBadgeHTML(ase.pct_tasa_uso, targetMeta) : '-'}</td>
+              <td class="val-cell num-font">${ase.tot_porta_mono > 0 ? getDiscountStatusHTML(ase.pct_tasa_uso, targetMeta) : '-'}</td>
+            `;
+            tbody.appendChild(trAse);
+          });
+        }
       });
+
+      const labelEl = document.getElementById('rowCountLabel');
+      if (labelEl) labelEl.textContent = `${visibleRows} filas en reporte de tasa de uso de descuento (${selMonth})`;
     }
 
-    
-    // ================= PAGE 6: PERMANENCIA M6 RENDER LOGIC =================
-    // Default is false (collapsed by PDV)
-
-    function togglePermPdv(pdvName) {
-      permExpandedState[pdvName] = permExpandedState[pdvName] === true ? false : true;
-      renderPermanenciaTable();
-    }
-
-    function getPermBadgeHTML(pctVal) {
-      if (pctVal === null || pctVal === undefined) return `-`;
-      if (pctVal >= 50.0) {
-        // Green Cumple (>= 50%)
-        return `<span style="background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px;">✓ ${pctVal.toFixed(2)}%</span>`;
-      } else {
-        // Red Alert (< 50%)
-        return `<span style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px;">⚠️ ${pctVal.toFixed(2)}%</span>`;
-      }
-    }
-
-    
-    // ================= PAGE 7: OPERADOR CEDENTE RENDER LOGIC =================
-    // Default is false (collapsed by PDV)
-
+    // ================= PAGE 3: OPERADOR CEDENTE =================
     function toggleCedentePdv(pdvName) {
-      cedenteExpandedState[pdvName] = cedenteExpandedState[pdvName] === true ? false : true;
+      cedenteExpandedState[pdvName] = !cedenteExpandedState[pdvName];
       renderCedenteTable();
     }
 
@@ -2224,23 +2343,22 @@ function toggleDotacionDays() {
         tree = tree.filter(s => s.name === selSpv);
       }
 
-      // Grand Total Calculation
       let grandTotal = 0;
       let grandClaro = 0;
       let grandMovistar = 0;
       let grandBitel = 0;
 
       tree.forEach(spv => {
-        let filteredPdvs = spv.children;
+        let filteredPdvs = spv.children || [];
         if (selZone !== 'ALL') {
           filteredPdvs = filteredPdvs.filter(p => p.zona === selZone);
         }
         filteredPdvs.forEach(pdv => {
-          const mInfo = pdv.months[selMonth] || { claro_u: 0, movistar_u: 0, bitel_u: 0, total_u: 0 };
-          grandClaro += mInfo.claro_u;
-          grandMovistar += mInfo.movistar_u;
-          grandBitel += mInfo.bitel_u;
-          grandTotal += mInfo.total_u;
+          const mInfo = (pdv.months && pdv.months[selMonth]) ? pdv.months[selMonth] : { claro_u: 0, movistar_u: 0, bitel_u: 0, total_u: 0 };
+          grandClaro += (mInfo.claro_u || 0);
+          grandMovistar += (mInfo.movistar_u || 0);
+          grandBitel += (mInfo.bitel_u || 0);
+          grandTotal += (mInfo.total_u || 0);
         });
       });
 
@@ -2248,31 +2366,29 @@ function toggleDotacionDays() {
       const grandMovPct = grandTotal > 0 ? (grandMovistar / grandTotal * 100) : 0;
       const grandBitPct = grandTotal > 0 ? (grandBitel / grandTotal * 100) : 0;
 
-      // Grand Total Row
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><span>TOTAL FORTALECERNOS (${selMonth})</span></div></td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${grandTotal.toLocaleString('es-PE')}</td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #dc2626;">${grandClaro.toLocaleString('es-PE')}</td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #b91c1c;">${grandClaroPct.toFixed(1)}%</td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #16a34a;">${grandMovistar.toLocaleString('es-PE')}</td>
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS (${selMonth})</span></div></td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${grandTotal.toLocaleString('es-PE')} u.</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #2563eb;">${grandClaro.toLocaleString('es-PE')} u.</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #1d4ed8;">${grandClaroPct.toFixed(1)}%</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #16a34a;">${grandMovistar.toLocaleString('es-PE')} u.</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #15803d;">${grandMovPct.toFixed(1)}%</td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #ca8a04;">${grandBitel.toLocaleString('es-PE')}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #ca8a04;">${grandBitel.toLocaleString('es-PE')} u.</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #a16207;">${grandBitPct.toFixed(1)}%</td>
       `;
       tbody.appendChild(trTotal);
 
-      // Render PDVs and Asesores
       tree.forEach(spv => {
-        let filteredPdvs = spv.children;
+        let filteredPdvs = spv.children || [];
         if (selZone !== 'ALL') {
           filteredPdvs = filteredPdvs.filter(p => p.zona === selZone);
         }
 
         filteredPdvs.forEach(pdv => {
           const isPdvExpanded = cedenteExpandedState[pdv.name] === true;
-          const mInfo = pdv.months[selMonth] || { claro_u: 0, claro_pct: 0, movistar_u: 0, movistar_pct: 0, bitel_u: 0, bitel_pct: 0, total_u: 0 };
+          const mInfo = (pdv.months && pdv.months[selMonth]) ? pdv.months[selMonth] : { claro_u: 0, claro_pct: 0, movistar_u: 0, movistar_pct: 0, bitel_u: 0, bitel_pct: 0, total_u: 0 };
 
           const trPdv = document.createElement('tr');
           trPdv.className = 'row-pdv-shaded';
@@ -2284,19 +2400,19 @@ function toggleDotacionDays() {
                 <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
               </div>
             </td>
-            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${mInfo.total_u.toLocaleString('es-PE')}</td>
-            <td class="val-cell num-font" style="font-weight: 800; color: #dc2626; padding: 9px 12px;">${mInfo.claro_u > 0 ? mInfo.claro_u : '-'}</td>
-            <td class="val-cell num-font" style="font-weight: 700; color: #b91c1c; padding: 9px 12px;">${mInfo.claro_pct > 0 ? mInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
-            <td class="val-cell num-font" style="font-weight: 800; color: #16a34a; padding: 9px 12px;">${mInfo.movistar_u > 0 ? mInfo.movistar_u : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${mInfo.total_u.toLocaleString('es-PE')} u.</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #2563eb; padding: 9px 12px;">${mInfo.claro_u > 0 ? mInfo.claro_u + ' u.' : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 700; color: #1d4ed8; padding: 9px 12px;">${mInfo.claro_pct > 0 ? mInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #16a34a; padding: 9px 12px;">${mInfo.movistar_u > 0 ? mInfo.movistar_u + ' u.' : '-'}</td>
             <td class="val-cell num-font" style="font-weight: 700; color: #15803d; padding: 9px 12px;">${mInfo.movistar_pct > 0 ? mInfo.movistar_pct.toFixed(1) + '%' : '-'}</td>
-            <td class="val-cell num-font" style="font-weight: 800; color: #ca8a04; padding: 9px 12px;">${mInfo.bitel_u > 0 ? mInfo.bitel_u : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #ca8a04; padding: 9px 12px;">${mInfo.bitel_u > 0 ? mInfo.bitel_u + ' u.' : '-'}</td>
             <td class="val-cell num-font" style="font-weight: 700; color: #a16207; padding: 9px 12px;">${mInfo.bitel_pct > 0 ? mInfo.bitel_pct.toFixed(1) + '%' : '-'}</td>
           `;
           tbody.appendChild(trPdv);
 
           if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
             pdv.children.forEach(ase => {
-              const aInfo = ase.months[selMonth] || { claro_u: 0, claro_pct: 0, movistar_u: 0, movistar_pct: 0, bitel_u: 0, bitel_pct: 0, total_u: 0 };
+              const aInfo = (ase.months && ase.months[selMonth]) ? ase.months[selMonth] : { claro_u: 0, claro_pct: 0, movistar_u: 0, movistar_pct: 0, bitel_u: 0, bitel_pct: 0, total_u: 0 };
               const trAse = document.createElement('tr');
               trAse.className = 'row-asesor';
 
@@ -2309,12 +2425,12 @@ function toggleDotacionDays() {
                     <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
                   </div>
                 </td>
-                <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${aInfo.total_u > 0 ? aInfo.total_u : '-'}</td>
-                <td class="val-cell num-font" style="color: #ef4444; padding: 7px 12px;">${aInfo.claro_u > 0 ? aInfo.claro_u : '-'}</td>
-                <td class="val-cell num-font" style="color: #f87171; padding: 7px 12px;">${aInfo.claro_pct > 0 ? aInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
-                <td class="val-cell num-font" style="color: #22c55e; padding: 7px 12px;">${aInfo.movistar_u > 0 ? aInfo.movistar_u : '-'}</td>
+                <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${aInfo.total_u > 0 ? aInfo.total_u + ' u.' : '-'}</td>
+                <td class="val-cell num-font" style="color: #3b82f6; padding: 7px 12px;">${aInfo.claro_u > 0 ? aInfo.claro_u + ' u.' : '-'}</td>
+                <td class="val-cell num-font" style="color: #60a5fa; padding: 7px 12px;">${aInfo.claro_pct > 0 ? aInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
+                <td class="val-cell num-font" style="color: #22c55e; padding: 7px 12px;">${aInfo.movistar_u > 0 ? aInfo.movistar_u + ' u.' : '-'}</td>
                 <td class="val-cell num-font" style="color: #4ade80; padding: 7px 12px;">${aInfo.movistar_pct > 0 ? aInfo.movistar_pct.toFixed(1) + '%' : '-'}</td>
-                <td class="val-cell num-font" style="color: #eab308; padding: 7px 12px;">${aInfo.bitel_u > 0 ? aInfo.bitel_u : '-'}</td>
+                <td class="val-cell num-font" style="color: #eab308; padding: 7px 12px;">${aInfo.bitel_u > 0 ? aInfo.bitel_u + ' u.' : '-'}</td>
                 <td class="val-cell num-font" style="color: #facc15; padding: 7px 12px;">${aInfo.bitel_pct > 0 ? aInfo.bitel_pct.toFixed(1) + '%' : '-'}</td>
               `;
               tbody.appendChild(trAse);
@@ -2324,22 +2440,170 @@ function toggleDotacionDays() {
       });
     }
 
+    // ================= PAGE 4: MIX DE PLANES POSTPAGO =================
+    function toggleMixPdv(pdvName) {
+      mixExpandedState[pdvName] = !mixExpandedState[pdvName];
+      renderMixPlanesTable();
+    }
+
+    function getPlanCellHTML(planName, count, isPdvRow = false) {
+      if (!count || count <= 0) return `<td class="val-cell num-font" style="color: #cbd5e1; padding: 9px 12px;">-</td>`;
+      
+      const pNorm = planName.toUpperCase();
+      let textColor = '#334155';
+      if (pNorm.includes('35.90') || pNorm.includes('32.90') || pNorm.includes('29.90')) {
+        textColor = '#dc2626';
+      } else if (pNorm.includes('39.90')) {
+        textColor = '#0f172a';
+      } else {
+        textColor = '#15803d';
+      }
+
+      const fontWeight = isPdvRow ? '800' : '600';
+      return `<td class="val-cell num-font" style="color: ${textColor}; font-weight: ${fontWeight}; padding: 9px 12px;">${count.toLocaleString('es-PE')} u.</td>`;
+    }
+
+    function renderMixPlanesTable() {
+      const tbody = document.getElementById('mixPlanesTbody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      const selMonth = document.getElementById('monthMixPlanesFilter') ? document.getElementById('monthMixPlanesFilter').value : 'Agosto';
+      const selZone = document.getElementById('zoneSelectPage4') ? document.getElementById('zoneSelectPage4').value : 'ALL';
+      const selSpv = document.getElementById('spvMixFilter') ? document.getElementById('spvMixFilter').value : 'ALL';
+      
+      const mixData = window.MIX_PLANES_DATA;
+      if (!mixData) return;
+
+      const monthData = mixData.months && mixData.months[selMonth] ? mixData.months[selMonth] : mixData;
+      const plans = monthData.plans_list || mixData.plans_list || [];
+
+      let tree = JSON.parse(JSON.stringify(monthData.tree || mixData.tree || []));
+      if (selSpv !== 'ALL') {
+        tree = tree.filter(s => s.name === selSpv);
+      }
+      if (selZone !== 'ALL') {
+        tree.forEach(s => {
+          if (s.children) s.children = s.children.filter(p => p.zona === selZone);
+        });
+        tree = tree.filter(s => s.children && s.children.length > 0);
+      }
+
+      const grandPlans = {};
+      plans.forEach(p => grandPlans[p] = 0);
+      let grandTot = 0;
+
+      tree.forEach(spv => {
+        if (spv.children) {
+          spv.children.forEach(pdv => {
+            plans.forEach(p => {
+              grandPlans[p] += (pdv.plans && pdv.plans[p] ? pdv.plans[p] : 0);
+            });
+            grandTot += (pdv.total || 0);
+          });
+        }
+      });
+
+      const subEl = document.getElementById('mixPlanesSubtitle');
+      if (subEl) {
+        subEl.innerHTML = `Cierre Mensual <strong>${selMonth} 2026</strong>: <strong>${grandTot.toLocaleString('es-PE')} Unidades</strong> &bull; Desglose por RB de Plan`;
+      }
+
+      const trTotal = document.createElement('tr');
+      trTotal.className = 'row-grand-total';
+
+      let planColsHTML = plans.map(p => {
+        const cnt = grandPlans[p];
+        const pct = grandTot > 0 ? (cnt / grandTot * 100) : 0;
+        const pctStr = cnt > 0 ? ` (${pct.toFixed(1)}%)` : '';
+        return `<td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800;">${cnt > 0 ? cnt.toLocaleString('es-PE') + ' u.' + `<span style="font-size: 10.5px; color: #475569; font-weight: 600; margin-left: 2px;">${pctStr}</span>` : '-'}</td>`;
+      }).join('');
+
+      trTotal.innerHTML = `
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS (${selMonth}) ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        ${planColsHTML}
+      `;
+      tbody.appendChild(trTotal);
+
+      tree.forEach(spv => {
+        if (spv.children) {
+          spv.children.forEach(pdv => {
+            const isPdvExpanded = mixExpandedState[pdv.name] === true;
+
+            const trPdv = document.createElement('tr');
+            trPdv.className = 'row-pdv-shaded';
+
+            let pdvColsHTML = plans.map(p => getPlanCellHTML(p, pdv.plans ? pdv.plans[p] : 0, true)).join('');
+
+            trPdv.innerHTML = `
+              <td style="padding: 9px 12px;">
+                <div class="node-cell indent-0">
+                  <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleMixPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
+                  <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
+                </div>
+              </td>
+              ${pdvColsHTML}
+            `;
+            tbody.appendChild(trPdv);
+
+            if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
+              pdv.children.forEach(ase => {
+                const trAse = document.createElement('tr');
+                trAse.className = 'row-asesor';
+
+                let aseColsHTML = plans.map(p => getPlanCellHTML(p, ase.plans ? ase.plans[p] : 0, false)).join('');
+                const userCode = ase.name;
+                const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode]) ? window.USER_CODE_MAP[userCode] : userCode;
+
+                trAse.innerHTML = `
+                  <td style="padding: 7px 12px;">
+                    <div class="node-cell indent-1">
+                      <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
+                    </div>
+                  </td>
+                  ${aseColsHTML}
+                `;
+                tbody.appendChild(trAse);
+              });
+            }
+          });
+        }
+      });
+    }
+
+    // ================= PAGE 5: PERMANENCIA M6 =================
+    function togglePermPdv(pdvName) {
+      permExpandedState[pdvName] = !permExpandedState[pdvName];
+      renderPermanenciaTable();
+    }
+
+    function getPermBadgeHTML(pctVal) {
+      if (pctVal === null || pctVal === undefined) return `-`;
+      if (pctVal >= 50.0) {
+        return `<span style="background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px;">✓ ${pctVal.toFixed(2)}%</span>`;
+      } else {
+        return `<span style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px;">⚠️ ${pctVal.toFixed(2)}%</span>`;
+      }
+    }
+
     function renderPermanenciaTable() {
       const tbody = document.getElementById('permanenciaTbody');
       if (!tbody) return;
       tbody.innerHTML = '';
 
+      const selMonth = document.getElementById('monthPermanenciaFilter') ? document.getElementById('monthPermanenciaFilter').value : 'Agosto';
+      const selZone = document.getElementById('zoneSelectPage5') ? document.getElementById('zoneSelectPage5').value : 'ALL';
+
       const permData = window.PERMANENCIA_DATA;
       if (!permData || !permData.tree) return;
 
-      const s = permData.summary;
+      const s = permData.summary || {};
 
-      // Grand Total Row
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><span>TOTAL FORTALECERNOS</span></div></td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${s.total_sales_jan.toLocaleString('es-PE')}</td>
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS (${selMonth})</span></div></td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${s.total_sales_jan ? s.total_sales_jan.toLocaleString('es-PE') + ' u.' : '-'}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m0_pct ? s.m0_pct.toFixed(2) + '%' : '-'}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m1_pct ? s.m1_pct.toFixed(2) + '%' : '-'}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m2_pct ? s.m2_pct.toFixed(2) + '%' : '-'}</td>
@@ -2352,6 +2616,7 @@ function toggleDotacionDays() {
       tbody.appendChild(trTotal);
 
       permData.tree.forEach(pdv => {
+        if (selZone !== 'ALL' && pdv.zona && pdv.zona !== selZone) return;
         const isPdvExpanded = permExpandedState[pdv.name] === true;
 
         const trPdv = document.createElement('tr');
@@ -2364,14 +2629,14 @@ function toggleDotacionDays() {
               <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
             </div>
           </td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${pdv.total.toLocaleString('es-PE')}</td>
-          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m0 !== null ? pdv.m0.toFixed(2) + '%' : '-'}</td>
-          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m1 !== null ? pdv.m1.toFixed(2) + '%' : '-'}</td>
-          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m2 !== null ? pdv.m2.toFixed(2) + '%' : '-'}</td>
-          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m3 !== null ? pdv.m3.toFixed(2) + '%' : '-'}</td>
-          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m4 !== null ? pdv.m4.toFixed(2) + '%' : '-'}</td>
-          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m5 !== null ? pdv.m5.toFixed(2) + '%' : '-'}</td>
-          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m6 !== null ? pdv.m6.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${pdv.total ? pdv.total.toLocaleString('es-PE') + ' u.' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m0 !== null && pdv.m0 !== undefined ? pdv.m0.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m1 !== null && pdv.m1 !== undefined ? pdv.m1.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m2 !== null && pdv.m2 !== undefined ? pdv.m2.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m3 !== null && pdv.m3 !== undefined ? pdv.m3.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m4 !== null && pdv.m4 !== undefined ? pdv.m4.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m5 !== null && pdv.m5 !== undefined ? pdv.m5.toFixed(2) + '%' : '-'}</td>
+          <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m6 !== null && pdv.m6 !== undefined ? pdv.m6.toFixed(2) + '%' : '-'}</td>
           <td class="val-cell num-font" style="padding: 9px 12px;">${getPermBadgeHTML(pdv.perm_m6)}</td>
         `;
         tbody.appendChild(trPdv);
@@ -2382,7 +2647,7 @@ function toggleDotacionDays() {
             trAse.className = 'row-asesor';
 
             const userCode = ase.name;
-            const realName = window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : userCode;
+            const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode]) ? window.USER_CODE_MAP[userCode] : userCode;
 
             trAse.innerHTML = `
               <td style="padding: 7px 12px;">
@@ -2390,14 +2655,14 @@ function toggleDotacionDays() {
                   <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
                 </div>
               </td>
-              <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${ase.total.toLocaleString('es-PE')}</td>
-              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m0 !== null ? ase.m0.toFixed(2) + '%' : '-'}</td>
-              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m1 !== null ? ase.m1.toFixed(2) + '%' : '-'}</td>
-              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m2 !== null ? ase.m2.toFixed(2) + '%' : '-'}</td>
-              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m3 !== null ? ase.m3.toFixed(2) + '%' : '-'}</td>
-              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m4 !== null ? ase.m4.toFixed(2) + '%' : '-'}</td>
-              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m5 !== null ? ase.m5.toFixed(2) + '%' : '-'}</td>
-              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m6 !== null ? ase.m6.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${ase.total ? ase.total.toLocaleString('es-PE') + ' u.' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m0 !== null && ase.m0 !== undefined ? ase.m0.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m1 !== null && ase.m1 !== undefined ? ase.m1.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m2 !== null && ase.m2 !== undefined ? ase.m2.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m3 !== null && ase.m3 !== undefined ? ase.m3.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m4 !== null && ase.m4 !== undefined ? ase.m4.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m5 !== null && ase.m5 !== undefined ? ase.m5.toFixed(2) + '%' : '-'}</td>
+              <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m6 !== null && ase.m6 !== undefined ? ase.m6.toFixed(2) + '%' : '-'}</td>
               <td class="val-cell num-font" style="padding: 7px 12px;">${getPermBadgeHTML(ase.perm_m6)}</td>
             `;
             tbody.appendChild(trAse);
@@ -2406,17 +2671,45 @@ function toggleDotacionDays() {
       });
     }
 
+    // ================= PAGE 7: REPORTE DE CALIDAD Y NPS =================
+    function renderNpsHeader() {
+      const thead = document.getElementById('npsThead');
+      if (!thead) return;
+
+      let weekHeadersHTML = '';
+      if (isWeeksExpanded) {
+        weekHeadersHTML = `
+          <th class="val-cell">SEM1</th>
+          <th class="val-cell">SEM2</th>
+          <th class="val-cell">SEM3</th>
+          <th class="val-cell">SEM4</th>
+          <th class="val-cell">SEM5</th>
+        `;
+      }
+
+      thead.innerHTML = `
+        <tr>
+          <th style="min-width: 260px;">ESTRUCTURA</th>
+          ${weekHeadersHTML}
+          <th class="val-cell">TOTAL NPS</th>
+          <th class="val-cell">ENCUESTAS (Q)</th>
+          <th class="val-cell">% TOTAL Q</th>
+          <th class="val-cell" style="min-width: 140px;">ESTADO CUMPLIMIENTO</th>
+        </tr>
+      `;
+    }
+
     function renderNpsTable() {
       const tbody = document.getElementById('npsTbody');
+      if (!tbody) return;
       tbody.innerHTML = '';
 
-      const selSpv = document.getElementById('spvNpsFilter').value;
-      const selZone = document.getElementById('zoneSelectPage3').value;
+      const selSpv = document.getElementById('spvNpsFilter') ? document.getElementById('spvNpsFilter').value : 'ALL';
+      const selZone = document.getElementById('zoneSelectPage7') ? document.getElementById('zoneSelectPage7').value : 'ALL';
       const npsData = window.NPS_DATA;
       if (!npsData || !npsData[currentNpsChannel]) return;
 
       const channelData = npsData[currentNpsChannel];
-      const isPostventa = (currentNpsChannel === 'postventa');
       const targetMeta = npsData.target || 58.0;
 
       let pdvs = channelData.pdvs || [];
@@ -2437,7 +2730,7 @@ function toggleDotacionDays() {
 
       const kpiGrid = document.getElementById('npsKpiCards');
       if (kpiGrid) {
-        const bestSem = isPostventa ? 'SEM1 & SEM4 (100% NPS)' : 'SEM3 (89% NPS)';
+        const bestSem = (currentNpsChannel === 'postventa') ? 'SEM1 & SEM4 (100% NPS)' : 'SEM3 (89% NPS)';
         kpiGrid.innerHTML = `
           <div class="kpi-card">
             <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
@@ -2458,7 +2751,7 @@ function toggleDotacionDays() {
           <div class="kpi-card">
             <div class="kpi-icon-box" style="background: #f0f9ff; color: #0369a1;"><i class="fa-solid fa-comments"></i></div>
             <div>
-              <div class="kpi-title">Total Encuestas</div>
+              <div class="kpi-title">Total Encuestas (Q)</div>
               <div class="kpi-value">${totQ} Respuestas</div>
             </div>
           </div>
@@ -2476,24 +2769,18 @@ function toggleDotacionDays() {
       trTotal.className = 'row-grand-total';
 
       let weekTotalCells = '';
-      if (isWeeksExpanded && channelData.summary) {
-        const s1 = channelData.summary.sem1 || {nps:0, q:0};
-        const s2 = channelData.summary.sem2 || {nps:0, q:0};
-        const s3 = channelData.summary.sem3 || {nps:0, q:0};
-        const s4 = channelData.summary.sem4 || {nps:0, q:0};
-        const s5 = channelData.summary.sem5 || {nps:0, q:0};
-
+      if (isWeeksExpanded) {
         weekTotalCells = `
-          <td class="val-cell num-font">${getNpsBadgeHTML(s1.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s1.q})</span></td>
-          <td class="val-cell num-font">${getNpsBadgeHTML(s2.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s2.q})</span></td>
-          <td class="val-cell num-font">${getNpsBadgeHTML(s3.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s3.q})</span></td>
-          <td class="val-cell num-font">${getNpsBadgeHTML(s4.nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s4.q})</span></td>
-          ${isPostventa ? `<td class="val-cell num-font">${getNpsBadgeHTML(s5 ? s5.nps : 0, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${s5 ? s5.q : 0})</span></td>` : ''}
+          <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 1, targetMeta)}</td>
+          <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 2, targetMeta)}</td>
+          <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 3, targetMeta)}</td>
+          <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 4, targetMeta)}</td>
+          <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 5, targetMeta)}</td>
         `;
       }
 
       trTotal.innerHTML = `
-        <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS (${currentNpsChannel.toUpperCase()}) ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
         ${weekTotalCells}
         <td class="val-cell num-font" style="font-size: 14px; font-weight: 800;">${getNpsBadgeHTML(totNps, targetMeta)}</td>
         <td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${totQ}</td>
@@ -2506,29 +2793,20 @@ function toggleDotacionDays() {
 
       let visibleRows = 0;
 
-      // Sort PDVs from highest to lowest TOTAL NPS (total_nps descending)
-      pdvs.sort((a, b) => (b.total_nps || 0) - (a.total_nps || 0));
-
       pdvs.forEach(pdv => {
-        const isPdvExpanded = npsExpandedState[pdv.name] === true;
+        const isPdvExpanded = npsExpandedState[pdv.name] !== false;
 
         const trPdv = document.createElement('tr');
         trPdv.className = 'row-pdv-shaded';
 
         let pdvWeeksHTML = '';
         if (isWeeksExpanded) {
-          const s1 = pdv.sem1 || {nps:0, q:0};
-          const s2 = pdv.sem2 || {nps:0, q:0};
-          const s3 = pdv.sem3 || {nps:0, q:0};
-          const s4 = pdv.sem4 || {nps:0, q:0};
-          const s5 = pdv.sem5 || {nps:0, q:0};
-
           pdvWeeksHTML = `
-            <td class="val-cell num-font">${s1.q > 0 ? getNpsBadgeHTML(s1.nps, targetMeta) + ` (${s1.q})` : '-'}</td>
-            <td class="val-cell num-font">${s2.q > 0 ? getNpsBadgeHTML(s2.nps, targetMeta) + ` (${s2.q})` : '-'}</td>
-            <td class="val-cell num-font">${s3.q > 0 ? getNpsBadgeHTML(s3.nps, targetMeta) + ` (${s3.q})` : '-'}</td>
-            <td class="val-cell num-font">${s4.q > 0 ? getNpsBadgeHTML(s4.nps, targetMeta) + ` (${s4.q})` : '-'}</td>
-            ${isPostventa ? `<td class="val-cell num-font">${s5.q > 0 ? getNpsBadgeHTML(s5.nps, targetMeta) + ` (${s5.q})` : '-'}</td>` : ''}
+            <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 1, targetMeta)}</td>
+            <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 2, targetMeta)}</td>
+            <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 3, targetMeta)}</td>
+            <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 4, targetMeta)}</td>
+            <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 5, targetMeta)}</td>
           `;
         }
 
@@ -2542,7 +2820,7 @@ function toggleDotacionDays() {
           ${pdvWeeksHTML}
           <td class="val-cell num-font">${getNpsBadgeHTML(pdv.total_nps, targetMeta)}</td>
           <td class="val-cell num-font">${pdv.total_q}</td>
-          <td class="val-cell num-font">${pdv.pct_q}%</td>
+          <td class="val-cell num-font">${pdv.total_pct_q !== undefined ? pdv.total_pct_q : (pdv.pct_q || 0)}%</td>
           <td class="val-cell num-font">
             ${pdv.total_nps >= targetMeta ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`}
           </td>
@@ -2550,27 +2828,19 @@ function toggleDotacionDays() {
         tbody.appendChild(trPdv);
         visibleRows++;
 
-        if (isPdvExpanded && pdv.asesores && Array.isArray(pdv.asesores)) {
-          // Sort Asesores from highest to lowest TOTAL NPS (total_nps descending)
-          pdv.asesores.sort((a, b) => (b.total_nps || 0) - (a.total_nps || 0));
-          pdv.asesores.forEach(ase => {
+        if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
+          pdv.children.forEach(ase => {
             const trAse = document.createElement('tr');
             trAse.className = 'row-asesor';
 
             let aseWeeksHTML = '';
             if (isWeeksExpanded) {
-              const s1 = ase.sem1 || {nps:0, q:0};
-              const s2 = ase.sem2 || {nps:0, q:0};
-              const s3 = ase.sem3 || {nps:0, q:0};
-              const s4 = ase.sem4 || {nps:0, q:0};
-              const s5 = ase.sem5 || {nps:0, q:0};
-
               aseWeeksHTML = `
-                <td class="val-cell num-font">${s1.q > 0 ? getNpsBadgeHTML(s1.nps, targetMeta) + ` (${s1.q})` : '-'}</td>
-                <td class="val-cell num-font">${s2.q > 0 ? getNpsBadgeHTML(s2.nps, targetMeta) + ` (${s2.q})` : '-'}</td>
-                <td class="val-cell num-font">${s3.q > 0 ? getNpsBadgeHTML(s3.nps, targetMeta) + ` (${s3.q})` : '-'}</td>
-                <td class="val-cell num-font">${s4.q > 0 ? getNpsBadgeHTML(s4.nps, targetMeta) + ` (${s4.q})` : '-'}</td>
-                ${isPostventa ? `<td class="val-cell num-font">${s5.q > 0 ? getNpsBadgeHTML(s5.nps, targetMeta) + ` (${s5.q})` : '-'}</td>` : ''}
+                <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 1, targetMeta)}</td>
+                <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 2, targetMeta)}</td>
+                <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 3, targetMeta)}</td>
+                <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 4, targetMeta)}</td>
+                <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 5, targetMeta)}</td>
               `;
             }
 
@@ -2582,14 +2852,14 @@ function toggleDotacionDays() {
                 <div class="node-cell indent-1">
                   <div style="display: flex; flex-direction: column;">
                     <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
-                    <span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>
+                    ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
                   </div>
                 </div>
               </td>
               ${aseWeeksHTML}
               <td class="val-cell num-font">${getNpsBadgeHTML(ase.total_nps, targetMeta)}</td>
               <td class="val-cell num-font">${ase.total_q}</td>
-              <td class="val-cell num-font">${ase.pct_q}%</td>
+              <td class="val-cell num-font">${ase.total_pct_q !== undefined ? ase.total_pct_q : (ase.pct_q || 0)}%</td>
               <td class="val-cell num-font">
                 ${ase.total_nps >= targetMeta ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`}
               </td>
@@ -2600,306 +2870,47 @@ function toggleDotacionDays() {
         }
       });
 
-      document.getElementById('rowCountLabel').textContent = 'Equipo de Operaciones • 2026';
+      const labelEl = document.getElementById('rowCountLabel');
+      if (labelEl) labelEl.textContent = `${visibleRows} filas en reporte de calidad y NPS (${currentNpsChannel.toUpperCase()})`;
     }
 
-    // ================= PAGE 4: TASA DE USO DE DESCUENTO RENDER LOGIC =================
-    function handleDiscountSearch() {
-      discountSearchQuery = document.getElementById('discountSearchInput').value.trim().toLowerCase();
-      if (discountSearchQuery.length > 0) {
-        window.DISCOUNT_DATA.tree.forEach(spv => {
-          spv.children.forEach(pdv => { discountExpandedState[pdv.id] = true; });
-        });
+    function getWeekCellBadgeHTML(node, wNum, targetMeta) {
+      if (!node) return '-';
+      const q = node[`sem${wNum}_q`];
+      const nps = node[`sem${wNum}_nps`];
+      if (q !== undefined && q !== null && q > 0) {
+        return `${getNpsBadgeHTML(nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${q}Q)</span>`;
       }
-      renderDiscountTable();
+      return '-';
     }
 
-    function toggleDiscountNode(nodeId, event) {
-      if (event) event.stopPropagation();
-      discountExpandedState[nodeId] = !discountExpandedState[nodeId];
-      renderDiscountTable();
-    }
-
-    function toggleDiscountExpandAll() {
-      isDiscountAllExpanded = !isDiscountAllExpanded;
-      window.DISCOUNT_DATA.tree.forEach(spv => {
-        spv.children.forEach(pdv => { discountExpandedState[pdv.id] = isDiscountAllExpanded; });
-      });
-      const btnEl = document.getElementById('expandDiscountBtnText'); if (btnEl) btnEl.textContent = isDiscountAllExpanded ? 'Colapsar Todo' : 'Expandir Todo';
-      renderDiscountTable();
-    }
-
-    function renderDiscountHeader() {
-      const thead = document.getElementById('discountThead');
-      thead.innerHTML = `
-        <tr>
-          <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
-          <th class="val-cell">TOTAL VENTAS PORTA OSS MONO</th>
-          <th class="val-cell">VENTAS CON DESCUENTO 50%</th>
-          <th class="val-cell">% TASA DE USO DESCUENTO</th>
-          <th class="val-cell" style="min-width: 180px;">ESTADO / ALERTA DESVIACIÓN</th>
-        </tr>
-      `;
-    }
-
-    function renderDiscountTable() {
-      const tbody = document.getElementById('discountTbody');
-      tbody.innerHTML = '';
-
-      const discData = window.DISCOUNT_DATA;
-      const selSpv = document.getElementById('spvDiscountFilter').value;
-      const selZone = document.getElementById('zoneSelectPage4').value;
-      const targetMeta = discData.target_pct;
-
-      // Extract all PDVs across supervisors
-      let allPdvs = [];
-      discData.tree.forEach(spv => {
-        if (selSpv === 'ALL' || spv.name === selSpv) {
-          spv.children.forEach(pdv => {
-            if (selZone === 'ALL' || pdv.zona === selZone) {
-              allPdvs.push(pdv);
-            }
-          });
-        }
-      });
-
-      // Calculate totals for current filter view
-      let totMono = 0;
-      let totDesc = 0;
-      allPdvs.forEach(p => {
-        totMono += p.tot_porta_mono;
-        totDesc += p.tot_desc_50;
-      });
-
-      const pctTasaUso = totMono > 0 ? roundOneDec(totDesc / totMono * 100) : 0.0;
-      const isExcede = pctTasaUso > targetMeta;
-
-      // Render KPI cards for Page 4 (Using "Tope Máximo Tasa Uso")
-      const kpiGrid = document.getElementById('discountKpiCards');
-
-      if (kpiGrid) {
-        kpiGrid.innerHTML = `
-          <div class="kpi-card">
-            <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
-            <div>
-              <div class="kpi-title">Tope Máximo Tasa Uso</div>
-              <div class="kpi-value">70.0% <span style="font-size: 11px; font-weight: 600; color: #64748b;">(Límite)</span></div>
-            </div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-icon-box" style="background: ${isExcede ? '#fef2f2' : '#f0fdf4'}; color: ${isExcede ? '#991b1b' : '#166534'};">
-              <i class="fa-solid ${isExcede ? 'fa-triangle-exclamation' : 'fa-circle-check'}"></i>
-            </div>
-            <div>
-              <div class="kpi-title">Tasa Uso Lograda (Julio)</div>
-              <div class="kpi-value" style="color: ${isExcede ? '#b91c1c' : '#15803d'};">${pctTasaUso.toFixed(1)}% ${getDiscountUsageBadgeHTML(pctTasaUso, targetMeta)}</div>
-            </div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-icon-box" style="background: #f0f9ff; color: #0369a1;"><i class="fa-solid fa-mobile-screen-button"></i></div>
-            <div>
-              <div class="kpi-title">Ventas PORTA OSS MONO</div>
-              <div class="kpi-value">${totMono} Unidades</div>
-            </div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-tags"></i></div>
-            <div>
-              <div class="kpi-title">Con Descuento 50%</div>
-              <div class="kpi-value" style="color: #a16207;">${totDesc} Unidades</div>
-            </div>
-          </div>
-        `;
-      }
-
-      // Grand Total Row
-      const trTotal = document.createElement('tr');
-      trTotal.className = 'row-grand-total';
-      trTotal.innerHTML = `
-        <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''} ${selSpv !== 'ALL' ? '[' + selSpv + ']' : ''}</span></div></td>
-        <td class="val-cell num-font">${totMono.toLocaleString('es-PE')}</td>
-        <td class="val-cell num-font" style="color: #38bdf8;">${totDesc.toLocaleString('es-PE')}</td>
-        <td class="val-cell num-font" style="font-size: 13.5px;">${getDiscountUsageBadgeHTML(pctTasaUso, targetMeta)}</td>
-        <td class="val-cell num-font">${getDiscountStatusHTML(pctTasaUso, targetMeta)}</td>
-      `;
-      tbody.appendChild(trTotal);
-
-      let visibleRows = 0;
-
-      allPdvs.forEach(pdv => {
-        let pdvMatch = pdv.name.toLowerCase().includes(discountSearchQuery);
-        let matchingAsesores = pdv.children.filter(ase => ase.name.toLowerCase().includes(discountSearchQuery));
-
-        if (discountSearchQuery.length > 0 && !pdvMatch && matchingAsesores.length === 0) return;
-
-        visibleRows++;
-        const isPdvExpanded = discountExpandedState[pdv.id] === true;
-
-        const trPdv = document.createElement('tr');
-        trPdv.className = 'row-pdv-shaded';
-        trPdv.innerHTML = `
-          <td>
-            <div class="node-cell indent-0">
-              <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleDiscountNode('${pdv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
-              <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
-            </div>
-          </td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${pdv.tot_porta_mono.toLocaleString('es-PE')}</td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.tot_desc_50.toLocaleString('es-PE')}</td>
-          <td class="val-cell num-font">${getDiscountUsageBadgeHTML(pdv.pct_tasa_uso, targetMeta)}</td>
-          <td class="val-cell num-font">${getDiscountStatusHTML(pdv.pct_tasa_uso, targetMeta)}</td>
-        `;
-        tbody.appendChild(trPdv);
-
-        if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
-          pdv.children.forEach(ase => {
-            if (discountSearchQuery.length > 0 && !pdvMatch && !ase.name.toLowerCase().includes(discountSearchQuery)) return;
-
-            visibleRows++;
-            const trAse = document.createElement('tr');
-            trAse.className = 'row-asesor';
-
-            const realName = (window.USER_CODE_MAP && window.USER_CODE_MAP[ase.name]) ? window.USER_CODE_MAP[ase.name] : '';
-
-            trAse.innerHTML = `
-              <td>
-                <div class="node-cell indent-1">
-                  <div style="display: flex; flex-direction: column;">
-                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${ase.name}</span>
-                    ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
-                  </div>
-                </div>
-              </td>
-              <td class="val-cell num-font">${ase.tot_porta_mono}</td>
-              <td class="val-cell num-font" style="color: #0369a1; font-weight: 700;">${ase.tot_desc_50}</td>
-              <td class="val-cell num-font">${ase.tot_porta_mono > 0 ? getDiscountUsageBadgeHTML(ase.pct_tasa_uso, targetMeta) : '-'}</td>
-              <td class="val-cell num-font">${ase.tot_porta_mono > 0 ? getDiscountStatusHTML(ase.pct_tasa_uso, targetMeta) : '-'}</td>
-            `;
-            tbody.appendChild(trAse);
-          });
-        }
-      });
-
-      document.getElementById('rowCountLabel').textContent = 'Equipo de Operaciones • 2026';
-    }
-
-    function roundOneDec(val) {
-      return Math.round(val * 10) / 10;
-    }
-
-    function openSupervisorPlanDrawer(spvName) {
-      document.getElementById('drawerTypeBadge').textContent = 'Plan de Acción de Supervisión';
-      document.getElementById('drawerNodeName').textContent = spvName;
-      document.getElementById('drawerNodeMeta').textContent = `Agosto 2026 \u2022 Producto: ${getProductLabel()}`;
-
-      const diagList = document.getElementById('drawerPdvDiagnosticsList');
-      diagList.innerHTML = '';
-
-      let flaggedCount = 0;
-      const targetSpv = window.SALES_DATA.tree.find(s => s.name === spvName);
-
-      if (targetSpv && targetSpv.children) {
-        targetSpv.children.forEach(pdv => {
-          if (getGlobalSalesInMonth(pdv, currentMonthFilter) === 0) return;
-
-          const pdvUnits = getNodeUnits(pdv, currentMonthFilter);
-          const pdvQuota = getNodeQuota(pdv, currentMonthFilter);
-          const pdvProjUnits = Math.round((pdvUnits / ELAPSED_WD) * TOTAL_WD);
-          const pdvProjComp = pdvQuota > 0 ? (pdvProjUnits / pdvQuota * 100) : 0;
-          
-          const pdvArribos = getNodeArribos(pdv, currentMonthFilter);
-          const pdvConv = pdvArribos > 0 ? (pdvUnits / pdvArribos * 100) : 0;
-
-          if (pdvProjComp < 100) {
-            flaggedCount++;
-
-            let microAlerts = [];
-            microAlerts.push(`Proyección de cierre por debajo de la cuota (${pdvProjComp.toFixed(1)}% / ${pdvProjUnits} u. de ${pdvQuota} u. meta).`);
-
-            if (pdvArribos > 0 && pdvConv < 35) {
-              microAlerts.push(`Conversión de tienda baja (${pdvConv.toFixed(1)}% vs Meta 35.0% \u2022 Arribos: ${pdvArribos} int.).`);
-            }
-
-            let lowAsesores = [];
-            if (pdv.children && Array.isArray(pdv.children)) {
-              pdv.children.forEach(ase => {
-                const aseUnits = getNodeUnits(ase, currentMonthFilter);
-                if (aseUnits <= 3) {
-                  lowAsesores.push(`${ase.name} (${aseUnits})`);
-                }
-              });
-            }
-            if (lowAsesores.length > 0) {
-              microAlerts.push(`Asesor(es) con baja venta: <strong>${lowAsesores.join(', ')}</strong>.`);
-            }
-
-            let statusClass = 'status-yellow';
-            if (pdvProjComp < 50 || pdvUnits === 0) statusClass = 'status-red';
-
-            const card = document.createElement('div');
-            card.className = `pdv-diag-card ${statusClass}`;
-            card.innerHTML = `
-              <div class="pdv-card-header">
-                <div class="pdv-card-name">${pdv.name}</div>
-                <div>${getComplianceBadgeHTML(pdvProjComp)}</div>
-              </div>
-              
-              <div class="progress-bar-bg">
-                <div class="progress-bar-fill" style="width: ${Math.min(pdvProjComp, 100)}%; background: ${pdvProjComp < 50 ? '#ef4444' : '#f59e0b'};"></div>
-              </div>
-
-              <div class="metrics-mini-grid">
-                <div class="metric-mini-item"><span class="metric-mini-label">Avance (3D)</span><span class="metric-mini-val" style="color: #dc2626;">${pdvUnits}</span></div>
-                <div class="metric-mini-item"><span class="metric-mini-label">Cuota Mes</span><span class="metric-mini-val">${pdvQuota}</span></div>
-                <div class="metric-mini-item"><span class="metric-mini-label">Proyección</span><span class="metric-mini-val" style="color: #7c3aed;">${pdvProjUnits}</span></div>
-                <div class="metric-mini-item"><span class="metric-mini-label">% Conversión</span><span class="metric-mini-val">${pdvArribos > 0 ? pdvConv.toFixed(1) + '%' : '-'}</span></div>
-              </div>
-
-              <div class="pdv-alert-box">
-                <div class="pdv-alert-header"><i class="fa-solid fa-triangle-exclamation"></i> Diagnóstico Específico en Tienda:</div>
-                <ul class="pdv-alert-list">${microAlerts.map(alt => `<li>${alt}</li>`).join('')}</ul>
-              </div>
-            `;
-            diagList.appendChild(card);
-          }
-        });
-      }
-
-      if (flaggedCount === 0) {
-        diagList.innerHTML = `
-          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 18px; text-align: center; color: #166534;">
-            <i class="fa-solid fa-circle-check" style="font-size: 32px; color: #22c55e; margin-bottom: 8px;"></i>
-            <div style="font-size: 14px; font-weight: 800;">¡Desempeño Óptimo!</div>
-            <div style="font-size: 12px; margin-top: 4px; color: #15803d;">Todos los PDVs de <strong>${spvName}</strong> proyectan al 100% o más de su cuota mensual en Agosto 2026.</div>
-          </div>
-        `;
-      }
-
-      const actionContainer = document.getElementById('supervisorActionContainer');
-      actionContainer.innerHTML = `
-        <div class="supervisor-action-card">
-          <div class="supervisor-action-header">
-            <i class="fa-solid fa-pen-to-square"></i>
-            <div class="supervisor-action-title">Acciones Tácticas del Supervisor</div>
-          </div>
-          
-          <div class="supervisor-blank-area">
-            <i class="fa-solid fa-clipboard-question" style="font-size: 26px; color: #f87171; margin-bottom: 8px;"></i>
-            <div style="font-weight: 800; font-size: 13.5px; color: #ffffff;">[ Espacio Reservado para Acciones de ${spvName} ]</div>
-            <div style="font-size: 11px; color: #94a3b8; margin-top: 6px; line-height: 1.4;">
-              Las acciones específicas de este supervisor se ingresarán para la reunión con gerencia.
-            </div>
-          </div>
-        </div>
-      `;
-
-      document.getElementById('drawerOverlay').classList.add('active');
-    }
-
-    function closeDrawer(event) {
-      document.getElementById('drawerOverlay').classList.remove('active');
-    }
-  </script>
-
+  // Global Exports for window/globalThis
+  if (typeof window !== 'undefined') {
+    window.switchSlidePage = switchSlidePage;
+    window.toggleDotacionPdv = toggleDotacionPdv;
+    window.renderDotacionTable = renderDotacionTable;
+    window.renderNpsTable = renderNpsTable;
+    window.renderNpsHeader = renderNpsHeader;
+    window.selectNpsChannel = selectNpsChannel;
+    window.toggleNpsWeeks = toggleNpsWeeks;
+    window.renderPermanenciaTable = renderPermanenciaTable;
+    window.renderMixPlanesTable = renderMixPlanesTable;
+    window.renderCedenteTable = renderCedenteTable;
+    window.renderDiscountTable = renderDiscountTable;
+  }
+  if (typeof globalThis !== 'undefined') {
+    globalThis.switchSlidePage = switchSlidePage;
+    globalThis.toggleDotacionPdv = toggleDotacionPdv;
+    globalThis.renderDotacionTable = renderDotacionTable;
+    globalThis.renderNpsTable = renderNpsTable;
+    globalThis.renderNpsHeader = renderNpsHeader;
+    globalThis.selectNpsChannel = selectNpsChannel;
+    globalThis.toggleNpsWeeks = toggleNpsWeeks;
+    globalThis.renderPermanenciaTable = renderPermanenciaTable;
+    globalThis.renderMixPlanesTable = renderMixPlanesTable;
+    globalThis.renderCedenteTable = renderCedenteTable;
+    globalThis.renderDiscountTable = renderDiscountTable;
+  }
+</script>
 </body>
 </html>

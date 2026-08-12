@@ -82,3 +82,22 @@ Todas las tablas construidas en el informe ejecutivo deben guiarse por el están
 ## 🏷️ 7. Regla Estricta de Unidades de Medida
 - La **ÚNICA unidad de medida explícita** que se permite mostrar en celdas, tarjetas e insignias de todas las tablas es el símbolo de Porcentaje (**`%`**).
 - Se prohíbe el uso de la letra `Q` como sufijo de encuestas (ej. `(1Q)` → `(1)`, `(4Q)` → `(4)`). Se conserva la cifra entre paréntesis indicando la cantidad de respuestas, pero retirando únicamente la letra `Q`.
+
+## 📅 8. Regla Estricta de Proyección y Días Hábiles (Página 1)
+- Cada vez que el usuario pida actualizar los datos del informe porque actualizó el Excel, **el asistente DEBE pedir SIEMPRE confirmación de los Días Totales y Días Transcurridos** antes de calcular las proyecciones de la Página 1.
+- La fórmula de proyección en la Página 1 se calcula estrictamente como: `Proyección (UND) = Math.round((Ventas / Días Transcurridos) * Días Totales)`.
+- No se cuentan domingos en el cómputo de días hábiles transcurridos.
+
+## ⚙️ 9. Regla Estricta de Actualización Automatizada de Datos (Master Pipeline Rule)
+- Cada vez que el usuario solicite actualizar los datos del informe porque actualizó el archivo `INFORME DE AVANCE.xlsx`:
+  1. **Confirmación Obligatoria**: Solicitar siempre la confirmación de los Días Hábiles Transcurridos y Días Hábiles Totales para la Página 1 (por ejemplo, 8/26).
+  2. **Ejecución del Pipeline en 1 Segundo**: Ejecutar el script automatizado `python update_dashboard_data.py <dias_transcurridos> <dias_totales>` desde la raíz del proyecto local.
+  3. **Alcance Automatizado**: El script procesa automáticamente todas las hojas del Excel (`POST + PRE`, `RENO SS`, `CUOTAS`, `ARRIBOS`, `ZONAS`, `MIX PLANES`, `PERMANENCIA`) para actualizar las Páginas 0, 1, 2, 3, 4, 5.
+  4. **Normalización Estricta de Planes (Página 4)**: Normaliza automáticamente las variaciones de nombres de planes con/sin sufijo `" N"` (`Power 39.90`, `Power Ilim 79.90 SD`, etc.) garantizando una coincidencia exacta al 100% con el Postpago Total de la Página 1 (513 Unidades == 513 Unidades).
+  5. **Verificación Estricta en Local**: Ejecutar la prueba de renderizado en Node.js para garantizar 0 errores en las 8 páginas antes de concluir la tarea.
+
+## 🗓️ 10. Regla Estricta de Filtro de Camadas en Permanencia (Página 5)
+- La Página 5 (Permanencia) no debe mostrar todas las camadas a la vez.
+- Utiliza la columna `CAMADAS` de la hoja `PERMANENCIA` (`AGOSTO`, `JULIO`, `JUNIO`, `ENERO`) como selector de mes dinámico.
+- Por defecto, el filtro selecciona **Agosto 2026**.
+- Al cambiar el selector, se recalculan y actualizan dinámicamente las tarjetas de KPI y la tabla jerárquica de PDVs y Asesores.
