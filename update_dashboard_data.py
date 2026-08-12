@@ -3,16 +3,94 @@ import json
 import re
 import sys
 import os
+import shutil
+import subprocess
+import unicodedata
+from pathlib import Path
 
-def run_update(excel_path=r'C:\Users\gueva\Downloads\INFORME DE AVANCE.xlsx', elapsed_wd=8, total_wd=26):
-    data_js_path = 'data.js'
-    html_path = 'index.html'
+PROJECT_DIR = Path(__file__).resolve().parent
+
+
+def strip_text_columns(df):
+    for column in df.columns:
+        dtype = df[column].dtype
+        if pd.api.types.is_object_dtype(dtype) or pd.api.types.is_string_dtype(dtype):
+            df[column] = df[column].astype(str).str.strip()
+
+
+def normalize_person_name(value):
+    text = unicodedata.normalize('NFKD', str(value).strip().upper())
+    text = ''.join(character for character in text if not unicodedata.combining(character))
+    return re.sub(r'\s+', ' ', text)
+
+
+def build_advisor_tenure_map(excel_path):
+    users = pd.read_excel(excel_path, sheet_name='USUARIOS', header=2)
+    required = {'ASESOR', 'FECHA INGRESO'}
+    if not required.issubset(users.columns):
+        raise ValueError('La hoja USUARIOS debe contener ASESOR y FECHA INGRESO.')
+
+    today = pd.Timestamp.today().normalize()
+    tenure_map = {}
+    for _, row in users.iterrows():
+        advisor = str(row.get('ASESOR', '')).strip()
+        raw_date = row.get('FECHA INGRESO')
+        if not advisor or advisor.lower() == 'nan':
+            continue
+
+        normalized_name = normalize_person_name(advisor)
+        if str(raw_date).strip().upper() in {'CESE', 'CESADO', 'CESADA'}:
+            tenure_map[normalized_name] = {
+                'status': 'ceased',
+                'label': 'Cesado',
+            }
+            continue
+
+        start_date = pd.to_datetime(raw_date, errors='coerce')
+        if pd.isna(start_date):
+            continue
+        days = max(0, int((today - start_date.normalize()).days))
+        if days <= 30:
+            category, category_key = '0 a 30 días', 'days-0-30'
+        elif days <= 90:
+            category, category_key = '1 a 3 meses', 'months-1-3'
+        elif days <= 180:
+            category, category_key = '3 a 6 meses', 'months-3-6'
+        elif days <= 365:
+            category, category_key = '6 meses a un año', 'months-6-12'
+        else:
+            category, category_key = 'Mayor a un año', 'over-1-year'
+
+        tenure_map[normalized_name] = {
+            'status': 'active',
+            'category': category,
+            'category_key': category_key,
+            'date': start_date.strftime('%d/%m/%Y'),
+            'days': days,
+        }
+    return tenure_map
+
+
+def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
+    if elapsed_wd is None or total_wd is None:
+        raise ValueError("Debes confirmar los días hábiles transcurridos y totales.")
+    if elapsed_wd <= 0 or total_wd <= 0 or elapsed_wd > total_wd:
+        raise ValueError("Los días hábiles deben ser positivos y los transcurridos no pueden superar el total.")
+
+    excel_path = Path(
+        excel_path
+        or os.environ.get('DASHBOARD_EXCEL_PATH')
+        or (Path.home() / 'Downloads' / 'INFORME DE AVANCE.xlsx')
+    )
+    data_js_path = PROJECT_DIR / 'data.js'
+    html_path = PROJECT_DIR / 'index.html'
 
     print(f"=== STARTING AUTOMATED DATA PIPELINE UPDATE FROM: {excel_path} ===")
     
-    if not os.path.exists(excel_path):
-        print(f"ERROR: File not found at {excel_path}")
-        return
+    if not excel_path.exists():
+        raise FileNotFoundError(f"No se encontró el Excel en: {excel_path}")
+
+    xl = pd.ExcelFile(excel_path)
 
     with open(data_js_path, 'r', encoding='utf-8') as f:
         data_js_content = f.read()
@@ -37,10 +115,10 @@ def run_update(excel_path=r'C:\Users\gueva\Downloads\INFORME DE AVANCE.xlsx', el
     df_mix = pd.read_excel(excel_path, sheet_name='MIX PLANES')
     df_zonas = pd.read_excel(excel_path, sheet_name='ZONAS')
     df_arribos = pd.read_excel(excel_path, sheet_name='ARRIBOS')
+    advisor_tenure_map = build_advisor_tenure_map(excel_path)
 
     for df in [df_post, df_reno, df_cuotas, df_mix, df_zonas, df_arribos]:
-        for col in df.select_dtypes(include='object').columns:
-            df[col] = df[col].astype(str).str.strip()
+        strip_text_columns(df)
 
     # Zone mapping and Store-to-SPV fallback mapping
     store_spv_map = {}
@@ -212,6 +290,10 @@ def run_update(excel_path=r'C:\Users\gueva\Downloads\INFORME DE AVANCE.xlsx', el
                     "user_code": str(ase),
                     "spv": str(spv),
                     "zona": zona,
+                    "tenure": advisor_tenure_map.get(normalize_person_name(ase), {
+                        'status': 'missing',
+                        'label': 'Sin registro',
+                    }),
                     "products": ase_formatted_products
                 })
 
@@ -451,8 +533,7 @@ def run_update(excel_path=r'C:\Users\gueva\Downloads\INFORME DE AVANCE.xlsx', el
     # 7.4 BUILD DOTACION_DATA (Dynamic from DOTACIÓN sheet with full Asesor hierarchy)
     dot_sheet_name = [s for s in xl.sheet_names if 'DOT' in s.upper()][0] if 'xl' in locals() else 'DOTACIÓN'
     df_dot = pd.read_excel(excel_path, sheet_name=dot_sheet_name)
-    for col in df_dot.select_dtypes(include='object').columns:
-        df_dot[col] = df_dot[col].astype(str).str.strip()
+    strip_text_columns(df_dot)
 
     daily_cols = [c for c in df_dot.columns if isinstance(c, pd.Timestamp) or '2026' in str(c) or '08-' in str(c)]
     
@@ -570,8 +651,7 @@ def run_update(excel_path=r'C:\Users\gueva\Downloads\INFORME DE AVANCE.xlsx', el
 
     # 7.5 BUILD PERMANENCIA_DATA (Dynamic for all Camadas: Agosto, Julio, Junio, Enero)
     df_perm = pd.read_excel(excel_path, sheet_name='PERMANENCIA')
-    for col in df_perm.select_dtypes(include='object').columns:
-        df_perm[col] = df_perm[col].astype(str).str.strip()
+    strip_text_columns(df_perm)
 
     months_perm_map = {'AGOSTO': 'Agosto', 'JULIO': 'Julio', 'JUNIO': 'Junio', 'ENERO': 'Enero'}
     permanencia_months = {}
@@ -661,7 +741,7 @@ def run_update(excel_path=r'C:\Users\gueva\Downloads\INFORME DE AVANCE.xlsx', el
     # NPS VENTA
     nps_v_sheet_name = [s for s in xl.sheet_names if 'NPS' in s.upper() and 'VENTA' in s.upper() and 'POST' not in s.upper()][0] if 'xl' in locals() else 'NPS VENTA'
     df_nps_v = pd.read_excel(excel_path, sheet_name=nps_v_sheet_name)
-    for col in df_nps_v.select_dtypes(include='object').columns: df_nps_v[col] = df_nps_v[col].astype(str).str.strip()
+    strip_text_columns(df_nps_v)
 
     pdvs_v = []
     summary_v = {"total_nps": 12.5, "total_q": 8}
@@ -674,14 +754,19 @@ def run_update(excel_path=r'C:\Users\gueva\Downloads\INFORME DE AVANCE.xlsx', el
 
         if est.upper() == 'VENTA':
             summary_v = {
-                "total_nps": parse_nps_val(row.iloc[6], is_pct=True) or 12.5,
-                "total_q": parse_nps_val(row.iloc[7]) or 8
+                "total_nps": parse_nps_val(row.iloc[7], is_pct=True),
+                "total_q": parse_nps_val(row.iloc[8]),
+                "total_pct_q": parse_nps_val(row.iloc[9], is_pct=True),
+                "sem1_nps": parse_nps_val(row.iloc[1], is_pct=True),
+                "sem1_q": parse_nps_val(row.iloc[2]),
+                "sem5_nps": parse_nps_val(row.iloc[4], is_pct=True),
+                "sem5_q": parse_nps_val(row.iloc[5])
             }
             continue
 
-        tot_nps = parse_nps_val(row.iloc[6], is_pct=True) or 0.0
-        tot_q = parse_nps_val(row.iloc[7]) or 0
-        tot_pct_q = parse_nps_val(row.iloc[8], is_pct=True) or 0.0
+        tot_nps = parse_nps_val(row.iloc[7], is_pct=True) or 0.0
+        tot_q = parse_nps_val(row.iloc[8]) or 0
+        tot_pct_q = parse_nps_val(row.iloc[9], is_pct=True) or 0.0
         s1_nps = parse_nps_val(row.iloc[1], is_pct=True)
         s1_q = parse_nps_val(row.iloc[2])
         s5_nps = parse_nps_val(row.iloc[4], is_pct=True)
@@ -710,7 +795,7 @@ def run_update(excel_path=r'C:\Users\gueva\Downloads\INFORME DE AVANCE.xlsx', el
     # NPS POSTVENTA
     nps_p_sheet_name = [s for s in xl.sheet_names if 'NPS' in s.upper() and 'POST' in s.upper()][0] if 'xl' in locals() else 'NPS POSTVENTA'
     df_nps_p = pd.read_excel(excel_path, sheet_name=nps_p_sheet_name)
-    for col in df_nps_p.select_dtypes(include='object').columns: df_nps_p[col] = df_nps_p[col].astype(str).str.strip()
+    strip_text_columns(df_nps_p)
 
     pdvs_p = []
     summary_p = {"total_nps": -50.0, "total_q": 2}
@@ -723,8 +808,11 @@ def run_update(excel_path=r'C:\Users\gueva\Downloads\INFORME DE AVANCE.xlsx', el
 
         if est.upper() == 'POSTVENTA':
             summary_p = {
-                "total_nps": parse_nps_val(row.iloc[4], is_pct=True) or -50.0,
-                "total_q": parse_nps_val(row.iloc[5]) or 2
+                "total_nps": parse_nps_val(row.iloc[4], is_pct=True),
+                "total_q": parse_nps_val(row.iloc[5]),
+                "total_pct_q": parse_nps_val(row.iloc[6], is_pct=True),
+                "sem1_nps": parse_nps_val(row.iloc[1], is_pct=True),
+                "sem1_q": parse_nps_val(row.iloc[2])
             }
             continue
 
@@ -775,9 +863,24 @@ def run_update(excel_path=r'C:\Users\gueva\Downloads\INFORME DE AVANCE.xlsx', el
     with open(data_js_path, 'w', encoding='utf-8') as f:
         f.write(new_data_js)
 
-    print("[OK] MASTER PIPELINE EXECUTED SUCCESSFULLY! DATA.JS AND INDEX.HTML UPDATED IN 1 SECOND!")
+    verifier_path = PROJECT_DIR / 'verify_dashboard.js'
+    node_executable = shutil.which('node')
+    if not verifier_path.exists():
+        raise FileNotFoundError(f"No se encontró la verificación local: {verifier_path}")
+    if not node_executable:
+        raise RuntimeError("Node.js no está disponible en PATH para verificar las ocho páginas.")
+
+    subprocess.run(
+        [node_executable, str(verifier_path)],
+        cwd=PROJECT_DIR,
+        check=True,
+    )
+    print("[OK] Pipeline actualizado y ocho páginas verificadas sin errores.")
 
 if __name__ == '__main__':
-    e_wd = int(sys.argv[1]) if len(sys.argv) > 1 else 8
-    t_wd = int(sys.argv[2]) if len(sys.argv) > 2 else 26
-    run_update(elapsed_wd=e_wd, total_wd=t_wd)
+    if len(sys.argv) != 3:
+        raise SystemExit(
+            "Uso: python update_dashboard_data.py <dias_transcurridos> <dias_totales>\n"
+            "Confirma ambos valores antes de ejecutar; no se cuentan domingos."
+        )
+    run_update(elapsed_wd=int(sys.argv[1]), total_wd=int(sys.argv[2]))

@@ -13,590 +13,15 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    :root {
-      /* Premium Executive Slate Palette */
-      --brand-header-bg: #0f172a;
-      --bg-canvas: #090d16;
-      
-      --slide-bg: #ffffff;
-      --border-light: #e2e8f0;
-      --border-subtle: #f1f5f9;
-      
-      --text-dark: #0f172a;
-      --text-muted: #475569;
-      --text-light: #64748b;
-      
-      --shadow-slide: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      --radius-card: 12px;
-      --radius-btn: 6px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      width: 100%;
-      height: 100vh;
-      background-color: var(--bg-canvas);
-      color: var(--text-dark);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .num-font {
-      font-family: 'IBM Plex Mono', monospace;
-      font-variant-numeric: tabular-nums;
-    }
-
-    /* Widescreen Executive Slide (16:9 Aspect Ratio) */
-    .slide-wrapper {
-      width: 98vw;
-      max-width: 1720px;
-      height: 96vh;
-      max-height: 960px;
-      background: var(--slide-bg);
-      border-radius: 16px;
-      box-shadow: var(--shadow-slide);
-      display: flex;
-      flex-direction: column;
-      padding: 16px 22px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* NAVIGATION BAR BETWEEN PRESENTATION PAGES */
-    .page-nav-bar {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      background: #0f172a;
-      border-radius: 10px;
-      padding: 6px 14px;
-      margin-bottom: 10px;
-    }
-
-    .slide-nav-tabs {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: #0f172a;
-      padding: 8px 12px;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-
-    .page-tab-btn {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #94a3b8;
-      padding: 7px 14px;
-      border-radius: 8px;
-      font-size: 11.5px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      flex-shrink: 0;
-      transition: all 0.2s ease;
-    }
-
-    .page-tab-btn.active {
-      background: #2563eb;
-      color: #ffffff;
-      border-color: #60a5fa;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-    }
-
-    .page-tab-btn:hover:not(.active) {
-      background: rgba(255, 255, 255, 0.16);
-      color: #ffffff;
-    }
-
-    /* RESTORED VIVID BLUE EXECUTIVE HEADER BAR */
-    .slide-header {
-      background: linear-gradient(135deg, #0e1aa1, #1e1b4b);
-      border-radius: var(--radius-card);
-      padding: 12px 20px;
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #ffffff;
-      gap: 16px;
-    }
-
-    .slide-title-box {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .slide-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(8px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 17px;
-      color: #ffffff;
-    }
-
-    .slide-title {
-      font-size: 19px;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.1;
-      letter-spacing: -0.3px;
-    }
-
-    .slide-subtitle {
-      font-size: 11.5px;
-      color: #cbd5e1;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    /* Glass Controls */
-    .month-select-glass {
-      height: 34px;
-      background: rgba(255, 255, 255, 0.22);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: #ffffff;
-      padding: 0 12px;
-      border-radius: 8px;
-      font-size: 11.5px;
-      font-weight: 700;
-      outline: none;
-      cursor: pointer;
-    }
-
-    .month-select-glass option {
-      background: #1e1b4b;
-      color: #ffffff;
-    }
-
-    .btn-glass {
-      height: 34px;
-      background: rgba(255, 255, 255, 0.16);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      color: #ffffff;
-      padding: 0 14px;
-      border-radius: 8px;
-      font-size: 11.5px;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-    .btn-glass:hover { background: rgba(255, 255, 255, 0.25); }
-
-    .btn-sync-live {
-      background: rgba(16, 185, 129, 0.25) !important;
-      border-color: #34d399 !important;
-      color: #ffffff !important;
-    }
-    .btn-sync-live:hover {
-      background: rgba(16, 185, 129, 0.4) !important;
-    }
-
-    /* Compact Product Selector Tabs */
-    .product-tabs-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-      gap: 12px;
-    }
-
-    .product-tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .prod-tab {
-      height: 30px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      color: #64748b;
-      padding: 0 14px;
-      border-radius: var(--radius-btn);
-      font-size: 11px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .prod-tab.active {
-      background: #0f172a;
-      color: #ffffff;
-      border-color: #0f172a;
-      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.2);
-    }
-
-    /* Specialized Wide Tab Buttons for Page 3 NPS Channels */
-    .nps-channel-tab {
-      height: 34px;
-      padding: 0 18px;
-      font-size: 11.5px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      border-radius: 8px;
-    }
-    .nps-channel-tab i {
-      font-size: 13px;
-      margin-right: 2px;
-    }
-
-    .search-box-compact {
-      position: relative;
-      width: 280px;
-    }
-
-    .search-box-compact i {
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-light);
-      font-size: 12px;
-    }
-
-    .search-input-compact {
-      width: 100%;
-      height: 30px;
-      background: #f8fafc;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-btn);
-      padding: 0 10px 0 32px;
-      color: var(--text-dark);
-      font-size: 12px;
-      outline: none;
-    }
-
-    /* Page View Containers */
-    .page-view {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
-      overflow: hidden;
-    }
-
-    /* KPI Cards Row for Page 2, Page 3 & Page 4 */
-    .kpi-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .kpi-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
-    }
-
-    .kpi-icon-box {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
-
-    .kpi-title { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; }
-    .kpi-value { font-size: 16px; font-weight: 800; color: #0f172a; }
-
-        /* ================= TABLA PRESENTACIÓN (MASTER DESIGN SYSTEM) ================= */
-    .table-slide-card, .table-container-card {
-      flex: 1;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
-    }
-
-    .table-scroll-area, .table-scroll-wrapper {
-      flex: 1;
-      max-height: 580px;
-      overflow-y: auto;
-      overflow-x: auto;
-    }
-
-    .tree-table, .presentation-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 11.5px;
-      font-family: inherit;
-    }
-
-    .tree-table th, .presentation-table th {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background-color: #0f172a !important;
-      color: #f1f5f9;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 10.5px;
-      letter-spacing: 0.5px;
-      padding: 10px 8px;
-      vertical-align: middle;
-      line-height: 1.2;
-      text-align: center !important;
-      border-bottom: 2px solid #1e293b;
-      white-space: nowrap;
-      user-select: none;
-    }
-
-    .tree-table th:first-child, .presentation-table th:first-child {
-      text-align: left !important;
-    }
-
-    .tree-table th.sortable, .presentation-table th.sortable { cursor: pointer; }
-    .tree-table th.sortable:hover, .presentation-table th.sortable:hover { color: #38bdf8; }
-
-    .tree-table td, .presentation-table td {
-      padding: 8px 10px;
-      border-bottom: 1px solid #f1f5f9;
-      white-space: nowrap;
-    }
-
-    .val-cell {
-      text-align: center !important;
-    }
-
-    .row-grand-total {
-      background: linear-gradient(135deg, #0f172a, #1e293b) !important;
-      color: #ffffff !important;
-      font-weight: 800 !important;
-      font-size: 12.5px;
-    }
-    .row-grand-total td {
-      border-bottom: 2px solid #3b82f6 !important;
-      color: #ffffff !important;
-      padding: 10px 10px;
-      text-align: center;
-    }
-    .row-grand-total td:first-child {
-      text-align: left;
-    }
-
-    .row-spv {
-      background: #f8fafc;
-      font-weight: 800;
-      color: #0f172a;
-      border-bottom: 1px solid #f1f5f9;
-    }
-    .row-spv:hover { background: #f1f5f9 !important; }
-
-    .row-pdv, .row-pdv-shaded {
-      background: #ffffff;
-      font-weight: 600;
-      color: #334155;
-      border-bottom: 1px solid #f1f5f9;
-    }
-    .row-pdv:hover, .row-pdv-shaded:hover { background: #f8fafc !important; }
-
-    .row-asesor {
-      background: #ffffff;
-      font-weight: 400;
-      color: #64748b;
-      font-size: 11px;
-      border-bottom: 1px solid #f1f5f9;
-    }
-    .row-asesor:hover { background: rgba(59, 130, 246, 0.04) !important; color: #0f172a; }
-
-    .node-cell { display: flex; align-items: center; gap: 8px; }
-    .indent-0 { padding-left: 0px; }
-    .indent-1 { padding-left: 18px; }
-    .indent-2 { padding-left: 36px; }
-
-    .toggle-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      background: #e2e8f0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: #0f172a;
-      cursor: pointer;
-      transition: transform 0.15s ease;
-    }
-    .toggle-icon.expanded { transform: rotate(90deg); }
-
-    /* Minimalist Elegant Performance Badges (Soft Tints) */
-    .badge-compliance {
-      padding: 3px 8px;
-      border-radius: 50px;
-      font-size: 10.5px;
-      font-weight: 700;
-      display: inline-block;
-      text-align: center;
-    }
-
-    .comp-green { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
-    .comp-yellow { background: #fefce8; color: #a16207; border: 1px solid #fef08a; }
-    .comp-red { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
-
-    .badge-gap-red { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; padding: 2px 7px; border-radius: 50px; font-weight: 800; }
-    .badge-gap-green { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; padding: 2px 7px; border-radius: 50px; font-weight: 800; }
-    .badge-gap-zero { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; padding: 2px 7px; border-radius: 50px; font-weight: 700; }
-
-    /* Executive Action Button (Exclusive for Supervisors) */
-    .btn-plan-action {
-      background: #0f172a;
-      color: #ffffff;
-      border: 1px solid #0f172a;
-      padding: 4px 12px;
-      border-radius: 6px;
-      font-size: 10.5px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
-      transition: all 0.2s;
-    }
-    .btn-plan-action:hover {
-      background: #1e293b;
-      border-color: #ef4444;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-    }
-
-    .val-total { font-weight: 800; color: #0f172a; font-size: 12px; }
-    .val-highlight { color: #0f172a; font-weight: 600; }
-
-    /* Slide Footer Controls */
-    .slide-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 8px;
-      margin-top: 4px;
-      border-top: 1px solid var(--border-subtle);
-      font-size: 11px;
-      color: var(--text-light);
-    }
-
-    /* Drawer Overlay & Panel */
-    .drawer-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(5px);
-      z-index: 1000; opacity: 0; visibility: hidden;
-      transition: all 0.3s ease;
-    }
-    .drawer-overlay.active { opacity: 1; visibility: visible; }
-    .drawer-panel {
-      position: fixed; top: 0; right: -520px; width: 520px; height: 100vh;
-      background: #f8fafc; padding: 24px; display: flex; flex-direction: column;
-      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1); overflow-y: auto; z-index: 1001;
-      border-left: 1px solid #cbd5e1;
-    }
-    .drawer-overlay.active .drawer-panel { right: 0; }
-    .drawer-close {
-      position: absolute; top: 18px; right: 18px; background: #ffffff; border: 1px solid #cbd5e1;
-      width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
-      color: #0f172a; transition: all 0.2s;
-    }
-    .drawer-close:hover { background: #0f172a; color: #ffffff; }
-
-    /* DIAGNOSTIC CARDS */
-    .pdv-diag-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 12px;
-      box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.08);
-      border: 1px solid #e2e8f0;
-      transition: transform 0.2s ease;
-    }
-    .pdv-diag-card.status-red { border-left: 5px solid #ef4444; }
-    .pdv-diag-card.status-yellow { border-left: 5px solid #f59e0b; }
-    .pdv-diag-card.status-green { border-left: 5px solid #10b981; }
-
-    .pdv-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-    .pdv-card-name { font-size: 13.5px; font-weight: 800; color: #0f172a; }
-
-    .progress-bar-bg { width: 100%; height: 6px; background: #f1f5f9; border-radius: 3px; overflow: hidden; margin: 8px 0; }
-    .progress-bar-fill { height: 100%; border-radius: 3px; }
-
-    .metrics-mini-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
-      background: #f8fafc; padding: 8px; border-radius: 8px; margin-top: 6px; text-align: center;
-    }
-    .metric-mini-item { display: flex; flex-direction: column; }
-    .metric-mini-label { font-size: 9px; font-weight: 700; color: #64748b; text-transform: uppercase; }
-    .metric-mini-val { font-size: 11.5px; font-weight: 800; color: #0f172a; }
-
-    .pdv-alert-box {
-      background: #fff1f2; border: 1px solid #fecdd3; border-radius: 6px;
-      padding: 8px 10px; margin-top: 10px; font-size: 10.5px; color: #9f1239;
-    }
-    .pdv-alert-header { font-weight: 700; display: flex; align-items: center; gap: 5px; margin-bottom: 3px; color: #e11d48; }
-    .pdv-alert-list { margin-left: 14px; padding-left: 0; line-height: 1.45; }
-
-    /* SUPERVISOR ACTION BOX */
-    .supervisor-action-card {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      border-radius: 14px; padding: 20px; color: #ffffff;
-      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
-      border: 1px solid #3b82f6; margin-top: 14px;
-    }
-    .supervisor-action-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .supervisor-action-header i {
-      width: 32px; height: 32px; border-radius: 8px; background: rgba(59, 130, 246, 0.25);
-      color: #60a5fa; display: flex; align-items: center; justify-content: center; font-size: 16px;
-    }
-    .supervisor-action-title { font-size: 14px; font-weight: 800; color: #ffffff; }
-
-    .supervisor-blank-area {
-      background: rgba(255, 255, 255, 0.06); border: 2px dashed rgba(255, 255, 255, 0.25);
-      border-radius: 10px; padding: 20px; text-align: center; color: #cbd5e1;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/shell.css?v=20260811_isolated1">
+  <link rel="stylesheet" href="styles/page-0.css?v=20260811_isolated1">
+  <link rel="stylesheet" href="styles/page-1.css?v=20260811_isolated1">
+  <link rel="stylesheet" href="styles/page-2.css?v=20260811_isolated1">
+  <link rel="stylesheet" href="styles/page-3.css?v=20260811_isolated1">
+  <link rel="stylesheet" href="styles/page-4.css?v=20260811_isolated1">
+  <link rel="stylesheet" href="styles/page-5.css?v=20260811_isolated1">
+  <link rel="stylesheet" href="styles/page-6.css?v=20260811_isolated1">
+  <link rel="stylesheet" href="styles/page-7.css?v=20260811_isolated1">
 </head>
 <body>
 
@@ -694,7 +119,7 @@
           <div>
             <h1 class="slide-title">Reporte de Avance y Proyección de Ventas</h1>
             <div class="slide-subtitle" id="headerPeriodSubtitle">
-              Agosto 2026 (Mes Vigente - Avance 8/26 Días Hábiles) &bull; <strong id="selectedProductBadge" style="color: #6366f1">POSTPAGO TOTAL</strong>
+              Agosto 2026 (Mes Vigente - Avance 9/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">POSTPAGO TOTAL</strong>
             </div>
           </div>
         </div>
@@ -710,10 +135,9 @@
           
 
           <select id="monthSelectHeader" class="month-select-glass" onchange="handleMonthChange(this.value)">
-            <option value="m202608" selected>🎯 Agosto 2026 (Mes Vigente)</option>
-            <option value="m202607">📅 Julio 2026 (Cierre M-1)</option>
-            <option value="m202606">📅 Junio 2026 (Cierre M-2)</option>
-            <option value="ALL">🗓️ Últimos 3 Meses (Jun - Ago)</option>
+            <option value="m202608" selected>Agosto</option>
+            <option value="m202607">Julio</option>
+            <option value="m202606">Junio</option>
           </select>
 
           
@@ -766,9 +190,9 @@
 
         <div class="header-actions">
           <select id="monthDiscountFilter" class="month-select-glass" onchange="renderDiscountTable()">
-            <option value="Junio">🗓️ Junio 2026</option>
-            <option value="Julio">🗓️ Julio 2026</option>
-            <option value="Agosto" selected>🗓️ Agosto 2026</option>
+            <option value="Agosto" selected>Agosto</option>
+            <option value="Julio">Julio</option>
+            <option value="Junio">Junio</option>
           </select>
           <select id="zoneSelectPage2" class="month-select-glass" onchange="renderDiscountTable()">
             <option value="ALL" selected>🌍 Todas las Zonas</option>
@@ -819,11 +243,11 @@
         </div>
         <div class="header-actions">
           <select id="monthCedenteFilter" class="month-select-glass" onchange="renderCedenteTable()">
-            <option value="Junio">🗓️ Junio 2026</option>
-            <option value="Julio">🗓️ Julio 2026</option>
-            <option value="Agosto" selected>🗓️ Agosto 2026</option>
+            <option value="Agosto" selected>Agosto</option>
+            <option value="Julio">Julio</option>
+            <option value="Junio">Junio</option>
           </select>
-          <select id="zoneSelectPage7" class="month-select-glass" onchange="renderCedenteTable()">
+          <select id="zoneSelectPage3" class="month-select-glass" onchange="renderCedenteTable()">
             <option value="ALL">🌍 Todas las Zonas</option>
             <option value="CENTRO">📍 CENTRO</option>
             <option value="SUR">📍 SUR</option>
@@ -846,11 +270,11 @@
               <tr style="background: #1e293b; color: #ffffff;">
                 <th style="min-width: 280px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PUNTO DE VENTA / ASESOR</th>
                 <th class="val-cell" style="padding: 10px 12px; font-size: 11px; font-weight: 800;">TOTAL PORTAS</th>
-                <th class="val-cell" style="color: #f87171; font-weight: 800; padding: 10px 12px; font-size: 11px;">CLARO (UND)</th>
+                <th class="val-cell" style="color: #f87171; font-weight: 800; padding: 10px 12px; font-size: 11px;">CLARO</th>
                 <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;">CLARO (%)</th>
-                <th class="val-cell" style="color: #4ade80; font-weight: 800; padding: 10px 12px; font-size: 11px;">MOVISTAR (UND)</th>
+                <th class="val-cell" style="color: #4ade80; font-weight: 800; padding: 10px 12px; font-size: 11px;">MOVISTAR</th>
                 <th class="val-cell" style="color: #86efac; font-weight: 800; padding: 10px 12px; font-size: 11px;">MOVISTAR (%)</th>
-                <th class="val-cell" style="color: #facc15; font-weight: 800; padding: 10px 12px; font-size: 11px;">BITEL (UND)</th>
+                <th class="val-cell" style="color: #facc15; font-weight: 800; padding: 10px 12px; font-size: 11px;">BITEL</th>
                 <th class="val-cell" style="color: #fde047; font-weight: 800; padding: 10px 12px; font-size: 11px;">BITEL (%)</th>
               </tr>
             </thead>
@@ -870,14 +294,14 @@
           <div class="slide-icon"><i class="fa-solid fa-layer-group"></i></div>
           <div>
             <h1 class="slide-title">Mix de Planes Postpago</h1>
-            <div id="mixPlanesSubtitle" class="slide-subtitle">Cierre Mensual Agosto 2026: 409 Unidades &bull; Desglose por RB de Plan</div>
+            <div id="mixPlanesSubtitle" class="slide-subtitle">Cierre Mensual Agosto 2026: 513 &bull; Desglose por RB de Plan</div>
           </div>
         </div>
         <div class="header-actions">
           <select id="monthMixPlanesFilter" class="month-select-glass" onchange="renderMixPlanesTable()">
-            <option value="Junio">🗓️ Junio 2026</option>
-            <option value="Julio">🗓️ Julio 2026</option>
-            <option value="Agosto" selected>🗓️ Agosto 2026</option>
+            <option value="Agosto" selected>Agosto</option>
+            <option value="Julio">Julio</option>
+            <option value="Junio">Junio</option>
           </select>
           <select id="zoneSelectPage4" class="month-select-glass" onchange="renderMixPlanesTable()">
             <option value="ALL">🌍 Todas las Zonas</option>
@@ -935,10 +359,10 @@
         </div>
         <div class="header-actions">
           <select id="monthPermanenciaFilter" class="month-select-glass" onchange="renderPermanenciaTable()">
-            <option value="Agosto" selected>🗓️ Agosto 2026</option>
-            <option value="Julio">🗓️ Julio 2026</option>
-            <option value="Junio">🗓️ Junio 2026</option>
-            <option value="Enero">🗓️ Enero 2026</option>
+            <option value="Agosto" selected>Agosto</option>
+            <option value="Julio">Julio</option>
+            <option value="Junio">Junio</option>
+            <option value="Enero">Enero</option>
           </select>
           <select id="zoneSelectPage5" class="month-select-glass" onchange="renderPermanenciaTable()">
             <option value="ALL">🌐 Todas las Zonas</option>
@@ -1064,10 +488,10 @@
       <div class="product-tabs-bar">
         <div class="product-tabs">
           <button class="prod-tab nps-channel-tab active" id="tabNpsVenta" onclick="selectNpsChannel('venta')">
-            <i class="fa-solid fa-cart-shopping"></i> NPS VENTA (Meta 58.0%)
+            <i class="fa-solid fa-cart-shopping"></i> NPS VENTA
           </button>
           <button class="prod-tab nps-channel-tab" id="tabNpsPostventa" onclick="selectNpsChannel('postventa')">
-            <i class="fa-solid fa-headset"></i> NPS POSTVENTA (Meta 58.0%)
+            <i class="fa-solid fa-headset"></i> NPS POSTVENTA
           </button>
         </div>
       </div>
@@ -1118,14 +542,26 @@
   </div>
 
   <!-- Data Payload -->
-  <script src="data.js?v=20260811_final"></script>
+  <script src="data.js?v=20260811_isolated1"></script>
     <script>
                 // ================= GLOBAL STATE VARIABLES =================
-    var currentSort = { column: null, direction: 'desc' };
+    
     var totalCondicion = 0;
-    var ELAPSED_WD = 8;
+    var ELAPSED_WD = 9;
     var TOTAL_WD = 26;
     var grandCondicionPct = 74.0;
+
+    // Estado aislado: cada página administra exclusivamente sus propios valores.
+    const shellState = { page: 0 };
+    const pageState = {
+      1: { sort: { column: null, direction: 'desc' }, productCode: 'POSTPAGO_TOTAL', monthFilter: 'm202608', query: '', expanded: {}, allExpanded: false },
+      2: { expanded: {}, query: '', allExpanded: false },
+      3: { expanded: {} },
+      4: { expanded: {} },
+      5: { expanded: {} },
+      6: { expanded: {}, daysExpanded: false },
+      7: { expanded: {}, channel: 'venta', weeksExpanded: false },
+    };
     var monthLabelsMap = {
       'm202608': 'Agosto 2026',
       'm202607': 'Julio 2026',
@@ -1146,55 +582,29 @@
       'm202603': 'm202602',
       'm202602': 'm202601'
     };
-    var currentPage = 0;
-    var currentProductCode = 'POSTPAGO_TOTAL';
-    var currentMonthFilter = 'm202608';
-    var searchQuery = '';
-    var expandedState = {};
+    
+    
+    
+    
+    
 
-    var discountExpandedState = {};
-    var discountSearchQuery = '';
+    
+    
 
-    var dotacionExpandedState = {};
-    var isDaysExpanded = false;
+    
+    
 
-    var npsExpandedState = {};
-    var currentNpsChannel = 'venta';
-    var isWeeksExpanded = false;
+    
+    
+    
 
-    var mixExpandedState = {};
-    var permExpandedState = {};
-    var cedenteExpandedState = {};
+    
+    
+    
 
-                // ================= GLOBAL STATE VARIABLES =================
-    var currentSort = { col: null, dir: 'asc' };
-    var totalCondicion = 0;
-    var ELAPSED_WD = 8;
-    var TOTAL_WD = 26;
-    var grandCondicionPct = 74.0;
-    var monthLabelsMap = {
-      'm202608': 'Agosto 2026',
-      'm202607': 'Julio 2026',
-      'm202606': 'Junio 2026',
-      'm202605': 'Mayo 2026',
-      'm202604': 'Abril 2026',
-      'm202603': 'Marzo 2026',
-      'm202602': 'Febrero 2026',
-      'm202601': 'Enero 2026'
-    };
-
-    var prevMonthLabels = {
-      'm202608': 'm202607',
-      'm202607': 'm202606',
-      'm202606': 'm202605',
-      'm202605': 'm202604',
-      'm202604': 'm202603',
-      'm202603': 'm202602',
-      'm202602': 'm202601'
-    };
     // State Variables
     function switchSlidePage(pageNum) {
-      currentPage = pageNum;
+      shellState.page = pageNum;
       for (let i = 0; i <= 7; i++) {
         const btn = document.getElementById('navTab' + i);
         if (btn) btn.classList.toggle('active', i === pageNum);
@@ -1286,14 +696,12 @@
     });
 
     function handleMonthChange(val) {
-      currentMonthFilter = val;
+      pageState[1].monthFilter = val;
       const subtitle = document.getElementById('headerPeriodSubtitle');
-      if (val === 'ALL') {
-        subtitle.innerHTML = 'Periodo Últimos 3 Meses (Junio - Agosto 2026) &bull; <strong id="selectedProductBadge" style="color: #6366f1">' + getProductLabel() + '</strong>';
-      } else if (val === 'm202608') {
-        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 8/26 Días Hábiles) &bull; <strong id="selectedProductBadge" style="color: #6366f1">' + getProductLabel() + '</strong>';
+      if (val === 'm202608') {
+        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 9/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">' + getProductLabel() + '</strong>';
       } else {
-        subtitle.innerHTML = `Mes Filtrado: ${monthLabelsMap[val] || val} &bull; <strong id="selectedProductBadge" style="color: #6366f1">${getProductLabel()}</strong>`;
+        subtitle.innerHTML = `Mes Filtrado: ${monthLabelsMap[val] || val} &bull; <strong class="selected-product-badge" style="color: #6366f1">${getProductLabel()}</strong>`;
       }
 
       renderTableHeader();
@@ -1302,33 +710,46 @@
 
     function getProductLabel() {
       const defs = window.SALES_DATA.summary.prod_definitions;
-      const curDef = defs.find(d => d.id === currentProductCode) || { label: currentProductCode };
+      const curDef = defs.find(d => d.id === pageState[1].productCode) || { label: pageState[1].productCode };
       return curDef.label;
     }
 
+    function getAdvisorTenureHTML(advisor) {
+      const tenure = advisor && advisor.tenure;
+      if (!tenure) return '';
+      if (tenure.status === 'ceased') {
+        return '<span class="advisor-tenure advisor-tenure-ceased">Cesado</span>';
+      }
+      if (tenure.status === 'missing') {
+        return '<span class="advisor-tenure advisor-tenure-missing">Sin registro</span>';
+      }
+      if (!tenure.category || !tenure.date) return '';
+      return `<span class="advisor-tenure advisor-tenure-${tenure.category_key}">${tenure.category} (${tenure.date})</span>`;
+    }
+
     function selectProductTab(code) {
-      currentProductCode = code;
+      pageState[1].productCode = code;
       document.querySelectorAll('.prod-tab').forEach(t => {
         if (!t.classList.contains('nps-channel-tab')) {
           t.classList.toggle('active', t.dataset.prod === code);
         }
       });
-      handleMonthChange(currentMonthFilter);
+      handleMonthChange(pageState[1].monthFilter);
     }
 
     function getNodeUnits(node, monthKey) {
       if (!node) return 0;
       let uDict = null;
-      if (node.products && node.products[currentProductCode]) {
-        uDict = node.products[currentProductCode].units;
-      } else if (node.units && node.units[currentProductCode]) {
-        uDict = node.units[currentProductCode];
+      if (node.products && node.products[pageState[1].productCode]) {
+        uDict = node.products[pageState[1].productCode].units;
+      } else if (node.units && node.units[pageState[1].productCode]) {
+        uDict = node.units[pageState[1].productCode];
       }
       if (uDict) {
-        if (currentMonthFilter !== 'ALL' && monthKey === 'total') {
-          return uDict[currentMonthFilter] || 0;
+        if (pageState[1].monthFilter !== 'ALL' && monthKey === 'total') {
+          return uDict[pageState[1].monthFilter] || 0;
         }
-        if (currentMonthFilter === 'ALL' && monthKey === 'total') {
+        if (pageState[1].monthFilter === 'ALL' && monthKey === 'total') {
           return (uDict['m202606'] || 0) + (uDict['m202607'] || 0) + (uDict['m202608'] || 0);
         }
         return uDict[monthKey] || 0;
@@ -1347,16 +768,16 @@
       }
 
       let qDict = null;
-      if (node.products && node.products[currentProductCode]) {
-        qDict = node.products[currentProductCode].quotas;
-      } else if (node.quotas && node.quotas[currentProductCode]) {
-        qDict = node.quotas[currentProductCode];
+      if (node.products && node.products[pageState[1].productCode]) {
+        qDict = node.products[pageState[1].productCode].quotas;
+      } else if (node.quotas && node.quotas[pageState[1].productCode]) {
+        qDict = node.quotas[pageState[1].productCode];
       }
       if (qDict) {
-        if (currentMonthFilter !== 'ALL' && monthKey === 'total') {
-          return qDict[currentMonthFilter] || 0;
+        if (pageState[1].monthFilter !== 'ALL' && monthKey === 'total') {
+          return qDict[pageState[1].monthFilter] || 0;
         }
-        if (currentMonthFilter === 'ALL' && monthKey === 'total') {
+        if (pageState[1].monthFilter === 'ALL' && monthKey === 'total') {
           return (qDict['m202606'] || 0) + (qDict['m202607'] || 0) + (qDict['m202608'] || 0);
         }
         return qDict[monthKey] || 0;
@@ -1411,11 +832,11 @@
     }
 
     function handleSearch() {
-      searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-      if (searchQuery.length > 0) {
+      pageState[1].query = document.getElementById('searchInput').value.trim().toLowerCase();
+      if (pageState[1].query.length > 0) {
         window.SALES_DATA.tree.forEach(spv => {
-          expandedState[spv.id] = true;
-          spv.children.forEach(pdv => { expandedState[pdv.id] = true; });
+          pageState[1].expanded[spv.id] = true;
+          spv.children.forEach(pdv => { pageState[1].expanded[pdv.id] = true; });
         });
       }
       renderTreeTable();
@@ -1423,26 +844,26 @@
 
     function toggleNode(nodeId, event) {
       if (event) event.stopPropagation();
-      expandedState[nodeId] = !expandedState[nodeId];
+      pageState[1].expanded[nodeId] = !pageState[1].expanded[nodeId];
       renderTreeTable();
     }
 
     function toggleExpandAll() {
-      isAllExpanded = !isAllExpanded;
+      pageState[1].allExpanded = !pageState[1].allExpanded;
       window.SALES_DATA.tree.forEach(spv => {
-        expandedState[spv.id] = isAllExpanded;
-        spv.children.forEach(pdv => { expandedState[pdv.id] = isAllExpanded; });
+        pageState[1].expanded[spv.id] = pageState[1].allExpanded;
+        spv.children.forEach(pdv => { pageState[1].expanded[pdv.id] = pageState[1].allExpanded; });
       });
-      document.getElementById('expandBtnText').textContent = isAllExpanded ? 'Colapsar Todo' : 'Expandir Todo';
+      document.getElementById('expandBtnText').textContent = pageState[1].allExpanded ? 'Colapsar Todo' : 'Expandir Todo';
       renderTreeTable();
     }
 
     function sortTable(column) {
-      if (currentSort.column === column) {
-        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+      if (pageState[1].sort.column === column) {
+        pageState[1].sort.direction = pageState[1].sort.direction === 'asc' ? 'desc' : 'asc';
       } else {
-        currentSort.column = column;
-        currentSort.direction = 'desc';
+        pageState[1].sort.column = column;
+        pageState[1].sort.direction = 'desc';
       }
       renderTreeTable();
     }
@@ -1451,20 +872,9 @@
       const thead = document.getElementById('treeThead');
       if (!thead) return;
 
-      const showArribos = (currentProductCode === 'POSTPAGO_TOTAL');
+      const showArribos = (pageState[1].productCode === 'POSTPAGO_TOTAL');
 
-      if (currentMonthFilter === 'ALL') {
-        thead.innerHTML = `
-          <tr>
-            <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
-            <th class="val-cell sortable" onclick="sortTable('m202606')">JUNIO</th>
-            <th class="val-cell sortable" onclick="sortTable('m202607')">JULIO</th>
-            <th class="val-cell sortable" onclick="sortTable('m202608')">AGOSTO</th>
-            ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
-            <th class="val-cell sortable" onclick="sortTable('total')">TOTAL VENTAS</th>
-          </tr>
-        `;
-      } else if (currentMonthFilter === 'm202608') {
+      if (pageState[1].monthFilter === 'm202608') {
         thead.innerHTML = `
           <tr>
             <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
@@ -1472,15 +882,15 @@
             <th class="val-cell sortable" onclick="sortTable('m202608')">AVANCE</th>
             <th class="val-cell sortable" onclick="sortTable('pct_cump')">% AVANCE</th>
             ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
-            <th class="val-cell">PROY (UND)</th>
+            <th class="val-cell">PROY</th>
             <th class="val-cell">% CUMP.</th>
-            <th class="val-cell sortable" onclick="sortTable('m1')">M-1</th>
-            <th class="val-cell sortable" onclick="sortTable('var_m1')">VAR VS M-1</th>
+            <th class="val-cell sortable" onclick="sortTable('m1')">JULIO</th>
+            <th class="val-cell sortable" onclick="sortTable('var_m1')">VAR VS JULIO</th>
           </tr>
         `;
       } else {
-        const prevMKey = prevMonthLabels[currentMonthFilter];
-        const prevLabel = prevMKey ? (monthLabelsMap[prevMKey] || prevMKey).toUpperCase() : 'M-1';
+        const prevMKey = prevMonthLabels[pageState[1].monthFilter];
+        const prevLabel = prevMKey ? (monthLabelsMap[prevMKey] || prevMKey).replace(/\s+2026$/, '').toUpperCase() : '';
         thead.innerHTML = `
           <tr>
             <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
@@ -1488,8 +898,8 @@
             <th class="val-cell sortable" onclick="sortTable('current')">VENTAS</th>
             <th class="val-cell sortable" onclick="sortTable('pct_cump')">% CUMP.</th>
             ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
-            <th class="val-cell">${prevLabel} (M-1)</th>
-            <th class="val-cell">VAR VS M-1</th>
+            <th class="val-cell">${prevLabel}</th>
+            <th class="val-cell">VAR VS ${prevLabel}</th>
           </tr>
         `;
       }
@@ -1502,9 +912,9 @@
       if (!tbody) return;
       tbody.innerHTML = '';
 
-      const keyToUse = currentMonthFilter === 'ALL' ? 'total' : currentMonthFilter;
-      const prevMKey = prevMonthLabels[currentMonthFilter];
-      const showArribos = (currentProductCode === 'POSTPAGO_TOTAL');
+      const keyToUse = pageState[1].monthFilter === 'ALL' ? 'total' : pageState[1].monthFilter;
+      const prevMKey = prevMonthLabels[pageState[1].monthFilter];
+      const showArribos = (pageState[1].productCode === 'POSTPAGO_TOTAL');
       const selZone = document.getElementById('zoneSelectPage1').value;
 
       let treeData = JSON.parse(JSON.stringify(window.SALES_DATA.tree));
@@ -1523,7 +933,7 @@
       treeData.forEach(spv => {
         grandTotal += getNodeUnits(spv, keyToUse);
         grandQuota += getNodeQuota(spv, keyToUse);
-        if (currentMonthFilter === 'm202608') {
+        if (pageState[1].monthFilter === 'm202608') {
           grandM1Units += getNodeUnits(spv, 'm202607');
         } else if (prevMKey) {
           grandM1Units += getNodeUnits(spv, prevMKey);
@@ -1533,23 +943,23 @@
       let visibleRowsCount = 0;
 
       treeData = treeData.filter(spv => {
-        if (getGlobalSalesInMonth(spv, currentMonthFilter) === 0) return false;
+        if (getGlobalSalesInMonth(spv, pageState[1].monthFilter) === 0) return false;
         spv.children = spv.children.filter(pdv => {
-          if (getGlobalSalesInMonth(pdv, currentMonthFilter) === 0) return false;
-          pdv.children = pdv.children.filter(ase => getGlobalSalesInMonth(ase, currentMonthFilter) > 0);
+          if (getGlobalSalesInMonth(pdv, pageState[1].monthFilter) === 0) return false;
+          pdv.children = pdv.children.filter(ase => getGlobalSalesInMonth(ase, pageState[1].monthFilter) > 0);
           return true;
         });
         return true;
       });
 
       let grandArribos = 0;
-      treeData.forEach(spv => { grandArribos += getNodeArribos(spv, currentMonthFilter); });
+      treeData.forEach(spv => { grandArribos += getNodeArribos(spv, pageState[1].monthFilter); });
       const grandConvPct = grandArribos > 0 ? (grandTotal / grandArribos * 100) : 0;
 
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
 
-      if (currentMonthFilter === 'ALL') {
+      if (pageState[1].monthFilter === 'ALL') {
         let m6 = 0, m7 = 0, m8 = 0;
         treeData.forEach(spv => {
           m6 += getNodeUnits(spv, 'm202606');
@@ -1558,14 +968,14 @@
         });
 
         trTotal.innerHTML = `
-          <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+          <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS</span></div></td>
           <td class="val-cell num-font">${m6.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${m7.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${m8.toLocaleString('es-PE')}</td>
           ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8;">${grandArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
         `;
-      } else if (currentMonthFilter === 'm202608') {
+      } else if (pageState[1].monthFilter === 'm202608') {
         const grandProjUnits = Math.round((grandTotal / ELAPSED_WD) * TOTAL_WD);
         const grandComp = grandQuota > 0 ? (grandTotal / grandQuota * 100) : 0;
         const grandProjComp = grandQuota > 0 ? (grandProjUnits / grandQuota * 100) : 0;
@@ -1573,7 +983,7 @@
         const grandVarPct = grandM1Units > 0 ? (grandVarM1 / grandM1Units * 100) : 0;
 
         trTotal.innerHTML = `
-          <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+          <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS</span></div></td>
           <td class="val-cell num-font">${grandQuota > 0 ? grandQuota.toLocaleString('es-PE') : '-'}</td>
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandComp) : '-'}</td>
@@ -1589,7 +999,7 @@
         const diffPct = grandM1Units > 0 ? (diffUnits / grandM1Units * 100) : 0;
 
         trTotal.innerHTML = `
-          <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+          <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS</span></div></td>
           <td class="val-cell num-font">${grandQuota > 0 ? grandQuota.toLocaleString('es-PE') : '-'}</td>
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandComp) : '-'}</td>
@@ -1603,14 +1013,14 @@
 
       // Sort Tree Data
       treeData.sort((a, b) => {
-        let valA = currentSort.column === 'name' ? a.name : getNodeUnits(a, currentSort.column);
-        let valB = currentSort.column === 'name' ? b.name : getNodeUnits(b, currentSort.column);
-        if (typeof valA === 'string') return currentSort.direction === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
-        return currentSort.direction === 'asc' ? valA - valB : valB - valA;
+        let valA = pageState[1].sort.column === 'name' ? a.name : getNodeUnits(a, pageState[1].sort.column);
+        let valB = pageState[1].sort.column === 'name' ? b.name : getNodeUnits(b, pageState[1].sort.column);
+        if (typeof valA === 'string') return pageState[1].sort.direction === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        return pageState[1].sort.direction === 'asc' ? valA - valB : valB - valA;
       });
 
       treeData.forEach(spv => {
-        const isSpvExpanded = expandedState[spv.id] !== false;
+        const isSpvExpanded = pageState[1].expanded[spv.id] !== false;
 
         const trSpv = document.createElement('tr');
         trSpv.className = 'row-spv';
@@ -1618,10 +1028,10 @@
         const spvTotal = getNodeUnits(spv, keyToUse);
         const spvQuota = getNodeQuota(spv, keyToUse);
         const spvComp = spvQuota > 0 ? (spvTotal / spvQuota * 100) : 0;
-        const spvArribos = getNodeArribos(spv, currentMonthFilter);
+        const spvArribos = getNodeArribos(spv, pageState[1].monthFilter);
         const spvConvPct = spvArribos > 0 ? (spvTotal / spvArribos * 100) : 0;
 
-        if (currentMonthFilter === 'ALL') {
+        if (pageState[1].monthFilter === 'ALL') {
           const m6 = getNodeUnits(spv, 'm202606');
           const m7 = getNodeUnits(spv, 'm202607');
           const m8 = getNodeUnits(spv, 'm202608');
@@ -1639,7 +1049,7 @@
             ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${spvArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font" style="color: #475569;">${spvConvPct.toFixed(1)}%</td>` : ''}
             <td class="val-cell num-font val-total" style="color: #0f172a;">${spvTotal.toLocaleString('es-PE')}</td>
           `;
-        } else if (currentMonthFilter === 'm202608') {
+        } else if (pageState[1].monthFilter === 'm202608') {
           const projUnits = Math.round((spvTotal / ELAPSED_WD) * TOTAL_WD);
           const projComp = spvQuota > 0 ? (projUnits / spvQuota * 100) : 0;
           const spvM1 = getNodeUnits(spv, 'm202607');
@@ -1688,7 +1098,7 @@
 
         if (isSpvExpanded) {
           spv.children.forEach(pdv => {
-            const isPdvExpanded = expandedState[pdv.id] === true;
+            const isPdvExpanded = pageState[1].expanded[pdv.id] === true;
 
             const trPdv = document.createElement('tr');
             trPdv.className = 'row-pdv';
@@ -1696,10 +1106,10 @@
             const pdvTotal = getNodeUnits(pdv, keyToUse);
             const pdvQuota = getNodeQuota(pdv, keyToUse);
             const pdvComp = pdvQuota > 0 ? (pdvTotal / pdvQuota * 100) : 0;
-            const pdvArribos = getNodeArribos(pdv, currentMonthFilter);
+            const pdvArribos = getNodeArribos(pdv, pageState[1].monthFilter);
             const pdvConvPct = pdvArribos > 0 ? (pdvTotal / pdvArribos * 100) : 0;
 
-            if (currentMonthFilter === 'ALL') {
+            if (pageState[1].monthFilter === 'ALL') {
               const m6 = getNodeUnits(pdv, 'm202606');
               const m7 = getNodeUnits(pdv, 'm202607');
               const m8 = getNodeUnits(pdv, 'm202608');
@@ -1717,7 +1127,7 @@
                 ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')}</td>
               `;
-            } else if (currentMonthFilter === 'm202608') {
+            } else if (pageState[1].monthFilter === 'm202608') {
               const projUnits = Math.round((pdvTotal / ELAPSED_WD) * TOTAL_WD);
               const projComp = pdvQuota > 0 ? (projUnits / pdvQuota * 100) : 0;
               const pdvM1 = getNodeUnits(pdv, 'm202607');
@@ -1775,11 +1185,11 @@
                 const trAse = document.createElement('tr');
                 trAse.className = 'row-asesor';
 
-                if (currentMonthFilter === 'ALL') {
+                if (pageState[1].monthFilter === 'ALL') {
                   trAse.innerHTML = `
                     <td>
                       <div class="node-cell indent-2">
-                        <span style="font-weight: 600; color: #334155; font-size: 11px;">${realName || userCode}</span>
+                        <span class="advisor-name-line"><span class="advisor-name">${realName || userCode}</span>${getAdvisorTenureHTML(ase)}</span>
                       </div>
                     </td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202606').toLocaleString('es-PE')}</td>
@@ -1788,7 +1198,7 @@
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')}</td>
                   `;
-                } else if (currentMonthFilter === 'm202608') {
+                } else if (pageState[1].monthFilter === 'm202608') {
                   const projUnits = Math.round((aseTotal / ELAPSED_WD) * TOTAL_WD);
                   const projComp = aseQuota > 0 ? (projUnits / aseQuota * 100) : 0;
                   const aseM1 = getNodeUnits(ase, 'm202607');
@@ -1798,7 +1208,7 @@
                   trAse.innerHTML = `
                     <td>
                       <div class="node-cell indent-2">
-                        <span style="font-weight: 600; color: #334155; font-size: 11px;">${realName || userCode}</span>
+                        <span class="advisor-name-line"><span class="advisor-name">${realName || userCode}</span>${getAdvisorTenureHTML(ase)}</span>
                       </div>
                     </td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') : 'N/A'}</td>
@@ -1818,7 +1228,7 @@
                   trAse.innerHTML = `
                     <td>
                       <div class="node-cell indent-2">
-                        <span style="font-weight: 600; color: #334155; font-size: 11px;">${realName || userCode}</span>
+                        <span class="advisor-name-line"><span class="advisor-name">${realName || userCode}</span>${getAdvisorTenureHTML(ase)}</span>
                       </div>
                     </td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? aseQuota.toLocaleString('es-PE') : 'N/A'}</td>
@@ -1841,15 +1251,15 @@
     }
 
 function toggleDotacionDays() {
-      isDaysExpanded = !isDaysExpanded;
-      document.getElementById('toggleDaysText').textContent = isDaysExpanded ? 'Ocultar Días (26-Jul a 1-Ago)' : 'Mostrar Días (26-Jul - 1-Ago)';
+      pageState[6].daysExpanded = !pageState[6].daysExpanded;
+      document.getElementById('toggleDaysText').textContent = pageState[6].daysExpanded ? 'Ocultar Días (26-Jul a 1-Ago)' : 'Mostrar Días (26-Jul - 1-Ago)';
       renderDotacionHeader();
       renderDotacionTable();
     }
 
     window.toggleDotacionPdv = function toggleDotacionPdv(pdvName) {
   globalThis.toggleDotacionPdv = toggleDotacionPdv;
-      dotacionExpandedState[pdvName] = !dotacionExpandedState[pdvName];
+      pageState[6].expanded[pdvName] = !pageState[6].expanded[pdvName];
       renderDotacionTable();
     }
     if (typeof global !== 'undefined') global.toggleDotacionPdv = toggleDotacionPdv;
@@ -1866,11 +1276,11 @@ function toggleDotacionDays() {
       
       const btnText = document.getElementById('toggleDaysText');
       if (btnText && dHeaders.length > 0) {
-        btnText.textContent = `${isDaysExpanded ? 'Ocultar' : 'Mostrar'} Días (${dHeaders[0]} - ${dHeaders[dHeaders.length - 1]})`;
+        btnText.textContent = `${pageState[6].daysExpanded ? 'Ocultar' : 'Mostrar'} Días (${dHeaders[0]} - ${dHeaders[dHeaders.length - 1]})`;
       }
 
       let dailyThs = '';
-      if (isDaysExpanded) {
+      if (pageState[6].daysExpanded) {
         dHeaders.forEach(dh => {
           dailyThs += `<th class="val-cell">${dh}</th>`;
         });
@@ -1976,7 +1386,7 @@ window.renderDotacionTable = function renderDotacionTable() {
 
       // Grand Total Row
       let grandDailyTds = '';
-      if (isDaysExpanded) {
+      if (pageState[6].daysExpanded) {
         dKeys.forEach(k => {
           grandDailyTds += `<td class="val-cell num-font" style="font-weight: 800; font-size: 12px;">${grandDaily[k] || 0}</td>`;
         });
@@ -1999,10 +1409,10 @@ window.renderDotacionTable = function renderDotacionTable() {
 
       // PDV Rows
       pdvs.forEach(p => {
-        const isPdvExpanded = dotacionExpandedState[p.name] === true;
+        const isPdvExpanded = pageState[6].expanded[p.name] === true;
 
         let pDailyTds = '';
-        if (isDaysExpanded) {
+        if (pageState[6].daysExpanded) {
           dKeys.forEach(k => {
             const val = (p.daily_sales && p.daily_sales[k] !== undefined) ? p.daily_sales[k] : 0;
             pDailyTds += `<td class="val-cell num-font" style="font-weight: 700;">${val > 0 ? val : '-'}</td>`;
@@ -2035,7 +1445,7 @@ window.renderDotacionTable = function renderDotacionTable() {
         if (isPdvExpanded && p.children && Array.isArray(p.children)) {
           p.children.forEach(ase => {
             let aseDailyTds = '';
-            if (isDaysExpanded) {
+            if (pageState[6].daysExpanded) {
               dKeys.forEach(k => {
                 const v = (ase.daily_sales && ase.daily_sales[k] !== undefined) ? ase.daily_sales[k] : 0;
                 aseDailyTds += `<td class="val-cell num-font">${v > 0 ? v : '-'}</td>`;
@@ -2076,48 +1486,19 @@ window.renderDotacionTable = function renderDotacionTable() {
     }
 
   
-function renderNpsHeader() {
-      const thead = document.getElementById('npsThead');
-      const isPostventa = (currentNpsChannel === 'postventa');
-      
-      let weekHeadersHTML = '';
-      if (isWeeksExpanded) {
-        weekHeadersHTML = `
-          <th class="val-cell">SEM1</th>
-          <th class="val-cell">SEM2</th>
-          <th class="val-cell">SEM3</th>
-          <th class="val-cell">SEM4</th>
-          ${isPostventa ? `<th class="val-cell">SEM5</th>` : ''}
-        `;
-      }
-
-      thead.innerHTML = `
-        <tr>
-          <th style="min-width: 260px;">ESTRUCTURA</th>
-          ${weekHeadersHTML}
-          <th class="val-cell">TOTAL NPS</th>
-          <th class="val-cell">ENCUESTAS (Q)</th>
-          <th class="val-cell">% TOTAL Q</th>
-          <th class="val-cell" style="min-width: 140px;">ESTADO CUMPLIMIENTO</th>
-        </tr>
-      `;
-    }
-
-        
-                            
     // ================= PAGE GLOBAL HELPERS & VARIABLES =================
-    var isWeeksExpanded = false;
-    var currentNpsChannel = 'venta';
-    var npsExpandedState = {};
-    var discountSearchQuery = '';
-    var discountExpandedState = {};
-    var isDiscountAllExpanded = false;
-    var mixExpandedState = {};
-    var permExpandedState = {};
-    var cedenteExpandedState = {};
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     function selectNpsChannel(channel) {
-      currentNpsChannel = channel;
+      pageState[7].channel = channel;
       const btnVenta = document.getElementById('tabNpsVenta');
       const btnPost = document.getElementById('tabNpsPostventa');
       if (btnVenta) btnVenta.classList.toggle('active', channel === 'venta');
@@ -2127,26 +1508,26 @@ function renderNpsHeader() {
     }
 
     function toggleNpsWeeks() {
-      isWeeksExpanded = !isWeeksExpanded;
+      pageState[7].weeksExpanded = !pageState[7].weeksExpanded;
       const txtEl = document.getElementById('toggleNpsWeeksText');
-      if (txtEl) txtEl.textContent = isWeeksExpanded ? 'Ocultar Semanas (SEM1 - SEM5)' : 'Mostrar Semanas (SEM1 - SEM5)';
+      if (txtEl) txtEl.textContent = pageState[7].weeksExpanded ? 'Ocultar Semanas (SEM1 - SEM5)' : 'Mostrar Semanas (SEM1 - SEM5)';
       renderNpsHeader();
       renderNpsTable();
     }
 
     function toggleNpsPdv(pdvName) {
-      npsExpandedState[pdvName] = !npsExpandedState[pdvName];
+      pageState[7].expanded[pdvName] = !pageState[7].expanded[pdvName];
       renderNpsTable();
     }
 
     // ================= PAGE 2: TASA DE USO DE DESCUENTO =================
     function handleDiscountSearch() {
-      discountSearchQuery = document.getElementById('discountSearchInput') ? document.getElementById('discountSearchInput').value.trim().toLowerCase() : '';
-      if (discountSearchQuery.length > 0 && window.DISCOUNT_DATA && window.DISCOUNT_DATA.months) {
+      pageState[2].query = document.getElementById('discountSearchInput') ? document.getElementById('discountSearchInput').value.trim().toLowerCase() : '';
+      if (pageState[2].query.length > 0 && window.DISCOUNT_DATA && window.DISCOUNT_DATA.months) {
         const mData = window.DISCOUNT_DATA.months['Agosto'] || window.DISCOUNT_DATA;
         if (mData.tree) {
           mData.tree.forEach(spv => {
-            spv.children.forEach(pdv => { discountExpandedState[pdv.id] = true; });
+            spv.children.forEach(pdv => { pageState[2].expanded[pdv.id] = true; });
           });
         }
       }
@@ -2155,7 +1536,7 @@ function renderNpsHeader() {
 
     function toggleDiscountNode(nodeId, event) {
       if (event) event.stopPropagation();
-      discountExpandedState[nodeId] = !discountExpandedState[nodeId];
+      pageState[2].expanded[nodeId] = !pageState[2].expanded[nodeId];
       renderDiscountTable();
     }
 
@@ -2164,7 +1545,7 @@ function renderNpsHeader() {
       if (!thead) return;
       thead.innerHTML = `
         <tr>
-          <th style="min-width: 280px;">PUNTO DE VENTA (PDV) / ASESOR</th>
+          <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
           <th class="val-cell">TOTAL VENTAS PORTA OSS MONO</th>
           <th class="val-cell">VENTAS CON DESCUENTO 50%</th>
           <th class="val-cell">% TASA DE USO DESCUENTO</th>
@@ -2235,14 +1616,14 @@ function renderNpsHeader() {
             <div class="kpi-icon-box" style="background: #f0f9ff; color: #0369a1;"><i class="fa-solid fa-mobile-screen-button"></i></div>
             <div>
               <div class="kpi-title">Ventas PORTA OSS MONO</div>
-              <div class="kpi-value">${totMono.toLocaleString('es-PE')} u.</div>
+              <div class="kpi-value">${totMono.toLocaleString('es-PE')}</div>
             </div>
           </div>
           <div class="kpi-card">
             <div class="kpi-icon-box" style="background: #fefce8; color: #854d0e;"><i class="fa-solid fa-tags"></i></div>
             <div>
               <div class="kpi-title">Con Descuento 50%</div>
-              <div class="kpi-value" style="color: #a16207;">${totDesc.toLocaleString('es-PE')} u.</div>
+              <div class="kpi-value" style="color: #a16207;">${totDesc.toLocaleString('es-PE')}</div>
             </div>
           </div>
         `;
@@ -2251,9 +1632,9 @@ function renderNpsHeader() {
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS (${selMonth}) ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
-        <td class="val-cell num-font">${totMono.toLocaleString('es-PE')} u.</td>
-        <td class="val-cell num-font" style="color: #38bdf8;">${totDesc.toLocaleString('es-PE')} u.</td>
+        <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS</span></div></td>
+        <td class="val-cell num-font">${totMono.toLocaleString('es-PE')}</td>
+        <td class="val-cell num-font" style="color: #38bdf8;">${totDesc.toLocaleString('es-PE')}</td>
         <td class="val-cell num-font" style="font-size: 13.5px;">${getDiscountUsageBadgeHTML(pctTasaUso, targetMeta)}</td>
         <td class="val-cell num-font">${getDiscountStatusHTML(pctTasaUso, targetMeta)}</td>
       `;
@@ -2262,25 +1643,25 @@ function renderNpsHeader() {
       let visibleRows = 0;
 
       allPdvs.forEach(pdv => {
-        let pdvMatch = pdv.name.toLowerCase().includes(discountSearchQuery);
-        let matchingAsesores = pdv.children ? pdv.children.filter(ase => ase.name.toLowerCase().includes(discountSearchQuery)) : [];
+        let pdvMatch = pdv.name.toLowerCase().includes(pageState[2].query);
+        let matchingAsesores = pdv.children ? pdv.children.filter(ase => ase.name.toLowerCase().includes(pageState[2].query)) : [];
 
-        if (discountSearchQuery.length > 0 && !pdvMatch && matchingAsesores.length === 0) return;
+        if (pageState[2].query.length > 0 && !pdvMatch && matchingAsesores.length === 0) return;
 
         visibleRows++;
-        const isPdvExpanded = discountExpandedState[pdv.id] !== false;
+        const isPdvExpanded = pageState[2].expanded[pdv.id] === true;
 
         const trPdv = document.createElement('tr');
         trPdv.className = 'row-pdv-shaded';
         trPdv.innerHTML = `
           <td>
-            <div class="node-cell indent-0">
+            <div class="node-cell indent-1">
               <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleDiscountNode('${pdv.id}', event)"><i class="fa-solid fa-chevron-right"></i></span>
               <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
             </div>
           </td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${pdv.tot_porta_mono.toLocaleString('es-PE')} u.</td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.tot_desc_50.toLocaleString('es-PE')} u.</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a;">${pdv.tot_porta_mono.toLocaleString('es-PE')}</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0284c7;">${pdv.tot_desc_50.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${getDiscountUsageBadgeHTML(pdv.pct_tasa_uso, targetMeta)}</td>
           <td class="val-cell num-font">${getDiscountStatusHTML(pdv.pct_tasa_uso, targetMeta)}</td>
         `;
@@ -2288,7 +1669,7 @@ function renderNpsHeader() {
 
         if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
           pdv.children.forEach(ase => {
-            if (discountSearchQuery.length > 0 && !pdvMatch && !ase.name.toLowerCase().includes(discountSearchQuery)) return;
+            if (pageState[2].query.length > 0 && !pdvMatch && !ase.name.toLowerCase().includes(pageState[2].query)) return;
 
             visibleRows++;
             const trAse = document.createElement('tr');
@@ -2299,15 +1680,15 @@ function renderNpsHeader() {
 
             trAse.innerHTML = `
               <td>
-                <div class="node-cell indent-1">
+                <div class="node-cell indent-2">
                   <div style="display: flex; flex-direction: column;">
                     <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
                     ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
                   </div>
                 </div>
               </td>
-              <td class="val-cell num-font">${ase.tot_porta_mono} u.</td>
-              <td class="val-cell num-font" style="color: #0369a1; font-weight: 700;">${ase.tot_desc_50} u.</td>
+              <td class="val-cell num-font">${ase.tot_porta_mono}</td>
+              <td class="val-cell num-font" style="color: #0369a1; font-weight: 700;">${ase.tot_desc_50}</td>
               <td class="val-cell num-font">${ase.tot_porta_mono > 0 ? getDiscountUsageBadgeHTML(ase.pct_tasa_uso, targetMeta) : '-'}</td>
               <td class="val-cell num-font">${ase.tot_porta_mono > 0 ? getDiscountStatusHTML(ase.pct_tasa_uso, targetMeta) : '-'}</td>
             `;
@@ -2322,7 +1703,7 @@ function renderNpsHeader() {
 
     // ================= PAGE 3: OPERADOR CEDENTE =================
     function toggleCedentePdv(pdvName) {
-      cedenteExpandedState[pdvName] = !cedenteExpandedState[pdvName];
+      pageState[3].expanded[pdvName] = !pageState[3].expanded[pdvName];
       renderCedenteTable();
     }
 
@@ -2331,8 +1712,8 @@ function renderNpsHeader() {
       if (!tbody) return;
       tbody.innerHTML = '';
 
-      const selMonth = document.getElementById('monthCedenteFilter') ? document.getElementById('monthCedenteFilter').value : 'Julio';
-      const selZone = document.getElementById('zoneSelectPage7') ? document.getElementById('zoneSelectPage7').value : 'ALL';
+      const selMonth = document.getElementById('monthCedenteFilter') ? document.getElementById('monthCedenteFilter').value : 'Agosto';
+      const selZone = document.getElementById('zoneSelectPage3') ? document.getElementById('zoneSelectPage3').value : 'ALL';
       const selSpv = document.getElementById('spvCedenteFilter') ? document.getElementById('spvCedenteFilter').value : 'ALL';
 
       const cData = window.OPERADOR_CEDENTE_DATA;
@@ -2369,13 +1750,13 @@ function renderNpsHeader() {
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS (${selMonth})</span></div></td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${grandTotal.toLocaleString('es-PE')} u.</td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #2563eb;">${grandClaro.toLocaleString('es-PE')} u.</td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #1d4ed8;">${grandClaroPct.toFixed(1)}%</td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #16a34a;">${grandMovistar.toLocaleString('es-PE')} u.</td>
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><span>TOTAL FORTALECERNOS</span></div></td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${grandTotal.toLocaleString('es-PE')}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #dc2626;">${grandClaro.toLocaleString('es-PE')}</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #b91c1c;">${grandClaroPct.toFixed(1)}%</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #16a34a;">${grandMovistar.toLocaleString('es-PE')}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #15803d;">${grandMovPct.toFixed(1)}%</td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #ca8a04;">${grandBitel.toLocaleString('es-PE')} u.</td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #ca8a04;">${grandBitel.toLocaleString('es-PE')}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800; color: #a16207;">${grandBitPct.toFixed(1)}%</td>
       `;
       tbody.appendChild(trTotal);
@@ -2387,7 +1768,7 @@ function renderNpsHeader() {
         }
 
         filteredPdvs.forEach(pdv => {
-          const isPdvExpanded = cedenteExpandedState[pdv.name] === true;
+          const isPdvExpanded = pageState[3].expanded[pdv.name] === true;
           const mInfo = (pdv.months && pdv.months[selMonth]) ? pdv.months[selMonth] : { claro_u: 0, claro_pct: 0, movistar_u: 0, movistar_pct: 0, bitel_u: 0, bitel_pct: 0, total_u: 0 };
 
           const trPdv = document.createElement('tr');
@@ -2395,23 +1776,23 @@ function renderNpsHeader() {
 
           trPdv.innerHTML = `
             <td style="padding: 9px 12px;">
-              <div class="node-cell indent-0">
+              <div class="node-cell indent-1">
                 <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleCedentePdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
                 <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
               </div>
             </td>
-            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${mInfo.total_u.toLocaleString('es-PE')} u.</td>
-            <td class="val-cell num-font" style="font-weight: 800; color: #2563eb; padding: 9px 12px;">${mInfo.claro_u > 0 ? mInfo.claro_u + ' u.' : '-'}</td>
-            <td class="val-cell num-font" style="font-weight: 700; color: #1d4ed8; padding: 9px 12px;">${mInfo.claro_pct > 0 ? mInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
-            <td class="val-cell num-font" style="font-weight: 800; color: #16a34a; padding: 9px 12px;">${mInfo.movistar_u > 0 ? mInfo.movistar_u + ' u.' : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${mInfo.total_u.toLocaleString('es-PE')}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #dc2626; padding: 9px 12px;">${mInfo.claro_u > 0 ? mInfo.claro_u + '' : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 700; color: #b91c1c; padding: 9px 12px;">${mInfo.claro_pct > 0 ? mInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #16a34a; padding: 9px 12px;">${mInfo.movistar_u > 0 ? mInfo.movistar_u + '' : '-'}</td>
             <td class="val-cell num-font" style="font-weight: 700; color: #15803d; padding: 9px 12px;">${mInfo.movistar_pct > 0 ? mInfo.movistar_pct.toFixed(1) + '%' : '-'}</td>
-            <td class="val-cell num-font" style="font-weight: 800; color: #ca8a04; padding: 9px 12px;">${mInfo.bitel_u > 0 ? mInfo.bitel_u + ' u.' : '-'}</td>
+            <td class="val-cell num-font" style="font-weight: 800; color: #ca8a04; padding: 9px 12px;">${mInfo.bitel_u > 0 ? mInfo.bitel_u + '' : '-'}</td>
             <td class="val-cell num-font" style="font-weight: 700; color: #a16207; padding: 9px 12px;">${mInfo.bitel_pct > 0 ? mInfo.bitel_pct.toFixed(1) + '%' : '-'}</td>
           `;
           tbody.appendChild(trPdv);
 
-          if (isPdvExpanded && pdv.children && Array.isArray(pdv.children)) {
-            pdv.children.forEach(ase => {
+          if (isPdvExpanded && pdv.asesores && Array.isArray(pdv.asesores)) {
+            pdv.asesores.forEach(ase => {
               const aInfo = (ase.months && ase.months[selMonth]) ? ase.months[selMonth] : { claro_u: 0, claro_pct: 0, movistar_u: 0, movistar_pct: 0, bitel_u: 0, bitel_pct: 0, total_u: 0 };
               const trAse = document.createElement('tr');
               trAse.className = 'row-asesor';
@@ -2421,16 +1802,16 @@ function renderNpsHeader() {
 
               trAse.innerHTML = `
                 <td style="padding: 7px 12px;">
-                  <div class="node-cell indent-1">
+                  <div class="node-cell indent-2">
                     <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
                   </div>
                 </td>
-                <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${aInfo.total_u > 0 ? aInfo.total_u + ' u.' : '-'}</td>
-                <td class="val-cell num-font" style="color: #3b82f6; padding: 7px 12px;">${aInfo.claro_u > 0 ? aInfo.claro_u + ' u.' : '-'}</td>
-                <td class="val-cell num-font" style="color: #60a5fa; padding: 7px 12px;">${aInfo.claro_pct > 0 ? aInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
-                <td class="val-cell num-font" style="color: #22c55e; padding: 7px 12px;">${aInfo.movistar_u > 0 ? aInfo.movistar_u + ' u.' : '-'}</td>
+                <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${aInfo.total_u > 0 ? aInfo.total_u + '' : '-'}</td>
+                <td class="val-cell num-font" style="color: #dc2626; padding: 7px 12px;">${aInfo.claro_u > 0 ? aInfo.claro_u + '' : '-'}</td>
+                <td class="val-cell num-font" style="color: #b91c1c; padding: 7px 12px;">${aInfo.claro_pct > 0 ? aInfo.claro_pct.toFixed(1) + '%' : '-'}</td>
+                <td class="val-cell num-font" style="color: #22c55e; padding: 7px 12px;">${aInfo.movistar_u > 0 ? aInfo.movistar_u + '' : '-'}</td>
                 <td class="val-cell num-font" style="color: #4ade80; padding: 7px 12px;">${aInfo.movistar_pct > 0 ? aInfo.movistar_pct.toFixed(1) + '%' : '-'}</td>
-                <td class="val-cell num-font" style="color: #eab308; padding: 7px 12px;">${aInfo.bitel_u > 0 ? aInfo.bitel_u + ' u.' : '-'}</td>
+                <td class="val-cell num-font" style="color: #eab308; padding: 7px 12px;">${aInfo.bitel_u > 0 ? aInfo.bitel_u + '' : '-'}</td>
                 <td class="val-cell num-font" style="color: #facc15; padding: 7px 12px;">${aInfo.bitel_pct > 0 ? aInfo.bitel_pct.toFixed(1) + '%' : '-'}</td>
               `;
               tbody.appendChild(trAse);
@@ -2442,7 +1823,7 @@ function renderNpsHeader() {
 
     // ================= PAGE 4: MIX DE PLANES POSTPAGO =================
     function toggleMixPdv(pdvName) {
-      mixExpandedState[pdvName] = !mixExpandedState[pdvName];
+      pageState[4].expanded[pdvName] = !pageState[4].expanded[pdvName];
       renderMixPlanesTable();
     }
 
@@ -2460,7 +1841,7 @@ function renderNpsHeader() {
       }
 
       const fontWeight = isPdvRow ? '800' : '600';
-      return `<td class="val-cell num-font" style="color: ${textColor}; font-weight: ${fontWeight}; padding: 9px 12px;">${count.toLocaleString('es-PE')} u.</td>`;
+      return `<td class="val-cell num-font" style="color: ${textColor}; font-weight: ${fontWeight}; padding: 9px 12px;">${count.toLocaleString('es-PE')}</td>`;
     }
 
     function renderMixPlanesTable() {
@@ -2506,7 +1887,7 @@ function renderNpsHeader() {
 
       const subEl = document.getElementById('mixPlanesSubtitle');
       if (subEl) {
-        subEl.innerHTML = `Cierre Mensual <strong>${selMonth} 2026</strong>: <strong>${grandTot.toLocaleString('es-PE')} Unidades</strong> &bull; Desglose por RB de Plan`;
+        subEl.innerHTML = `Cierre Mensual <strong>${selMonth} 2026</strong>: <strong>${grandTot.toLocaleString('es-PE')}</strong> &bull; Desglose por RB de Plan`;
       }
 
       const trTotal = document.createElement('tr');
@@ -2516,11 +1897,11 @@ function renderNpsHeader() {
         const cnt = grandPlans[p];
         const pct = grandTot > 0 ? (cnt / grandTot * 100) : 0;
         const pctStr = cnt > 0 ? ` (${pct.toFixed(1)}%)` : '';
-        return `<td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800;">${cnt > 0 ? cnt.toLocaleString('es-PE') + ' u.' + `<span style="font-size: 10.5px; color: #475569; font-weight: 600; margin-left: 2px;">${pctStr}</span>` : '-'}</td>`;
+        return `<td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 800;">${cnt > 0 ? cnt.toLocaleString('es-PE') + '' + `<span class="grand-total-pct">${pctStr}</span>` : '-'}</td>`;
       }).join('');
 
       trTotal.innerHTML = `
-        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS (${selMonth}) ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><span>TOTAL FORTALECERNOS</span></div></td>
         ${planColsHTML}
       `;
       tbody.appendChild(trTotal);
@@ -2528,7 +1909,7 @@ function renderNpsHeader() {
       tree.forEach(spv => {
         if (spv.children) {
           spv.children.forEach(pdv => {
-            const isPdvExpanded = mixExpandedState[pdv.name] === true;
+            const isPdvExpanded = pageState[4].expanded[pdv.name] === true;
 
             const trPdv = document.createElement('tr');
             trPdv.className = 'row-pdv-shaded';
@@ -2537,7 +1918,7 @@ function renderNpsHeader() {
 
             trPdv.innerHTML = `
               <td style="padding: 9px 12px;">
-                <div class="node-cell indent-0">
+                <div class="node-cell indent-1">
                   <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleMixPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
                   <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
                 </div>
@@ -2557,7 +1938,7 @@ function renderNpsHeader() {
 
                 trAse.innerHTML = `
                   <td style="padding: 7px 12px;">
-                    <div class="node-cell indent-1">
+                    <div class="node-cell indent-2">
                       <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
                     </div>
                   </td>
@@ -2573,7 +1954,7 @@ function renderNpsHeader() {
 
     // ================= PAGE 5: PERMANENCIA M6 =================
     function togglePermPdv(pdvName) {
-      permExpandedState[pdvName] = !permExpandedState[pdvName];
+      pageState[5].expanded[pdvName] = !pageState[5].expanded[pdvName];
       renderPermanenciaTable();
     }
 
@@ -2610,8 +1991,8 @@ function renderNpsHeader() {
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
       trTotal.innerHTML = `
-        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><i class="fa-solid fa-calculator" style="color: #60a5fa; margin-right: 6px;"></i><span>TOTAL FORTALECERNOS (${selMonth})</span></div></td>
-        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${s.total_sales_jan ? s.total_sales_jan.toLocaleString('es-PE') + ' u.' : '-'}</td>
+        <td style="padding: 10px 12px;"><div class="node-cell indent-0" style="font-size: 13px; font-weight: 800;"><span>TOTAL FORTALECERNOS</span></div></td>
+        <td class="val-cell num-font" style="padding: 10px 12px; font-size: 13px; font-weight: 800;">${s.total_sales_jan ? s.total_sales_jan.toLocaleString('es-PE') + '' : '-'}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m0_pct ? s.m0_pct.toFixed(2) + '%' : '-'}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m1_pct ? s.m1_pct.toFixed(2) + '%' : '-'}</td>
         <td class="val-cell num-font" style="padding: 10px 12px; font-size: 12px; font-weight: 700;">${s.m2_pct ? s.m2_pct.toFixed(2) + '%' : '-'}</td>
@@ -2625,19 +2006,19 @@ function renderNpsHeader() {
 
       tree.forEach(pdv => {
         if (selZone !== 'ALL' && pdv.zona && pdv.zona !== selZone) return;
-        const isPdvExpanded = permExpandedState[pdv.name] === true;
+        const isPdvExpanded = pageState[5].expanded[pdv.name] === true;
 
         const trPdv = document.createElement('tr');
         trPdv.className = 'row-pdv-shaded';
 
         trPdv.innerHTML = `
           <td style="padding: 9px 12px;">
-            <div class="node-cell indent-0">
+            <div class="node-cell indent-1">
               <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="togglePermPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
               <span style="font-weight: 800; color: #0f172a; font-size: 12px;">${pdv.name}</span>
             </div>
           </td>
-          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${pdv.total ? pdv.total.toLocaleString('es-PE') + ' u.' : '-'}</td>
+          <td class="val-cell num-font" style="font-weight: 800; color: #0f172a; padding: 9px 12px;">${pdv.total ? pdv.total.toLocaleString('es-PE') + '' : '-'}</td>
           <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m0 !== null && pdv.m0 !== undefined ? pdv.m0.toFixed(2) + '%' : '-'}</td>
           <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m1 !== null && pdv.m1 !== undefined ? pdv.m1.toFixed(2) + '%' : '-'}</td>
           <td class="val-cell num-font" style="color: #475569; padding: 9px 12px;">${pdv.m2 !== null && pdv.m2 !== undefined ? pdv.m2.toFixed(2) + '%' : '-'}</td>
@@ -2659,11 +2040,11 @@ function renderNpsHeader() {
 
             trAse.innerHTML = `
               <td style="padding: 7px 12px;">
-                <div class="node-cell indent-1">
+                <div class="node-cell indent-2">
                   <span style="font-weight: 500; color: #475569; font-size: 11px;">${realName}</span>
                 </div>
               </td>
-              <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${ase.total ? ase.total.toLocaleString('es-PE') + ' u.' : '-'}</td>
+              <td class="val-cell num-font" style="font-weight: 700; color: #334155; padding: 7px 12px;">${ase.total ? ase.total.toLocaleString('es-PE') + '' : '-'}</td>
               <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m0 !== null && ase.m0 !== undefined ? ase.m0.toFixed(2) + '%' : '-'}</td>
               <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m1 !== null && ase.m1 !== undefined ? ase.m1.toFixed(2) + '%' : '-'}</td>
               <td class="val-cell num-font" style="color: #64748b; padding: 7px 12px;">${ase.m2 !== null && ase.m2 !== undefined ? ase.m2.toFixed(2) + '%' : '-'}</td>
@@ -2688,7 +2069,7 @@ function renderNpsHeader() {
       if (!thead) return;
 
       let weekHeadersHTML = '';
-      if (isWeeksExpanded) {
+      if (pageState[7].weeksExpanded) {
         weekHeadersHTML = `
           <th class="val-cell">SEM1</th>
           <th class="val-cell">SEM2</th>
@@ -2700,11 +2081,11 @@ function renderNpsHeader() {
 
       thead.innerHTML = `
         <tr>
-          <th style="min-width: 260px;">ESTRUCTURA</th>
+          <th style="min-width: 260px;">PUNTO DE VENTA / ASESOR</th>
           ${weekHeadersHTML}
           <th class="val-cell">TOTAL NPS</th>
-          <th class="val-cell">ENCUESTAS (Q)</th>
-          <th class="val-cell">% TOTAL Q</th>
+          <th class="val-cell">ENCUESTAS</th>
+          <th class="val-cell">% TOTAL</th>
           <th class="val-cell" style="min-width: 140px;">ESTADO CUMPLIMIENTO</th>
         </tr>
       `;
@@ -2718,9 +2099,9 @@ function renderNpsHeader() {
       const selSpv = document.getElementById('spvNpsFilter') ? document.getElementById('spvNpsFilter').value : 'ALL';
       const selZone = document.getElementById('zoneSelectPage7') ? document.getElementById('zoneSelectPage7').value : 'ALL';
       const npsData = window.NPS_DATA;
-      if (!npsData || !npsData[currentNpsChannel]) return;
+      if (!npsData || !npsData[pageState[7].channel]) return;
 
-      const channelData = npsData[currentNpsChannel];
+      const channelData = npsData[pageState[7].channel];
       const targetMeta = npsData.target || 58.0;
 
       let pdvs = channelData.pdvs || [];
@@ -2741,7 +2122,19 @@ function renderNpsHeader() {
 
       const kpiGrid = document.getElementById('npsKpiCards');
       if (kpiGrid) {
-        const bestSem = (currentNpsChannel === 'postventa') ? 'SEM1 & SEM4 (100% NPS)' : 'SEM3 (89% NPS)';
+        const weeklyResults = [1, 2, 3, 4, 5].map(week => {
+          let q = 0;
+          let weightedNps = 0;
+          pdvs.forEach(pdv => {
+            const weekQ = Number(pdv[`sem${week}_q`] || 0);
+            const weekNps = Number(pdv[`sem${week}_nps`] || 0);
+            q += weekQ;
+            weightedNps += weekNps * weekQ;
+          });
+          return { week, q, nps: q > 0 ? weightedNps / q : null };
+        }).filter(result => result.q > 0);
+        const peakWeek = weeklyResults.reduce((best, current) => !best || current.nps > best.nps ? current : best, null);
+        const bestSem = peakWeek ? `SEM${peakWeek.week} (${peakWeek.nps.toFixed(0)}% NPS)` : 'Sin encuestas';
         kpiGrid.innerHTML = `
           <div class="kpi-card">
             <div class="kpi-icon-box" style="background: #e0e7ff; color: #3730a3;"><i class="fa-solid fa-bullseye"></i></div>
@@ -2755,15 +2148,15 @@ function renderNpsHeader() {
               <i class="fa-solid ${totNps >= targetMeta ? 'fa-award' : 'fa-triangle-exclamation'}"></i>
             </div>
             <div>
-              <div class="kpi-title">NPS Logrado (${currentNpsChannel.toUpperCase()})</div>
-              <div class="kpi-value" style="color: ${totNps >= targetMeta ? '#15803d' : '#b91c1c'};">${totNps.toFixed(0)}% ${getNpsBadgeHTML(totNps, targetMeta)}</div>
+              <div class="kpi-title">NPS Logrado (${pageState[7].channel.toUpperCase()})</div>
+              <div class="kpi-value" style="color: ${totNps >= targetMeta ? '#15803d' : '#b91c1c'};">${totNps.toFixed(0)}%</div>
             </div>
           </div>
           <div class="kpi-card">
             <div class="kpi-icon-box" style="background: #f0f9ff; color: #0369a1;"><i class="fa-solid fa-comments"></i></div>
             <div>
-              <div class="kpi-title">Total Encuestas (Q)</div>
-              <div class="kpi-value">${totQ} Respuestas</div>
+              <div class="kpi-title">Total Encuestas</div>
+              <div class="kpi-value">${totQ}</div>
             </div>
           </div>
           <div class="kpi-card">
@@ -2780,7 +2173,7 @@ function renderNpsHeader() {
       trTotal.className = 'row-grand-total';
 
       let weekTotalCells = '';
-      if (isWeeksExpanded) {
+      if (pageState[7].weeksExpanded) {
         weekTotalCells = `
           <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 1, targetMeta)}</td>
           <td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, 2, targetMeta)}</td>
@@ -2791,7 +2184,7 @@ function renderNpsHeader() {
       }
 
       trTotal.innerHTML = `
-        <td><div class="node-cell indent-0"><i class="fa-solid fa-calculator" style="color: #60a5fa;"></i><span>TOTAL FORTALECERNOS (${currentNpsChannel.toUpperCase()}) ${selZone !== 'ALL' ? '(' + selZone + ')' : ''}</span></div></td>
+        <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS</span></div></td>
         ${weekTotalCells}
         <td class="val-cell num-font" style="font-size: 14px; font-weight: 800;">${getNpsBadgeHTML(totNps, targetMeta)}</td>
         <td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${totQ}</td>
@@ -2805,13 +2198,13 @@ function renderNpsHeader() {
       let visibleRows = 0;
 
       pdvs.forEach(pdv => {
-        const isPdvExpanded = npsExpandedState[pdv.name] !== false;
+        const isPdvExpanded = pageState[7].expanded[pdv.name] === true;
 
         const trPdv = document.createElement('tr');
         trPdv.className = 'row-pdv-shaded';
 
         let pdvWeeksHTML = '';
-        if (isWeeksExpanded) {
+        if (pageState[7].weeksExpanded) {
           pdvWeeksHTML = `
             <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 1, targetMeta)}</td>
             <td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, 2, targetMeta)}</td>
@@ -2823,7 +2216,7 @@ function renderNpsHeader() {
 
         trPdv.innerHTML = `
           <td>
-            <div class="node-cell indent-0">
+            <div class="node-cell indent-1">
               <span class="toggle-icon ${isPdvExpanded ? 'expanded' : ''}" onclick="toggleNpsPdv('${pdv.name}')"><i class="fa-solid fa-chevron-right"></i></span>
               <span style="font-weight: 800; color: #0f172a;">${pdv.name}</span>
             </div>
@@ -2845,7 +2238,7 @@ function renderNpsHeader() {
             trAse.className = 'row-asesor';
 
             let aseWeeksHTML = '';
-            if (isWeeksExpanded) {
+            if (pageState[7].weeksExpanded) {
               aseWeeksHTML = `
                 <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 1, targetMeta)}</td>
                 <td class="val-cell num-font">${getWeekCellBadgeHTML(ase, 2, targetMeta)}</td>
@@ -2860,9 +2253,9 @@ function renderNpsHeader() {
 
             trAse.innerHTML = `
               <td>
-                <div class="node-cell indent-1">
+                <div class="node-cell indent-2">
                   <div style="display: flex; flex-direction: column;">
-                    <span style="font-weight: 700; font-size: 11px; color: #0f172a;">${userCode}</span>
+                    <span style="font-weight: 400; font-size: 11px; color: #64748b;">${userCode}</span>
                     ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
                   </div>
                 </div>
@@ -2882,7 +2275,7 @@ function renderNpsHeader() {
       });
 
       const labelEl = document.getElementById('rowCountLabel');
-      if (labelEl) labelEl.textContent = `${visibleRows} filas en reporte de calidad y NPS (${currentNpsChannel.toUpperCase()})`;
+      if (labelEl) labelEl.textContent = `${visibleRows} filas en reporte de calidad y NPS (${pageState[7].channel.toUpperCase()})`;
     }
 
     function getWeekCellBadgeHTML(node, wNum, targetMeta) {
@@ -2890,7 +2283,7 @@ function renderNpsHeader() {
       const q = node[`sem${wNum}_q`];
       const nps = node[`sem${wNum}_nps`];
       if (q !== undefined && q !== null && q > 0) {
-        return `${getNpsBadgeHTML(nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${q}Q)</span>`;
+        return `${getNpsBadgeHTML(nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${q})</span>`;
       }
       return '-';
     }

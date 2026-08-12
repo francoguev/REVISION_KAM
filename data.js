@@ -2,77 +2,77 @@ ARRIBOS_DATA = {
   "TE SATELITE CA\u00d1ETE": {
     "m202606": 272,
     "m202607": 319,
-    "m202608": 76
+    "m202608": 78
   },
   "TE AYACUCHO": {
     "m202606": 261,
     "m202607": 259,
-    "m202608": 68
+    "m202608": 76
   },
   "TE HUANTA": {
     "m202606": 268,
     "m202607": 302,
-    "m202608": 122
+    "m202608": 130
   },
   "TE ICA": {
     "m202606": 231,
     "m202607": 209,
-    "m202608": 65
+    "m202608": 71
   },
   "TE SAN CLEMENTE": {
     "m202606": 231,
     "m202607": 209,
-    "m202608": 65
+    "m202608": 71
   },
   "TE ICA 3": {
     "m202606": 299,
     "m202607": 351,
-    "m202608": 105
+    "m202608": 114
   },
   "TE ICA II": {
     "m202606": 464,
     "m202607": 618,
-    "m202608": 256
+    "m202608": 272
   },
   "TE ICA MODELO": {
     "m202606": 70,
     "m202607": 103,
-    "m202608": 57
+    "m202608": 60
   },
   "TE NAZCA": {
     "m202606": 528,
     "m202607": 631,
-    "m202608": 213
+    "m202608": 223
   },
   "TE PARCONA": {
     "m202606": 151,
     "m202607": 98,
-    "m202608": 63
+    "m202608": 68
   },
   "TE PISCO": {
     "m202606": 201,
     "m202607": 278,
-    "m202608": 128
+    "m202608": 134
   },
   "TE SATELITE BARRIO CHINO": {
     "m202606": 427,
     "m202607": 594,
-    "m202608": 224
+    "m202608": 244
   },
   "TE SATELITE CHALA": {
     "m202606": 142,
     "m202607": 151,
-    "m202608": 59
+    "m202608": 62
   },
   "TE SATELITE PALPA": {
     "m202606": 112,
     "m202607": 110,
-    "m202608": 35
+    "m202608": 37
   },
   "TE SATELITE PUEBLO JOVEN": {
     "m202606": 129,
     "m202607": 170,
-    "m202608": 60
+    "m202608": 68
   }
 };
 
@@ -149,22 +149,22 @@ SALES_DATA = {
       "POSTPAGO_TOTAL": {
         "m202606": 1385,
         "m202607": 1432,
-        "m202608": 513
+        "m202608": 534
       },
       "PORTA_OSS": {
         "m202606": 547,
         "m202607": 567,
-        "m202608": 218
+        "m202608": 225
       },
       "PORTA_OPP": {
         "m202606": 105,
         "m202607": 119,
-        "m202608": 34
+        "m202608": 36
       },
       "VR": {
         "m202606": 733,
         "m202607": 746,
-        "m202608": 261
+        "m202608": 273
       },
       "RENO_SS": {
         "m202606": 152,
@@ -174,12 +174,12 @@ SALES_DATA = {
       "LINEA_ADICIONAL": {
         "m202606": 444,
         "m202607": 455,
-        "m202608": 150
+        "m202608": 152
       },
       "PREPAGO": {
         "m202606": 767,
         "m202607": 657,
-        "m202608": 182
+        "m202608": 189
       }
     }
   },
@@ -197,7 +197,7 @@ SALES_DATA = {
           "units": {
             "m202606": 436,
             "m202607": 463,
-            "m202608": 172
+            "m202608": 180
           }
         },
         "PORTA_OSS": {
@@ -209,7 +209,7 @@ SALES_DATA = {
           "units": {
             "m202606": 185,
             "m202607": 203,
-            "m202608": 71
+            "m202608": 73
           }
         },
         "PORTA_OPP": {
@@ -221,7 +221,7 @@ SALES_DATA = {
           "units": {
             "m202606": 29,
             "m202607": 24,
-            "m202608": 12
+            "m202608": 14
           }
         },
         "VR": {
@@ -233,7 +233,7 @@ SALES_DATA = {
           "units": {
             "m202606": 222,
             "m202607": 236,
-            "m202608": 89
+            "m202608": 93
           }
         },
         "RENO_SS": {
@@ -269,7 +269,7 @@ SALES_DATA = {
           "units": {
             "m202606": 242,
             "m202607": 232,
-            "m202608": 80
+            "m202608": 85
           }
         }
       },
@@ -289,7 +289,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 122,
                 "m202607": 144,
-                "m202608": 40
+                "m202608": 42
               }
             },
             "PORTA_OSS": {
@@ -301,7 +301,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 49,
                 "m202607": 62,
-                "m202608": 20
+                "m202608": 21
               }
             },
             "PORTA_OPP": {
@@ -325,7 +325,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 58,
                 "m202607": 72,
-                "m202608": 19
+                "m202608": 20
               }
             },
             "RENO_SS": {
@@ -361,7 +361,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 89,
                 "m202607": 80,
-                "m202608": 19
+                "m202608": 23
               }
             }
           },
@@ -372,6 +372,13 @@ SALES_DATA = {
               "user_code": "JANELLA ISABEL VALLEJOS PINEDA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "3 a 6 meses",
+                "category_key": "months-3-6",
+                "date": "05/05/2026",
+                "days": 99
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -454,7 +461,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 50,
                     "m202607": 54,
-                    "m202608": 11
+                    "m202608": 15
                   }
                 }
               }
@@ -465,6 +472,13 @@ SALES_DATA = {
               "user_code": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "1 a 3 meses",
+                "category_key": "months-1-3",
+                "date": "01/06/2026",
+                "days": 72
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -558,6 +572,13 @@ SALES_DATA = {
               "user_code": "NAOMI MARINA AMESQUITA APARCANA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "3 a 6 meses",
+                "category_key": "months-3-6",
+                "date": "26/02/2026",
+                "days": 167
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -568,7 +589,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 62,
                     "m202607": 77,
-                    "m202608": 23
+                    "m202608": 25
                   }
                 },
                 "PORTA_OSS": {
@@ -580,7 +601,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 22,
                     "m202607": 35,
-                    "m202608": 9
+                    "m202608": 10
                   }
                 },
                 "PORTA_OPP": {
@@ -604,7 +625,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 33,
                     "m202607": 36,
-                    "m202608": 13
+                    "m202608": 14
                   }
                 },
                 "RENO_SS": {
@@ -662,7 +683,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 239,
                 "m202607": 254,
-                "m202608": 98
+                "m202608": 104
               }
             },
             "PORTA_OSS": {
@@ -674,7 +695,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 104,
                 "m202607": 107,
-                "m202608": 34
+                "m202608": 35
               }
             },
             "PORTA_OPP": {
@@ -686,7 +707,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 12,
                 "m202607": 13,
-                "m202608": 8
+                "m202608": 10
               }
             },
             "VR": {
@@ -698,7 +719,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 123,
                 "m202607": 134,
-                "m202608": 56
+                "m202608": 59
               }
             },
             "RENO_SS": {
@@ -734,7 +755,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 87,
                 "m202607": 114,
-                "m202608": 37
+                "m202608": 38
               }
             }
           },
@@ -745,6 +766,13 @@ SALES_DATA = {
               "user_code": "DIANA LORENA SIME BENDEZU",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "6 meses a un a\u00f1o",
+                "category_key": "months-6-12",
+                "date": "01/10/2025",
+                "days": 315
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -755,7 +783,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 132,
                     "m202607": 140,
-                    "m202608": 51
+                    "m202608": 56
                   }
                 },
                 "PORTA_OSS": {
@@ -767,7 +795,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 57,
                     "m202607": 59,
-                    "m202608": 17
+                    "m202608": 18
                   }
                 },
                 "PORTA_OPP": {
@@ -779,7 +807,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 9,
                     "m202607": 6,
-                    "m202608": 3
+                    "m202608": 4
                   }
                 },
                 "VR": {
@@ -791,7 +819,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 66,
                     "m202607": 75,
-                    "m202608": 31
+                    "m202608": 34
                   }
                 },
                 "RENO_SS": {
@@ -827,7 +855,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 37,
                     "m202607": 51,
-                    "m202608": 22
+                    "m202608": 23
                   }
                 }
               }
@@ -838,6 +866,10 @@ SALES_DATA = {
               "user_code": "GAMBOA MEDINA MARTIN JOS\u00c9 ANTONIO",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "ceased",
+                "label": "Cesado"
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -931,6 +963,13 @@ SALES_DATA = {
               "user_code": "ROGGER SMITH NAVARRETE CAHUA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "6 meses a un a\u00f1o",
+                "category_key": "months-6-12",
+                "date": "24/09/2025",
+                "days": 322
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -941,7 +980,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 107,
                     "m202607": 108,
-                    "m202608": 47
+                    "m202608": 48
                   }
                 },
                 "PORTA_OSS": {
@@ -965,7 +1004,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 3,
                     "m202607": 6,
-                    "m202608": 5
+                    "m202608": 6
                   }
                 },
                 "VR": {
@@ -1118,6 +1157,10 @@ SALES_DATA = {
               "user_code": "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "ceased",
+                "label": "Cesado"
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -1211,6 +1254,13 @@ SALES_DATA = {
               "user_code": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "0 a 30 d\u00edas",
+                "category_key": "days-0-30",
+                "date": "17/07/2026",
+                "days": 26
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -1304,6 +1354,13 @@ SALES_DATA = {
               "user_code": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "1 a 3 meses",
+                "category_key": "months-1-3",
+                "date": "01/06/2026",
+                "days": 72
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -1397,6 +1454,13 @@ SALES_DATA = {
               "user_code": "VALENTINA BAEZ TORDOYA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "1 a 3 meses",
+                "category_key": "months-1-3",
+                "date": "01/07/2026",
+                "days": 42
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -1584,6 +1648,13 @@ SALES_DATA = {
               "user_code": "DANILO GIORDANO CARRIZALES RAMOS",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "Mayor a un a\u00f1o",
+                "category_key": "over-1-year",
+                "date": "01/08/2025",
+                "days": 376
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -1677,6 +1748,13 @@ SALES_DATA = {
               "user_code": "JOSU\u00c9 MIGUEL ESPINO SAYRITUPAC",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "1 a 3 meses",
+                "category_key": "months-1-3",
+                "date": "01/06/2026",
+                "days": 72
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -1770,6 +1848,13 @@ SALES_DATA = {
               "user_code": "JUNIOR ANTHONY GARCIA GUERRA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "0 a 30 d\u00edas",
+                "category_key": "days-0-30",
+                "date": "20/07/2026",
+                "days": 23
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -1874,7 +1959,7 @@ SALES_DATA = {
           "units": {
             "m202606": 328,
             "m202607": 282,
-            "m202608": 101
+            "m202608": 106
           }
         },
         "PORTA_OSS": {
@@ -1886,7 +1971,7 @@ SALES_DATA = {
           "units": {
             "m202606": 103,
             "m202607": 97,
-            "m202608": 47
+            "m202608": 49
           }
         },
         "PORTA_OPP": {
@@ -1910,7 +1995,7 @@ SALES_DATA = {
           "units": {
             "m202606": 202,
             "m202607": 160,
-            "m202608": 52
+            "m202608": 55
           }
         },
         "RENO_SS": {
@@ -1934,7 +2019,7 @@ SALES_DATA = {
           "units": {
             "m202606": 152,
             "m202607": 135,
-            "m202608": 34
+            "m202608": 35
           }
         },
         "PREPAGO": {
@@ -1966,7 +2051,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 237,
                 "m202607": 206,
-                "m202608": 75
+                "m202608": 79
               }
             },
             "PORTA_OSS": {
@@ -1978,7 +2063,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 76,
                 "m202607": 74,
-                "m202608": 32
+                "m202608": 34
               }
             },
             "PORTA_OPP": {
@@ -2002,7 +2087,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 148,
                 "m202607": 117,
-                "m202608": 41
+                "m202608": 43
               }
             },
             "RENO_SS": {
@@ -2026,7 +2111,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 117,
                 "m202607": 103,
-                "m202608": 23
+                "m202608": 24
               }
             },
             "PREPAGO": {
@@ -2044,11 +2129,115 @@ SALES_DATA = {
           },
           "children": [
             {
+              "id": "ase_dieslly_joseydi_calle_prado",
+              "name": "DIESLLY JOSEYDI CALLE PRADO",
+              "user_code": "DIESLLY JOSEYDI CALLE PRADO",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
+              "tenure": {
+                "status": "missing",
+                "label": "Sin registro"
+              },
+              "products": {
+                "POSTPAGO_TOTAL": {
+                  "quotas": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  },
+                  "units": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 2
+                  }
+                },
+                "PORTA_OSS": {
+                  "quotas": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  },
+                  "units": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 2
+                  }
+                },
+                "PORTA_OPP": {
+                  "quotas": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  },
+                  "units": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  }
+                },
+                "VR": {
+                  "quotas": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  },
+                  "units": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  }
+                },
+                "RENO_SS": {
+                  "quotas": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  },
+                  "units": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  }
+                },
+                "LINEA_ADICIONAL": {
+                  "quotas": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  },
+                  "units": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 1
+                  }
+                },
+                "PREPAGO": {
+                  "quotas": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  },
+                  "units": {
+                    "m202606": 0,
+                    "m202607": 0,
+                    "m202608": 0
+                  }
+                }
+              }
+            },
+            {
               "id": "ase_jose_fernando_moreno_valencia",
               "name": "JOSE FERNANDO MORENO VALENCIA",
               "user_code": "JOSE FERNANDO MORENO VALENCIA",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "Mayor a un a\u00f1o",
+                "category_key": "over-1-year",
+                "date": "01/12/2024",
+                "days": 619
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -2142,6 +2331,13 @@ SALES_DATA = {
               "user_code": "PEDRO FERNANDO CUMPA VIVANCO",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "3 a 6 meses",
+                "category_key": "months-3-6",
+                "date": "30/03/2026",
+                "days": 135
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -2235,6 +2431,13 @@ SALES_DATA = {
               "user_code": "RUBETH DANNAE PICKMAN SAN MIGUEL",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "Mayor a un a\u00f1o",
+                "category_key": "over-1-year",
+                "date": "02/10/2024",
+                "days": 679
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -2245,7 +2448,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 121,
                     "m202607": 83,
-                    "m202608": 40
+                    "m202608": 42
                   }
                 },
                 "PORTA_OSS": {
@@ -2281,7 +2484,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 69,
                     "m202607": 49,
-                    "m202608": 22
+                    "m202608": 24
                   }
                 },
                 "RENO_SS": {
@@ -2328,6 +2531,10 @@ SALES_DATA = {
               "user_code": "YESSICA MARIA RAMOS TAPIA",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "ceased",
+                "label": "Cesado"
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -2432,7 +2639,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 49,
                 "m202607": 48,
-                "m202608": 16
+                "m202608": 17
               }
             },
             "PORTA_OSS": {
@@ -2468,7 +2675,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 26,
                 "m202607": 27,
-                "m202608": 5
+                "m202608": 6
               }
             },
             "RENO_SS": {
@@ -2515,6 +2722,13 @@ SALES_DATA = {
               "user_code": "ELIZABETH LISLEY HUAMAN YBARRA",
               "spv": "FERNANDO MORENO",
               "zona": "SUR",
+              "tenure": {
+                "status": "active",
+                "category": "6 meses a un a\u00f1o",
+                "category_key": "months-6-12",
+                "date": "17/09/2025",
+                "days": 329
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -2525,7 +2739,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 49,
                     "m202607": 48,
-                    "m202608": 16
+                    "m202608": 17
                   }
                 },
                 "PORTA_OSS": {
@@ -2561,7 +2775,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 26,
                     "m202607": 27,
-                    "m202608": 5
+                    "m202608": 6
                   }
                 },
                 "RENO_SS": {
@@ -2702,6 +2916,13 @@ SALES_DATA = {
               "user_code": "ALEXANDRA ECHAJAYA GARCIA",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "6 meses a un a\u00f1o",
+                "category_key": "months-6-12",
+                "date": "17/10/2025",
+                "days": 299
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -2806,7 +3027,7 @@ SALES_DATA = {
           "units": {
             "m202606": 351,
             "m202607": 414,
-            "m202608": 157
+            "m202608": 162
           }
         },
         "PORTA_OSS": {
@@ -2818,7 +3039,7 @@ SALES_DATA = {
           "units": {
             "m202606": 137,
             "m202607": 159,
-            "m202608": 69
+            "m202608": 71
           }
         },
         "PORTA_OPP": {
@@ -2842,7 +3063,7 @@ SALES_DATA = {
           "units": {
             "m202606": 190,
             "m202607": 211,
-            "m202608": 74
+            "m202608": 77
           }
         },
         "RENO_SS": {
@@ -2878,7 +3099,7 @@ SALES_DATA = {
           "units": {
             "m202606": 253,
             "m202607": 213,
-            "m202608": 50
+            "m202608": 51
           }
         }
       },
@@ -2981,6 +3202,13 @@ SALES_DATA = {
               "user_code": "LUIS ELIZALDE ESCATE",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "3 a 6 meses",
+                "category_key": "months-3-6",
+                "date": "06/03/2026",
+                "days": 159
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -3074,6 +3302,13 @@ SALES_DATA = {
               "user_code": "ROSARIO ISABEL ELIAS MAVILA",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "3 a 6 meses",
+                "category_key": "months-3-6",
+                "date": "11/05/2026",
+                "days": 93
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -3261,6 +3496,10 @@ SALES_DATA = {
               "user_code": "CONCA FLORES YAMY NICOLL",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "ceased",
+                "label": "Cesado"
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -3354,6 +3593,13 @@ SALES_DATA = {
               "user_code": "CYNTIA JETZABEL MANRIQUE NAPA",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "6 meses a un a\u00f1o",
+                "category_key": "months-6-12",
+                "date": "30/01/2026",
+                "days": 194
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -3447,6 +3693,13 @@ SALES_DATA = {
               "user_code": "FIORELLA ASTRID CRUZ PARODI",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "1 a 3 meses",
+                "category_key": "months-1-3",
+                "date": "10/07/2026",
+                "days": 33
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -3540,6 +3793,10 @@ SALES_DATA = {
               "user_code": "MARIA DE LA CRUZ MEZA",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "ceased",
+                "label": "Cesado"
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -3633,6 +3890,13 @@ SALES_DATA = {
               "user_code": "VALERIA ALANA ECHEVARRIA BRAVO",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "1 a 3 meses",
+                "category_key": "months-1-3",
+                "date": "16/06/2026",
+                "days": 57
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -3737,7 +4001,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 117,
                 "m202607": 163,
-                "m202608": 85
+                "m202608": 90
               }
             },
             "PORTA_OSS": {
@@ -3749,7 +4013,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 50,
                 "m202607": 56,
-                "m202608": 39
+                "m202608": 41
               }
             },
             "PORTA_OPP": {
@@ -3773,7 +4037,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 59,
                 "m202607": 90,
-                "m202608": 40
+                "m202608": 43
               }
             },
             "RENO_SS": {
@@ -3809,7 +4073,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 51,
                 "m202607": 45,
-                "m202608": 15
+                "m202608": 16
               }
             }
           },
@@ -3820,6 +4084,10 @@ SALES_DATA = {
               "user_code": "ARIANA JUDITH VASQUEZ CHOQUE",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "LIMA",
+              "tenure": {
+                "status": "ceased",
+                "label": "Cesado"
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -3913,6 +4181,13 @@ SALES_DATA = {
               "user_code": "ELIZABETH ANA RAMOS ANGULO",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "LIMA",
+              "tenure": {
+                "status": "active",
+                "category": "6 meses a un a\u00f1o",
+                "category_key": "months-6-12",
+                "date": "01/12/2025",
+                "days": 254
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -4006,6 +4281,13 @@ SALES_DATA = {
               "user_code": "RIGOBERTO AYALA CARPIO",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "LIMA",
+              "tenure": {
+                "status": "active",
+                "category": "Mayor a un a\u00f1o",
+                "category_key": "over-1-year",
+                "date": "17/06/2025",
+                "days": 421
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -4016,7 +4298,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 51,
                     "m202607": 79,
-                    "m202608": 41
+                    "m202608": 46
                   }
                 },
                 "PORTA_OSS": {
@@ -4028,7 +4310,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 21,
                     "m202607": 26,
-                    "m202608": 21
+                    "m202608": 23
                   }
                 },
                 "PORTA_OPP": {
@@ -4052,7 +4334,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 26,
                     "m202607": 48,
-                    "m202608": 17
+                    "m202608": 20
                   }
                 },
                 "RENO_SS": {
@@ -4088,7 +4370,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 23,
                     "m202607": 26,
-                    "m202608": 11
+                    "m202608": 12
                   }
                 }
               }
@@ -4193,6 +4475,13 @@ SALES_DATA = {
               "user_code": "CAMILA VERONICA ROSAS PALOMINO",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "LIMA",
+              "tenure": {
+                "status": "active",
+                "category": "3 a 6 meses",
+                "category_key": "months-3-6",
+                "date": "06/03/2026",
+                "days": 159
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -4286,6 +4575,13 @@ SALES_DATA = {
               "user_code": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "LIMA",
+              "tenure": {
+                "status": "active",
+                "category": "Mayor a un a\u00f1o",
+                "category_key": "over-1-year",
+                "date": "12/05/2025",
+                "days": 457
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -4473,6 +4769,10 @@ SALES_DATA = {
               "user_code": "GAMBOA MEDINA MARTIN JOS\u00c9 ANTONIO",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "ceased",
+                "label": "Cesado"
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -4566,6 +4866,13 @@ SALES_DATA = {
               "user_code": "JASMIN JANINE PAULA ESPINO CUYA",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "3 a 6 meses",
+                "category_key": "months-3-6",
+                "date": "24/03/2026",
+                "days": 141
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -4659,6 +4966,13 @@ SALES_DATA = {
               "user_code": "MARIA DEL CARMEN BERNAOLA FARFAN",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "6 meses a un a\u00f1o",
+                "category_key": "months-6-12",
+                "date": "01/10/2025",
+                "days": 315
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -4752,6 +5066,13 @@ SALES_DATA = {
               "user_code": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "1 a 3 meses",
+                "category_key": "months-1-3",
+                "date": "01/06/2026",
+                "days": 72
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -4856,7 +5177,7 @@ SALES_DATA = {
           "units": {
             "m202606": 270,
             "m202607": 273,
-            "m202608": 83
+            "m202608": 86
           }
         },
         "PORTA_OSS": {
@@ -4868,7 +5189,7 @@ SALES_DATA = {
           "units": {
             "m202606": 122,
             "m202607": 108,
-            "m202608": 31
+            "m202608": 32
           }
         },
         "PORTA_OPP": {
@@ -4892,7 +5213,7 @@ SALES_DATA = {
           "units": {
             "m202606": 119,
             "m202607": 139,
-            "m202608": 46
+            "m202608": 48
           }
         },
         "RENO_SS": {
@@ -4916,7 +5237,7 @@ SALES_DATA = {
           "units": {
             "m202606": 56,
             "m202607": 50,
-            "m202608": 19
+            "m202608": 20
           }
         },
         "PREPAGO": {
@@ -4928,7 +5249,7 @@ SALES_DATA = {
           "units": {
             "m202606": 113,
             "m202607": 92,
-            "m202608": 16
+            "m202608": 17
           }
         }
       },
@@ -4948,7 +5269,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 139,
                 "m202607": 147,
-                "m202608": 33
+                "m202608": 36
               }
             },
             "PORTA_OSS": {
@@ -4960,7 +5281,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 62,
                 "m202607": 63,
-                "m202608": 13
+                "m202608": 14
               }
             },
             "PORTA_OPP": {
@@ -4984,7 +5305,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 63,
                 "m202607": 67,
-                "m202608": 17
+                "m202608": 19
               }
             },
             "RENO_SS": {
@@ -5008,7 +5329,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 29,
                 "m202607": 28,
-                "m202608": 5
+                "m202608": 6
               }
             },
             "PREPAGO": {
@@ -5020,7 +5341,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 43,
                 "m202607": 20,
-                "m202608": 6
+                "m202608": 7
               }
             }
           },
@@ -5031,6 +5352,13 @@ SALES_DATA = {
               "user_code": "LORENA ALEXANDRA HUAMANI YUPANQUI",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "6 meses a un a\u00f1o",
+                "category_key": "months-6-12",
+                "date": "23/12/2025",
+                "days": 232
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -5041,7 +5369,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 119,
                     "m202607": 85,
-                    "m202608": 22
+                    "m202608": 25
                   }
                 },
                 "PORTA_OSS": {
@@ -5053,7 +5381,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 51,
                     "m202607": 39,
-                    "m202608": 9
+                    "m202608": 10
                   }
                 },
                 "PORTA_OPP": {
@@ -5077,7 +5405,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 56,
                     "m202607": 37,
-                    "m202608": 11
+                    "m202608": 13
                   }
                 },
                 "RENO_SS": {
@@ -5101,7 +5429,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 25,
                     "m202607": 14,
-                    "m202608": 3
+                    "m202608": 4
                   }
                 },
                 "PREPAGO": {
@@ -5113,7 +5441,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 35,
                     "m202607": 18,
-                    "m202608": 6
+                    "m202608": 7
                   }
                 }
               }
@@ -5124,6 +5452,10 @@ SALES_DATA = {
               "user_code": "NORI ESPINO AYVAR",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "ceased",
+                "label": "Cesado"
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -5217,6 +5549,13 @@ SALES_DATA = {
               "user_code": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "1 a 3 meses",
+                "category_key": "months-1-3",
+                "date": "12/06/2026",
+                "days": 61
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -5404,6 +5743,13 @@ SALES_DATA = {
               "user_code": "MARCO ANDRE FELICES GONZALEZ",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "3 a 6 meses",
+                "category_key": "months-3-6",
+                "date": "11/05/2026",
+                "days": 93
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -5497,6 +5843,13 @@ SALES_DATA = {
               "user_code": "MERY LAPA ZARATE",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "6 meses a un a\u00f1o",
+                "category_key": "months-6-12",
+                "date": "08/09/2025",
+                "days": 338
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -5590,6 +5943,13 @@ SALES_DATA = {
               "user_code": "SONALY JULIA MEZA ASTUPILLO",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
+              "tenure": {
+                "status": "active",
+                "category": "3 a 6 meses",
+                "category_key": "months-3-6",
+                "date": "02/03/2026",
+                "days": 163
+              },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
@@ -6778,18 +7138,18 @@ DISCOUNT_DATA = {
     "Agosto": {
       "month_label": "Agosto 2026",
       "summary": {
-        "tot_porta_mono": 186,
+        "tot_porta_mono": 192,
         "tot_desc_50": 121,
-        "pct_tasa_uso": 65.1,
+        "pct_tasa_uso": 63.0,
         "excede_meta": false
       },
       "tree": [
         {
           "id": "spv_disc_CYNTHIA GUERRA",
           "name": "CYNTHIA GUERRA",
-          "tot_porta_mono": 62,
+          "tot_porta_mono": 64,
           "tot_desc_50": 36,
-          "pct_tasa_uso": 58.1,
+          "pct_tasa_uso": 56.2,
           "excede_meta": false,
           "children": [
             {
@@ -6797,10 +7157,10 @@ DISCOUNT_DATA = {
               "name": "TE ICA 3",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
-              "tot_porta_mono": 18,
+              "tot_porta_mono": 19,
               "tot_desc_50": 13,
-              "pct_tasa_uso": 72.2,
-              "excede_meta": true,
+              "pct_tasa_uso": 68.4,
+              "excede_meta": false,
               "children": [
                 {
                   "id": "ase_disc_JANELLA ISABEL VALLEJOS PINEDA",
@@ -6819,9 +7179,9 @@ DISCOUNT_DATA = {
                   "user_code": "NAOMI MARINA AMESQUITA APARCANA",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
-                  "tot_porta_mono": 8,
+                  "tot_porta_mono": 9,
                   "tot_desc_50": 7,
-                  "pct_tasa_uso": 87.5,
+                  "pct_tasa_uso": 77.8,
                   "excede_meta": true
                 }
               ]
@@ -6831,9 +7191,9 @@ DISCOUNT_DATA = {
               "name": "TE ICA II",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
-              "tot_porta_mono": 30,
+              "tot_porta_mono": 31,
               "tot_desc_50": 13,
-              "pct_tasa_uso": 43.3,
+              "pct_tasa_uso": 41.9,
               "excede_meta": false,
               "children": [
                 {
@@ -6842,9 +7202,9 @@ DISCOUNT_DATA = {
                   "user_code": "DIANA LORENA SIME BENDEZU",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
-                  "tot_porta_mono": 15,
+                  "tot_porta_mono": 16,
                   "tot_desc_50": 6,
-                  "pct_tasa_uso": 40.0,
+                  "pct_tasa_uso": 37.5,
                   "excede_meta": false
                 },
                 {
@@ -6944,9 +7304,9 @@ DISCOUNT_DATA = {
         {
           "id": "spv_disc_FERNANDO MORENO",
           "name": "FERNANDO MORENO",
-          "tot_porta_mono": 37,
+          "tot_porta_mono": 38,
           "tot_desc_50": 24,
-          "pct_tasa_uso": 64.9,
+          "pct_tasa_uso": 63.2,
           "excede_meta": false,
           "children": [
             {
@@ -6954,11 +7314,22 @@ DISCOUNT_DATA = {
               "name": "TE NAZCA",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
-              "tot_porta_mono": 27,
+              "tot_porta_mono": 28,
               "tot_desc_50": 18,
-              "pct_tasa_uso": 66.7,
+              "pct_tasa_uso": 64.3,
               "excede_meta": false,
               "children": [
+                {
+                  "id": "ase_disc_DIESLLY JOSEYDI CALLE PRADO",
+                  "name": "DIESLLY JOSEYDI CALLE PRADO",
+                  "user_code": "DIESLLY JOSEYDI CALLE PRADO",
+                  "spv": "FERNANDO MORENO",
+                  "zona": "CENTRO",
+                  "tot_porta_mono": 1,
+                  "tot_desc_50": 0,
+                  "pct_tasa_uso": 0.0,
+                  "excede_meta": false
+                },
                 {
                   "id": "ase_disc_JOSE FERNANDO MORENO VALENCIA",
                   "name": "JOSE FERNANDO MORENO VALENCIA",
@@ -7045,9 +7416,9 @@ DISCOUNT_DATA = {
         {
           "id": "spv_disc_MAR\u00cdA BERNAOLA",
           "name": "MAR\u00cdA BERNAOLA",
-          "tot_porta_mono": 58,
+          "tot_porta_mono": 60,
           "tot_desc_50": 39,
-          "pct_tasa_uso": 67.2,
+          "pct_tasa_uso": 65.0,
           "excede_meta": false,
           "children": [
             {
@@ -7123,9 +7494,9 @@ DISCOUNT_DATA = {
               "name": "TE SATELITE BARRIO CHINO",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "LIMA",
-              "tot_porta_mono": 33,
+              "tot_porta_mono": 35,
               "tot_desc_50": 23,
-              "pct_tasa_uso": 69.7,
+              "pct_tasa_uso": 65.7,
               "excede_meta": false,
               "children": [
                 {
@@ -7145,10 +7516,10 @@ DISCOUNT_DATA = {
                   "user_code": "RIGOBERTO AYALA CARPIO",
                   "spv": "MAR\u00cdA BERNAOLA",
                   "zona": "LIMA",
-                  "tot_porta_mono": 17,
+                  "tot_porta_mono": 19,
                   "tot_desc_50": 12,
-                  "pct_tasa_uso": 70.6,
-                  "excede_meta": true
+                  "pct_tasa_uso": 63.2,
+                  "excede_meta": false
                 }
               ]
             },
@@ -7203,9 +7574,9 @@ DISCOUNT_DATA = {
         {
           "id": "spv_disc_MERY LAPA",
           "name": "MERY LAPA",
-          "tot_porta_mono": 29,
+          "tot_porta_mono": 30,
           "tot_desc_50": 22,
-          "pct_tasa_uso": 75.9,
+          "pct_tasa_uso": 73.3,
           "excede_meta": true,
           "children": [
             {
@@ -7213,9 +7584,9 @@ DISCOUNT_DATA = {
               "name": "TE AYACUCHO",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
-              "tot_porta_mono": 13,
+              "tot_porta_mono": 14,
               "tot_desc_50": 11,
-              "pct_tasa_uso": 84.6,
+              "pct_tasa_uso": 78.6,
               "excede_meta": true,
               "children": [
                 {
@@ -7224,9 +7595,9 @@ DISCOUNT_DATA = {
                   "user_code": "LORENA ALEXANDRA HUAMANI YUPANQUI",
                   "spv": "MERY LAPA",
                   "zona": "CENTRO",
-                  "tot_porta_mono": 9,
+                  "tot_porta_mono": 10,
                   "tot_desc_50": 8,
-                  "pct_tasa_uso": 88.9,
+                  "pct_tasa_uso": 80.0,
                   "excede_meta": true
                 },
                 {
@@ -7293,18 +7664,18 @@ DISCOUNT_DATA = {
     }
   },
   "summary": {
-    "tot_porta_mono": 186,
+    "tot_porta_mono": 192,
     "tot_desc_50": 121,
-    "pct_tasa_uso": 65.1,
+    "pct_tasa_uso": 63.0,
     "excede_meta": false
   },
   "tree": [
     {
       "id": "spv_disc_CYNTHIA GUERRA",
       "name": "CYNTHIA GUERRA",
-      "tot_porta_mono": 62,
+      "tot_porta_mono": 64,
       "tot_desc_50": 36,
-      "pct_tasa_uso": 58.1,
+      "pct_tasa_uso": 56.2,
       "excede_meta": false,
       "children": [
         {
@@ -7312,10 +7683,10 @@ DISCOUNT_DATA = {
           "name": "TE ICA 3",
           "spv": "CYNTHIA GUERRA",
           "zona": "CENTRO",
-          "tot_porta_mono": 18,
+          "tot_porta_mono": 19,
           "tot_desc_50": 13,
-          "pct_tasa_uso": 72.2,
-          "excede_meta": true,
+          "pct_tasa_uso": 68.4,
+          "excede_meta": false,
           "children": [
             {
               "id": "ase_disc_JANELLA ISABEL VALLEJOS PINEDA",
@@ -7334,9 +7705,9 @@ DISCOUNT_DATA = {
               "user_code": "NAOMI MARINA AMESQUITA APARCANA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
-              "tot_porta_mono": 8,
+              "tot_porta_mono": 9,
               "tot_desc_50": 7,
-              "pct_tasa_uso": 87.5,
+              "pct_tasa_uso": 77.8,
               "excede_meta": true
             }
           ]
@@ -7346,9 +7717,9 @@ DISCOUNT_DATA = {
           "name": "TE ICA II",
           "spv": "CYNTHIA GUERRA",
           "zona": "CENTRO",
-          "tot_porta_mono": 30,
+          "tot_porta_mono": 31,
           "tot_desc_50": 13,
-          "pct_tasa_uso": 43.3,
+          "pct_tasa_uso": 41.9,
           "excede_meta": false,
           "children": [
             {
@@ -7357,9 +7728,9 @@ DISCOUNT_DATA = {
               "user_code": "DIANA LORENA SIME BENDEZU",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
-              "tot_porta_mono": 15,
+              "tot_porta_mono": 16,
               "tot_desc_50": 6,
-              "pct_tasa_uso": 40.0,
+              "pct_tasa_uso": 37.5,
               "excede_meta": false
             },
             {
@@ -7459,9 +7830,9 @@ DISCOUNT_DATA = {
     {
       "id": "spv_disc_FERNANDO MORENO",
       "name": "FERNANDO MORENO",
-      "tot_porta_mono": 37,
+      "tot_porta_mono": 38,
       "tot_desc_50": 24,
-      "pct_tasa_uso": 64.9,
+      "pct_tasa_uso": 63.2,
       "excede_meta": false,
       "children": [
         {
@@ -7469,11 +7840,22 @@ DISCOUNT_DATA = {
           "name": "TE NAZCA",
           "spv": "FERNANDO MORENO",
           "zona": "CENTRO",
-          "tot_porta_mono": 27,
+          "tot_porta_mono": 28,
           "tot_desc_50": 18,
-          "pct_tasa_uso": 66.7,
+          "pct_tasa_uso": 64.3,
           "excede_meta": false,
           "children": [
+            {
+              "id": "ase_disc_DIESLLY JOSEYDI CALLE PRADO",
+              "name": "DIESLLY JOSEYDI CALLE PRADO",
+              "user_code": "DIESLLY JOSEYDI CALLE PRADO",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
+              "tot_porta_mono": 1,
+              "tot_desc_50": 0,
+              "pct_tasa_uso": 0.0,
+              "excede_meta": false
+            },
             {
               "id": "ase_disc_JOSE FERNANDO MORENO VALENCIA",
               "name": "JOSE FERNANDO MORENO VALENCIA",
@@ -7560,9 +7942,9 @@ DISCOUNT_DATA = {
     {
       "id": "spv_disc_MAR\u00cdA BERNAOLA",
       "name": "MAR\u00cdA BERNAOLA",
-      "tot_porta_mono": 58,
+      "tot_porta_mono": 60,
       "tot_desc_50": 39,
-      "pct_tasa_uso": 67.2,
+      "pct_tasa_uso": 65.0,
       "excede_meta": false,
       "children": [
         {
@@ -7638,9 +8020,9 @@ DISCOUNT_DATA = {
           "name": "TE SATELITE BARRIO CHINO",
           "spv": "MAR\u00cdA BERNAOLA",
           "zona": "LIMA",
-          "tot_porta_mono": 33,
+          "tot_porta_mono": 35,
           "tot_desc_50": 23,
-          "pct_tasa_uso": 69.7,
+          "pct_tasa_uso": 65.7,
           "excede_meta": false,
           "children": [
             {
@@ -7660,10 +8042,10 @@ DISCOUNT_DATA = {
               "user_code": "RIGOBERTO AYALA CARPIO",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "LIMA",
-              "tot_porta_mono": 17,
+              "tot_porta_mono": 19,
               "tot_desc_50": 12,
-              "pct_tasa_uso": 70.6,
-              "excede_meta": true
+              "pct_tasa_uso": 63.2,
+              "excede_meta": false
             }
           ]
         },
@@ -7718,9 +8100,9 @@ DISCOUNT_DATA = {
     {
       "id": "spv_disc_MERY LAPA",
       "name": "MERY LAPA",
-      "tot_porta_mono": 29,
+      "tot_porta_mono": 30,
       "tot_desc_50": 22,
-      "pct_tasa_uso": 75.9,
+      "pct_tasa_uso": 73.3,
       "excede_meta": true,
       "children": [
         {
@@ -7728,9 +8110,9 @@ DISCOUNT_DATA = {
           "name": "TE AYACUCHO",
           "spv": "MERY LAPA",
           "zona": "CENTRO",
-          "tot_porta_mono": 13,
+          "tot_porta_mono": 14,
           "tot_desc_50": 11,
-          "pct_tasa_uso": 84.6,
+          "pct_tasa_uso": 78.6,
           "excede_meta": true,
           "children": [
             {
@@ -7739,9 +8121,9 @@ DISCOUNT_DATA = {
               "user_code": "LORENA ALEXANDRA HUAMANI YUPANQUI",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
-              "tot_porta_mono": 9,
+              "tot_porta_mono": 10,
               "tot_desc_50": 8,
-              "pct_tasa_uso": 88.9,
+              "pct_tasa_uso": 80.0,
               "excede_meta": true
             },
             {
@@ -7825,13 +8207,13 @@ OPERADOR_CEDENTE_DATA = {
       "claro": 66,
       "movistar": 46,
       "bitel": 76,
-      "total": 218
+      "total": 225
     },
     "Acumulado": {
       "claro": 493,
       "movistar": 403,
       "bitel": 406,
-      "total": 1332
+      "total": 1339
     }
   },
   "tree": [
@@ -7863,21 +8245,21 @@ OPERADOR_CEDENTE_DATA = {
             },
             "Agosto": {
               "claro_u": 5,
-              "claro_pct": 25.0,
+              "claro_pct": 23.8,
               "movistar_u": 5,
-              "movistar_pct": 25.0,
+              "movistar_pct": 23.8,
               "bitel_u": 8,
-              "bitel_pct": 40.0,
-              "total_u": 20
+              "bitel_pct": 38.1,
+              "total_u": 21
             },
             "Acumulado": {
               "claro_u": 48,
-              "claro_pct": 36.6,
+              "claro_pct": 36.4,
               "movistar_u": 38,
-              "movistar_pct": 29.0,
+              "movistar_pct": 28.8,
               "bitel_u": 43,
-              "bitel_pct": 32.8,
-              "total_u": 131
+              "bitel_pct": 32.6,
+              "total_u": 132
             }
           },
           "asesores": [
@@ -7986,21 +8368,21 @@ OPERADOR_CEDENTE_DATA = {
                 },
                 "Agosto": {
                   "claro_u": 4,
-                  "claro_pct": 44.4,
+                  "claro_pct": 40.0,
                   "movistar_u": 3,
-                  "movistar_pct": 33.3,
+                  "movistar_pct": 30.0,
                   "bitel_u": 2,
-                  "bitel_pct": 22.2,
-                  "total_u": 9
+                  "bitel_pct": 20.0,
+                  "total_u": 10
                 },
                 "Acumulado": {
                   "claro_u": 27,
-                  "claro_pct": 40.9,
+                  "claro_pct": 40.3,
                   "movistar_u": 19,
-                  "movistar_pct": 28.8,
+                  "movistar_pct": 28.4,
                   "bitel_u": 20,
-                  "bitel_pct": 30.3,
-                  "total_u": 66
+                  "bitel_pct": 29.9,
+                  "total_u": 67
                 }
               }
             }
@@ -8031,21 +8413,21 @@ OPERADOR_CEDENTE_DATA = {
             },
             "Agosto": {
               "claro_u": 8,
-              "claro_pct": 23.5,
+              "claro_pct": 22.9,
               "movistar_u": 13,
-              "movistar_pct": 38.2,
+              "movistar_pct": 37.1,
               "bitel_u": 8,
-              "bitel_pct": 23.5,
-              "total_u": 34
+              "bitel_pct": 22.9,
+              "total_u": 35
             },
             "Acumulado": {
               "claro_u": 84,
-              "claro_pct": 34.3,
+              "claro_pct": 34.1,
               "movistar_u": 85,
-              "movistar_pct": 34.7,
+              "movistar_pct": 34.6,
               "bitel_u": 71,
-              "bitel_pct": 29.0,
-              "total_u": 245
+              "bitel_pct": 28.9,
+              "total_u": 246
             }
           },
           "asesores": [
@@ -8072,21 +8454,21 @@ OPERADOR_CEDENTE_DATA = {
                 },
                 "Agosto": {
                   "claro_u": 3,
-                  "claro_pct": 17.6,
+                  "claro_pct": 16.7,
                   "movistar_u": 6,
-                  "movistar_pct": 35.3,
+                  "movistar_pct": 33.3,
                   "bitel_u": 5,
-                  "bitel_pct": 29.4,
-                  "total_u": 17
+                  "bitel_pct": 27.8,
+                  "total_u": 18
                 },
                 "Acumulado": {
                   "claro_u": 44,
-                  "claro_pct": 33.1,
+                  "claro_pct": 32.8,
                   "movistar_u": 51,
-                  "movistar_pct": 38.3,
+                  "movistar_pct": 38.1,
                   "bitel_u": 35,
-                  "bitel_pct": 26.3,
-                  "total_u": 133
+                  "bitel_pct": 26.1,
+                  "total_u": 134
                 }
               }
             },
@@ -8581,24 +8963,65 @@ OPERADOR_CEDENTE_DATA = {
             },
             "Agosto": {
               "claro_u": 6,
-              "claro_pct": 18.8,
+              "claro_pct": 17.6,
               "movistar_u": 11,
-              "movistar_pct": 34.4,
+              "movistar_pct": 32.4,
               "bitel_u": 11,
-              "bitel_pct": 34.4,
-              "total_u": 32
+              "bitel_pct": 32.4,
+              "total_u": 34
             },
             "Acumulado": {
               "claro_u": 55,
-              "claro_pct": 30.2,
+              "claro_pct": 29.9,
               "movistar_u": 63,
-              "movistar_pct": 34.6,
+              "movistar_pct": 34.2,
               "bitel_u": 60,
-              "bitel_pct": 33.0,
-              "total_u": 182
+              "bitel_pct": 32.6,
+              "total_u": 184
             }
           },
           "asesores": [
+            {
+              "user_code": "DIESLLY JOSEYDI CALLE PRADO",
+              "months": {
+                "Junio": {
+                  "claro_u": 0,
+                  "claro_pct": 0.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 0
+                },
+                "Julio": {
+                  "claro_u": 0,
+                  "claro_pct": 0.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 0
+                },
+                "Agosto": {
+                  "claro_u": 0,
+                  "claro_pct": 0.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 2
+                },
+                "Acumulado": {
+                  "claro_u": 0,
+                  "claro_pct": 0.0,
+                  "movistar_u": 0,
+                  "movistar_pct": 0.0,
+                  "bitel_u": 0,
+                  "bitel_pct": 0.0,
+                  "total_u": 2
+                }
+              }
+            },
             {
               "user_code": "JOSE FERNANDO MORENO VALENCIA",
               "months": {
@@ -9303,21 +9726,21 @@ OPERADOR_CEDENTE_DATA = {
             },
             "Agosto": {
               "claro_u": 13,
-              "claro_pct": 33.3,
+              "claro_pct": 31.7,
               "movistar_u": 2,
-              "movistar_pct": 5.1,
+              "movistar_pct": 4.9,
               "bitel_u": 20,
-              "bitel_pct": 51.3,
-              "total_u": 39
+              "bitel_pct": 48.8,
+              "total_u": 41
             },
             "Acumulado": {
               "claro_u": 60,
-              "claro_pct": 41.4,
+              "claro_pct": 40.8,
               "movistar_u": 16,
-              "movistar_pct": 11.0,
+              "movistar_pct": 10.9,
               "bitel_u": 65,
-              "bitel_pct": 44.8,
-              "total_u": 145
+              "bitel_pct": 44.2,
+              "total_u": 147
             }
           },
           "asesores": [
@@ -9426,21 +9849,21 @@ OPERADOR_CEDENTE_DATA = {
                 },
                 "Agosto": {
                   "claro_u": 5,
-                  "claro_pct": 23.8,
+                  "claro_pct": 21.7,
                   "movistar_u": 2,
-                  "movistar_pct": 9.5,
+                  "movistar_pct": 8.7,
                   "bitel_u": 12,
-                  "bitel_pct": 57.1,
-                  "total_u": 21
+                  "bitel_pct": 52.2,
+                  "total_u": 23
                 },
                 "Acumulado": {
                   "claro_u": 26,
-                  "claro_pct": 38.2,
+                  "claro_pct": 37.1,
                   "movistar_u": 9,
-                  "movistar_pct": 13.2,
+                  "movistar_pct": 12.9,
                   "bitel_u": 31,
-                  "bitel_pct": 45.6,
-                  "total_u": 68
+                  "bitel_pct": 44.3,
+                  "total_u": 70
                 }
               }
             }
@@ -9730,21 +10153,21 @@ OPERADOR_CEDENTE_DATA = {
             },
             "Agosto": {
               "claro_u": 5,
-              "claro_pct": 38.5,
+              "claro_pct": 35.7,
               "movistar_u": 2,
-              "movistar_pct": 15.4,
+              "movistar_pct": 14.3,
               "bitel_u": 6,
-              "bitel_pct": 46.2,
-              "total_u": 13
+              "bitel_pct": 42.9,
+              "total_u": 14
             },
             "Acumulado": {
               "claro_u": 60,
-              "claro_pct": 43.5,
+              "claro_pct": 43.2,
               "movistar_u": 38,
-              "movistar_pct": 27.5,
+              "movistar_pct": 27.3,
               "bitel_u": 40,
-              "bitel_pct": 29.0,
-              "total_u": 138
+              "bitel_pct": 28.8,
+              "total_u": 139
             }
           },
           "asesores": [
@@ -9771,21 +10194,21 @@ OPERADOR_CEDENTE_DATA = {
                 },
                 "Agosto": {
                   "claro_u": 2,
-                  "claro_pct": 22.2,
+                  "claro_pct": 20.0,
                   "movistar_u": 1,
-                  "movistar_pct": 11.1,
+                  "movistar_pct": 10.0,
                   "bitel_u": 6,
-                  "bitel_pct": 66.7,
-                  "total_u": 9
+                  "bitel_pct": 60.0,
+                  "total_u": 10
                 },
                 "Acumulado": {
                   "claro_u": 40,
-                  "claro_pct": 40.4,
+                  "claro_pct": 40.0,
                   "movistar_u": 27,
-                  "movistar_pct": 27.3,
+                  "movistar_pct": 27.0,
                   "bitel_u": 32,
-                  "bitel_pct": 32.3,
-                  "total_u": 99
+                  "bitel_pct": 32.0,
+                  "total_u": 100
                 }
               }
             },
@@ -12058,14 +12481,14 @@ MIX_PLANES_DATA = {
           "Entel Chip 35.90": 0,
           "Entel chip+ 32.90": 0,
           "Power 29.90 N": 4,
-          "Power 39.90 N": 167,
-          "Power 49.90 N": 73,
+          "Power 39.90 N": 176,
+          "Power 49.90 N": 78,
           "Power 59.90 N": 15,
-          "Power ilim 69.90 N": 26,
-          "Power ilim 79.90 SD N": 226,
+          "Power ilim 69.90 N": 27,
+          "Power ilim 79.90 SD N": 232,
           "Power ilim 99.90 SD N": 2
         },
-        "total": 513
+        "total": 534
       },
       "tree": [
         {
@@ -12075,14 +12498,14 @@ MIX_PLANES_DATA = {
             "Entel Chip 35.90": 0,
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 0,
-            "Power 39.90 N": 74,
+            "Power 39.90 N": 81,
             "Power 49.90 N": 23,
             "Power 59.90 N": 4,
             "Power ilim 69.90 N": 7,
-            "Power ilim 79.90 SD N": 64,
+            "Power ilim 79.90 SD N": 65,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 172,
+          "total": 180,
           "children": [
             {
               "id": "pdv_mix_TE ICA 3",
@@ -12093,14 +12516,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 8,
+                "Power 39.90 N": 9,
                 "Power 49.90 N": 9,
                 "Power 59.90 N": 3,
                 "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 18,
+                "Power ilim 79.90 SD N": 19,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 40,
+              "total": 42,
               "children": [
                 {
                   "id": "ase_mix_JANELLA ISABEL VALLEJOS PINEDA",
@@ -12131,14 +12554,14 @@ MIX_PLANES_DATA = {
                     "Entel Chip 35.90": 0,
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 0,
-                    "Power 39.90 N": 5,
+                    "Power 39.90 N": 6,
                     "Power 49.90 N": 6,
                     "Power 59.90 N": 3,
                     "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 9,
+                    "Power ilim 79.90 SD N": 10,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 23
+                  "total": 25
                 }
               ]
             },
@@ -12151,14 +12574,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 57,
+                "Power 39.90 N": 63,
                 "Power 49.90 N": 10,
                 "Power 59.90 N": 0,
                 "Power ilim 69.90 N": 4,
                 "Power ilim 79.90 SD N": 27,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 98,
+              "total": 104,
               "children": [
                 {
                   "id": "ase_mix_DIANA LORENA SIME BENDEZU",
@@ -12170,14 +12593,14 @@ MIX_PLANES_DATA = {
                     "Entel Chip 35.90": 0,
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 0,
-                    "Power 39.90 N": 29,
+                    "Power 39.90 N": 34,
                     "Power 49.90 N": 5,
                     "Power 59.90 N": 0,
                     "Power ilim 69.90 N": 4,
                     "Power ilim 79.90 SD N": 13,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 51
+                  "total": 56
                 },
                 {
                   "id": "ase_mix_ROGGER SMITH NAVARRETE CAHUA",
@@ -12189,14 +12612,14 @@ MIX_PLANES_DATA = {
                     "Entel Chip 35.90": 0,
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 0,
-                    "Power 39.90 N": 28,
+                    "Power 39.90 N": 29,
                     "Power 49.90 N": 5,
                     "Power 59.90 N": 0,
                     "Power ilim 69.90 N": 0,
                     "Power ilim 79.90 SD N": 14,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 47
+                  "total": 48
                 }
               ]
             },
@@ -12344,14 +12767,14 @@ MIX_PLANES_DATA = {
             "Entel Chip 35.90": 0,
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 0,
-            "Power 39.90 N": 15,
-            "Power 49.90 N": 13,
+            "Power 39.90 N": 17,
+            "Power 49.90 N": 14,
             "Power 59.90 N": 4,
             "Power ilim 69.90 N": 11,
-            "Power ilim 79.90 SD N": 56,
+            "Power ilim 79.90 SD N": 58,
             "Power ilim 99.90 SD N": 2
           },
-          "total": 101,
+          "total": 106,
           "children": [
             {
               "id": "pdv_mix_TE NAZCA",
@@ -12362,15 +12785,34 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 12,
-                "Power 49.90 N": 9,
+                "Power 39.90 N": 13,
+                "Power 49.90 N": 10,
                 "Power 59.90 N": 3,
                 "Power ilim 69.90 N": 9,
-                "Power ilim 79.90 SD N": 41,
+                "Power ilim 79.90 SD N": 43,
                 "Power ilim 99.90 SD N": 1
               },
-              "total": 75,
+              "total": 79,
               "children": [
+                {
+                  "id": "ase_mix_DIESLLY JOSEYDI CALLE PRADO",
+                  "name": "DIESLLY JOSEYDI CALLE PRADO",
+                  "user_code": "DIESLLY JOSEYDI CALLE PRADO",
+                  "spv": "FERNANDO MORENO",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "Entel Chip 35.90": 0,
+                    "Entel chip+ 32.90": 0,
+                    "Power 29.90 N": 0,
+                    "Power 39.90 N": 0,
+                    "Power 49.90 N": 0,
+                    "Power 59.90 N": 0,
+                    "Power ilim 69.90 N": 0,
+                    "Power ilim 79.90 SD N": 2,
+                    "Power ilim 99.90 SD N": 0
+                  },
+                  "total": 2
+                },
                 {
                   "id": "ase_mix_JOSE FERNANDO MORENO VALENCIA",
                   "name": "JOSE FERNANDO MORENO VALENCIA",
@@ -12419,14 +12861,14 @@ MIX_PLANES_DATA = {
                     "Entel Chip 35.90": 0,
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 0,
-                    "Power 39.90 N": 4,
-                    "Power 49.90 N": 8,
+                    "Power 39.90 N": 5,
+                    "Power 49.90 N": 9,
                     "Power 59.90 N": 1,
                     "Power ilim 69.90 N": 5,
                     "Power ilim 79.90 SD N": 21,
                     "Power ilim 99.90 SD N": 1
                   },
-                  "total": 40
+                  "total": 42
                 }
               ]
             },
@@ -12439,14 +12881,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 1,
+                "Power 39.90 N": 2,
                 "Power 49.90 N": 3,
                 "Power 59.90 N": 1,
                 "Power ilim 69.90 N": 1,
                 "Power ilim 79.90 SD N": 9,
                 "Power ilim 99.90 SD N": 1
               },
-              "total": 16,
+              "total": 17,
               "children": [
                 {
                   "id": "ase_mix_ELIZABETH LISLEY HUAMAN YBARRA",
@@ -12458,14 +12900,14 @@ MIX_PLANES_DATA = {
                     "Entel Chip 35.90": 0,
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 0,
-                    "Power 39.90 N": 1,
+                    "Power 39.90 N": 2,
                     "Power 49.90 N": 3,
                     "Power 59.90 N": 1,
                     "Power ilim 69.90 N": 1,
                     "Power ilim 79.90 SD N": 9,
                     "Power ilim 99.90 SD N": 1
                   },
-                  "total": 16
+                  "total": 17
                 }
               ]
             },
@@ -12518,13 +12960,13 @@ MIX_PLANES_DATA = {
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 3,
             "Power 39.90 N": 38,
-            "Power 49.90 N": 31,
+            "Power 49.90 N": 33,
             "Power 59.90 N": 5,
-            "Power ilim 69.90 N": 7,
-            "Power ilim 79.90 SD N": 73,
+            "Power ilim 69.90 N": 8,
+            "Power ilim 79.90 SD N": 75,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 157,
+          "total": 162,
           "children": [
             {
               "id": "pdv_mix_TE ICA",
@@ -12652,13 +13094,13 @@ MIX_PLANES_DATA = {
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 2,
                 "Power 39.90 N": 8,
-                "Power 49.90 N": 24,
+                "Power 49.90 N": 26,
                 "Power 59.90 N": 3,
-                "Power ilim 69.90 N": 6,
-                "Power ilim 79.90 SD N": 42,
+                "Power ilim 69.90 N": 7,
+                "Power ilim 79.90 SD N": 44,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 85,
+              "total": 90,
               "children": [
                 {
                   "id": "ase_mix_ELIZABETH ANA RAMOS ANGULO",
@@ -12690,13 +13132,13 @@ MIX_PLANES_DATA = {
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 0,
                     "Power 39.90 N": 5,
-                    "Power 49.90 N": 9,
+                    "Power 49.90 N": 11,
                     "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 3,
-                    "Power ilim 79.90 SD N": 24,
+                    "Power ilim 69.90 N": 4,
+                    "Power ilim 79.90 SD N": 26,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 41
+                  "total": 46
                 }
               ]
             },
@@ -12788,13 +13230,13 @@ MIX_PLANES_DATA = {
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 1,
             "Power 39.90 N": 40,
-            "Power 49.90 N": 6,
+            "Power 49.90 N": 8,
             "Power 59.90 N": 2,
             "Power ilim 69.90 N": 1,
-            "Power ilim 79.90 SD N": 33,
+            "Power ilim 79.90 SD N": 34,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 83,
+          "total": 86,
           "children": [
             {
               "id": "pdv_mix_TE AYACUCHO",
@@ -12806,13 +13248,13 @@ MIX_PLANES_DATA = {
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
                 "Power 39.90 N": 18,
-                "Power 49.90 N": 0,
+                "Power 49.90 N": 2,
                 "Power 59.90 N": 0,
                 "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 15,
+                "Power ilim 79.90 SD N": 16,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 33,
+              "total": 36,
               "children": [
                 {
                   "id": "ase_mix_LORENA ALEXANDRA HUAMANI YUPANQUI",
@@ -12825,13 +13267,13 @@ MIX_PLANES_DATA = {
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 0,
                     "Power 39.90 N": 13,
-                    "Power 49.90 N": 0,
+                    "Power 49.90 N": 2,
                     "Power 59.90 N": 0,
                     "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 9,
+                    "Power ilim 79.90 SD N": 10,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 22
+                  "total": 25
                 },
                 {
                   "id": "ase_mix_SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
@@ -12941,14 +13383,14 @@ MIX_PLANES_DATA = {
       "Entel Chip 35.90": 0,
       "Entel chip+ 32.90": 0,
       "Power 29.90 N": 4,
-      "Power 39.90 N": 167,
-      "Power 49.90 N": 73,
+      "Power 39.90 N": 176,
+      "Power 49.90 N": 78,
       "Power 59.90 N": 15,
-      "Power ilim 69.90 N": 26,
-      "Power ilim 79.90 SD N": 226,
+      "Power ilim 69.90 N": 27,
+      "Power ilim 79.90 SD N": 232,
       "Power ilim 99.90 SD N": 2
     },
-    "total": 513
+    "total": 534
   },
   "tree": [
     {
@@ -12958,14 +13400,14 @@ MIX_PLANES_DATA = {
         "Entel Chip 35.90": 0,
         "Entel chip+ 32.90": 0,
         "Power 29.90 N": 0,
-        "Power 39.90 N": 74,
+        "Power 39.90 N": 81,
         "Power 49.90 N": 23,
         "Power 59.90 N": 4,
         "Power ilim 69.90 N": 7,
-        "Power ilim 79.90 SD N": 64,
+        "Power ilim 79.90 SD N": 65,
         "Power ilim 99.90 SD N": 0
       },
-      "total": 172,
+      "total": 180,
       "children": [
         {
           "id": "pdv_mix_TE ICA 3",
@@ -12976,14 +13418,14 @@ MIX_PLANES_DATA = {
             "Entel Chip 35.90": 0,
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 0,
-            "Power 39.90 N": 8,
+            "Power 39.90 N": 9,
             "Power 49.90 N": 9,
             "Power 59.90 N": 3,
             "Power ilim 69.90 N": 2,
-            "Power ilim 79.90 SD N": 18,
+            "Power ilim 79.90 SD N": 19,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 40,
+          "total": 42,
           "children": [
             {
               "id": "ase_mix_JANELLA ISABEL VALLEJOS PINEDA",
@@ -13014,14 +13456,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 5,
+                "Power 39.90 N": 6,
                 "Power 49.90 N": 6,
                 "Power 59.90 N": 3,
                 "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 9,
+                "Power ilim 79.90 SD N": 10,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 23
+              "total": 25
             }
           ]
         },
@@ -13034,14 +13476,14 @@ MIX_PLANES_DATA = {
             "Entel Chip 35.90": 0,
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 0,
-            "Power 39.90 N": 57,
+            "Power 39.90 N": 63,
             "Power 49.90 N": 10,
             "Power 59.90 N": 0,
             "Power ilim 69.90 N": 4,
             "Power ilim 79.90 SD N": 27,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 98,
+          "total": 104,
           "children": [
             {
               "id": "ase_mix_DIANA LORENA SIME BENDEZU",
@@ -13053,14 +13495,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 29,
+                "Power 39.90 N": 34,
                 "Power 49.90 N": 5,
                 "Power 59.90 N": 0,
                 "Power ilim 69.90 N": 4,
                 "Power ilim 79.90 SD N": 13,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 51
+              "total": 56
             },
             {
               "id": "ase_mix_ROGGER SMITH NAVARRETE CAHUA",
@@ -13072,14 +13514,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 28,
+                "Power 39.90 N": 29,
                 "Power 49.90 N": 5,
                 "Power 59.90 N": 0,
                 "Power ilim 69.90 N": 0,
                 "Power ilim 79.90 SD N": 14,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 47
+              "total": 48
             }
           ]
         },
@@ -13227,14 +13669,14 @@ MIX_PLANES_DATA = {
         "Entel Chip 35.90": 0,
         "Entel chip+ 32.90": 0,
         "Power 29.90 N": 0,
-        "Power 39.90 N": 15,
-        "Power 49.90 N": 13,
+        "Power 39.90 N": 17,
+        "Power 49.90 N": 14,
         "Power 59.90 N": 4,
         "Power ilim 69.90 N": 11,
-        "Power ilim 79.90 SD N": 56,
+        "Power ilim 79.90 SD N": 58,
         "Power ilim 99.90 SD N": 2
       },
-      "total": 101,
+      "total": 106,
       "children": [
         {
           "id": "pdv_mix_TE NAZCA",
@@ -13245,15 +13687,34 @@ MIX_PLANES_DATA = {
             "Entel Chip 35.90": 0,
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 0,
-            "Power 39.90 N": 12,
-            "Power 49.90 N": 9,
+            "Power 39.90 N": 13,
+            "Power 49.90 N": 10,
             "Power 59.90 N": 3,
             "Power ilim 69.90 N": 9,
-            "Power ilim 79.90 SD N": 41,
+            "Power ilim 79.90 SD N": 43,
             "Power ilim 99.90 SD N": 1
           },
-          "total": 75,
+          "total": 79,
           "children": [
+            {
+              "id": "ase_mix_DIESLLY JOSEYDI CALLE PRADO",
+              "name": "DIESLLY JOSEYDI CALLE PRADO",
+              "user_code": "DIESLLY JOSEYDI CALLE PRADO",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
+              "plans": {
+                "Entel Chip 35.90": 0,
+                "Entel chip+ 32.90": 0,
+                "Power 29.90 N": 0,
+                "Power 39.90 N": 0,
+                "Power 49.90 N": 0,
+                "Power 59.90 N": 0,
+                "Power ilim 69.90 N": 0,
+                "Power ilim 79.90 SD N": 2,
+                "Power ilim 99.90 SD N": 0
+              },
+              "total": 2
+            },
             {
               "id": "ase_mix_JOSE FERNANDO MORENO VALENCIA",
               "name": "JOSE FERNANDO MORENO VALENCIA",
@@ -13302,14 +13763,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 4,
-                "Power 49.90 N": 8,
+                "Power 39.90 N": 5,
+                "Power 49.90 N": 9,
                 "Power 59.90 N": 1,
                 "Power ilim 69.90 N": 5,
                 "Power ilim 79.90 SD N": 21,
                 "Power ilim 99.90 SD N": 1
               },
-              "total": 40
+              "total": 42
             }
           ]
         },
@@ -13322,14 +13783,14 @@ MIX_PLANES_DATA = {
             "Entel Chip 35.90": 0,
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 0,
-            "Power 39.90 N": 1,
+            "Power 39.90 N": 2,
             "Power 49.90 N": 3,
             "Power 59.90 N": 1,
             "Power ilim 69.90 N": 1,
             "Power ilim 79.90 SD N": 9,
             "Power ilim 99.90 SD N": 1
           },
-          "total": 16,
+          "total": 17,
           "children": [
             {
               "id": "ase_mix_ELIZABETH LISLEY HUAMAN YBARRA",
@@ -13341,14 +13802,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 1,
+                "Power 39.90 N": 2,
                 "Power 49.90 N": 3,
                 "Power 59.90 N": 1,
                 "Power ilim 69.90 N": 1,
                 "Power ilim 79.90 SD N": 9,
                 "Power ilim 99.90 SD N": 1
               },
-              "total": 16
+              "total": 17
             }
           ]
         },
@@ -13401,13 +13862,13 @@ MIX_PLANES_DATA = {
         "Entel chip+ 32.90": 0,
         "Power 29.90 N": 3,
         "Power 39.90 N": 38,
-        "Power 49.90 N": 31,
+        "Power 49.90 N": 33,
         "Power 59.90 N": 5,
-        "Power ilim 69.90 N": 7,
-        "Power ilim 79.90 SD N": 73,
+        "Power ilim 69.90 N": 8,
+        "Power ilim 79.90 SD N": 75,
         "Power ilim 99.90 SD N": 0
       },
-      "total": 157,
+      "total": 162,
       "children": [
         {
           "id": "pdv_mix_TE ICA",
@@ -13535,13 +13996,13 @@ MIX_PLANES_DATA = {
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 2,
             "Power 39.90 N": 8,
-            "Power 49.90 N": 24,
+            "Power 49.90 N": 26,
             "Power 59.90 N": 3,
-            "Power ilim 69.90 N": 6,
-            "Power ilim 79.90 SD N": 42,
+            "Power ilim 69.90 N": 7,
+            "Power ilim 79.90 SD N": 44,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 85,
+          "total": 90,
           "children": [
             {
               "id": "ase_mix_ELIZABETH ANA RAMOS ANGULO",
@@ -13573,13 +14034,13 @@ MIX_PLANES_DATA = {
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
                 "Power 39.90 N": 5,
-                "Power 49.90 N": 9,
+                "Power 49.90 N": 11,
                 "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 3,
-                "Power ilim 79.90 SD N": 24,
+                "Power ilim 69.90 N": 4,
+                "Power ilim 79.90 SD N": 26,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 41
+              "total": 46
             }
           ]
         },
@@ -13671,13 +14132,13 @@ MIX_PLANES_DATA = {
         "Entel chip+ 32.90": 0,
         "Power 29.90 N": 1,
         "Power 39.90 N": 40,
-        "Power 49.90 N": 6,
+        "Power 49.90 N": 8,
         "Power 59.90 N": 2,
         "Power ilim 69.90 N": 1,
-        "Power ilim 79.90 SD N": 33,
+        "Power ilim 79.90 SD N": 34,
         "Power ilim 99.90 SD N": 0
       },
-      "total": 83,
+      "total": 86,
       "children": [
         {
           "id": "pdv_mix_TE AYACUCHO",
@@ -13689,13 +14150,13 @@ MIX_PLANES_DATA = {
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 0,
             "Power 39.90 N": 18,
-            "Power 49.90 N": 0,
+            "Power 49.90 N": 2,
             "Power 59.90 N": 0,
             "Power ilim 69.90 N": 0,
-            "Power ilim 79.90 SD N": 15,
+            "Power ilim 79.90 SD N": 16,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 33,
+          "total": 36,
           "children": [
             {
               "id": "ase_mix_LORENA ALEXANDRA HUAMANI YUPANQUI",
@@ -13708,13 +14169,13 @@ MIX_PLANES_DATA = {
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
                 "Power 39.90 N": 13,
-                "Power 49.90 N": 0,
+                "Power 49.90 N": 2,
                 "Power 59.90 N": 0,
                 "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 9,
+                "Power ilim 79.90 SD N": 10,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 22
+              "total": 25
             },
             {
               "id": "ase_mix_SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
@@ -17290,109 +17751,22 @@ NPS_DATA = {
   "target": 58.0,
   "venta": {
     "summary": {
-      "total_nps": 100.0,
-      "total_q": 8
+      "total_nps": 12.5,
+      "total_q": 8,
+      "total_pct_q": 100.0,
+      "sem1_nps": 0.0,
+      "sem1_q": 4,
+      "sem5_nps": 25.0,
+      "sem5_q": 4
     },
     "pdvs": [
-      {
-        "name": "TE PISCO",
-        "spv": "MAR\u00cdA BERNAOLA",
-        "zona": "SUR",
-        "total_nps": 25.0,
-        "total_q": 0,
-        "total_pct_q": 200.0,
-        "sem1_nps": -100.0,
-        "sem1_q": 1,
-        "sem5_nps": 100.0,
-        "sem5_q": 1,
-        "children": [
-          {
-            "name": "FLN_VECHEVARRIB",
-            "total_nps": 100.0,
-            "total_q": 1,
-            "total_pct_q": 100.0,
-            "sem1_nps": 0.0,
-            "sem1_q": 0,
-            "sem5_nps": 100.0,
-            "sem5_q": 1
-          },
-          {
-            "name": "FLN_FCRUZP",
-            "total_nps": 0.0,
-            "total_q": -1,
-            "total_pct_q": 100.0,
-            "sem1_nps": -100.0,
-            "sem1_q": 1,
-            "sem5_nps": 0.0,
-            "sem5_q": 0
-          }
-        ]
-      },
-      {
-        "name": "TE ICA 3",
-        "spv": "CYNTHIA GUERRA",
-        "zona": "SUR",
-        "total_nps": 25.0,
-        "total_q": 0,
-        "total_pct_q": 400.0,
-        "sem1_nps": 33.3,
-        "sem1_q": 3,
-        "sem5_nps": 0.0,
-        "sem5_q": 1,
-        "children": [
-          {
-            "name": "FLN_NAMESQUITAA",
-            "total_nps": 100.0,
-            "total_q": 0,
-            "total_pct_q": 200.0,
-            "sem1_nps": 100.0,
-            "sem1_q": 1,
-            "sem5_nps": 0.0,
-            "sem5_q": 1
-          },
-          {
-            "name": "FLN_JVALLEJOSP",
-            "total_nps": 0.0,
-            "total_q": 0,
-            "total_pct_q": 200.0,
-            "sem1_nps": 0.0,
-            "sem1_q": 2,
-            "sem5_nps": 0.0,
-            "sem5_q": 0
-          }
-        ]
-      },
-      {
-        "name": "TE SATELITE BARRIO CHINO",
-        "spv": "MAR\u00cdA BERNAOLA",
-        "zona": "SUR",
-        "total_nps": 25.0,
-        "total_q": -1,
-        "total_pct_q": 100.0,
-        "sem1_nps": 0.0,
-        "sem1_q": 0,
-        "sem5_nps": -100.0,
-        "sem5_q": 1,
-        "children": [
-          {
-            "name": "FLN_RAYALAC",
-            "total_nps": 100.0,
-            "total_q": -1,
-            "total_pct_q": 100.0,
-            "sem1_nps": 0.0,
-            "sem1_q": 0,
-            "sem5_nps": -100.0,
-            "sem5_q": 1
-          }
-        ]
-      },
       {
         "name": "TE ICA MODELO",
         "spv": "CYNTHIA GUERRA",
         "zona": "SUR",
-        "total_nps": 25.0,
+        "total_nps": 100.0,
         "total_q": 1,
-        "total_pct_q": 100.0,
+        "total_pct_q": 12.5,
         "sem1_nps": 0.0,
         "sem1_q": 0,
         "sem5_nps": 100.0,
@@ -17409,13 +17783,108 @@ NPS_DATA = {
             "sem5_q": 1
           }
         ]
+      },
+      {
+        "name": "TE ICA 3",
+        "spv": "CYNTHIA GUERRA",
+        "zona": "SUR",
+        "total_nps": 25.0,
+        "total_q": 4,
+        "total_pct_q": 50.0,
+        "sem1_nps": 33.3,
+        "sem1_q": 3,
+        "sem5_nps": 0.0,
+        "sem5_q": 1,
+        "children": [
+          {
+            "name": "FLN_NAMESQUITAA",
+            "total_nps": 50.0,
+            "total_q": 2,
+            "total_pct_q": 50.0,
+            "sem1_nps": 100.0,
+            "sem1_q": 1,
+            "sem5_nps": 0.0,
+            "sem5_q": 1
+          },
+          {
+            "name": "FLN_JVALLEJOSP",
+            "total_nps": 0.0,
+            "total_q": 2,
+            "total_pct_q": 50.0,
+            "sem1_nps": 0.0,
+            "sem1_q": 2,
+            "sem5_nps": 0.0,
+            "sem5_q": 0
+          }
+        ]
+      },
+      {
+        "name": "TE PISCO",
+        "spv": "MAR\u00cdA BERNAOLA",
+        "zona": "SUR",
+        "total_nps": 0.0,
+        "total_q": 2,
+        "total_pct_q": 25.0,
+        "sem1_nps": -100.0,
+        "sem1_q": 1,
+        "sem5_nps": 100.0,
+        "sem5_q": 1,
+        "children": [
+          {
+            "name": "FLN_VECHEVARRIB",
+            "total_nps": 100.0,
+            "total_q": 1,
+            "total_pct_q": 50.0,
+            "sem1_nps": 0.0,
+            "sem1_q": 0,
+            "sem5_nps": 100.0,
+            "sem5_q": 1
+          },
+          {
+            "name": "FLN_FCRUZP",
+            "total_nps": -100.0,
+            "total_q": 1,
+            "total_pct_q": 50.0,
+            "sem1_nps": -100.0,
+            "sem1_q": 1,
+            "sem5_nps": 0.0,
+            "sem5_q": 0
+          }
+        ]
+      },
+      {
+        "name": "TE SATELITE BARRIO CHINO",
+        "spv": "MAR\u00cdA BERNAOLA",
+        "zona": "SUR",
+        "total_nps": -100.0,
+        "total_q": 1,
+        "total_pct_q": 12.5,
+        "sem1_nps": 0.0,
+        "sem1_q": 0,
+        "sem5_nps": -100.0,
+        "sem5_q": 1,
+        "children": [
+          {
+            "name": "FLN_RAYALAC",
+            "total_nps": -100.0,
+            "total_q": 1,
+            "total_pct_q": 100.0,
+            "sem1_nps": 0.0,
+            "sem1_q": 0,
+            "sem5_nps": -100.0,
+            "sem5_q": 1
+          }
+        ]
       }
     ]
   },
   "postventa": {
     "summary": {
       "total_nps": -50.0,
-      "total_q": 2
+      "total_q": 2,
+      "total_pct_q": 100.0,
+      "sem1_nps": -50.0,
+      "sem1_q": 2
     },
     "pdvs": [
       {
