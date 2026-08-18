@@ -829,10 +829,102 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     pdvs_p.sort(key=lambda x: x["total_nps"], reverse=True)
     for p in pdvs_p: p["children"].sort(key=lambda x: x["total_nps"], reverse=True)
 
+    def build_nps_channel_v2(sheet_name, channel_label):
+        raw = pd.read_excel(excel_path, sheet_name=sheet_name, header=None)
+        header = raw.iloc[5]
+        weeks = []
+        for col_idx, value in enumerate(header):
+            match = re.fullmatch(r'SEM(\d+)', str(value).strip().upper())
+            if match:
+                weeks.append({"number": int(match.group(1)), "nps_col": col_idx, "q_col": col_idx + 1})
+
+        total_nps_col = next(idx for idx, value in enumerate(header) if re.sub(r'\s+', ' ', str(value).strip().upper()) == 'TOTAL NPS')
+        total_q_col = next(idx for idx, value in enumerate(header) if re.sub(r'\s+', ' ', str(value).strip().upper()) == 'TOTAL Q')
+
+        def metrics_for(row):
+            metrics = {
+                "total_nps": parse_nps_val(row.iloc[total_nps_col], is_pct=True) or 0.0,
+                "total_q": parse_nps_val(row.iloc[total_q_col]) or 0,
+            }
+            for week in weeks:
+                number = week["number"]
+                metrics[f"sem{number}_nps"] = parse_nps_val(row.iloc[week["nps_col"]], is_pct=True)
+                metrics[f"sem{number}_q"] = parse_nps_val(row.iloc[week["q_col"]])
+            return metrics
+
+        summary = {"total_nps": 0.0, "total_q": 0}
+        pdvs = []
+        current_pdv = None
+        for idx in range(7, len(raw)):
+            row = raw.iloc[idx]
+            label = str(row.iloc[0]).strip()
+            if not label or label.upper() in {'NAN', 'TOTAL GENERAL'}:
+                continue
+            metrics = metrics_for(row)
+            if label.upper() == channel_label:
+                summary = metrics
+                continue
+            if label.startswith('TE ') or label in store_spv_map:
+                current_pdv = {
+                    "name": label,
+                    "spv": store_spv_map.get(label, 'MARÍA BERNAOLA'),
+                    "zona": "SUR",
+                    **metrics,
+                    "children": [],
+                }
+                pdvs.append(current_pdv)
+            elif current_pdv:
+                current_pdv["children"].append({"name": label, **metrics})
+
+        pdvs.sort(key=lambda item: item["total_nps"], reverse=True)
+        for pdv in pdvs:
+            pdv["children"].sort(key=lambda item: item["total_nps"], reverse=True)
+        return {"summary": summary, "pdvs": pdvs, "weeks": [week["number"] for week in weeks]}
+
+    venta_channel = build_nps_channel_v2(nps_v_sheet_name, 'VENTA')
+    postventa_channel = build_nps_channel_v2(nps_p_sheet_name, 'POSTVENTA')
+
     nps_data_obj = {
         "target": 58.0,
-        "venta": {"summary": summary_v, "pdvs": pdvs_v},
-        "postventa": {"summary": summary_p, "pdvs": pdvs_p}
+        "venta": venta_channel,
+        "postventa": postventa_channel
+    }
+
+    # 7.7 BUILD PRODUCTIVIDADES_DATA (Page 1 modal)
+    productivity_sheet = next((sheet for sheet in xl.sheet_names if sheet.strip().upper() == 'PRODUCTIVIDADES'), None)
+    if not productivity_sheet:
+        raise ValueError('No se encontró la hoja PRODUCTIVIDADES en el Excel.')
+    productivity_df = pd.read_excel(excel_path, sheet_name=productivity_sheet)
+    productivity_df.columns = [str(column).strip() for column in productivity_df.columns]
+    required_productivity_columns = {'MES', 'PDV', 'USUARIOS', 'ESTADO', 'Antiguedad'}
+    if not required_productivity_columns.issubset(productivity_df.columns):
+        raise ValueError('PRODUCTIVIDADES debe contener MES, PDV, USUARIOS, ESTADO y Antiguedad.')
+
+    productivity_columns = list(productivity_df.columns)
+    productivity_months = {}
+    for month, month_df in productivity_df.groupby('MES', sort=False):
+        month_name = str(month).strip()
+        rows = []
+        for record in month_df.to_dict(orient='records'):
+            clean_record = {}
+            for column, value in record.items():
+                if pd.isna(value):
+                    clean_record[column] = None
+                elif isinstance(value, pd.Timestamp):
+                    clean_record[column] = value.strftime('%d/%m/%Y')
+                elif hasattr(value, 'item'):
+                    clean_record[column] = value.item()
+                else:
+                    clean_record[column] = value
+            rows.append(clean_record)
+        productivity_months[month_name] = rows
+
+    productividades_data_obj = {
+        "columns": productivity_columns,
+        "months": productivity_months,
+        "default_month": "Agosto" if "Agosto" in productivity_months else next(iter(productivity_months), ""),
+        "percentage_columns": [column for column in productivity_columns if column.startswith('%')],
+        "age_column": "Antiguedad"
     }
 
     # 8. WRITE ALL TO DATA.JS
@@ -846,6 +938,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     new_data_js += "DOTACION_DATA = " + json.dumps(dotacion_data_obj, indent=2) + ";\n\n"
     new_data_js += "PERMANENCIA_DATA = " + json.dumps(permanencia_data_obj, indent=2) + ";\n\n"
     new_data_js += "NPS_DATA = " + json.dumps(nps_data_obj, indent=2) + ";\n\n"
+    new_data_js += "PRODUCTIVIDADES_DATA = " + json.dumps(productividades_data_obj, indent=2) + ";\n\n"
 
     with open(data_js_path, 'w', encoding='utf-8') as f:
         f.write(new_data_js)

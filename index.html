@@ -15,7 +15,7 @@
 
   <link rel="stylesheet" href="styles/shell.css?v=20260811_isolated1">
   <link rel="stylesheet" href="styles/page-0.css?v=20260811_isolated1">
-  <link rel="stylesheet" href="styles/page-1.css?v=20260811_isolated1">
+  <link rel="stylesheet" href="styles/page-1.css?v=20260818_productivity3">
   <link rel="stylesheet" href="styles/page-2.css?v=20260811_isolated1">
   <link rel="stylesheet" href="styles/page-3.css?v=20260811_isolated1">
   <link rel="stylesheet" href="styles/page-4.css?v=20260811_isolated1">
@@ -93,10 +93,10 @@
       <!-- Línea divisoria en gradiente azul -->
       <div style="width: 140px; height: 5px; background: linear-gradient(90deg, #1d4ed8 0%, #60a5fa 100%); border-radius: 3px; margin-bottom: 28px;"></div>
 
-      <!-- AGOSTO S1 (Pequeño / Pill corporativo) -->
+      <!-- AGOSTO S1-S2 (Pequeño / Pill corporativo) -->
       <div style="display: inline-flex; align-items: center; gap: 8px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 700; letter-spacing: 1px;">
         <i class="fa-solid fa-calendar-days" style="color: #2563eb;"></i>
-        <span>AGOSTO S1</span>
+        <span>AGOSTO S1-S2</span>
       </div>
 
       <!-- Metadata del informe al pie de la portada -->
@@ -119,12 +119,17 @@
           <div>
             <h1 class="slide-title">Reporte de Avance y Proyección de Ventas</h1>
             <div class="slide-subtitle" id="headerPeriodSubtitle">
-              Agosto 2026 (Mes Vigente - Avance 9/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">POSTPAGO TOTAL</strong>
+              Agosto 2026 (Mes Vigente - Avance 14/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">POSTPAGO TOTAL</strong>
             </div>
           </div>
         </div>
 
         <div class="header-actions">
+          <button type="button" class="btn-glass productivity-trigger" onclick="openProductivityModal()" aria-haspopup="dialog" aria-controls="productivityModal">
+            <i class="fa-solid fa-people-group"></i>
+            <span>Productividades HC</span>
+          </button>
+
           <select id="zoneSelectPage1" class="month-select-glass" onchange="renderTreeTable()">
             <option value="ALL" selected>🌍 Todas las Zonas</option>
             <option value="CENTRO">📍 CENTRO</option>
@@ -167,6 +172,34 @@
             <thead id="treeThead"></thead>
             <tbody id="treeTbody"></tbody>
           </table>
+        </div>
+      </div>
+
+      <div id="productivityModal" class="productivity-modal" role="dialog" aria-modal="true" aria-labelledby="productivityModalTitle" aria-hidden="true" onclick="handleProductivityBackdrop(event)">
+        <div class="productivity-dialog" role="document">
+          <div class="productivity-modal-header">
+            <div class="productivity-modal-titlebox">
+              <div class="productivity-modal-icon"><i class="fa-solid fa-people-group"></i></div>
+              <div>
+                <h2 id="productivityModalTitle">Productividades HC</h2>
+                <p id="productivityModalSummary">Detalle de productividad por asesor</p>
+              </div>
+            </div>
+            <div class="productivity-modal-actions">
+              <label for="productivityMonthFilter">Mes</label>
+              <select id="productivityMonthFilter" onchange="renderProductivityTable()"></select>
+              <button type="button" class="productivity-close" onclick="closeProductivityModal()" aria-label="Cerrar Productividades HC">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+          <div class="productivity-table-wrap">
+            <table class="productivity-table">
+              <thead id="productivityThead"></thead>
+              <tbody id="productivityTbody"></tbody>
+            </table>
+            <div id="productivityEmpty" class="productivity-empty" hidden>No hay registros para el mes seleccionado.</div>
+          </div>
         </div>
       </div>
 
@@ -470,9 +503,6 @@
             <option value="MERY LAPA">MERY LAPA</option>
           </select>
 
-          <button class="btn-glass" onclick="toggleNpsWeeks()">
-            <i class="fa-solid fa-calendar-week"></i> <span id="toggleNpsWeeksText">Mostrar Semana</span>
-          </button>
         </div>
       </header>
 
@@ -539,7 +569,7 @@
                 // ================= GLOBAL STATE VARIABLES =================
     
     var totalCondicion = 0;
-    var ELAPSED_WD = 9;
+    var ELAPSED_WD = 14;
     var TOTAL_WD = 26;
     var grandCondicionPct = 74.0;
 
@@ -552,7 +582,7 @@
       4: { expanded: {} },
       5: { expanded: {} },
       6: { expanded: {}, daysExpanded: false },
-      7: { expanded: {}, channel: 'venta', weeksExpanded: false },
+      7: { expanded: {}, channel: 'venta' },
     };
     var monthLabelsMap = {
       'm202608': 'Agosto 2026',
@@ -668,6 +698,23 @@
       }
     }
 
+    function getIdealValue(quota) {
+      const numericQuota = Number(quota || 0);
+      if (numericQuota <= 0 || TOTAL_WD <= 0 || ELAPSED_WD <= 0) return 0;
+      return Math.round((numericQuota / TOTAL_WD) * ELAPSED_WD);
+    }
+
+    function getGapBadgeHTML(gap) {
+      const numericGap = Number(gap || 0);
+      if (numericGap > 0) {
+        return `<span class="badge-compliance comp-green"><i class="fa-solid fa-arrow-up"></i> +${numericGap.toLocaleString('es-PE')}</span>`;
+      }
+      if (numericGap < 0) {
+        return `<span class="badge-compliance comp-red"><i class="fa-solid fa-arrow-down"></i> ${numericGap.toLocaleString('es-PE')}</span>`;
+      }
+      return `<span class="badge-compliance comp-yellow">= 0</span>`;
+    }
+
     function getDiscountUsageBadgeHTML(pct, target = 70.0) {
       if (pct > target) {
         return `<span class="badge-compliance comp-red"><i class="fa-solid fa-triangle-exclamation"></i> ${pct.toFixed(1)}%</span>`;
@@ -693,7 +740,7 @@
       pageState[1].monthFilter = val;
       const subtitle = document.getElementById('headerPeriodSubtitle');
       if (val === 'm202608') {
-        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 9/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">' + getProductLabel() + '</strong>';
+        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 14/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">' + getProductLabel() + '</strong>';
       } else {
         subtitle.innerHTML = `Mes Filtrado: ${monthLabelsMap[val] || val} &bull; <strong class="selected-product-badge" style="color: #6366f1">${getProductLabel()}</strong>`;
       }
@@ -887,6 +934,8 @@
             <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
             <th class="val-cell sortable" onclick="sortTable('quota')">CUOTA</th>
             <th class="val-cell sortable" onclick="sortTable('m202608')">AVANCE</th>
+            <th class="val-cell">IDEAL</th>
+            <th class="val-cell">GAP</th>
             <th class="val-cell sortable" onclick="sortTable('pct_cump')">% AVANCE</th>
             ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
             <th class="val-cell">PROY</th>
@@ -903,6 +952,8 @@
             <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
             <th class="val-cell sortable" onclick="sortTable('quota')">CUOTA</th>
             <th class="val-cell sortable" onclick="sortTable('current')">VENTAS</th>
+            <th class="val-cell">IDEAL</th>
+            <th class="val-cell">GAP</th>
             <th class="val-cell sortable" onclick="sortTable('pct_cump')">% CUMP.</th>
             ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
             <th class="val-cell">${prevLabel}</th>
@@ -983,6 +1034,8 @@
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
         `;
       } else if (pageState[1].monthFilter === 'm202608') {
+        const grandIdeal = getIdealValue(grandQuota);
+        const grandGap = grandTotal - grandIdeal;
         const grandProjUnits = Math.round((grandTotal / ELAPSED_WD) * TOTAL_WD);
         const grandComp = grandQuota > 0 ? (grandTotal / grandQuota * 100) : 0;
         const grandProjComp = grandQuota > 0 ? (grandProjUnits / grandQuota * 100) : 0;
@@ -993,6 +1046,8 @@
           <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS</span></div></td>
           <td class="val-cell num-font">${grandQuota > 0 ? grandQuota.toLocaleString('es-PE') : '-'}</td>
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
+          <td class="val-cell num-font">${grandQuota > 0 ? grandIdeal.toLocaleString('es-PE') : '-'}</td>
+          <td class="val-cell num-font">${grandQuota > 0 ? getGapBadgeHTML(grandGap) : '-'}</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandComp) : '-'}</td>
           ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
           <td class="val-cell num-font" style="color: #93c5fd; font-weight: 800;">${grandProjUnits.toLocaleString('es-PE')}</td>
@@ -1001,6 +1056,8 @@
           <td class="val-cell num-font">${getVariationBadgeHTML(grandVarM1, grandVarPct)}</td>
         `;
       } else {
+        const grandIdeal = getIdealValue(grandQuota);
+        const grandGap = grandTotal - grandIdeal;
         const grandComp = grandQuota > 0 ? (grandTotal / grandQuota * 100) : 0;
         const diffUnits = grandTotal - grandM1Units;
         const diffPct = grandM1Units > 0 ? (diffUnits / grandM1Units * 100) : 0;
@@ -1009,6 +1066,8 @@
           <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS</span></div></td>
           <td class="val-cell num-font">${grandQuota > 0 ? grandQuota.toLocaleString('es-PE') : '-'}</td>
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
+          <td class="val-cell num-font">${grandQuota > 0 ? grandIdeal.toLocaleString('es-PE') : '-'}</td>
+          <td class="val-cell num-font">${grandQuota > 0 ? getGapBadgeHTML(grandGap) : '-'}</td>
           <td class="val-cell num-font">${grandQuota > 0 ? getComplianceBadgeHTML(grandComp) : '-'}</td>
           ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${grandArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
           <td class="val-cell num-font">${prevMKey ? grandM1Units.toLocaleString('es-PE') : 'N/A'}</td>
@@ -1057,6 +1116,8 @@
             <td class="val-cell num-font val-total" style="color: #0f172a;">${spvTotal.toLocaleString('es-PE')}</td>
           `;
         } else if (pageState[1].monthFilter === 'm202608') {
+          const spvIdeal = getIdealValue(spvQuota);
+          const spvGap = spvTotal - spvIdeal;
           const projUnits = Math.round((spvTotal / ELAPSED_WD) * TOTAL_WD);
           const projComp = spvQuota > 0 ? (projUnits / spvQuota * 100) : 0;
           const spvM1 = getNodeUnits(spv, 'm202607');
@@ -1072,6 +1133,8 @@
             </td>
             <td class="val-cell num-font" style="color: var(--text-muted);">${spvQuota > 0 ? spvQuota.toLocaleString('es-PE') : 'N/A'}</td>
             <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')}</td>
+            <td class="val-cell num-font">${spvQuota > 0 ? spvIdeal.toLocaleString('es-PE') : '-'}</td>
+            <td class="val-cell num-font">${spvQuota > 0 ? getGapBadgeHTML(spvGap) : '-'}</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(spvComp) : '-'}</td>
             ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
             <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')}</td>
@@ -1080,6 +1143,8 @@
             <td class="val-cell num-font">${getVariationBadgeHTML(spvVarM1, spvVarPct)}</td>
           `;
         } else {
+          const spvIdeal = getIdealValue(spvQuota);
+          const spvGap = spvTotal - spvIdeal;
           const spvM1 = prevMKey ? getNodeUnits(spv, prevMKey) : 0;
           const diffUnits = spvTotal - spvM1;
           const diffPct = spvM1 > 0 ? (diffUnits / spvM1 * 100) : 0;
@@ -1093,6 +1158,8 @@
             </td>
             <td class="val-cell num-font" style="color: var(--text-muted);">${spvQuota > 0 ? spvQuota.toLocaleString('es-PE') : 'N/A'}</td>
             <td class="val-cell num-font val-total">${spvTotal.toLocaleString('es-PE')}</td>
+            <td class="val-cell num-font">${spvQuota > 0 ? spvIdeal.toLocaleString('es-PE') : '-'}</td>
+            <td class="val-cell num-font">${spvQuota > 0 ? getGapBadgeHTML(spvGap) : '-'}</td>
             <td class="val-cell num-font">${spvQuota > 0 ? getComplianceBadgeHTML(spvComp) : '-'}</td>
             ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${spvArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(spvConvPct)}</td>` : ''}
             <td class="val-cell num-font">${prevMKey ? spvM1.toLocaleString('es-PE') : 'N/A'}</td>
@@ -1135,6 +1202,8 @@
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')}</td>
               `;
             } else if (pageState[1].monthFilter === 'm202608') {
+              const pdvIdeal = getIdealValue(pdvQuota);
+              const pdvGap = pdvTotal - pdvIdeal;
               const projUnits = Math.round((pdvTotal / ELAPSED_WD) * TOTAL_WD);
               const projComp = pdvQuota > 0 ? (projUnits / pdvQuota * 100) : 0;
               const pdvM1 = getNodeUnits(pdv, 'm202607');
@@ -1150,6 +1219,8 @@
                 </td>
                 <td class="val-cell num-font" style="color: var(--text-muted);">${pdvQuota > 0 ? pdvQuota.toLocaleString('es-PE') : 'N/A'}</td>
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')}</td>
+                <td class="val-cell num-font">${pdvQuota > 0 ? pdvIdeal.toLocaleString('es-PE') : '-'}</td>
+                <td class="val-cell num-font">${pdvQuota > 0 ? getGapBadgeHTML(pdvGap) : '-'}</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(pdvComp) : '-'}</td>
                 ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
                 <td class="val-cell num-font" style="font-weight: 700; color: #0f172a;">${projUnits.toLocaleString('es-PE')}</td>
@@ -1158,6 +1229,8 @@
                 <td class="val-cell num-font">${getVariationBadgeHTML(pdvVarM1, pdvVarPct)}</td>
               `;
             } else {
+              const pdvIdeal = getIdealValue(pdvQuota);
+              const pdvGap = pdvTotal - pdvIdeal;
               const pdvM1 = prevMKey ? getNodeUnits(pdv, prevMKey) : 0;
               const diffUnits = pdvTotal - pdvM1;
               const diffPct = pdvM1 > 0 ? (diffUnits / pdvM1 * 100) : 0;
@@ -1171,6 +1244,8 @@
                 </td>
                 <td class="val-cell num-font" style="color: var(--text-muted);">${pdvQuota > 0 ? pdvQuota.toLocaleString('es-PE') : 'N/A'}</td>
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')}</td>
+                <td class="val-cell num-font">${pdvQuota > 0 ? pdvIdeal.toLocaleString('es-PE') : '-'}</td>
+                <td class="val-cell num-font">${pdvQuota > 0 ? getGapBadgeHTML(pdvGap) : '-'}</td>
                 <td class="val-cell num-font">${pdvQuota > 0 ? getComplianceBadgeHTML(pdvComp) : '-'}</td>
                 ${showArribos ? `<td class="val-cell num-font" style="font-weight: 600; color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
                 <td class="val-cell num-font">${prevMKey ? pdvM1.toLocaleString('es-PE') : 'N/A'}</td>
@@ -1206,6 +1281,8 @@
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')}</td>
                   `;
                 } else if (pageState[1].monthFilter === 'm202608') {
+                  const aseIdeal = getIdealValue(aseQuota);
+                  const aseGap = aseTotal - aseIdeal;
                   const projUnits = Math.round((aseTotal / ELAPSED_WD) * TOTAL_WD);
                   const projComp = aseQuota > 0 ? (projUnits / aseQuota * 100) : 0;
                   const aseM1 = getNodeUnits(ase, 'm202607');
@@ -1220,6 +1297,8 @@
                     </td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? formatAdvisorQuota(aseQuota) : 'N/A'}</td>
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')}</td>
+                    <td class="val-cell num-font">${aseQuota > 0 ? aseIdeal.toLocaleString('es-PE') : '-'}</td>
+                    <td class="val-cell num-font">${aseQuota > 0 ? getGapBadgeHTML(aseGap) : '-'}</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
                     <td class="val-cell num-font" style="font-weight: 600; color: #0f172a;">${projUnits.toLocaleString('es-PE')}</td>
@@ -1228,6 +1307,8 @@
                     <td class="val-cell num-font">${getVariationBadgeHTML(aseVarM1, aseVarPct)}</td>
                   `;
                 } else {
+                  const aseIdeal = getIdealValue(aseQuota);
+                  const aseGap = aseTotal - aseIdeal;
                   const aseM1 = prevMKey ? getNodeUnits(ase, prevMKey) : 0;
                   const diffUnits = aseTotal - aseM1;
                   const diffPct = aseM1 > 0 ? (diffUnits / aseM1 * 100) : 0;
@@ -1240,6 +1321,8 @@
                     </td>
                     <td class="val-cell num-font" style="color: var(--text-muted);">${aseQuota > 0 ? formatAdvisorQuota(aseQuota) : 'N/A'}</td>
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')}</td>
+                    <td class="val-cell num-font">${aseQuota > 0 ? aseIdeal.toLocaleString('es-PE') : '-'}</td>
+                    <td class="val-cell num-font">${aseQuota > 0 ? getGapBadgeHTML(aseGap) : '-'}</td>
                     <td class="val-cell num-font">${aseQuota > 0 ? getComplianceBadgeHTML(aseComp) : '-'}</td>
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
                     <td class="val-cell num-font">${prevMKey ? aseM1.toLocaleString('es-PE') : 'N/A'}</td>
@@ -1522,18 +1605,103 @@ window.renderDotacionTable = function renderDotacionTable() {
       renderNpsTable();
     }
 
-    function toggleNpsWeeks() {
-      pageState[7].weeksExpanded = !pageState[7].weeksExpanded;
-      const txtEl = document.getElementById('toggleNpsWeeksText');
-      if (txtEl) txtEl.textContent = pageState[7].weeksExpanded ? 'Ocultar Semana' : 'Mostrar Semana';
-      renderNpsHeader();
-      renderNpsTable();
-    }
-
     function toggleNpsPdv(pdvName) {
       pageState[7].expanded[pdvName] = !pageState[7].expanded[pdvName];
       renderNpsTable();
     }
+
+    // ================= PAGE 1: PRODUCTIVIDADES HC =================
+    let productivityReturnFocus = null;
+
+    function escapeProductivityHTML(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function formatProductivityValue(column, value) {
+      if (value === null || value === undefined || value === '') return '-';
+      const data = window.PRODUCTIVIDADES_DATA;
+      if (column === 'Antiguedad') {
+        const months = Number(value);
+        return `${Number.isFinite(months) ? months.toLocaleString('es-PE') : escapeProductivityHTML(value)} ${months === 1 ? 'mes' : 'meses'}`;
+      }
+      if (data && Array.isArray(data.percentage_columns) && data.percentage_columns.includes(column)) {
+        const percentage = Number(value) * 100;
+        return Number.isFinite(percentage) ? `${percentage.toFixed(1)}%` : '-';
+      }
+      if (typeof value === 'number') return Number.isInteger(value) ? value.toLocaleString('es-PE') : value.toLocaleString('es-PE', { maximumFractionDigits: 2 });
+      return escapeProductivityHTML(value);
+    }
+
+    function renderProductivityTable() {
+      const data = window.PRODUCTIVIDADES_DATA;
+      const thead = document.getElementById('productivityThead');
+      const tbody = document.getElementById('productivityTbody');
+      const monthFilter = document.getElementById('productivityMonthFilter');
+      const summary = document.getElementById('productivityModalSummary');
+      const empty = document.getElementById('productivityEmpty');
+      if (!data || !thead || !tbody || !monthFilter) return;
+
+      const month = monthFilter.value || data.default_month;
+      const displayColumns = data.columns.filter(column => column !== 'MES');
+      const rows = [...(data.months[month] || [])].sort((left, right) => {
+        const byPdv = String(left.PDV || '').localeCompare(String(right.PDV || ''), 'es', { sensitivity: 'base' });
+        return byPdv || String(left.USUARIOS || '').localeCompare(String(right.USUARIOS || ''), 'es', { sensitivity: 'base' });
+      });
+      thead.innerHTML = `<tr>${displayColumns.map(column => `<th>${escapeProductivityHTML(column)}</th>`).join('')}</tr>`;
+      tbody.innerHTML = rows.map(row => `
+        <tr>
+          ${displayColumns.map(column => {
+            if (column === 'ESTADO') {
+              const status = String(row[column] || '').trim().toUpperCase();
+              const statusClass = status === 'ACTIVO' ? 'is-active' : 'is-inactive';
+              return `<td><span class="productivity-status ${statusClass}"><span class="productivity-status-dot"></span>${escapeProductivityHTML(row[column] || '-')}</span></td>`;
+            }
+            const cellClass = column === 'Antiguedad' ? 'productivity-age' : (typeof row[column] === 'number' ? 'productivity-number' : '');
+            return `<td class="${cellClass}">${formatProductivityValue(column, row[column])}</td>`;
+          }).join('')}
+        </tr>
+      `).join('');
+      if (summary) summary.textContent = `${rows.length} asesores · ${month}`;
+      if (empty) empty.hidden = rows.length > 0;
+    }
+
+    function openProductivityModal() {
+      const modal = document.getElementById('productivityModal');
+      const monthFilter = document.getElementById('productivityMonthFilter');
+      const data = window.PRODUCTIVIDADES_DATA;
+      if (!modal || !monthFilter || !data) return;
+      productivityReturnFocus = document.activeElement;
+      const months = Object.keys(data.months || {});
+      monthFilter.innerHTML = months.map(month => `<option value="${escapeProductivityHTML(month)}">${escapeProductivityHTML(month)}</option>`).join('');
+      monthFilter.value = months.includes('Agosto') ? 'Agosto' : data.default_month;
+      renderProductivityTable();
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('productivity-modal-open');
+      window.requestAnimationFrame(() => monthFilter.focus());
+    }
+
+    function closeProductivityModal() {
+      const modal = document.getElementById('productivityModal');
+      if (!modal) return;
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('productivity-modal-open');
+      if (productivityReturnFocus && typeof productivityReturnFocus.focus === 'function') productivityReturnFocus.focus();
+    }
+
+    function handleProductivityBackdrop(event) {
+      if (event.target && event.target.id === 'productivityModal') closeProductivityModal();
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && document.getElementById('productivityModal')?.classList.contains('is-open')) closeProductivityModal();
+    });
 
     // ================= PAGE 2: TASA DE USO DE DESCUENTO =================
     function handleDiscountSearch() {
@@ -2096,7 +2264,9 @@ window.renderDotacionTable = function renderDotacionTable() {
 
     // ================= PAGE 7: REPORTE DE CALIDAD Y NPS =================
     function getAvailableNpsWeeks(channelData) {
-      return [1, 2, 3, 4, 5].filter(week => channelData && channelData.summary && Number(channelData.summary[`sem${week}_q`] || 0) > 0);
+      if (!channelData) return [];
+      if (Array.isArray(channelData.weeks)) return channelData.weeks;
+      return [1, 2, 3, 4, 5].filter(week => channelData.summary && Number(channelData.summary[`sem${week}_q`] || 0) > 0);
     }
 
     function renderNpsHeader() {
@@ -2105,19 +2275,19 @@ window.renderDotacionTable = function renderDotacionTable() {
 
       const channelData = window.NPS_DATA && window.NPS_DATA[pageState[7].channel];
       const availableWeeks = getAvailableNpsWeeks(channelData);
-      let weekHeadersHTML = '';
-      if (pageState[7].weeksExpanded) {
-        weekHeadersHTML = availableWeeks.map(week => `<th class="val-cell">SEM${week}</th>`).join('');
-      }
+      const weekGroupHeaders = availableWeeks.map(week => `<th class="val-cell" colspan="2">SEM${week}</th>`).join('');
+      const weekMetricHeaders = availableWeeks.map(() => '<th class="val-cell">NPS</th><th class="val-cell">Q</th>').join('');
 
       thead.innerHTML = `
         <tr>
-          <th style="min-width: 260px;">PUNTO DE VENTA / ASESOR</th>
-          ${weekHeadersHTML}
-          <th class="val-cell">TOTAL NPS</th>
-          <th class="val-cell">ENCUESTAS</th>
-          <th class="val-cell">% TOTAL</th>
-          <th class="val-cell" style="min-width: 140px;">ESTADO CUMPLIMIENTO</th>
+          <th style="min-width: 260px;" rowspan="2">PUNTO DE VENTA / ASESOR</th>
+          ${weekGroupHeaders}
+          <th class="val-cell" colspan="2">TOTAL</th>
+        </tr>
+        <tr>
+          ${weekMetricHeaders}
+          <th class="val-cell">NPS</th>
+          <th class="val-cell">Q</th>
         </tr>
       `;
     }
@@ -2204,20 +2374,13 @@ window.renderDotacionTable = function renderDotacionTable() {
       const trTotal = document.createElement('tr');
       trTotal.className = 'row-grand-total';
 
-      let weekTotalCells = '';
-      if (pageState[7].weeksExpanded) {
-        weekTotalCells = availableWeeks.map(week => `<td class="val-cell num-font">${getWeekCellBadgeHTML(channelData.summary, week, targetMeta)}</td>`).join('');
-      }
+      const weekTotalCells = availableWeeks.map(week => getWeekMetricCellsHTML(channelData.summary, week, targetMeta)).join('');
 
       trTotal.innerHTML = `
         <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS</span></div></td>
         ${weekTotalCells}
         <td class="val-cell num-font" style="font-size: 14px; font-weight: 800;">${getNpsBadgeHTML(totNps, targetMeta)}</td>
         <td class="val-cell num-font" style="color: #38bdf8; font-weight: 800;">${totQ}</td>
-        <td class="val-cell num-font">100%</td>
-        <td class="val-cell num-font">
-          ${totNps >= targetMeta ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-circle-check"></i> CUMPLE META (>=58%)</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-triangle-exclamation"></i> BAJO META (<58%)</span>`}
-        </td>
       `;
       tbody.appendChild(trTotal);
 
@@ -2229,10 +2392,7 @@ window.renderDotacionTable = function renderDotacionTable() {
         const trPdv = document.createElement('tr');
         trPdv.className = 'row-pdv-shaded';
 
-        let pdvWeeksHTML = '';
-        if (pageState[7].weeksExpanded) {
-          pdvWeeksHTML = availableWeeks.map(week => `<td class="val-cell num-font">${getWeekCellBadgeHTML(pdv, week, targetMeta)}</td>`).join('');
-        }
+        const pdvWeeksHTML = availableWeeks.map(week => getWeekMetricCellsHTML(pdv, week, targetMeta)).join('');
 
         trPdv.innerHTML = `
           <td>
@@ -2244,10 +2404,6 @@ window.renderDotacionTable = function renderDotacionTable() {
           ${pdvWeeksHTML}
           <td class="val-cell num-font">${getNpsBadgeHTML(pdv.total_nps, targetMeta)}</td>
           <td class="val-cell num-font">${pdv.total_q}</td>
-          <td class="val-cell num-font">${pdv.total_pct_q !== undefined ? pdv.total_pct_q : (pdv.pct_q || 0)}%</td>
-          <td class="val-cell num-font">
-            ${pdv.total_nps >= targetMeta ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`}
-          </td>
         `;
         tbody.appendChild(trPdv);
         visibleRows++;
@@ -2257,30 +2413,25 @@ window.renderDotacionTable = function renderDotacionTable() {
             const trAse = document.createElement('tr');
             trAse.className = 'row-asesor';
 
-            let aseWeeksHTML = '';
-            if (pageState[7].weeksExpanded) {
-              aseWeeksHTML = availableWeeks.map(week => `<td class="val-cell num-font">${getWeekCellBadgeHTML(ase, week, targetMeta)}</td>`).join('');
-            }
+            const aseWeeksHTML = availableWeeks.map(week => getWeekMetricCellsHTML(ase, week, targetMeta)).join('');
 
             const userCode = ase.user_code || ase.name;
-            const realName = ase.real_name || (window.USER_CODE_MAP && window.USER_CODE_MAP[userCode] ? window.USER_CODE_MAP[userCode] : '');
+            const normalizedUserCode = String(userCode || '').trim().toUpperCase();
+            const npsUserNameMap = window.PERMANENCIA_DATA && window.PERMANENCIA_DATA.user_name_map
+              ? window.PERMANENCIA_DATA.user_name_map
+              : {};
+            const realName = ase.real_name || npsUserNameMap[normalizedUserCode] || '';
 
             trAse.innerHTML = `
               <td>
                 <div class="node-cell indent-2">
-                  <div style="display: flex; flex-direction: column;">
-                    <span style="font-weight: 400; font-size: 11px; color: #64748b;">${userCode}</span>
-                    ${realName ? `<span style="font-size: 9.5px; color: #64748b; font-weight: 500; line-height: 1.1;">${realName}</span>` : ''}
-                  </div>
+                  <span style="font-weight: 700; color: #475569; font-size: 11px;">${userCode}</span>
+                  ${realName ? `<span style="margin-left: 8px; font-weight: 500; color: #94a3b8; font-size: 10px;">${realName}</span>` : ''}
                 </div>
               </td>
               ${aseWeeksHTML}
               <td class="val-cell num-font">${getNpsBadgeHTML(ase.total_nps, targetMeta)}</td>
               <td class="val-cell num-font">${ase.total_q}</td>
-              <td class="val-cell num-font">${ase.total_pct_q !== undefined ? ase.total_pct_q : (ase.pct_q || 0)}%</td>
-              <td class="val-cell num-font">
-                ${ase.total_nps >= targetMeta ? `<span class="badge-compliance comp-green"><i class="fa-solid fa-check"></i> CUMPLE</span>` : `<span class="badge-compliance comp-red"><i class="fa-solid fa-xmark"></i> NO CUMPLE</span>`}
-              </td>
             `;
             tbody.appendChild(trAse);
             visibleRows++;
@@ -2292,14 +2443,14 @@ window.renderDotacionTable = function renderDotacionTable() {
       if (labelEl) labelEl.textContent = 'Equipo de Operaciones • 2026';
     }
 
-    function getWeekCellBadgeHTML(node, wNum, targetMeta) {
-      if (!node) return '-';
+    function getWeekMetricCellsHTML(node, wNum, targetMeta) {
+      if (!node) return '<td class="val-cell num-font">-</td><td class="val-cell num-font">-</td>';
       const q = node[`sem${wNum}_q`];
       const nps = node[`sem${wNum}_nps`];
       if (q !== undefined && q !== null && q > 0) {
-        return `${getNpsBadgeHTML(nps, targetMeta)} <span style="font-size: 10px; opacity: 0.8;">(${q})</span>`;
+        return `<td class="val-cell num-font">${getNpsBadgeHTML(nps, targetMeta)}</td><td class="val-cell num-font">${q}</td>`;
       }
-      return '-';
+      return '<td class="val-cell num-font">-</td><td class="val-cell num-font">-</td>';
     }
 
   // Global Exports for window/globalThis
@@ -2310,7 +2461,10 @@ window.renderDotacionTable = function renderDotacionTable() {
     window.renderNpsTable = renderNpsTable;
     window.renderNpsHeader = renderNpsHeader;
     window.selectNpsChannel = selectNpsChannel;
-    window.toggleNpsWeeks = toggleNpsWeeks;
+    window.openProductivityModal = openProductivityModal;
+    window.closeProductivityModal = closeProductivityModal;
+    window.handleProductivityBackdrop = handleProductivityBackdrop;
+    window.renderProductivityTable = renderProductivityTable;
     window.renderPermanenciaTable = renderPermanenciaTable;
     window.renderMixPlanesTable = renderMixPlanesTable;
     window.renderCedenteTable = renderCedenteTable;
@@ -2323,7 +2477,10 @@ window.renderDotacionTable = function renderDotacionTable() {
     globalThis.renderNpsTable = renderNpsTable;
     globalThis.renderNpsHeader = renderNpsHeader;
     globalThis.selectNpsChannel = selectNpsChannel;
-    globalThis.toggleNpsWeeks = toggleNpsWeeks;
+    globalThis.openProductivityModal = openProductivityModal;
+    globalThis.closeProductivityModal = closeProductivityModal;
+    globalThis.handleProductivityBackdrop = handleProductivityBackdrop;
+    globalThis.renderProductivityTable = renderProductivityTable;
     globalThis.renderPermanenciaTable = renderPermanenciaTable;
     globalThis.renderMixPlanesTable = renderMixPlanesTable;
     globalThis.renderCedenteTable = renderCedenteTable;
