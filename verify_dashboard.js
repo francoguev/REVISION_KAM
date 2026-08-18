@@ -58,6 +58,7 @@ const sandbox = {
   clearTimeout,
   setInterval,
   clearInterval,
+  requestAnimationFrame(callback) { callback(); },
 };
 sandbox.window = sandbox;
 sandbox.globalThis = sandbox;
@@ -68,6 +69,8 @@ const failures = [];
 const check = (condition, message) => {
   if (!condition) failures.push(message);
 };
+check(html.includes('<span>AGOSTO S1-S2</span>'), 'La portada no muestra AGOSTO S1-S2.');
+check(!html.includes('<span>AGOSTO S1</span>'), 'La portada conserva el rótulo anterior AGOSTO S1.');
 const run = (label, fn) => {
   try {
     fn();
@@ -102,49 +105,66 @@ for (const period of ['5-11', '9-15']) {
 }
 run('NPS Venta', () => sandbox.selectNpsChannel('venta'));
 run('NPS Postventa', () => sandbox.selectNpsChannel('postventa'));
-run('Semanas NPS', () => sandbox.toggleNpsWeeks());
+run('Productividades HC', () => {
+  sandbox.openProductivityModal();
+  const productivity = sandbox.PRODUCTIVIDADES_DATA;
+  check(productivity.default_month === 'Agosto', 'Productividades HC no inicia en Agosto.');
+  check(productivity.columns.length === 20, 'Productividades HC no conserva todas las columnas del Excel.');
+  check(productivity.months.Agosto.length === 27 && productivity.months.Julio.length === 31, 'Productividades HC no conserva todos los registros mensuales.');
+  check(productivity.months.Agosto.every((row) => typeof row.Antiguedad === 'number'), 'Antiguedad no se conserva como cantidad de meses.');
+  const theadHTML = documentMock.getElementById('productivityThead').innerHTML;
+  const tbodyHTML = documentMock.getElementById('productivityTbody').innerHTML;
+  check(!theadHTML.includes('>MES<') && (theadHTML.match(/<th>/g) || []).length === 19, 'MES no se ocultó de la tabla de Productividades HC.');
+  check(/<tr>\s*<td[^>]*>TE AYACUCHO<\/td>/.test(tbodyHTML), 'Productividades HC no está ordenada alfabéticamente por PDV.');
+  check((tbodyHTML.match(/<tr>/g) || []).length === 27, 'El modal no renderiza los 27 registros de Agosto.');
+  check(tbodyHTML.includes('is-active') && tbodyHTML.includes('is-inactive'), 'El modal no diferencia visualmente activos y no activos.');
+  check(tbodyHTML.includes('meses'), 'El modal no muestra Antiguedad en meses.');
+  sandbox.closeProductivityModal();
+});
 
 const postpagoAugust = sandbox.SALES_DATA.summary.global_units.POSTPAGO_TOTAL.m202608;
+const elapsedDaysMatch = html.match(/var ELAPSED_WD = (\d+);/);
+const totalDaysMatch = html.match(/var TOTAL_WD = (\d+);/);
+const verifiedElapsedDays = Number(elapsedDaysMatch?.[1] || 0);
+const verifiedTotalDays = Number(totalDaysMatch?.[1] || 0);
+check(verifiedElapsedDays > 0 && verifiedTotalDays >= verifiedElapsedDays, 'El corte de días hábiles no es válido.');
+check(/AVANCE<\/th>\s*<th[^>]*>IDEAL<\/th>\s*<th[^>]*>GAP<\/th>/.test(html), 'IDEAL y GAP no están ubicados a la derecha de AVANCE.');
+check(/Math\.round\(\(numericQuota \/ TOTAL_WD\) \* ELAPSED_WD\)/.test(html), 'IDEAL no usa Cuota / días totales * días transcurridos.');
+check((html.match(/getIdealValue\((?:grand|spv|pdv|ase)Quota\)/g) || []).length === 8, 'IDEAL no se calcula en todos los niveles y meses de la Página 1.');
+check((html.match(/getGapBadgeHTML\((?:grand|spv|pdv|ase)Gap\)/g) || []).length === 8, 'GAP no se muestra en todos los niveles y meses de la Página 1.');
+check(sandbox.getIdealValue(1486) === Math.round((1486 / verifiedTotalDays) * verifiedElapsedDays), 'IDEAL no aplica el corte vigente de días hábiles.');
+check(sandbox.getGapBadgeHTML(58).includes('fa-arrow-up') && sandbox.getGapBadgeHTML(-58).includes('fa-arrow-down'), 'GAP no utiliza las flechas de variación positiva y negativa.');
+const visibleCutLabel = `Avance ${verifiedElapsedDays}/${verifiedTotalDays} Días Hábiles`;
+check((html.match(new RegExp(visibleCutLabel, 'g')) || []).length === 2, 'El texto visible de avance no muestra el corte vigente de días hábiles en todos sus estados.');
 const mixAugust = sandbox.MIX_PLANES_DATA.months.Agosto.summary.total;
 check(postpagoAugust === mixAugust, `Mix de planes (${mixAugust}) no coincide con Postpago (${postpagoAugust}).`);
 
 for (const channel of ['venta', 'postventa']) {
-  const pdvs = sandbox.NPS_DATA[channel].pdvs;
+  const channelData = sandbox.NPS_DATA[channel];
+  const pdvs = channelData.pdvs;
   check(pdvs.every((item, index) => index === 0 || pdvs[index - 1].total_nps >= item.total_nps), `Los PDV de NPS ${channel} no están ordenados de mayor a menor.`);
   check(pdvs.every((pdv) => (pdv.children || []).every((item, index) => index === 0 || pdv.children[index - 1].total_nps >= item.total_nps)), `Los asesores de NPS ${channel} no están ordenados de mayor a menor.`);
+  const pdvTotalQ = pdvs.reduce((sum, pdv) => sum + Number(pdv.total_q || 0), 0);
+  const pdvWeightedNps = pdvs.reduce((sum, pdv) => sum + Number(pdv.total_nps || 0) * Number(pdv.total_q || 0), 0);
+  const expectedNps = pdvTotalQ > 0 ? Math.round((pdvWeightedNps / pdvTotalQ) * 10) / 10 : 0;
+  check(channelData.summary.total_q === pdvTotalQ, `El total de encuestas NPS ${channel} no reconcilia con sus PDV.`);
+  check(Math.abs(channelData.summary.total_nps - expectedNps) < 0.11, `El NPS total de ${channel} no reconcilia con sus PDV.`);
+  check(Array.isArray(channelData.weeks) && channelData.weeks.length > 0, `NPS ${channel} no declara semanas disponibles.`);
 }
-check(sandbox.NPS_DATA.venta.summary.total_nps === 50, 'El NPS total de Venta debe ser 50%.');
-check(sandbox.NPS_DATA.venta.summary.total_q === 8, 'El total de encuestas de Venta debe ser 8.');
-check(sandbox.NPS_DATA.venta.summary.sem1_nps === 50 && sandbox.NPS_DATA.venta.summary.sem1_q === 8, 'SEM1 de Venta no coincide con el Excel.');
-check(sandbox.NPS_DATA.venta.summary.sem5_nps === undefined && sandbox.NPS_DATA.venta.summary.sem5_q === undefined, 'Venta conserva una SEM5 que ya no existe en el Excel.');
-check(sandbox.NPS_DATA.postventa.summary.total_nps === -50 && sandbox.NPS_DATA.postventa.summary.total_q === 2, 'El resumen de Postventa no coincide con el Excel.');
+check(sandbox.NPS_DATA.venta.summary.total_nps === 50 && sandbox.NPS_DATA.venta.summary.total_q === 16, 'NPS Venta no coincide con 50% y 16 encuestas.');
+check(sandbox.NPS_DATA.postventa.summary.total_nps === 25 && sandbox.NPS_DATA.postventa.summary.total_q === 4, 'NPS Postventa no coincide con 25% y 4 encuestas.');
 check(/const weeklyResults = availableWeeks\.map/.test(html) && !html.includes("SEM3 (89% NPS)"), 'La baldosa Pico Semanal no se calcula dinámicamente.');
 check(/function getAvailableNpsWeeks\(channelData\)/.test(html), 'La Página 7 no limita las columnas a las semanas disponibles.');
-check(!html.includes('Mostrar Semanas (SEM1 - SEM5)'), 'El control semanal anuncia semanas inexistentes.');
+check(!html.includes('toggleNpsWeeks') && !html.includes('Mostrar Semana') && !html.includes('Ocultar Semana'), 'La Página 7 conserva el control semanal.');
+check(/weekGroupHeaders[\s\S]*colspan="2"/.test(html) && /weekMetricHeaders[\s\S]*>NPS<[\s\S]*>Q</.test(html), 'Las semanas no muestran siempre NPS y Q.');
+check(!html.includes('% TOTAL') && !html.includes('ESTADO CUMPLIMIENTO'), 'La tabla NPS conserva columnas ajenas a NPS y Q.');
 check(!/\$\{totNps\.toFixed\(0\)\}% \$\{getNpsBadgeHTML/.test(html), 'La baldosa NPS Logrado repite el porcentaje.');
 check(/id="tabNpsVenta"[\s\S]*?NPS VENTA\s*<\/button>/.test(html), 'El selector de NPS Venta contiene texto adicional.');
 check(/id="tabNpsPostventa"[\s\S]*?NPS POSTVENTA\s*<\/button>/.test(html), 'El selector de NPS Postventa contiene texto adicional.');
 check(!/NPS (?:VENTA|POSTVENTA) \([^)]*\)/.test(html), 'Los selectores NPS todavía contienen texto entre paréntesis.');
-const ventaExpected = {
-  'TE PISCO': [-100, 1, 12.5],
-  'TE ICA 3': [33.3, 3, 37.5],
-  'TE ICA II': [100, 1, 12.5],
-  'TE NAZCA': [100, 1, 12.5],
-  'TE SATELITE BARRIO CHINO': [100, 2, 25],
-};
-for (const pdv of sandbox.NPS_DATA.venta.pdvs) {
-  const expected = ventaExpected[pdv.name];
-  check(Boolean(expected) && pdv.total_nps === expected[0] && pdv.total_q === expected[1] && pdv.total_pct_q === expected[2], `${pdv.name} no coincide con NPS VENTA.`);
-}
-const postventaExpected = {
-  'TE ICA II': [0, 1, 50],
-  'TE SATELITE BARRIO CHINO': [-100, 1, 50],
-};
-for (const pdv of sandbox.NPS_DATA.postventa.pdvs) {
-  const expected = postventaExpected[pdv.name];
-  check(Boolean(expected) && pdv.total_nps === expected[0] && pdv.total_q === expected[1] && pdv.total_pct_q === expected[2], `${pdv.name} no coincide con NPS POSTVENTA.`);
-}
-
+check(/const npsUserNameMap = window\.PERMANENCIA_DATA && window\.PERMANENCIA_DATA\.user_name_map/.test(html), 'La Página 7 no cruza los usuarios NPS con la hoja USUARIOS.');
+check(/npsUserNameMap\[normalizedUserCode\] \|\| ''/.test(html), 'La Página 7 no deja vacío el nombre cuando el usuario no existe.');
+check(/margin-left: 8px; font-weight: 500; color: #94a3b8; font-size: 10px;/.test(html), 'Los nombres NPS no conservan el estilo sutil de Permanencia.');
 check(['Agosto', 'Julio', 'Junio', 'Enero'].every((month) => sandbox.PERMANENCIA_DATA.months[month]), 'Faltan camadas requeridas en Permanencia.');
 check(!html.includes('fa-calculator'), 'La fila Total General todavía contiene un icono de calculadora.');
 check(!/>ESTRUCTURA<|PUNTO DE VENTA \(PDV\) \/ ASESOR/.test(html), 'Hay encabezados de primera columna fuera del estándar.');

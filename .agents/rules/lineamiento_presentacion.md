@@ -86,6 +86,8 @@ Todas las tablas construidas en el informe ejecutivo deben guiarse por el están
 ## 📅 8. Regla Estricta de Proyección y Días Hábiles (Página 1)
 - Cada vez que el usuario pida actualizar los datos del informe porque actualizó el Excel, **el asistente DEBE pedir SIEMPRE confirmación de los Días Totales y Días Transcurridos** antes de calcular las proyecciones de la Página 1.
 - La fórmula de proyección en la Página 1 se calcula estrictamente como: `Proyección (UND) = Math.round((Ventas / Días Transcurridos) * Días Totales)`.
+- Los mismos valores confirmados alimentan las columnas calculadas de todos los productos de la Página 1: `IDEAL = Math.round((Cuota / Días Totales) * Días Transcurridos)` y `GAP = Avance - IDEAL`.
+- `IDEAL` se muestra como entero. `GAP` conserva únicamente el diseño de flecha/color de `VAR VS MES ANTERIOR`: flecha arriba para positivo, flecha abajo para negativo y sin porcentaje.
 - No se cuentan domingos en el cómputo de días hábiles transcurridos.
 
 ## ⚙️ 9. Regla Estricta de Actualización Automatizada de Datos (Master Pipeline Rule)
