@@ -119,7 +119,7 @@
           <div>
             <h1 class="slide-title">Reporte de Avance y Proyección de Ventas</h1>
             <div class="slide-subtitle" id="headerPeriodSubtitle">
-              Agosto 2026 (Mes Vigente - Avance 14/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">POSTPAGO TOTAL</strong>
+              Agosto 2026 (Mes Vigente - Avance 15/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">POSTPAGO TOTAL</strong>
             </div>
           </div>
         </div>
@@ -569,7 +569,7 @@
                 // ================= GLOBAL STATE VARIABLES =================
     
     var totalCondicion = 0;
-    var ELAPSED_WD = 14;
+    var ELAPSED_WD = 15;
     var TOTAL_WD = 26;
     var grandCondicionPct = 74.0;
 
@@ -740,7 +740,7 @@
       pageState[1].monthFilter = val;
       const subtitle = document.getElementById('headerPeriodSubtitle');
       if (val === 'm202608') {
-        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 14/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">' + getProductLabel() + '</strong>';
+        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 15/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">' + getProductLabel() + '</strong>';
       } else {
         subtitle.innerHTML = `Mes Filtrado: ${monthLabelsMap[val] || val} &bull; <strong class="selected-product-badge" style="color: #6366f1">${getProductLabel()}</strong>`;
       }
