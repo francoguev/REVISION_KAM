@@ -71,6 +71,28 @@ def build_advisor_tenure_map(excel_path):
     return tenure_map
 
 
+def build_advisor_participation_map(excel_path):
+    users = pd.read_excel(excel_path, sheet_name='USUARIOS', header=2)
+    participation_column = next(
+        (
+            column for column in users.columns
+            if normalize_person_name(column).startswith('PARTICIPACION')
+        ),
+        None,
+    )
+    if participation_column is None or 'ASESOR' not in users.columns:
+        raise ValueError('La hoja USUARIOS debe contener ASESOR y PARTICIPACIÓN.')
+
+    participation_map = {}
+    for _, row in users.iterrows():
+        advisor = str(row.get('ASESOR', '')).strip()
+        participation = pd.to_numeric(row.get(participation_column), errors='coerce')
+        if not advisor or advisor.lower() == 'nan' or pd.isna(participation):
+            continue
+        participation_map[normalize_person_name(advisor)] = max(0.0, float(participation))
+    return participation_map
+
+
 def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     if elapsed_wd is None or total_wd is None:
         raise ValueError("Debes confirmar los días hábiles transcurridos y totales.")
@@ -116,6 +138,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     df_zonas = pd.read_excel(excel_path, sheet_name='ZONAS')
     df_arribos = pd.read_excel(excel_path, sheet_name='ARRIBOS')
     advisor_tenure_map = build_advisor_tenure_map(excel_path)
+    advisor_participation_map = build_advisor_participation_map(excel_path)
 
     for df in [df_post, df_reno, df_cuotas, df_mix, df_zonas, df_arribos]:
         strip_text_columns(df)
@@ -283,6 +306,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
                 for m_key in ["m202606", "m202607", "m202608"]
             }
             for ase, a_prods in sorted(p_data["ases"].items()):
+                august_participation = advisor_participation_map.get(normalize_person_name(ase), 1.0)
                 # Standardize advisor product format to match pdv & spv nodes: { quotas: {...}, units: {...} }
                 ase_formatted_products = {}
                 for pcode in a_prods:
@@ -290,7 +314,8 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
                     for m_key in advisor_quotas:
                         seller_count = postpago_sellers_by_month[m_key]
                         if seller_count > 0 and a_prods["POSTPAGO_TOTAL"][m_key] > 0:
-                            advisor_quotas[m_key] = pdv_products[pcode]["quotas"][m_key] / seller_count
+                            base_quota = pdv_products[pcode]["quotas"][m_key] / seller_count
+                            advisor_quotas[m_key] = base_quota * (august_participation if m_key == 'm202608' else 1.0)
                     ase_formatted_products[pcode] = {
                         "quotas": advisor_quotas,
                         "units": a_prods[pcode]
@@ -302,10 +327,9 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
                     "user_code": str(ase),
                     "spv": str(spv),
                     "zona": zona,
-                    "tenure": advisor_tenure_map.get(normalize_person_name(ase), {
-                        'status': 'missing',
-                        'label': 'Sin registro',
-                    }),
+                    "august_participation": august_participation,
+                    # Sin fecha de ingreso ni marca de cese no se muestra detalle.
+                    "tenure": advisor_tenure_map.get(normalize_person_name(ase)),
                     "products": ase_formatted_products
                 })
 
@@ -488,9 +512,10 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     operador_cedente_obj = {"summary": summary_cedente, "tree": tree_cedente}
 
     # 7. BUILD MIX_PLANES_DATA (Postpago Only & Normalized Plan Names)
-    plans_list = ["Entel Chip 35.90", "Entel chip+ 32.90", "Power 29.90 N", "Power 39.90 N", "Power 49.90 N", "Power 59.90 N", "Power ilim 69.90 N", "Power ilim 79.90 SD N", "Power ilim 99.90 SD N"]
+    plans_list = ["Entel Total 19.90", "Entel Chip 35.90", "Entel chip+ 32.90", "Power 29.90 N", "Power 39.90 N", "Power 49.90 N", "Power 59.90 N", "Power ilim 69.90 N", "Power ilim 79.90 SD N", "Power ilim 99.90 SD N"]
     
     plan_map = {
+        'ENTEL TOTAL 19.90': 'Entel Total 19.90',
         'POWER 39.90': 'Power 39.90 N',
         'POWER 39.90 N': 'Power 39.90 N',
         'POWER ILIM 79.90 SD': 'Power ilim 79.90 SD N',
@@ -628,7 +653,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
 
     dot_sheet_names = [s for s in xl.sheet_names if s.upper().startswith('DOTACIÓN ')]
     dotacion_periods = {sheet_name.replace('DOTACIÓN ', ''): build_dotacion_period(sheet_name) for sheet_name in dot_sheet_names}
-    default_dotacion_period = '9-15' if '9-15' in dotacion_periods else next(iter(dotacion_periods))
+    default_dotacion_period = '16-22' if '16-22' in dotacion_periods else next(reversed(dotacion_periods))
     dotacion_data_obj = {"default_period": default_dotacion_period, "periods": dotacion_periods, **dotacion_periods[default_dotacion_period]}
 
     # 7.5 BUILD PERMANENCIA_DATA (Dynamic for all Camadas: Agosto, Julio, Junio, Enero)
