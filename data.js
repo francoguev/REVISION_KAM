@@ -75,6 +75,7 @@ ARRIBOS_DATA = {
     "m202608": 154
   }
 };
+
 SALES_DATA = {
   "summary": {
     "prod_definitions": [
@@ -148,37 +149,37 @@ SALES_DATA = {
       "POSTPAGO_TOTAL": {
         "m202606": 1385,
         "m202607": 1433,
-        "m202608": 1233
+        "m202608": 1251
       },
       "PORTA_OSS": {
         "m202606": 547,
         "m202607": 567,
-        "m202608": 519
+        "m202608": 526
       },
       "PORTA_OPP": {
         "m202606": 105,
         "m202607": 119,
-        "m202608": 82
+        "m202608": 84
       },
       "VR": {
         "m202606": 733,
         "m202607": 747,
-        "m202608": 632
+        "m202608": 641
       },
       "RENO_SS": {
         "m202606": 152,
         "m202607": 165,
-        "m202608": 124
+        "m202608": 127
       },
       "LINEA_ADICIONAL": {
         "m202606": 444,
         "m202607": 455,
-        "m202608": 367
+        "m202608": 369
       },
       "PREPAGO": {
         "m202606": 767,
         "m202607": 657,
-        "m202608": 467
+        "m202608": 470
       }
     }
   },
@@ -196,7 +197,7 @@ SALES_DATA = {
           "units": {
             "m202606": 436,
             "m202607": 463,
-            "m202608": 402
+            "m202608": 408
           }
         },
         "PORTA_OSS": {
@@ -208,7 +209,7 @@ SALES_DATA = {
           "units": {
             "m202606": 185,
             "m202607": 203,
-            "m202608": 165
+            "m202608": 166
           }
         },
         "PORTA_OPP": {
@@ -220,7 +221,7 @@ SALES_DATA = {
           "units": {
             "m202606": 29,
             "m202607": 24,
-            "m202608": 28
+            "m202608": 30
           }
         },
         "VR": {
@@ -232,7 +233,7 @@ SALES_DATA = {
           "units": {
             "m202606": 222,
             "m202607": 236,
-            "m202608": 209
+            "m202608": 212
           }
         },
         "RENO_SS": {
@@ -377,7 +378,7 @@ SALES_DATA = {
                 "category": "3 a 6 meses",
                 "category_key": "months-3-6",
                 "date": "05/05/2026",
-                "days": 112
+                "days": 113
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -573,10 +574,10 @@ SALES_DATA = {
               "august_participation": 1.0,
               "tenure": {
                 "status": "active",
-                "category": "3 a 6 meses",
-                "category_key": "months-3-6",
+                "category": "6 meses a un a\u00f1o",
+                "category_key": "months-6-12",
                 "date": "26/02/2026",
-                "days": 180
+                "days": 181
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -682,7 +683,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 239,
                 "m202607": 254,
-                "m202608": 219
+                "m202608": 221
               }
             },
             "PORTA_OSS": {
@@ -694,7 +695,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 104,
                 "m202607": 107,
-                "m202608": 82
+                "m202608": 83
               }
             },
             "PORTA_OPP": {
@@ -718,7 +719,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 123,
                 "m202607": 134,
-                "m202608": 121
+                "m202608": 122
               }
             },
             "RENO_SS": {
@@ -771,7 +772,7 @@ SALES_DATA = {
                 "category": "6 meses a un a\u00f1o",
                 "category_key": "months-6-12",
                 "date": "01/10/2025",
-                "days": 328
+                "days": 329
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -970,7 +971,7 @@ SALES_DATA = {
                 "category": "6 meses a un a\u00f1o",
                 "category_key": "months-6-12",
                 "date": "24/09/2025",
-                "days": 335
+                "days": 336
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -982,7 +983,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 107,
                     "m202607": 108,
-                    "m202608": 101
+                    "m202608": 103
                   }
                 },
                 "PORTA_OSS": {
@@ -994,7 +995,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 47,
                     "m202607": 45,
-                    "m202608": 36
+                    "m202608": 37
                   }
                 },
                 "PORTA_OPP": {
@@ -1018,7 +1019,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 57,
                     "m202607": 57,
-                    "m202608": 59
+                    "m202608": 60
                   }
                 },
                 "RENO_SS": {
@@ -1076,7 +1077,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 19,
                 "m202607": 35,
-                "m202608": 29
+                "m202608": 33
               }
             },
             "PORTA_OSS": {
@@ -1100,7 +1101,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 1,
                 "m202607": 1,
-                "m202608": 4
+                "m202608": 6
               }
             },
             "VR": {
@@ -1112,7 +1113,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 8,
                 "m202607": 16,
-                "m202608": 12
+                "m202608": 14
               }
             },
             "RENO_SS": {
@@ -1252,107 +1253,6 @@ SALES_DATA = {
               }
             },
             {
-              "id": "ase_jhon_anderson_medina_farfan",
-              "name": "JHON ANDERSON MEDINA FARFAN",
-              "user_code": "JHON ANDERSON MEDINA FARFAN",
-              "spv": "CYNTHIA GUERRA",
-              "zona": "CENTRO",
-              "august_participation": 0.0,
-              "tenure": {
-                "status": "active",
-                "category": "0 a 30 d\u00edas",
-                "category_key": "days-0-30",
-                "date": "10/08/2026",
-                "days": 15
-              },
-              "products": {
-                "POSTPAGO_TOTAL": {
-                  "quotas": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0.0
-                  },
-                  "units": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 1
-                  }
-                },
-                "PORTA_OSS": {
-                  "quotas": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0.0
-                  },
-                  "units": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0
-                  }
-                },
-                "PORTA_OPP": {
-                  "quotas": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0.0
-                  },
-                  "units": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0
-                  }
-                },
-                "VR": {
-                  "quotas": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0.0
-                  },
-                  "units": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 1
-                  }
-                },
-                "RENO_SS": {
-                  "quotas": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0.0
-                  },
-                  "units": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0
-                  }
-                },
-                "LINEA_ADICIONAL": {
-                  "quotas": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0.0
-                  },
-                  "units": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0
-                  }
-                },
-                "PREPAGO": {
-                  "quotas": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0.0
-                  },
-                  "units": {
-                    "m202606": 0,
-                    "m202607": 0,
-                    "m202608": 0
-                  }
-                }
-              }
-            },
-            {
               "id": "ase_junior_luciano_mu\u00f1oz_hern\u00e1ndez",
               "name": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
               "user_code": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
@@ -1364,26 +1264,26 @@ SALES_DATA = {
                 "category": "1 a 3 meses",
                 "category_key": "months-1-3",
                 "date": "17/07/2026",
-                "days": 39
+                "days": 40
               },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 20.75,
-                    "m202608": 21.0
+                    "m202608": 31.5
                   },
                   "units": {
                     "m202606": 0,
                     "m202607": 1,
-                    "m202608": 15
+                    "m202608": 20
                   }
                 },
                 "PORTA_OSS": {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 10.75,
-                    "m202608": 11.0
+                    "m202608": 16.5
                   },
                   "units": {
                     "m202606": 0,
@@ -1395,31 +1295,31 @@ SALES_DATA = {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 1.0,
-                    "m202608": 1.5
+                    "m202608": 2.25
                   },
                   "units": {
                     "m202606": 0,
                     "m202607": 0,
-                    "m202608": 3
+                    "m202608": 5
                   }
                 },
                 "VR": {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 9.0,
-                    "m202608": 8.5
+                    "m202608": 12.75
                   },
                   "units": {
                     "m202606": 0,
                     "m202607": 1,
-                    "m202608": 5
+                    "m202608": 8
                   }
                 },
                 "RENO_SS": {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 1.25,
-                    "m202608": 2.5
+                    "m202608": 3.75
                   },
                   "units": {
                     "m202606": 0,
@@ -1431,7 +1331,7 @@ SALES_DATA = {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 8.75,
-                    "m202608": 6.5
+                    "m202608": 9.75
                   },
                   "units": {
                     "m202606": 0,
@@ -1443,7 +1343,7 @@ SALES_DATA = {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 3.5,
-                    "m202608": 7.0
+                    "m202608": 10.5
                   },
                   "units": {
                     "m202606": 0,
@@ -1563,14 +1463,14 @@ SALES_DATA = {
                 "category": "1 a 3 meses",
                 "category_key": "months-1-3",
                 "date": "01/07/2026",
-                "days": 55
+                "days": 56
               },
               "products": {
                 "POSTPAGO_TOTAL": {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 20.75,
-                    "m202608": 21.0
+                    "m202608": 31.5
                   },
                   "units": {
                     "m202606": 0,
@@ -1582,7 +1482,7 @@ SALES_DATA = {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 10.75,
-                    "m202608": 11.0
+                    "m202608": 16.5
                   },
                   "units": {
                     "m202606": 0,
@@ -1594,7 +1494,7 @@ SALES_DATA = {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 1.0,
-                    "m202608": 1.5
+                    "m202608": 2.25
                   },
                   "units": {
                     "m202606": 0,
@@ -1606,7 +1506,7 @@ SALES_DATA = {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 9.0,
-                    "m202608": 8.5
+                    "m202608": 12.75
                   },
                   "units": {
                     "m202606": 0,
@@ -1618,7 +1518,7 @@ SALES_DATA = {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 1.25,
-                    "m202608": 2.5
+                    "m202608": 3.75
                   },
                   "units": {
                     "m202606": 0,
@@ -1630,7 +1530,7 @@ SALES_DATA = {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 8.75,
-                    "m202608": 6.5
+                    "m202608": 9.75
                   },
                   "units": {
                     "m202606": 0,
@@ -1642,7 +1542,7 @@ SALES_DATA = {
                   "quotas": {
                     "m202606": 0,
                     "m202607": 3.5,
-                    "m202608": 7.0
+                    "m202608": 10.5
                   },
                   "units": {
                     "m202606": 0,
@@ -1758,7 +1658,7 @@ SALES_DATA = {
                 "category": "Mayor a un a\u00f1o",
                 "category_key": "over-1-year",
                 "date": "01/08/2025",
-                "days": 389
+                "days": 390
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -1859,7 +1759,7 @@ SALES_DATA = {
                 "category": "0 a 30 d\u00edas",
                 "category_key": "days-0-30",
                 "date": "01/08/2026",
-                "days": 24
+                "days": 25
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -1960,7 +1860,7 @@ SALES_DATA = {
                 "category": "1 a 3 meses",
                 "category_key": "months-1-3",
                 "date": "20/07/2026",
-                "days": 36
+                "days": 37
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -2066,7 +1966,7 @@ SALES_DATA = {
           "units": {
             "m202606": 328,
             "m202607": 282,
-            "m202608": 240
+            "m202608": 243
           }
         },
         "PORTA_OSS": {
@@ -2078,7 +1978,7 @@ SALES_DATA = {
           "units": {
             "m202606": 103,
             "m202607": 97,
-            "m202608": 104
+            "m202608": 106
           }
         },
         "PORTA_OPP": {
@@ -2102,7 +2002,7 @@ SALES_DATA = {
           "units": {
             "m202606": 202,
             "m202607": 160,
-            "m202608": 130
+            "m202608": 131
           }
         },
         "RENO_SS": {
@@ -2158,7 +2058,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 237,
                 "m202607": 206,
-                "m202608": 168
+                "m202608": 170
               }
             },
             "PORTA_OSS": {
@@ -2170,7 +2070,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 76,
                 "m202607": 74,
-                "m202608": 75
+                "m202608": 76
               }
             },
             "PORTA_OPP": {
@@ -2194,7 +2094,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 148,
                 "m202607": 117,
-                "m202608": 88
+                "m202608": 89
               }
             },
             "RENO_SS": {
@@ -2247,7 +2147,7 @@ SALES_DATA = {
                 "category": "0 a 30 d\u00edas",
                 "category_key": "days-0-30",
                 "date": "01/08/2026",
-                "days": 24
+                "days": 25
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -2259,7 +2159,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 0,
                     "m202607": 0,
-                    "m202608": 23
+                    "m202608": 25
                   }
                 },
                 "PORTA_OSS": {
@@ -2271,7 +2171,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 0,
                     "m202607": 0,
-                    "m202608": 11
+                    "m202608": 12
                   }
                 },
                 "PORTA_OPP": {
@@ -2295,7 +2195,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 0,
                     "m202607": 0,
-                    "m202608": 10
+                    "m202608": 11
                   }
                 },
                 "RENO_SS": {
@@ -2348,7 +2248,7 @@ SALES_DATA = {
                 "category": "Mayor a un a\u00f1o",
                 "category_key": "over-1-year",
                 "date": "01/12/2024",
-                "days": 632
+                "days": 633
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -2449,7 +2349,7 @@ SALES_DATA = {
                 "category": "3 a 6 meses",
                 "category_key": "months-3-6",
                 "date": "30/03/2026",
-                "days": 148
+                "days": 149
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -2550,7 +2450,7 @@ SALES_DATA = {
                 "category": "Mayor a un a\u00f1o",
                 "category_key": "over-1-year",
                 "date": "02/10/2024",
-                "days": 692
+                "days": 693
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -2843,7 +2743,7 @@ SALES_DATA = {
                 "category": "6 meses a un a\u00f1o",
                 "category_key": "months-6-12",
                 "date": "29/09/2025",
-                "days": 330
+                "days": 331
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -2949,7 +2849,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 42,
                 "m202607": 28,
-                "m202608": 25
+                "m202608": 26
               }
             },
             "PORTA_OSS": {
@@ -2961,7 +2861,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 11,
                 "m202607": 8,
-                "m202608": 9
+                "m202608": 10
               }
             },
             "PORTA_OPP": {
@@ -3038,7 +2938,7 @@ SALES_DATA = {
                 "category": "6 meses a un a\u00f1o",
                 "category_key": "months-6-12",
                 "date": "17/10/2025",
-                "days": 312
+                "days": 313
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -3050,7 +2950,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 42,
                     "m202607": 28,
-                    "m202608": 25
+                    "m202608": 26
                   }
                 },
                 "PORTA_OSS": {
@@ -3062,7 +2962,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 11,
                     "m202607": 8,
-                    "m202608": 9
+                    "m202608": 10
                   }
                 },
                 "PORTA_OPP": {
@@ -3144,7 +3044,7 @@ SALES_DATA = {
           "units": {
             "m202606": 351,
             "m202607": 415,
-            "m202608": 387
+            "m202608": 396
           }
         },
         "PORTA_OSS": {
@@ -3156,7 +3056,7 @@ SALES_DATA = {
           "units": {
             "m202606": 137,
             "m202607": 159,
-            "m202608": 164
+            "m202608": 168
           }
         },
         "PORTA_OPP": {
@@ -3180,7 +3080,7 @@ SALES_DATA = {
           "units": {
             "m202606": 190,
             "m202607": 212,
-            "m202608": 193
+            "m202608": 198
           }
         },
         "RENO_SS": {
@@ -3192,7 +3092,7 @@ SALES_DATA = {
           "units": {
             "m202606": 59,
             "m202607": 71,
-            "m202608": 53
+            "m202608": 56
           }
         },
         "LINEA_ADICIONAL": {
@@ -3204,7 +3104,7 @@ SALES_DATA = {
           "units": {
             "m202606": 103,
             "m202607": 136,
-            "m202608": 124
+            "m202608": 126
           }
         },
         "PREPAGO": {
@@ -3216,7 +3116,7 @@ SALES_DATA = {
           "units": {
             "m202606": 253,
             "m202607": 213,
-            "m202608": 132
+            "m202608": 135
           }
         }
       },
@@ -3236,7 +3136,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 59,
                 "m202607": 55,
-                "m202608": 40
+                "m202608": 42
               }
             },
             "PORTA_OSS": {
@@ -3272,7 +3172,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 30,
                 "m202607": 25,
-                "m202608": 17
+                "m202608": 19
               }
             },
             "RENO_SS": {
@@ -3325,7 +3225,7 @@ SALES_DATA = {
                 "category": "0 a 30 d\u00edas",
                 "category_key": "days-0-30",
                 "date": "06/08/2026",
-                "days": 19
+                "days": 20
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -3426,7 +3326,7 @@ SALES_DATA = {
                 "category": "3 a 6 meses",
                 "category_key": "months-3-6",
                 "date": "06/03/2026",
-                "days": 172
+                "days": 173
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -3438,7 +3338,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 38,
                     "m202607": 29,
-                    "m202608": 31
+                    "m202608": 33
                   }
                 },
                 "PORTA_OSS": {
@@ -3474,7 +3374,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 21,
                     "m202607": 16,
-                    "m202608": 14
+                    "m202608": 16
                   }
                 },
                 "RENO_SS": {
@@ -3814,7 +3714,7 @@ SALES_DATA = {
                 "category": "6 meses a un a\u00f1o",
                 "category_key": "months-6-12",
                 "date": "30/01/2026",
-                "days": 207
+                "days": 208
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -3915,7 +3815,7 @@ SALES_DATA = {
                 "category": "1 a 3 meses",
                 "category_key": "months-1-3",
                 "date": "10/07/2026",
-                "days": 46
+                "days": 47
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -4114,7 +4014,7 @@ SALES_DATA = {
                 "category": "1 a 3 meses",
                 "category_key": "months-1-3",
                 "date": "16/06/2026",
-                "days": 70
+                "days": 71
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -4220,7 +4120,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 117,
                 "m202607": 164,
-                "m202608": 187
+                "m202608": 194
               }
             },
             "PORTA_OSS": {
@@ -4232,7 +4132,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 50,
                 "m202607": 56,
-                "m202608": 80
+                "m202608": 84
               }
             },
             "PORTA_OPP": {
@@ -4256,7 +4156,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 59,
                 "m202607": 91,
-                "m202608": 95
+                "m202608": 98
               }
             },
             "RENO_SS": {
@@ -4268,7 +4168,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 29,
                 "m202607": 46,
-                "m202608": 39
+                "m202608": 42
               }
             },
             "LINEA_ADICIONAL": {
@@ -4280,7 +4180,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 34,
                 "m202607": 62,
-                "m202608": 69
+                "m202608": 71
               }
             },
             "PREPAGO": {
@@ -4292,7 +4192,7 @@ SALES_DATA = {
               "units": {
                 "m202606": 51,
                 "m202607": 45,
-                "m202608": 40
+                "m202608": 43
               }
             }
           },
@@ -4407,7 +4307,7 @@ SALES_DATA = {
                 "category": "6 meses a un a\u00f1o",
                 "category_key": "months-6-12",
                 "date": "01/12/2025",
-                "days": 267
+                "days": 268
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -4508,7 +4408,7 @@ SALES_DATA = {
                 "category": "Mayor a un a\u00f1o",
                 "category_key": "over-1-year",
                 "date": "17/06/2025",
-                "days": 434
+                "days": 435
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -4520,7 +4420,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 51,
                     "m202607": 80,
-                    "m202608": 90
+                    "m202608": 97
                   }
                 },
                 "PORTA_OSS": {
@@ -4532,7 +4432,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 21,
                     "m202607": 26,
-                    "m202608": 43
+                    "m202608": 47
                   }
                 },
                 "PORTA_OPP": {
@@ -4556,7 +4456,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 26,
                     "m202607": 49,
-                    "m202608": 41
+                    "m202608": 44
                   }
                 },
                 "RENO_SS": {
@@ -4568,7 +4468,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 11,
                     "m202607": 22,
-                    "m202608": 18
+                    "m202608": 21
                   }
                 },
                 "LINEA_ADICIONAL": {
@@ -4580,7 +4480,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 11,
                     "m202607": 36,
-                    "m202608": 30
+                    "m202608": 32
                   }
                 },
                 "PREPAGO": {
@@ -4592,7 +4492,7 @@ SALES_DATA = {
                   "units": {
                     "m202606": 23,
                     "m202607": 26,
-                    "m202608": 22
+                    "m202608": 25
                   }
                 }
               }
@@ -4703,7 +4603,7 @@ SALES_DATA = {
                 "category": "3 a 6 meses",
                 "category_key": "months-3-6",
                 "date": "06/03/2026",
-                "days": 172
+                "days": 173
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -4804,7 +4704,7 @@ SALES_DATA = {
                 "category": "Mayor a un a\u00f1o",
                 "category_key": "over-1-year",
                 "date": "12/05/2025",
-                "days": 470
+                "days": 471
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -5097,7 +4997,7 @@ SALES_DATA = {
                 "category": "3 a 6 meses",
                 "category_key": "months-3-6",
                 "date": "24/03/2026",
-                "days": 154
+                "days": 155
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -5198,7 +5098,7 @@ SALES_DATA = {
                 "category": "0 a 30 d\u00edas",
                 "category_key": "days-0-30",
                 "date": "07/08/2026",
-                "days": 18
+                "days": 19
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -5299,7 +5199,7 @@ SALES_DATA = {
                 "category": "6 meses a un a\u00f1o",
                 "category_key": "months-6-12",
                 "date": "01/10/2025",
-                "days": 328
+                "days": 329
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -5684,7 +5584,7 @@ SALES_DATA = {
                 "category": "6 meses a un a\u00f1o",
                 "category_key": "months-6-12",
                 "date": "23/12/2025",
-                "days": 245
+                "days": 246
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -6075,7 +5975,7 @@ SALES_DATA = {
                 "category": "0 a 30 d\u00edas",
                 "category_key": "days-0-30",
                 "date": "10/08/2026",
-                "days": 15
+                "days": 16
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -6176,7 +6076,7 @@ SALES_DATA = {
                 "category": "3 a 6 meses",
                 "category_key": "months-3-6",
                 "date": "11/05/2026",
-                "days": 106
+                "days": 107
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -6277,7 +6177,7 @@ SALES_DATA = {
                 "category": "6 meses a un a\u00f1o",
                 "category_key": "months-6-12",
                 "date": "08/09/2025",
-                "days": 351
+                "days": 352
               },
               "products": {
                 "POSTPAGO_TOTAL": {
@@ -7565,18 +7465,18 @@ DISCOUNT_DATA = {
     "Agosto": {
       "month_label": "Agosto 2026",
       "summary": {
-        "tot_porta_mono": 444,
+        "tot_porta_mono": 451,
         "tot_desc_50": 301,
-        "pct_tasa_uso": 67.8,
+        "pct_tasa_uso": 66.7,
         "excede_meta": false
       },
       "tree": [
         {
           "id": "spv_disc_CYNTHIA GUERRA",
           "name": "CYNTHIA GUERRA",
-          "tot_porta_mono": 143,
+          "tot_porta_mono": 144,
           "tot_desc_50": 82,
-          "pct_tasa_uso": 57.3,
+          "pct_tasa_uso": 56.9,
           "excede_meta": false,
           "children": [
             {
@@ -7618,9 +7518,9 @@ DISCOUNT_DATA = {
               "name": "TE ICA II",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
-              "tot_porta_mono": 70,
+              "tot_porta_mono": 71,
               "tot_desc_50": 30,
-              "pct_tasa_uso": 42.9,
+              "pct_tasa_uso": 42.3,
               "excede_meta": false,
               "children": [
                 {
@@ -7640,9 +7540,9 @@ DISCOUNT_DATA = {
                   "user_code": "ROGGER SMITH NAVARRETE CAHUA",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
-                  "tot_porta_mono": 30,
+                  "tot_porta_mono": 31,
                   "tot_desc_50": 17,
-                  "pct_tasa_uso": 56.7,
+                  "pct_tasa_uso": 54.8,
                   "excede_meta": false
                 }
               ]
@@ -7731,9 +7631,9 @@ DISCOUNT_DATA = {
         {
           "id": "spv_disc_FERNANDO MORENO",
           "name": "FERNANDO MORENO",
-          "tot_porta_mono": 83,
+          "tot_porta_mono": 85,
           "tot_desc_50": 56,
-          "pct_tasa_uso": 67.5,
+          "pct_tasa_uso": 65.9,
           "excede_meta": false,
           "children": [
             {
@@ -7741,9 +7641,9 @@ DISCOUNT_DATA = {
               "name": "TE NAZCA",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
-              "tot_porta_mono": 62,
+              "tot_porta_mono": 63,
               "tot_desc_50": 42,
-              "pct_tasa_uso": 67.7,
+              "pct_tasa_uso": 66.7,
               "excede_meta": false,
               "children": [
                 {
@@ -7752,9 +7652,9 @@ DISCOUNT_DATA = {
                   "user_code": "DIESLLY JOSEYDI CALLE PRADO",
                   "spv": "FERNANDO MORENO",
                   "zona": "CENTRO",
-                  "tot_porta_mono": 7,
+                  "tot_porta_mono": 8,
                   "tot_desc_50": 4,
-                  "pct_tasa_uso": 57.1,
+                  "pct_tasa_uso": 50.0,
                   "excede_meta": false
                 },
                 {
@@ -7820,9 +7720,9 @@ DISCOUNT_DATA = {
               "name": "TE SATELITE PALPA",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
-              "tot_porta_mono": 6,
+              "tot_porta_mono": 7,
               "tot_desc_50": 5,
-              "pct_tasa_uso": 83.3,
+              "pct_tasa_uso": 71.4,
               "excede_meta": true,
               "children": [
                 {
@@ -7831,9 +7731,9 @@ DISCOUNT_DATA = {
                   "user_code": "ALEXANDRA ECHAJAYA GARCIA",
                   "spv": "FERNANDO MORENO",
                   "zona": "CENTRO",
-                  "tot_porta_mono": 6,
+                  "tot_porta_mono": 7,
                   "tot_desc_50": 5,
-                  "pct_tasa_uso": 83.3,
+                  "pct_tasa_uso": 71.4,
                   "excede_meta": true
                 }
               ]
@@ -7843,9 +7743,9 @@ DISCOUNT_DATA = {
         {
           "id": "spv_disc_MAR\u00cdA BERNAOLA",
           "name": "MAR\u00cdA BERNAOLA",
-          "tot_porta_mono": 142,
+          "tot_porta_mono": 146,
           "tot_desc_50": 99,
-          "pct_tasa_uso": 69.7,
+          "pct_tasa_uso": 67.8,
           "excede_meta": false,
           "children": [
             {
@@ -7932,10 +7832,10 @@ DISCOUNT_DATA = {
               "name": "TE SATELITE BARRIO CHINO",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
-              "tot_porta_mono": 69,
+              "tot_porta_mono": 73,
               "tot_desc_50": 50,
-              "pct_tasa_uso": 72.5,
-              "excede_meta": true,
+              "pct_tasa_uso": 68.5,
+              "excede_meta": false,
               "children": [
                 {
                   "id": "ase_disc_ELIZABETH ANA RAMOS ANGULO",
@@ -7954,10 +7854,10 @@ DISCOUNT_DATA = {
                   "user_code": "RIGOBERTO AYALA CARPIO",
                   "spv": "MAR\u00cdA BERNAOLA",
                   "zona": "CENTRO",
-                  "tot_porta_mono": 38,
+                  "tot_porta_mono": 42,
                   "tot_desc_50": 28,
-                  "pct_tasa_uso": 73.7,
-                  "excede_meta": true
+                  "pct_tasa_uso": 66.7,
+                  "excede_meta": false
                 }
               ]
             },
@@ -8135,18 +8035,18 @@ DISCOUNT_DATA = {
     }
   },
   "summary": {
-    "tot_porta_mono": 444,
+    "tot_porta_mono": 451,
     "tot_desc_50": 301,
-    "pct_tasa_uso": 67.8,
+    "pct_tasa_uso": 66.7,
     "excede_meta": false
   },
   "tree": [
     {
       "id": "spv_disc_CYNTHIA GUERRA",
       "name": "CYNTHIA GUERRA",
-      "tot_porta_mono": 143,
+      "tot_porta_mono": 144,
       "tot_desc_50": 82,
-      "pct_tasa_uso": 57.3,
+      "pct_tasa_uso": 56.9,
       "excede_meta": false,
       "children": [
         {
@@ -8188,9 +8088,9 @@ DISCOUNT_DATA = {
           "name": "TE ICA II",
           "spv": "CYNTHIA GUERRA",
           "zona": "CENTRO",
-          "tot_porta_mono": 70,
+          "tot_porta_mono": 71,
           "tot_desc_50": 30,
-          "pct_tasa_uso": 42.9,
+          "pct_tasa_uso": 42.3,
           "excede_meta": false,
           "children": [
             {
@@ -8210,9 +8110,9 @@ DISCOUNT_DATA = {
               "user_code": "ROGGER SMITH NAVARRETE CAHUA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
-              "tot_porta_mono": 30,
+              "tot_porta_mono": 31,
               "tot_desc_50": 17,
-              "pct_tasa_uso": 56.7,
+              "pct_tasa_uso": 54.8,
               "excede_meta": false
             }
           ]
@@ -8301,9 +8201,9 @@ DISCOUNT_DATA = {
     {
       "id": "spv_disc_FERNANDO MORENO",
       "name": "FERNANDO MORENO",
-      "tot_porta_mono": 83,
+      "tot_porta_mono": 85,
       "tot_desc_50": 56,
-      "pct_tasa_uso": 67.5,
+      "pct_tasa_uso": 65.9,
       "excede_meta": false,
       "children": [
         {
@@ -8311,9 +8211,9 @@ DISCOUNT_DATA = {
           "name": "TE NAZCA",
           "spv": "FERNANDO MORENO",
           "zona": "CENTRO",
-          "tot_porta_mono": 62,
+          "tot_porta_mono": 63,
           "tot_desc_50": 42,
-          "pct_tasa_uso": 67.7,
+          "pct_tasa_uso": 66.7,
           "excede_meta": false,
           "children": [
             {
@@ -8322,9 +8222,9 @@ DISCOUNT_DATA = {
               "user_code": "DIESLLY JOSEYDI CALLE PRADO",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
-              "tot_porta_mono": 7,
+              "tot_porta_mono": 8,
               "tot_desc_50": 4,
-              "pct_tasa_uso": 57.1,
+              "pct_tasa_uso": 50.0,
               "excede_meta": false
             },
             {
@@ -8390,9 +8290,9 @@ DISCOUNT_DATA = {
           "name": "TE SATELITE PALPA",
           "spv": "FERNANDO MORENO",
           "zona": "CENTRO",
-          "tot_porta_mono": 6,
+          "tot_porta_mono": 7,
           "tot_desc_50": 5,
-          "pct_tasa_uso": 83.3,
+          "pct_tasa_uso": 71.4,
           "excede_meta": true,
           "children": [
             {
@@ -8401,9 +8301,9 @@ DISCOUNT_DATA = {
               "user_code": "ALEXANDRA ECHAJAYA GARCIA",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
-              "tot_porta_mono": 6,
+              "tot_porta_mono": 7,
               "tot_desc_50": 5,
-              "pct_tasa_uso": 83.3,
+              "pct_tasa_uso": 71.4,
               "excede_meta": true
             }
           ]
@@ -8413,9 +8313,9 @@ DISCOUNT_DATA = {
     {
       "id": "spv_disc_MAR\u00cdA BERNAOLA",
       "name": "MAR\u00cdA BERNAOLA",
-      "tot_porta_mono": 142,
+      "tot_porta_mono": 146,
       "tot_desc_50": 99,
-      "pct_tasa_uso": 69.7,
+      "pct_tasa_uso": 67.8,
       "excede_meta": false,
       "children": [
         {
@@ -8502,10 +8402,10 @@ DISCOUNT_DATA = {
           "name": "TE SATELITE BARRIO CHINO",
           "spv": "MAR\u00cdA BERNAOLA",
           "zona": "CENTRO",
-          "tot_porta_mono": 69,
+          "tot_porta_mono": 73,
           "tot_desc_50": 50,
-          "pct_tasa_uso": 72.5,
-          "excede_meta": true,
+          "pct_tasa_uso": 68.5,
+          "excede_meta": false,
           "children": [
             {
               "id": "ase_disc_ELIZABETH ANA RAMOS ANGULO",
@@ -8524,10 +8424,10 @@ DISCOUNT_DATA = {
               "user_code": "RIGOBERTO AYALA CARPIO",
               "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
-              "tot_porta_mono": 38,
+              "tot_porta_mono": 42,
               "tot_desc_50": 28,
-              "pct_tasa_uso": 73.7,
-              "excede_meta": true
+              "pct_tasa_uso": 66.7,
+              "excede_meta": false
             }
           ]
         },
@@ -8722,13 +8622,13 @@ OPERADOR_CEDENTE_DATA = {
       "claro": 186,
       "movistar": 113,
       "bitel": 168,
-      "total": 519
+      "total": 526
     },
     "Acumulado": {
       "claro": 613,
       "movistar": 470,
       "bitel": 498,
-      "total": 1633
+      "total": 1640
     }
   },
   "tree": [
@@ -8931,21 +8831,21 @@ OPERADOR_CEDENTE_DATA = {
             },
             "Agosto": {
               "claro_u": 25,
-              "claro_pct": 30.5,
+              "claro_pct": 30.1,
               "movistar_u": 26,
-              "movistar_pct": 31.7,
+              "movistar_pct": 31.3,
               "bitel_u": 19,
-              "bitel_pct": 23.2,
-              "total_u": 82
+              "bitel_pct": 22.9,
+              "total_u": 83
             },
             "Acumulado": {
               "claro_u": 101,
-              "claro_pct": 34.5,
+              "claro_pct": 34.4,
               "movistar_u": 98,
-              "movistar_pct": 33.4,
+              "movistar_pct": 33.3,
               "bitel_u": 82,
-              "bitel_pct": 28.0,
-              "total_u": 293
+              "bitel_pct": 27.9,
+              "total_u": 294
             }
           },
           "asesores": [
@@ -9057,21 +8957,21 @@ OPERADOR_CEDENTE_DATA = {
                 },
                 "Agosto": {
                   "claro_u": 11,
-                  "claro_pct": 30.6,
+                  "claro_pct": 29.7,
                   "movistar_u": 14,
-                  "movistar_pct": 38.9,
+                  "movistar_pct": 37.8,
                   "bitel_u": 10,
-                  "bitel_pct": 27.8,
-                  "total_u": 36
+                  "bitel_pct": 27.0,
+                  "total_u": 37
                 },
                 "Acumulado": {
                   "claro_u": 43,
-                  "claro_pct": 33.6,
+                  "claro_pct": 33.3,
                   "movistar_u": 41,
-                  "movistar_pct": 32.0,
+                  "movistar_pct": 31.8,
                   "bitel_u": 43,
-                  "bitel_pct": 33.6,
-                  "total_u": 128
+                  "bitel_pct": 33.3,
+                  "total_u": 129
                 }
               }
             }
@@ -9491,21 +9391,21 @@ OPERADOR_CEDENTE_DATA = {
             },
             "Agosto": {
               "claro_u": 18,
-              "claro_pct": 24.0,
+              "claro_pct": 23.7,
               "movistar_u": 20,
-              "movistar_pct": 26.7,
+              "movistar_pct": 26.3,
               "bitel_u": 25,
-              "bitel_pct": 33.3,
-              "total_u": 75
+              "bitel_pct": 32.9,
+              "total_u": 76
             },
             "Acumulado": {
               "claro_u": 67,
-              "claro_pct": 29.8,
+              "claro_pct": 29.6,
               "movistar_u": 72,
-              "movistar_pct": 32.0,
+              "movistar_pct": 31.9,
               "bitel_u": 74,
-              "bitel_pct": 32.9,
-              "total_u": 225
+              "bitel_pct": 32.7,
+              "total_u": 226
             }
           },
           "asesores": [
@@ -9533,21 +9433,21 @@ OPERADOR_CEDENTE_DATA = {
                 },
                 "Agosto": {
                   "claro_u": 2,
-                  "claro_pct": 18.2,
+                  "claro_pct": 16.7,
                   "movistar_u": 2,
-                  "movistar_pct": 18.2,
+                  "movistar_pct": 16.7,
                   "bitel_u": 4,
-                  "bitel_pct": 36.4,
-                  "total_u": 11
+                  "bitel_pct": 33.3,
+                  "total_u": 12
                 },
                 "Acumulado": {
                   "claro_u": 2,
-                  "claro_pct": 18.2,
+                  "claro_pct": 16.7,
                   "movistar_u": 2,
-                  "movistar_pct": 18.2,
+                  "movistar_pct": 16.7,
                   "bitel_u": 4,
-                  "bitel_pct": 36.4,
-                  "total_u": 11
+                  "bitel_pct": 33.3,
+                  "total_u": 12
                 }
               }
             },
@@ -9833,21 +9733,21 @@ OPERADOR_CEDENTE_DATA = {
             },
             "Agosto": {
               "claro_u": 4,
-              "claro_pct": 44.4,
+              "claro_pct": 40.0,
               "movistar_u": 2,
-              "movistar_pct": 22.2,
+              "movistar_pct": 20.0,
               "bitel_u": 3,
-              "bitel_pct": 33.3,
-              "total_u": 9
+              "bitel_pct": 30.0,
+              "total_u": 10
             },
             "Acumulado": {
               "claro_u": 9,
-              "claro_pct": 32.1,
+              "claro_pct": 31.0,
               "movistar_u": 14,
-              "movistar_pct": 50.0,
+              "movistar_pct": 48.3,
               "bitel_u": 5,
-              "bitel_pct": 17.9,
-              "total_u": 28
+              "bitel_pct": 17.2,
+              "total_u": 29
             }
           },
           "asesores": [
@@ -9875,21 +9775,21 @@ OPERADOR_CEDENTE_DATA = {
                 },
                 "Agosto": {
                   "claro_u": 4,
-                  "claro_pct": 44.4,
+                  "claro_pct": 40.0,
                   "movistar_u": 2,
-                  "movistar_pct": 22.2,
+                  "movistar_pct": 20.0,
                   "bitel_u": 3,
-                  "bitel_pct": 33.3,
-                  "total_u": 9
+                  "bitel_pct": 30.0,
+                  "total_u": 10
                 },
                 "Acumulado": {
                   "claro_u": 9,
-                  "claro_pct": 32.1,
+                  "claro_pct": 31.0,
                   "movistar_u": 14,
-                  "movistar_pct": 50.0,
+                  "movistar_pct": 48.3,
                   "bitel_u": 5,
-                  "bitel_pct": 17.9,
-                  "total_u": 28
+                  "bitel_pct": 17.2,
+                  "total_u": 29
                 }
               }
             }
@@ -10309,21 +10209,21 @@ OPERADOR_CEDENTE_DATA = {
             },
             "Agosto": {
               "claro_u": 35,
-              "claro_pct": 43.8,
+              "claro_pct": 41.7,
               "movistar_u": 6,
-              "movistar_pct": 7.5,
+              "movistar_pct": 7.1,
               "bitel_u": 33,
-              "bitel_pct": 41.2,
-              "total_u": 80
+              "bitel_pct": 39.3,
+              "total_u": 84
             },
             "Acumulado": {
               "claro_u": 82,
-              "claro_pct": 44.1,
+              "claro_pct": 43.2,
               "movistar_u": 20,
-              "movistar_pct": 10.8,
+              "movistar_pct": 10.5,
               "bitel_u": 78,
-              "bitel_pct": 41.9,
-              "total_u": 186
+              "bitel_pct": 41.1,
+              "total_u": 190
             }
           },
           "asesores": [
@@ -10435,21 +10335,21 @@ OPERADOR_CEDENTE_DATA = {
                 },
                 "Agosto": {
                   "claro_u": 16,
-                  "claro_pct": 37.2,
+                  "claro_pct": 34.0,
                   "movistar_u": 5,
-                  "movistar_pct": 11.6,
+                  "movistar_pct": 10.6,
                   "bitel_u": 20,
-                  "bitel_pct": 46.5,
-                  "total_u": 43
+                  "bitel_pct": 42.6,
+                  "total_u": 47
                 },
                 "Acumulado": {
                   "claro_u": 37,
-                  "claro_pct": 41.1,
+                  "claro_pct": 39.4,
                   "movistar_u": 12,
-                  "movistar_pct": 13.3,
+                  "movistar_pct": 12.8,
                   "bitel_u": 39,
-                  "bitel_pct": 43.3,
-                  "total_u": 90
+                  "bitel_pct": 41.5,
+                  "total_u": 94
                 }
               }
             }
@@ -13268,14 +13168,14 @@ MIX_PLANES_DATA = {
           "Entel Chip 35.90": 0,
           "Entel chip+ 32.90": 0,
           "Power 29.90 N": 5,
-          "Power 39.90 N": 419,
-          "Power 49.90 N": 191,
-          "Power 59.90 N": 40,
-          "Power ilim 69.90 N": 73,
-          "Power ilim 79.90 SD N": 501,
+          "Power 39.90 N": 422,
+          "Power 49.90 N": 198,
+          "Power 59.90 N": 42,
+          "Power ilim 69.90 N": 74,
+          "Power ilim 79.90 SD N": 506,
           "Power ilim 99.90 SD N": 3
         },
-        "total": 1233
+        "total": 1251
       },
       "tree": [
         {
@@ -13286,14 +13186,14 @@ MIX_PLANES_DATA = {
             "Entel Chip 35.90": 0,
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 0,
-            "Power 39.90 N": 181,
-            "Power 49.90 N": 62,
+            "Power 39.90 N": 183,
+            "Power 49.90 N": 66,
             "Power 59.90 N": 11,
             "Power ilim 69.90 N": 19,
             "Power ilim 79.90 SD N": 128,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 402,
+          "total": 408,
           "children": [
             {
               "id": "pdv_mix_TE ICA 3",
@@ -13366,14 +13266,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 127,
+                "Power 39.90 N": 129,
                 "Power 49.90 N": 28,
                 "Power 59.90 N": 5,
                 "Power ilim 69.90 N": 9,
                 "Power ilim 79.90 SD N": 50,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 219,
+              "total": 221,
               "children": [
                 {
                   "id": "ase_mix_DIANA LORENA SIME BENDEZU",
@@ -13406,14 +13306,14 @@ MIX_PLANES_DATA = {
                     "Entel Chip 35.90": 0,
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 0,
-                    "Power 39.90 N": 55,
+                    "Power 39.90 N": 57,
                     "Power 49.90 N": 16,
                     "Power 59.90 N": 3,
                     "Power ilim 69.90 N": 2,
                     "Power ilim 79.90 SD N": 25,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 101
+                  "total": 103
                 }
               ]
             },
@@ -13428,34 +13328,14 @@ MIX_PLANES_DATA = {
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
                 "Power 39.90 N": 8,
-                "Power 49.90 N": 5,
+                "Power 49.90 N": 9,
                 "Power 59.90 N": 2,
                 "Power ilim 69.90 N": 0,
                 "Power ilim 79.90 SD N": 13,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 29,
+              "total": 33,
               "children": [
-                {
-                  "id": "ase_mix_JHON ANDERSON MEDINA FARFAN",
-                  "name": "JHON ANDERSON MEDINA FARFAN",
-                  "user_code": "JHON ANDERSON MEDINA FARFAN",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Total 19.90": 0,
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 1,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 0,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 1
-                },
                 {
                   "id": "ase_mix_JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
                   "name": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
@@ -13467,14 +13347,14 @@ MIX_PLANES_DATA = {
                     "Entel Chip 35.90": 0,
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 0,
-                    "Power 39.90 N": 4,
-                    "Power 49.90 N": 3,
+                    "Power 39.90 N": 5,
+                    "Power 49.90 N": 7,
                     "Power 59.90 N": 0,
                     "Power ilim 69.90 N": 0,
                     "Power ilim 79.90 SD N": 7,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 15
+                  "total": 20
                 },
                 {
                   "id": "ase_mix_VALENTINA BAEZ TORDOYA",
@@ -13593,10 +13473,10 @@ MIX_PLANES_DATA = {
             "Power 49.90 N": 27,
             "Power 59.90 N": 12,
             "Power ilim 69.90 N": 28,
-            "Power ilim 79.90 SD N": 129,
+            "Power ilim 79.90 SD N": 132,
             "Power ilim 99.90 SD N": 2
           },
-          "total": 240,
+          "total": 243,
           "children": [
             {
               "id": "pdv_mix_TE NAZCA",
@@ -13612,10 +13492,10 @@ MIX_PLANES_DATA = {
                 "Power 49.90 N": 18,
                 "Power 59.90 N": 9,
                 "Power ilim 69.90 N": 17,
-                "Power ilim 79.90 SD N": 97,
+                "Power ilim 79.90 SD N": 99,
                 "Power ilim 99.90 SD N": 1
               },
-              "total": 168,
+              "total": 170,
               "children": [
                 {
                   "id": "ase_mix_DIESLLY JOSEYDI CALLE PRADO",
@@ -13632,10 +13512,10 @@ MIX_PLANES_DATA = {
                     "Power 49.90 N": 1,
                     "Power 59.90 N": 1,
                     "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 18,
+                    "Power ilim 79.90 SD N": 20,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 23
+                  "total": 25
                 },
                 {
                   "id": "ase_mix_JOSE FERNANDO MORENO VALENCIA",
@@ -13754,10 +13634,10 @@ MIX_PLANES_DATA = {
                 "Power 49.90 N": 2,
                 "Power 59.90 N": 0,
                 "Power ilim 69.90 N": 3,
-                "Power ilim 79.90 SD N": 16,
+                "Power ilim 79.90 SD N": 17,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 25,
+              "total": 26,
               "children": [
                 {
                   "id": "ase_mix_ALEXANDRA ECHAJAYA GARCIA",
@@ -13774,10 +13654,10 @@ MIX_PLANES_DATA = {
                     "Power 49.90 N": 2,
                     "Power 59.90 N": 0,
                     "Power ilim 69.90 N": 3,
-                    "Power ilim 79.90 SD N": 16,
+                    "Power ilim 79.90 SD N": 17,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 25
+                  "total": 26
                 }
               ]
             }
@@ -13791,14 +13671,14 @@ MIX_PLANES_DATA = {
             "Entel Chip 35.90": 0,
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 3,
-            "Power 39.90 N": 106,
-            "Power 49.90 N": 85,
-            "Power 59.90 N": 14,
-            "Power ilim 69.90 N": 22,
-            "Power ilim 79.90 SD N": 156,
+            "Power 39.90 N": 107,
+            "Power 49.90 N": 88,
+            "Power 59.90 N": 16,
+            "Power ilim 69.90 N": 23,
+            "Power ilim 79.90 SD N": 158,
             "Power ilim 99.90 SD N": 1
           },
-          "total": 387,
+          "total": 396,
           "children": [
             {
               "id": "pdv_mix_TE ICA",
@@ -13810,14 +13690,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 1,
-                "Power 39.90 N": 15,
+                "Power 39.90 N": 16,
                 "Power 49.90 N": 5,
                 "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 3,
+                "Power ilim 69.90 N": 4,
                 "Power ilim 79.90 SD N": 15,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 40,
+              "total": 42,
               "children": [
                 {
                   "id": "ase_mix_CINDY PAMELA ENRIQUEZ HUANCA",
@@ -13850,14 +13730,14 @@ MIX_PLANES_DATA = {
                     "Entel Chip 35.90": 0,
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 1,
-                    "Power 39.90 N": 9,
+                    "Power 39.90 N": 10,
                     "Power 49.90 N": 4,
                     "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 3,
+                    "Power ilim 69.90 N": 4,
                     "Power ilim 79.90 SD N": 13,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 31
+                  "total": 33
                 }
               ]
             },
@@ -13953,13 +13833,13 @@ MIX_PLANES_DATA = {
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 2,
                 "Power 39.90 N": 29,
-                "Power 49.90 N": 60,
-                "Power 59.90 N": 8,
+                "Power 49.90 N": 63,
+                "Power 59.90 N": 10,
                 "Power ilim 69.90 N": 15,
-                "Power ilim 79.90 SD N": 73,
+                "Power ilim 79.90 SD N": 75,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 187,
+              "total": 194,
               "children": [
                 {
                   "id": "ase_mix_ELIZABETH ANA RAMOS ANGULO",
@@ -13993,13 +13873,13 @@ MIX_PLANES_DATA = {
                     "Entel chip+ 32.90": 0,
                     "Power 29.90 N": 0,
                     "Power 39.90 N": 14,
-                    "Power 49.90 N": 29,
-                    "Power 59.90 N": 1,
+                    "Power 49.90 N": 32,
+                    "Power 59.90 N": 3,
                     "Power ilim 69.90 N": 7,
-                    "Power ilim 79.90 SD N": 39,
+                    "Power ilim 79.90 SD N": 41,
                     "Power ilim 99.90 SD N": 0
                   },
-                  "total": 90
+                  "total": 97
                 }
               ]
             },
@@ -14317,14 +14197,14 @@ MIX_PLANES_DATA = {
       "Entel Chip 35.90": 0,
       "Entel chip+ 32.90": 0,
       "Power 29.90 N": 5,
-      "Power 39.90 N": 419,
-      "Power 49.90 N": 191,
-      "Power 59.90 N": 40,
-      "Power ilim 69.90 N": 73,
-      "Power ilim 79.90 SD N": 501,
+      "Power 39.90 N": 422,
+      "Power 49.90 N": 198,
+      "Power 59.90 N": 42,
+      "Power ilim 69.90 N": 74,
+      "Power ilim 79.90 SD N": 506,
       "Power ilim 99.90 SD N": 3
     },
-    "total": 1233
+    "total": 1251
   },
   "tree": [
     {
@@ -14335,14 +14215,14 @@ MIX_PLANES_DATA = {
         "Entel Chip 35.90": 0,
         "Entel chip+ 32.90": 0,
         "Power 29.90 N": 0,
-        "Power 39.90 N": 181,
-        "Power 49.90 N": 62,
+        "Power 39.90 N": 183,
+        "Power 49.90 N": 66,
         "Power 59.90 N": 11,
         "Power ilim 69.90 N": 19,
         "Power ilim 79.90 SD N": 128,
         "Power ilim 99.90 SD N": 0
       },
-      "total": 402,
+      "total": 408,
       "children": [
         {
           "id": "pdv_mix_TE ICA 3",
@@ -14415,14 +14295,14 @@ MIX_PLANES_DATA = {
             "Entel Chip 35.90": 0,
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 0,
-            "Power 39.90 N": 127,
+            "Power 39.90 N": 129,
             "Power 49.90 N": 28,
             "Power 59.90 N": 5,
             "Power ilim 69.90 N": 9,
             "Power ilim 79.90 SD N": 50,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 219,
+          "total": 221,
           "children": [
             {
               "id": "ase_mix_DIANA LORENA SIME BENDEZU",
@@ -14455,14 +14335,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 55,
+                "Power 39.90 N": 57,
                 "Power 49.90 N": 16,
                 "Power 59.90 N": 3,
                 "Power ilim 69.90 N": 2,
                 "Power ilim 79.90 SD N": 25,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 101
+              "total": 103
             }
           ]
         },
@@ -14477,34 +14357,14 @@ MIX_PLANES_DATA = {
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 0,
             "Power 39.90 N": 8,
-            "Power 49.90 N": 5,
+            "Power 49.90 N": 9,
             "Power 59.90 N": 2,
             "Power ilim 69.90 N": 0,
             "Power ilim 79.90 SD N": 13,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 29,
+          "total": 33,
           "children": [
-            {
-              "id": "ase_mix_JHON ANDERSON MEDINA FARFAN",
-              "name": "JHON ANDERSON MEDINA FARFAN",
-              "user_code": "JHON ANDERSON MEDINA FARFAN",
-              "spv": "CYNTHIA GUERRA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Total 19.90": 0,
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 1,
-                "Power 49.90 N": 0,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 0,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 1
-            },
             {
               "id": "ase_mix_JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
               "name": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
@@ -14516,14 +14376,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
-                "Power 39.90 N": 4,
-                "Power 49.90 N": 3,
+                "Power 39.90 N": 5,
+                "Power 49.90 N": 7,
                 "Power 59.90 N": 0,
                 "Power ilim 69.90 N": 0,
                 "Power ilim 79.90 SD N": 7,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 15
+              "total": 20
             },
             {
               "id": "ase_mix_VALENTINA BAEZ TORDOYA",
@@ -14642,10 +14502,10 @@ MIX_PLANES_DATA = {
         "Power 49.90 N": 27,
         "Power 59.90 N": 12,
         "Power ilim 69.90 N": 28,
-        "Power ilim 79.90 SD N": 129,
+        "Power ilim 79.90 SD N": 132,
         "Power ilim 99.90 SD N": 2
       },
-      "total": 240,
+      "total": 243,
       "children": [
         {
           "id": "pdv_mix_TE NAZCA",
@@ -14661,10 +14521,10 @@ MIX_PLANES_DATA = {
             "Power 49.90 N": 18,
             "Power 59.90 N": 9,
             "Power ilim 69.90 N": 17,
-            "Power ilim 79.90 SD N": 97,
+            "Power ilim 79.90 SD N": 99,
             "Power ilim 99.90 SD N": 1
           },
-          "total": 168,
+          "total": 170,
           "children": [
             {
               "id": "ase_mix_DIESLLY JOSEYDI CALLE PRADO",
@@ -14681,10 +14541,10 @@ MIX_PLANES_DATA = {
                 "Power 49.90 N": 1,
                 "Power 59.90 N": 1,
                 "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 18,
+                "Power ilim 79.90 SD N": 20,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 23
+              "total": 25
             },
             {
               "id": "ase_mix_JOSE FERNANDO MORENO VALENCIA",
@@ -14803,10 +14663,10 @@ MIX_PLANES_DATA = {
             "Power 49.90 N": 2,
             "Power 59.90 N": 0,
             "Power ilim 69.90 N": 3,
-            "Power ilim 79.90 SD N": 16,
+            "Power ilim 79.90 SD N": 17,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 25,
+          "total": 26,
           "children": [
             {
               "id": "ase_mix_ALEXANDRA ECHAJAYA GARCIA",
@@ -14823,10 +14683,10 @@ MIX_PLANES_DATA = {
                 "Power 49.90 N": 2,
                 "Power 59.90 N": 0,
                 "Power ilim 69.90 N": 3,
-                "Power ilim 79.90 SD N": 16,
+                "Power ilim 79.90 SD N": 17,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 25
+              "total": 26
             }
           ]
         }
@@ -14840,14 +14700,14 @@ MIX_PLANES_DATA = {
         "Entel Chip 35.90": 0,
         "Entel chip+ 32.90": 0,
         "Power 29.90 N": 3,
-        "Power 39.90 N": 106,
-        "Power 49.90 N": 85,
-        "Power 59.90 N": 14,
-        "Power ilim 69.90 N": 22,
-        "Power ilim 79.90 SD N": 156,
+        "Power 39.90 N": 107,
+        "Power 49.90 N": 88,
+        "Power 59.90 N": 16,
+        "Power ilim 69.90 N": 23,
+        "Power ilim 79.90 SD N": 158,
         "Power ilim 99.90 SD N": 1
       },
-      "total": 387,
+      "total": 396,
       "children": [
         {
           "id": "pdv_mix_TE ICA",
@@ -14859,14 +14719,14 @@ MIX_PLANES_DATA = {
             "Entel Chip 35.90": 0,
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 1,
-            "Power 39.90 N": 15,
+            "Power 39.90 N": 16,
             "Power 49.90 N": 5,
             "Power 59.90 N": 1,
-            "Power ilim 69.90 N": 3,
+            "Power ilim 69.90 N": 4,
             "Power ilim 79.90 SD N": 15,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 40,
+          "total": 42,
           "children": [
             {
               "id": "ase_mix_CINDY PAMELA ENRIQUEZ HUANCA",
@@ -14899,14 +14759,14 @@ MIX_PLANES_DATA = {
                 "Entel Chip 35.90": 0,
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 1,
-                "Power 39.90 N": 9,
+                "Power 39.90 N": 10,
                 "Power 49.90 N": 4,
                 "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 3,
+                "Power ilim 69.90 N": 4,
                 "Power ilim 79.90 SD N": 13,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 31
+              "total": 33
             }
           ]
         },
@@ -15002,13 +14862,13 @@ MIX_PLANES_DATA = {
             "Entel chip+ 32.90": 0,
             "Power 29.90 N": 2,
             "Power 39.90 N": 29,
-            "Power 49.90 N": 60,
-            "Power 59.90 N": 8,
+            "Power 49.90 N": 63,
+            "Power 59.90 N": 10,
             "Power ilim 69.90 N": 15,
-            "Power ilim 79.90 SD N": 73,
+            "Power ilim 79.90 SD N": 75,
             "Power ilim 99.90 SD N": 0
           },
-          "total": 187,
+          "total": 194,
           "children": [
             {
               "id": "ase_mix_ELIZABETH ANA RAMOS ANGULO",
@@ -15042,13 +14902,13 @@ MIX_PLANES_DATA = {
                 "Entel chip+ 32.90": 0,
                 "Power 29.90 N": 0,
                 "Power 39.90 N": 14,
-                "Power 49.90 N": 29,
-                "Power 59.90 N": 1,
+                "Power 49.90 N": 32,
+                "Power 59.90 N": 3,
                 "Power ilim 69.90 N": 7,
-                "Power ilim 79.90 SD N": 39,
+                "Power ilim 79.90 SD N": 41,
                 "Power ilim 99.90 SD N": 0
               },
-              "total": 90
+              "total": 97
             }
           ]
         },
