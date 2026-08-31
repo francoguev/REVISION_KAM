@@ -11534,2287 +11534,341 @@ OPERADOR_CEDENTE_DATA = {
 MIX_PLANES_DATA = {
   "month_label": "Agosto 2026",
   "plans_list": [
-    "Entel Chip 35.90",
-    "Entel chip+ 32.90",
-    "Power 29.90 N",
-    "Power 39.90 N",
-    "Power 49.90 N",
-    "Power 59.90 N",
-    "Power ilim 69.90 N",
-    "Power ilim 79.90 SD N",
-    "Power ilim 99.90 SD N"
+    "19.9",
+    "22.9",
+    "25.9",
+    "29.9",
+    "39.9",
+    "49.9",
+    "59.9",
+    "69.9",
+    "79.9",
+    "89.9",
+    "99.9"
   ],
   "months": {
-    "Junio": {
-      "month_label": "Junio 2026",
-      "plans_list": [
-        "Entel Chip 35.90",
-        "Entel chip+ 32.90",
-        "Power 29.90 N",
-        "Power 39.90 N",
-        "Power 49.90 N",
-        "Power 59.90 N",
-        "Power ilim 69.90 N",
-        "Power ilim 79.90 SD N",
-        "Power ilim 99.90 SD N"
-      ],
-      "summary": {
-        "plans": {
-          "Entel Chip 35.90": 1,
-          "Entel chip+ 32.90": 0,
-          "Power 29.90 N": 7,
-          "Power 39.90 N": 446,
-          "Power 49.90 N": 234,
-          "Power 59.90 N": 48,
-          "Power ilim 69.90 N": 95,
-          "Power ilim 79.90 SD N": 552,
-          "Power ilim 99.90 SD N": 2
-        },
-        "total": 1385
-      },
-      "tree": [
-        {
-          "id": "spv_mix_CYNTHIA GUERRA",
-          "name": "CYNTHIA GUERRA",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 1,
-            "Power 39.90 N": 189,
-            "Power 49.90 N": 64,
-            "Power 59.90 N": 12,
-            "Power ilim 69.90 N": 22,
-            "Power ilim 79.90 SD N": 148,
-            "Power ilim 99.90 SD N": 0
-          },
-          "total": 436,
-          "children": [
-            {
-              "id": "pdv_mix_TE ICA 3",
-              "name": "TE ICA 3",
-              "spv": "CYNTHIA GUERRA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 50,
-                "Power 49.90 N": 24,
-                "Power 59.90 N": 4,
-                "Power ilim 69.90 N": 3,
-                "Power ilim 79.90 SD N": 41,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 122,
-              "children": [
-                {
-                  "id": "ase_mix_JANELLA ISABEL VALLEJOS PINEDA",
-                  "name": "JANELLA ISABEL VALLEJOS PINEDA",
-                  "user_code": "JANELLA ISABEL VALLEJOS PINEDA",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 29,
-                    "Power 49.90 N": 7,
-                    "Power 59.90 N": 3,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 18,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 58
-                },
-                {
-                  "id": "ase_mix_MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "name": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "user_code": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 2,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 0,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 2
-                },
-                {
-                  "id": "ase_mix_NAOMI MARINA AMESQUITA APARCANA",
-                  "name": "NAOMI MARINA AMESQUITA APARCANA",
-                  "user_code": "NAOMI MARINA AMESQUITA APARCANA",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 19,
-                    "Power 49.90 N": 17,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 23,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 62
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE ICA II",
-              "name": "TE ICA II",
-              "spv": "CYNTHIA GUERRA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 124,
-                "Power 49.90 N": 21,
-                "Power 59.90 N": 7,
-                "Power ilim 69.90 N": 17,
-                "Power ilim 79.90 SD N": 70,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 239,
-              "children": [
-                {
-                  "id": "ase_mix_DIANA LORENA SIME BENDEZU",
-                  "name": "DIANA LORENA SIME BENDEZU",
-                  "user_code": "DIANA LORENA SIME BENDEZU",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 75,
-                    "Power 49.90 N": 9,
-                    "Power 59.90 N": 4,
-                    "Power ilim 69.90 N": 8,
-                    "Power ilim 79.90 SD N": 36,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 132
-                },
-                {
-                  "id": "ase_mix_ROGGER SMITH NAVARRETE CAHUA",
-                  "name": "ROGGER SMITH NAVARRETE CAHUA",
-                  "user_code": "ROGGER SMITH NAVARRETE CAHUA",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 49,
-                    "Power 49.90 N": 12,
-                    "Power 59.90 N": 3,
-                    "Power ilim 69.90 N": 9,
-                    "Power ilim 79.90 SD N": 34,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 107
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE ICA MODELO",
-              "name": "TE ICA MODELO",
-              "spv": "CYNTHIA GUERRA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 1,
-                "Power 39.90 N": 7,
-                "Power 49.90 N": 2,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 9,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 19,
-              "children": [
-                {
-                  "id": "ase_mix_ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
-                  "name": "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
-                  "user_code": "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 1,
-                    "Power 39.90 N": 7,
-                    "Power 49.90 N": 2,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 3,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 13
-                },
-                {
-                  "id": "ase_mix_MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "name": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "user_code": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 0,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 6,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 6
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE PARCONA",
-              "name": "TE PARCONA",
-              "spv": "CYNTHIA GUERRA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 8,
-                "Power 49.90 N": 17,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 28,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 56,
-              "children": [
-                {
-                  "id": "ase_mix_DANILO GIORDANO CARRIZALES RAMOS",
-                  "name": "DANILO GIORDANO CARRIZALES RAMOS",
-                  "user_code": "DANILO GIORDANO CARRIZALES RAMOS",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 7,
-                    "Power 49.90 N": 9,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 9,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 26
-                },
-                {
-                  "id": "ase_mix_JOSU\u00c9 MIGUEL ESPINO SAYRITUPAC",
-                  "name": "JOSU\u00c9 MIGUEL ESPINO SAYRITUPAC",
-                  "user_code": "JOSU\u00c9 MIGUEL ESPINO SAYRITUPAC",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 1,
-                    "Power 49.90 N": 8,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 19,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 30
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "spv_mix_FERNANDO MORENO",
-          "name": "FERNANDO MORENO",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 54,
-            "Power 49.90 N": 70,
-            "Power 59.90 N": 21,
-            "Power ilim 69.90 N": 46,
-            "Power ilim 79.90 SD N": 136,
-            "Power ilim 99.90 SD N": 1
-          },
-          "total": 328,
-          "children": [
-            {
-              "id": "pdv_mix_TE NAZCA",
-              "name": "TE NAZCA",
-              "spv": "FERNANDO MORENO",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 35,
-                "Power 49.90 N": 55,
-                "Power 59.90 N": 14,
-                "Power ilim 69.90 N": 35,
-                "Power ilim 79.90 SD N": 97,
-                "Power ilim 99.90 SD N": 1
-              },
-              "total": 237,
-              "children": [
-                {
-                  "id": "ase_mix_JOSE FERNANDO MORENO VALENCIA",
-                  "name": "JOSE FERNANDO MORENO VALENCIA",
-                  "user_code": "JOSE FERNANDO MORENO VALENCIA",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 3,
-                    "Power 49.90 N": 5,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 3,
-                    "Power ilim 79.90 SD N": 14,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 25
-                },
-                {
-                  "id": "ase_mix_PEDRO FERNANDO CUMPA VIVANCO",
-                  "name": "PEDRO FERNANDO CUMPA VIVANCO",
-                  "user_code": "PEDRO FERNANDO CUMPA VIVANCO",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 11,
-                    "Power 49.90 N": 18,
-                    "Power 59.90 N": 10,
-                    "Power ilim 69.90 N": 9,
-                    "Power ilim 79.90 SD N": 38,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 86
-                },
-                {
-                  "id": "ase_mix_RUBETH DANNAE PICKMAN SAN MIGUEL",
-                  "name": "RUBETH DANNAE PICKMAN SAN MIGUEL",
-                  "user_code": "RUBETH DANNAE PICKMAN SAN MIGUEL",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 20,
-                    "Power 49.90 N": 30,
-                    "Power 59.90 N": 4,
-                    "Power ilim 69.90 N": 22,
-                    "Power ilim 79.90 SD N": 44,
-                    "Power ilim 99.90 SD N": 1
-                  },
-                  "total": 121
-                },
-                {
-                  "id": "ase_mix_YESSICA MARIA RAMOS TAPIA",
-                  "name": "YESSICA MARIA RAMOS TAPIA",
-                  "user_code": "YESSICA MARIA RAMOS TAPIA",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 1,
-                    "Power 49.90 N": 2,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 1,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 5
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE CHALA",
-              "name": "TE SATELITE CHALA",
-              "spv": "FERNANDO MORENO",
-              "zona": "SUR",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 9,
-                "Power 49.90 N": 12,
-                "Power 59.90 N": 5,
-                "Power ilim 69.90 N": 6,
-                "Power ilim 79.90 SD N": 17,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 49,
-              "children": [
-                {
-                  "id": "ase_mix_ELIZABETH LISLEY HUAMAN YBARRA",
-                  "name": "ELIZABETH LISLEY HUAMAN YBARRA",
-                  "user_code": "ELIZABETH LISLEY HUAMAN YBARRA",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "SUR",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 9,
-                    "Power 49.90 N": 12,
-                    "Power 59.90 N": 5,
-                    "Power ilim 69.90 N": 6,
-                    "Power ilim 79.90 SD N": 17,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 49
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE PALPA",
-              "name": "TE SATELITE PALPA",
-              "spv": "FERNANDO MORENO",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 10,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 2,
-                "Power ilim 69.90 N": 5,
-                "Power ilim 79.90 SD N": 22,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 42,
-              "children": [
-                {
-                  "id": "ase_mix_ALEXANDRA ECHAJAYA GARCIA",
-                  "name": "ALEXANDRA ECHAJAYA GARCIA",
-                  "user_code": "ALEXANDRA ECHAJAYA GARCIA",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 10,
-                    "Power 49.90 N": 3,
-                    "Power 59.90 N": 2,
-                    "Power ilim 69.90 N": 5,
-                    "Power ilim 79.90 SD N": 22,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 42
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "spv_mix_MAR\u00cdA BERNAOLA",
-          "name": "MAR\u00cdA BERNAOLA",
-          "plans": {
-            "Entel Chip 35.90": 1,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 6,
-            "Power 39.90 N": 90,
-            "Power 49.90 N": 62,
-            "Power 59.90 N": 12,
-            "Power ilim 69.90 N": 18,
-            "Power ilim 79.90 SD N": 161,
-            "Power ilim 99.90 SD N": 1
-          },
-          "total": 351,
-          "children": [
-            {
-              "id": "pdv_mix_TE ICA",
-              "name": "TE ICA",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 1,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 5,
-                "Power 39.90 N": 5,
-                "Power 49.90 N": 8,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 37,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 59,
-              "children": [
-                {
-                  "id": "ase_mix_LUIS ELIZALDE ESCATE",
-                  "name": "LUIS ELIZALDE ESCATE",
-                  "user_code": "LUIS ELIZALDE ESCATE",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 4,
-                    "Power 39.90 N": 3,
-                    "Power 49.90 N": 8,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 20,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 38
-                },
-                {
-                  "id": "ase_mix_ROSARIO ISABEL ELIAS MAVILA",
-                  "name": "ROSARIO ISABEL ELIAS MAVILA",
-                  "user_code": "ROSARIO ISABEL ELIAS MAVILA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 1,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 1,
-                    "Power 39.90 N": 2,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 17,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 21
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE PISCO",
-              "name": "TE PISCO",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 1,
-                "Power 39.90 N": 15,
-                "Power 49.90 N": 14,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 25,
-                "Power ilim 99.90 SD N": 1
-              },
-              "total": 57,
-              "children": [
-                {
-                  "id": "ase_mix_CONCA FLORES YAMY NICOLL",
-                  "name": "CONCA FLORES YAMY NICOLL",
-                  "user_code": "CONCA FLORES YAMY NICOLL",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 0,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 1,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 1
-                },
-                {
-                  "id": "ase_mix_CYNTIA JETZABEL MANRIQUE NAPA",
-                  "name": "CYNTIA JETZABEL MANRIQUE NAPA",
-                  "user_code": "CYNTIA JETZABEL MANRIQUE NAPA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 12,
-                    "Power 49.90 N": 10,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 18,
-                    "Power ilim 99.90 SD N": 1
-                  },
-                  "total": 41
-                },
-                {
-                  "id": "ase_mix_MARIA DE LA CRUZ MEZA",
-                  "name": "MARIA DE LA CRUZ MEZA",
-                  "user_code": "MARIA DE LA CRUZ MEZA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 1,
-                    "Power 39.90 N": 3,
-                    "Power 49.90 N": 4,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 6,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 15
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE BARRIO CHINO",
-              "name": "TE SATELITE BARRIO CHINO",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 21,
-                "Power 49.90 N": 25,
-                "Power 59.90 N": 4,
-                "Power ilim 69.90 N": 7,
-                "Power ilim 79.90 SD N": 60,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 117,
-              "children": [
-                {
-                  "id": "ase_mix_ARIANA JUDITH VASQUEZ CHOQUE",
-                  "name": "ARIANA JUDITH VASQUEZ CHOQUE",
-                  "user_code": "ARIANA JUDITH VASQUEZ CHOQUE",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 1,
-                    "Power 49.90 N": 3,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 4,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 9
-                },
-                {
-                  "id": "ase_mix_ELIZABETH ANA RAMOS ANGULO",
-                  "name": "ELIZABETH ANA RAMOS ANGULO",
-                  "user_code": "ELIZABETH ANA RAMOS ANGULO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 8,
-                    "Power 49.90 N": 13,
-                    "Power 59.90 N": 3,
-                    "Power ilim 69.90 N": 4,
-                    "Power ilim 79.90 SD N": 29,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 57
-                },
-                {
-                  "id": "ase_mix_RIGOBERTO AYALA CARPIO",
-                  "name": "RIGOBERTO AYALA CARPIO",
-                  "user_code": "RIGOBERTO AYALA CARPIO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 12,
-                    "Power 49.90 N": 9,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 3,
-                    "Power ilim 79.90 SD N": 27,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 51
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE CA\u00d1ETE",
-              "name": "TE SATELITE CA\u00d1ETE",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "LIMA",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 33,
-                "Power 49.90 N": 12,
-                "Power 59.90 N": 6,
-                "Power ilim 69.90 N": 9,
-                "Power ilim 79.90 SD N": 27,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 87,
-              "children": [
-                {
-                  "id": "ase_mix_CAMILA VERONICA ROSAS PALOMINO",
-                  "name": "CAMILA VERONICA ROSAS PALOMINO",
-                  "user_code": "CAMILA VERONICA ROSAS PALOMINO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "LIMA",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 17,
-                    "Power 49.90 N": 6,
-                    "Power 59.90 N": 5,
-                    "Power ilim 69.90 N": 5,
-                    "Power ilim 79.90 SD N": 15,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 48
-                },
-                {
-                  "id": "ase_mix_GISELLA VANNESA CHAUPIN BUSTAMANTE",
-                  "name": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
-                  "user_code": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "LIMA",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 16,
-                    "Power 49.90 N": 6,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 4,
-                    "Power ilim 79.90 SD N": 12,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 39
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE PUEBLO JOVEN",
-              "name": "TE SATELITE PUEBLO JOVEN",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 16,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 12,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 31,
-              "children": [
-                {
-                  "id": "ase_mix_JASMIN JANINE PAULA ESPINO CUYA",
-                  "name": "JASMIN JANINE PAULA ESPINO CUYA",
-                  "user_code": "JASMIN JANINE PAULA ESPINO CUYA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 16,
-                    "Power 49.90 N": 3,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 12,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 31
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "spv_mix_MERY LAPA",
-          "name": "MERY LAPA",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 113,
-            "Power 49.90 N": 38,
-            "Power 59.90 N": 3,
-            "Power ilim 69.90 N": 9,
-            "Power ilim 79.90 SD N": 107,
-            "Power ilim 99.90 SD N": 0
-          },
-          "total": 270,
-          "children": [
-            {
-              "id": "pdv_mix_TE AYACUCHO",
-              "name": "TE AYACUCHO",
-              "spv": "MERY LAPA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 59,
-                "Power 49.90 N": 18,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 4,
-                "Power ilim 79.90 SD N": 58,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 139,
-              "children": [
-                {
-                  "id": "ase_mix_LORENA ALEXANDRA HUAMANI YUPANQUI",
-                  "name": "LORENA ALEXANDRA HUAMANI YUPANQUI",
-                  "user_code": "LORENA ALEXANDRA HUAMANI YUPANQUI",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 52,
-                    "Power 49.90 N": 15,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 4,
-                    "Power ilim 79.90 SD N": 48,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 119
-                },
-                {
-                  "id": "ase_mix_NORI ESPINO AYVAR",
-                  "name": "NORI ESPINO AYVAR",
-                  "user_code": "NORI ESPINO AYVAR",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 4,
-                    "Power 49.90 N": 3,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 4,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 11
-                },
-                {
-                  "id": "ase_mix_SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
-                  "name": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
-                  "user_code": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 3,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 6,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 9
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE HUANTA",
-              "name": "TE HUANTA",
-              "spv": "MERY LAPA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 54,
-                "Power 49.90 N": 20,
-                "Power 59.90 N": 3,
-                "Power ilim 69.90 N": 5,
-                "Power ilim 79.90 SD N": 49,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 131,
-              "children": [
-                {
-                  "id": "ase_mix_MARCO ANDRE FELICES GONZALEZ",
-                  "name": "MARCO ANDRE FELICES GONZALEZ",
-                  "user_code": "MARCO ANDRE FELICES GONZALEZ",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 27,
-                    "Power 49.90 N": 5,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 21,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 55
-                },
-                {
-                  "id": "ase_mix_MERY LAPA ZARATE",
-                  "name": "MERY LAPA ZARATE",
-                  "user_code": "MERY LAPA ZARATE",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 14,
-                    "Power 49.90 N": 10,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 13,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 39
-                },
-                {
-                  "id": "ase_mix_SONALY JULIA MEZA ASTUPILLO",
-                  "name": "SONALY JULIA MEZA ASTUPILLO",
-                  "user_code": "SONALY JULIA MEZA ASTUPILLO",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 13,
-                    "Power 49.90 N": 5,
-                    "Power 59.90 N": 3,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 15,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 37
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    "Julio": {
-      "month_label": "Julio 2026",
-      "plans_list": [
-        "Entel Chip 35.90",
-        "Entel chip+ 32.90",
-        "Power 29.90 N",
-        "Power 39.90 N",
-        "Power 49.90 N",
-        "Power 59.90 N",
-        "Power ilim 69.90 N",
-        "Power ilim 79.90 SD N",
-        "Power ilim 99.90 SD N"
-      ],
-      "summary": {
-        "plans": {
-          "Entel Chip 35.90": 1,
-          "Entel chip+ 32.90": 2,
-          "Power 29.90 N": 4,
-          "Power 39.90 N": 496,
-          "Power 49.90 N": 217,
-          "Power 59.90 N": 48,
-          "Power ilim 69.90 N": 88,
-          "Power ilim 79.90 SD N": 576,
-          "Power ilim 99.90 SD N": 1
-        },
-        "total": 1433
-      },
-      "tree": [
-        {
-          "id": "spv_mix_CYNTHIA GUERRA",
-          "name": "CYNTHIA GUERRA",
-          "plans": {
-            "Entel Chip 35.90": 1,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 192,
-            "Power 49.90 N": 64,
-            "Power 59.90 N": 14,
-            "Power ilim 69.90 N": 22,
-            "Power ilim 79.90 SD N": 170,
-            "Power ilim 99.90 SD N": 0
-          },
-          "total": 463,
-          "children": [
-            {
-              "id": "pdv_mix_TE ICA 3",
-              "name": "TE ICA 3",
-              "spv": "CYNTHIA GUERRA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 52,
-                "Power 49.90 N": 24,
-                "Power 59.90 N": 6,
-                "Power ilim 69.90 N": 11,
-                "Power ilim 79.90 SD N": 51,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 144,
-              "children": [
-                {
-                  "id": "ase_mix_JANELLA ISABEL VALLEJOS PINEDA",
-                  "name": "JANELLA ISABEL VALLEJOS PINEDA",
-                  "user_code": "JANELLA ISABEL VALLEJOS PINEDA",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 28,
-                    "Power 49.90 N": 11,
-                    "Power 59.90 N": 5,
-                    "Power ilim 69.90 N": 5,
-                    "Power ilim 79.90 SD N": 18,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 67
-                },
-                {
-                  "id": "ase_mix_NAOMI MARINA AMESQUITA APARCANA",
-                  "name": "NAOMI MARINA AMESQUITA APARCANA",
-                  "user_code": "NAOMI MARINA AMESQUITA APARCANA",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 24,
-                    "Power 49.90 N": 13,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 6,
-                    "Power ilim 79.90 SD N": 33,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 77
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE ICA II",
-              "name": "TE ICA II",
-              "spv": "CYNTHIA GUERRA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 1,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 123,
-                "Power 49.90 N": 30,
-                "Power 59.90 N": 6,
-                "Power ilim 69.90 N": 10,
-                "Power ilim 79.90 SD N": 84,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 254,
-              "children": [
-                {
-                  "id": "ase_mix_DIANA LORENA SIME BENDEZU",
-                  "name": "DIANA LORENA SIME BENDEZU",
-                  "user_code": "DIANA LORENA SIME BENDEZU",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 67,
-                    "Power 49.90 N": 17,
-                    "Power 59.90 N": 4,
-                    "Power ilim 69.90 N": 8,
-                    "Power ilim 79.90 SD N": 44,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 140
-                },
-                {
-                  "id": "ase_mix_GAMBOA MEDINA MARTIN JOS\u00c9 ANTONIO",
-                  "name": "GAMBOA MEDINA MARTIN JOS\u00c9 ANTONIO",
-                  "user_code": "GAMBOA MEDINA MARTIN JOS\u00c9 ANTONIO",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 1,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 2,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 3,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 6
-                },
-                {
-                  "id": "ase_mix_ROGGER SMITH NAVARRETE CAHUA",
-                  "name": "ROGGER SMITH NAVARRETE CAHUA",
-                  "user_code": "ROGGER SMITH NAVARRETE CAHUA",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 54,
-                    "Power 49.90 N": 13,
-                    "Power 59.90 N": 2,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 37,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 108
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE ICA MODELO",
-              "name": "TE ICA MODELO",
-              "spv": "CYNTHIA GUERRA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 9,
-                "Power 49.90 N": 6,
-                "Power 59.90 N": 2,
-                "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 17,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 35,
-              "children": [
-                {
-                  "id": "ase_mix_ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
-                  "name": "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
-                  "user_code": "ANDREA ALEJANDRA DE LA CRUZ HERNANDEZ",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 3,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 0,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 4
-                },
-                {
-                  "id": "ase_mix_JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
-                  "name": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
-                  "user_code": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 1,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 0,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 1
-                },
-                {
-                  "id": "ase_mix_MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "name": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "user_code": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 1,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 0,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 1
-                },
-                {
-                  "id": "ase_mix_VALENTINA BAEZ TORDOYA",
-                  "name": "VALENTINA BAEZ TORDOYA",
-                  "user_code": "VALENTINA BAEZ TORDOYA",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 4,
-                    "Power 49.90 N": 6,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 17,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 29
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE PARCONA",
-              "name": "TE PARCONA",
-              "spv": "CYNTHIA GUERRA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 8,
-                "Power 49.90 N": 4,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 18,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 30,
-              "children": [
-                {
-                  "id": "ase_mix_DANILO GIORDANO CARRIZALES RAMOS",
-                  "name": "DANILO GIORDANO CARRIZALES RAMOS",
-                  "user_code": "DANILO GIORDANO CARRIZALES RAMOS",
-                  "spv": "CYNTHIA GUERRA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 8,
-                    "Power 49.90 N": 4,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 18,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 30
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "spv_mix_FERNANDO MORENO",
-          "name": "FERNANDO MORENO",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 53,
-            "Power 49.90 N": 45,
-            "Power 59.90 N": 17,
-            "Power ilim 69.90 N": 43,
-            "Power ilim 79.90 SD N": 123,
-            "Power ilim 99.90 SD N": 1
-          },
-          "total": 282,
-          "children": [
-            {
-              "id": "pdv_mix_TE NAZCA",
-              "name": "TE NAZCA",
-              "spv": "FERNANDO MORENO",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 43,
-                "Power 49.90 N": 35,
-                "Power 59.90 N": 14,
-                "Power ilim 69.90 N": 31,
-                "Power ilim 79.90 SD N": 82,
-                "Power ilim 99.90 SD N": 1
-              },
-              "total": 206,
-              "children": [
-                {
-                  "id": "ase_mix_JOSE FERNANDO MORENO VALENCIA",
-                  "name": "JOSE FERNANDO MORENO VALENCIA",
-                  "user_code": "JOSE FERNANDO MORENO VALENCIA",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 14,
-                    "Power 49.90 N": 7,
-                    "Power 59.90 N": 4,
-                    "Power ilim 69.90 N": 6,
-                    "Power ilim 79.90 SD N": 17,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 48
-                },
-                {
-                  "id": "ase_mix_PEDRO FERNANDO CUMPA VIVANCO",
-                  "name": "PEDRO FERNANDO CUMPA VIVANCO",
-                  "user_code": "PEDRO FERNANDO CUMPA VIVANCO",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 12,
-                    "Power 49.90 N": 13,
-                    "Power 59.90 N": 5,
-                    "Power ilim 69.90 N": 9,
-                    "Power ilim 79.90 SD N": 36,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 75
-                },
-                {
-                  "id": "ase_mix_RUBETH DANNAE PICKMAN SAN MIGUEL",
-                  "name": "RUBETH DANNAE PICKMAN SAN MIGUEL",
-                  "user_code": "RUBETH DANNAE PICKMAN SAN MIGUEL",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 17,
-                    "Power 49.90 N": 15,
-                    "Power 59.90 N": 5,
-                    "Power ilim 69.90 N": 16,
-                    "Power ilim 79.90 SD N": 29,
-                    "Power ilim 99.90 SD N": 1
-                  },
-                  "total": 83
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE CHALA",
-              "name": "TE SATELITE CHALA",
-              "spv": "FERNANDO MORENO",
-              "zona": "SUR",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 7,
-                "Power 49.90 N": 8,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 7,
-                "Power ilim 79.90 SD N": 25,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 48,
-              "children": [
-                {
-                  "id": "ase_mix_ELIZABETH LISLEY HUAMAN YBARRA",
-                  "name": "ELIZABETH LISLEY HUAMAN YBARRA",
-                  "user_code": "ELIZABETH LISLEY HUAMAN YBARRA",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "SUR",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 7,
-                    "Power 49.90 N": 8,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 7,
-                    "Power ilim 79.90 SD N": 25,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 48
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE PALPA",
-              "name": "TE SATELITE PALPA",
-              "spv": "FERNANDO MORENO",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 3,
-                "Power 49.90 N": 2,
-                "Power 59.90 N": 2,
-                "Power ilim 69.90 N": 5,
-                "Power ilim 79.90 SD N": 16,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 28,
-              "children": [
-                {
-                  "id": "ase_mix_ALEXANDRA ECHAJAYA GARCIA",
-                  "name": "ALEXANDRA ECHAJAYA GARCIA",
-                  "user_code": "ALEXANDRA ECHAJAYA GARCIA",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 3,
-                    "Power 49.90 N": 2,
-                    "Power 59.90 N": 2,
-                    "Power ilim 69.90 N": 5,
-                    "Power ilim 79.90 SD N": 16,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 28
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "spv_mix_MAR\u00cdA BERNAOLA",
-          "name": "MAR\u00cdA BERNAOLA",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 2,
-            "Power 29.90 N": 3,
-            "Power 39.90 N": 106,
-            "Power 49.90 N": 82,
-            "Power 59.90 N": 15,
-            "Power ilim 69.90 N": 21,
-            "Power ilim 79.90 SD N": 186,
-            "Power ilim 99.90 SD N": 0
-          },
-          "total": 415,
-          "children": [
-            {
-              "id": "pdv_mix_TE ICA",
-              "name": "TE ICA",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 2,
-                "Power 29.90 N": 3,
-                "Power 39.90 N": 14,
-                "Power 49.90 N": 2,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 31,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 55,
-              "children": [
-                {
-                  "id": "ase_mix_LUIS ELIZALDE ESCATE",
-                  "name": "LUIS ELIZALDE ESCATE",
-                  "user_code": "LUIS ELIZALDE ESCATE",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 2,
-                    "Power 29.90 N": 2,
-                    "Power 39.90 N": 5,
-                    "Power 49.90 N": 2,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 15,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 29
-                },
-                {
-                  "id": "ase_mix_ROSARIO ISABEL ELIAS MAVILA",
-                  "name": "ROSARIO ISABEL ELIAS MAVILA",
-                  "user_code": "ROSARIO ISABEL ELIAS MAVILA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 1,
-                    "Power 39.90 N": 9,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 16,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 26
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE PISCO",
-              "name": "TE PISCO",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 25,
-                "Power 49.90 N": 17,
-                "Power 59.90 N": 4,
-                "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 33,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 81,
-              "children": [
-                {
-                  "id": "ase_mix_CYNTIA JETZABEL MANRIQUE NAPA",
-                  "name": "CYNTIA JETZABEL MANRIQUE NAPA",
-                  "user_code": "CYNTIA JETZABEL MANRIQUE NAPA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 14,
-                    "Power 49.90 N": 10,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 16,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 43
-                },
-                {
-                  "id": "ase_mix_FIORELLA ASTRID CRUZ PARODI",
-                  "name": "FIORELLA ASTRID CRUZ PARODI",
-                  "user_code": "FIORELLA ASTRID CRUZ PARODI",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 3,
-                    "Power 49.90 N": 2,
-                    "Power 59.90 N": 2,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 1,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 8
-                },
-                {
-                  "id": "ase_mix_VALERIA ALANA ECHEVARRIA BRAVO",
-                  "name": "VALERIA ALANA ECHEVARRIA BRAVO",
-                  "user_code": "VALERIA ALANA ECHEVARRIA BRAVO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 8,
-                    "Power 49.90 N": 5,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 16,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 30
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE BARRIO CHINO",
-              "name": "TE SATELITE BARRIO CHINO",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 28,
-                "Power 49.90 N": 55,
-                "Power 59.90 N": 4,
-                "Power ilim 69.90 N": 11,
-                "Power ilim 79.90 SD N": 66,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 164,
-              "children": [
-                {
-                  "id": "ase_mix_ELIZABETH ANA RAMOS ANGULO",
-                  "name": "ELIZABETH ANA RAMOS ANGULO",
-                  "user_code": "ELIZABETH ANA RAMOS ANGULO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 14,
-                    "Power 49.90 N": 32,
-                    "Power 59.90 N": 2,
-                    "Power ilim 69.90 N": 5,
-                    "Power ilim 79.90 SD N": 31,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 84
-                },
-                {
-                  "id": "ase_mix_RIGOBERTO AYALA CARPIO",
-                  "name": "RIGOBERTO AYALA CARPIO",
-                  "user_code": "RIGOBERTO AYALA CARPIO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 14,
-                    "Power 49.90 N": 23,
-                    "Power 59.90 N": 2,
-                    "Power ilim 69.90 N": 6,
-                    "Power ilim 79.90 SD N": 35,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 80
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE CA\u00d1ETE",
-              "name": "TE SATELITE CA\u00d1ETE",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "LIMA",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 27,
-                "Power 49.90 N": 5,
-                "Power 59.90 N": 6,
-                "Power ilim 69.90 N": 4,
-                "Power ilim 79.90 SD N": 31,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 73,
-              "children": [
-                {
-                  "id": "ase_mix_CAMILA VERONICA ROSAS PALOMINO",
-                  "name": "CAMILA VERONICA ROSAS PALOMINO",
-                  "user_code": "CAMILA VERONICA ROSAS PALOMINO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "LIMA",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 10,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 5,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 13,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 30
-                },
-                {
-                  "id": "ase_mix_GISELLA VANNESA CHAUPIN BUSTAMANTE",
-                  "name": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
-                  "user_code": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "LIMA",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 17,
-                    "Power 49.90 N": 5,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 18,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 43
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE PUEBLO JOVEN",
-              "name": "TE SATELITE PUEBLO JOVEN",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 12,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 25,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 42,
-              "children": [
-                {
-                  "id": "ase_mix_JASMIN JANINE PAULA ESPINO CUYA",
-                  "name": "JASMIN JANINE PAULA ESPINO CUYA",
-                  "user_code": "JASMIN JANINE PAULA ESPINO CUYA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 9,
-                    "Power 49.90 N": 2,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 18,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 31
-                },
-                {
-                  "id": "ase_mix_MARIA DEL CARMEN BERNAOLA FARFAN",
-                  "name": "MARIA DEL CARMEN BERNAOLA FARFAN",
-                  "user_code": "MARIA DEL CARMEN BERNAOLA FARFAN",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 3,
-                    "Power 49.90 N": 1,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 1,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 5
-                },
-                {
-                  "id": "ase_mix_MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "name": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "user_code": "MIJAIL JHOAN VASQUEZ LIZARZABURO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 0,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 6,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 6
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "spv_mix_MERY LAPA",
-          "name": "MERY LAPA",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 1,
-            "Power 39.90 N": 145,
-            "Power 49.90 N": 26,
-            "Power 59.90 N": 2,
-            "Power ilim 69.90 N": 2,
-            "Power ilim 79.90 SD N": 97,
-            "Power ilim 99.90 SD N": 0
-          },
-          "total": 273,
-          "children": [
-            {
-              "id": "pdv_mix_TE AYACUCHO",
-              "name": "TE AYACUCHO",
-              "spv": "MERY LAPA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 72,
-                "Power 49.90 N": 11,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 63,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 147,
-              "children": [
-                {
-                  "id": "ase_mix_LORENA ALEXANDRA HUAMANI YUPANQUI",
-                  "name": "LORENA ALEXANDRA HUAMANI YUPANQUI",
-                  "user_code": "LORENA ALEXANDRA HUAMANI YUPANQUI",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 40,
-                    "Power 49.90 N": 9,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 35,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 85
-                },
-                {
-                  "id": "ase_mix_SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
-                  "name": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
-                  "user_code": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 32,
-                    "Power 49.90 N": 2,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 28,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 62
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE HUANTA",
-              "name": "TE HUANTA",
-              "spv": "MERY LAPA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 1,
-                "Power 39.90 N": 73,
-                "Power 49.90 N": 15,
-                "Power 59.90 N": 2,
-                "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 34,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 126,
-              "children": [
-                {
-                  "id": "ase_mix_MARCO ANDRE FELICES GONZALEZ",
-                  "name": "MARCO ANDRE FELICES GONZALEZ",
-                  "user_code": "MARCO ANDRE FELICES GONZALEZ",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 1,
-                    "Power 39.90 N": 48,
-                    "Power 49.90 N": 7,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 20,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 77
-                },
-                {
-                  "id": "ase_mix_MERY LAPA ZARATE",
-                  "name": "MERY LAPA ZARATE",
-                  "user_code": "MERY LAPA ZARATE",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 5,
-                    "Power 49.90 N": 4,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 5,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 14
-                },
-                {
-                  "id": "ase_mix_SONALY JULIA MEZA ASTUPILLO",
-                  "name": "SONALY JULIA MEZA ASTUPILLO",
-                  "user_code": "SONALY JULIA MEZA ASTUPILLO",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 20,
-                    "Power 49.90 N": 4,
-                    "Power 59.90 N": 2,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 9,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 35
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
     "Agosto": {
       "month_label": "Agosto 2026",
       "plans_list": [
-        "Entel Chip 35.90",
-        "Entel chip+ 32.90",
-        "Power 29.90 N",
-        "Power 39.90 N",
-        "Power 49.90 N",
-        "Power 59.90 N",
-        "Power ilim 69.90 N",
-        "Power ilim 79.90 SD N",
-        "Power ilim 99.90 SD N"
+        "19.9",
+        "22.9",
+        "25.9",
+        "29.9",
+        "39.9",
+        "49.9",
+        "59.9",
+        "69.9",
+        "79.9",
+        "89.9",
+        "99.9"
       ],
       "summary": {
         "plans": {
-          "Entel Chip 35.90": 0,
-          "Entel chip+ 32.90": 0,
-          "Power 29.90 N": 5,
-          "Power 39.90 N": 518,
-          "Power 49.90 N": 228,
-          "Power 59.90 N": 51,
-          "Power ilim 69.90 N": 90,
-          "Power ilim 79.90 SD N": 598,
-          "Power ilim 99.90 SD N": 3
+          "19.9": 1,
+          "22.9": 2,
+          "25.9": 1,
+          "29.9": 2,
+          "39.9": 518,
+          "49.9": 228,
+          "59.9": 51,
+          "69.9": 90,
+          "79.9": 598,
+          "89.9": 1,
+          "99.9": 2
         },
-        "total": 1493
+        "total": 1494
       },
       "tree": [
         {
-          "id": "spv_mix_CYNTHIA GUERRA",
+          "id": "spv_mix_cynthia_guerra",
           "name": "CYNTHIA GUERRA",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 225,
-            "Power 49.90 N": 69,
-            "Power 59.90 N": 14,
-            "Power ilim 69.90 N": 21,
-            "Power ilim 79.90 SD N": 155,
-            "Power ilim 99.90 SD N": 0
+            "19.9": 1,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 225,
+            "49.9": 69,
+            "59.9": 14,
+            "69.9": 21,
+            "79.9": 155,
+            "89.9": 0,
+            "99.9": 0
           },
-          "total": 484,
+          "total": 485,
           "children": [
             {
-              "id": "pdv_mix_TE ICA 3",
+              "id": "pdv_mix_te_ica_3",
               "name": "TE ICA 3",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 42,
-                "Power 49.90 N": 24,
-                "Power 59.90 N": 5,
-                "Power ilim 69.90 N": 7,
-                "Power ilim 79.90 SD N": 56,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 42,
+                "49.9": 24,
+                "59.9": 5,
+                "69.9": 7,
+                "79.9": 56,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 134,
               "children": [
                 {
-                  "id": "ase_mix_JANELLA ISABEL VALLEJOS PINEDA",
-                  "name": "JANELLA ISABEL VALLEJOS PINEDA",
-                  "user_code": "JANELLA ISABEL VALLEJOS PINEDA",
+                  "id": "ase_mix_fln_jvallejosp",
+                  "name": "FLN_JVALLEJOSP",
+                  "user_code": "FLN_JVALLEJOSP",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 18,
-                    "Power 49.90 N": 11,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 4,
-                    "Power ilim 79.90 SD N": 27,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 18,
+                    "49.9": 11,
+                    "59.9": 1,
+                    "69.9": 4,
+                    "79.9": 27,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 61
                 },
                 {
-                  "id": "ase_mix_NAOMI MARINA AMESQUITA APARCANA",
-                  "name": "NAOMI MARINA AMESQUITA APARCANA",
-                  "user_code": "NAOMI MARINA AMESQUITA APARCANA",
+                  "id": "ase_mix_fln_namesquitaa",
+                  "name": "FLN_NAMESQUITAA",
+                  "user_code": "FLN_NAMESQUITAA",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 24,
-                    "Power 49.90 N": 13,
-                    "Power 59.90 N": 4,
-                    "Power ilim 69.90 N": 3,
-                    "Power ilim 79.90 SD N": 29,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 24,
+                    "49.9": 13,
+                    "59.9": 4,
+                    "69.9": 3,
+                    "79.9": 29,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 73
                 }
               ]
             },
             {
-              "id": "pdv_mix_TE ICA II",
+              "id": "pdv_mix_te_ica_ii",
               "name": "TE ICA II",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 149,
-                "Power 49.90 N": 32,
-                "Power 59.90 N": 7,
-                "Power ilim 69.90 N": 10,
-                "Power ilim 79.90 SD N": 60,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 149,
+                "49.9": 32,
+                "59.9": 7,
+                "69.9": 10,
+                "79.9": 60,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 258,
               "children": [
                 {
-                  "id": "ase_mix_DIANA LORENA SIME BENDEZU",
-                  "name": "DIANA LORENA SIME BENDEZU",
-                  "user_code": "DIANA LORENA SIME BENDEZU",
+                  "id": "ase_mix_fln_dsimeb",
+                  "name": "FLN_DSIMEB",
+                  "user_code": "FLN_DSIMEB",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 84,
-                    "Power 49.90 N": 14,
-                    "Power 59.90 N": 3,
-                    "Power ilim 69.90 N": 8,
-                    "Power ilim 79.90 SD N": 33,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 84,
+                    "49.9": 14,
+                    "59.9": 3,
+                    "69.9": 8,
+                    "79.9": 33,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 142
                 },
                 {
-                  "id": "ase_mix_ROGGER SMITH NAVARRETE CAHUA",
-                  "name": "ROGGER SMITH NAVARRETE CAHUA",
-                  "user_code": "ROGGER SMITH NAVARRETE CAHUA",
+                  "id": "ase_mix_fln_rnavarretec",
+                  "name": "FLN_RNAVARRETEC",
+                  "user_code": "FLN_RNAVARRETEC",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 65,
-                    "Power 49.90 N": 18,
-                    "Power 59.90 N": 4,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 27,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 65,
+                    "49.9": 18,
+                    "59.9": 4,
+                    "69.9": 2,
+                    "79.9": 27,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 116
                 }
               ]
             },
             {
-              "id": "pdv_mix_TE ICA MODELO",
+              "id": "pdv_mix_te_ica_modelo",
               "name": "TE ICA MODELO",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 13,
-                "Power 49.90 N": 7,
-                "Power 59.90 N": 2,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 17,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 1,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 13,
+                "49.9": 7,
+                "59.9": 2,
+                "69.9": 0,
+                "79.9": 17,
+                "89.9": 0,
+                "99.9": 0
               },
-              "total": 39,
+              "total": 40,
               "children": [
                 {
-                  "id": "ase_mix_JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
-                  "name": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
-                  "user_code": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
+                  "id": "ase_mix_fln_jmunozh",
+                  "name": "FLN_JMUNOZH",
+                  "user_code": "FLN_JMUNOZH",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 7,
-                    "Power 49.90 N": 4,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 10,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 1,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 7,
+                    "49.9": 4,
+                    "59.9": 0,
+                    "69.9": 0,
+                    "79.9": 10,
+                    "89.9": 0,
+                    "99.9": 0
                   },
-                  "total": 21
+                  "total": 22
                 },
                 {
-                  "id": "ase_mix_VALENTINA BAEZ TORDOYA",
-                  "name": "VALENTINA BAEZ TORDOYA",
-                  "user_code": "VALENTINA BAEZ TORDOYA",
+                  "id": "ase_mix_fln_vbaezt",
+                  "name": "FLN_VBAEZT",
+                  "user_code": "FLN_VBAEZT",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 6,
-                    "Power 49.90 N": 3,
-                    "Power 59.90 N": 2,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 7,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 6,
+                    "49.9": 3,
+                    "59.9": 2,
+                    "69.9": 0,
+                    "79.9": 7,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 18
                 }
               ]
             },
             {
-              "id": "pdv_mix_TE PARCONA",
+              "id": "pdv_mix_te_parcona",
               "name": "TE PARCONA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 21,
-                "Power 49.90 N": 6,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 4,
-                "Power ilim 79.90 SD N": 22,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 21,
+                "49.9": 6,
+                "59.9": 0,
+                "69.9": 4,
+                "79.9": 22,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 53,
               "children": [
                 {
-                  "id": "ase_mix_DANILO GIORDANO CARRIZALES RAMOS",
-                  "name": "DANILO GIORDANO CARRIZALES RAMOS",
-                  "user_code": "DANILO GIORDANO CARRIZALES RAMOS",
+                  "id": "ase_mix_fln_dcarrizaler",
+                  "name": "FLN_DCARRIZALER",
+                  "user_code": "FLN_DCARRIZALER",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 16,
-                    "Power 49.90 N": 3,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 4,
-                    "Power ilim 79.90 SD N": 16,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 16,
+                    "49.9": 3,
+                    "59.9": 0,
+                    "69.9": 4,
+                    "79.9": 16,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 39
                 },
                 {
-                  "id": "ase_mix_JOSU\u00c9 MIGUEL ESPINO SAYRITUPAC",
-                  "name": "JOSU\u00c9 MIGUEL ESPINO SAYRITUPAC",
-                  "user_code": "JOSU\u00c9 MIGUEL ESPINO SAYRITUPAC",
+                  "id": "ase_mix_fln_jespinos",
+                  "name": "FLN_JESPINOS",
+                  "user_code": "FLN_JESPINOS",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 2,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 2,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 2,
+                    "49.9": 0,
+                    "59.9": 0,
+                    "69.9": 0,
+                    "79.9": 2,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 4
                 },
                 {
-                  "id": "ase_mix_JUNIOR ANTHONY GARCIA GUERRA",
-                  "name": "JUNIOR ANTHONY GARCIA GUERRA",
-                  "user_code": "JUNIOR ANTHONY GARCIA GUERRA",
+                  "id": "ase_mix_fln_jgarciag",
+                  "name": "FLN_JGARCIAG",
+                  "user_code": "FLN_JGARCIAG",
                   "spv": "CYNTHIA GUERRA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 3,
-                    "Power 49.90 N": 3,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 4,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 3,
+                    "49.9": 3,
+                    "59.9": 0,
+                    "69.9": 0,
+                    "79.9": 4,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 10
                 }
@@ -13823,209 +11877,613 @@ MIX_PLANES_DATA = {
           ]
         },
         {
-          "id": "spv_mix_FERNANDO MORENO",
-          "name": "FERNANDO MORENO",
+          "id": "spv_mix_mar\u00eda_bernaola",
+          "name": "MAR\u00cdA BERNAOLA",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 49,
-            "Power 49.90 N": 35,
-            "Power 59.90 N": 15,
-            "Power ilim 69.90 N": 33,
-            "Power ilim 79.90 SD N": 153,
-            "Power ilim 99.90 SD N": 2
+            "19.9": 0,
+            "22.9": 2,
+            "25.9": 1,
+            "29.9": 0,
+            "39.9": 139,
+            "49.9": 103,
+            "59.9": 19,
+            "69.9": 32,
+            "79.9": 182,
+            "89.9": 1,
+            "99.9": 0
           },
-          "total": 287,
+          "total": 479,
           "children": [
             {
-              "id": "pdv_mix_TE NAZCA",
-              "name": "TE NAZCA",
-              "spv": "FERNANDO MORENO",
+              "id": "pdv_mix_te_ica",
+              "name": "TE ICA",
+              "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 30,
-                "Power 49.90 N": 24,
-                "Power 59.90 N": 11,
-                "Power ilim 69.90 N": 20,
-                "Power ilim 79.90 SD N": 116,
-                "Power ilim 99.90 SD N": 1
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 1,
+                "29.9": 0,
+                "39.9": 20,
+                "49.9": 5,
+                "59.9": 1,
+                "69.9": 4,
+                "79.9": 23,
+                "89.9": 0,
+                "99.9": 0
               },
-              "total": 202,
+              "total": 54,
               "children": [
                 {
-                  "id": "ase_mix_DIESLLY JOSEYDI CALLE PRADO",
-                  "name": "DIESLLY JOSEYDI CALLE PRADO",
-                  "user_code": "DIESLLY JOSEYDI CALLE PRADO",
-                  "spv": "FERNANDO MORENO",
+                  "id": "ase_mix_fln_lelizaldee",
+                  "name": "FLN_LELIZALDEE",
+                  "user_code": "FLN_LELIZALDEE",
+                  "spv": "MAR\u00cdA BERNAOLA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 4,
-                    "Power 49.90 N": 2,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 27,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 1,
+                    "29.9": 0,
+                    "39.9": 11,
+                    "49.9": 4,
+                    "59.9": 1,
+                    "69.9": 3,
+                    "79.9": 18,
+                    "89.9": 0,
+                    "99.9": 0
                   },
-                  "total": 35
+                  "total": 38
                 },
                 {
-                  "id": "ase_mix_JOSE FERNANDO MORENO VALENCIA",
-                  "name": "JOSE FERNANDO MORENO VALENCIA",
-                  "user_code": "JOSE FERNANDO MORENO VALENCIA",
-                  "spv": "FERNANDO MORENO",
+                  "id": "ase_mix_fln_cenriquezh",
+                  "name": "FLN_CENRIQUEZH",
+                  "user_code": "FLN_CENRIQUEZH",
+                  "spv": "MAR\u00cdA BERNAOLA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 1,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 7,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 8,
+                    "49.9": 1,
+                    "59.9": 0,
+                    "69.9": 1,
+                    "79.9": 2,
+                    "89.9": 0,
+                    "99.9": 0
                   },
-                  "total": 10
+                  "total": 12
                 },
                 {
-                  "id": "ase_mix_PEDRO FERNANDO CUMPA VIVANCO",
-                  "name": "PEDRO FERNANDO CUMPA VIVANCO",
-                  "user_code": "PEDRO FERNANDO CUMPA VIVANCO",
-                  "spv": "FERNANDO MORENO",
+                  "id": "ase_mix_fln_kcastillob",
+                  "name": "FLN_KCASTILLOB",
+                  "user_code": "FLN_KCASTILLOB",
+                  "spv": "MAR\u00cdA BERNAOLA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 15,
-                    "Power 49.90 N": 3,
-                    "Power 59.90 N": 7,
-                    "Power ilim 69.90 N": 7,
-                    "Power ilim 79.90 SD N": 40,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 1,
+                    "49.9": 0,
+                    "59.9": 0,
+                    "69.9": 0,
+                    "79.9": 3,
+                    "89.9": 0,
+                    "99.9": 0
                   },
-                  "total": 72
-                },
-                {
-                  "id": "ase_mix_RUBETH DANNAE PICKMAN SAN MIGUEL",
-                  "name": "RUBETH DANNAE PICKMAN SAN MIGUEL",
-                  "user_code": "RUBETH DANNAE PICKMAN SAN MIGUEL",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 10,
-                    "Power 49.90 N": 19,
-                    "Power 59.90 N": 2,
-                    "Power ilim 69.90 N": 11,
-                    "Power ilim 79.90 SD N": 42,
-                    "Power ilim 99.90 SD N": 1
-                  },
-                  "total": 85
+                  "total": 4
                 }
               ]
             },
             {
-              "id": "pdv_mix_TE SATELITE CHALA",
-              "name": "TE SATELITE CHALA",
-              "spv": "FERNANDO MORENO",
-              "zona": "SUR",
+              "id": "pdv_mix_te_pisco",
+              "name": "TE PISCO",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 12,
-                "Power 49.90 N": 8,
-                "Power 59.90 N": 4,
-                "Power ilim 69.90 N": 9,
-                "Power ilim 79.90 SD N": 17,
-                "Power ilim 99.90 SD N": 1
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 34,
+                "49.9": 15,
+                "59.9": 2,
+                "69.9": 2,
+                "79.9": 24,
+                "89.9": 0,
+                "99.9": 0
               },
-              "total": 51,
+              "total": 77,
               "children": [
                 {
-                  "id": "ase_mix_ELIZABETH LISLEY HUAMAN YBARRA",
-                  "name": "ELIZABETH LISLEY HUAMAN YBARRA",
-                  "user_code": "ELIZABETH LISLEY HUAMAN YBARRA",
-                  "spv": "FERNANDO MORENO",
-                  "zona": "SUR",
+                  "id": "ase_mix_fln_cmanriquen",
+                  "name": "FLN_CMANRIQUEN",
+                  "user_code": "FLN_CMANRIQUEN",
+                  "spv": "MAR\u00cdA BERNAOLA",
+                  "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 12,
-                    "Power 49.90 N": 7,
-                    "Power 59.90 N": 4,
-                    "Power ilim 69.90 N": 9,
-                    "Power ilim 79.90 SD N": 17,
-                    "Power ilim 99.90 SD N": 1
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 9,
+                    "49.9": 6,
+                    "59.9": 0,
+                    "69.9": 2,
+                    "79.9": 14,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 31
+                },
+                {
+                  "id": "ase_mix_fln_fcruzp",
+                  "name": "FLN_FCRUZP",
+                  "user_code": "FLN_FCRUZP",
+                  "spv": "MAR\u00cdA BERNAOLA",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 13,
+                    "49.9": 6,
+                    "59.9": 0,
+                    "69.9": 0,
+                    "79.9": 3,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 22
+                },
+                {
+                  "id": "ase_mix_fln_vechevarrib",
+                  "name": "FLN_VECHEVARRIB",
+                  "user_code": "FLN_VECHEVARRIB",
+                  "spv": "MAR\u00cdA BERNAOLA",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 12,
+                    "49.9": 3,
+                    "59.9": 2,
+                    "69.9": 0,
+                    "79.9": 7,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 24
+                }
+              ]
+            },
+            {
+              "id": "pdv_mix_te_satelite_barrio_chino",
+              "name": "TE SATELITE BARRIO CHINO",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 2,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 41,
+                "49.9": 73,
+                "59.9": 12,
+                "69.9": 20,
+                "79.9": 82,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 230,
+              "children": [
+                {
+                  "id": "ase_mix_fln_eramosa",
+                  "name": "FLN_ERAMOSA",
+                  "user_code": "FLN_ERAMOSA",
+                  "spv": "MAR\u00cdA BERNAOLA",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 2,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 24,
+                    "49.9": 36,
+                    "59.9": 8,
+                    "69.9": 10,
+                    "79.9": 36,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 116
+                },
+                {
+                  "id": "ase_mix_fln_rayalac",
+                  "name": "FLN_RAYALAC",
+                  "user_code": "FLN_RAYALAC",
+                  "spv": "MAR\u00cdA BERNAOLA",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 17,
+                    "49.9": 37,
+                    "59.9": 4,
+                    "69.9": 10,
+                    "79.9": 46,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 114
+                }
+              ]
+            },
+            {
+              "id": "pdv_mix_te_satelite_ca\u00f1ete",
+              "name": "TE SATELITE CA\u00d1ETE",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "LIMA",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 27,
+                "49.9": 3,
+                "59.9": 3,
+                "69.9": 3,
+                "79.9": 31,
+                "89.9": 1,
+                "99.9": 0
+              },
+              "total": 68,
+              "children": [
+                {
+                  "id": "ase_mix_fln_crosasp",
+                  "name": "FLN_CROSASP",
+                  "user_code": "FLN_CROSASP",
+                  "spv": "MAR\u00cdA BERNAOLA",
+                  "zona": "LIMA",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 20,
+                    "49.9": 2,
+                    "59.9": 3,
+                    "69.9": 1,
+                    "79.9": 23,
+                    "89.9": 1,
+                    "99.9": 0
                   },
                   "total": 50
                 },
                 {
-                  "id": "ase_mix_LUZ ALEJANDRINA ANCCASI QUISPE",
-                  "name": "LUZ ALEJANDRINA ANCCASI QUISPE",
-                  "user_code": "LUZ ALEJANDRINA ANCCASI QUISPE",
+                  "id": "ase_mix_fln_gchaupinb",
+                  "name": "FLN_GCHAUPINB",
+                  "user_code": "FLN_GCHAUPINB",
+                  "spv": "MAR\u00cdA BERNAOLA",
+                  "zona": "LIMA",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 7,
+                    "49.9": 1,
+                    "59.9": 0,
+                    "69.9": 2,
+                    "79.9": 8,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 18
+                }
+              ]
+            },
+            {
+              "id": "pdv_mix_te_satelite_pueblo_joven",
+              "name": "TE SATELITE PUEBLO JOVEN",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 17,
+                "49.9": 7,
+                "59.9": 1,
+                "69.9": 3,
+                "79.9": 22,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 50,
+              "children": [
+                {
+                  "id": "ase_mix_fln_jjespinoc",
+                  "name": "FLN_JJESPINOC",
+                  "user_code": "FLN_JJESPINOC",
+                  "spv": "MAR\u00cdA BERNAOLA",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 15,
+                    "49.9": 6,
+                    "59.9": 0,
+                    "69.9": 0,
+                    "79.9": 19,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 40
+                },
+                {
+                  "id": "ase_mix_fln_jinfantea",
+                  "name": "FLN_JINFANTEA",
+                  "user_code": "FLN_JINFANTEA",
+                  "spv": "MAR\u00cdA BERNAOLA",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 2,
+                    "49.9": 1,
+                    "59.9": 1,
+                    "69.9": 3,
+                    "79.9": 3,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "spv_mix_fernando_moreno",
+          "name": "FERNANDO MORENO",
+          "plans": {
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 49,
+            "49.9": 35,
+            "59.9": 15,
+            "69.9": 33,
+            "79.9": 153,
+            "89.9": 0,
+            "99.9": 2
+          },
+          "total": 287,
+          "children": [
+            {
+              "id": "pdv_mix_te_nazca",
+              "name": "TE NAZCA",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 30,
+                "49.9": 24,
+                "59.9": 11,
+                "69.9": 20,
+                "79.9": 116,
+                "89.9": 0,
+                "99.9": 1
+              },
+              "total": 202,
+              "children": [
+                {
+                  "id": "ase_mix_fln_jfmorenov",
+                  "name": "FLN_JFMORENOV",
+                  "user_code": "FLN_JFMORENOV",
+                  "spv": "FERNANDO MORENO",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 1,
+                    "49.9": 0,
+                    "59.9": 1,
+                    "69.9": 1,
+                    "79.9": 7,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 10
+                },
+                {
+                  "id": "ase_mix_fln_pcumpav",
+                  "name": "FLN_PCUMPAV",
+                  "user_code": "FLN_PCUMPAV",
+                  "spv": "FERNANDO MORENO",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 15,
+                    "49.9": 3,
+                    "59.9": 7,
+                    "69.9": 7,
+                    "79.9": 40,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 72
+                },
+                {
+                  "id": "ase_mix_fln_rpickmans",
+                  "name": "FLN_RPICKMANS",
+                  "user_code": "FLN_RPICKMANS",
+                  "spv": "FERNANDO MORENO",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 10,
+                    "49.9": 19,
+                    "59.9": 2,
+                    "69.9": 11,
+                    "79.9": 42,
+                    "89.9": 0,
+                    "99.9": 1
+                  },
+                  "total": 85
+                },
+                {
+                  "id": "ase_mix_fln_dcallep",
+                  "name": "FLN_DCALLEP",
+                  "user_code": "FLN_DCALLEP",
+                  "spv": "FERNANDO MORENO",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 4,
+                    "49.9": 2,
+                    "59.9": 1,
+                    "69.9": 1,
+                    "79.9": 27,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 35
+                }
+              ]
+            },
+            {
+              "id": "pdv_mix_te_satelite_chala",
+              "name": "TE SATELITE CHALA",
+              "spv": "FERNANDO MORENO",
+              "zona": "SUR",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 12,
+                "49.9": 8,
+                "59.9": 4,
+                "69.9": 9,
+                "79.9": 17,
+                "89.9": 0,
+                "99.9": 1
+              },
+              "total": 51,
+              "children": [
+                {
+                  "id": "ase_mix_fln_ehuamany",
+                  "name": "FLN_EHUAMANY",
+                  "user_code": "FLN_EHUAMANY",
                   "spv": "FERNANDO MORENO",
                   "zona": "SUR",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 0,
-                    "Power 49.90 N": 1,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 0,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 12,
+                    "49.9": 7,
+                    "59.9": 4,
+                    "69.9": 9,
+                    "79.9": 17,
+                    "89.9": 0,
+                    "99.9": 1
+                  },
+                  "total": 50
+                },
+                {
+                  "id": "ase_mix_fln_lanccasiq",
+                  "name": "FLN_LANCCASIQ",
+                  "user_code": "FLN_LANCCASIQ",
+                  "spv": "FERNANDO MORENO",
+                  "zona": "SUR",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 0,
+                    "49.9": 1,
+                    "59.9": 0,
+                    "69.9": 0,
+                    "79.9": 0,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 1
                 }
               ]
             },
             {
-              "id": "pdv_mix_TE SATELITE PALPA",
+              "id": "pdv_mix_te_satelite_palpa",
               "name": "TE SATELITE PALPA",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 7,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 4,
-                "Power ilim 79.90 SD N": 20,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 7,
+                "49.9": 3,
+                "59.9": 0,
+                "69.9": 4,
+                "79.9": 20,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 34,
               "children": [
                 {
-                  "id": "ase_mix_ALEXANDRA ECHAJAYA GARCIA",
-                  "name": "ALEXANDRA ECHAJAYA GARCIA",
-                  "user_code": "ALEXANDRA ECHAJAYA GARCIA",
+                  "id": "ase_mix_fln_aechajayag",
+                  "name": "FLN_AECHAJAYAG",
+                  "user_code": "FLN_AECHAJAYAG",
                   "spv": "FERNANDO MORENO",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 7,
-                    "Power 49.90 N": 3,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 4,
-                    "Power ilim 79.90 SD N": 20,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 7,
+                    "49.9": 3,
+                    "59.9": 0,
+                    "69.9": 4,
+                    "79.9": 20,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 34
                 }
@@ -14034,537 +12492,211 @@ MIX_PLANES_DATA = {
           ]
         },
         {
-          "id": "spv_mix_MAR\u00cdA BERNAOLA",
-          "name": "MAR\u00cdA BERNAOLA",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 3,
-            "Power 39.90 N": 139,
-            "Power 49.90 N": 103,
-            "Power 59.90 N": 19,
-            "Power ilim 69.90 N": 32,
-            "Power ilim 79.90 SD N": 182,
-            "Power ilim 99.90 SD N": 1
-          },
-          "total": 479,
-          "children": [
-            {
-              "id": "pdv_mix_TE ICA",
-              "name": "TE ICA",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 1,
-                "Power 39.90 N": 20,
-                "Power 49.90 N": 5,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 4,
-                "Power ilim 79.90 SD N": 23,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 54,
-              "children": [
-                {
-                  "id": "ase_mix_CINDY PAMELA ENRIQUEZ HUANCA",
-                  "name": "CINDY PAMELA ENRIQUEZ HUANCA",
-                  "user_code": "CINDY PAMELA ENRIQUEZ HUANCA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 8,
-                    "Power 49.90 N": 1,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 2,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 12
-                },
-                {
-                  "id": "ase_mix_KIARA SHIRLY CASTILLO BENAVIDES",
-                  "name": "KIARA SHIRLY CASTILLO BENAVIDES",
-                  "user_code": "KIARA SHIRLY CASTILLO BENAVIDES",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 1,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 3,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 4
-                },
-                {
-                  "id": "ase_mix_LUIS ELIZALDE ESCATE",
-                  "name": "LUIS ELIZALDE ESCATE",
-                  "user_code": "LUIS ELIZALDE ESCATE",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 1,
-                    "Power 39.90 N": 11,
-                    "Power 49.90 N": 4,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 3,
-                    "Power ilim 79.90 SD N": 18,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 38
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE PISCO",
-              "name": "TE PISCO",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 34,
-                "Power 49.90 N": 15,
-                "Power 59.90 N": 2,
-                "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 24,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 77,
-              "children": [
-                {
-                  "id": "ase_mix_CYNTIA JETZABEL MANRIQUE NAPA",
-                  "name": "CYNTIA JETZABEL MANRIQUE NAPA",
-                  "user_code": "CYNTIA JETZABEL MANRIQUE NAPA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 9,
-                    "Power 49.90 N": 6,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 14,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 31
-                },
-                {
-                  "id": "ase_mix_FIORELLA ASTRID CRUZ PARODI",
-                  "name": "FIORELLA ASTRID CRUZ PARODI",
-                  "user_code": "FIORELLA ASTRID CRUZ PARODI",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 13,
-                    "Power 49.90 N": 6,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 3,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 22
-                },
-                {
-                  "id": "ase_mix_VALERIA ALANA ECHEVARRIA BRAVO",
-                  "name": "VALERIA ALANA ECHEVARRIA BRAVO",
-                  "user_code": "VALERIA ALANA ECHEVARRIA BRAVO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 12,
-                    "Power 49.90 N": 3,
-                    "Power 59.90 N": 2,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 7,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 24
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE BARRIO CHINO",
-              "name": "TE SATELITE BARRIO CHINO",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 2,
-                "Power 39.90 N": 41,
-                "Power 49.90 N": 73,
-                "Power 59.90 N": 12,
-                "Power ilim 69.90 N": 20,
-                "Power ilim 79.90 SD N": 82,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 230,
-              "children": [
-                {
-                  "id": "ase_mix_ELIZABETH ANA RAMOS ANGULO",
-                  "name": "ELIZABETH ANA RAMOS ANGULO",
-                  "user_code": "ELIZABETH ANA RAMOS ANGULO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 2,
-                    "Power 39.90 N": 24,
-                    "Power 49.90 N": 36,
-                    "Power 59.90 N": 8,
-                    "Power ilim 69.90 N": 10,
-                    "Power ilim 79.90 SD N": 36,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 116
-                },
-                {
-                  "id": "ase_mix_RIGOBERTO AYALA CARPIO",
-                  "name": "RIGOBERTO AYALA CARPIO",
-                  "user_code": "RIGOBERTO AYALA CARPIO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 17,
-                    "Power 49.90 N": 37,
-                    "Power 59.90 N": 4,
-                    "Power ilim 69.90 N": 10,
-                    "Power ilim 79.90 SD N": 46,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 114
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE CA\u00d1ETE",
-              "name": "TE SATELITE CA\u00d1ETE",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "LIMA",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 27,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 3,
-                "Power ilim 69.90 N": 3,
-                "Power ilim 79.90 SD N": 31,
-                "Power ilim 99.90 SD N": 1
-              },
-              "total": 68,
-              "children": [
-                {
-                  "id": "ase_mix_CAMILA VERONICA ROSAS PALOMINO",
-                  "name": "CAMILA VERONICA ROSAS PALOMINO",
-                  "user_code": "CAMILA VERONICA ROSAS PALOMINO",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "LIMA",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 20,
-                    "Power 49.90 N": 2,
-                    "Power 59.90 N": 3,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 23,
-                    "Power ilim 99.90 SD N": 1
-                  },
-                  "total": 50
-                },
-                {
-                  "id": "ase_mix_GISELLA VANNESA CHAUPIN BUSTAMANTE",
-                  "name": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
-                  "user_code": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "LIMA",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 7,
-                    "Power 49.90 N": 1,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 8,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 18
-                }
-              ]
-            },
-            {
-              "id": "pdv_mix_TE SATELITE PUEBLO JOVEN",
-              "name": "TE SATELITE PUEBLO JOVEN",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 17,
-                "Power 49.90 N": 7,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 3,
-                "Power ilim 79.90 SD N": 22,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 50,
-              "children": [
-                {
-                  "id": "ase_mix_JASMIN JANINE PAULA ESPINO CUYA",
-                  "name": "JASMIN JANINE PAULA ESPINO CUYA",
-                  "user_code": "JASMIN JANINE PAULA ESPINO CUYA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 15,
-                    "Power 49.90 N": 6,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 19,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 40
-                },
-                {
-                  "id": "ase_mix_JOSE GABRIEL INFANTE APARCANA",
-                  "name": "JOSE GABRIEL INFANTE APARCANA",
-                  "user_code": "JOSE GABRIEL INFANTE APARCANA",
-                  "spv": "MAR\u00cdA BERNAOLA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 2,
-                    "Power 49.90 N": 1,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 3,
-                    "Power ilim 79.90 SD N": 3,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 10
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "spv_mix_MERY LAPA",
+          "id": "spv_mix_mery_lapa",
           "name": "MERY LAPA",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 2,
-            "Power 39.90 N": 105,
-            "Power 49.90 N": 21,
-            "Power 59.90 N": 3,
-            "Power ilim 69.90 N": 4,
-            "Power ilim 79.90 SD N": 108,
-            "Power ilim 99.90 SD N": 0
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 2,
+            "39.9": 105,
+            "49.9": 21,
+            "59.9": 3,
+            "69.9": 4,
+            "79.9": 108,
+            "89.9": 0,
+            "99.9": 0
           },
           "total": 243,
           "children": [
             {
-              "id": "pdv_mix_TE AYACUCHO",
+              "id": "pdv_mix_te_ayacucho",
               "name": "TE AYACUCHO",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 50,
-                "Power 49.90 N": 9,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 55,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 50,
+                "49.9": 9,
+                "59.9": 1,
+                "69.9": 1,
+                "79.9": 55,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 116,
               "children": [
                 {
-                  "id": "ase_mix_LORENA ALEXANDRA HUAMANI YUPANQUI",
-                  "name": "LORENA ALEXANDRA HUAMANI YUPANQUI",
-                  "user_code": "LORENA ALEXANDRA HUAMANI YUPANQUI",
+                  "id": "ase_mix_fln_lhuamaniy",
+                  "name": "FLN_LHUAMANIY",
+                  "user_code": "FLN_LHUAMANIY",
                   "spv": "MERY LAPA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 45,
-                    "Power 49.90 N": 9,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 48,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 45,
+                    "49.9": 9,
+                    "59.9": 1,
+                    "69.9": 1,
+                    "79.9": 48,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 104
                 },
                 {
-                  "id": "ase_mix_MARCO ANDRE FELICES GONZALEZ",
-                  "name": "MARCO ANDRE FELICES GONZALEZ",
-                  "user_code": "MARCO ANDRE FELICES GONZALEZ",
+                  "id": "ase_mix_fln_mfelicesg",
+                  "name": "FLN_MFELICESG",
+                  "user_code": "FLN_MFELICESG",
                   "spv": "MERY LAPA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 0,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 1,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 0,
+                    "49.9": 0,
+                    "59.9": 0,
+                    "69.9": 0,
+                    "79.9": 1,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 1
                 },
                 {
-                  "id": "ase_mix_SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
-                  "name": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
-                  "user_code": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
+                  "id": "ase_mix_fln_sreymundezm",
+                  "name": "FLN_SREYMUNDEZM",
+                  "user_code": "FLN_SREYMUNDEZM",
                   "spv": "MERY LAPA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 5,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 6,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 5,
+                    "49.9": 0,
+                    "59.9": 0,
+                    "69.9": 0,
+                    "79.9": 6,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 11
                 }
               ]
             },
             {
-              "id": "pdv_mix_TE HUANTA",
+              "id": "pdv_mix_te_huanta",
               "name": "TE HUANTA",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 2,
-                "Power 39.90 N": 55,
-                "Power 49.90 N": 12,
-                "Power 59.90 N": 2,
-                "Power ilim 69.90 N": 3,
-                "Power ilim 79.90 SD N": 53,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 2,
+                "39.9": 55,
+                "49.9": 12,
+                "59.9": 2,
+                "69.9": 3,
+                "79.9": 53,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 127,
               "children": [
                 {
-                  "id": "ase_mix_JHON ANDERSON MEDINA FARFAN",
-                  "name": "JHON ANDERSON MEDINA FARFAN",
-                  "user_code": "JHON ANDERSON MEDINA FARFAN",
+                  "id": "ase_mix_fln_mfelicesg",
+                  "name": "FLN_MFELICESG",
+                  "user_code": "FLN_MFELICESG",
                   "spv": "MERY LAPA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 8,
-                    "Power 49.90 N": 0,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 2,
-                    "Power ilim 79.90 SD N": 15,
-                    "Power ilim 99.90 SD N": 0
-                  },
-                  "total": 25
-                },
-                {
-                  "id": "ase_mix_MARCO ANDRE FELICES GONZALEZ",
-                  "name": "MARCO ANDRE FELICES GONZALEZ",
-                  "user_code": "MARCO ANDRE FELICES GONZALEZ",
-                  "spv": "MERY LAPA",
-                  "zona": "CENTRO",
-                  "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 2,
-                    "Power 39.90 N": 42,
-                    "Power 49.90 N": 7,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 27,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 2,
+                    "39.9": 42,
+                    "49.9": 7,
+                    "59.9": 1,
+                    "69.9": 0,
+                    "79.9": 27,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 79
                 },
                 {
-                  "id": "ase_mix_MERY LAPA ZARATE",
-                  "name": "MERY LAPA ZARATE",
-                  "user_code": "MERY LAPA ZARATE",
+                  "id": "ase_mix_fln_mlapaz",
+                  "name": "FLN_MLAPAZ",
+                  "user_code": "FLN_MLAPAZ",
                   "spv": "MERY LAPA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 2,
-                    "Power 49.90 N": 1,
-                    "Power 59.90 N": 0,
-                    "Power ilim 69.90 N": 1,
-                    "Power ilim 79.90 SD N": 2,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 2,
+                    "49.9": 1,
+                    "59.9": 0,
+                    "69.9": 1,
+                    "79.9": 2,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 6
                 },
                 {
-                  "id": "ase_mix_SONALY JULIA MEZA ASTUPILLO",
-                  "name": "SONALY JULIA MEZA ASTUPILLO",
-                  "user_code": "SONALY JULIA MEZA ASTUPILLO",
+                  "id": "ase_mix_fln_smezaa",
+                  "name": "FLN_SMEZAA",
+                  "user_code": "FLN_SMEZAA",
                   "spv": "MERY LAPA",
                   "zona": "CENTRO",
                   "plans": {
-                    "Entel Chip 35.90": 0,
-                    "Entel chip+ 32.90": 0,
-                    "Power 29.90 N": 0,
-                    "Power 39.90 N": 3,
-                    "Power 49.90 N": 4,
-                    "Power 59.90 N": 1,
-                    "Power ilim 69.90 N": 0,
-                    "Power ilim 79.90 SD N": 9,
-                    "Power ilim 99.90 SD N": 0
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 3,
+                    "49.9": 4,
+                    "59.9": 1,
+                    "69.9": 0,
+                    "79.9": 9,
+                    "89.9": 0,
+                    "99.9": 0
                   },
                   "total": 17
+                },
+                {
+                  "id": "ase_mix_fln_jmedinaf",
+                  "name": "FLN_JMEDINAF",
+                  "user_code": "FLN_JMEDINAF",
+                  "spv": "MERY LAPA",
+                  "zona": "CENTRO",
+                  "plans": {
+                    "19.9": 0,
+                    "22.9": 0,
+                    "25.9": 0,
+                    "29.9": 0,
+                    "39.9": 8,
+                    "49.9": 0,
+                    "59.9": 0,
+                    "69.9": 2,
+                    "79.9": 15,
+                    "89.9": 0,
+                    "99.9": 0
+                  },
+                  "total": 25
                 }
               ]
             }
@@ -14574,282 +12706,309 @@ MIX_PLANES_DATA = {
     }
   },
   "summary": {
-    "plans": {
-      "Entel Chip 35.90": 0,
-      "Entel chip+ 32.90": 0,
-      "Power 29.90 N": 5,
-      "Power 39.90 N": 518,
-      "Power 49.90 N": 228,
-      "Power 59.90 N": 51,
-      "Power ilim 69.90 N": 90,
-      "Power ilim 79.90 SD N": 598,
-      "Power ilim 99.90 SD N": 3
-    },
-    "total": 1493
+    "19.9": 1,
+    "22.9": 2,
+    "25.9": 1,
+    "29.9": 2,
+    "39.9": 518,
+    "49.9": 228,
+    "59.9": 51,
+    "69.9": 90,
+    "79.9": 598,
+    "89.9": 1,
+    "99.9": 2
   },
   "tree": [
     {
-      "id": "spv_mix_CYNTHIA GUERRA",
+      "id": "spv_mix_cynthia_guerra",
       "name": "CYNTHIA GUERRA",
       "plans": {
-        "Entel Chip 35.90": 0,
-        "Entel chip+ 32.90": 0,
-        "Power 29.90 N": 0,
-        "Power 39.90 N": 225,
-        "Power 49.90 N": 69,
-        "Power 59.90 N": 14,
-        "Power ilim 69.90 N": 21,
-        "Power ilim 79.90 SD N": 155,
-        "Power ilim 99.90 SD N": 0
+        "19.9": 1,
+        "22.9": 0,
+        "25.9": 0,
+        "29.9": 0,
+        "39.9": 225,
+        "49.9": 69,
+        "59.9": 14,
+        "69.9": 21,
+        "79.9": 155,
+        "89.9": 0,
+        "99.9": 0
       },
-      "total": 484,
+      "total": 485,
       "children": [
         {
-          "id": "pdv_mix_TE ICA 3",
+          "id": "pdv_mix_te_ica_3",
           "name": "TE ICA 3",
           "spv": "CYNTHIA GUERRA",
           "zona": "CENTRO",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 42,
-            "Power 49.90 N": 24,
-            "Power 59.90 N": 5,
-            "Power ilim 69.90 N": 7,
-            "Power ilim 79.90 SD N": 56,
-            "Power ilim 99.90 SD N": 0
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 42,
+            "49.9": 24,
+            "59.9": 5,
+            "69.9": 7,
+            "79.9": 56,
+            "89.9": 0,
+            "99.9": 0
           },
           "total": 134,
           "children": [
             {
-              "id": "ase_mix_JANELLA ISABEL VALLEJOS PINEDA",
-              "name": "JANELLA ISABEL VALLEJOS PINEDA",
-              "user_code": "JANELLA ISABEL VALLEJOS PINEDA",
+              "id": "ase_mix_fln_jvallejosp",
+              "name": "FLN_JVALLEJOSP",
+              "user_code": "FLN_JVALLEJOSP",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 18,
-                "Power 49.90 N": 11,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 4,
-                "Power ilim 79.90 SD N": 27,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 18,
+                "49.9": 11,
+                "59.9": 1,
+                "69.9": 4,
+                "79.9": 27,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 61
             },
             {
-              "id": "ase_mix_NAOMI MARINA AMESQUITA APARCANA",
-              "name": "NAOMI MARINA AMESQUITA APARCANA",
-              "user_code": "NAOMI MARINA AMESQUITA APARCANA",
+              "id": "ase_mix_fln_namesquitaa",
+              "name": "FLN_NAMESQUITAA",
+              "user_code": "FLN_NAMESQUITAA",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 24,
-                "Power 49.90 N": 13,
-                "Power 59.90 N": 4,
-                "Power ilim 69.90 N": 3,
-                "Power ilim 79.90 SD N": 29,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 24,
+                "49.9": 13,
+                "59.9": 4,
+                "69.9": 3,
+                "79.9": 29,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 73
             }
           ]
         },
         {
-          "id": "pdv_mix_TE ICA II",
+          "id": "pdv_mix_te_ica_ii",
           "name": "TE ICA II",
           "spv": "CYNTHIA GUERRA",
           "zona": "CENTRO",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 149,
-            "Power 49.90 N": 32,
-            "Power 59.90 N": 7,
-            "Power ilim 69.90 N": 10,
-            "Power ilim 79.90 SD N": 60,
-            "Power ilim 99.90 SD N": 0
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 149,
+            "49.9": 32,
+            "59.9": 7,
+            "69.9": 10,
+            "79.9": 60,
+            "89.9": 0,
+            "99.9": 0
           },
           "total": 258,
           "children": [
             {
-              "id": "ase_mix_DIANA LORENA SIME BENDEZU",
-              "name": "DIANA LORENA SIME BENDEZU",
-              "user_code": "DIANA LORENA SIME BENDEZU",
+              "id": "ase_mix_fln_dsimeb",
+              "name": "FLN_DSIMEB",
+              "user_code": "FLN_DSIMEB",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 84,
-                "Power 49.90 N": 14,
-                "Power 59.90 N": 3,
-                "Power ilim 69.90 N": 8,
-                "Power ilim 79.90 SD N": 33,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 84,
+                "49.9": 14,
+                "59.9": 3,
+                "69.9": 8,
+                "79.9": 33,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 142
             },
             {
-              "id": "ase_mix_ROGGER SMITH NAVARRETE CAHUA",
-              "name": "ROGGER SMITH NAVARRETE CAHUA",
-              "user_code": "ROGGER SMITH NAVARRETE CAHUA",
+              "id": "ase_mix_fln_rnavarretec",
+              "name": "FLN_RNAVARRETEC",
+              "user_code": "FLN_RNAVARRETEC",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 65,
-                "Power 49.90 N": 18,
-                "Power 59.90 N": 4,
-                "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 27,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 65,
+                "49.9": 18,
+                "59.9": 4,
+                "69.9": 2,
+                "79.9": 27,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 116
             }
           ]
         },
         {
-          "id": "pdv_mix_TE ICA MODELO",
+          "id": "pdv_mix_te_ica_modelo",
           "name": "TE ICA MODELO",
           "spv": "CYNTHIA GUERRA",
           "zona": "CENTRO",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 13,
-            "Power 49.90 N": 7,
-            "Power 59.90 N": 2,
-            "Power ilim 69.90 N": 0,
-            "Power ilim 79.90 SD N": 17,
-            "Power ilim 99.90 SD N": 0
+            "19.9": 1,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 13,
+            "49.9": 7,
+            "59.9": 2,
+            "69.9": 0,
+            "79.9": 17,
+            "89.9": 0,
+            "99.9": 0
           },
-          "total": 39,
+          "total": 40,
           "children": [
             {
-              "id": "ase_mix_JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
-              "name": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
-              "user_code": "JUNIOR LUCIANO MU\u00d1OZ HERN\u00c1NDEZ",
+              "id": "ase_mix_fln_jmunozh",
+              "name": "FLN_JMUNOZH",
+              "user_code": "FLN_JMUNOZH",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 7,
-                "Power 49.90 N": 4,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 10,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 1,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 7,
+                "49.9": 4,
+                "59.9": 0,
+                "69.9": 0,
+                "79.9": 10,
+                "89.9": 0,
+                "99.9": 0
               },
-              "total": 21
+              "total": 22
             },
             {
-              "id": "ase_mix_VALENTINA BAEZ TORDOYA",
-              "name": "VALENTINA BAEZ TORDOYA",
-              "user_code": "VALENTINA BAEZ TORDOYA",
+              "id": "ase_mix_fln_vbaezt",
+              "name": "FLN_VBAEZT",
+              "user_code": "FLN_VBAEZT",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 6,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 2,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 7,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 6,
+                "49.9": 3,
+                "59.9": 2,
+                "69.9": 0,
+                "79.9": 7,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 18
             }
           ]
         },
         {
-          "id": "pdv_mix_TE PARCONA",
+          "id": "pdv_mix_te_parcona",
           "name": "TE PARCONA",
           "spv": "CYNTHIA GUERRA",
           "zona": "CENTRO",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 21,
-            "Power 49.90 N": 6,
-            "Power 59.90 N": 0,
-            "Power ilim 69.90 N": 4,
-            "Power ilim 79.90 SD N": 22,
-            "Power ilim 99.90 SD N": 0
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 21,
+            "49.9": 6,
+            "59.9": 0,
+            "69.9": 4,
+            "79.9": 22,
+            "89.9": 0,
+            "99.9": 0
           },
           "total": 53,
           "children": [
             {
-              "id": "ase_mix_DANILO GIORDANO CARRIZALES RAMOS",
-              "name": "DANILO GIORDANO CARRIZALES RAMOS",
-              "user_code": "DANILO GIORDANO CARRIZALES RAMOS",
+              "id": "ase_mix_fln_dcarrizaler",
+              "name": "FLN_DCARRIZALER",
+              "user_code": "FLN_DCARRIZALER",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 16,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 4,
-                "Power ilim 79.90 SD N": 16,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 16,
+                "49.9": 3,
+                "59.9": 0,
+                "69.9": 4,
+                "79.9": 16,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 39
             },
             {
-              "id": "ase_mix_JOSU\u00c9 MIGUEL ESPINO SAYRITUPAC",
-              "name": "JOSU\u00c9 MIGUEL ESPINO SAYRITUPAC",
-              "user_code": "JOSU\u00c9 MIGUEL ESPINO SAYRITUPAC",
+              "id": "ase_mix_fln_jespinos",
+              "name": "FLN_JESPINOS",
+              "user_code": "FLN_JESPINOS",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 2,
-                "Power 49.90 N": 0,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 2,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 2,
+                "49.9": 0,
+                "59.9": 0,
+                "69.9": 0,
+                "79.9": 2,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 4
             },
             {
-              "id": "ase_mix_JUNIOR ANTHONY GARCIA GUERRA",
-              "name": "JUNIOR ANTHONY GARCIA GUERRA",
-              "user_code": "JUNIOR ANTHONY GARCIA GUERRA",
+              "id": "ase_mix_fln_jgarciag",
+              "name": "FLN_JGARCIAG",
+              "user_code": "FLN_JGARCIAG",
               "spv": "CYNTHIA GUERRA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 3,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 4,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 3,
+                "49.9": 3,
+                "59.9": 0,
+                "69.9": 0,
+                "79.9": 4,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 10
             }
@@ -14858,209 +13017,613 @@ MIX_PLANES_DATA = {
       ]
     },
     {
-      "id": "spv_mix_FERNANDO MORENO",
-      "name": "FERNANDO MORENO",
+      "id": "spv_mix_mar\u00eda_bernaola",
+      "name": "MAR\u00cdA BERNAOLA",
       "plans": {
-        "Entel Chip 35.90": 0,
-        "Entel chip+ 32.90": 0,
-        "Power 29.90 N": 0,
-        "Power 39.90 N": 49,
-        "Power 49.90 N": 35,
-        "Power 59.90 N": 15,
-        "Power ilim 69.90 N": 33,
-        "Power ilim 79.90 SD N": 153,
-        "Power ilim 99.90 SD N": 2
+        "19.9": 0,
+        "22.9": 2,
+        "25.9": 1,
+        "29.9": 0,
+        "39.9": 139,
+        "49.9": 103,
+        "59.9": 19,
+        "69.9": 32,
+        "79.9": 182,
+        "89.9": 1,
+        "99.9": 0
       },
-      "total": 287,
+      "total": 479,
       "children": [
         {
-          "id": "pdv_mix_TE NAZCA",
-          "name": "TE NAZCA",
-          "spv": "FERNANDO MORENO",
+          "id": "pdv_mix_te_ica",
+          "name": "TE ICA",
+          "spv": "MAR\u00cdA BERNAOLA",
           "zona": "CENTRO",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 30,
-            "Power 49.90 N": 24,
-            "Power 59.90 N": 11,
-            "Power ilim 69.90 N": 20,
-            "Power ilim 79.90 SD N": 116,
-            "Power ilim 99.90 SD N": 1
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 1,
+            "29.9": 0,
+            "39.9": 20,
+            "49.9": 5,
+            "59.9": 1,
+            "69.9": 4,
+            "79.9": 23,
+            "89.9": 0,
+            "99.9": 0
           },
-          "total": 202,
+          "total": 54,
           "children": [
             {
-              "id": "ase_mix_DIESLLY JOSEYDI CALLE PRADO",
-              "name": "DIESLLY JOSEYDI CALLE PRADO",
-              "user_code": "DIESLLY JOSEYDI CALLE PRADO",
-              "spv": "FERNANDO MORENO",
+              "id": "ase_mix_fln_lelizaldee",
+              "name": "FLN_LELIZALDEE",
+              "user_code": "FLN_LELIZALDEE",
+              "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 4,
-                "Power 49.90 N": 2,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 27,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 1,
+                "29.9": 0,
+                "39.9": 11,
+                "49.9": 4,
+                "59.9": 1,
+                "69.9": 3,
+                "79.9": 18,
+                "89.9": 0,
+                "99.9": 0
               },
-              "total": 35
+              "total": 38
             },
             {
-              "id": "ase_mix_JOSE FERNANDO MORENO VALENCIA",
-              "name": "JOSE FERNANDO MORENO VALENCIA",
-              "user_code": "JOSE FERNANDO MORENO VALENCIA",
-              "spv": "FERNANDO MORENO",
+              "id": "ase_mix_fln_cenriquezh",
+              "name": "FLN_CENRIQUEZH",
+              "user_code": "FLN_CENRIQUEZH",
+              "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 1,
-                "Power 49.90 N": 0,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 7,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 8,
+                "49.9": 1,
+                "59.9": 0,
+                "69.9": 1,
+                "79.9": 2,
+                "89.9": 0,
+                "99.9": 0
               },
-              "total": 10
+              "total": 12
             },
             {
-              "id": "ase_mix_PEDRO FERNANDO CUMPA VIVANCO",
-              "name": "PEDRO FERNANDO CUMPA VIVANCO",
-              "user_code": "PEDRO FERNANDO CUMPA VIVANCO",
-              "spv": "FERNANDO MORENO",
+              "id": "ase_mix_fln_kcastillob",
+              "name": "FLN_KCASTILLOB",
+              "user_code": "FLN_KCASTILLOB",
+              "spv": "MAR\u00cdA BERNAOLA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 15,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 7,
-                "Power ilim 69.90 N": 7,
-                "Power ilim 79.90 SD N": 40,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 1,
+                "49.9": 0,
+                "59.9": 0,
+                "69.9": 0,
+                "79.9": 3,
+                "89.9": 0,
+                "99.9": 0
               },
-              "total": 72
-            },
-            {
-              "id": "ase_mix_RUBETH DANNAE PICKMAN SAN MIGUEL",
-              "name": "RUBETH DANNAE PICKMAN SAN MIGUEL",
-              "user_code": "RUBETH DANNAE PICKMAN SAN MIGUEL",
-              "spv": "FERNANDO MORENO",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 10,
-                "Power 49.90 N": 19,
-                "Power 59.90 N": 2,
-                "Power ilim 69.90 N": 11,
-                "Power ilim 79.90 SD N": 42,
-                "Power ilim 99.90 SD N": 1
-              },
-              "total": 85
+              "total": 4
             }
           ]
         },
         {
-          "id": "pdv_mix_TE SATELITE CHALA",
-          "name": "TE SATELITE CHALA",
-          "spv": "FERNANDO MORENO",
-          "zona": "SUR",
+          "id": "pdv_mix_te_pisco",
+          "name": "TE PISCO",
+          "spv": "MAR\u00cdA BERNAOLA",
+          "zona": "CENTRO",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 12,
-            "Power 49.90 N": 8,
-            "Power 59.90 N": 4,
-            "Power ilim 69.90 N": 9,
-            "Power ilim 79.90 SD N": 17,
-            "Power ilim 99.90 SD N": 1
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 34,
+            "49.9": 15,
+            "59.9": 2,
+            "69.9": 2,
+            "79.9": 24,
+            "89.9": 0,
+            "99.9": 0
           },
-          "total": 51,
+          "total": 77,
           "children": [
             {
-              "id": "ase_mix_ELIZABETH LISLEY HUAMAN YBARRA",
-              "name": "ELIZABETH LISLEY HUAMAN YBARRA",
-              "user_code": "ELIZABETH LISLEY HUAMAN YBARRA",
-              "spv": "FERNANDO MORENO",
-              "zona": "SUR",
+              "id": "ase_mix_fln_cmanriquen",
+              "name": "FLN_CMANRIQUEN",
+              "user_code": "FLN_CMANRIQUEN",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 12,
-                "Power 49.90 N": 7,
-                "Power 59.90 N": 4,
-                "Power ilim 69.90 N": 9,
-                "Power ilim 79.90 SD N": 17,
-                "Power ilim 99.90 SD N": 1
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 9,
+                "49.9": 6,
+                "59.9": 0,
+                "69.9": 2,
+                "79.9": 14,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 31
+            },
+            {
+              "id": "ase_mix_fln_fcruzp",
+              "name": "FLN_FCRUZP",
+              "user_code": "FLN_FCRUZP",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 13,
+                "49.9": 6,
+                "59.9": 0,
+                "69.9": 0,
+                "79.9": 3,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 22
+            },
+            {
+              "id": "ase_mix_fln_vechevarrib",
+              "name": "FLN_VECHEVARRIB",
+              "user_code": "FLN_VECHEVARRIB",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 12,
+                "49.9": 3,
+                "59.9": 2,
+                "69.9": 0,
+                "79.9": 7,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 24
+            }
+          ]
+        },
+        {
+          "id": "pdv_mix_te_satelite_barrio_chino",
+          "name": "TE SATELITE BARRIO CHINO",
+          "spv": "MAR\u00cdA BERNAOLA",
+          "zona": "CENTRO",
+          "plans": {
+            "19.9": 0,
+            "22.9": 2,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 41,
+            "49.9": 73,
+            "59.9": 12,
+            "69.9": 20,
+            "79.9": 82,
+            "89.9": 0,
+            "99.9": 0
+          },
+          "total": 230,
+          "children": [
+            {
+              "id": "ase_mix_fln_eramosa",
+              "name": "FLN_ERAMOSA",
+              "user_code": "FLN_ERAMOSA",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 2,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 24,
+                "49.9": 36,
+                "59.9": 8,
+                "69.9": 10,
+                "79.9": 36,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 116
+            },
+            {
+              "id": "ase_mix_fln_rayalac",
+              "name": "FLN_RAYALAC",
+              "user_code": "FLN_RAYALAC",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 17,
+                "49.9": 37,
+                "59.9": 4,
+                "69.9": 10,
+                "79.9": 46,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 114
+            }
+          ]
+        },
+        {
+          "id": "pdv_mix_te_satelite_ca\u00f1ete",
+          "name": "TE SATELITE CA\u00d1ETE",
+          "spv": "MAR\u00cdA BERNAOLA",
+          "zona": "LIMA",
+          "plans": {
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 27,
+            "49.9": 3,
+            "59.9": 3,
+            "69.9": 3,
+            "79.9": 31,
+            "89.9": 1,
+            "99.9": 0
+          },
+          "total": 68,
+          "children": [
+            {
+              "id": "ase_mix_fln_crosasp",
+              "name": "FLN_CROSASP",
+              "user_code": "FLN_CROSASP",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "LIMA",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 20,
+                "49.9": 2,
+                "59.9": 3,
+                "69.9": 1,
+                "79.9": 23,
+                "89.9": 1,
+                "99.9": 0
               },
               "total": 50
             },
             {
-              "id": "ase_mix_LUZ ALEJANDRINA ANCCASI QUISPE",
-              "name": "LUZ ALEJANDRINA ANCCASI QUISPE",
-              "user_code": "LUZ ALEJANDRINA ANCCASI QUISPE",
+              "id": "ase_mix_fln_gchaupinb",
+              "name": "FLN_GCHAUPINB",
+              "user_code": "FLN_GCHAUPINB",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "LIMA",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 7,
+                "49.9": 1,
+                "59.9": 0,
+                "69.9": 2,
+                "79.9": 8,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 18
+            }
+          ]
+        },
+        {
+          "id": "pdv_mix_te_satelite_pueblo_joven",
+          "name": "TE SATELITE PUEBLO JOVEN",
+          "spv": "MAR\u00cdA BERNAOLA",
+          "zona": "CENTRO",
+          "plans": {
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 17,
+            "49.9": 7,
+            "59.9": 1,
+            "69.9": 3,
+            "79.9": 22,
+            "89.9": 0,
+            "99.9": 0
+          },
+          "total": 50,
+          "children": [
+            {
+              "id": "ase_mix_fln_jjespinoc",
+              "name": "FLN_JJESPINOC",
+              "user_code": "FLN_JJESPINOC",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 15,
+                "49.9": 6,
+                "59.9": 0,
+                "69.9": 0,
+                "79.9": 19,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 40
+            },
+            {
+              "id": "ase_mix_fln_jinfantea",
+              "name": "FLN_JINFANTEA",
+              "user_code": "FLN_JINFANTEA",
+              "spv": "MAR\u00cdA BERNAOLA",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 2,
+                "49.9": 1,
+                "59.9": 1,
+                "69.9": 3,
+                "79.9": 3,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spv_mix_fernando_moreno",
+      "name": "FERNANDO MORENO",
+      "plans": {
+        "19.9": 0,
+        "22.9": 0,
+        "25.9": 0,
+        "29.9": 0,
+        "39.9": 49,
+        "49.9": 35,
+        "59.9": 15,
+        "69.9": 33,
+        "79.9": 153,
+        "89.9": 0,
+        "99.9": 2
+      },
+      "total": 287,
+      "children": [
+        {
+          "id": "pdv_mix_te_nazca",
+          "name": "TE NAZCA",
+          "spv": "FERNANDO MORENO",
+          "zona": "CENTRO",
+          "plans": {
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 30,
+            "49.9": 24,
+            "59.9": 11,
+            "69.9": 20,
+            "79.9": 116,
+            "89.9": 0,
+            "99.9": 1
+          },
+          "total": 202,
+          "children": [
+            {
+              "id": "ase_mix_fln_jfmorenov",
+              "name": "FLN_JFMORENOV",
+              "user_code": "FLN_JFMORENOV",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 1,
+                "49.9": 0,
+                "59.9": 1,
+                "69.9": 1,
+                "79.9": 7,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 10
+            },
+            {
+              "id": "ase_mix_fln_pcumpav",
+              "name": "FLN_PCUMPAV",
+              "user_code": "FLN_PCUMPAV",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 15,
+                "49.9": 3,
+                "59.9": 7,
+                "69.9": 7,
+                "79.9": 40,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 72
+            },
+            {
+              "id": "ase_mix_fln_rpickmans",
+              "name": "FLN_RPICKMANS",
+              "user_code": "FLN_RPICKMANS",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 10,
+                "49.9": 19,
+                "59.9": 2,
+                "69.9": 11,
+                "79.9": 42,
+                "89.9": 0,
+                "99.9": 1
+              },
+              "total": 85
+            },
+            {
+              "id": "ase_mix_fln_dcallep",
+              "name": "FLN_DCALLEP",
+              "user_code": "FLN_DCALLEP",
+              "spv": "FERNANDO MORENO",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 4,
+                "49.9": 2,
+                "59.9": 1,
+                "69.9": 1,
+                "79.9": 27,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 35
+            }
+          ]
+        },
+        {
+          "id": "pdv_mix_te_satelite_chala",
+          "name": "TE SATELITE CHALA",
+          "spv": "FERNANDO MORENO",
+          "zona": "SUR",
+          "plans": {
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 12,
+            "49.9": 8,
+            "59.9": 4,
+            "69.9": 9,
+            "79.9": 17,
+            "89.9": 0,
+            "99.9": 1
+          },
+          "total": 51,
+          "children": [
+            {
+              "id": "ase_mix_fln_ehuamany",
+              "name": "FLN_EHUAMANY",
+              "user_code": "FLN_EHUAMANY",
               "spv": "FERNANDO MORENO",
               "zona": "SUR",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 0,
-                "Power 49.90 N": 1,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 0,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 12,
+                "49.9": 7,
+                "59.9": 4,
+                "69.9": 9,
+                "79.9": 17,
+                "89.9": 0,
+                "99.9": 1
+              },
+              "total": 50
+            },
+            {
+              "id": "ase_mix_fln_lanccasiq",
+              "name": "FLN_LANCCASIQ",
+              "user_code": "FLN_LANCCASIQ",
+              "spv": "FERNANDO MORENO",
+              "zona": "SUR",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 0,
+                "49.9": 1,
+                "59.9": 0,
+                "69.9": 0,
+                "79.9": 0,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 1
             }
           ]
         },
         {
-          "id": "pdv_mix_TE SATELITE PALPA",
+          "id": "pdv_mix_te_satelite_palpa",
           "name": "TE SATELITE PALPA",
           "spv": "FERNANDO MORENO",
           "zona": "CENTRO",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 7,
-            "Power 49.90 N": 3,
-            "Power 59.90 N": 0,
-            "Power ilim 69.90 N": 4,
-            "Power ilim 79.90 SD N": 20,
-            "Power ilim 99.90 SD N": 0
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 7,
+            "49.9": 3,
+            "59.9": 0,
+            "69.9": 4,
+            "79.9": 20,
+            "89.9": 0,
+            "99.9": 0
           },
           "total": 34,
           "children": [
             {
-              "id": "ase_mix_ALEXANDRA ECHAJAYA GARCIA",
-              "name": "ALEXANDRA ECHAJAYA GARCIA",
-              "user_code": "ALEXANDRA ECHAJAYA GARCIA",
+              "id": "ase_mix_fln_aechajayag",
+              "name": "FLN_AECHAJAYAG",
+              "user_code": "FLN_AECHAJAYAG",
               "spv": "FERNANDO MORENO",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 7,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 4,
-                "Power ilim 79.90 SD N": 20,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 7,
+                "49.9": 3,
+                "59.9": 0,
+                "69.9": 4,
+                "79.9": 20,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 34
             }
@@ -15069,537 +13632,211 @@ MIX_PLANES_DATA = {
       ]
     },
     {
-      "id": "spv_mix_MAR\u00cdA BERNAOLA",
-      "name": "MAR\u00cdA BERNAOLA",
-      "plans": {
-        "Entel Chip 35.90": 0,
-        "Entel chip+ 32.90": 0,
-        "Power 29.90 N": 3,
-        "Power 39.90 N": 139,
-        "Power 49.90 N": 103,
-        "Power 59.90 N": 19,
-        "Power ilim 69.90 N": 32,
-        "Power ilim 79.90 SD N": 182,
-        "Power ilim 99.90 SD N": 1
-      },
-      "total": 479,
-      "children": [
-        {
-          "id": "pdv_mix_TE ICA",
-          "name": "TE ICA",
-          "spv": "MAR\u00cdA BERNAOLA",
-          "zona": "CENTRO",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 1,
-            "Power 39.90 N": 20,
-            "Power 49.90 N": 5,
-            "Power 59.90 N": 1,
-            "Power ilim 69.90 N": 4,
-            "Power ilim 79.90 SD N": 23,
-            "Power ilim 99.90 SD N": 0
-          },
-          "total": 54,
-          "children": [
-            {
-              "id": "ase_mix_CINDY PAMELA ENRIQUEZ HUANCA",
-              "name": "CINDY PAMELA ENRIQUEZ HUANCA",
-              "user_code": "CINDY PAMELA ENRIQUEZ HUANCA",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 8,
-                "Power 49.90 N": 1,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 2,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 12
-            },
-            {
-              "id": "ase_mix_KIARA SHIRLY CASTILLO BENAVIDES",
-              "name": "KIARA SHIRLY CASTILLO BENAVIDES",
-              "user_code": "KIARA SHIRLY CASTILLO BENAVIDES",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 1,
-                "Power 49.90 N": 0,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 3,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 4
-            },
-            {
-              "id": "ase_mix_LUIS ELIZALDE ESCATE",
-              "name": "LUIS ELIZALDE ESCATE",
-              "user_code": "LUIS ELIZALDE ESCATE",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 1,
-                "Power 39.90 N": 11,
-                "Power 49.90 N": 4,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 3,
-                "Power ilim 79.90 SD N": 18,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 38
-            }
-          ]
-        },
-        {
-          "id": "pdv_mix_TE PISCO",
-          "name": "TE PISCO",
-          "spv": "MAR\u00cdA BERNAOLA",
-          "zona": "CENTRO",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 34,
-            "Power 49.90 N": 15,
-            "Power 59.90 N": 2,
-            "Power ilim 69.90 N": 2,
-            "Power ilim 79.90 SD N": 24,
-            "Power ilim 99.90 SD N": 0
-          },
-          "total": 77,
-          "children": [
-            {
-              "id": "ase_mix_CYNTIA JETZABEL MANRIQUE NAPA",
-              "name": "CYNTIA JETZABEL MANRIQUE NAPA",
-              "user_code": "CYNTIA JETZABEL MANRIQUE NAPA",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 9,
-                "Power 49.90 N": 6,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 14,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 31
-            },
-            {
-              "id": "ase_mix_FIORELLA ASTRID CRUZ PARODI",
-              "name": "FIORELLA ASTRID CRUZ PARODI",
-              "user_code": "FIORELLA ASTRID CRUZ PARODI",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 13,
-                "Power 49.90 N": 6,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 3,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 22
-            },
-            {
-              "id": "ase_mix_VALERIA ALANA ECHEVARRIA BRAVO",
-              "name": "VALERIA ALANA ECHEVARRIA BRAVO",
-              "user_code": "VALERIA ALANA ECHEVARRIA BRAVO",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 12,
-                "Power 49.90 N": 3,
-                "Power 59.90 N": 2,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 7,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 24
-            }
-          ]
-        },
-        {
-          "id": "pdv_mix_TE SATELITE BARRIO CHINO",
-          "name": "TE SATELITE BARRIO CHINO",
-          "spv": "MAR\u00cdA BERNAOLA",
-          "zona": "CENTRO",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 2,
-            "Power 39.90 N": 41,
-            "Power 49.90 N": 73,
-            "Power 59.90 N": 12,
-            "Power ilim 69.90 N": 20,
-            "Power ilim 79.90 SD N": 82,
-            "Power ilim 99.90 SD N": 0
-          },
-          "total": 230,
-          "children": [
-            {
-              "id": "ase_mix_ELIZABETH ANA RAMOS ANGULO",
-              "name": "ELIZABETH ANA RAMOS ANGULO",
-              "user_code": "ELIZABETH ANA RAMOS ANGULO",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 2,
-                "Power 39.90 N": 24,
-                "Power 49.90 N": 36,
-                "Power 59.90 N": 8,
-                "Power ilim 69.90 N": 10,
-                "Power ilim 79.90 SD N": 36,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 116
-            },
-            {
-              "id": "ase_mix_RIGOBERTO AYALA CARPIO",
-              "name": "RIGOBERTO AYALA CARPIO",
-              "user_code": "RIGOBERTO AYALA CARPIO",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 17,
-                "Power 49.90 N": 37,
-                "Power 59.90 N": 4,
-                "Power ilim 69.90 N": 10,
-                "Power ilim 79.90 SD N": 46,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 114
-            }
-          ]
-        },
-        {
-          "id": "pdv_mix_TE SATELITE CA\u00d1ETE",
-          "name": "TE SATELITE CA\u00d1ETE",
-          "spv": "MAR\u00cdA BERNAOLA",
-          "zona": "LIMA",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 27,
-            "Power 49.90 N": 3,
-            "Power 59.90 N": 3,
-            "Power ilim 69.90 N": 3,
-            "Power ilim 79.90 SD N": 31,
-            "Power ilim 99.90 SD N": 1
-          },
-          "total": 68,
-          "children": [
-            {
-              "id": "ase_mix_CAMILA VERONICA ROSAS PALOMINO",
-              "name": "CAMILA VERONICA ROSAS PALOMINO",
-              "user_code": "CAMILA VERONICA ROSAS PALOMINO",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "LIMA",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 20,
-                "Power 49.90 N": 2,
-                "Power 59.90 N": 3,
-                "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 23,
-                "Power ilim 99.90 SD N": 1
-              },
-              "total": 50
-            },
-            {
-              "id": "ase_mix_GISELLA VANNESA CHAUPIN BUSTAMANTE",
-              "name": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
-              "user_code": "GISELLA VANNESA CHAUPIN BUSTAMANTE",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "LIMA",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 7,
-                "Power 49.90 N": 1,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 8,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 18
-            }
-          ]
-        },
-        {
-          "id": "pdv_mix_TE SATELITE PUEBLO JOVEN",
-          "name": "TE SATELITE PUEBLO JOVEN",
-          "spv": "MAR\u00cdA BERNAOLA",
-          "zona": "CENTRO",
-          "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 17,
-            "Power 49.90 N": 7,
-            "Power 59.90 N": 1,
-            "Power ilim 69.90 N": 3,
-            "Power ilim 79.90 SD N": 22,
-            "Power ilim 99.90 SD N": 0
-          },
-          "total": 50,
-          "children": [
-            {
-              "id": "ase_mix_JASMIN JANINE PAULA ESPINO CUYA",
-              "name": "JASMIN JANINE PAULA ESPINO CUYA",
-              "user_code": "JASMIN JANINE PAULA ESPINO CUYA",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 15,
-                "Power 49.90 N": 6,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 19,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 40
-            },
-            {
-              "id": "ase_mix_JOSE GABRIEL INFANTE APARCANA",
-              "name": "JOSE GABRIEL INFANTE APARCANA",
-              "user_code": "JOSE GABRIEL INFANTE APARCANA",
-              "spv": "MAR\u00cdA BERNAOLA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 2,
-                "Power 49.90 N": 1,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 3,
-                "Power ilim 79.90 SD N": 3,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 10
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "spv_mix_MERY LAPA",
+      "id": "spv_mix_mery_lapa",
       "name": "MERY LAPA",
       "plans": {
-        "Entel Chip 35.90": 0,
-        "Entel chip+ 32.90": 0,
-        "Power 29.90 N": 2,
-        "Power 39.90 N": 105,
-        "Power 49.90 N": 21,
-        "Power 59.90 N": 3,
-        "Power ilim 69.90 N": 4,
-        "Power ilim 79.90 SD N": 108,
-        "Power ilim 99.90 SD N": 0
+        "19.9": 0,
+        "22.9": 0,
+        "25.9": 0,
+        "29.9": 2,
+        "39.9": 105,
+        "49.9": 21,
+        "59.9": 3,
+        "69.9": 4,
+        "79.9": 108,
+        "89.9": 0,
+        "99.9": 0
       },
       "total": 243,
       "children": [
         {
-          "id": "pdv_mix_TE AYACUCHO",
+          "id": "pdv_mix_te_ayacucho",
           "name": "TE AYACUCHO",
           "spv": "MERY LAPA",
           "zona": "CENTRO",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 0,
-            "Power 39.90 N": 50,
-            "Power 49.90 N": 9,
-            "Power 59.90 N": 1,
-            "Power ilim 69.90 N": 1,
-            "Power ilim 79.90 SD N": 55,
-            "Power ilim 99.90 SD N": 0
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 0,
+            "39.9": 50,
+            "49.9": 9,
+            "59.9": 1,
+            "69.9": 1,
+            "79.9": 55,
+            "89.9": 0,
+            "99.9": 0
           },
           "total": 116,
           "children": [
             {
-              "id": "ase_mix_LORENA ALEXANDRA HUAMANI YUPANQUI",
-              "name": "LORENA ALEXANDRA HUAMANI YUPANQUI",
-              "user_code": "LORENA ALEXANDRA HUAMANI YUPANQUI",
+              "id": "ase_mix_fln_lhuamaniy",
+              "name": "FLN_LHUAMANIY",
+              "user_code": "FLN_LHUAMANIY",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 45,
-                "Power 49.90 N": 9,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 48,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 45,
+                "49.9": 9,
+                "59.9": 1,
+                "69.9": 1,
+                "79.9": 48,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 104
             },
             {
-              "id": "ase_mix_MARCO ANDRE FELICES GONZALEZ",
-              "name": "MARCO ANDRE FELICES GONZALEZ",
-              "user_code": "MARCO ANDRE FELICES GONZALEZ",
+              "id": "ase_mix_fln_mfelicesg",
+              "name": "FLN_MFELICESG",
+              "user_code": "FLN_MFELICESG",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 0,
-                "Power 49.90 N": 0,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 1,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 0,
+                "49.9": 0,
+                "59.9": 0,
+                "69.9": 0,
+                "79.9": 1,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 1
             },
             {
-              "id": "ase_mix_SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
-              "name": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
-              "user_code": "SHERLEY ALEXSANDRA REYMUNDEZ MENDOZA",
+              "id": "ase_mix_fln_sreymundezm",
+              "name": "FLN_SREYMUNDEZM",
+              "user_code": "FLN_SREYMUNDEZM",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 5,
-                "Power 49.90 N": 0,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 6,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 5,
+                "49.9": 0,
+                "59.9": 0,
+                "69.9": 0,
+                "79.9": 6,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 11
             }
           ]
         },
         {
-          "id": "pdv_mix_TE HUANTA",
+          "id": "pdv_mix_te_huanta",
           "name": "TE HUANTA",
           "spv": "MERY LAPA",
           "zona": "CENTRO",
           "plans": {
-            "Entel Chip 35.90": 0,
-            "Entel chip+ 32.90": 0,
-            "Power 29.90 N": 2,
-            "Power 39.90 N": 55,
-            "Power 49.90 N": 12,
-            "Power 59.90 N": 2,
-            "Power ilim 69.90 N": 3,
-            "Power ilim 79.90 SD N": 53,
-            "Power ilim 99.90 SD N": 0
+            "19.9": 0,
+            "22.9": 0,
+            "25.9": 0,
+            "29.9": 2,
+            "39.9": 55,
+            "49.9": 12,
+            "59.9": 2,
+            "69.9": 3,
+            "79.9": 53,
+            "89.9": 0,
+            "99.9": 0
           },
           "total": 127,
           "children": [
             {
-              "id": "ase_mix_JHON ANDERSON MEDINA FARFAN",
-              "name": "JHON ANDERSON MEDINA FARFAN",
-              "user_code": "JHON ANDERSON MEDINA FARFAN",
+              "id": "ase_mix_fln_mfelicesg",
+              "name": "FLN_MFELICESG",
+              "user_code": "FLN_MFELICESG",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 8,
-                "Power 49.90 N": 0,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 2,
-                "Power ilim 79.90 SD N": 15,
-                "Power ilim 99.90 SD N": 0
-              },
-              "total": 25
-            },
-            {
-              "id": "ase_mix_MARCO ANDRE FELICES GONZALEZ",
-              "name": "MARCO ANDRE FELICES GONZALEZ",
-              "user_code": "MARCO ANDRE FELICES GONZALEZ",
-              "spv": "MERY LAPA",
-              "zona": "CENTRO",
-              "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 2,
-                "Power 39.90 N": 42,
-                "Power 49.90 N": 7,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 27,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 2,
+                "39.9": 42,
+                "49.9": 7,
+                "59.9": 1,
+                "69.9": 0,
+                "79.9": 27,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 79
             },
             {
-              "id": "ase_mix_MERY LAPA ZARATE",
-              "name": "MERY LAPA ZARATE",
-              "user_code": "MERY LAPA ZARATE",
+              "id": "ase_mix_fln_mlapaz",
+              "name": "FLN_MLAPAZ",
+              "user_code": "FLN_MLAPAZ",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 2,
-                "Power 49.90 N": 1,
-                "Power 59.90 N": 0,
-                "Power ilim 69.90 N": 1,
-                "Power ilim 79.90 SD N": 2,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 2,
+                "49.9": 1,
+                "59.9": 0,
+                "69.9": 1,
+                "79.9": 2,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 6
             },
             {
-              "id": "ase_mix_SONALY JULIA MEZA ASTUPILLO",
-              "name": "SONALY JULIA MEZA ASTUPILLO",
-              "user_code": "SONALY JULIA MEZA ASTUPILLO",
+              "id": "ase_mix_fln_smezaa",
+              "name": "FLN_SMEZAA",
+              "user_code": "FLN_SMEZAA",
               "spv": "MERY LAPA",
               "zona": "CENTRO",
               "plans": {
-                "Entel Chip 35.90": 0,
-                "Entel chip+ 32.90": 0,
-                "Power 29.90 N": 0,
-                "Power 39.90 N": 3,
-                "Power 49.90 N": 4,
-                "Power 59.90 N": 1,
-                "Power ilim 69.90 N": 0,
-                "Power ilim 79.90 SD N": 9,
-                "Power ilim 99.90 SD N": 0
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 3,
+                "49.9": 4,
+                "59.9": 1,
+                "69.9": 0,
+                "79.9": 9,
+                "89.9": 0,
+                "99.9": 0
               },
               "total": 17
+            },
+            {
+              "id": "ase_mix_fln_jmedinaf",
+              "name": "FLN_JMEDINAF",
+              "user_code": "FLN_JMEDINAF",
+              "spv": "MERY LAPA",
+              "zona": "CENTRO",
+              "plans": {
+                "19.9": 0,
+                "22.9": 0,
+                "25.9": 0,
+                "29.9": 0,
+                "39.9": 8,
+                "49.9": 0,
+                "59.9": 0,
+                "69.9": 2,
+                "79.9": 15,
+                "89.9": 0,
+                "99.9": 0
+              },
+              "total": 25
             }
           ]
         }
