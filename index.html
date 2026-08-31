@@ -355,7 +355,7 @@
       <div class="table-container-card">
         <div class="table-scroll-wrapper" style="max-height: 560px; overflow-y: auto; overflow-x: auto;">
           <table class="presentation-table" style="width: 100%; border-collapse: collapse;">
-            <thead>
+            <thead id="mixPlanesThead">
               <tr style="background: #1e293b; color: #ffffff;">
                 <th style="min-width: 280px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PUNTO DE VENTA / ASESOR</th>
                 <!-- RED PLANES (< 39.90) -->
@@ -2046,6 +2046,24 @@ window.renderDotacionTable = function renderDotacionTable() {
 
       const monthData = mixData.months && mixData.months[selMonth] ? mixData.months[selMonth] : mixData;
       const plans = monthData.plans_list || mixData.plans_list || [];
+
+      const thead = document.getElementById('mixPlanesThead');
+      if (thead) {
+        let thsHTML = plans.map(p => {
+          let color = '#86efac';
+          const numVal = parseFloat(p);
+          if (numVal < 39.9) color = '#fca5a5';
+          else if (Math.abs(numVal - 39.9) < 0.01) color = '#fde047';
+          return `<th class="val-cell" style="color: ${color}; font-weight: 800; padding: 10px 12px; font-size: 11px;">${p}</th>`;
+        }).join('');
+
+        thead.innerHTML = `
+          <tr style="background: #1e293b; color: #ffffff;">
+            <th style="min-width: 280px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PUNTO DE VENTA / ASESOR</th>
+            ${thsHTML}
+          </tr>
+        `;
+      }
 
       let tree = JSON.parse(JSON.stringify(monthData.tree || mixData.tree || []));
       if (selSpv !== 'ALL') {
