@@ -13,15 +13,15 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="styles/shell.css?v=20260811_isolated1">
-  <link rel="stylesheet" href="styles/page-0.css?v=20260811_isolated1">
-  <link rel="stylesheet" href="styles/page-1.css?v=20260818_productivity3">
-  <link rel="stylesheet" href="styles/page-2.css?v=20260811_isolated1">
-  <link rel="stylesheet" href="styles/page-3.css?v=20260811_isolated1">
-  <link rel="stylesheet" href="styles/page-4.css?v=20260811_isolated1">
-  <link rel="stylesheet" href="styles/page-5.css?v=20260811_isolated1">
-  <link rel="stylesheet" href="styles/page-6.css?v=20260811_isolated1">
-  <link rel="stylesheet" href="styles/page-7.css?v=20260811_isolated1">
+  <link rel="stylesheet" href="styles/shell.css?v=20260830_v3">
+  <link rel="stylesheet" href="styles/page-0.css?v=20260830_v3">
+  <link rel="stylesheet" href="styles/page-1.css?v=20260830_v3">
+  <link rel="stylesheet" href="styles/page-2.css?v=20260830_v3">
+  <link rel="stylesheet" href="styles/page-3.css?v=20260830_v3">
+  <link rel="stylesheet" href="styles/page-4.css?v=20260830_v3">
+  <link rel="stylesheet" href="styles/page-5.css?v=20260830_v3">
+  <link rel="stylesheet" href="styles/page-6.css?v=20260830_v3">
+  <link rel="stylesheet" href="styles/page-7.css?v=20260830_v3">
 </head>
 <body>
 
@@ -93,10 +93,10 @@
       <!-- Línea divisoria en gradiente azul -->
       <div style="width: 140px; height: 5px; background: linear-gradient(90deg, #1d4ed8 0%, #60a5fa 100%); border-radius: 3px; margin-bottom: 28px;"></div>
 
-      <!-- AGOSTO S1-S2-S3 (Pequeño / Pill corporativo) -->
+      <!-- AGOSTO S1-S2-S3-S4 (Pequeño / Pill corporativo) -->
       <div style="display: inline-flex; align-items: center; gap: 8px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 700; letter-spacing: 1px;">
         <i class="fa-solid fa-calendar-days" style="color: #2563eb;"></i>
-        <span>AGOSTO S1-S2-S3</span>
+        <span>AGOSTO S1-S2-S3-S4</span>
       </div>
 
       <!-- Metadata del informe al pie de la portada -->
@@ -119,7 +119,7 @@
           <div>
             <h1 class="slide-title">Reporte de Avance y Proyección de Ventas</h1>
             <div class="slide-subtitle" id="headerPeriodSubtitle">
-              Agosto 2026 (Mes Vigente - Avance 21/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">POSTPAGO TOTAL</strong>
+              Agosto 2026 (Mes Vigente - Avance 25/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">POSTPAGO TOTAL</strong>
             </div>
           </div>
         </div>
@@ -175,7 +175,7 @@
         </div>
       </div>
 
-      <div id="productivityModal" class="productivity-modal" role="dialog" aria-modal="true" aria-labelledby="productivityModalTitle" aria-hidden="true" onclick="handleProductivityBackdrop(event)">
+      <div id="productivityModal" class="productivity-modal" role="dialog" aria-modal="true" aria-labelledby="productivityModalTitle" aria-hidden="true" style="display: none;" onclick="handleProductivityBackdrop(event)">
         <div class="productivity-dialog" role="document">
           <div class="productivity-modal-header">
             <div class="productivity-modal-titlebox">
@@ -359,7 +359,6 @@
               <tr style="background: #1e293b; color: #ffffff;">
                 <th style="min-width: 280px; text-align: left; padding: 10px 12px; color: #ffffff; font-weight: 800; font-size: 11px;">PUNTO DE VENTA / ASESOR</th>
                 <!-- RED PLANES (< 39.90) -->
-                <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">19.9</th>
                 <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">35.9</th>
                 <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">32.9</th>
                 <th class="val-cell" style="color: #fca5a5; font-weight: 800; padding: 10px 12px; font-size: 11px;" title="Menores a 39.90">29.9</th>
@@ -440,8 +439,8 @@
 
         <div class="header-actions">
           <select id="dotacionPeriodFilter" class="month-select-glass" onchange="renderDotacionTable()" aria-label="Periodo de dotación">
-            <option value="9-15">9-15</option>
-            <option value="16-22" selected>16-22</option>
+            <option value="5-11">5-11</option>
+            <option value="9-15" selected>9-15</option>
           </select>
 
           <select id="spvDotacionFilter" class="month-select-glass" onchange="renderDotacionTable()">
@@ -570,7 +569,7 @@
                 // ================= GLOBAL STATE VARIABLES =================
     
     var totalCondicion = 0;
-    var ELAPSED_WD = 21;
+    var ELAPSED_WD = 25;
     var TOTAL_WD = 26;
     var grandCondicionPct = 74.0;
 
@@ -741,7 +740,7 @@
       pageState[1].monthFilter = val;
       const subtitle = document.getElementById('headerPeriodSubtitle');
       if (val === 'm202608') {
-        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 21/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">' + getProductLabel() + '</strong>';
+        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 25/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">' + getProductLabel() + '</strong>';
       } else {
         subtitle.innerHTML = `Mes Filtrado: ${monthLabelsMap[val] || val} &bull; <strong class="selected-product-badge" style="color: #6366f1">${getProductLabel()}</strong>`;
       }
@@ -1363,7 +1362,7 @@ function toggleDotacionDays() {
       const rootData = window.DOTACION_DATA;
       if (!rootData) return null;
       const periodFilter = document.getElementById('dotacionPeriodFilter');
-      const selectedPeriod = periodFilter ? periodFilter.value : (rootData.default_period || '16-22');
+      const selectedPeriod = periodFilter ? periodFilter.value : (rootData.default_period || '9-15');
       return rootData.periods && rootData.periods[selectedPeriod] ? rootData.periods[selectedPeriod] : rootData;
     }
 
@@ -1681,6 +1680,7 @@ window.renderDotacionTable = function renderDotacionTable() {
       monthFilter.innerHTML = months.map(month => `<option value="${escapeProductivityHTML(month)}">${escapeProductivityHTML(month)}</option>`).join('');
       monthFilter.value = months.includes('Agosto') ? 'Agosto' : data.default_month;
       renderProductivityTable();
+      modal.style.display = 'flex';
       modal.classList.add('is-open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('productivity-modal-open');
@@ -1691,6 +1691,7 @@ window.renderDotacionTable = function renderDotacionTable() {
       const modal = document.getElementById('productivityModal');
       if (!modal) return;
       modal.classList.remove('is-open');
+      modal.style.display = 'none';
       modal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('productivity-modal-open');
       if (productivityReturnFocus && typeof productivityReturnFocus.focus === 'function') productivityReturnFocus.focus();
@@ -2019,7 +2020,7 @@ window.renderDotacionTable = function renderDotacionTable() {
       
       const pNorm = planName.toUpperCase();
       let textColor = '#334155';
-      if (pNorm.includes('19.90') || pNorm.includes('35.90') || pNorm.includes('32.90') || pNorm.includes('29.90')) {
+      if (pNorm.includes('35.90') || pNorm.includes('32.90') || pNorm.includes('29.90')) {
         textColor = '#dc2626';
       } else if (pNorm.includes('39.90')) {
         textColor = '#0f172a';
