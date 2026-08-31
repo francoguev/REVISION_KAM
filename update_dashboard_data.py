@@ -516,132 +516,85 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     }
     operador_cedente_obj = {"summary": summary_cedente, "tree": tree_cedente}
 
-    # 7. BUILD MIX_PLANES_DATA (Direct parsing of MIX PLANES sheet matrix)
-    df_mix_sheet = pd.read_excel(excel_path, sheet_name='MIX PLANES', header=3)
-    strip_text_columns(df_mix_sheet)
+    # 7. BUILD MIX_PLANES_DATA (Postpago Plans Distribution per Month)
+    plans_list = ["19.9", "22.9", "25.9", "29.9", "39.9", "49.9", "59.9", "69.9", "79.9", "89.9", "99.9"]
 
-    raw_headers = [str(c).strip() for c in df_mix_sheet.iloc[0].values]
+    def extract_plan_price(plan_str):
+        plan_str = str(plan_str).upper()
+        m = re.search(r'(\d{2}\.\d{1,2})', plan_str)
+        if m:
+            val = float(m.group(1))
+            p_str = f"{val:.1f}" if val * 10 % 1 == 0 else str(val)
+            if p_str in plans_list:
+                return p_str
+        return "39.9"
 
-    plans_list = []
-    for h in raw_headers[1:]:
-        if h and str(h).lower() not in ['nan', 'none', '']:
-            try:
-                val_float = float(h)
-                plan_str = f"{val_float:.1f}" if val_float * 10 % 1 == 0 else str(val_float)
-                plans_list.append(plan_str)
-            except Exception:
-                plans_list.append(str(h))
+    df_post_only = df_post[~df_post['PRODUCTO'].astype(str).str.upper().str.startswith('PREPAGO')].copy()
+    df_post_only['PLAN_PRICE'] = df_post_only['VCHN_PLAN'].apply(extract_plan_price)
 
-    if not plans_list:
-        plans_list = ["19.9", "22.9", "25.9", "29.9", "39.9", "49.9", "59.9", "69.9", "79.9", "89.9", "99.9"]
+    mix_months = {}
+    for m_name in ["Junio", "Julio", "Agosto"]:
+        df_m = df_post_only[df_post_only['Nombre del mes'] == m_name].copy()
 
-    spvs_dict = {
-        'CYNTHIA GUERRA': {'name': 'CYNTHIA GUERRA', 'children': []},
-        'MARÍA BERNAOLA': {'name': 'MARÍA BERNAOLA', 'children': []},
-        'FERNANDO MORENO': {'name': 'FERNANDO MORENO', 'children': []},
-        'MERY LAPA': {'name': 'MERY LAPA', 'children': []}
-    }
+        plan_counts = df_m['PLAN_PRICE'].value_counts().to_dict()
+        summary_plans = {p: int(plan_counts.get(p, 0)) for p in plans_list}
+        tot_plans = sum(summary_plans.values())
 
-    curr_pdv_node = None
-    curr_spv = 'MERY LAPA'
-    summary_plans = {p: 0 for p in plans_list}
+        spv_mix_nodes = []
+        for spv, grp_spv in df_m.groupby('SPV'):
+            s_counts = grp_spv['PLAN_PRICE'].value_counts().to_dict()
+            s_plans = {p: int(s_counts.get(p, 0)) for p in plans_list}
+            s_tot = sum(s_plans.values())
+            pdv_mix_nodes = []
+            for pdv, grp_pdv in grp_spv.groupby(pdv_col):
+                zona = zona_map.get(pdv, str(grp_pdv['ZONA'].iloc[0]) if 'ZONA' in grp_pdv.columns else 'SUR')
+                p_counts = grp_pdv['PLAN_PRICE'].value_counts().to_dict()
+                p_plans = {p: int(p_counts.get(p, 0)) for p in plans_list}
+                p_tot = sum(p_plans.values())
+                ase_mix_nodes = []
+                for ase, grp_ase in grp_pdv.groupby(ase_col):
+                    a_counts = grp_ase['PLAN_PRICE'].value_counts().to_dict()
+                    a_plans = {p: int(a_counts.get(p, 0)) for p in plans_list}
+                    a_tot = sum(a_plans.values())
+                    ase_mix_nodes.append({
+                        "id": f"ase_mix_{str(ase).lower().replace(' ', '_')}",
+                        "name": str(ase),
+                        "user_code": str(ase),
+                        "spv": str(spv),
+                        "zona": zona,
+                        "plans": a_plans,
+                        "total": a_tot
+                    })
+                pdv_mix_nodes.append({
+                    "id": f"pdv_mix_{str(pdv).lower().replace(' ', '_')}",
+                    "name": str(pdv),
+                    "spv": str(spv),
+                    "zona": zona,
+                    "plans": p_plans,
+                    "total": p_tot,
+                    "children": ase_mix_nodes
+                })
+            spv_mix_nodes.append({
+                "id": f"spv_mix_{str(spv).lower().replace(' ', '_')}",
+                "name": str(spv),
+                "plans": s_plans,
+                "total": s_tot,
+                "children": pdv_mix_nodes
+            })
 
-    for idx in range(1, len(df_mix_sheet)):
-        row = df_mix_sheet.iloc[idx]
-        name = str(row.iloc[0]).strip()
-        if not name or name.lower() in ['nan', 'none', '']:
-            continue
-        if name.lower() == 'total general':
-            for col_idx, pcol in enumerate(plans_list):
-                if col_idx + 1 < len(row):
-                    v = row.iloc[col_idx + 1]
-                    try:
-                        summary_plans[pcol] = int(float(v)) if pd.notna(v) and str(v).lower() not in ['nan', 'none'] else 0
-                    except Exception:
-                        summary_plans[pcol] = 0
-            continue
-
-        row_plans = {}
-        for col_idx, pcol in enumerate(plans_list):
-            if col_idx + 1 < len(row):
-                v = row.iloc[col_idx + 1]
-                try:
-                    row_plans[pcol] = int(float(v)) if pd.notna(v) and str(v).lower() not in ['nan', 'none'] else 0
-                except Exception:
-                    row_plans[pcol] = 0
-            else:
-                row_plans[pcol] = 0
-
-        row_tot = sum(row_plans.values())
-
-        is_pdv = name.startswith('TE ') or name.startswith('TIENDA ') or name in store_spv_map
-        if is_pdv:
-            target_spv = store_spv_map.get(name, curr_spv)
-            if target_spv not in spvs_dict:
-                spvs_dict[target_spv] = {'name': target_spv, 'children': []}
-
-            curr_pdv_node = {
-                'id': f'pdv_mix_{name.lower().replace(" ", "_")}',
-                'name': name,
-                'spv': target_spv,
-                'zona': zona_map.get(name, 'SUR'),
-                'plans': row_plans,
-                'total': row_tot,
-                'children': []
-            }
-            spvs_dict[target_spv]['children'].append(curr_pdv_node)
-        elif curr_pdv_node:
-            ase_node = {
-                'id': f'ase_mix_{name.lower().replace(" ", "_")}',
-                'name': name,
-                'user_code': name,
-                'spv': curr_pdv_node['spv'],
-                'zona': curr_pdv_node['zona'],
-                'plans': row_plans,
-                'total': row_tot
-            }
-            curr_pdv_node['children'].append(ase_node)
-
-    spv_tree = []
-    tot_summary = sum(summary_plans.values())
-
-    for spv_name, spv_data in spvs_dict.items():
-        spv_plans = {p: 0 for p in plans_list}
-        spv_tot = 0
-        for pdv_node in spv_data['children']:
-            for p in plans_list:
-                spv_plans[p] += pdv_node['plans'].get(p, 0)
-            spv_tot += pdv_node['total']
-
-        if tot_summary == 0:
-            for p in plans_list:
-                summary_plans[p] += spv_plans[p]
-
-        spv_tree.append({
-            'id': f'spv_mix_{spv_name.lower().replace(" ", "_")}',
-            'name': spv_name,
-            'plans': spv_plans,
-            'total': spv_tot,
-            'children': spv_data['children']
-        })
-
-    tot_summary = sum(summary_plans.values())
-
-    mix_months_obj = {
-        "Agosto": {
-            "month_label": "Agosto 2026",
+        mix_months[m_name] = {
+            "month_label": f"{m_name} 2026",
             "plans_list": plans_list,
-            "summary": {"plans": summary_plans, "total": tot_summary},
-            "tree": spv_tree
+            "summary": {"plans": summary_plans, "total": tot_plans},
+            "tree": spv_mix_nodes
         }
-    }
 
     mix_planes_data_obj = {
         "month_label": "Agosto 2026",
         "plans_list": plans_list,
-        "months": mix_months_obj,
-        "summary": summary_plans,
-        "tree": spv_tree
+        "months": mix_months,
+        "summary": mix_months["Agosto"]["summary"],
+        "tree": mix_months["Agosto"]["tree"]
     }
 
     # 7.4 BUILD DOTACION_DATA (Dynamic from DOTACIÓN sheet with full Asesor hierarchy)
