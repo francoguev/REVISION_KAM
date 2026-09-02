@@ -454,7 +454,7 @@
           </select>
 
           <button class="btn-glass" onclick="toggleDotacionDays()">
-            <i class="fa-solid fa-calendar-days"></i> <span id="toggleDaysText">Mostrar Días (26 Jul - 1 Ago)</span>
+            <i class="fa-solid fa-calendar-days"></i> <span id="toggleDaysText">Mostrar Días (16-Ago - 22-Ago)</span>
           </button>
         </div>
       </header>
@@ -1360,24 +1360,45 @@ function toggleDotacionDays() {
     window.toggleDotacionPdv = toggleDotacionPdv;
     
 
+    function syncDotacionPeriodSelector() {
+      const periodFilter = document.getElementById('dotacionPeriodFilter');
+      const rootData = window.DOTACION_DATA;
+      if (!periodFilter || !rootData || !rootData.periods) return;
+      const periods = Object.keys(rootData.periods);
+      if (periods.length === 0) return;
+
+      const currentVal = periodFilter.value;
+      const optionsHTML = periods.map(p => `<option value="${p}" ${p === currentVal ? 'selected' : ''}>${p}</option>`).join('');
+      if (periodFilter.innerHTML.trim() !== optionsHTML.trim()) {
+        periodFilter.innerHTML = optionsHTML;
+        if (periods.includes(currentVal)) {
+          periodFilter.value = currentVal;
+        } else {
+          periodFilter.value = rootData.default_period || periods[0];
+        }
+      }
+    }
+
     function getActiveDotacionData() {
       const rootData = window.DOTACION_DATA;
       if (!rootData) return null;
+      syncDotacionPeriodSelector();
       const periodFilter = document.getElementById('dotacionPeriodFilter');
-      const selectedPeriod = periodFilter ? periodFilter.value : (rootData.default_period || '9-15');
+      const selectedPeriod = periodFilter ? periodFilter.value : (rootData.default_period || '16-22');
       return rootData.periods && rootData.periods[selectedPeriod] ? rootData.periods[selectedPeriod] : rootData;
     }
 
     function renderDotacionHeader() {
       const thead = document.getElementById('dotacionThead');
-      if (!thead) return;
       const dData = getActiveDotacionData();
-      const dHeaders = (dData && dData.daily_headers) ? dData.daily_headers : ['5-Ago', '6-Ago', '7-Ago', '8-Ago', '9-Ago', '10-Ago', '11-Ago'];
+      const dHeaders = (dData && dData.daily_headers) ? dData.daily_headers : ['16-Ago', '17-Ago', '18-Ago', '19-Ago', '20-Ago', '21-Ago', '22-Ago'];
       
       const btnText = document.getElementById('toggleDaysText');
       if (btnText && dHeaders.length > 0) {
         btnText.textContent = `${pageState[6].daysExpanded ? 'Ocultar' : 'Mostrar'} Días (${dHeaders[0]} - ${dHeaders[dHeaders.length - 1]})`;
       }
+
+      if (!thead) return;
 
       let dailyThs = '';
       if (pageState[6].daysExpanded) {
@@ -1401,9 +1422,9 @@ function toggleDotacionDays() {
       `;
     }
 
-        
 window.renderDotacionTable = function renderDotacionTable() {
   globalThis.renderDotacionTable = renderDotacionTable;
+      renderDotacionHeader();
       const tbody = document.getElementById('dotacionTbody');
       if (!tbody) return;
       tbody.innerHTML = '';
