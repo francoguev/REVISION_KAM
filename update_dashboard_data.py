@@ -687,7 +687,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
         m = re.search(r'(\d+-\d+)', sheet_name)
         period_key = m.group(1) if m else sheet_name
         dotacion_periods[period_key] = build_dotacion_period(sheet_name)
-    default_dotacion_period = '9-15' if '9-15' in dotacion_periods else next(iter(dotacion_periods))
+    default_dotacion_period = '16-22' if '16-22' in dotacion_periods else next(iter(dotacion_periods))
     dotacion_data_obj = {"default_period": default_dotacion_period, "periods": dotacion_periods, **dotacion_periods[default_dotacion_period]}
 
     # 7.5 BUILD PERMANENCIA_DATA (Dynamic for all Camadas: Agosto, Julio, Junio, Enero)
@@ -788,117 +788,84 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             return round(val * 100, 1) if is_pct else int(val)
         except: return None if is_pct else 0
 
+    def build_nps_channel_rows(df_nps, channel_name):
+        nps_rows = [i for i in range(len(df_nps)) if str(df_nps.iloc[i, 0]).strip().upper() == channel_name]
+        start_row = nps_rows[-1] if nps_rows else 6
+
+        pdvs = []
+        summary = {"total_nps": 0.0, "total_q": 0}
+        curr_pdv = None
+
+        for idx in range(start_row, len(df_nps)):
+            row = df_nps.iloc[idx]
+            est = str(row.iloc[0]).strip()
+            if not est or est.upper() in ['NAN', 'TOTAL GENERAL']: continue
+
+            n_col = len(row)
+            tot_nps = parse_nps_val(row.iloc[n_col - 2], is_pct=True) or 0.0
+            tot_q = parse_nps_val(row.iloc[n_col - 1]) or 0
+            s1_nps = parse_nps_val(row.iloc[1], is_pct=True)
+            s1_q = parse_nps_val(row.iloc[2])
+
+            if est.upper() == channel_name:
+                summary = {
+                    "total_nps": tot_nps,
+                    "total_q": tot_q,
+                    "total_pct_q": 100.0,
+                    "sem1_nps": s1_nps,
+                    "sem1_q": s1_q
+                }
+                continue
+
+            is_pdv = est.startswith('TE ') or est in store_spv_map
+            if is_pdv:
+                target_spv = store_spv_map.get(est, 'MARÍA BERNAOLA')
+                curr_pdv = {
+                    "name": est, "spv": target_spv, "zona": "SUR",
+                    "total_nps": tot_nps, "total_q": tot_q, "total_pct_q": 100.0,
+                    "sem1_nps": s1_nps, "sem1_q": s1_q,
+                    "children": []
+                }
+                pdvs.append(curr_pdv)
+            elif curr_pdv:
+                curr_pdv["children"].append({
+                    "name": est,
+                    "total_nps": tot_nps, "total_q": tot_q, "total_pct_q": 100.0,
+                    "sem1_nps": s1_nps, "sem1_q": s1_q
+                })
+
+        pdvs.sort(key=lambda x: x["total_nps"], reverse=True)
+        for p in pdvs: p["children"].sort(key=lambda x: x["total_nps"], reverse=True)
+        return summary, pdvs
+
     # NPS VENTA
     nps_v_sheet_name = [s for s in xl.sheet_names if 'NPS' in s.upper() and 'VENTA' in s.upper() and 'POST' not in s.upper()][0] if 'xl' in locals() else 'NPS VENTA'
     df_nps_v = pd.read_excel(excel_path, sheet_name=nps_v_sheet_name)
     strip_text_columns(df_nps_v)
-
-    pdvs_v = []
-    summary_v = {"total_nps": 0.0, "total_q": 0}
-    curr_pdv_v = None
-
-    for idx in range(6, len(df_nps_v)):
-        row = df_nps_v.iloc[idx]
-        est = str(row.iloc[0]).strip()
-        if not est or est.upper() in ['NAN', 'TOTAL GENERAL']: continue
-
-        if est.upper() == 'VENTA':
-            summary_v = {
-                "total_nps": parse_nps_val(row.iloc[4], is_pct=True),
-                "total_q": parse_nps_val(row.iloc[5]),
-                "total_pct_q": parse_nps_val(row.iloc[6], is_pct=True),
-                "sem1_nps": parse_nps_val(row.iloc[1], is_pct=True),
-                "sem1_q": parse_nps_val(row.iloc[2])
-            }
-            continue
-
-        tot_nps = parse_nps_val(row.iloc[4], is_pct=True) or 0.0
-        tot_q = parse_nps_val(row.iloc[5]) or 0
-        tot_pct_q = parse_nps_val(row.iloc[6], is_pct=True) or 0.0
-        s1_nps = parse_nps_val(row.iloc[1], is_pct=True)
-        s1_q = parse_nps_val(row.iloc[2])
-
-        is_pdv = est.startswith('TE ') or est in store_spv_map
-        if is_pdv:
-            target_spv = store_spv_map.get(est, 'MARÍA BERNAOLA')
-            curr_pdv_v = {
-                "name": est, "spv": target_spv, "zona": "SUR",
-                "total_nps": tot_nps, "total_q": tot_q, "total_pct_q": tot_pct_q,
-                "sem1_nps": s1_nps, "sem1_q": s1_q,
-                "children": []
-            }
-            pdvs_v.append(curr_pdv_v)
-        elif curr_pdv_v:
-            curr_pdv_v["children"].append({
-                "name": est,
-                "total_nps": tot_nps, "total_q": tot_q, "total_pct_q": tot_pct_q,
-                "sem1_nps": s1_nps, "sem1_q": s1_q
-            })
-
-    pdvs_v.sort(key=lambda x: x["total_nps"], reverse=True)
-    for p in pdvs_v: p["children"].sort(key=lambda x: x["total_nps"], reverse=True)
+    summary_v, pdvs_v = build_nps_channel_rows(df_nps_v, 'VENTA')
 
     # NPS POSTVENTA
     nps_p_sheet_name = [s for s in xl.sheet_names if 'NPS' in s.upper() and 'POST' in s.upper()][0] if 'xl' in locals() else 'NPS POSTVENTA'
     df_nps_p = pd.read_excel(excel_path, sheet_name=nps_p_sheet_name)
     strip_text_columns(df_nps_p)
-
-    pdvs_p = []
-    summary_p = {"total_nps": -50.0, "total_q": 2}
-    curr_pdv_p = None
-
-    for idx in range(6, len(df_nps_p)):
-        row = df_nps_p.iloc[idx]
-        est = str(row.iloc[0]).strip()
-        if not est or est.upper() in ['NAN', 'TOTAL GENERAL']: continue
-
-        if est.upper() == 'POSTVENTA':
-            summary_p = {
-                "total_nps": parse_nps_val(row.iloc[4], is_pct=True),
-                "total_q": parse_nps_val(row.iloc[5]),
-                "total_pct_q": parse_nps_val(row.iloc[6], is_pct=True),
-                "sem1_nps": parse_nps_val(row.iloc[1], is_pct=True),
-                "sem1_q": parse_nps_val(row.iloc[2])
-            }
-            continue
-
-        tot_nps = parse_nps_val(row.iloc[4], is_pct=True) or 0.0
-        tot_q = parse_nps_val(row.iloc[5]) or 0
-        tot_pct_q = parse_nps_val(row.iloc[6], is_pct=True) or 0.0
-        s1_nps = parse_nps_val(row.iloc[1], is_pct=True)
-        s1_q = parse_nps_val(row.iloc[2])
-
-        is_pdv = est.startswith('TE ') or est in store_spv_map
-        if is_pdv:
-            target_spv = store_spv_map.get(est, 'MARÍA BERNAOLA')
-            curr_pdv_p = {
-                "name": est, "spv": target_spv, "zona": "SUR",
-                "total_nps": tot_nps, "total_q": tot_q, "total_pct_q": tot_pct_q,
-                "sem1_nps": s1_nps, "sem1_q": s1_q,
-                "children": []
-            }
-            pdvs_p.append(curr_pdv_p)
-        elif curr_pdv_p:
-            curr_pdv_p["children"].append({
-                "name": est,
-                "total_nps": tot_nps, "total_q": tot_q, "total_pct_q": tot_pct_q,
-                "sem1_nps": s1_nps, "sem1_q": s1_q
-            })
-
-    pdvs_p.sort(key=lambda x: x["total_nps"], reverse=True)
-    for p in pdvs_p: p["children"].sort(key=lambda x: x["total_nps"], reverse=True)
+    summary_p, pdvs_p = build_nps_channel_rows(df_nps_p, 'POSTVENTA')
 
     def build_nps_channel_v2(sheet_name, channel_label):
         raw = pd.read_excel(excel_path, sheet_name=sheet_name, header=None)
-        header = raw.iloc[5]
+        
+        channel_rows = [i for i in range(len(raw)) if str(raw.iloc[i, 0]).strip().upper() == channel_label]
+        start_idx = channel_rows[-1] if channel_rows else 6
+        header_row_idx = start_idx - 2 if start_idx >= 2 else 5
+        header = raw.iloc[header_row_idx]
+
         weeks = []
         for col_idx, value in enumerate(header):
-            match = re.fullmatch(r'SEM(\d+)', str(value).strip().upper())
+            match = re.search(r'SEM(\d+)', str(value).strip().upper())
             if match:
                 weeks.append({"number": int(match.group(1)), "nps_col": col_idx, "q_col": col_idx + 1})
 
-        total_nps_col = next(idx for idx, value in enumerate(header) if re.sub(r'\s+', ' ', str(value).strip().upper()) == 'TOTAL NPS')
-        total_q_col = next(idx for idx, value in enumerate(header) if re.sub(r'\s+', ' ', str(value).strip().upper()) == 'TOTAL Q')
+        total_nps_col = next((idx for idx, value in enumerate(header) if re.sub(r'\s+', ' ', str(value).strip().upper()) == 'TOTAL NPS'), len(header) - 2)
+        total_q_col = next((idx for idx, value in enumerate(header) if re.sub(r'\s+', ' ', str(value).strip().upper()) == 'TOTAL Q'), len(header) - 1)
 
         def metrics_for(row):
             metrics = {
@@ -914,7 +881,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
         summary = {"total_nps": 0.0, "total_q": 0}
         pdvs = []
         current_pdv = None
-        for idx in range(7, len(raw)):
+        for idx in range(start_idx, len(raw)):
             row = raw.iloc[idx]
             label = str(row.iloc[0]).strip()
             if not label or label.upper() in {'NAN', 'TOTAL GENERAL'}:
@@ -923,7 +890,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             if label.upper() == channel_label:
                 summary = metrics
                 continue
-            if label.startswith('TE ') or label in store_spv_map:
+            if label.startswith('TE ') or label.startswith('TIENDA ') or label in store_spv_map:
                 current_pdv = {
                     "name": label,
                     "spv": store_spv_map.get(label, 'MARÍA BERNAOLA'),
@@ -944,7 +911,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     postventa_channel = build_nps_channel_v2(nps_p_sheet_name, 'POSTVENTA')
 
     nps_data_obj = {
-        "target": 58.0,
+        "target": 57.0,
         "venta": venta_channel,
         "postventa": postventa_channel
     }
