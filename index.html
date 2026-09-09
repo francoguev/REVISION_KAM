@@ -96,10 +96,10 @@
       <!-- Línea divisoria en gradiente azul -->
       <div style="width: 140px; height: 5px; background: linear-gradient(90deg, #1d4ed8 0%, #60a5fa 100%); border-radius: 3px; margin-bottom: 28px;"></div>
 
-      <!-- AGOSTO S1-S2-S3-S4 (Pequeño / Pill corporativo) -->
+      <!-- SETIEMBRE S1 (Pequeño / Pill corporativo) -->
       <div style="display: inline-flex; align-items: center; gap: 8px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 700; letter-spacing: 1px;">
         <i class="fa-solid fa-calendar-days" style="color: #2563eb;"></i>
-        <span>AGOSTO S1-S2-S3-S4</span>
+        <span>SETIEMBRE S1</span>
       </div>
 
       <!-- Metadata del informe al pie de la portada -->
@@ -122,7 +122,7 @@
           <div>
             <h1 class="slide-title">Reporte de Avance y Proyección de Ventas</h1>
             <div class="slide-subtitle" id="headerPeriodSubtitle">
-              Agosto 2026 (Mes Vigente - Avance 26/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">POSTPAGO TOTAL</strong>
+              Setiembre 2026 (Mes Vigente - Avance 7/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">POSTPAGO TOTAL</strong>
             </div>
           </div>
         </div>
@@ -143,9 +143,9 @@
           
 
           <select id="monthSelectHeader" class="month-select-glass" onchange="handleMonthChange(this.value)">
-            <option value="m202608" selected>Agosto</option>
+            <option value="m202609" selected>Setiembre</option>
+            <option value="m202608">Agosto</option>
             <option value="m202607">Julio</option>
-            <option value="m202606">Junio</option>
           </select>
 
           
@@ -226,9 +226,9 @@
 
         <div class="header-actions">
           <select id="monthDiscountFilter" class="month-select-glass" onchange="renderDiscountTable()">
-            <option value="Agosto" selected>Agosto</option>
+            <option value="Setiembre" selected>Setiembre</option>
+            <option value="Agosto">Agosto</option>
             <option value="Julio">Julio</option>
-            <option value="Junio">Junio</option>
           </select>
           <select id="zoneSelectPage2" class="month-select-glass" onchange="renderDiscountTable()">
             <option value="ALL" selected>🌍 Todas las Zonas</option>
@@ -279,9 +279,9 @@
         </div>
         <div class="header-actions">
           <select id="monthCedenteFilter" class="month-select-glass" onchange="renderCedenteTable()">
-            <option value="Agosto" selected>Agosto</option>
+            <option value="Setiembre" selected>Setiembre</option>
+            <option value="Agosto">Agosto</option>
             <option value="Julio">Julio</option>
-            <option value="Junio">Junio</option>
           </select>
           <select id="zoneSelectPage3" class="month-select-glass" onchange="renderCedenteTable()">
             <option value="ALL">🌍 Todas las Zonas</option>
@@ -335,9 +335,9 @@
         </div>
         <div class="header-actions">
           <select id="monthMixPlanesFilter" class="month-select-glass" onchange="renderMixPlanesTable()">
-            <option value="Agosto" selected>Agosto</option>
+            <option value="Setiembre" selected>Setiembre</option>
+            <option value="Agosto">Agosto</option>
             <option value="Julio">Julio</option>
-            <option value="Junio">Junio</option>
           </select>
           <select id="zoneSelectPage4" class="month-select-glass" onchange="renderMixPlanesTable()">
             <option value="ALL">🌍 Todas las Zonas</option>
@@ -388,16 +388,16 @@
         <div class="slide-title-box">
           <div class="slide-icon"><i class="fa-solid fa-user-shield"></i></div>
           <div>
-            <h1 id="permanenciaTitle" class="slide-title">Reporte de Permanencia M6 (Camada Agosto 2026)</h1>
-            <div id="permanenciaSubtitle" class="slide-subtitle">Curva de Desactivación M0 a M6 (Agosto 2026) &bull; <strong>Objetivo de Permanencia: 50.0%</strong></div>
+            <h1 id="permanenciaTitle" class="slide-title">Reporte de Permanencia M6 (Camada Setiembre 2026)</h1>
+            <div id="permanenciaSubtitle" class="slide-subtitle">Curva de Desactivación M0 a M6 (Setiembre 2026) &bull; <strong>Objetivo de Permanencia: 50.0%</strong></div>
           </div>
         </div>
         <div class="header-actions">
           <select id="monthPermanenciaFilter" class="month-select-glass" onchange="renderPermanenciaTable()">
-            <option value="Agosto" selected>Agosto</option>
+            <option value="Setiembre" selected>Setiembre</option>
+            <option value="Agosto">Agosto</option>
             <option value="Julio">Julio</option>
-            <option value="Junio">Junio</option>
-            <option value="Enero">Enero</option>
+            <option value="Febrero">Febrero</option>
           </select>
         </div>
       </header>
@@ -571,14 +571,14 @@
                 // ================= GLOBAL STATE VARIABLES =================
     
     var totalCondicion = 0;
-    var ELAPSED_WD = 26;
+    var ELAPSED_WD = 7;
     var TOTAL_WD = 26;
     var grandCondicionPct = 74.0;
 
     // Estado aislado: cada página administra exclusivamente sus propios valores.
     const shellState = { page: 0 };
     const pageState = {
-      1: { sort: { column: null, direction: 'desc' }, productCode: 'POSTPAGO_TOTAL', monthFilter: 'm202608', query: '', expanded: {}, allExpanded: false },
+      1: { sort: { column: null, direction: 'desc' }, productCode: 'POSTPAGO_TOTAL', monthFilter: 'm202609', query: '', expanded: {}, allExpanded: false },
       2: { expanded: {}, query: '', allExpanded: false },
       3: { expanded: {} },
       4: { expanded: {} },
@@ -587,6 +587,7 @@
       7: { expanded: {}, channel: 'venta' },
     };
     var monthLabelsMap = {
+      'm202609': 'Setiembre 2026',
       'm202608': 'Agosto 2026',
       'm202607': 'Julio 2026',
       'm202606': 'Junio 2026',
@@ -598,6 +599,7 @@
     };
 
     var prevMonthLabels = {
+      'm202609': 'm202608',
       'm202608': 'm202607',
       'm202607': 'm202606',
       'm202606': 'm202605',
@@ -702,7 +704,9 @@
 
     function getIdealValue(quota) {
       const numericQuota = Number(quota || 0);
-      if (numericQuota <= 0 || TOTAL_WD <= 0 || ELAPSED_WD <= 0) return 0;
+      if (numericQuota <= 0) return 0;
+      if (pageState[1].monthFilter !== 'm202609') return numericQuota;
+      if (TOTAL_WD <= 0 || ELAPSED_WD <= 0) return 0;
       return Math.round((numericQuota / TOTAL_WD) * ELAPSED_WD);
     }
 
@@ -741,8 +745,8 @@
     function handleMonthChange(val) {
       pageState[1].monthFilter = val;
       const subtitle = document.getElementById('headerPeriodSubtitle');
-      if (val === 'm202608') {
-        subtitle.innerHTML = 'Agosto 2026 (Mes Vigente - Avance 26/26 Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">' + getProductLabel() + '</strong>';
+      if (val === 'm202609') {
+        subtitle.innerHTML = `Setiembre 2026 (Mes Vigente - Avance ${ELAPSED_WD}/${TOTAL_WD} Días Hábiles) &bull; <strong class="selected-product-badge" style="color: #6366f1">${getProductLabel()}</strong>`;
       } else {
         subtitle.innerHTML = `Mes Filtrado: ${monthLabelsMap[val] || val} &bull; <strong class="selected-product-badge" style="color: #6366f1">${getProductLabel()}</strong>`;
       }
@@ -930,20 +934,20 @@
 
       const showArribos = (pageState[1].productCode === 'POSTPAGO_TOTAL');
 
-      if (pageState[1].monthFilter === 'm202608') {
+      if (pageState[1].monthFilter === 'm202609') {
         thead.innerHTML = `
           <tr>
             <th style="min-width: 280px;">PUNTO DE VENTA / ASESOR</th>
             <th class="val-cell sortable" onclick="sortTable('quota')">CUOTA</th>
-            <th class="val-cell sortable" onclick="sortTable('m202608')">AVANCE</th>
+            <th class="val-cell sortable" onclick="sortTable('m202609')">AVANCE</th>
             <th class="val-cell">IDEAL</th>
             <th class="val-cell">GAP</th>
             <th class="val-cell sortable" onclick="sortTable('pct_cump')">% AVANCE</th>
             ${showArribos ? `<th class="val-cell">ARRIBOS</th><th class="val-cell">% CONV.</th>` : ''}
             <th class="val-cell">PROY</th>
             <th class="val-cell">% CUMP.</th>
-            <th class="val-cell sortable" onclick="sortTable('m1')">JULIO</th>
-            <th class="val-cell sortable" onclick="sortTable('var_m1')">VAR VS JULIO</th>
+            <th class="val-cell sortable" onclick="sortTable('m1')">AGOSTO</th>
+            <th class="val-cell sortable" onclick="sortTable('var_m1')">VAR VS AGOSTO</th>
           </tr>
         `;
       } else {
@@ -993,8 +997,8 @@
       treeData.forEach(spv => {
         grandTotal += getNodeUnits(spv, keyToUse);
         grandQuota += getNodeQuota(spv, keyToUse);
-        if (pageState[1].monthFilter === 'm202608') {
-          grandM1Units += getNodeUnits(spv, 'm202607');
+        if (pageState[1].monthFilter === 'm202609') {
+          grandM1Units += getNodeUnits(spv, 'm202608');
         } else if (prevMKey) {
           grandM1Units += getNodeUnits(spv, prevMKey);
         }
@@ -1020,22 +1024,22 @@
       trTotal.className = 'row-grand-total';
 
       if (pageState[1].monthFilter === 'ALL') {
-        let m6 = 0, m7 = 0, m8 = 0;
+        let m7 = 0, m8 = 0, m9 = 0;
         treeData.forEach(spv => {
-          m6 += getNodeUnits(spv, 'm202606');
           m7 += getNodeUnits(spv, 'm202607');
           m8 += getNodeUnits(spv, 'm202608');
+          m9 += getNodeUnits(spv, 'm202609');
         });
 
         trTotal.innerHTML = `
           <td><div class="node-cell indent-0"><span>TOTAL FORTALECERNOS</span></div></td>
-          <td class="val-cell num-font">${m6.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${m7.toLocaleString('es-PE')}</td>
           <td class="val-cell num-font">${m8.toLocaleString('es-PE')}</td>
+          <td class="val-cell num-font">${m9.toLocaleString('es-PE')}</td>
           ${showArribos ? `<td class="val-cell num-font" style="color: #38bdf8;">${grandArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font">${getConversionBadgeHTML(grandConvPct)}</td>` : ''}
           <td class="val-cell num-font" style="color: #34d399;">${grandTotal.toLocaleString('es-PE')}</td>
         `;
-      } else if (pageState[1].monthFilter === 'm202608') {
+      } else if (pageState[1].monthFilter === 'm202609') {
         const grandIdeal = getIdealValue(grandQuota);
         const grandGap = grandTotal - grandIdeal;
         const grandProjUnits = Math.round((grandTotal / ELAPSED_WD) * TOTAL_WD);
@@ -1100,9 +1104,9 @@
         const spvConvPct = spvArribos > 0 ? (spvTotal / spvArribos * 100) : 0;
 
         if (pageState[1].monthFilter === 'ALL') {
-          const m6 = getNodeUnits(spv, 'm202606');
           const m7 = getNodeUnits(spv, 'm202607');
           const m8 = getNodeUnits(spv, 'm202608');
+          const m9 = getNodeUnits(spv, 'm202609');
 
           trSpv.innerHTML = `
             <td>
@@ -1111,18 +1115,18 @@
                 <span style="font-weight: 800; color: #0f172a;">${spv.name}</span>
               </div>
             </td>
-            <td class="val-cell num-font">${m6.toLocaleString('es-PE')}</td>
             <td class="val-cell num-font">${m7.toLocaleString('es-PE')}</td>
             <td class="val-cell num-font">${m8.toLocaleString('es-PE')}</td>
+            <td class="val-cell num-font">${m9.toLocaleString('es-PE')}</td>
             ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${spvArribos.toLocaleString('es-PE')}</td><td class="val-cell num-font" style="color: #475569;">${spvConvPct.toFixed(1)}%</td>` : ''}
             <td class="val-cell num-font val-total" style="color: #0f172a;">${spvTotal.toLocaleString('es-PE')}</td>
           `;
-        } else if (pageState[1].monthFilter === 'm202608') {
+        } else if (pageState[1].monthFilter === 'm202609') {
           const spvIdeal = getIdealValue(spvQuota);
           const spvGap = spvTotal - spvIdeal;
           const projUnits = Math.round((spvTotal / ELAPSED_WD) * TOTAL_WD);
           const projComp = spvQuota > 0 ? (projUnits / spvQuota * 100) : 0;
-          const spvM1 = getNodeUnits(spv, 'm202607');
+          const spvM1 = getNodeUnits(spv, 'm202608');
           const spvVarM1 = projUnits - spvM1;
           const spvVarPct = spvM1 > 0 ? (spvVarM1 / spvM1 * 100) : 0;
 
@@ -1186,9 +1190,9 @@
             const pdvConvPct = pdvArribos > 0 ? (pdvTotal / pdvArribos * 100) : 0;
 
             if (pageState[1].monthFilter === 'ALL') {
-              const m6 = getNodeUnits(pdv, 'm202606');
               const m7 = getNodeUnits(pdv, 'm202607');
               const m8 = getNodeUnits(pdv, 'm202608');
+              const m9 = getNodeUnits(pdv, 'm202609');
 
               trPdv.innerHTML = `
                 <td>
@@ -1197,18 +1201,18 @@
                     <span style="font-weight: 700; color: #334155;">${pdv.name}</span>
                   </div>
                 </td>
-                <td class="val-cell num-font">${m6.toLocaleString('es-PE')}</td>
                 <td class="val-cell num-font">${m7.toLocaleString('es-PE')}</td>
                 <td class="val-cell num-font">${m8.toLocaleString('es-PE')}</td>
+                <td class="val-cell num-font">${m9.toLocaleString('es-PE')}</td>
                 ${showArribos ? `<td class="val-cell num-font" style="color: #475569;">${pdvArribos > 0 ? pdvArribos.toLocaleString('es-PE') : '-'}</td><td class="val-cell num-font">${pdvArribos > 0 ? getConversionBadgeHTML(pdvConvPct) : '-'}</td>` : ''}
                 <td class="val-cell num-font val-total" style="color: #0f172a;">${pdvTotal.toLocaleString('es-PE')}</td>
               `;
-            } else if (pageState[1].monthFilter === 'm202608') {
+            } else if (pageState[1].monthFilter === 'm202609') {
               const pdvIdeal = getIdealValue(pdvQuota);
               const pdvGap = pdvTotal - pdvIdeal;
               const projUnits = Math.round((pdvTotal / ELAPSED_WD) * TOTAL_WD);
               const projComp = pdvQuota > 0 ? (projUnits / pdvQuota * 100) : 0;
-              const pdvM1 = getNodeUnits(pdv, 'm202607');
+              const pdvM1 = getNodeUnits(pdv, 'm202608');
               const pdvVarM1 = projUnits - pdvM1;
               const pdvVarPct = pdvM1 > 0 ? (pdvVarM1 / pdvM1 * 100) : 0;
 
@@ -1276,18 +1280,18 @@
                         <span class="advisor-name-line"><span class="advisor-name">${realName || userCode}</span>${getAdvisorTenureHTML(ase)}</span>
                       </div>
                     </td>
-                    <td class="val-cell num-font">${getNodeUnits(ase, 'm202606').toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202607').toLocaleString('es-PE')}</td>
                     <td class="val-cell num-font">${getNodeUnits(ase, 'm202608').toLocaleString('es-PE')}</td>
+                    <td class="val-cell num-font">${getNodeUnits(ase, 'm202609').toLocaleString('es-PE')}</td>
                     ${showArribos ? `<td class="val-cell num-font" style="color: var(--text-light);">-</td><td class="val-cell num-font" style="color: var(--text-light);">-</td>` : ''}
                     <td class="val-cell num-font val-highlight">${aseTotal.toLocaleString('es-PE')}</td>
                   `;
-                } else if (pageState[1].monthFilter === 'm202608') {
+                } else if (pageState[1].monthFilter === 'm202609') {
                   const aseIdeal = getIdealValue(aseQuota);
                   const aseGap = aseTotal - aseIdeal;
                   const projUnits = Math.round((aseTotal / ELAPSED_WD) * TOTAL_WD);
                   const projComp = aseQuota > 0 ? (projUnits / aseQuota * 100) : 0;
-                  const aseM1 = getNodeUnits(ase, 'm202607');
+                  const aseM1 = getNodeUnits(ase, 'm202608');
                   const aseVarM1 = projUnits - aseM1;
                   const aseVarPct = aseM1 > 0 ? (aseVarM1 / aseM1 * 100) : 0;
 
@@ -1344,7 +1348,6 @@
 
 function toggleDotacionDays() {
       pageState[6].daysExpanded = !pageState[6].daysExpanded;
-      document.getElementById('toggleDaysText').textContent = pageState[6].daysExpanded ? 'Ocultar Días (26-Jul a 1-Ago)' : 'Mostrar Días (26-Jul - 1-Ago)';
       renderDotacionHeader();
       renderDotacionTable();
     }
@@ -1920,7 +1923,7 @@ window.renderDotacionTable = function renderDotacionTable() {
       if (!tbody) return;
       tbody.innerHTML = '';
 
-      const selMonth = document.getElementById('monthCedenteFilter') ? document.getElementById('monthCedenteFilter').value : 'Agosto';
+      const selMonth = document.getElementById('monthCedenteFilter') ? document.getElementById('monthCedenteFilter').value : 'Setiembre';
       const selZone = document.getElementById('zoneSelectPage3') ? document.getElementById('zoneSelectPage3').value : 'ALL';
       const selSpv = document.getElementById('spvCedenteFilter') ? document.getElementById('spvCedenteFilter').value : 'ALL';
 
@@ -2060,7 +2063,7 @@ window.renderDotacionTable = function renderDotacionTable() {
       if (!tbody) return;
       tbody.innerHTML = '';
 
-      const selMonth = document.getElementById('monthMixPlanesFilter') ? document.getElementById('monthMixPlanesFilter').value : 'Agosto';
+      const selMonth = document.getElementById('monthMixPlanesFilter') ? document.getElementById('monthMixPlanesFilter').value : 'Setiembre';
       const selZone = document.getElementById('zoneSelectPage4') ? document.getElementById('zoneSelectPage4').value : 'ALL';
       const selSpv = document.getElementById('spvMixFilter') ? document.getElementById('spvMixFilter').value : 'ALL';
       
@@ -2201,9 +2204,9 @@ window.renderDotacionTable = function renderDotacionTable() {
       if (!tbody) return;
       tbody.innerHTML = '';
 
-      const selMonth = document.getElementById('monthPermanenciaFilter') ? document.getElementById('monthPermanenciaFilter').value : 'Agosto';
+      const selMonth = document.getElementById('monthPermanenciaFilter') ? document.getElementById('monthPermanenciaFilter').value : 'Setiembre';
 
-      const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+      const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
       const monthAbbreviations = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
       const selectedMonthIndex = monthNames.indexOf(selMonth);
       if (selectedMonthIndex >= 0) {

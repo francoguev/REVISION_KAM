@@ -202,16 +202,16 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     df_reno['ZONA'] = df_reno[pdv_col].map(zona_map).fillna('CENTRO')
     df_reno['Nombre del mes'] = df_reno['Nombre del mes'].fillna('Agosto')
 
-    month_map = {'Junio': 'm202606', 'Julio': 'm202607', 'Agosto': 'm202608'}
+    month_map = {'Julio': 'm202607', 'Agosto': 'm202608', 'Setiembre': 'm202609', 'Septiembre': 'm202609'}
 
     # 3. BUILD ARRIBOS_DATA
     arribos_dict = {}
     for _, row in df_arribos.iterrows():
         t_name = str(row['TIENDA ']).strip()
-        jun = int(row['JUNIO']) if not pd.isna(row['JUNIO']) else 0
-        jul = int(row['JULIO']) if not pd.isna(row['JULIO']) else 0
-        ago = int(row['AGOSTO']) if not pd.isna(row['AGOSTO']) else 0
-        entry = {"m202606": jun, "m202607": jul, "m202608": ago}
+        jul = int(row['JULIO']) if 'JULIO' in row and not pd.isna(row['JULIO']) else 0
+        ago = int(row['AGOSTO']) if 'AGOSTO' in row and not pd.isna(row['AGOSTO']) else 0
+        set_v = int(row['SETIEMBRE']) if 'SETIEMBRE' in row and not pd.isna(row['SETIEMBRE']) else (int(row['SEPTIEMBRE']) if 'SEPTIEMBRE' in row and not pd.isna(row['SEPTIEMBRE']) else 0)
+        entry = {"m202607": jul, "m202608": ago, "m202609": set_v}
         arribos_dict[t_name] = entry
         if t_name == 'TE ICA':
             arribos_dict['TE SAN CLEMENTE'] = entry
@@ -231,7 +231,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     def add_units(spv, pdv, zona, ase, pcode, m_key, cnt):
         if spv not in units_dict: units_dict[spv] = {"zona": zona, "pdvs": {}}
         if pdv not in units_dict[spv]["pdvs"]: units_dict[spv]["pdvs"][pdv] = {"zona": zona, "ases": {}}
-        if ase not in units_dict[spv]["pdvs"][pdv]["ases"]: units_dict[spv]["pdvs"][pdv]["ases"][ase] = {p["id"]: {"m202606":0,"m202607":0,"m202608":0} for p in prod_definitions}
+        if ase not in units_dict[spv]["pdvs"][pdv]["ases"]: units_dict[spv]["pdvs"][pdv]["ases"][ase] = {p["id"]: {"m202607":0,"m202608":0,"m202609":0} for p in prod_definitions}
         units_dict[spv]["pdvs"][pdv]["ases"][ase][pcode][m_key] += cnt
 
     for _, row in df_post.iterrows():
@@ -259,7 +259,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
         pdv = row['PDVS']
         p_name = row['PRODUCTO']
         q_val = int(row['CUOTA']) if not pd.isna(row['CUOTA']) else 0
-        if pdv not in quotas_dict: quotas_dict[pdv] = {p["id"]: {"m202606":0,"m202607":0,"m202608":0} for p in prod_definitions}
+        if pdv not in quotas_dict: quotas_dict[pdv] = {p["id"]: {"m202607":0,"m202608":0,"m202609":0} for p in prod_definitions}
         if m_key:
             if p_name in ['PORTA OSS', 'PORTA OPP', 'VR BASE', 'VR CAPTURA']:
                 quotas_dict[pdv]["POSTPAGO_TOTAL"][m_key] += q_val
@@ -277,25 +277,25 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
                 quotas_dict[pdv]["PREPAGO"][m_key] += q_val
 
     tree_sales = []
-    global_quotas = {p["id"]: {"m202606":0,"m202607":0,"m202608":0} for p in prod_definitions}
-    global_units = {p["id"]: {"m202606":0,"m202607":0,"m202608":0} for p in prod_definitions}
+    global_quotas = {p["id"]: {"m202607":0,"m202608":0,"m202609":0} for p in prod_definitions}
+    global_units = {p["id"]: {"m202607":0,"m202608":0,"m202609":0} for p in prod_definitions}
 
     for spv, s_data in sorted(units_dict.items()):
         spv_node = {
             "id": f"spv_{spv.lower().replace(' ', '_')}",
             "name": str(spv),
-            "products": {p["id"]: {"quotas": {"m202606":0,"m202607":0,"m202608":0}, "units": {"m202606":0,"m202607":0,"m202608":0}} for p in prod_definitions},
+            "products": {p["id"]: {"quotas": {"m202607":0,"m202608":0,"m202609":0}, "units": {"m202607":0,"m202608":0,"m202609":0}} for p in prod_definitions},
             "children": []
         }
         
         for pdv, p_data in sorted(s_data["pdvs"].items()):
             zona = p_data["zona"]
-            pdv_products = {p["id"]: {"quotas": {"m202606":0,"m202607":0,"m202608":0}, "units": {"m202606":0,"m202607":0,"m202608":0}} for p in prod_definitions}
+            pdv_products = {p["id"]: {"quotas": {"m202607":0,"m202608":0,"m202609":0}, "units": {"m202607":0,"m202608":0,"m202609":0}} for p in prod_definitions}
             
             if pdv in quotas_dict:
                 for pcode in prod_definitions:
                     pcode = pcode["id"]
-                    for m_key in ["m202606", "m202607", "m202608"]:
+                    for m_key in ["m202607", "m202608", "m202609"]:
                         pdv_products[pcode]["quotas"][m_key] = quotas_dict[pdv][pcode][m_key]
                         
             ase_children = []
@@ -304,7 +304,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
                     1 for advisor_products in p_data["ases"].values()
                     if advisor_products["POSTPAGO_TOTAL"][m_key] > 0
                 )
-                for m_key in ["m202606", "m202607", "m202608"]
+                for m_key in ["m202607", "m202608", "m202609"]
             }
             for ase, a_prods in sorted(p_data["ases"].items()):
                 # Standardize advisor product format to match pdv & spv nodes: { quotas: {...}, units: {...} }
@@ -314,7 +314,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
 
                 ase_formatted_products = {}
                 for pcode in a_prods:
-                    advisor_quotas = {"m202606":0, "m202607":0, "m202608":0}
+                    advisor_quotas = {"m202607":0, "m202608":0, "m202609":0}
                     for m_key in advisor_quotas:
                         seller_count = postpago_sellers_by_month[m_key]
                         if seller_count > 0 and a_prods["POSTPAGO_TOTAL"][m_key] > 0:
@@ -340,7 +340,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
                 })
 
                 for pcode in a_prods:
-                    for m_key in ["m202606", "m202607", "m202608"]:
+                    for m_key in ["m202607", "m202608", "m202609"]:
                         pdv_products[pcode]["units"][m_key] += a_prods[pcode][m_key]
             spv_node["children"].append({
                 "id": f"pdv_{pdv.lower().replace(' ', '_')}",
@@ -352,12 +352,12 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             })
 
             for pcode in pdv_products:
-                for m_key in ["m202606", "m202607", "m202608"]:
+                for m_key in ["m202607", "m202608", "m202609"]:
                     spv_node["products"][pcode]["quotas"][m_key] += pdv_products[pcode]["quotas"][m_key]
                     spv_node["products"][pcode]["units"][m_key] += pdv_products[pcode]["units"][m_key]
 
         for pcode in spv_node["products"]:
-            for m_key in ["m202606", "m202607", "m202608"]:
+            for m_key in ["m202607", "m202608", "m202609"]:
                 global_quotas[pcode][m_key] += spv_node["products"][pcode]["quotas"][m_key]
                 global_units[pcode][m_key] += spv_node["products"][pcode]["units"][m_key]
 
@@ -374,11 +374,11 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
 
     # 5. BUILD DISCOUNT_DATA
     discount_months = {}
-    for m_name in ["Junio", "Julio", "Agosto"]:
+    for m_name in ["Julio", "Agosto", "Setiembre"]:
         df_m = df_post[df_post['Nombre del mes'] == m_name]
         df_mono = df_m[df_m['PRODUCTO'] == 'PORTA OSS MONO']
         tot_mono = len(df_mono)
-        tot_desc = len(df_mono[df_mono['VCHDESC_DSC_PROM'].str.contains('50%', na=False) | df_mono['VCHCONCEPTO_DESC'].str.contains('50%', na=False)])
+        tot_desc = len(df_mono[df_mono['VCHDESC_DSC_PROM'].astype(str).str.contains('50%', na=False) | df_mono['VCHCONCEPTO_DESC'].astype(str).str.contains('50%', na=False)])
         if tot_desc == 0 and tot_mono > 0:
             tot_desc = int(tot_mono * (0.76 if m_name == 'Julio' else 0.72))
         pct_tasa = round((tot_desc / tot_mono * 100), 1) if tot_mono > 0 else 0.0
@@ -386,7 +386,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
         spv_nodes = []
         for spv, grp_spv in df_mono.groupby('SPV'):
             s_mono = len(grp_spv)
-            s_desc = len(grp_spv[grp_spv['VCHDESC_DSC_PROM'].str.contains('50%', na=False) | grp_spv['VCHCONCEPTO_DESC'].str.contains('50%', na=False)])
+            s_desc = len(grp_spv[grp_spv['VCHDESC_DSC_PROM'].astype(str).str.contains('50%', na=False) | grp_spv['VCHCONCEPTO_DESC'].astype(str).str.contains('50%', na=False)])
             if s_desc == 0 and s_mono > 0:
                 s_desc = int(s_mono * (tot_desc / tot_mono if tot_mono > 0 else 0.7))
             s_pct = round((s_desc / s_mono * 100), 1) if s_mono > 0 else 0.0
@@ -395,7 +395,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             for pdv, grp_pdv in grp_spv.groupby(pdv_col):
                 zona = str(grp_pdv['ZONA'].iloc[0])
                 p_mono = len(grp_pdv)
-                p_desc = len(grp_pdv[grp_pdv['VCHDESC_DSC_PROM'].str.contains('50%', na=False) | grp_pdv['VCHCONCEPTO_DESC'].str.contains('50%', na=False)])
+                p_desc = len(grp_pdv[grp_pdv['VCHDESC_DSC_PROM'].astype(str).str.contains('50%', na=False) | grp_pdv['VCHCONCEPTO_DESC'].astype(str).str.contains('50%', na=False)])
                 if p_desc == 0 and p_mono > 0:
                     p_desc = int(p_mono * (tot_desc / tot_mono if tot_mono > 0 else 0.7))
                 p_pct = round((p_desc / p_mono * 100), 1) if p_mono > 0 else 0.0
@@ -403,7 +403,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
                 ase_nodes = []
                 for ase, grp_ase in grp_pdv.groupby(ase_col):
                     a_mono = len(grp_ase)
-                    a_desc = len(grp_ase[grp_ase['VCHDESC_DSC_PROM'].str.contains('50%', na=False) | grp_ase['VCHCONCEPTO_DESC'].str.contains('50%', na=False)])
+                    a_desc = len(grp_ase[grp_ase['VCHDESC_DSC_PROM'].astype(str).str.contains('50%', na=False) | grp_ase['VCHCONCEPTO_DESC'].astype(str).str.contains('50%', na=False)])
                     if a_desc == 0 and a_mono > 0:
                         a_desc = int(a_mono * (tot_desc / tot_mono if tot_mono > 0 else 0.7))
                     a_pct = round((a_desc / a_mono * 100), 1) if a_mono > 0 else 0.0
@@ -427,9 +427,10 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             "summary": {"tot_porta_mono": tot_mono, "tot_desc_50": tot_desc, "pct_tasa_uso": pct_tasa, "excede_meta": pct_tasa > 70.0},
             "tree": spv_nodes
         }
+    active_m = "Setiembre" if "Setiembre" in discount_months else "Agosto"
     discount_data_obj = {
-        "target_pct": 70.0, "month_label": "Agosto 2026", "months": discount_months,
-        "summary": discount_months["Agosto"]["summary"], "tree": discount_months["Agosto"]["tree"]
+        "target_pct": 70.0, "month_label": f"{active_m} 2026", "months": discount_months,
+        "summary": discount_months[active_m]["summary"], "tree": discount_months[active_m]["tree"]
     }
 
     # 6. BUILD OPERADOR_CEDENTE_DATA (Strictly PORTA OSS)
@@ -442,7 +443,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
         spv_node = {"name": str(spv), "children": []}
         for pdv, grp_pdv in grp_spv.groupby(pdv_col):
             zona = str(grp_pdv['ZONA'].iloc[0])
-            pdv_months = {m: {"claro_u": 0, "claro_pct": 0.0, "movistar_u": 0, "movistar_pct": 0.0, "bitel_u": 0, "bitel_pct": 0.0, "total_u": 0} for m in ["Junio", "Julio", "Agosto", "Acumulado"]}
+            pdv_months = {m: {"claro_u": 0, "claro_pct": 0.0, "movistar_u": 0, "movistar_pct": 0.0, "bitel_u": 0, "bitel_pct": 0.0, "total_u": 0} for m in ["Julio", "Agosto", "Setiembre", "Acumulado"]}
             for _, row in grp_pdv.iterrows():
                 m, c, cnt = row['Nombre del mes'], row['VCHPORTA_CEDENTE'], row['count']
                 if m in pdv_months:
@@ -464,7 +465,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
 
             pdv_node = {"name": str(pdv), "spv": str(spv), "zona": zona, "months": pdv_months, "asesores": []}
             for ase, grp_ase in grp_pdv.groupby(ase_col):
-                ase_months = {m: {"claro_u": 0, "claro_pct": 0.0, "movistar_u": 0, "movistar_pct": 0.0, "bitel_u": 0, "bitel_pct": 0.0, "total_u": 0} for m in ["Junio", "Julio", "Agosto", "Acumulado"]}
+                ase_months = {m: {"claro_u": 0, "claro_pct": 0.0, "movistar_u": 0, "movistar_pct": 0.0, "bitel_u": 0, "bitel_pct": 0.0, "total_u": 0} for m in ["Julio", "Agosto", "Setiembre", "Acumulado"]}
                 for _, row in grp_ase.iterrows():
                     m, c, cnt = row['Nombre del mes'], row['VCHPORTA_CEDENTE'], row['count']
                     if m in ase_months:
@@ -489,12 +490,6 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
         tree_cedente.append(spv_node)
 
     summary_cedente = {
-        "Junio": {
-            "claro": len(df_porta_oss[(df_porta_oss['Nombre del mes']=='Junio')&(df_porta_oss['VCHPORTA_CEDENTE']=='CLARO')]),
-            "movistar": len(df_porta_oss[(df_porta_oss['Nombre del mes']=='Junio')&(df_porta_oss['VCHPORTA_CEDENTE']=='TELEFONICA')]),
-            "bitel": len(df_porta_oss[(df_porta_oss['Nombre del mes']=='Junio')&(df_porta_oss['VCHPORTA_CEDENTE']=='VIETTEL')]),
-            "total": len(df_porta_oss[df_porta_oss['Nombre del mes']=='Junio'])
-        },
         "Julio": {
             "claro": len(df_porta_oss[(df_porta_oss['Nombre del mes']=='Julio')&(df_porta_oss['VCHPORTA_CEDENTE']=='CLARO')]),
             "movistar": len(df_porta_oss[(df_porta_oss['Nombre del mes']=='Julio')&(df_porta_oss['VCHPORTA_CEDENTE']=='TELEFONICA')]),
@@ -507,12 +502,18 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             "bitel": len(df_porta_oss[(df_porta_oss['Nombre del mes']=='Agosto')&(df_porta_oss['VCHPORTA_CEDENTE']=='VIETTEL')]),
             "total": len(df_porta_oss[df_porta_oss['Nombre del mes']=='Agosto'])
         },
+        "Setiembre": {
+            "claro": len(df_porta_oss[(df_porta_oss['Nombre del mes']=='Setiembre')&(df_porta_oss['VCHPORTA_CEDENTE']=='CLARO')]),
+            "movistar": len(df_porta_oss[(df_porta_oss['Nombre del mes']=='Setiembre')&(df_porta_oss['VCHPORTA_CEDENTE']=='TELEFONICA')]),
+            "bitel": len(df_porta_oss[(df_porta_oss['Nombre del mes']=='Setiembre')&(df_porta_oss['VCHPORTA_CEDENTE']=='VIETTEL')]),
+            "total": len(df_porta_oss[df_porta_oss['Nombre del mes']=='Setiembre'])
+        },
     }
     summary_cedente["Acumulado"] = {
-        "claro": summary_cedente["Junio"]["claro"] + summary_cedente["Julio"]["claro"] + summary_cedente["Agosto"]["claro"],
-        "movistar": summary_cedente["Junio"]["movistar"] + summary_cedente["Julio"]["movistar"] + summary_cedente["Agosto"]["movistar"],
-        "bitel": summary_cedente["Junio"]["bitel"] + summary_cedente["Julio"]["bitel"] + summary_cedente["Agosto"]["bitel"],
-        "total": summary_cedente["Junio"]["total"] + summary_cedente["Julio"]["total"] + summary_cedente["Agosto"]["total"],
+        "claro": summary_cedente["Julio"]["claro"] + summary_cedente["Agosto"]["claro"] + summary_cedente["Setiembre"]["claro"],
+        "movistar": summary_cedente["Julio"]["movistar"] + summary_cedente["Agosto"]["movistar"] + summary_cedente["Setiembre"]["movistar"],
+        "bitel": summary_cedente["Julio"]["bitel"] + summary_cedente["Agosto"]["bitel"] + summary_cedente["Setiembre"]["bitel"],
+        "total": summary_cedente["Julio"]["total"] + summary_cedente["Agosto"]["total"] + summary_cedente["Setiembre"]["total"],
     }
     operador_cedente_obj = {"summary": summary_cedente, "tree": tree_cedente}
 
@@ -533,7 +534,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     df_post_only['PLAN_PRICE'] = df_post_only['VCHN_PLAN'].apply(extract_plan_price)
 
     mix_months = {}
-    for m_name in ["Junio", "Julio", "Agosto"]:
+    for m_name in ["Julio", "Agosto", "Setiembre"]:
         df_m = df_post_only[df_post_only['Nombre del mes'] == m_name].copy()
 
         plan_counts = df_m['PLAN_PRICE'].value_counts().to_dict()
@@ -589,12 +590,13 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             "tree": spv_mix_nodes
         }
 
+    active_mix_m = "Setiembre" if "Setiembre" in mix_months else "Agosto"
     mix_planes_data_obj = {
-        "month_label": "Agosto 2026",
+        "month_label": f"{active_mix_m} 2026",
         "plans_list": plans_list,
         "months": mix_months,
-        "summary": mix_months["Agosto"]["summary"],
-        "tree": mix_months["Agosto"]["tree"]
+        "summary": mix_months[active_mix_m]["summary"],
+        "tree": mix_months[active_mix_m]["tree"]
     }
 
     # 7.4 BUILD DOTACION_DATA (Dynamic from DOTACIÓN sheet with full Asesor hierarchy)
@@ -611,18 +613,32 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     def build_dotacion_period(sheet_name):
         df_dot = pd.read_excel(excel_path, sheet_name=sheet_name)
         strip_text_columns(df_dot)
-        daily_cols = [c for c in df_dot.columns if isinstance(c, pd.Timestamp) or '2026' in str(c) or '08-' in str(c)]
-        daily_keys = [c.strftime('%Y-%m-%d') if isinstance(c, pd.Timestamp) else str(c)[:10] for c in daily_cols]
+        daily_cols = list(df_dot.columns[6:13])
+        daily_keys = []
         daily_headers = []
-        for c in daily_cols:
+        for i, c in enumerate(daily_cols):
             if isinstance(c, pd.Timestamp):
-                daily_headers.append(f"{c.day}-{months_es.get(c.month, 'Ago')}")
-            else:
+                daily_keys.append(f"d_{c.month:02d}_{c.day:02d}")
+                m_label = months_es.get(c.month, 'Ago')
+                daily_headers.append(f"{c.day:02d}-{m_label}")
+            elif '08-' in str(c) or '09-' in str(c) or '2026' in str(c):
+                daily_keys.append(str(c)[:10])
                 try:
                     parts = str(c)[:10].split('-')
-                    daily_headers.append(f"{int(parts[2])}-{months_es.get(int(parts[1]), 'Ago')}")
+                    daily_headers.append(f"{int(parts[2]):02d}-{months_es.get(int(parts[1]), 'Ago')}")
                 except Exception:
                     daily_headers.append(str(c)[:10])
+            else:
+                m_match = re.search(r'(\d+)-(\d+)', sheet_name)
+                start_day = int(m_match.group(1)) if m_match else 16
+                if start_day == 1 or '01-08' in sheet_name:
+                    start_day = 16
+                    month_name = 'Ago'
+                else:
+                    month_name = 'Set' if 'SET' in sheet_name.upper() else 'Ago'
+                day_val = start_day + i
+                daily_keys.append(f"d_{day_val:02d}")
+                daily_headers.append(f"{day_val:02d}-{month_name}")
 
         spvs_dot = ['CYNTHIA GUERRA', 'MARÍA BERNAOLA', 'FERNANDO MORENO', 'MERY LAPA']
         spv_nodes_dot = {s: {"name": s, "hc_obj": 0, "hc_codigo": 0, "hc_gap": 0, "cumple_condicion": 0, "daily_totals": {k: 0 for k in daily_keys}, "children": []} for s in spvs_dot}
@@ -686,6 +702,8 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     for sheet_name in dot_sheet_names:
         m = re.search(r'(\d+-\d+)', sheet_name)
         period_key = m.group(1) if m else sheet_name
+        if period_key == '01-08':
+            period_key = '16-22'
         dotacion_periods[period_key] = build_dotacion_period(sheet_name)
     default_dotacion_period = '16-22' if '16-22' in dotacion_periods else next(iter(dotacion_periods))
     dotacion_data_obj = {"default_period": default_dotacion_period, "periods": dotacion_periods, **dotacion_periods[default_dotacion_period]}
@@ -694,14 +712,14 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
     df_perm = pd.read_excel(excel_path, sheet_name='PERMANENCIA')
     strip_text_columns(df_perm)
 
-    months_perm_map = {'AGOSTO': 'Agosto', 'JULIO': 'Julio', 'JUNIO': 'Junio', 'ENERO': 'Enero'}
+    months_perm_map = {'SETIEMBRE': 'Setiembre', 'SEPTIEMBRE': 'Setiembre', 'AGOSTO': 'Agosto', 'JULIO': 'Julio', 'FEBRERO': 'Febrero', 'JUNIO': 'Junio', 'ENERO': 'Enero'}
     permanencia_months = {}
 
     for camada_raw, camada_clean in months_perm_map.items():
-        df_c = df_perm[df_perm['CAMADAS'].str.upper() == camada_raw].copy()
+        df_c = df_perm[df_perm['CAMADAS'].astype(str).str.upper() == camada_raw].copy()
         if len(df_c) == 0: continue
 
-        row_total = df_c[df_c['PDV'].str.upper() == 'TOTAL']
+        row_total = df_c[df_c['PDV'].astype(str).str.upper() == 'TOTAL']
         if len(row_total) > 0:
             r_tot = row_total.iloc[0]
             tot_sales = int(r_tot['SS TOTAL']) if pd.notna(r_tot['SS TOTAL']) else 0
@@ -722,10 +740,10 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             "m4_pct": m4_p, "m5_pct": m5_p, "m6_pct": m6_p, "perm_m6_pct": perm_m6_p
         }
 
-        df_pdvs = df_c[df_c['PDV'].str.upper() != 'TOTAL'].copy()
+        df_pdvs = df_c[df_c['PDV'].astype(str).str.upper() != 'TOTAL'].copy()
         tree_list = []
         for pdv, grp_pdv in df_pdvs.groupby('PDV'):
-            row_pdv_tot = grp_pdv[grp_pdv['ASESOR'].str.upper() == 'TOTAL']
+            row_pdv_tot = grp_pdv[grp_pdv['ASESOR'].astype(str).str.upper() == 'TOTAL']
             rp = row_pdv_tot.iloc[0] if len(row_pdv_tot) > 0 else grp_pdv.iloc[0]
             p_tot = int(rp['SS TOTAL']) if pd.notna(rp['SS TOTAL']) else 0
             pm0 = round(float(rp['M0']) * 100, 2) if pd.notna(rp['M0']) and str(rp['M0']) != 'nan' else None
@@ -738,7 +756,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             pperm_m6 = round(float(rp['%PERM_M6']) * 100, 2) if pd.notna(rp['%PERM_M6']) and str(rp['%PERM_M6']) != 'nan' else (round(100 - pm6, 2) if pm6 else None)
 
             children_list = []
-            df_ases = grp_pdv[grp_pdv['ASESOR'].str.upper() != 'TOTAL']
+            df_ases = grp_pdv[grp_pdv['ASESOR'].astype(str).str.upper() != 'TOTAL']
             for _, ra in df_ases.iterrows():
                 a_tot = int(ra['SS TOTAL']) if pd.notna(ra['SS TOTAL']) else 0
                 am0 = round(float(ra['M0']) * 100, 2) if pd.notna(ra['M0']) and str(ra['M0']) != 'nan' else None
@@ -763,7 +781,8 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
 
         permanencia_months[camada_clean] = {"summary": summary_obj, "tree": tree_list}
 
-    default_perm = permanencia_months.get("Agosto", list(permanencia_months.values())[0])
+    active_perm_m = "Setiembre" if "Setiembre" in permanencia_months else ("Agosto" if "Agosto" in permanencia_months else list(permanencia_months.keys())[0])
+    default_perm = permanencia_months[active_perm_m]
     df_users_perm = pd.read_excel(excel_path, sheet_name='USUARIOS', header=2)
     permanencia_user_name_map = {}
     if {'USUARIO', 'ASESOR'}.issubset(df_users_perm.columns):
@@ -773,7 +792,7 @@ def run_update(excel_path=None, elapsed_wd=None, total_wd=None):
             if user_code and user_code != 'NAN' and advisor_name and advisor_name.lower() != 'nan':
                 permanencia_user_name_map[user_code] = advisor_name
     permanencia_data_obj = {
-        "month_label": "Agosto 2026",
+        "month_label": f"{active_perm_m} 2026",
         "months": permanencia_months,
         "summary": default_perm["summary"],
         "tree": default_perm["tree"],
