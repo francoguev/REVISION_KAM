@@ -13,9 +13,10 @@ if (!scriptMatch) {
 
 const elements = new Map();
 const defaultValue = (id) => {
-  if (id === 'monthFilter') return 'm202609';
-  if (id === 'dotacionPeriodFilter') return '16-22';
-  if (/month/i.test(id)) return 'Setiembre';
+  if (id === 'monthFilter' || id === 'monthSelectHeader') return 'm202610';
+  if (id === 'dotacionPeriodFilter') return '04-10';
+  if (id === 'monthPermanenciaFilter') return 'Marzo';
+  if (/month/i.test(id)) return 'Octubre';
   if (/zone|spv/i.test(id)) return 'ALL';
   return '';
 };
@@ -69,8 +70,8 @@ const failures = [];
 const check = (condition, message) => {
   if (!condition) failures.push(message);
 };
-check(html.includes('<span>SETIEMBRE S1</span>'), 'La portada no muestra SETIEMBRE S1.');
-check(!html.includes('<span>AGOSTO S1-S2-S3-S4</span>'), 'La portada conserva el rótulo anterior AGOSTO S1-S2-S3-S4.');
+check(html.includes('<span>OCTUBRE S1</span>'), 'La portada no muestra OCTUBRE S1.');
+check(!html.includes('<span>SETIEMBRE S1</span>'), 'La portada conserva el rótulo anterior SETIEMBRE S1.');
 const run = (label, fn) => {
   try {
     fn();
@@ -109,7 +110,7 @@ run('NPS Postventa', () => sandbox.selectNpsChannel('postventa'));
 run('Productividades HC', () => {
   sandbox.openProductivityModal();
   const productivity = sandbox.PRODUCTIVIDADES_DATA;
-  check(productivity.default_month === 'Agosto' || productivity.default_month === 'Setiembre', 'Productividades HC no inicia en Agosto o Setiembre.');
+  check(productivity.default_month === 'Agosto' || productivity.default_month === 'Setiembre' || productivity.default_month === 'Octubre', 'Productividades HC no inicia en un mes válido.');
   check(productivity.columns.length === 20, 'Productividades HC no conserva todas las columnas del Excel.');
   check(Object.keys(productivity.months).length > 0, 'Productividades HC no conserva todos los registros mensuales.');
   check((productivity.months.Setiembre || productivity.months.Agosto || []).every((row) => typeof row.Antiguedad === 'number'), 'Antiguedad no se conserva como cantidad de meses.');
@@ -123,7 +124,7 @@ run('Productividades HC', () => {
   sandbox.closeProductivityModal();
 });
 
-const postpagoActiveMonth = sandbox.SALES_DATA.summary.global_units.POSTPAGO_TOTAL.m202609 ?? sandbox.SALES_DATA.summary.global_units.POSTPAGO_TOTAL.m202608;
+const postpagoActiveMonth = sandbox.SALES_DATA.summary.global_units.POSTPAGO_TOTAL.m202610 ?? sandbox.SALES_DATA.summary.global_units.POSTPAGO_TOTAL.m202609;
 const elapsedDaysMatch = html.match(/var ELAPSED_WD = (\d+);/);
 const totalDaysMatch = html.match(/var TOTAL_WD = (\d+);/);
 const verifiedElapsedDays = Number(elapsedDaysMatch?.[1] || 0);
@@ -137,8 +138,8 @@ check(sandbox.getIdealValue(1486) === Math.round((1486 / verifiedTotalDays) * ve
 check(sandbox.getGapBadgeHTML(58).includes('fa-arrow-up') && sandbox.getGapBadgeHTML(-58).includes('fa-arrow-down'), 'GAP no utiliza las flechas de variación positiva y negativa.');
 const visibleCutLabel = `Avance ${verifiedElapsedDays}/${verifiedTotalDays} Días Hábiles`;
 check((html.match(new RegExp(visibleCutLabel, 'g')) || []).length >= 1, 'El texto visible de avance no muestra el corte vigente de días hábiles en todos sus estados.');
-const mixMonthName = sandbox.MIX_PLANES_DATA.months.Setiembre ? 'Setiembre' : 'Agosto';
-const postpagoMonthKey = sandbox.MIX_PLANES_DATA.months.Setiembre ? 'm202609' : 'm202608';
+const mixMonthName = sandbox.MIX_PLANES_DATA.months.Octubre ? 'Octubre' : (sandbox.MIX_PLANES_DATA.months.Setiembre ? 'Setiembre' : 'Agosto');
+const postpagoMonthKey = sandbox.MIX_PLANES_DATA.months.Octubre ? 'm202610' : (sandbox.MIX_PLANES_DATA.months.Setiembre ? 'm202609' : 'm202608');
 const postpagoVal = sandbox.SALES_DATA.summary.global_units.POSTPAGO_TOTAL[postpagoMonthKey];
 const mixVal = sandbox.MIX_PLANES_DATA.months[mixMonthName]?.summary?.total || 0;
 check(Math.abs(postpagoVal - mixVal) <= 5, `Mix de planes (${mixVal}) no coincide con Postpago (${postpagoVal}).`);
@@ -216,11 +217,11 @@ check(!/\bvar\s+(currentSort|currentProductCode|currentMonthFilter|expandedState
 check(html.includes('id="zoneSelectPage3"') && html.includes('id="zoneSelectPage7"'), 'Los filtros de zona de Cedente y NPS no tienen identificadores independientes.');
 
 const monthFilters = {
-  monthSelectHeader: { selected: 'm202609', labels: ['Setiembre', 'Agosto', 'Julio'] },
-  monthDiscountFilter: { selected: 'Setiembre', labels: ['Setiembre', 'Agosto', 'Julio'] },
-  monthCedenteFilter: { selected: 'Setiembre', labels: ['Setiembre', 'Agosto', 'Julio'] },
-  monthMixPlanesFilter: { selected: 'Setiembre', labels: ['Setiembre', 'Agosto', 'Julio'] },
-  monthPermanenciaFilter: { selected: 'Setiembre', labels: ['Setiembre', 'Agosto', 'Julio', 'Febrero'] },
+  monthSelectHeader: { selected: 'm202610', labels: ['Octubre', 'Setiembre', 'Agosto'] },
+  monthDiscountFilter: { selected: 'Octubre', labels: ['Octubre', 'Setiembre', 'Agosto'] },
+  monthCedenteFilter: { selected: 'Octubre', labels: ['Octubre', 'Setiembre', 'Agosto'] },
+  monthMixPlanesFilter: { selected: 'Octubre', labels: ['Octubre', 'Setiembre', 'Agosto'] },
+  monthPermanenciaFilter: { selected: 'Marzo', labels: ['Marzo', 'Setiembre', 'Agosto'] },
 };
 for (const [id, expected] of Object.entries(monthFilters)) {
   const selectMatch = html.match(new RegExp(`<select[^>]*id="${id}"[\\s\\S]*?<\\/select>`));
@@ -278,7 +279,7 @@ for (const advisor of advisorsWithTenure) {
 }
 check(html.includes('getAdvisorTenureHTML(ase)'), 'La Página 1 no renderiza la antigüedad junto al asesor.');
 check(html.includes('getPostpagoTotalSalesInMonth(ase, pageState[1].monthFilter) > 0'), 'La plantilla de asesores de la Página 1 no se basa en POSTPAGO TOTAL del mes filtrado.');
-const quotaMonths = sandbox.SALES_DATA.summary.global_units.POSTPAGO_TOTAL.m202609 !== undefined ? ['m202607', 'm202608', 'm202609'] : ['m202606', 'm202607', 'm202608'];
+const quotaMonths = sandbox.SALES_DATA.summary.global_units.POSTPAGO_TOTAL.m202610 !== undefined ? ['m202608', 'm202609', 'm202610'] : ['m202607', 'm202608', 'm202609'];
 const productCodes = sandbox.SALES_DATA.summary.prod_definitions.map((product) => product.id);
 for (const supervisor of sandbox.SALES_DATA.tree) {
   for (const pdv of supervisor.children || []) {
